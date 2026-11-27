@@ -1,0 +1,658 @@
+{
+  "arm": "E2",
+  "position": 46,
+  "example_id": "test:1698:1-17419587-1",
+  "original_index": 1698,
+  "table_id": "1-17419587-1",
+  "question": "What is the location of the airport that had a traffic of 3258 in 2009-10",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        10,
+        0,
+        3258
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [],
+  "status": "GROUNDING_FAILED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "GROUNDING_FAILED",
+    "valid": false,
+    "errors": [
+      "condition 1: invalid column",
+      "condition 1: grounding NO_MATCH"
+    ],
+    "conditions": [
+      {
+        "surface": "3258",
+        "value": 3258,
+        "start": 58,
+        "end": 62,
+        "clause": "What is the location of the airport that had a traffic of 3258 in 2009-10",
+        "columnIndex": 10,
+        "columnCandidates": [
+          10
+        ],
+        "columnMatchReason": "Traffic value 3258 appears under the 2009–10 header for Canberra International Airport.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "2009-10",
+        "value": "2009-10",
+        "start": 66,
+        "end": 73,
+        "clause": "What is the location of the airport that had a traffic of 3258 in 2009-10",
+        "columnMatchStatus": "UNRESOLVED",
+        "columnCandidates": [],
+        "columnMatchReason": "2009-10 identifies the year/header that qualifies the traffic field, not a separate row-level condition; no cell field is supported.",
+        "operator": "=",
+        "grounded": false,
+        "groundingStatus": "NO_MATCH"
+      }
+    ],
+    "stage": "WHERE_CONDITION_VALIDATE",
+    "originalConditions": [
+      {
+        "surface": "3258",
+        "value": "3258",
+        "start": 58,
+        "end": 62
+      },
+      {
+        "surface": "2009-10",
+        "value": "2009-10",
+        "start": 66,
+        "end": 73
+      }
+    ],
+    "halt": true,
+    "completed": false,
+    "conds": [],
+    "warnings": [
+      "operator model output count mismatch; used local clause cues"
+    ],
+    "request": {
+      "question": "What is the location of the airport that had a traffic of 3258 in 2009-10",
+      "table": {
+        "header": [
+          "Rank",
+          "Airport",
+          "Location",
+          "IATA",
+          "1985–86",
+          "1990–91",
+          "1995–96",
+          "2000–01",
+          "2005–06",
+          "2007–08",
+          "2009–10",
+          "2010-11"
+        ],
+        "page_title": "List of the busiest airports in Australia",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "real",
+          "real",
+          "real",
+          "real",
+          "real",
+          "real",
+          "real",
+          "real"
+        ],
+        "id": "1-17419587-1",
+        "section_title": "Top 11 by passenger traffic 1985–2011",
+        "caption": "Top 11 by passenger traffic 1985–2011",
+        "rows": [
+          [
+            1,
+            "Sydney Airport",
+            "Sydney , New South Wales",
+            "SYD",
+            9497,
+            12361,
+            19878,
+            25814,
+            28996,
+            32701,
+            34458,
+            36624
+          ],
+          [
+            2,
+            "Melbourne Airport",
+            "Melbourne , Victoria",
+            "MEL",
+            6476,
+            8346,
+            12972,
+            16881,
+            21041,
+            23943,
+            25918,
+            27607
+          ],
+          [
+            3,
+            "Brisbane Airport",
+            "Brisbane , Queensland",
+            "BNE",
+            3457,
+            5246,
+            9236,
+            12467,
+            16016,
+            18298,
+            18889,
+            20278
+          ],
+          [
+            4,
+            "Perth Airport",
+            "Perth , Western Australia",
+            "PER",
+            1939,
+            2508,
+            4145,
+            5162,
+            7005,
+            8952,
+            9992,
+            11328
+          ],
+          [
+            5,
+            "Adelaide Airport",
+            "Adelaide , South Australia",
+            "ADL",
+            2082,
+            2461,
+            3743,
+            4443,
+            5767,
+            6619,
+            7016,
+            7021
+          ],
+          [
+            6,
+            "Gold Coast Airport",
+            "Gold Coast , Queensland",
+            "OOL",
+            587,
+            1288,
+            2595,
+            2891,
+            3518,
+            4323,
+            5186,
+            5261
+          ],
+          [
+            7,
+            "Cairns Airport",
+            "Cairns , Queensland",
+            "CNS",
+            778,
+            1090,
+            1993,
+            1888,
+            3731,
+            3777,
+            3550,
+            3848
+          ],
+          [
+            8,
+            "Canberra International Airport",
+            "Canberra , Australian Capital Territory",
+            "CBR",
+            1008,
+            1124,
+            1750,
+            2107,
+            2550,
+            2853,
+            3258,
+            3206
+          ],
+          [
+            9,
+            "Hobart International Airport",
+            "Hobart , Tasmania",
+            "HBA",
+            506,
+            590,
+            850,
+            974,
+            1606,
+            1758,
+            1856,
+            1903
+          ],
+          [
+            10,
+            "Darwin International Airport",
+            "Darwin , Northern Territory",
+            "DRW",
+            407,
+            496,
+            932,
+            1078,
+            1219,
+            1562,
+            1569,
+            1743
+          ]
+        ],
+        "name": "table_17419587_1",
+        "headers": [
+          "Rank",
+          "Airport",
+          "Location",
+          "IATA",
+          "1985–86",
+          "1990–91",
+          "1995–96",
+          "2000–01",
+          "2005–06",
+          "2007–08",
+          "2009–10",
+          "2010-11"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-17419587-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 9,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "3258",
+              "value": "3258",
+              "start": 58,
+              "end": 62
+            },
+            {
+              "surface": "2009-10",
+              "value": "2009-10",
+              "start": 66,
+              "end": 73
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0235aacfb54425291bdfa0cc8223285d93f3d193578e4299e7236a885a673da7",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5170,
+              "completion_tokens": 33,
+              "total_tokens": 5203,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "3258",
+              "value": "3258",
+              "start": 58,
+              "end": 62,
+              "clause": "What is the location of the airport that had a traffic of 3258 in 2009-10"
+            },
+            {
+              "surface": "2009-10",
+              "value": "2009-10",
+              "start": 66,
+              "end": 73,
+              "clause": "What is the location of the airport that had a traffic of 3258 in 2009-10"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "3258",
+              "value": "3258",
+              "start": 58,
+              "end": 62,
+              "clause": "What is the location of the airport that had a traffic of 3258 in 2009-10"
+            },
+            {
+              "surface": "2009-10",
+              "value": "2009-10",
+              "start": 66,
+              "end": 73,
+              "clause": "What is the location of the airport that had a traffic of 3258 in 2009-10"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "3258",
+              "value": "3258",
+              "start": 58,
+              "end": 62,
+              "clause": "What is the location of the airport that had a traffic of 3258 in 2009-10",
+              "columnIndex": 10,
+              "columnCandidates": [
+                10
+              ],
+              "columnMatchReason": "Traffic value 3258 appears under the 2009–10 header for Canberra International Airport."
+            },
+            {
+              "surface": "2009-10",
+              "value": "2009-10",
+              "start": 66,
+              "end": 73,
+              "clause": "What is the location of the airport that had a traffic of 3258 in 2009-10",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [],
+              "columnMatchReason": "2009-10 identifies the year/header that qualifies the traffic field, not a separate row-level condition; no cell field is supported."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "53abfcb1e0d3fd71b8227c432388354eb037efc5ce73675109a36ba1aa8a6415",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5261,
+              "completion_tokens": 69,
+              "total_tokens": 5330,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "warnings": [
+            "operator model output count mismatch; used local clause cues"
+          ],
+          "conditions": [
+            {
+              "surface": "3258",
+              "value": "3258",
+              "start": 58,
+              "end": 62,
+              "clause": "What is the location of the airport that had a traffic of 3258 in 2009-10",
+              "columnIndex": 10,
+              "columnCandidates": [
+                10
+              ],
+              "columnMatchReason": "Traffic value 3258 appears under the 2009–10 header for Canberra International Airport.",
+              "operator": "="
+            },
+            {
+              "surface": "2009-10",
+              "value": "2009-10",
+              "start": 66,
+              "end": 73,
+              "clause": "What is the location of the airport that had a traffic of 3258 in 2009-10",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [],
+              "columnMatchReason": "2009-10 identifies the year/header that qualifies the traffic field, not a separate row-level condition; no cell field is supported.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "52bdffc031af0960322ff73cdfc769c94823e335bef803fd6b869ce9676e3d56",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5370,
+              "completion_tokens": 9,
+              "total_tokens": 5379,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "3258",
+              "value": 3258,
+              "start": 58,
+              "end": 62,
+              "clause": "What is the location of the airport that had a traffic of 3258 in 2009-10",
+              "columnIndex": 10,
+              "columnCandidates": [
+                10
+              ],
+              "columnMatchReason": "Traffic value 3258 appears under the 2009–10 header for Canberra International Airport.",
+              "operator": "="
+            },
+            {
+              "surface": "2009-10",
+              "value": "2009-10",
+              "start": 66,
+              "end": 73,
+              "clause": "What is the location of the airport that had a traffic of 3258 in 2009-10",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [],
+              "columnMatchReason": "2009-10 identifies the year/header that qualifies the traffic field, not a separate row-level condition; no cell field is supported.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "9ed8d4be91a25b04bbf0405bb375af737594e4377c9c552d0d5ddcd7a2d766ff",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5324,
+              "completion_tokens": 16,
+              "total_tokens": 5340,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "3258",
+              "value": "3258",
+              "start": 58,
+              "end": 62,
+              "clause": "What is the location of the airport that had a traffic of 3258 in 2009-10",
+              "columnIndex": 10,
+              "columnCandidates": [
+                10
+              ],
+              "columnMatchReason": "Traffic value 3258 appears under the 2009–10 header for Canberra International Airport.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2009-10",
+              "value": "2009-10",
+              "start": 66,
+              "end": 73,
+              "clause": "What is the location of the airport that had a traffic of 3258 in 2009-10",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [],
+              "columnMatchReason": "2009-10 identifies the year/header that qualifies the traffic field, not a separate row-level condition; no cell field is supported.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "3258",
+              "value": 3258,
+              "start": 58,
+              "end": 62,
+              "clause": "What is the location of the airport that had a traffic of 3258 in 2009-10",
+              "columnIndex": 10,
+              "columnCandidates": [
+                10
+              ],
+              "columnMatchReason": "Traffic value 3258 appears under the 2009–10 header for Canberra International Airport.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2009-10",
+              "value": "2009-10",
+              "start": 66,
+              "end": 73,
+              "clause": "What is the location of the airport that had a traffic of 3258 in 2009-10",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [],
+              "columnMatchReason": "2009-10 identifies the year/header that qualifies the traffic field, not a separate row-level condition; no cell field is supported.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "GROUNDING_FAILED",
+          "valid": false,
+          "errors": [
+            "condition 1: invalid column",
+            "condition 1: grounding NO_MATCH"
+          ],
+          "conditions": [
+            {
+              "surface": "3258",
+              "value": 3258,
+              "start": 58,
+              "end": 62,
+              "clause": "What is the location of the airport that had a traffic of 3258 in 2009-10",
+              "columnIndex": 10,
+              "columnCandidates": [
+                10
+              ],
+              "columnMatchReason": "Traffic value 3258 appears under the 2009–10 header for Canberra International Airport.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2009-10",
+              "value": "2009-10",
+              "start": 66,
+              "end": 73,
+              "clause": "What is the location of the airport that had a traffic of 3258 in 2009-10",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [],
+              "columnMatchReason": "2009-10 identifies the year/header that qualifies the traffic field, not a separate row-level condition; no cell field is supported.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH"
+            }
+          ]
+        }
+      },
+      "warnings": [
+        "operator model output count mismatch; used local clause cues"
+      ],
+      "execution": {
+        "status": "GROUNDING_FAILED",
+        "stage": "WHERE_CONDITION_VALIDATE",
+        "halt": true,
+        "completed": false,
+        "errors": [
+          "condition 1: invalid column",
+          "condition 1: grounding NO_MATCH"
+        ],
+        "warnings": [
+          "operator model output count mismatch; used local clause cues"
+        ]
+      },
+      "originalConditions": [
+        {
+          "surface": "3258",
+          "value": "3258",
+          "start": 58,
+          "end": 62
+        },
+        {
+          "surface": "2009-10",
+          "value": "2009-10",
+          "start": 66,
+          "end": 73
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "3258",
+          "value": 3258,
+          "start": 58,
+          "end": 62,
+          "clause": "What is the location of the airport that had a traffic of 3258 in 2009-10",
+          "columnIndex": 10,
+          "columnCandidates": [
+            10
+          ],
+          "columnMatchReason": "Traffic value 3258 appears under the 2009–10 header for Canberra International Airport.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "2009-10",
+          "value": "2009-10",
+          "start": 66,
+          "end": 73,
+          "clause": "What is the location of the airport that had a traffic of 3258 in 2009-10",
+          "columnMatchStatus": "UNRESOLVED",
+          "columnCandidates": [],
+          "columnMatchReason": "2009-10 identifies the year/header that qualifies the traffic field, not a separate row-level condition; no cell field is supported.",
+          "operator": "=",
+          "grounded": false,
+          "groundingStatus": "NO_MATCH"
+        }
+      ],
+      "count": 2
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": false,
+  "elapsed_ms": 9453
+}

@@ -1,0 +1,602 @@
+{
+  "arm": "E2",
+  "position": 369,
+  "example_id": "test:14425:2-12382876-5",
+  "original_index": 14425,
+  "table_id": "2-12382876-5",
+  "question": "When is the lane less than 5 and is named ágnes kovács?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        1,
+        2,
+        5
+      ],
+      [
+        2,
+        0,
+        "ágnes kovács"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      1,
+      2,
+      5
+    ],
+    [
+      2,
+      0,
+      "Ágnes Kovács"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        2,
+        5
+      ],
+      [
+        2,
+        0,
+        "Ágnes Kovács"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "less than 5",
+        "value": 5,
+        "start": 17,
+        "end": 28,
+        "clause": "When is the lane less than 5",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The clause explicitly identifies Lane, a numeric field supporting comparison with 5.",
+        "operator": "<",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "ágnes kovács",
+        "value": "Ágnes Kovács",
+        "start": 42,
+        "end": 54,
+        "clause": "and is named ágnes kovács?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The wording 'named' identifies the Name field, which contains Ágnes Kovács.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "less than 5",
+        "value": "5",
+        "start": 17,
+        "end": 28
+      },
+      {
+        "surface": "ágnes kovács",
+        "value": "Ágnes Kovács",
+        "start": 42,
+        "end": 54
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "When is the lane less than 5 and is named ágnes kovács?",
+      "table": {
+        "header": [
+          "Rank",
+          "Lane",
+          "Name",
+          "Nationality",
+          "Time"
+        ],
+        "page_title": "Swimming at the 2000 Summer Olympics – Women's 200 metre breaststroke",
+        "types": [
+          "real",
+          "real",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 12382876,
+        "id": "2-12382876-5",
+        "section_title": "Semifinal 2",
+        "rows": [
+          [
+            "1",
+            "4",
+            "Ágnes Kovács",
+            "Hungary",
+            "2:24.03"
+          ],
+          [
+            "2",
+            "5",
+            "Qi Hui",
+            "China",
+            "2:24.21"
+          ],
+          [
+            "3",
+            "2",
+            "Olga Bakaldina",
+            "Russia",
+            "2:25.41"
+          ],
+          [
+            "4",
+            "3",
+            "Masami Tanaka",
+            "Japan",
+            "2:26.24"
+          ],
+          [
+            "5",
+            "6",
+            "Amanda Beard",
+            "United States",
+            "2:26.62"
+          ],
+          [
+            "6",
+            "1",
+            "Christin Petelski",
+            "Canada",
+            "2:29.43"
+          ],
+          [
+            "7",
+            "7",
+            "Rebecca Brown",
+            "Australia",
+            "2:29.90"
+          ],
+          [
+            "8",
+            "8",
+            "Alicja Pęczak",
+            "Poland",
+            "2:30.02"
+          ]
+        ],
+        "caption": "Semifinal 2",
+        "headers": [
+          "Rank",
+          "Lane",
+          "Name",
+          "Nationality",
+          "Time"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-12382876-5",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "less than 5",
+              "value": "5",
+              "start": 17,
+              "end": 28
+            },
+            {
+              "surface": "ágnes kovács",
+              "value": "Ágnes Kovács",
+              "start": 42,
+              "end": 54
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b684d066c9d476b9a22ef345505f85c057e4a161c60c14a20aa3806b8ac12378",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4831,
+              "completion_tokens": 37,
+              "total_tokens": 4868,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "less than 5",
+              "value": "5",
+              "start": 17,
+              "end": 28,
+              "clause": "When is the lane less than 5"
+            },
+            {
+              "surface": "ágnes kovács",
+              "value": "Ágnes Kovács",
+              "start": 42,
+              "end": 54,
+              "clause": "and is named ágnes kovács?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "less than 5",
+              "value": "5",
+              "start": 17,
+              "end": 28,
+              "clause": "When is the lane less than 5"
+            },
+            {
+              "surface": "ágnes kovács",
+              "value": "Ágnes Kovács",
+              "start": 42,
+              "end": 54,
+              "clause": "and is named ágnes kovács?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "less than 5",
+              "value": "5",
+              "start": 17,
+              "end": 28,
+              "clause": "When is the lane less than 5",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly identifies Lane, a numeric field supporting comparison with 5."
+            },
+            {
+              "surface": "ágnes kovács",
+              "value": "Ágnes Kovács",
+              "start": 42,
+              "end": 54,
+              "clause": "and is named ágnes kovács?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The wording 'named' identifies the Name field, which contains Ágnes Kovács."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "6f2f14cccf391690291ea6120846e3ac55c793bd32d077799aabb85a676bce82",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4901,
+              "completion_tokens": 59,
+              "total_tokens": 4960,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "less than 5",
+              "value": "5",
+              "start": 17,
+              "end": 28,
+              "clause": "When is the lane less than 5",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly identifies Lane, a numeric field supporting comparison with 5.",
+              "operator": "<"
+            },
+            {
+              "surface": "ágnes kovács",
+              "value": "Ágnes Kovács",
+              "start": 42,
+              "end": 54,
+              "clause": "and is named ágnes kovács?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The wording 'named' identifies the Name field, which contains Ágnes Kovács.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "235087adafedddce0432f66cd90df36b825e5f4f3f4282187e97b6761d305fc4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4995,
+              "completion_tokens": 11,
+              "total_tokens": 5006,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "less than 5",
+              "value": "5",
+              "start": 17,
+              "end": 28,
+              "clause": "When is the lane less than 5",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly identifies Lane, a numeric field supporting comparison with 5.",
+              "operator": "<"
+            },
+            {
+              "surface": "ágnes kovács",
+              "value": "Ágnes Kovács",
+              "start": 42,
+              "end": 54,
+              "clause": "and is named ágnes kovács?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The wording 'named' identifies the Name field, which contains Ágnes Kovács.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "75a32e9015b54a621eacc73bf890bd16d43297279a96283c8f38698deab8b69d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4949,
+              "completion_tokens": 17,
+              "total_tokens": 4966,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "less than 5",
+              "value": "5",
+              "start": 17,
+              "end": 28,
+              "clause": "When is the lane less than 5",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly identifies Lane, a numeric field supporting comparison with 5.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "ágnes kovács",
+              "value": "Ágnes Kovács",
+              "start": 42,
+              "end": 54,
+              "clause": "and is named ágnes kovács?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The wording 'named' identifies the Name field, which contains Ágnes Kovács.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "less than 5",
+              "value": 5,
+              "start": 17,
+              "end": 28,
+              "clause": "When is the lane less than 5",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly identifies Lane, a numeric field supporting comparison with 5.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "ágnes kovács",
+              "value": "Ágnes Kovács",
+              "start": 42,
+              "end": 54,
+              "clause": "and is named ágnes kovács?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The wording 'named' identifies the Name field, which contains Ágnes Kovács.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "less than 5",
+              "value": 5,
+              "start": 17,
+              "end": 28,
+              "clause": "When is the lane less than 5",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly identifies Lane, a numeric field supporting comparison with 5.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "ágnes kovács",
+              "value": "Ágnes Kovács",
+              "start": 42,
+              "end": 54,
+              "clause": "and is named ágnes kovács?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The wording 'named' identifies the Name field, which contains Ágnes Kovács.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              2,
+              5
+            ],
+            [
+              2,
+              0,
+              "Ágnes Kovács"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "less than 5",
+          "value": "5",
+          "start": 17,
+          "end": 28
+        },
+        {
+          "surface": "ágnes kovács",
+          "value": "Ágnes Kovács",
+          "start": 42,
+          "end": 54
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "less than 5",
+          "value": 5,
+          "start": 17,
+          "end": 28,
+          "clause": "When is the lane less than 5",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The clause explicitly identifies Lane, a numeric field supporting comparison with 5.",
+          "operator": "<",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "ágnes kovács",
+          "value": "Ágnes Kovács",
+          "start": 42,
+          "end": 54,
+          "clause": "and is named ágnes kovács?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The wording 'named' identifies the Name field, which contains Ágnes Kovács.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          1,
+          2,
+          5
+        ],
+        [
+          2,
+          0,
+          "Ágnes Kovács"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8156
+}

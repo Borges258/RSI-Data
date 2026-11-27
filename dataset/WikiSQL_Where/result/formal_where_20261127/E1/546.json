@@ -1,0 +1,138 @@
+{
+  "arm": "E1",
+  "position": 546,
+  "example_id": "test:5021:2-14342480-15",
+  "original_index": 5021,
+  "table_id": "2-14342480-15",
+  "question": "While Duncan Thompson played, how many points did he have where there were 0 field goals, 0 extra points, and more than 9 touchdowns?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        9
+      ],
+      [
+        2,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        "duncan thompson"
+      ]
+    ],
+    "agg": 5
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "Duncan Thompson"
+    ],
+    [
+      3,
+      0,
+      0
+    ],
+    [
+      2,
+      0,
+      0
+    ],
+    [
+      1,
+      1,
+      9
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": "gpt-5.6-sol",
+  "usage": {
+    "prompt_tokens": 9433,
+    "completion_tokens": 67,
+    "total_tokens": 9500,
+    "prompt_tokens_details": {
+      "cached_tokens": 4224
+    }
+  },
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "Duncan Thompson"
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        9
+      ]
+    ],
+    "explanation": "Filters Duncan Thompson with 0 field goals, 0 extra points, and touchdowns strictly greater than 9.",
+    "version": "wikisql-where-prior-v1",
+    "tableId": "2-14342480-15",
+    "knowledgeIds": [
+      "g-eq",
+      "g-gt",
+      "g-lt",
+      "g-inclusive",
+      "g-literal",
+      "g-threshold",
+      "g-and",
+      "g-or",
+      "g-column",
+      "g-count",
+      "g-ambiguous",
+      "t-2-14342480-15-field-0",
+      "t-2-14342480-15-field-1",
+      "t-2-14342480-15-field-2",
+      "t-2-14342480-15-field-3",
+      "t-2-14342480-15-field-4",
+      "d-implicit-eq",
+      "d-explicit-eq",
+      "d-gt",
+      "d-lt-and-gt",
+      "d-with-two",
+      "d-literal-form",
+      "p-text",
+      "p-number",
+      "p-multi",
+      "p-unsupported"
+    ],
+    "promptSha256": "0f13718c5db51246468cae417935d69cedaa4a926d680eb8cbe61ad437206f2f",
+    "model": "gpt-5.6-sol",
+    "usage": {
+      "prompt_tokens": 9433,
+      "completion_tokens": 67,
+      "total_tokens": 9500,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      }
+    },
+    "latencyMs": 2449
+  },
+  "source": "where_prior_parse",
+  "safe_completed": true,
+  "elapsed_ms": 2469
+}

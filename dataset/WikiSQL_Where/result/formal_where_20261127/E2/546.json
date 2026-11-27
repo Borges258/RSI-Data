@@ -1,0 +1,945 @@
+{
+  "arm": "E2",
+  "position": 546,
+  "example_id": "test:5021:2-14342480-15",
+  "original_index": 5021,
+  "table_id": "2-14342480-15",
+  "question": "While Duncan Thompson played, how many points did he have where there were 0 field goals, 0 extra points, and more than 9 touchdowns?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        9
+      ],
+      [
+        2,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        "duncan thompson"
+      ]
+    ],
+    "agg": 5
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "Duncan Thompson"
+    ],
+    [
+      3,
+      0,
+      0
+    ],
+    [
+      2,
+      0,
+      0
+    ],
+    [
+      1,
+      1,
+      9
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "Duncan Thompson"
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        9
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Duncan Thompson",
+        "value": "Duncan Thompson",
+        "start": 6,
+        "end": 21,
+        "clause": "While Duncan Thompson played, how many points did he have where there were 0 field goals, 0 extra points,",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "Duncan Thompson is named as the player, matching Player.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "0",
+        "value": 0,
+        "start": 75,
+        "end": 76,
+        "clause": "how many points did he have where there were 0 field goals, 0 extra points,",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The first 0 is explicitly qualified by field goals, matching Field goals.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "0",
+        "value": 0,
+        "start": 90,
+        "end": 91,
+        "clause": "0 extra points,",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The second 0 is explicitly qualified by extra points, matching Extra points.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "9",
+        "value": 9,
+        "start": 120,
+        "end": 121,
+        "clause": "and more than 9 touchdowns?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The value 9 is explicitly qualified by touchdowns, matching Touchdowns.",
+        "operator": ">",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Duncan Thompson",
+        "value": "Duncan Thompson",
+        "start": 6,
+        "end": 21
+      },
+      {
+        "surface": "0",
+        "value": "0",
+        "start": 75,
+        "end": 76
+      },
+      {
+        "surface": "0",
+        "value": "0",
+        "start": 90,
+        "end": 91
+      },
+      {
+        "surface": "9",
+        "value": "9",
+        "start": 120,
+        "end": 121
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "While Duncan Thompson played, how many points did he have where there were 0 field goals, 0 extra points, and more than 9 touchdowns?",
+      "table": {
+        "header": [
+          "Player",
+          "Touchdowns",
+          "Extra points",
+          "Field goals",
+          "Points"
+        ],
+        "page_title": "1903 Michigan Wolverines football team",
+        "types": [
+          "text",
+          "real",
+          "real",
+          "real",
+          "real"
+        ],
+        "page_id": 14342480,
+        "id": "2-14342480-15",
+        "section_title": "Scoring leaders",
+        "rows": [
+          [
+            "Tom Hammond",
+            "15",
+            "63",
+            "5",
+            "163"
+          ],
+          [
+            "Herb Graver",
+            "15",
+            "1",
+            "0",
+            "76"
+          ],
+          [
+            "Willie Heston",
+            "14",
+            "0",
+            "0",
+            "70"
+          ],
+          [
+            "Joe Curtis",
+            "8",
+            "13",
+            "0",
+            "53"
+          ],
+          [
+            "Joe Maddock",
+            "10",
+            "0",
+            "0",
+            "50"
+          ],
+          [
+            "Duncan Thompson",
+            "10",
+            "0",
+            "0",
+            "50"
+          ],
+          [
+            "Fred Norcross",
+            "9",
+            "0",
+            "0",
+            "45"
+          ],
+          [
+            "Rolla Bigelow",
+            "5",
+            "0",
+            "0",
+            "25"
+          ]
+        ],
+        "caption": "Scoring leaders",
+        "headers": [
+          "Player",
+          "Touchdowns",
+          "Extra points",
+          "Field goals",
+          "Points"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-14342480-15",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 4,
+          "conditions": [
+            {
+              "surface": "Duncan Thompson",
+              "value": "Duncan Thompson",
+              "start": 6,
+              "end": 21
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 75,
+              "end": 76
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 90,
+              "end": 91
+            },
+            {
+              "surface": "9",
+              "value": "9",
+              "start": 120,
+              "end": 121
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "95d25353f644389ada0a51dfe0db0be2669fadff55c9c45735708310e53f06e1",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4796,
+              "completion_tokens": 125,
+              "total_tokens": 4921,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 78
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Duncan Thompson",
+              "value": "Duncan Thompson",
+              "start": 6,
+              "end": 21,
+              "clause": "While Duncan Thompson played, how many points did he have where there were 0 field goals, 0 extra points,"
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 75,
+              "end": 76,
+              "clause": "how many points did he have where there were 0 field goals, 0 extra points,"
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 90,
+              "end": 91,
+              "clause": "0 extra points,"
+            },
+            {
+              "surface": "9",
+              "value": "9",
+              "start": 120,
+              "end": 121,
+              "clause": "and more than 9 touchdowns?"
+            }
+          ],
+          "count": 4
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Duncan Thompson",
+              "value": "Duncan Thompson",
+              "start": 6,
+              "end": 21,
+              "clause": "While Duncan Thompson played, how many points did he have where there were 0 field goals, 0 extra points,"
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 75,
+              "end": 76,
+              "clause": "how many points did he have where there were 0 field goals, 0 extra points,"
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 90,
+              "end": 91,
+              "clause": "0 extra points,"
+            },
+            {
+              "surface": "9",
+              "value": "9",
+              "start": 120,
+              "end": 121,
+              "clause": "and more than 9 touchdowns?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Duncan Thompson",
+              "value": "Duncan Thompson",
+              "start": 6,
+              "end": 21,
+              "clause": "While Duncan Thompson played, how many points did he have where there were 0 field goals, 0 extra points,",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Duncan Thompson is named as the player, matching Player."
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 75,
+              "end": 76,
+              "clause": "how many points did he have where there were 0 field goals, 0 extra points,",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The first 0 is explicitly qualified by field goals, matching Field goals."
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 90,
+              "end": 91,
+              "clause": "0 extra points,",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The second 0 is explicitly qualified by extra points, matching Extra points."
+            },
+            {
+              "surface": "9",
+              "value": "9",
+              "start": 120,
+              "end": 121,
+              "clause": "and more than 9 touchdowns?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The value 9 is explicitly qualified by touchdowns, matching Touchdowns."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a20ed701f29de44fec89269a54294173ba6efbb639f96091c55a7bdc9ed4388f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4935,
+              "completion_tokens": 89,
+              "total_tokens": 5024,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Duncan Thompson",
+              "value": "Duncan Thompson",
+              "start": 6,
+              "end": 21,
+              "clause": "While Duncan Thompson played, how many points did he have where there were 0 field goals, 0 extra points,",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Duncan Thompson is named as the player, matching Player.",
+              "operator": "="
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 75,
+              "end": 76,
+              "clause": "how many points did he have where there were 0 field goals, 0 extra points,",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The first 0 is explicitly qualified by field goals, matching Field goals.",
+              "operator": "="
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 90,
+              "end": 91,
+              "clause": "0 extra points,",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The second 0 is explicitly qualified by extra points, matching Extra points.",
+              "operator": "="
+            },
+            {
+              "surface": "9",
+              "value": "9",
+              "start": 120,
+              "end": 121,
+              "clause": "and more than 9 touchdowns?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The value 9 is explicitly qualified by touchdowns, matching Touchdowns.",
+              "operator": ">"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "6e1869cf1b8e186ae26ab9ac82757738cae121f307e216e255c736e80257b663",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5081,
+              "completion_tokens": 15,
+              "total_tokens": 5096,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Duncan Thompson",
+              "value": "Duncan Thompson",
+              "start": 6,
+              "end": 21,
+              "clause": "While Duncan Thompson played, how many points did he have where there were 0 field goals, 0 extra points,",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Duncan Thompson is named as the player, matching Player.",
+              "operator": "="
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 75,
+              "end": 76,
+              "clause": "how many points did he have where there were 0 field goals, 0 extra points,",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The first 0 is explicitly qualified by field goals, matching Field goals.",
+              "operator": "="
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 90,
+              "end": 91,
+              "clause": "0 extra points,",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The second 0 is explicitly qualified by extra points, matching Extra points.",
+              "operator": "="
+            },
+            {
+              "surface": "9",
+              "value": "9",
+              "start": 120,
+              "end": 121,
+              "clause": "and more than 9 touchdowns?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The value 9 is explicitly qualified by touchdowns, matching Touchdowns.",
+              "operator": ">"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "80234331bea58e6f77475bd383eaef7605c9f46729601f86b29fc74e1ad817cf",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5041,
+              "completion_tokens": 18,
+              "total_tokens": 5059,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Duncan Thompson",
+              "value": "Duncan Thompson",
+              "start": 6,
+              "end": 21,
+              "clause": "While Duncan Thompson played, how many points did he have where there were 0 field goals, 0 extra points,",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Duncan Thompson is named as the player, matching Player.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 75,
+              "end": 76,
+              "clause": "how many points did he have where there were 0 field goals, 0 extra points,",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The first 0 is explicitly qualified by field goals, matching Field goals.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 90,
+              "end": 91,
+              "clause": "0 extra points,",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The second 0 is explicitly qualified by extra points, matching Extra points.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "9",
+              "value": "9",
+              "start": 120,
+              "end": 121,
+              "clause": "and more than 9 touchdowns?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The value 9 is explicitly qualified by touchdowns, matching Touchdowns.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Duncan Thompson",
+              "value": "Duncan Thompson",
+              "start": 6,
+              "end": 21,
+              "clause": "While Duncan Thompson played, how many points did he have where there were 0 field goals, 0 extra points,",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Duncan Thompson is named as the player, matching Player.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "0",
+              "value": 0,
+              "start": 75,
+              "end": 76,
+              "clause": "how many points did he have where there were 0 field goals, 0 extra points,",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The first 0 is explicitly qualified by field goals, matching Field goals.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "0",
+              "value": 0,
+              "start": 90,
+              "end": 91,
+              "clause": "0 extra points,",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The second 0 is explicitly qualified by extra points, matching Extra points.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "9",
+              "value": 9,
+              "start": 120,
+              "end": 121,
+              "clause": "and more than 9 touchdowns?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The value 9 is explicitly qualified by touchdowns, matching Touchdowns.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Duncan Thompson",
+              "value": "Duncan Thompson",
+              "start": 6,
+              "end": 21,
+              "clause": "While Duncan Thompson played, how many points did he have where there were 0 field goals, 0 extra points,",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Duncan Thompson is named as the player, matching Player.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "0",
+              "value": 0,
+              "start": 75,
+              "end": 76,
+              "clause": "how many points did he have where there were 0 field goals, 0 extra points,",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The first 0 is explicitly qualified by field goals, matching Field goals.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "0",
+              "value": 0,
+              "start": 90,
+              "end": 91,
+              "clause": "0 extra points,",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The second 0 is explicitly qualified by extra points, matching Extra points.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "9",
+              "value": 9,
+              "start": 120,
+              "end": 121,
+              "clause": "and more than 9 touchdowns?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The value 9 is explicitly qualified by touchdowns, matching Touchdowns.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              "Duncan Thompson"
+            ],
+            [
+              3,
+              0,
+              0
+            ],
+            [
+              2,
+              0,
+              0
+            ],
+            [
+              1,
+              1,
+              9
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Duncan Thompson",
+          "value": "Duncan Thompson",
+          "start": 6,
+          "end": 21
+        },
+        {
+          "surface": "0",
+          "value": "0",
+          "start": 75,
+          "end": 76
+        },
+        {
+          "surface": "0",
+          "value": "0",
+          "start": 90,
+          "end": 91
+        },
+        {
+          "surface": "9",
+          "value": "9",
+          "start": 120,
+          "end": 121
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Duncan Thompson",
+          "value": "Duncan Thompson",
+          "start": 6,
+          "end": 21,
+          "clause": "While Duncan Thompson played, how many points did he have where there were 0 field goals, 0 extra points,",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "Duncan Thompson is named as the player, matching Player.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "0",
+          "value": 0,
+          "start": 75,
+          "end": 76,
+          "clause": "how many points did he have where there were 0 field goals, 0 extra points,",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The first 0 is explicitly qualified by field goals, matching Field goals.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "0",
+          "value": 0,
+          "start": 90,
+          "end": 91,
+          "clause": "0 extra points,",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The second 0 is explicitly qualified by extra points, matching Extra points.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "9",
+          "value": 9,
+          "start": 120,
+          "end": 121,
+          "clause": "and more than 9 touchdowns?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The value 9 is explicitly qualified by touchdowns, matching Touchdowns.",
+          "operator": ">",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 4,
+      "conds": [
+        [
+          0,
+          0,
+          "Duncan Thompson"
+        ],
+        [
+          3,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          9
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 12078
+}

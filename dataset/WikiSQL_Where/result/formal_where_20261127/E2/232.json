@@ -1,0 +1,474 @@
+{
+  "arm": "E2",
+  "position": 232,
+  "example_id": "test:10888:2-11171219-1",
+  "original_index": 10888,
+  "table_id": "2-11171219-1",
+  "question": "What was the attendance on October 27, 1968?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        1,
+        0,
+        "october 27, 1968"
+      ]
+    ],
+    "agg": 1
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "October 27, 1968"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "October 27, 1968"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "October 27, 1968",
+        "value": "October 27, 1968",
+        "start": 27,
+        "end": 43,
+        "clause": "What was the attendance on October 27, 1968?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The condition is a calendar date introduced by 'on'; it matches the Date header and a Date cell exactly.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "October 27, 1968",
+        "value": "October 27, 1968",
+        "start": 27,
+        "end": 43
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What was the attendance on October 27, 1968?",
+      "table": {
+        "header": [
+          "Week",
+          "Date",
+          "Opponent",
+          "Result",
+          "Attendance"
+        ],
+        "page_title": "1968 Los Angeles Rams season",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "real"
+        ],
+        "page_id": 11171219,
+        "id": "2-11171219-1",
+        "section_title": "Schedule",
+        "rows": [
+          [
+            "1",
+            "September 16, 1968",
+            "at St. Louis Cardinals",
+            "W 24-13",
+            "49,757"
+          ],
+          [
+            "2",
+            "September 22, 1968",
+            "Pittsburgh Steelers",
+            "W 45-10",
+            "49,647"
+          ],
+          [
+            "3",
+            "September 29, 1968",
+            "at Cleveland Browns",
+            "W 24-6",
+            "82,514"
+          ],
+          [
+            "4",
+            "October 6, 1968",
+            "San Francisco 49ers",
+            "W 24-10",
+            "69,520"
+          ],
+          [
+            "5",
+            "October 13, 1968",
+            "at Green Bay Packers",
+            "W 16-14",
+            "49,646"
+          ],
+          [
+            "6",
+            "October 20, 1968",
+            "Atlanta Falcons",
+            "W 27-14",
+            "54,443"
+          ],
+          [
+            "7",
+            "October 27, 1968",
+            "at Baltimore Colts",
+            "L 27-10",
+            "60,238"
+          ],
+          [
+            "8",
+            "November 3, 1968",
+            "Detroit Lions",
+            "W 10-7",
+            "77,982"
+          ],
+          [
+            "9",
+            "November 10, 1968",
+            "at Atlanta Falcons",
+            "W 17-10",
+            "53,979"
+          ],
+          [
+            "10",
+            "November 17, 1968",
+            "at San Francisco 49ers",
+            "T 20-20",
+            "41,815"
+          ],
+          [
+            "11",
+            "November 24, 1968",
+            "New York Giants",
+            "W 24-21",
+            "68,534"
+          ],
+          [
+            "12",
+            "December 1, 1968",
+            "at Minnesota Vikings",
+            "W 31-3",
+            "47,644"
+          ],
+          [
+            "13",
+            "December 8, 1968",
+            "Chicago Bears",
+            "L 17-16",
+            "66,368"
+          ],
+          [
+            "14",
+            "December 15, 1968",
+            "Baltimore Colts",
+            "L 28-24",
+            "69,397"
+          ]
+        ],
+        "caption": "Schedule",
+        "headers": [
+          "Week",
+          "Date",
+          "Opponent",
+          "Result",
+          "Attendance"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-11171219-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "October 27, 1968",
+              "value": "October 27, 1968",
+              "start": 27,
+              "end": 43
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "1d4fc3514b05d402420733bdc6e4fffccf68444945b4897615860c7dca5f3fe3",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5018,
+              "completion_tokens": 29,
+              "total_tokens": 5047,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "October 27, 1968",
+              "value": "October 27, 1968",
+              "start": 27,
+              "end": 43,
+              "clause": "What was the attendance on October 27, 1968?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "October 27, 1968",
+              "value": "October 27, 1968",
+              "start": 27,
+              "end": 43,
+              "clause": "What was the attendance on October 27, 1968?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "October 27, 1968",
+              "value": "October 27, 1968",
+              "start": 27,
+              "end": 43,
+              "clause": "What was the attendance on October 27, 1968?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The condition is a calendar date introduced by 'on'; it matches the Date header and a Date cell exactly."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0be4f97a64f670a8e0bec1d555f89704817d916f90d697c7d95f6e9f1e404497",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5064,
+              "completion_tokens": 43,
+              "total_tokens": 5107,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "October 27, 1968",
+              "value": "October 27, 1968",
+              "start": 27,
+              "end": 43,
+              "clause": "What was the attendance on October 27, 1968?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The condition is a calendar date introduced by 'on'; it matches the Date header and a Date cell exactly.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e9aa36c4e89df9dfc5006d2d48c2caa0a71d3b7ef43bdac551311d1d9c8461b0",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5131,
+              "completion_tokens": 9,
+              "total_tokens": 5140,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "October 27, 1968",
+              "value": "October 27, 1968",
+              "start": 27,
+              "end": 43,
+              "clause": "What was the attendance on October 27, 1968?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The condition is a calendar date introduced by 'on'; it matches the Date header and a Date cell exactly.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "edbb7723f82e75c455bc1e4debcdee90d7f96bc17aa8358885ec9ea3016ab30a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5082,
+              "completion_tokens": 16,
+              "total_tokens": 5098,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "October 27, 1968",
+              "value": "October 27, 1968",
+              "start": 27,
+              "end": 43,
+              "clause": "What was the attendance on October 27, 1968?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The condition is a calendar date introduced by 'on'; it matches the Date header and a Date cell exactly.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "October 27, 1968",
+              "value": "October 27, 1968",
+              "start": 27,
+              "end": 43,
+              "clause": "What was the attendance on October 27, 1968?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The condition is a calendar date introduced by 'on'; it matches the Date header and a Date cell exactly.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "October 27, 1968",
+              "value": "October 27, 1968",
+              "start": 27,
+              "end": 43,
+              "clause": "What was the attendance on October 27, 1968?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The condition is a calendar date introduced by 'on'; it matches the Date header and a Date cell exactly.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              "October 27, 1968"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "October 27, 1968",
+          "value": "October 27, 1968",
+          "start": 27,
+          "end": 43
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "October 27, 1968",
+          "value": "October 27, 1968",
+          "start": 27,
+          "end": 43,
+          "clause": "What was the attendance on October 27, 1968?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The condition is a calendar date introduced by 'on'; it matches the Date header and a Date cell exactly.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          1,
+          0,
+          "October 27, 1968"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8312
+}

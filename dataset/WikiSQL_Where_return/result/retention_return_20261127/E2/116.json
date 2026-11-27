@@ -1,0 +1,727 @@
+{
+  "arm": "E2",
+  "position": 116,
+  "example_id": "test:4286:1-30073089-2",
+  "original_index": 4286,
+  "table_id": "1-30073089-2",
+  "question": "Name the date for 2011 and position larger than 2.0",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        0,
+        0,
+        2011
+      ],
+      [
+        4,
+        1,
+        2.0
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [],
+  "status": "GROUNDING_FAILED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "GROUNDING_FAILED",
+    "valid": false,
+    "errors": [
+      "condition 1: grounding NO_MATCH",
+      "condition 1: nonnumeric value for real column"
+    ],
+    "conditions": [
+      {
+        "surface": "2011",
+        "value": 2011,
+        "start": 18,
+        "end": 22,
+        "clause": "Name the date for 2011",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "'2011' is constrained by 'for 2011' and matches the Season field's year values.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "larger than 2.0",
+        "value": "larger than 2.0",
+        "start": 36,
+        "end": 51,
+        "clause": "and position larger than 2.0",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The question explicitly names position and 'larger than 2.0' is a numeric comparison supported by the Position field.",
+        "operator": ">",
+        "grounded": false,
+        "groundingStatus": "NO_MATCH",
+        "groundingReview": {
+          "column": 4,
+          "reason": "The clause explicitly names Position, and the Position column is numeric with row values greater than 2.0 (value 3)."
+        }
+      }
+    ],
+    "stage": "WHERE_CONDITION_VALIDATE",
+    "originalConditions": [
+      {
+        "surface": "2011",
+        "value": "2011",
+        "start": 18,
+        "end": 22
+      },
+      {
+        "surface": "larger than 2.0",
+        "value": "larger than 2.0",
+        "start": 36,
+        "end": 51
+      }
+    ],
+    "halt": true,
+    "completed": false,
+    "conds": [],
+    "warnings": [
+      "value model disagreed with extracted question span; original retained"
+    ],
+    "request": {
+      "question": "Name the date for 2011 and position larger than 2.0",
+      "table": {
+        "header": [
+          "Season",
+          "Date",
+          "Location",
+          "Discipline",
+          "Position",
+          "FIS points"
+        ],
+        "page_title": "Kristaps Zvejnieks",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "real",
+          "real"
+        ],
+        "id": "1-30073089-2",
+        "section_title": "Individual FIS races",
+        "caption": "Individual FIS races",
+        "rows": [
+          [
+            2010,
+            "20 Dec 2010",
+            "Spindleruv Mlyn , Czech Republic",
+            "Slalom",
+            1,
+            3910
+          ],
+          [
+            2010,
+            "19 Jan 2010",
+            "Vratna , Slovakia",
+            "Slalom",
+            1,
+            4447
+          ],
+          [
+            2011,
+            "27 Nov 2010",
+            "Levi , Finland",
+            "Slalom",
+            3,
+            3366
+          ],
+          [
+            2011,
+            "19 Dec 2010",
+            "Spindleruv Mlyn, Czech Republic",
+            "Giant slalom",
+            2,
+            5144
+          ],
+          [
+            2011,
+            "20 Dec 2010",
+            "Spindleruv Mlyn, Czech Republic",
+            "Slalom",
+            1,
+            3595
+          ],
+          [
+            2011,
+            "7 Jan 2011",
+            "Liptovska Teplicka , Slovakia",
+            "Giant slalom",
+            2,
+            5719
+          ],
+          [
+            2012,
+            "20 Dec 2011",
+            "Solda , Italia",
+            "Giant slalom",
+            3,
+            3732
+          ],
+          [
+            2012,
+            "20 Jan 2012",
+            "Hafjell Olympiabakken , Norway",
+            "Super combined",
+            2,
+            4780
+          ],
+          [
+            2012,
+            "11 Feb 2012",
+            "Lenggries , Germany",
+            "Slalom",
+            1,
+            2553
+          ],
+          [
+            2012,
+            "12 Feb 2012",
+            "Gaal , Austria",
+            "Slalom",
+            1,
+            1713
+          ],
+          [
+            2012,
+            "25 Mar 2012",
+            "Hafjell Olympiabakken, Norway",
+            "Slalom",
+            2,
+            1455
+          ],
+          [
+            2013,
+            "25 Jan 2013",
+            "Hafjell Olympiabakken , Norway",
+            "Super Combined",
+            2,
+            5221
+          ],
+          [
+            2013,
+            "11 Feb 2013",
+            "Wildhaus , Switzerland",
+            "Slalom",
+            3,
+            1561
+          ],
+          [
+            2013,
+            "14 Feb 2013",
+            "Schladming , Austria",
+            "Giant slalom",
+            2,
+            2236
+          ],
+          [
+            2013,
+            "13 Mar 2013",
+            "S. Valentino Alla Muta , Italia",
+            "Slalom",
+            3,
+            2251
+          ],
+          [
+            2013,
+            "13 Mar 2013",
+            "Vratna , Slovakia",
+            "Giant slalom",
+            2,
+            3495
+          ],
+          [
+            2013,
+            "14 Mar 2013",
+            "Vratna , Slovakia",
+            "Giant slalom",
+            1,
+            3183
+          ],
+          [
+            2013,
+            "28 Mar 2013",
+            "Jasna , Slovakia",
+            "Giant slalom",
+            3,
+            3190
+          ],
+          [
+            2013,
+            "4 Apr 2013",
+            "Kirovsk , Russia",
+            "Slalom",
+            3,
+            1130
+          ]
+        ],
+        "name": "table_30073089_2",
+        "headers": [
+          "Season",
+          "Date",
+          "Location",
+          "Discipline",
+          "Position",
+          "FIS points"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-30073089-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 9,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "2011",
+              "value": "2011",
+              "start": 18,
+              "end": 22
+            },
+            {
+              "surface": "larger than 2.0",
+              "value": "larger than 2.0",
+              "start": 36,
+              "end": 51
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "93f6472d26993a574760dd3edda6815db93e98021cd712fa3d71d65cdfba4618",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5165,
+              "completion_tokens": 39,
+              "total_tokens": 5204,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2011",
+              "value": "2011",
+              "start": 18,
+              "end": 22,
+              "clause": "Name the date for 2011"
+            },
+            {
+              "surface": "larger than 2.0",
+              "value": "larger than 2.0",
+              "start": 36,
+              "end": 51,
+              "clause": "and position larger than 2.0"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "2011",
+              "value": "2011",
+              "start": 18,
+              "end": 22,
+              "clause": "Name the date for 2011"
+            },
+            {
+              "surface": "larger than 2.0",
+              "value": "larger than 2.0",
+              "start": 36,
+              "end": 51,
+              "clause": "and position larger than 2.0"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2011",
+              "value": "2011",
+              "start": 18,
+              "end": 22,
+              "clause": "Name the date for 2011",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'2011' is constrained by 'for 2011' and matches the Season field's year values."
+            },
+            {
+              "surface": "larger than 2.0",
+              "value": "larger than 2.0",
+              "start": 36,
+              "end": 51,
+              "clause": "and position larger than 2.0",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly names position and 'larger than 2.0' is a numeric comparison supported by the Position field."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d4aa399dfb0b016ee09443a341879be68d5ee41c3b0d274be49be92377e463c3",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5235,
+              "completion_tokens": 72,
+              "total_tokens": 5307,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2011",
+              "value": "2011",
+              "start": 18,
+              "end": 22,
+              "clause": "Name the date for 2011",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'2011' is constrained by 'for 2011' and matches the Season field's year values.",
+              "operator": "="
+            },
+            {
+              "surface": "larger than 2.0",
+              "value": "larger than 2.0",
+              "start": 36,
+              "end": 51,
+              "clause": "and position larger than 2.0",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly names position and 'larger than 2.0' is a numeric comparison supported by the Position field.",
+              "operator": ">"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "9235d08e52c67ccf25954764e11b3f97e745298823a9280744231e3d9df6556d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5341,
+              "completion_tokens": 11,
+              "total_tokens": 5352,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "warnings": [
+            "value model disagreed with extracted question span; original retained"
+          ],
+          "conditions": [
+            {
+              "surface": "2011",
+              "value": 2011,
+              "start": 18,
+              "end": 22,
+              "clause": "Name the date for 2011",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'2011' is constrained by 'for 2011' and matches the Season field's year values.",
+              "operator": "="
+            },
+            {
+              "surface": "larger than 2.0",
+              "value": "larger than 2.0",
+              "start": 36,
+              "end": 51,
+              "clause": "and position larger than 2.0",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly names position and 'larger than 2.0' is a numeric comparison supported by the Position field.",
+              "operator": ">"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "8cacc8d9356642309de5820f0e479bf08eefa92fb47e7bafa09fc42afa620f05",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5295,
+              "completion_tokens": 14,
+              "total_tokens": 5309,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2011",
+              "value": "2011",
+              "start": 18,
+              "end": 22,
+              "clause": "Name the date for 2011",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'2011' is constrained by 'for 2011' and matches the Season field's year values.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "larger than 2.0",
+              "value": "larger than 2.0",
+              "start": 36,
+              "end": 51,
+              "clause": "and position larger than 2.0",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly names position and 'larger than 2.0' is a numeric comparison supported by the Position field.",
+              "operator": ">",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 4,
+                "reason": "The clause explicitly names Position, and the Position column is numeric with row values greater than 2.0 (value 3)."
+              }
+            }
+          ],
+          "reviewModelCalls": [
+            {
+              "model": "gpt-5.6-sol",
+              "promptSha256": "1ae94bd024f28e12561a979b87fe51932783c268e6d7c37bb2779ea88cf436cc",
+              "knowledgeIds": [],
+              "usage": {
+                "prompt_tokens": 5268,
+                "completion_tokens": 64,
+                "total_tokens": 5332,
+                "prompt_tokens_details": {
+                  "cached_tokens": 4224
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 24
+                }
+              }
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "1ae94bd024f28e12561a979b87fe51932783c268e6d7c37bb2779ea88cf436cc",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5268,
+              "completion_tokens": 64,
+              "total_tokens": 5332,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 24
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2011",
+              "value": 2011,
+              "start": 18,
+              "end": 22,
+              "clause": "Name the date for 2011",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'2011' is constrained by 'for 2011' and matches the Season field's year values.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "larger than 2.0",
+              "value": "larger than 2.0",
+              "start": 36,
+              "end": 51,
+              "clause": "and position larger than 2.0",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly names position and 'larger than 2.0' is a numeric comparison supported by the Position field.",
+              "operator": ">",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 4,
+                "reason": "The clause explicitly names Position, and the Position column is numeric with row values greater than 2.0 (value 3)."
+              }
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "GROUNDING_FAILED",
+          "valid": false,
+          "errors": [
+            "condition 1: grounding NO_MATCH",
+            "condition 1: nonnumeric value for real column"
+          ],
+          "conditions": [
+            {
+              "surface": "2011",
+              "value": 2011,
+              "start": 18,
+              "end": 22,
+              "clause": "Name the date for 2011",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'2011' is constrained by 'for 2011' and matches the Season field's year values.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "larger than 2.0",
+              "value": "larger than 2.0",
+              "start": 36,
+              "end": 51,
+              "clause": "and position larger than 2.0",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly names position and 'larger than 2.0' is a numeric comparison supported by the Position field.",
+              "operator": ">",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 4,
+                "reason": "The clause explicitly names Position, and the Position column is numeric with row values greater than 2.0 (value 3)."
+              }
+            }
+          ]
+        }
+      },
+      "warnings": [
+        "value model disagreed with extracted question span; original retained"
+      ],
+      "execution": {
+        "status": "GROUNDING_FAILED",
+        "stage": "WHERE_CONDITION_VALIDATE",
+        "halt": true,
+        "completed": false,
+        "errors": [
+          "condition 1: grounding NO_MATCH",
+          "condition 1: nonnumeric value for real column"
+        ],
+        "warnings": [
+          "value model disagreed with extracted question span; original retained"
+        ]
+      },
+      "originalConditions": [
+        {
+          "surface": "2011",
+          "value": "2011",
+          "start": 18,
+          "end": 22
+        },
+        {
+          "surface": "larger than 2.0",
+          "value": "larger than 2.0",
+          "start": 36,
+          "end": 51
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "2011",
+          "value": 2011,
+          "start": 18,
+          "end": 22,
+          "clause": "Name the date for 2011",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "'2011' is constrained by 'for 2011' and matches the Season field's year values.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "larger than 2.0",
+          "value": "larger than 2.0",
+          "start": 36,
+          "end": 51,
+          "clause": "and position larger than 2.0",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The question explicitly names position and 'larger than 2.0' is a numeric comparison supported by the Position field.",
+          "operator": ">",
+          "grounded": false,
+          "groundingStatus": "NO_MATCH",
+          "groundingReview": {
+            "column": 4,
+            "reason": "The clause explicitly names Position, and the Position column is numeric with row values greater than 2.0 (value 3)."
+          }
+        }
+      ],
+      "count": 2
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": false,
+  "elapsed_ms": 11157
+}

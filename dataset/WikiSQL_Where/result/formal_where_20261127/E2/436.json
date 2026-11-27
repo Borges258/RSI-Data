@@ -1,0 +1,581 @@
+{
+  "arm": "E2",
+  "position": 436,
+  "example_id": "test:12826:2-17817954-1",
+  "original_index": 12826,
+  "table_id": "2-17817954-1",
+  "question": "When Ilie Năstase beat runner-up Peter Fleming what year was it?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        2,
+        0,
+        "ilie năstase"
+      ],
+      [
+        3,
+        0,
+        "peter fleming"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "Ilie Năstase"
+    ],
+    [
+      3,
+      0,
+      "Peter Fleming"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "Ilie Năstase"
+      ],
+      [
+        3,
+        0,
+        "Peter Fleming"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Ilie Năstase",
+        "value": "Ilie Năstase",
+        "start": 5,
+        "end": 17,
+        "clause": "When Ilie Năstase beat runner-up Peter Fleming what year was it?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "Ilie Năstase is the winner described by 'beat' and appears in Champion.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "Peter Fleming",
+        "value": "Peter Fleming",
+        "start": 33,
+        "end": 46,
+        "clause": "When Ilie Năstase beat runner-up Peter Fleming what year was it?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "Peter Fleming is explicitly described as runner-up and appears in Runner-up.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Ilie Năstase",
+        "value": "Ilie Năstase",
+        "start": 5,
+        "end": 17
+      },
+      {
+        "surface": "Peter Fleming",
+        "value": "Peter Fleming",
+        "start": 33,
+        "end": 46
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "When Ilie Năstase beat runner-up Peter Fleming what year was it?",
+      "table": {
+        "header": [
+          "Location",
+          "Year",
+          "Champion",
+          "Runner-up",
+          "Score"
+        ],
+        "page_title": "WCT Challenge Cup",
+        "types": [
+          "text",
+          "real",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 17817954,
+        "id": "2-17817954-1",
+        "section_title": "Singles champions",
+        "rows": [
+          [
+            "Honolulu",
+            "1976",
+            "Ilie Năstase",
+            "Arthur Ashe",
+            "6–3, 1–6, 6–7, 6–3, 6–1"
+          ],
+          [
+            "Las Vegas",
+            "1977",
+            "Ilie Nastase",
+            "Jimmy Connors",
+            "3–6, 7–6, 6–4, 7–5"
+          ],
+          [
+            "Montego Bay",
+            "1978",
+            "Ilie Năstase",
+            "Peter Fleming",
+            "2–6, 5–6, 6–2, 6–4, 6–4"
+          ],
+          [
+            "Montreal",
+            "1979",
+            "Björn Borg",
+            "Jimmy Connors",
+            "6–4, 6–2, 2–6, 6–4"
+          ],
+          [
+            "Montreal",
+            "1980",
+            "John McEnroe",
+            "Vijay Amritraj",
+            "6–1, 6–2, 6–1"
+          ]
+        ],
+        "caption": "Singles champions",
+        "headers": [
+          "Location",
+          "Year",
+          "Champion",
+          "Runner-up",
+          "Score"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-17817954-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "Ilie Năstase",
+              "value": "Ilie Năstase",
+              "start": 5,
+              "end": 17
+            },
+            {
+              "surface": "Peter Fleming",
+              "value": "Peter Fleming",
+              "start": 33,
+              "end": 46
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "05de59de508cd8fcf9467889e1faadefb50380d96d3b74fbdf4d63d32f06b8f2",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4853,
+              "completion_tokens": 37,
+              "total_tokens": 4890,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Ilie Năstase",
+              "value": "Ilie Năstase",
+              "start": 5,
+              "end": 17,
+              "clause": "When Ilie Năstase beat runner-up Peter Fleming what year was it?"
+            },
+            {
+              "surface": "Peter Fleming",
+              "value": "Peter Fleming",
+              "start": 33,
+              "end": 46,
+              "clause": "When Ilie Năstase beat runner-up Peter Fleming what year was it?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Ilie Năstase",
+              "value": "Ilie Năstase",
+              "start": 5,
+              "end": 17,
+              "clause": "When Ilie Năstase beat runner-up Peter Fleming what year was it?"
+            },
+            {
+              "surface": "Peter Fleming",
+              "value": "Peter Fleming",
+              "start": 33,
+              "end": 46,
+              "clause": "When Ilie Năstase beat runner-up Peter Fleming what year was it?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Ilie Năstase",
+              "value": "Ilie Năstase",
+              "start": 5,
+              "end": 17,
+              "clause": "When Ilie Năstase beat runner-up Peter Fleming what year was it?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Ilie Năstase is the winner described by 'beat' and appears in Champion."
+            },
+            {
+              "surface": "Peter Fleming",
+              "value": "Peter Fleming",
+              "start": 33,
+              "end": 46,
+              "clause": "When Ilie Năstase beat runner-up Peter Fleming what year was it?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Peter Fleming is explicitly described as runner-up and appears in Runner-up."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "590de3ed3a874845b13dd1a20c80d1ad5201967f0409d085b44d97f93b6ea533",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4940,
+              "completion_tokens": 58,
+              "total_tokens": 4998,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Ilie Năstase",
+              "value": "Ilie Năstase",
+              "start": 5,
+              "end": 17,
+              "clause": "When Ilie Năstase beat runner-up Peter Fleming what year was it?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Ilie Năstase is the winner described by 'beat' and appears in Champion.",
+              "operator": "="
+            },
+            {
+              "surface": "Peter Fleming",
+              "value": "Peter Fleming",
+              "start": 33,
+              "end": 46,
+              "clause": "When Ilie Năstase beat runner-up Peter Fleming what year was it?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Peter Fleming is explicitly described as runner-up and appears in Runner-up.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "54001339655672985a0cb68df2139f0e7b8ec9654476b5be5a6aa5ba7b2246bf",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5033,
+              "completion_tokens": 11,
+              "total_tokens": 5044,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Ilie Năstase",
+              "value": "Ilie Năstase",
+              "start": 5,
+              "end": 17,
+              "clause": "When Ilie Năstase beat runner-up Peter Fleming what year was it?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Ilie Năstase is the winner described by 'beat' and appears in Champion.",
+              "operator": "="
+            },
+            {
+              "surface": "Peter Fleming",
+              "value": "Peter Fleming",
+              "start": 33,
+              "end": 46,
+              "clause": "When Ilie Năstase beat runner-up Peter Fleming what year was it?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Peter Fleming is explicitly described as runner-up and appears in Runner-up.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "820213c3b13b9deba246abb2687def55eeabc5b82eab2f0af3394420a22bedae",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4987,
+              "completion_tokens": 18,
+              "total_tokens": 5005,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Ilie Năstase",
+              "value": "Ilie Năstase",
+              "start": 5,
+              "end": 17,
+              "clause": "When Ilie Năstase beat runner-up Peter Fleming what year was it?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Ilie Năstase is the winner described by 'beat' and appears in Champion.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Peter Fleming",
+              "value": "Peter Fleming",
+              "start": 33,
+              "end": 46,
+              "clause": "When Ilie Năstase beat runner-up Peter Fleming what year was it?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Peter Fleming is explicitly described as runner-up and appears in Runner-up.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Ilie Năstase",
+              "value": "Ilie Năstase",
+              "start": 5,
+              "end": 17,
+              "clause": "When Ilie Năstase beat runner-up Peter Fleming what year was it?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Ilie Năstase is the winner described by 'beat' and appears in Champion.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Peter Fleming",
+              "value": "Peter Fleming",
+              "start": 33,
+              "end": 46,
+              "clause": "When Ilie Năstase beat runner-up Peter Fleming what year was it?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Peter Fleming is explicitly described as runner-up and appears in Runner-up.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Ilie Năstase",
+              "value": "Ilie Năstase",
+              "start": 5,
+              "end": 17,
+              "clause": "When Ilie Năstase beat runner-up Peter Fleming what year was it?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Ilie Năstase is the winner described by 'beat' and appears in Champion.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Peter Fleming",
+              "value": "Peter Fleming",
+              "start": 33,
+              "end": 46,
+              "clause": "When Ilie Năstase beat runner-up Peter Fleming what year was it?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Peter Fleming is explicitly described as runner-up and appears in Runner-up.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "Ilie Năstase"
+            ],
+            [
+              3,
+              0,
+              "Peter Fleming"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Ilie Năstase",
+          "value": "Ilie Năstase",
+          "start": 5,
+          "end": 17
+        },
+        {
+          "surface": "Peter Fleming",
+          "value": "Peter Fleming",
+          "start": 33,
+          "end": 46
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Ilie Năstase",
+          "value": "Ilie Năstase",
+          "start": 5,
+          "end": 17,
+          "clause": "When Ilie Năstase beat runner-up Peter Fleming what year was it?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "Ilie Năstase is the winner described by 'beat' and appears in Champion.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "Peter Fleming",
+          "value": "Peter Fleming",
+          "start": 33,
+          "end": 46,
+          "clause": "When Ilie Năstase beat runner-up Peter Fleming what year was it?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "Peter Fleming is explicitly described as runner-up and appears in Runner-up.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          2,
+          0,
+          "Ilie Năstase"
+        ],
+        [
+          3,
+          0,
+          "Peter Fleming"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8906
+}

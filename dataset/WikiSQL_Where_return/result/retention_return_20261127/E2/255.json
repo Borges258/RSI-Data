@@ -1,0 +1,642 @@
+{
+  "arm": "E2",
+  "position": 255,
+  "example_id": "test:10145:2-11902580-3",
+  "original_index": 10145,
+  "table_id": "2-11902580-3",
+  "question": "Who was the visiting team where the decision was Biron on October 4?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        4,
+        0,
+        "biron"
+      ],
+      [
+        0,
+        0,
+        "october 4"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      4,
+      0,
+      "Biron"
+    ],
+    [
+      0,
+      0,
+      "October 4"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        0,
+        "Biron"
+      ],
+      [
+        0,
+        0,
+        "October 4"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Biron",
+        "value": "Biron",
+        "start": 49,
+        "end": 54,
+        "clause": "Who was the visiting team where the decision was Biron on October 4?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The question explicitly says the decision was Biron, matching the Decision header.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "October 4",
+        "value": "October 4",
+        "start": 58,
+        "end": 67,
+        "clause": "Who was the visiting team where the decision was Biron on October 4?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "The date phrase October 4 matches the Date header and identifies the corresponding row.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Biron",
+        "value": "Biron",
+        "start": 49,
+        "end": 54
+      },
+      {
+        "surface": "October 4",
+        "value": "October 4",
+        "start": 58,
+        "end": 67
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Who was the visiting team where the decision was Biron on October 4?",
+      "table": {
+        "header": [
+          "Date",
+          "Visitor",
+          "Score",
+          "Home",
+          "Decision",
+          "Attendance",
+          "Record"
+        ],
+        "page_title": "2007–08 Philadelphia Flyers season",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 11902580,
+        "id": "2-11902580-3",
+        "section_title": "Regular season",
+        "rows": [
+          [
+            "October 4",
+            "Philadelphia",
+            "3 – 2",
+            "Calgary",
+            "Biron",
+            "19,289",
+            "1–0–0"
+          ],
+          [
+            "October 6",
+            "Philadelphia",
+            "3 – 5",
+            "Edmonton",
+            "Biron",
+            "16,839",
+            "1–1–0"
+          ],
+          [
+            "October 10",
+            "Philadelphia",
+            "8 – 2",
+            "Vancouver",
+            "Biron",
+            "18,630",
+            "2–1–0"
+          ],
+          [
+            "October 13",
+            "NY Islanders",
+            "1 – 3",
+            "Philadelphia",
+            "Biron",
+            "19,714",
+            "3–1–0"
+          ],
+          [
+            "October 16",
+            "Atlanta",
+            "0 – 4",
+            "Philadelphia",
+            "Biron",
+            "18,933",
+            "4–1–0"
+          ],
+          [
+            "October 18",
+            "New Jersey",
+            "0 – 4",
+            "Philadelphia",
+            "Biron",
+            "19,113",
+            "5–1–0"
+          ],
+          [
+            "October 20",
+            "Carolina",
+            "2 – 3",
+            "Philadelphia",
+            "Biron",
+            "19,615",
+            "6–1–0"
+          ],
+          [
+            "October 24",
+            "Philadelphia",
+            "3 – 4",
+            "Florida",
+            "Biron",
+            "12,856",
+            "6–2–0"
+          ],
+          [
+            "October 25",
+            "Philadelphia",
+            "2 – 5",
+            "Tampa Bay",
+            "Niittymaki",
+            "18,616",
+            "6–3–0"
+          ],
+          [
+            "October 27",
+            "Philadelphia",
+            "2 – 1",
+            "Boston",
+            "Biron",
+            "14,956",
+            "7–3–0"
+          ]
+        ],
+        "caption": "Regular season",
+        "headers": [
+          "Date",
+          "Visitor",
+          "Score",
+          "Home",
+          "Decision",
+          "Attendance",
+          "Record"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-11902580-3",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "Biron",
+              "value": "Biron",
+              "start": 49,
+              "end": 54
+            },
+            {
+              "surface": "October 4",
+              "value": "October 4",
+              "start": 58,
+              "end": 67
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "72c6339af0dd8af58a53694046790357861e1ef3154765b08c58212ed5ca0fba",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4960,
+              "completion_tokens": 31,
+              "total_tokens": 4991,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Biron",
+              "value": "Biron",
+              "start": 49,
+              "end": 54,
+              "clause": "Who was the visiting team where the decision was Biron on October 4?"
+            },
+            {
+              "surface": "October 4",
+              "value": "October 4",
+              "start": 58,
+              "end": 67,
+              "clause": "Who was the visiting team where the decision was Biron on October 4?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Biron",
+              "value": "Biron",
+              "start": 49,
+              "end": 54,
+              "clause": "Who was the visiting team where the decision was Biron on October 4?"
+            },
+            {
+              "surface": "October 4",
+              "value": "October 4",
+              "start": 58,
+              "end": 67,
+              "clause": "Who was the visiting team where the decision was Biron on October 4?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Biron",
+              "value": "Biron",
+              "start": 49,
+              "end": 54,
+              "clause": "Who was the visiting team where the decision was Biron on October 4?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly says the decision was Biron, matching the Decision header."
+            },
+            {
+              "surface": "October 4",
+              "value": "October 4",
+              "start": 58,
+              "end": 67,
+              "clause": "Who was the visiting team where the decision was Biron on October 4?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The date phrase October 4 matches the Date header and identifies the corresponding row."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "88dded0e9115384621f38102588c595c29eaf0e6d371bdfc41a1e3f2834f9b8f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5039,
+              "completion_tokens": 56,
+              "total_tokens": 5095,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Biron",
+              "value": "Biron",
+              "start": 49,
+              "end": 54,
+              "clause": "Who was the visiting team where the decision was Biron on October 4?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly says the decision was Biron, matching the Decision header.",
+              "operator": "="
+            },
+            {
+              "surface": "October 4",
+              "value": "October 4",
+              "start": 58,
+              "end": 67,
+              "clause": "Who was the visiting team where the decision was Biron on October 4?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The date phrase October 4 matches the Date header and identifies the corresponding row.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "432dd39a65ab68decb50bd50e0f0aefc18bc6d5d8100b698513622f5972312c4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5130,
+              "completion_tokens": 11,
+              "total_tokens": 5141,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Biron",
+              "value": "Biron",
+              "start": 49,
+              "end": 54,
+              "clause": "Who was the visiting team where the decision was Biron on October 4?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly says the decision was Biron, matching the Decision header.",
+              "operator": "="
+            },
+            {
+              "surface": "October 4",
+              "value": "October 4",
+              "start": 58,
+              "end": 67,
+              "clause": "Who was the visiting team where the decision was Biron on October 4?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The date phrase October 4 matches the Date header and identifies the corresponding row.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "8a18c9c2ad8973d33d4a5085acc983cedd183d36cab73f210b71786f4e40879a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5084,
+              "completion_tokens": 15,
+              "total_tokens": 5099,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Biron",
+              "value": "Biron",
+              "start": 49,
+              "end": 54,
+              "clause": "Who was the visiting team where the decision was Biron on October 4?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly says the decision was Biron, matching the Decision header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "October 4",
+              "value": "October 4",
+              "start": 58,
+              "end": 67,
+              "clause": "Who was the visiting team where the decision was Biron on October 4?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The date phrase October 4 matches the Date header and identifies the corresponding row.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Biron",
+              "value": "Biron",
+              "start": 49,
+              "end": 54,
+              "clause": "Who was the visiting team where the decision was Biron on October 4?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly says the decision was Biron, matching the Decision header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "October 4",
+              "value": "October 4",
+              "start": 58,
+              "end": 67,
+              "clause": "Who was the visiting team where the decision was Biron on October 4?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The date phrase October 4 matches the Date header and identifies the corresponding row.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Biron",
+              "value": "Biron",
+              "start": 49,
+              "end": 54,
+              "clause": "Who was the visiting team where the decision was Biron on October 4?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly says the decision was Biron, matching the Decision header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "October 4",
+              "value": "October 4",
+              "start": 58,
+              "end": 67,
+              "clause": "Who was the visiting team where the decision was Biron on October 4?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The date phrase October 4 matches the Date header and identifies the corresponding row.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              0,
+              "Biron"
+            ],
+            [
+              0,
+              0,
+              "October 4"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Biron",
+          "value": "Biron",
+          "start": 49,
+          "end": 54
+        },
+        {
+          "surface": "October 4",
+          "value": "October 4",
+          "start": 58,
+          "end": 67
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Biron",
+          "value": "Biron",
+          "start": 49,
+          "end": 54,
+          "clause": "Who was the visiting team where the decision was Biron on October 4?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The question explicitly says the decision was Biron, matching the Decision header.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "October 4",
+          "value": "October 4",
+          "start": 58,
+          "end": 67,
+          "clause": "Who was the visiting team where the decision was Biron on October 4?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "The date phrase October 4 matches the Date header and identifies the corresponding row.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          4,
+          0,
+          "Biron"
+        ],
+        [
+          0,
+          0,
+          "October 4"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8782
+}

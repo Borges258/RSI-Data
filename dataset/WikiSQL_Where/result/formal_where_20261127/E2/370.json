@@ -1,0 +1,588 @@
+{
+  "arm": "E2",
+  "position": 370,
+  "example_id": "test:7099:2-15430129-2",
+  "original_index": 7099,
+  "table_id": "2-15430129-2",
+  "question": "How many match values have points under 14 and 0 draws?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        2,
+        2,
+        14
+      ],
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "agg": 3
+  },
+  "prediction_conds": [
+    [
+      2,
+      2,
+      14
+    ],
+    [
+      3,
+      0,
+      0
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        2,
+        14
+      ],
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "under 14",
+        "value": 14,
+        "start": 34,
+        "end": 42,
+        "clause": "How many match values have points under 14",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The clause explicitly says points under 14, matching the Points header and numeric values.",
+        "operator": "<",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "0",
+        "value": 0,
+        "start": 47,
+        "end": 48,
+        "clause": "and 0 draws?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The clause explicitly says 0 draws, matching the Draw header and numeric values.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "under 14",
+        "value": "14",
+        "start": 34,
+        "end": 42
+      },
+      {
+        "surface": "0",
+        "value": "0",
+        "start": 47,
+        "end": 48
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "How many match values have points under 14 and 0 draws?",
+      "table": {
+        "header": [
+          "Team",
+          "Match",
+          "Points",
+          "Draw",
+          "Lost"
+        ],
+        "page_title": "1955 Team Speedway Polish Championship",
+        "types": [
+          "text",
+          "real",
+          "real",
+          "real",
+          "real"
+        ],
+        "page_id": 15430129,
+        "id": "2-15430129-2",
+        "section_title": "First League",
+        "rows": [
+          [
+            "Gwardia Bydgoszcz",
+            "10",
+            "18",
+            "0",
+            "1"
+          ],
+          [
+            "Kolejarz Rawicz",
+            "10",
+            "14",
+            "0",
+            "3"
+          ],
+          [
+            "Sparta Wrocław",
+            "10",
+            "12",
+            "0",
+            "4"
+          ],
+          [
+            "Budowlani Warszawa",
+            "10",
+            "11",
+            "1",
+            "4"
+          ],
+          [
+            "Unia Leszno",
+            "10",
+            "5",
+            "1",
+            "7"
+          ],
+          [
+            "CWKS Wrocław",
+            "10",
+            "0",
+            "0",
+            "10"
+          ]
+        ],
+        "caption": "First League",
+        "headers": [
+          "Team",
+          "Match",
+          "Points",
+          "Draw",
+          "Lost"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-15430129-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "under 14",
+              "value": "14",
+              "start": 34,
+              "end": 42
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 47,
+              "end": 48
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "901e0e5d2deb2a1d077392d8d80ea85037499ea7d7a12534b70ebbd47f9c4a11",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4758,
+              "completion_tokens": 27,
+              "total_tokens": 4785,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "under 14",
+              "value": "14",
+              "start": 34,
+              "end": 42,
+              "clause": "How many match values have points under 14"
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 47,
+              "end": 48,
+              "clause": "and 0 draws?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "under 14",
+              "value": "14",
+              "start": 34,
+              "end": 42,
+              "clause": "How many match values have points under 14"
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 47,
+              "end": 48,
+              "clause": "and 0 draws?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "under 14",
+              "value": "14",
+              "start": 34,
+              "end": 42,
+              "clause": "How many match values have points under 14",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The clause explicitly says points under 14, matching the Points header and numeric values."
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 47,
+              "end": 48,
+              "clause": "and 0 draws?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly says 0 draws, matching the Draw header and numeric values."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "1525be467d19fca1f3cbf7aa0b00d6d24c3b37af56ea968e5bd98829571006cf",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4815,
+              "completion_tokens": 58,
+              "total_tokens": 4873,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "under 14",
+              "value": "14",
+              "start": 34,
+              "end": 42,
+              "clause": "How many match values have points under 14",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The clause explicitly says points under 14, matching the Points header and numeric values.",
+              "operator": "<"
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 47,
+              "end": 48,
+              "clause": "and 0 draws?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly says 0 draws, matching the Draw header and numeric values.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "972c6f8cfc13caaa679223f1293a674b84d96c4df70197155f7e8da303204cc6",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4908,
+              "completion_tokens": 11,
+              "total_tokens": 4919,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "under 14",
+              "value": 14,
+              "start": 34,
+              "end": 42,
+              "clause": "How many match values have points under 14",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The clause explicitly says points under 14, matching the Points header and numeric values.",
+              "operator": "<"
+            },
+            {
+              "surface": "0",
+              "value": 0,
+              "start": 47,
+              "end": 48,
+              "clause": "and 0 draws?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly says 0 draws, matching the Draw header and numeric values.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a2a4a29897ba155d0e7fa33382fef24e8ead030ce8e090446fce529b9813f254",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4862,
+              "completion_tokens": 11,
+              "total_tokens": 4873,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "under 14",
+              "value": "14",
+              "start": 34,
+              "end": 42,
+              "clause": "How many match values have points under 14",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The clause explicitly says points under 14, matching the Points header and numeric values.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 47,
+              "end": 48,
+              "clause": "and 0 draws?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly says 0 draws, matching the Draw header and numeric values.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "under 14",
+              "value": 14,
+              "start": 34,
+              "end": 42,
+              "clause": "How many match values have points under 14",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The clause explicitly says points under 14, matching the Points header and numeric values.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "0",
+              "value": 0,
+              "start": 47,
+              "end": 48,
+              "clause": "and 0 draws?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly says 0 draws, matching the Draw header and numeric values.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "under 14",
+              "value": 14,
+              "start": 34,
+              "end": 42,
+              "clause": "How many match values have points under 14",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The clause explicitly says points under 14, matching the Points header and numeric values.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "0",
+              "value": 0,
+              "start": 47,
+              "end": 48,
+              "clause": "and 0 draws?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly says 0 draws, matching the Draw header and numeric values.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              2,
+              14
+            ],
+            [
+              3,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "under 14",
+          "value": "14",
+          "start": 34,
+          "end": 42
+        },
+        {
+          "surface": "0",
+          "value": "0",
+          "start": 47,
+          "end": 48
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "under 14",
+          "value": 14,
+          "start": 34,
+          "end": 42,
+          "clause": "How many match values have points under 14",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The clause explicitly says points under 14, matching the Points header and numeric values.",
+          "operator": "<",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "0",
+          "value": 0,
+          "start": 47,
+          "end": 48,
+          "clause": "and 0 draws?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The clause explicitly says 0 draws, matching the Draw header and numeric values.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          2,
+          2,
+          14
+        ],
+        [
+          3,
+          0,
+          0
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 10437
+}

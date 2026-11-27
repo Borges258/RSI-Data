@@ -1,0 +1,119 @@
+{
+  "arm": "E1",
+  "position": 144,
+  "example_id": "test:10989:2-11086216-2",
+  "original_index": 10989,
+  "table_id": "2-11086216-2",
+  "question": "In what category was character Jacqui Mcqueen nominated before 2011?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        5,
+        0,
+        "jacqui mcqueen"
+      ],
+      [
+        0,
+        2,
+        2011
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      5,
+      0,
+      "Jacqui McQueen"
+    ],
+    [
+      1,
+      0,
+      "Nominated*"
+    ],
+    [
+      0,
+      2,
+      2011
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": "gpt-5.6-sol",
+  "usage": {
+    "prompt_tokens": 10106,
+    "completion_tokens": 71,
+    "total_tokens": 10177,
+    "prompt_tokens_details": {
+      "cached_tokens": 4224
+    }
+  },
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        5,
+        0,
+        "Jacqui McQueen"
+      ],
+      [
+        1,
+        0,
+        "Nominated*"
+      ],
+      [
+        0,
+        2,
+        2011
+      ]
+    ],
+    "explanation": "Filters Character to the table's exact spelling, Result to the pre-2011 nomination value, and Year strictly before 2011.",
+    "version": "wikisql-where-prior-v1",
+    "tableId": "2-11086216-2",
+    "knowledgeIds": [
+      "g-eq",
+      "g-gt",
+      "g-lt",
+      "g-inclusive",
+      "g-literal",
+      "g-threshold",
+      "g-and",
+      "g-or",
+      "g-column",
+      "g-count",
+      "g-ambiguous",
+      "t-2-11086216-2-field-0",
+      "t-2-11086216-2-field-1",
+      "t-2-11086216-2-field-2",
+      "t-2-11086216-2-field-3",
+      "t-2-11086216-2-field-4",
+      "t-2-11086216-2-field-5",
+      "d-implicit-eq",
+      "d-explicit-eq",
+      "d-gt",
+      "d-lt-and-gt",
+      "d-with-two",
+      "d-literal-form",
+      "p-text",
+      "p-number",
+      "p-multi",
+      "p-unsupported"
+    ],
+    "promptSha256": "b48ba18753477263ef9ba4ca3218e526bd9d453920ff9394e327af7754816144",
+    "model": "gpt-5.6-sol",
+    "usage": {
+      "prompt_tokens": 10106,
+      "completion_tokens": 71,
+      "total_tokens": 10177,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      }
+    },
+    "latencyMs": 2758
+  },
+  "source": "where_prior_parse",
+  "safe_completed": true,
+  "elapsed_ms": 2781
+}

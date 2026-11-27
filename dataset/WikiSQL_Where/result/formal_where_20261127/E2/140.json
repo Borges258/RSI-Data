@@ -1,0 +1,436 @@
+{
+  "arm": "E2",
+  "position": 140,
+  "example_id": "test:10933:2-10809444-19",
+  "original_index": 10933,
+  "table_id": "2-10809444-19",
+  "question": "What did the team score when playing against home in geelong?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        0,
+        0,
+        "geelong"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "Geelong"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "Geelong"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "home",
+        "value": "Geelong",
+        "start": 45,
+        "end": 49,
+        "clause": "What did the team score when playing against home in geelong?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "The question identifies Geelong as the home team; the matching field is 'Home team'.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "home",
+        "value": "Geelong",
+        "start": 45,
+        "end": 49
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What did the team score when playing against home in geelong?",
+      "table": {
+        "header": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ],
+        "page_title": "1947 VFL season",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 10809444,
+        "id": "2-10809444-19",
+        "section_title": "Round 19",
+        "rows": [
+          [
+            "Richmond",
+            "16.17 (113)",
+            "South Melbourne",
+            "11.13 (79)",
+            "Punt Road Oval",
+            "22,000",
+            "30 August 1947"
+          ],
+          [
+            "Fitzroy",
+            "20.18 (138)",
+            "Footscray",
+            "10.14 (74)",
+            "Brunswick Street Oval",
+            "13,000",
+            "30 August 1947"
+          ],
+          [
+            "Collingwood",
+            "14.17 (101)",
+            "Essendon",
+            "16.12 (108)",
+            "Victoria Park",
+            "33,000",
+            "30 August 1947"
+          ],
+          [
+            "St Kilda",
+            "10.18 (78)",
+            "Melbourne",
+            "27.9 (171)",
+            "Junction Oval",
+            "6,000",
+            "30 August 1947"
+          ],
+          [
+            "North Melbourne",
+            "10.14 (74)",
+            "Hawthorn",
+            "10.10 (70)",
+            "Arden Street Oval",
+            "4,000",
+            "30 August 1947"
+          ],
+          [
+            "Geelong",
+            "17.7 (109)",
+            "Carlton",
+            "16.11 (107)",
+            "Kardinia Park",
+            "21,500",
+            "30 August 1947"
+          ]
+        ],
+        "caption": "Round 19",
+        "headers": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-10809444-19",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "home",
+              "value": "Geelong",
+              "start": 45,
+              "end": 49
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ad10659ea19dc1dcb42e14400abb84898a8389b0e94c372f91c9ebc7b5d0f3af",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4909,
+              "completion_tokens": 18,
+              "total_tokens": 4927,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "home",
+              "value": "Geelong",
+              "start": 45,
+              "end": 49,
+              "clause": "What did the team score when playing against home in geelong?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "home",
+              "value": "Geelong",
+              "start": 45,
+              "end": 49,
+              "clause": "What did the team score when playing against home in geelong?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "home",
+              "value": "Geelong",
+              "start": 45,
+              "end": 49,
+              "clause": "What did the team score when playing against home in geelong?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question identifies Geelong as the home team; the matching field is 'Home team'."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "4c089ab536c0b675646d56f00bdea89f1b304e50ab3664884664683c878f1b47",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4944,
+              "completion_tokens": 39,
+              "total_tokens": 4983,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "home",
+              "value": "Geelong",
+              "start": 45,
+              "end": 49,
+              "clause": "What did the team score when playing against home in geelong?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question identifies Geelong as the home team; the matching field is 'Home team'.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f2530d0762bb0861f1d00a18eac22ecd938b82fef3939b3179e92ef6599a3cd3",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5008,
+              "completion_tokens": 9,
+              "total_tokens": 5017,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "home",
+              "value": "Geelong",
+              "start": 45,
+              "end": 49,
+              "clause": "What did the team score when playing against home in geelong?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question identifies Geelong as the home team; the matching field is 'Home team'.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f0c5bddedebe2f0c17217c41b71f769f5e3d770c4422aee2d68568ff1295311a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4959,
+              "completion_tokens": 11,
+              "total_tokens": 4970,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "home",
+              "value": "Geelong",
+              "start": 45,
+              "end": 49,
+              "clause": "What did the team score when playing against home in geelong?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question identifies Geelong as the home team; the matching field is 'Home team'.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "home",
+              "value": "Geelong",
+              "start": 45,
+              "end": 49,
+              "clause": "What did the team score when playing against home in geelong?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question identifies Geelong as the home team; the matching field is 'Home team'.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "home",
+              "value": "Geelong",
+              "start": 45,
+              "end": 49,
+              "clause": "What did the team score when playing against home in geelong?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question identifies Geelong as the home team; the matching field is 'Home team'.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              "Geelong"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "home",
+          "value": "Geelong",
+          "start": 45,
+          "end": 49
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "home",
+          "value": "Geelong",
+          "start": 45,
+          "end": 49,
+          "clause": "What did the team score when playing against home in geelong?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "The question identifies Geelong as the home team; the matching field is 'Home team'.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          0,
+          0,
+          "Geelong"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9094
+}

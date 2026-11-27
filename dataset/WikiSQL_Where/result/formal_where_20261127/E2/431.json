@@ -1,0 +1,629 @@
+{
+  "arm": "E2",
+  "position": 431,
+  "example_id": "test:11858:2-12094300-1",
+  "original_index": 11858,
+  "table_id": "2-12094300-1",
+  "question": "What is the evening gown score of the contestant from the District of Columbia with preliminaries smaller than 8.647?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        1,
+        2,
+        8.647
+      ],
+      [
+        0,
+        0,
+        "district of columbia"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "District of Columbia"
+    ],
+    [
+      1,
+      2,
+      8.647
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "District of Columbia"
+      ],
+      [
+        1,
+        2,
+        8.647
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "District of Columbia",
+        "value": "District of Columbia",
+        "start": 58,
+        "end": 78,
+        "clause": "What is the evening gown score of the contestant from the District of Columbia with preliminaries smaller than 8.647?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "'District of Columbia' identifies the contestant's State and appears in the State column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "8.647",
+        "value": 8.647,
+        "start": 111,
+        "end": 116,
+        "clause": "What is the evening gown score of the contestant from the District of Columbia with preliminaries smaller than 8.647?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "'preliminaries smaller than 8.647' explicitly applies the numeric threshold to the Preliminaries column.",
+        "operator": "<",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "District of Columbia",
+        "value": "District of Columbia",
+        "start": 58,
+        "end": 78
+      },
+      {
+        "surface": "8.647",
+        "value": "8.647",
+        "start": 111,
+        "end": 116
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the evening gown score of the contestant from the District of Columbia with preliminaries smaller than 8.647?",
+      "table": {
+        "header": [
+          "State",
+          "Preliminaries",
+          "Interview",
+          "Swimsuit",
+          "Evening Gown",
+          "Average"
+        ],
+        "page_title": "Miss Teen USA 1987",
+        "types": [
+          "text",
+          "real",
+          "real",
+          "real",
+          "real",
+          "real"
+        ],
+        "page_id": 12094300,
+        "id": "2-12094300-1",
+        "section_title": "Final competition scores",
+        "rows": [
+          [
+            "Mississippi",
+            "8.852",
+            "9.123",
+            "9.366",
+            "9.343",
+            "9.277"
+          ],
+          [
+            "North Dakota",
+            "8.622",
+            "9.005",
+            "9.132",
+            "9.073",
+            "9.070"
+          ],
+          [
+            "Oklahoma",
+            "8.467",
+            "8.554",
+            "8.948",
+            "9.027",
+            "8.843"
+          ],
+          [
+            "North Carolina",
+            "8.425",
+            "8.766",
+            "8.788",
+            "8.854",
+            "8.802"
+          ],
+          [
+            "Louisiana",
+            "8.350",
+            "8.712",
+            "8.908",
+            "8.754",
+            "8.791"
+          ],
+          [
+            "California",
+            "8.647",
+            "8.582",
+            "8.763",
+            "9.008",
+            "8.784"
+          ],
+          [
+            "District of Columbia",
+            "8.438",
+            "8.997",
+            "8.487",
+            "8.631",
+            "8.705"
+          ],
+          [
+            "Massachusetts",
+            "8.400",
+            "8.608",
+            "8.703",
+            "8.698",
+            "8.669"
+          ],
+          [
+            "New York",
+            "8.292",
+            "8.811",
+            "8.503",
+            "8.675",
+            "8.663"
+          ],
+          [
+            "Georgia",
+            "8.526",
+            "8.576",
+            "8.338",
+            "8.608",
+            "8.507"
+          ]
+        ],
+        "caption": "Final competition scores",
+        "headers": [
+          "State",
+          "Preliminaries",
+          "Interview",
+          "Swimsuit",
+          "Evening Gown",
+          "Average"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-12094300-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "District of Columbia",
+              "value": "District of Columbia",
+              "start": 58,
+              "end": 78
+            },
+            {
+              "surface": "8.647",
+              "value": "8.647",
+              "start": 111,
+              "end": 116
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b4d6eb51fc8284191819ca0554ea60dff0cafa52efd35c5aa7559f691b754d2d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4936,
+              "completion_tokens": 33,
+              "total_tokens": 4969,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "District of Columbia",
+              "value": "District of Columbia",
+              "start": 58,
+              "end": 78,
+              "clause": "What is the evening gown score of the contestant from the District of Columbia with preliminaries smaller than 8.647?"
+            },
+            {
+              "surface": "8.647",
+              "value": "8.647",
+              "start": 111,
+              "end": 116,
+              "clause": "What is the evening gown score of the contestant from the District of Columbia with preliminaries smaller than 8.647?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "District of Columbia",
+              "value": "District of Columbia",
+              "start": 58,
+              "end": 78,
+              "clause": "What is the evening gown score of the contestant from the District of Columbia with preliminaries smaller than 8.647?"
+            },
+            {
+              "surface": "8.647",
+              "value": "8.647",
+              "start": 111,
+              "end": 116,
+              "clause": "What is the evening gown score of the contestant from the District of Columbia with preliminaries smaller than 8.647?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "District of Columbia",
+              "value": "District of Columbia",
+              "start": 58,
+              "end": 78,
+              "clause": "What is the evening gown score of the contestant from the District of Columbia with preliminaries smaller than 8.647?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'District of Columbia' identifies the contestant's State and appears in the State column."
+            },
+            {
+              "surface": "8.647",
+              "value": "8.647",
+              "start": 111,
+              "end": 116,
+              "clause": "What is the evening gown score of the contestant from the District of Columbia with preliminaries smaller than 8.647?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'preliminaries smaller than 8.647' explicitly applies the numeric threshold to the Preliminaries column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "535b6efb19dc56007be98abd7594322692fa69b016ee96d84f73b0fa4eacd1f8",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5033,
+              "completion_tokens": 65,
+              "total_tokens": 5098,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "District of Columbia",
+              "value": "District of Columbia",
+              "start": 58,
+              "end": 78,
+              "clause": "What is the evening gown score of the contestant from the District of Columbia with preliminaries smaller than 8.647?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'District of Columbia' identifies the contestant's State and appears in the State column.",
+              "operator": "="
+            },
+            {
+              "surface": "8.647",
+              "value": "8.647",
+              "start": 111,
+              "end": 116,
+              "clause": "What is the evening gown score of the contestant from the District of Columbia with preliminaries smaller than 8.647?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'preliminaries smaller than 8.647' explicitly applies the numeric threshold to the Preliminaries column.",
+              "operator": "<"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f5e643053df595edba5578b3559524a0ab503cf455336c60ab88a837e2c2e23d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5131,
+              "completion_tokens": 12,
+              "total_tokens": 5143,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "District of Columbia",
+              "value": "District of Columbia",
+              "start": 58,
+              "end": 78,
+              "clause": "What is the evening gown score of the contestant from the District of Columbia with preliminaries smaller than 8.647?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'District of Columbia' identifies the contestant's State and appears in the State column.",
+              "operator": "="
+            },
+            {
+              "surface": "8.647",
+              "value": "8.647",
+              "start": 111,
+              "end": 116,
+              "clause": "What is the evening gown score of the contestant from the District of Columbia with preliminaries smaller than 8.647?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'preliminaries smaller than 8.647' explicitly applies the numeric threshold to the Preliminaries column.",
+              "operator": "<"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "5fa8c95aef2412ccdc3b2b9fe4e79096e7405a8f0a6511aab6e6d585b32a075a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5085,
+              "completion_tokens": 16,
+              "total_tokens": 5101,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "District of Columbia",
+              "value": "District of Columbia",
+              "start": 58,
+              "end": 78,
+              "clause": "What is the evening gown score of the contestant from the District of Columbia with preliminaries smaller than 8.647?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'District of Columbia' identifies the contestant's State and appears in the State column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "8.647",
+              "value": "8.647",
+              "start": 111,
+              "end": 116,
+              "clause": "What is the evening gown score of the contestant from the District of Columbia with preliminaries smaller than 8.647?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'preliminaries smaller than 8.647' explicitly applies the numeric threshold to the Preliminaries column.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "District of Columbia",
+              "value": "District of Columbia",
+              "start": 58,
+              "end": 78,
+              "clause": "What is the evening gown score of the contestant from the District of Columbia with preliminaries smaller than 8.647?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'District of Columbia' identifies the contestant's State and appears in the State column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "8.647",
+              "value": 8.647,
+              "start": 111,
+              "end": 116,
+              "clause": "What is the evening gown score of the contestant from the District of Columbia with preliminaries smaller than 8.647?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'preliminaries smaller than 8.647' explicitly applies the numeric threshold to the Preliminaries column.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "District of Columbia",
+              "value": "District of Columbia",
+              "start": 58,
+              "end": 78,
+              "clause": "What is the evening gown score of the contestant from the District of Columbia with preliminaries smaller than 8.647?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'District of Columbia' identifies the contestant's State and appears in the State column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "8.647",
+              "value": 8.647,
+              "start": 111,
+              "end": 116,
+              "clause": "What is the evening gown score of the contestant from the District of Columbia with preliminaries smaller than 8.647?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'preliminaries smaller than 8.647' explicitly applies the numeric threshold to the Preliminaries column.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              "District of Columbia"
+            ],
+            [
+              1,
+              2,
+              8.647
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "District of Columbia",
+          "value": "District of Columbia",
+          "start": 58,
+          "end": 78
+        },
+        {
+          "surface": "8.647",
+          "value": "8.647",
+          "start": 111,
+          "end": 116
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "District of Columbia",
+          "value": "District of Columbia",
+          "start": 58,
+          "end": 78,
+          "clause": "What is the evening gown score of the contestant from the District of Columbia with preliminaries smaller than 8.647?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "'District of Columbia' identifies the contestant's State and appears in the State column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "8.647",
+          "value": 8.647,
+          "start": 111,
+          "end": 116,
+          "clause": "What is the evening gown score of the contestant from the District of Columbia with preliminaries smaller than 8.647?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "'preliminaries smaller than 8.647' explicitly applies the numeric threshold to the Preliminaries column.",
+          "operator": "<",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          0,
+          0,
+          "District of Columbia"
+        ],
+        [
+          1,
+          2,
+          8.647
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8703
+}

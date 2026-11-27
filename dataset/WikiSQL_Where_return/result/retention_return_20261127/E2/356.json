@@ -1,0 +1,609 @@
+{
+  "arm": "E2",
+  "position": 356,
+  "example_id": "test:13953:2-18934662-2",
+  "original_index": 13953,
+  "table_id": "2-18934662-2",
+  "question": "Which Year(s) of manufacture has a Type of 1b n2, and a Quantity of 10?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        4,
+        0,
+        "1b n2"
+      ],
+      [
+        2,
+        0,
+        10
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      4,
+      0,
+      "1B n2"
+    ],
+    [
+      2,
+      0,
+      10
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        0,
+        "1B n2"
+      ],
+      [
+        2,
+        0,
+        10
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "1b n2",
+        "value": "1B n2",
+        "start": 43,
+        "end": 48,
+        "clause": "Which Year(s) of manufacture has a Type of 1b n2,",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The question explicitly says Type of 1b n2, matching the Type header and row values.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "10",
+        "value": 10,
+        "start": 68,
+        "end": 70,
+        "clause": "and a Quantity of 10?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The question explicitly says Quantity of 10, matching the Quantity header and numeric row values.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "1b n2",
+        "value": "1B n2",
+        "start": 43,
+        "end": 48
+      },
+      {
+        "surface": "10",
+        "value": "10",
+        "start": 68,
+        "end": 70
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Which Year(s) of manufacture has a Type of 1b n2, and a Quantity of 10?",
+      "table": {
+        "header": [
+          "Class",
+          "Railway number(s)",
+          "Quantity",
+          "Year(s) of manufacture",
+          "Type"
+        ],
+        "page_title": "List of Württemberg locomotives and railbuses",
+        "types": [
+          "text",
+          "text",
+          "real",
+          "text",
+          "text"
+        ],
+        "page_id": 18934662,
+        "id": "2-18934662-2",
+        "section_title": "Passenger and express train locomotives",
+        "rows": [
+          [
+            "B/B2 to 1869: D",
+            "180–183, 208–251, 270–295, 306–317",
+            "86",
+            "1868–1878",
+            "1B n2"
+          ],
+          [
+            "A from 1892: Aa",
+            "69\", 121\", 318–327, 334–336",
+            "15",
+            "1878–1888",
+            "1B n2"
+          ],
+          [
+            "A",
+            "337–341, 363–367",
+            "10",
+            "1888–1891",
+            "1B n2"
+          ],
+          [
+            "Ac ( de )",
+            "342–362, 368–377",
+            "31",
+            "1889–1897",
+            "1B n2v"
+          ],
+          [
+            "E ( de )",
+            "401–410",
+            "10",
+            "1892",
+            "1′B1′ n3v"
+          ],
+          [
+            "D ( de )",
+            "421–434",
+            "14",
+            "1898–1905",
+            "2′C n4v"
+          ],
+          [
+            "AD",
+            "451–500, 1501–1538",
+            "88",
+            "1899–1907",
+            "2′B n2v"
+          ],
+          [
+            "ADh",
+            "1541–1557",
+            "17",
+            "1907–1909",
+            "2′B h2"
+          ],
+          [
+            "C",
+            "2001–2041",
+            "41",
+            "1909–1921",
+            "2′C1′ h4v"
+          ]
+        ],
+        "caption": "Passenger and express train locomotives",
+        "headers": [
+          "Class",
+          "Railway number(s)",
+          "Quantity",
+          "Year(s) of manufacture",
+          "Type"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-18934662-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "1b n2",
+              "value": "1B n2",
+              "start": 43,
+              "end": 48
+            },
+            {
+              "surface": "10",
+              "value": "10",
+              "start": 68,
+              "end": 70
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e22dc5ff7ea143ca1079558d93d68c6620d9e5846a13731ef24df370d397efef",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4967,
+              "completion_tokens": 31,
+              "total_tokens": 4998,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1b n2",
+              "value": "1B n2",
+              "start": 43,
+              "end": 48,
+              "clause": "Which Year(s) of manufacture has a Type of 1b n2,"
+            },
+            {
+              "surface": "10",
+              "value": "10",
+              "start": 68,
+              "end": 70,
+              "clause": "and a Quantity of 10?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "1b n2",
+              "value": "1B n2",
+              "start": 43,
+              "end": 48,
+              "clause": "Which Year(s) of manufacture has a Type of 1b n2,"
+            },
+            {
+              "surface": "10",
+              "value": "10",
+              "start": 68,
+              "end": 70,
+              "clause": "and a Quantity of 10?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1b n2",
+              "value": "1B n2",
+              "start": 43,
+              "end": 48,
+              "clause": "Which Year(s) of manufacture has a Type of 1b n2,",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly says Type of 1b n2, matching the Type header and row values."
+            },
+            {
+              "surface": "10",
+              "value": "10",
+              "start": 68,
+              "end": 70,
+              "clause": "and a Quantity of 10?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly says Quantity of 10, matching the Quantity header and numeric row values."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "81cf80be997ea9aa845b9474e0904f287b8cf2923c288b0558b12410883ad668",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5037,
+              "completion_tokens": 63,
+              "total_tokens": 5100,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1b n2",
+              "value": "1B n2",
+              "start": 43,
+              "end": 48,
+              "clause": "Which Year(s) of manufacture has a Type of 1b n2,",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly says Type of 1b n2, matching the Type header and row values.",
+              "operator": "="
+            },
+            {
+              "surface": "10",
+              "value": "10",
+              "start": 68,
+              "end": 70,
+              "clause": "and a Quantity of 10?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly says Quantity of 10, matching the Quantity header and numeric row values.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "38c8782985265f43d31d9526c59e5c91e16d525180ce31c4ba125f7f9a6cf8f9",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5135,
+              "completion_tokens": 11,
+              "total_tokens": 5146,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1b n2",
+              "value": "1B n2",
+              "start": 43,
+              "end": 48,
+              "clause": "Which Year(s) of manufacture has a Type of 1b n2,",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly says Type of 1b n2, matching the Type header and row values.",
+              "operator": "="
+            },
+            {
+              "surface": "10",
+              "value": 10,
+              "start": 68,
+              "end": 70,
+              "clause": "and a Quantity of 10?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly says Quantity of 10, matching the Quantity header and numeric row values.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "2e48217f7de1d580a4b578e8d4fbcdd10dcaaa109e2ef45b29ec545fd474f9fc",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5089,
+              "completion_tokens": 14,
+              "total_tokens": 5103,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1b n2",
+              "value": "1B n2",
+              "start": 43,
+              "end": 48,
+              "clause": "Which Year(s) of manufacture has a Type of 1b n2,",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly says Type of 1b n2, matching the Type header and row values.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "10",
+              "value": "10",
+              "start": 68,
+              "end": 70,
+              "clause": "and a Quantity of 10?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly says Quantity of 10, matching the Quantity header and numeric row values.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1b n2",
+              "value": "1B n2",
+              "start": 43,
+              "end": 48,
+              "clause": "Which Year(s) of manufacture has a Type of 1b n2,",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly says Type of 1b n2, matching the Type header and row values.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "10",
+              "value": 10,
+              "start": 68,
+              "end": 70,
+              "clause": "and a Quantity of 10?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly says Quantity of 10, matching the Quantity header and numeric row values.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "1b n2",
+              "value": "1B n2",
+              "start": 43,
+              "end": 48,
+              "clause": "Which Year(s) of manufacture has a Type of 1b n2,",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly says Type of 1b n2, matching the Type header and row values.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "10",
+              "value": 10,
+              "start": 68,
+              "end": 70,
+              "clause": "and a Quantity of 10?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly says Quantity of 10, matching the Quantity header and numeric row values.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              0,
+              "1B n2"
+            ],
+            [
+              2,
+              0,
+              10
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "1b n2",
+          "value": "1B n2",
+          "start": 43,
+          "end": 48
+        },
+        {
+          "surface": "10",
+          "value": "10",
+          "start": 68,
+          "end": 70
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "1b n2",
+          "value": "1B n2",
+          "start": 43,
+          "end": 48,
+          "clause": "Which Year(s) of manufacture has a Type of 1b n2,",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The question explicitly says Type of 1b n2, matching the Type header and row values.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "10",
+          "value": 10,
+          "start": 68,
+          "end": 70,
+          "clause": "and a Quantity of 10?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The question explicitly says Quantity of 10, matching the Quantity header and numeric row values.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          4,
+          0,
+          "1B n2"
+        ],
+        [
+          2,
+          0,
+          10
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8312
+}

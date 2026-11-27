@@ -1,0 +1,108 @@
+{
+  "arm": "E1",
+  "position": 238,
+  "example_id": "test:12587:2-18354377-1",
+  "original_index": 12587,
+  "table_id": "2-18354377-1",
+  "question": "What was the latest year with a position of 1st at Maputo, Mozambique?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        3,
+        0,
+        "1st"
+      ],
+      [
+        2,
+        0,
+        "Maputo , Mozambique"
+      ]
+    ],
+    "agg": 1
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "Maputo , Mozambique"
+    ],
+    [
+      3,
+      0,
+      "1st"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": "gpt-5.6-sol",
+  "usage": {
+    "prompt_tokens": 9464,
+    "completion_tokens": 54,
+    "total_tokens": 9518,
+    "prompt_tokens_details": {
+      "cached_tokens": 4224
+    }
+  },
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "Maputo , Mozambique"
+      ],
+      [
+        3,
+        0,
+        "1st"
+      ]
+    ],
+    "explanation": "Venue and Position are explicit equality filters; latest describes the requested Year, not a WHERE condition.",
+    "version": "wikisql-where-prior-v1",
+    "tableId": "2-18354377-1",
+    "knowledgeIds": [
+      "g-eq",
+      "g-gt",
+      "g-lt",
+      "g-inclusive",
+      "g-literal",
+      "g-threshold",
+      "g-and",
+      "g-or",
+      "g-column",
+      "g-count",
+      "g-ambiguous",
+      "t-2-18354377-1-field-0",
+      "t-2-18354377-1-field-1",
+      "t-2-18354377-1-field-2",
+      "t-2-18354377-1-field-3",
+      "t-2-18354377-1-field-4",
+      "d-implicit-eq",
+      "d-explicit-eq",
+      "d-gt",
+      "d-lt-and-gt",
+      "d-with-two",
+      "d-literal-form",
+      "p-text",
+      "p-number",
+      "p-multi",
+      "p-unsupported"
+    ],
+    "promptSha256": "1c4fd0a738e7b5f8af51bbd77831087be5d42bfd205237a9fe72d207fe7b4788",
+    "model": "gpt-5.6-sol",
+    "usage": {
+      "prompt_tokens": 9464,
+      "completion_tokens": 54,
+      "total_tokens": 9518,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      }
+    },
+    "latencyMs": 2245
+  },
+  "source": "where_prior_parse",
+  "safe_completed": true,
+  "elapsed_ms": 2266
+}

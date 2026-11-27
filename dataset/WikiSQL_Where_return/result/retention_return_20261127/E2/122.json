@@ -1,0 +1,943 @@
+{
+  "arm": "E2",
+  "position": 122,
+  "example_id": "test:4506:2-10706879-3",
+  "original_index": 4506,
+  "table_id": "2-10706879-3",
+  "question": "Who is the winning driver of Penske Racing, and what was Rick Mears' pole position?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        4,
+        0,
+        "penske racing"
+      ],
+      [
+        1,
+        0,
+        "rick mears"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      4,
+      0,
+      "Penske Racing"
+    ],
+    [
+      1,
+      0,
+      "Rick Mears"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        0,
+        "Penske Racing"
+      ],
+      [
+        1,
+        0,
+        "Rick Mears"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Penske Racing",
+        "value": "Penske Racing",
+        "start": 29,
+        "end": 42,
+        "clause": "Who is the winning driver of Penske Racing,",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "“Penske Racing” matches the Winning team header and its row values.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "Rick Mears",
+        "value": "Rick Mears",
+        "start": 57,
+        "end": 67,
+        "clause": "and what was Rick Mears' pole position?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "“Rick Mears” is asked about as a pole-position holder, matching Pole Position values.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Penske Racing",
+        "value": "Penske Racing",
+        "start": 29,
+        "end": 42
+      },
+      {
+        "surface": "Rick Mears",
+        "value": "Rick Mears",
+        "start": 57,
+        "end": 67
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Who is the winning driver of Penske Racing, and what was Rick Mears' pole position?",
+      "table": {
+        "header": [
+          "Name",
+          "Pole Position",
+          "Fastest Lap",
+          "Winning driver",
+          "Winning team",
+          "Report"
+        ],
+        "page_title": "1981 IndyCar season",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 10706879,
+        "id": "2-10706879-3",
+        "section_title": "Race Results",
+        "rows": [
+          [
+            "Kraco Car Stereo 200",
+            "Bobby Unser",
+            "Unknown",
+            "Johnny Rutherford",
+            "Chaparral",
+            "Report"
+          ],
+          [
+            "Gould-Rex Mays 150",
+            "Gordon Johncock",
+            "Unknown",
+            "Mike Mosley",
+            "All American Racers",
+            "Report"
+          ],
+          [
+            "Kraco Twin 125 (R1)",
+            "Johnny Rutherford",
+            "Unknown",
+            "Rick Mears",
+            "Penske Racing",
+            "Report"
+          ],
+          [
+            "Kraco Twin 125 (R2)",
+            "Rick Mears",
+            "Unknown",
+            "Rick Mears",
+            "Penske Racing",
+            "Report"
+          ],
+          [
+            "Norton Michigan 500",
+            "Tom Sneva",
+            "Unknown",
+            "Pancho Carter",
+            "Alex Foods",
+            "Report"
+          ],
+          [
+            "Los Angeles Times 500",
+            "Geoff Brabham",
+            "Unknown",
+            "Rick Mears",
+            "Penske Racing",
+            "Report"
+          ],
+          [
+            "Tony Bettenhausen 200",
+            "Johnny Rutherford",
+            "Unknown",
+            "Tom Sneva",
+            "Bignotti-Cotter",
+            "Report"
+          ],
+          [
+            "Detroit News Grand Prix",
+            "Rick Mears",
+            "Unknown",
+            "Rick Mears",
+            "Penske Racing",
+            "Report"
+          ],
+          [
+            "Watkins Glen 200",
+            "Mario Andretti",
+            "Unknown",
+            "Rick Mears",
+            "Penske Racing",
+            "Report"
+          ],
+          [
+            "II Copa Mexico 150",
+            "Bobby Unser",
+            "Unknown",
+            "Rick Mears",
+            "Penske Racing",
+            "Report"
+          ],
+          [
+            "Miller High Life 150",
+            "Bobby Unser",
+            "Unknown",
+            "Tom Sneva",
+            "Bignotti-Cotter",
+            "Report"
+          ]
+        ],
+        "caption": "Race Results",
+        "headers": [
+          "Name",
+          "Pole Position",
+          "Fastest Lap",
+          "Winning driver",
+          "Winning team",
+          "Report"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-10706879-3",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "Penske Racing",
+              "value": "Penske Racing",
+              "start": 29,
+              "end": 42
+            },
+            {
+              "surface": "Rick Mears",
+              "value": "Rick Mears",
+              "start": 57,
+              "end": 67
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "61f011446b51903dd3413bf3f5bc6bc4d937b2338ddc89b0633fc7827332d2bb",
+            "knowledgeIds": [],
+            "usage": {
+              "attribution": {
+                "items": {
+                  "msg_00afd2cd9665d266016b08fd539a6c87d1832cb6e545a0e212": {
+                    "input_tokens": 86,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 86,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_00afd2cd9665d266016b08fd539a6c87d18d05df66328d79bc": {
+                    "input_tokens": 426,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 426,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_00afd2cd9665d266016b08fd539a6c87d1afebb9bd1bd9d5f5": {
+                    "input_tokens": 64,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 64,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_00afd2cd9665d266016b08fd553c7087d184282a9537e4eeef": {
+                    "input_tokens": 0,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 35,
+                    "content": [
+                      {
+                        "input_tokens": 0,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 35
+                      }
+                    ]
+                  },
+                  "rs_00afd2cd9665d266016b08fd55257c87d18270e6958e16f627": {
+                    "input_tokens": 2,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 71
+                  }
+                },
+                "request_fields": {
+                  "instructions": {
+                    "input_tokens": 4380,
+                    "cached_tokens": 3968,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0
+                  }
+                }
+              },
+              "prompt_tokens": 4958,
+              "completion_tokens": 106,
+              "total_tokens": 5064,
+              "prompt_tokens_details": {
+                "cache_write_tokens_details": {
+                  "ttl_30m_tokens": 0,
+                  "ttl_12h_tokens": 0
+                },
+                "cached_tokens": 3968
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 71
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Penske Racing",
+              "value": "Penske Racing",
+              "start": 29,
+              "end": 42,
+              "clause": "Who is the winning driver of Penske Racing,"
+            },
+            {
+              "surface": "Rick Mears",
+              "value": "Rick Mears",
+              "start": 57,
+              "end": 67,
+              "clause": "and what was Rick Mears' pole position?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Penske Racing",
+              "value": "Penske Racing",
+              "start": 29,
+              "end": 42,
+              "clause": "Who is the winning driver of Penske Racing,"
+            },
+            {
+              "surface": "Rick Mears",
+              "value": "Rick Mears",
+              "start": 57,
+              "end": 67,
+              "clause": "and what was Rick Mears' pole position?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Penske Racing",
+              "value": "Penske Racing",
+              "start": 29,
+              "end": 42,
+              "clause": "Who is the winning driver of Penske Racing,",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "“Penske Racing” matches the Winning team header and its row values."
+            },
+            {
+              "surface": "Rick Mears",
+              "value": "Rick Mears",
+              "start": 57,
+              "end": 67,
+              "clause": "and what was Rick Mears' pole position?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "“Rick Mears” is asked about as a pole-position holder, matching Pole Position values."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c8b7f36e516621eeec271abb065da5b28248e9fc5686562608b8bf8600cfafcc",
+            "knowledgeIds": [],
+            "usage": {
+              "attribution": {
+                "items": {
+                  "msg_05e3a1563bb4ebfe016b08fd5736d087d198f8ae8fc7d86751": {
+                    "input_tokens": 155,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 155,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_05e3a1563bb4ebfe016b08fd5736d087d1acc123644bb24325": {
+                    "input_tokens": 426,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 426,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_05e3a1563bb4ebfe016b08fd5736d087d1bae1088c055098c3": {
+                    "input_tokens": 64,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 64,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_05e3a1563bb4ebfe016b08fd5bb95887d1acd6525578579479": {
+                    "input_tokens": 0,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 61,
+                    "content": [
+                      {
+                        "input_tokens": 0,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 61
+                      }
+                    ]
+                  },
+                  "rs_05e3a1563bb4ebfe016b08fd5ba26087d19c647e3d720742df": {
+                    "input_tokens": 2,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 234
+                  }
+                },
+                "request_fields": {
+                  "instructions": {
+                    "input_tokens": 4380,
+                    "cached_tokens": 3968,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0
+                  }
+                }
+              },
+              "prompt_tokens": 5027,
+              "completion_tokens": 295,
+              "total_tokens": 5322,
+              "prompt_tokens_details": {
+                "cache_write_tokens_details": {
+                  "ttl_30m_tokens": 0,
+                  "ttl_12h_tokens": 0
+                },
+                "cached_tokens": 3968
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 234
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Penske Racing",
+              "value": "Penske Racing",
+              "start": 29,
+              "end": 42,
+              "clause": "Who is the winning driver of Penske Racing,",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "“Penske Racing” matches the Winning team header and its row values.",
+              "operator": "="
+            },
+            {
+              "surface": "Rick Mears",
+              "value": "Rick Mears",
+              "start": 57,
+              "end": 67,
+              "clause": "and what was Rick Mears' pole position?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "“Rick Mears” is asked about as a pole-position holder, matching Pole Position values.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "21eede10688b210270aa8e3f69d9bc096084d4e237de8ea6644dd612a6667d78",
+            "knowledgeIds": [],
+            "usage": {
+              "attribution": {
+                "items": {
+                  "msg_04113be06d6dc1c2016b08fd5deb9087d18189d5cebb2a4599": {
+                    "input_tokens": 426,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 426,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_04113be06d6dc1c2016b08fd5deb9087d1896ff2340bcc7df2": {
+                    "input_tokens": 249,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 249,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_04113be06d6dc1c2016b08fd5deb9087d1b86c3c035e6623cb": {
+                    "input_tokens": 64,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 64,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_04113be06d6dc1c2016b08fd5e2c6887d199dad8355d12a29f": {
+                    "input_tokens": 2,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 11,
+                    "content": [
+                      {
+                        "input_tokens": 2,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 11
+                      }
+                    ]
+                  }
+                },
+                "request_fields": {
+                  "instructions": {
+                    "input_tokens": 4380,
+                    "cached_tokens": 3968,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0
+                  }
+                }
+              },
+              "prompt_tokens": 5121,
+              "completion_tokens": 11,
+              "total_tokens": 5132,
+              "prompt_tokens_details": {
+                "cache_write_tokens_details": {
+                  "ttl_30m_tokens": 0,
+                  "ttl_12h_tokens": 0
+                },
+                "cached_tokens": 3968
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Penske Racing",
+              "value": "Penske Racing",
+              "start": 29,
+              "end": 42,
+              "clause": "Who is the winning driver of Penske Racing,",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "“Penske Racing” matches the Winning team header and its row values.",
+              "operator": "="
+            },
+            {
+              "surface": "Rick Mears",
+              "value": "Rick Mears",
+              "start": 57,
+              "end": 67,
+              "clause": "and what was Rick Mears' pole position?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "“Rick Mears” is asked about as a pole-position holder, matching Pole Position values.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "71813c99107891a7798910c5591d344cc2fff3e742c33f011bb74f07902bc837",
+            "knowledgeIds": [],
+            "usage": {
+              "attribution": {
+                "items": {
+                  "msg_0359eb36edced36e016b08fd5fcba487d1aad61fbb47d5e057": {
+                    "input_tokens": 426,
+                    "cached_tokens": 276,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 426,
+                        "cached_tokens": 276,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0359eb36edced36e016b08fd5fcba487d1b4e1a8b9fa922605": {
+                    "input_tokens": 203,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 203,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0359eb36edced36e016b08fd5fcba487d1ba8e8f5018231d92": {
+                    "input_tokens": 64,
+                    "cached_tokens": 61,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 64,
+                        "cached_tokens": 61,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0359eb36edced36e016b08fd600b9c87d19e14e27ebc45d213": {
+                    "input_tokens": 2,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 16,
+                    "content": [
+                      {
+                        "input_tokens": 2,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 16
+                      }
+                    ]
+                  }
+                },
+                "request_fields": {
+                  "instructions": {
+                    "input_tokens": 4380,
+                    "cached_tokens": 4143,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0
+                  }
+                }
+              },
+              "prompt_tokens": 5075,
+              "completion_tokens": 16,
+              "total_tokens": 5091,
+              "prompt_tokens_details": {
+                "cache_write_tokens_details": {
+                  "ttl_30m_tokens": 0,
+                  "ttl_12h_tokens": 0
+                },
+                "cached_tokens": 4480
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Penske Racing",
+              "value": "Penske Racing",
+              "start": 29,
+              "end": 42,
+              "clause": "Who is the winning driver of Penske Racing,",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "“Penske Racing” matches the Winning team header and its row values.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Rick Mears",
+              "value": "Rick Mears",
+              "start": 57,
+              "end": 67,
+              "clause": "and what was Rick Mears' pole position?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "“Rick Mears” is asked about as a pole-position holder, matching Pole Position values.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Penske Racing",
+              "value": "Penske Racing",
+              "start": 29,
+              "end": 42,
+              "clause": "Who is the winning driver of Penske Racing,",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "“Penske Racing” matches the Winning team header and its row values.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Rick Mears",
+              "value": "Rick Mears",
+              "start": 57,
+              "end": 67,
+              "clause": "and what was Rick Mears' pole position?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "“Rick Mears” is asked about as a pole-position holder, matching Pole Position values.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Penske Racing",
+              "value": "Penske Racing",
+              "start": 29,
+              "end": 42,
+              "clause": "Who is the winning driver of Penske Racing,",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "“Penske Racing” matches the Winning team header and its row values.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Rick Mears",
+              "value": "Rick Mears",
+              "start": 57,
+              "end": 67,
+              "clause": "and what was Rick Mears' pole position?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "“Rick Mears” is asked about as a pole-position holder, matching Pole Position values.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              0,
+              "Penske Racing"
+            ],
+            [
+              1,
+              0,
+              "Rick Mears"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Penske Racing",
+          "value": "Penske Racing",
+          "start": 29,
+          "end": 42
+        },
+        {
+          "surface": "Rick Mears",
+          "value": "Rick Mears",
+          "start": 57,
+          "end": 67
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Penske Racing",
+          "value": "Penske Racing",
+          "start": 29,
+          "end": 42,
+          "clause": "Who is the winning driver of Penske Racing,",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "“Penske Racing” matches the Winning team header and its row values.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "Rick Mears",
+          "value": "Rick Mears",
+          "start": 57,
+          "end": 67,
+          "clause": "and what was Rick Mears' pole position?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "“Rick Mears” is asked about as a pole-position holder, matching Pole Position values.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          4,
+          0,
+          "Penske Racing"
+        ],
+        [
+          1,
+          0,
+          "Rick Mears"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 15156
+}

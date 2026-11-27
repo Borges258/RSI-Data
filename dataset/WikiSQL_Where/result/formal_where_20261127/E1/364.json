@@ -1,0 +1,110 @@
+{
+  "arm": "E1",
+  "position": 364,
+  "example_id": "test:6587:2-1524433-1",
+  "original_index": 6587,
+  "table_id": "2-1524433-1",
+  "question": "What is the total number of top-25 that has a top-10 smaller than 4 with 0 cuts?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        3,
+        2,
+        4
+      ],
+      [
+        6,
+        0,
+        0
+      ]
+    ],
+    "agg": 3
+  },
+  "prediction_conds": [
+    [
+      3,
+      2,
+      4
+    ],
+    [
+      6,
+      0,
+      0
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": "gpt-5.6-sol",
+  "usage": {
+    "prompt_tokens": 9907,
+    "completion_tokens": 59,
+    "total_tokens": 9966,
+    "prompt_tokens_details": {
+      "cached_tokens": 4224
+    }
+  },
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        2,
+        4
+      ],
+      [
+        6,
+        0,
+        0
+      ]
+    ],
+    "explanation": "Top-10 is strictly smaller than 4, and Cuts made equals 0; Top-25 is the requested output, not a filter.",
+    "version": "wikisql-where-prior-v1",
+    "tableId": "2-1524433-1",
+    "knowledgeIds": [
+      "g-eq",
+      "g-gt",
+      "g-lt",
+      "g-inclusive",
+      "g-literal",
+      "g-threshold",
+      "g-and",
+      "g-or",
+      "g-column",
+      "g-count",
+      "g-ambiguous",
+      "t-2-1524433-1-field-0",
+      "t-2-1524433-1-field-1",
+      "t-2-1524433-1-field-2",
+      "t-2-1524433-1-field-3",
+      "t-2-1524433-1-field-4",
+      "t-2-1524433-1-field-5",
+      "t-2-1524433-1-field-6",
+      "d-implicit-eq",
+      "d-explicit-eq",
+      "d-gt",
+      "d-lt-and-gt",
+      "d-with-two",
+      "d-literal-form",
+      "p-text",
+      "p-number",
+      "p-multi",
+      "p-unsupported"
+    ],
+    "promptSha256": "5b5b2d733ef2e344e17c94f5569f887c9117bc4f4516638735711089a337f7eb",
+    "model": "gpt-5.6-sol",
+    "usage": {
+      "prompt_tokens": 9907,
+      "completion_tokens": 59,
+      "total_tokens": 9966,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      }
+    },
+    "latencyMs": 2712
+  },
+  "source": "where_prior_parse",
+  "safe_completed": true,
+  "elapsed_ms": 2718
+}

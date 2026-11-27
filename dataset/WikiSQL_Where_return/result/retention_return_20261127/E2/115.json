@@ -1,0 +1,427 @@
+{
+  "arm": "E2",
+  "position": 115,
+  "example_id": "test:4149:1-28898948-3",
+  "original_index": 4149,
+  "table_id": "1-28898948-3",
+  "question": "When ihaia tainui is the incumbent what is the date?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        3,
+        0,
+        "Ihaia Tainui"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      3,
+      0,
+      "Ihaia Tainui"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        0,
+        "Ihaia Tainui"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "ihaia tainui",
+        "value": "Ihaia Tainui",
+        "start": 5,
+        "end": 17,
+        "clause": "When ihaia tainui is the incumbent what is the date?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The question explicitly identifies Ihaia Tainui as the incumbent, matching the Incumbent header and row evidence.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "ihaia tainui",
+        "value": "Ihaia Tainui",
+        "start": 5,
+        "end": 17
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "When ihaia tainui is the incumbent what is the date?",
+      "table": {
+        "header": [
+          "By-election",
+          "Electorate",
+          "Date",
+          "Incumbent",
+          "Reason",
+          "Winner"
+        ],
+        "page_title": "7th New Zealand Parliament",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "id": "1-28898948-3",
+        "section_title": "Changes during term",
+        "caption": "Changes during term",
+        "rows": [
+          [
+            1880,
+            "Rangitikei",
+            "8 May",
+            "William Jarvis Willis",
+            "Resignation",
+            "William Fox"
+          ],
+          [
+            1880,
+            "Waitaki",
+            "16 June",
+            "Thomas William Hislop",
+            "Resignation",
+            "George Jones"
+          ],
+          [
+            1880,
+            "Waikaia",
+            "21 September",
+            "George Ireland",
+            "Death",
+            "Horace Bastings"
+          ],
+          [
+            1881,
+            "Suburbs of Nelson",
+            "11 January",
+            "Andrew Richmond",
+            "Death",
+            "Arthur Collins"
+          ],
+          [
+            1881,
+            "Southern Maori",
+            "1 March",
+            "Ihaia Tainui",
+            "Resignation",
+            "Hori Kerei Taiaroa"
+          ],
+          [
+            1881,
+            "City of Nelson",
+            "7 June",
+            "Acton Adams",
+            "Resignation",
+            "Henry Levestam"
+          ]
+        ],
+        "name": "table_28898948_3",
+        "headers": [
+          "By-election",
+          "Electorate",
+          "Date",
+          "Incumbent",
+          "Reason",
+          "Winner"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-28898948-3",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "ihaia tainui",
+              "value": "Ihaia Tainui",
+              "start": 5,
+              "end": 17
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "95e0e580acbf6e4a91f40df1823e5f10928dd6821cf06faa837b6740956b4b3e",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4823,
+              "completion_tokens": 27,
+              "total_tokens": 4850,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "ihaia tainui",
+              "value": "Ihaia Tainui",
+              "start": 5,
+              "end": 17,
+              "clause": "When ihaia tainui is the incumbent what is the date?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "ihaia tainui",
+              "value": "Ihaia Tainui",
+              "start": 5,
+              "end": 17,
+              "clause": "When ihaia tainui is the incumbent what is the date?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "ihaia tainui",
+              "value": "Ihaia Tainui",
+              "start": 5,
+              "end": 17,
+              "clause": "When ihaia tainui is the incumbent what is the date?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies Ihaia Tainui as the incumbent, matching the Incumbent header and row evidence."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c258b52f5bf44db53e3f9d30f68053561131efa135188d564949d2ca090465a1",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4869,
+              "completion_tokens": 45,
+              "total_tokens": 4914,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "ihaia tainui",
+              "value": "Ihaia Tainui",
+              "start": 5,
+              "end": 17,
+              "clause": "When ihaia tainui is the incumbent what is the date?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies Ihaia Tainui as the incumbent, matching the Incumbent header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "97d06d88fdbf35aeaa9c7603152aea94b63327d32ec1eebe01eba69e0b1e8eeb",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4938,
+              "completion_tokens": 9,
+              "total_tokens": 4947,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "ihaia tainui",
+              "value": "Ihaia Tainui",
+              "start": 5,
+              "end": 17,
+              "clause": "When ihaia tainui is the incumbent what is the date?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies Ihaia Tainui as the incumbent, matching the Incumbent header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "742df99414671c752be1a701e72db5be0701922e621bf7fa5cc35a36403541de",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4889,
+              "completion_tokens": 15,
+              "total_tokens": 4904,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "ihaia tainui",
+              "value": "Ihaia Tainui",
+              "start": 5,
+              "end": 17,
+              "clause": "When ihaia tainui is the incumbent what is the date?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies Ihaia Tainui as the incumbent, matching the Incumbent header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "ihaia tainui",
+              "value": "Ihaia Tainui",
+              "start": 5,
+              "end": 17,
+              "clause": "When ihaia tainui is the incumbent what is the date?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies Ihaia Tainui as the incumbent, matching the Incumbent header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "ihaia tainui",
+              "value": "Ihaia Tainui",
+              "start": 5,
+              "end": 17,
+              "clause": "When ihaia tainui is the incumbent what is the date?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies Ihaia Tainui as the incumbent, matching the Incumbent header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              0,
+              "Ihaia Tainui"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "ihaia tainui",
+          "value": "Ihaia Tainui",
+          "start": 5,
+          "end": 17
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "ihaia tainui",
+          "value": "Ihaia Tainui",
+          "start": 5,
+          "end": 17,
+          "clause": "When ihaia tainui is the incumbent what is the date?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The question explicitly identifies Ihaia Tainui as the incumbent, matching the Incumbent header and row evidence.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          3,
+          0,
+          "Ihaia Tainui"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9593
+}

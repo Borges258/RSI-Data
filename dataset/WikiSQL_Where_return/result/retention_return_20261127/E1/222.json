@@ -1,0 +1,123 @@
+{
+  "arm": "E1",
+  "position": 222,
+  "example_id": "test:8490:2-167446-1",
+  "original_index": 8490,
+  "table_id": "2-167446-1",
+  "question": "what is the date when the nationality is united kingdom, the type is freighter and the displacement is 5,145 t?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        2,
+        0,
+        "united kingdom"
+      ],
+      [
+        1,
+        0,
+        "freighter"
+      ],
+      [
+        4,
+        0,
+        "5,145 t"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "United Kingdom"
+    ],
+    [
+      1,
+      0,
+      "Freighter"
+    ],
+    [
+      4,
+      0,
+      "5,145 t"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": "gpt-5.6-sol",
+  "usage": {
+    "prompt_tokens": 10111,
+    "completion_tokens": 62,
+    "total_tokens": 10173,
+    "prompt_tokens_details": {
+      "cached_tokens": 4224
+    }
+  },
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "United Kingdom"
+      ],
+      [
+        1,
+        0,
+        "Freighter"
+      ],
+      [
+        4,
+        0,
+        "5,145 t"
+      ]
+    ],
+    "explanation": "Three explicit equality filters on Nationality, Type, and Displacement, using exact table values.",
+    "version": "wikisql-where-prior-v1",
+    "tableId": "2-167446-1",
+    "knowledgeIds": [
+      "g-eq",
+      "g-gt",
+      "g-lt",
+      "g-inclusive",
+      "g-literal",
+      "g-threshold",
+      "g-and",
+      "g-or",
+      "g-column",
+      "g-count",
+      "g-ambiguous",
+      "t-2-167446-1-field-0",
+      "t-2-167446-1-field-1",
+      "t-2-167446-1-field-2",
+      "t-2-167446-1-field-3",
+      "t-2-167446-1-field-4",
+      "d-implicit-eq",
+      "d-explicit-eq",
+      "d-gt",
+      "d-lt-and-gt",
+      "d-with-two",
+      "d-literal-form",
+      "p-text",
+      "p-number",
+      "p-multi",
+      "p-unsupported"
+    ],
+    "promptSha256": "dd3197e1f6be89d0a4f4a5091fd6e8337af33365320f0e0e2445f89cec568fea",
+    "model": "gpt-5.6-sol",
+    "usage": {
+      "prompt_tokens": 10111,
+      "completion_tokens": 62,
+      "total_tokens": 10173,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      }
+    },
+    "latencyMs": 2960
+  },
+  "source": "where_prior_parse",
+  "safe_completed": true,
+  "elapsed_ms": 2968
+}

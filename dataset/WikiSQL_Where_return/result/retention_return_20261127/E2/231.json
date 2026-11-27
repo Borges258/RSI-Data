@@ -1,0 +1,597 @@
+{
+  "arm": "E2",
+  "position": 231,
+  "example_id": "test:9158:2-16983267-1",
+  "original_index": 9158,
+  "table_id": "2-16983267-1",
+  "question": "Where was the tournament where monica seles was the finalist who played on a hard surface?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        1,
+        0,
+        "hard"
+      ],
+      [
+        4,
+        0,
+        "monica seles"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      4,
+      0,
+      "Monica Seles"
+    ],
+    [
+      1,
+      0,
+      "Hard"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        0,
+        "Monica Seles"
+      ],
+      [
+        1,
+        0,
+        "Hard"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "monica seles",
+        "value": "Monica Seles",
+        "start": 31,
+        "end": 43,
+        "clause": "Where was the tournament where monica seles was the finalist who played on a hard surface?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The question explicitly identifies Monica Seles as the finalist; matching rows place her in Finalist.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "hard",
+        "value": "Hard",
+        "start": 77,
+        "end": 81,
+        "clause": "Where was the tournament where monica seles was the finalist who played on a hard surface?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The question explicitly describes hard as the playing surface; Hard appears in Surface.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "monica seles",
+        "value": "Monica Seles",
+        "start": 31,
+        "end": 43
+      },
+      {
+        "surface": "hard",
+        "value": "Hard",
+        "start": 77,
+        "end": 81
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Where was the tournament where monica seles was the finalist who played on a hard surface?",
+      "table": {
+        "header": [
+          "Tournament",
+          "Surface",
+          "Week",
+          "Winner",
+          "Finalist",
+          "Semifinalists"
+        ],
+        "page_title": "1992 WTA Tier I Series",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 16983267,
+        "id": "2-16983267-1",
+        "section_title": "Singles",
+        "rows": [
+          [
+            "Boca Raton",
+            "Hard",
+            "March 2",
+            "Steffi Graf 3–6, 6–2, 6–0",
+            "Conchita Martínez",
+            "Mary Joe Fernandez Amanda Coetzer"
+          ],
+          [
+            "Key Biscayne",
+            "Hard",
+            "March 9",
+            "Arantxa Sánchez 6–1, 6–4",
+            "Gabriela Sabatini",
+            "Jennifer Capriati Steffi Graf"
+          ],
+          [
+            "Hilton Head",
+            "Clay",
+            "March 30",
+            "Gabriela Sabatini 6–1, 6–4",
+            "Conchita Martínez",
+            "Brenda Schultz-McCarthy Arantxa Sánchez"
+          ],
+          [
+            "Rome",
+            "Clay",
+            "May 4",
+            "Gabriela Sabatini 7–5, 6–4",
+            "Monica Seles",
+            "Amanda Coetzer Mary Joe Fernandez"
+          ],
+          [
+            "Berlin",
+            "Clay",
+            "May 11",
+            "Steffi Graf 4–6, 7–5, 6–2",
+            "Arantxa Sánchez",
+            "Jennifer Capriati Mary Joe Fernandez"
+          ],
+          [
+            "Montreal",
+            "Hard",
+            "August 17",
+            "Arantxa Sánchez 6–3, 4–6, 6–4",
+            "Monica Seles",
+            "Lori McNeil Helena Suková"
+          ]
+        ],
+        "caption": "Singles",
+        "headers": [
+          "Tournament",
+          "Surface",
+          "Week",
+          "Winner",
+          "Finalist",
+          "Semifinalists"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-16983267-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "monica seles",
+              "value": "Monica Seles",
+              "start": 31,
+              "end": 43
+            },
+            {
+              "surface": "hard",
+              "value": "Hard",
+              "start": 77,
+              "end": 81
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a1e86805ae0da56fe191c6130fe4c29471fec9f5cac1d23b6ebaa97dcb0ff0ac",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4924,
+              "completion_tokens": 31,
+              "total_tokens": 4955,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "monica seles",
+              "value": "Monica Seles",
+              "start": 31,
+              "end": 43,
+              "clause": "Where was the tournament where monica seles was the finalist who played on a hard surface?"
+            },
+            {
+              "surface": "hard",
+              "value": "Hard",
+              "start": 77,
+              "end": 81,
+              "clause": "Where was the tournament where monica seles was the finalist who played on a hard surface?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "monica seles",
+              "value": "Monica Seles",
+              "start": 31,
+              "end": 43,
+              "clause": "Where was the tournament where monica seles was the finalist who played on a hard surface?"
+            },
+            {
+              "surface": "hard",
+              "value": "Hard",
+              "start": 77,
+              "end": 81,
+              "clause": "Where was the tournament where monica seles was the finalist who played on a hard surface?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "monica seles",
+              "value": "Monica Seles",
+              "start": 31,
+              "end": 43,
+              "clause": "Where was the tournament where monica seles was the finalist who played on a hard surface?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly identifies Monica Seles as the finalist; matching rows place her in Finalist."
+            },
+            {
+              "surface": "hard",
+              "value": "Hard",
+              "start": 77,
+              "end": 81,
+              "clause": "Where was the tournament where monica seles was the finalist who played on a hard surface?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly describes hard as the playing surface; Hard appears in Surface."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b89dc4b88e27f6a1de1fab8229717512d33801c069639cb131aceea155b0530a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5009,
+              "completion_tokens": 59,
+              "total_tokens": 5068,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "monica seles",
+              "value": "Monica Seles",
+              "start": 31,
+              "end": 43,
+              "clause": "Where was the tournament where monica seles was the finalist who played on a hard surface?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly identifies Monica Seles as the finalist; matching rows place her in Finalist.",
+              "operator": "="
+            },
+            {
+              "surface": "hard",
+              "value": "Hard",
+              "start": 77,
+              "end": 81,
+              "clause": "Where was the tournament where monica seles was the finalist who played on a hard surface?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly describes hard as the playing surface; Hard appears in Surface.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "416d4db21ed71cddde7824bbc16803daa4a1fa8dd76b177557f7af4d6494b0ab",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5103,
+              "completion_tokens": 11,
+              "total_tokens": 5114,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "monica seles",
+              "value": "Monica Seles",
+              "start": 31,
+              "end": 43,
+              "clause": "Where was the tournament where monica seles was the finalist who played on a hard surface?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly identifies Monica Seles as the finalist; matching rows place her in Finalist.",
+              "operator": "="
+            },
+            {
+              "surface": "hard",
+              "value": "Hard",
+              "start": 77,
+              "end": 81,
+              "clause": "Where was the tournament where monica seles was the finalist who played on a hard surface?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly describes hard as the playing surface; Hard appears in Surface.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0c44b08ffb2c7a73de3f18ef01e05a8498eba837a7de604db919c7dca66ded1c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5057,
+              "completion_tokens": 15,
+              "total_tokens": 5072,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "monica seles",
+              "value": "Monica Seles",
+              "start": 31,
+              "end": 43,
+              "clause": "Where was the tournament where monica seles was the finalist who played on a hard surface?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly identifies Monica Seles as the finalist; matching rows place her in Finalist.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "hard",
+              "value": "Hard",
+              "start": 77,
+              "end": 81,
+              "clause": "Where was the tournament where monica seles was the finalist who played on a hard surface?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly describes hard as the playing surface; Hard appears in Surface.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "monica seles",
+              "value": "Monica Seles",
+              "start": 31,
+              "end": 43,
+              "clause": "Where was the tournament where monica seles was the finalist who played on a hard surface?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly identifies Monica Seles as the finalist; matching rows place her in Finalist.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "hard",
+              "value": "Hard",
+              "start": 77,
+              "end": 81,
+              "clause": "Where was the tournament where monica seles was the finalist who played on a hard surface?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly describes hard as the playing surface; Hard appears in Surface.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "monica seles",
+              "value": "Monica Seles",
+              "start": 31,
+              "end": 43,
+              "clause": "Where was the tournament where monica seles was the finalist who played on a hard surface?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly identifies Monica Seles as the finalist; matching rows place her in Finalist.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "hard",
+              "value": "Hard",
+              "start": 77,
+              "end": 81,
+              "clause": "Where was the tournament where monica seles was the finalist who played on a hard surface?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly describes hard as the playing surface; Hard appears in Surface.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              0,
+              "Monica Seles"
+            ],
+            [
+              1,
+              0,
+              "Hard"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "monica seles",
+          "value": "Monica Seles",
+          "start": 31,
+          "end": 43
+        },
+        {
+          "surface": "hard",
+          "value": "Hard",
+          "start": 77,
+          "end": 81
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "monica seles",
+          "value": "Monica Seles",
+          "start": 31,
+          "end": 43,
+          "clause": "Where was the tournament where monica seles was the finalist who played on a hard surface?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The question explicitly identifies Monica Seles as the finalist; matching rows place her in Finalist.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "hard",
+          "value": "Hard",
+          "start": 77,
+          "end": 81,
+          "clause": "Where was the tournament where monica seles was the finalist who played on a hard surface?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The question explicitly describes hard as the playing surface; Hard appears in Surface.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          4,
+          0,
+          "Monica Seles"
+        ],
+        [
+          1,
+          0,
+          "Hard"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7891
+}

@@ -1,0 +1,425 @@
+{
+  "arm": "E2",
+  "position": 155,
+  "example_id": "test:5616:2-1514559-6",
+  "original_index": 5616,
+  "table_id": "2-1514559-6",
+  "question": "What date was the match played where Amy Frazier was the opponent?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        3,
+        0,
+        "amy frazier"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      3,
+      0,
+      "Amy Frazier"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        0,
+        "Amy Frazier"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Amy Frazier",
+        "value": "Amy Frazier",
+        "start": 37,
+        "end": 48,
+        "clause": "What date was the match played where Amy Frazier was the opponent?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The question identifies Amy Frazier as the opponent, matching the 'Opponent in the Final' field.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Amy Frazier",
+        "value": "Amy Frazier",
+        "start": 37,
+        "end": 48
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What date was the match played where Amy Frazier was the opponent?",
+      "table": {
+        "header": [
+          "Date",
+          "Tournament",
+          "Surface",
+          "Opponent in the Final",
+          "Score"
+        ],
+        "page_title": "Ai Sugiyama",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 1514559,
+        "id": "2-1514559-6",
+        "section_title": "Singles runner-ups (7)",
+        "rows": [
+          [
+            "July 26, 1994",
+            "Surabaya , Indonesia",
+            "Hard",
+            "Elena Wagner",
+            "2–6, 6–0, ret."
+          ],
+          [
+            "November 5, 1995",
+            "Oakland , United States",
+            "Carpet (I)",
+            "Magdalena Maleeva",
+            "6–3, 6–4"
+          ],
+          [
+            "January 5, 1997",
+            "Gold Coast , Australia",
+            "Hard",
+            "Elena Likhovtseva",
+            "3–6, 7–6(7), 6–3"
+          ],
+          [
+            "November 2, 1997",
+            "Moscow, Russia",
+            "Carpet (I)",
+            "Jana Novotná",
+            "6–3, 6–4"
+          ],
+          [
+            "October 5, 1999",
+            "AIG Japan Open",
+            "Hard",
+            "Amy Frazier",
+            "6–2, 6–2"
+          ],
+          [
+            "August 17, 2005",
+            "Acura Classic",
+            "Hard",
+            "Mary Pierce",
+            "6–0, 6–3"
+          ],
+          [
+            "October 1, 2006",
+            "Seoul",
+            "Hard",
+            "Eleni Daniilidou",
+            "6–3 2–6 7–6"
+          ]
+        ],
+        "caption": "Singles runner-ups (7)",
+        "headers": [
+          "Date",
+          "Tournament",
+          "Surface",
+          "Opponent in the Final",
+          "Score"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-1514559-6",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Amy Frazier",
+              "value": "Amy Frazier",
+              "start": 37,
+              "end": 48
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "53485c768ccb7641454f69d67ea0732884f0e9c264e74cbfb87f7acbc6123d2d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4912,
+              "completion_tokens": 23,
+              "total_tokens": 4935,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Amy Frazier",
+              "value": "Amy Frazier",
+              "start": 37,
+              "end": 48,
+              "clause": "What date was the match played where Amy Frazier was the opponent?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Amy Frazier",
+              "value": "Amy Frazier",
+              "start": 37,
+              "end": 48,
+              "clause": "What date was the match played where Amy Frazier was the opponent?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Amy Frazier",
+              "value": "Amy Frazier",
+              "start": 37,
+              "end": 48,
+              "clause": "What date was the match played where Amy Frazier was the opponent?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question identifies Amy Frazier as the opponent, matching the 'Opponent in the Final' field."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "2966c0aa0f889b490398959eec0caa2c7f633e0bc0f66920e7a8f4562a62cb48",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4954,
+              "completion_tokens": 42,
+              "total_tokens": 4996,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Amy Frazier",
+              "value": "Amy Frazier",
+              "start": 37,
+              "end": 48,
+              "clause": "What date was the match played where Amy Frazier was the opponent?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question identifies Amy Frazier as the opponent, matching the 'Opponent in the Final' field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d96abd13b1747f8ee951a6b56a8c5d222ac267f2a9477831ec3421562643c4c6",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5020,
+              "completion_tokens": 9,
+              "total_tokens": 5029,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Amy Frazier",
+              "value": "Amy Frazier",
+              "start": 37,
+              "end": 48,
+              "clause": "What date was the match played where Amy Frazier was the opponent?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question identifies Amy Frazier as the opponent, matching the 'Opponent in the Final' field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "48bec9738d673f6c22a4eadc316674b1015d10fc3b707abfa8b746383d37e7f8",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4971,
+              "completion_tokens": 13,
+              "total_tokens": 4984,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Amy Frazier",
+              "value": "Amy Frazier",
+              "start": 37,
+              "end": 48,
+              "clause": "What date was the match played where Amy Frazier was the opponent?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question identifies Amy Frazier as the opponent, matching the 'Opponent in the Final' field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Amy Frazier",
+              "value": "Amy Frazier",
+              "start": 37,
+              "end": 48,
+              "clause": "What date was the match played where Amy Frazier was the opponent?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question identifies Amy Frazier as the opponent, matching the 'Opponent in the Final' field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Amy Frazier",
+              "value": "Amy Frazier",
+              "start": 37,
+              "end": 48,
+              "clause": "What date was the match played where Amy Frazier was the opponent?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question identifies Amy Frazier as the opponent, matching the 'Opponent in the Final' field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              0,
+              "Amy Frazier"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Amy Frazier",
+          "value": "Amy Frazier",
+          "start": 37,
+          "end": 48
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Amy Frazier",
+          "value": "Amy Frazier",
+          "start": 37,
+          "end": 48,
+          "clause": "What date was the match played where Amy Frazier was the opponent?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The question identifies Amy Frazier as the opponent, matching the 'Opponent in the Final' field.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          3,
+          0,
+          "Amy Frazier"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8500
+}

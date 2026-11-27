@@ -1,0 +1,419 @@
+{
+  "arm": "E2",
+  "position": 20,
+  "example_id": "test:786:1-1342393-16",
+  "original_index": 786,
+  "table_id": "1-1342393-16",
+  "question": "What is the candidates for first elected 1914",
+  "gold_sql": {
+    "sel": 5,
+    "conds": [
+      [
+        3,
+        0,
+        1914
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      3,
+      0,
+      1914
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        0,
+        1914
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "1914",
+        "value": 1914,
+        "start": 41,
+        "end": 45,
+        "clause": "What is the candidates for first elected 1914",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The phrase 'first elected 1914' directly matches the 'First elected' header, and 1914 appears in that column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "1914",
+        "value": "1914",
+        "start": 41,
+        "end": 45
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the candidates for first elected 1914",
+      "table": {
+        "header": [
+          "District",
+          "Incumbent",
+          "Party",
+          "First elected",
+          "Result",
+          "Candidates"
+        ],
+        "page_title": "United States House of Representatives elections, 1924",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "real",
+          "text",
+          "text"
+        ],
+        "id": "1-1342393-16",
+        "section_title": "",
+        "caption": "",
+        "rows": [
+          [
+            "Kentucky 1",
+            "Alben Barkley",
+            "Democratic",
+            1912,
+            "Re-elected",
+            "Alben Barkley (D) 66.9% Robert L. Myre (R) 33.1%"
+          ],
+          [
+            "Kentucky 2",
+            "David Hayes Kincheloe",
+            "Democratic",
+            1914,
+            "Re-elected",
+            "David Hayes Kincheloe (D) Unopposed"
+          ],
+          [
+            "Kentucky 7",
+            "Joseph W. Morris",
+            "Democratic",
+            1923,
+            "Retired Democratic hold",
+            "Virgil Chapman (D) Unopposed"
+          ],
+          [
+            "Kentucky 8",
+            "Ralph Waldo Emerson Gilbert",
+            "Democratic",
+            1920,
+            "Re-elected",
+            "Ralph Waldo Emerson Gilbert (D) Unopposed"
+          ],
+          [
+            "Kentucky 9",
+            "Fred M. Vinson",
+            "Democratic",
+            1924,
+            "Re-elected",
+            "Fred M. Vinson (D) 54.5% George Osborne (R) 45.5%"
+          ]
+        ],
+        "name": "table_1342393_16",
+        "headers": [
+          "District",
+          "Incumbent",
+          "Party",
+          "First elected",
+          "Result",
+          "Candidates"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-1342393-16",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "1914",
+              "value": "1914",
+              "start": 41,
+              "end": 45
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "1c853e810ac013c539f38137ad19d54a067cce3b6a853ed1d42f9ed91d1dbe56",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4869,
+              "completion_tokens": 19,
+              "total_tokens": 4888,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1914",
+              "value": "1914",
+              "start": 41,
+              "end": 45,
+              "clause": "What is the candidates for first elected 1914"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "1914",
+              "value": "1914",
+              "start": 41,
+              "end": 45,
+              "clause": "What is the candidates for first elected 1914"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1914",
+              "value": "1914",
+              "start": 41,
+              "end": 45,
+              "clause": "What is the candidates for first elected 1914",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The phrase 'first elected 1914' directly matches the 'First elected' header, and 1914 appears in that column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "72325cd0431bd370a7b9ab7ffc09508c7b5cd086424bc289c682291a9e0f1d92",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4902,
+              "completion_tokens": 48,
+              "total_tokens": 4950,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1914",
+              "value": "1914",
+              "start": 41,
+              "end": 45,
+              "clause": "What is the candidates for first elected 1914",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The phrase 'first elected 1914' directly matches the 'First elected' header, and 1914 appears in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c3bb0cfdfc4e46178a3d2a862dba4053ae001569477687004a54d5c938d6ed0d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4974,
+              "completion_tokens": 9,
+              "total_tokens": 4983,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1914",
+              "value": 1914,
+              "start": 41,
+              "end": 45,
+              "clause": "What is the candidates for first elected 1914",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The phrase 'first elected 1914' directly matches the 'First elected' header, and 1914 appears in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "7caae4aceea061100ed6ada10b940e2f56e3f20867f5d5f5e750a0aeb427c627",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4925,
+              "completion_tokens": 10,
+              "total_tokens": 4935,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1914",
+              "value": "1914",
+              "start": 41,
+              "end": 45,
+              "clause": "What is the candidates for first elected 1914",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The phrase 'first elected 1914' directly matches the 'First elected' header, and 1914 appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1914",
+              "value": 1914,
+              "start": 41,
+              "end": 45,
+              "clause": "What is the candidates for first elected 1914",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The phrase 'first elected 1914' directly matches the 'First elected' header, and 1914 appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "1914",
+              "value": 1914,
+              "start": 41,
+              "end": 45,
+              "clause": "What is the candidates for first elected 1914",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The phrase 'first elected 1914' directly matches the 'First elected' header, and 1914 appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              0,
+              1914
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "1914",
+          "value": "1914",
+          "start": 41,
+          "end": 45
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "1914",
+          "value": 1914,
+          "start": 41,
+          "end": 45,
+          "clause": "What is the candidates for first elected 1914",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The phrase 'first elected 1914' directly matches the 'First elected' header, and 1914 appears in that column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          3,
+          0,
+          1914
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8953
+}

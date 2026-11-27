@@ -1,0 +1,606 @@
+{
+  "arm": "E2",
+  "position": 322,
+  "example_id": "test:1954:1-187239-1",
+  "original_index": 1954,
+  "table_id": "1-187239-1",
+  "question": "When 2011 is the period and olympikus is the kit manufacturer how many minor sponsors are there?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        1,
+        0,
+        "Olympikus"
+      ],
+      [
+        0,
+        0,
+        "2011"
+      ]
+    ],
+    "agg": 3
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "2011"
+    ],
+    [
+      1,
+      0,
+      "Olympikus"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "2011"
+      ],
+      [
+        1,
+        0,
+        "Olympikus"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "2011",
+        "value": "2011",
+        "start": 5,
+        "end": 9,
+        "clause": "When 2011 is the period",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "The clause explicitly identifies 2011 as the Period, matching the Period header and row evidence.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "olympikus",
+        "value": "Olympikus",
+        "start": 28,
+        "end": 37,
+        "clause": "and olympikus is the kit manufacturer how many minor sponsors are there?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The clause explicitly identifies Olympikus as the kit manufacturer, matching the Kit manufacturer header and row evidence.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "2011",
+        "value": "2011",
+        "start": 5,
+        "end": 9
+      },
+      {
+        "surface": "olympikus",
+        "value": "Olympikus",
+        "start": 28,
+        "end": 37
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "When 2011 is the period and olympikus is the kit manufacturer how many minor sponsors are there?",
+      "table": {
+        "id": "1-187239-1",
+        "header": [
+          "Period",
+          "Kit manufacturer",
+          "Main sponsor",
+          "Secondary sponsor",
+          "Minor sponsors"
+        ],
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "rows": [
+          [
+            "1980–84",
+            "Adidas",
+            "none",
+            "none",
+            "none"
+          ],
+          [
+            "1984–92",
+            "Adidas",
+            "Petrobras",
+            "none",
+            "none"
+          ],
+          [
+            "1993–00",
+            "Umbro",
+            "Petrobras",
+            "none",
+            "none"
+          ],
+          [
+            "2000–09",
+            "Nike",
+            "Petrobras",
+            "none",
+            "none"
+          ],
+          [
+            "2009",
+            "Olympikus",
+            "Olympikus",
+            "Bozzano",
+            "none"
+          ],
+          [
+            "2009",
+            "Olympikus",
+            "Ale",
+            "Bozzano",
+            "none"
+          ],
+          [
+            "2010–2011",
+            "Olympikus",
+            "Batavo",
+            "Banco BMG",
+            "none"
+          ],
+          [
+            "2011",
+            "Olympikus",
+            "Procter & Gamble",
+            "Banco BMG",
+            "Tim Brasil Brokers"
+          ],
+          [
+            "2013",
+            "Olympikus",
+            "none",
+            "Banco BMG Mobil",
+            "Tim"
+          ]
+        ],
+        "name": "table_187239_1",
+        "headers": [
+          "Period",
+          "Kit manufacturer",
+          "Main sponsor",
+          "Secondary sponsor",
+          "Minor sponsors"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-187239-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "2011",
+              "value": "2011",
+              "start": 5,
+              "end": 9
+            },
+            {
+              "surface": "olympikus",
+              "value": "Olympikus",
+              "start": 28,
+              "end": 37
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "daa6a2e6650211517f63a045ccd64ee21175b863056d6cfa0790ce92396b7f56",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4811,
+              "completion_tokens": 31,
+              "total_tokens": 4842,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2011",
+              "value": "2011",
+              "start": 5,
+              "end": 9,
+              "clause": "When 2011 is the period"
+            },
+            {
+              "surface": "olympikus",
+              "value": "Olympikus",
+              "start": 28,
+              "end": 37,
+              "clause": "and olympikus is the kit manufacturer how many minor sponsors are there?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "2011",
+              "value": "2011",
+              "start": 5,
+              "end": 9,
+              "clause": "When 2011 is the period"
+            },
+            {
+              "surface": "olympikus",
+              "value": "Olympikus",
+              "start": 28,
+              "end": 37,
+              "clause": "and olympikus is the kit manufacturer how many minor sponsors are there?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2011",
+              "value": "2011",
+              "start": 5,
+              "end": 9,
+              "clause": "When 2011 is the period",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The clause explicitly identifies 2011 as the Period, matching the Period header and row evidence."
+            },
+            {
+              "surface": "olympikus",
+              "value": "Olympikus",
+              "start": 28,
+              "end": 37,
+              "clause": "and olympikus is the kit manufacturer how many minor sponsors are there?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly identifies Olympikus as the kit manufacturer, matching the Kit manufacturer header and row evidence."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "3d6ea785da06284a83df9d19ccc76721039e6ebf256d56aeb727363526f94a73",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4879,
+              "completion_tokens": 64,
+              "total_tokens": 4943,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2011",
+              "value": "2011",
+              "start": 5,
+              "end": 9,
+              "clause": "When 2011 is the period",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The clause explicitly identifies 2011 as the Period, matching the Period header and row evidence.",
+              "operator": "="
+            },
+            {
+              "surface": "olympikus",
+              "value": "Olympikus",
+              "start": 28,
+              "end": 37,
+              "clause": "and olympikus is the kit manufacturer how many minor sponsors are there?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly identifies Olympikus as the kit manufacturer, matching the Kit manufacturer header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "8d3fa03a56f651233f29ec536927b12afb0b3f61487fba822bbb4427085dd94c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4978,
+              "completion_tokens": 11,
+              "total_tokens": 4989,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2011",
+              "value": "2011",
+              "start": 5,
+              "end": 9,
+              "clause": "When 2011 is the period",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The clause explicitly identifies 2011 as the Period, matching the Period header and row evidence.",
+              "operator": "="
+            },
+            {
+              "surface": "olympikus",
+              "value": "Olympikus",
+              "start": 28,
+              "end": 37,
+              "clause": "and olympikus is the kit manufacturer how many minor sponsors are there?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly identifies Olympikus as the kit manufacturer, matching the Kit manufacturer header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ae265e88e19d6db02fbeafb2d9792712c16da109bd61bdbef4b563e6618f0ce8",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4932,
+              "completion_tokens": 14,
+              "total_tokens": 4946,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2011",
+              "value": "2011",
+              "start": 5,
+              "end": 9,
+              "clause": "When 2011 is the period",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The clause explicitly identifies 2011 as the Period, matching the Period header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "olympikus",
+              "value": "Olympikus",
+              "start": 28,
+              "end": 37,
+              "clause": "and olympikus is the kit manufacturer how many minor sponsors are there?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly identifies Olympikus as the kit manufacturer, matching the Kit manufacturer header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2011",
+              "value": "2011",
+              "start": 5,
+              "end": 9,
+              "clause": "When 2011 is the period",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The clause explicitly identifies 2011 as the Period, matching the Period header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "olympikus",
+              "value": "Olympikus",
+              "start": 28,
+              "end": 37,
+              "clause": "and olympikus is the kit manufacturer how many minor sponsors are there?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly identifies Olympikus as the kit manufacturer, matching the Kit manufacturer header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "2011",
+              "value": "2011",
+              "start": 5,
+              "end": 9,
+              "clause": "When 2011 is the period",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The clause explicitly identifies 2011 as the Period, matching the Period header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "olympikus",
+              "value": "Olympikus",
+              "start": 28,
+              "end": 37,
+              "clause": "and olympikus is the kit manufacturer how many minor sponsors are there?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly identifies Olympikus as the kit manufacturer, matching the Kit manufacturer header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              "2011"
+            ],
+            [
+              1,
+              0,
+              "Olympikus"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "2011",
+          "value": "2011",
+          "start": 5,
+          "end": 9
+        },
+        {
+          "surface": "olympikus",
+          "value": "Olympikus",
+          "start": 28,
+          "end": 37
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "2011",
+          "value": "2011",
+          "start": 5,
+          "end": 9,
+          "clause": "When 2011 is the period",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "The clause explicitly identifies 2011 as the Period, matching the Period header and row evidence.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "olympikus",
+          "value": "Olympikus",
+          "start": 28,
+          "end": 37,
+          "clause": "and olympikus is the kit manufacturer how many minor sponsors are there?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The clause explicitly identifies Olympikus as the kit manufacturer, matching the Kit manufacturer header and row evidence.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          0,
+          0,
+          "2011"
+        ],
+        [
+          1,
+          0,
+          "Olympikus"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8297
+}

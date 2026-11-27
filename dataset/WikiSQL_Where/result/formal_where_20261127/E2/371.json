@@ -1,0 +1,427 @@
+{
+  "arm": "E2",
+  "position": 371,
+  "example_id": "test:7113:2-1597347-1",
+  "original_index": 7113,
+  "table_id": "2-1597347-1",
+  "question": "What 2007 number when the million CZK shows operating revenues?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        0,
+        0,
+        "operating revenues"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "Operating revenues"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "Operating revenues"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "operating revenues",
+        "value": "Operating revenues",
+        "start": 44,
+        "end": 62,
+        "clause": "What 2007 number when the million CZK shows operating revenues?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "The condition names the financial metric, and 'Operating revenues' appears as a row label under the 'million CZK' field.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "operating revenues",
+        "value": "Operating revenues",
+        "start": 44,
+        "end": 62
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What 2007 number when the million CZK shows operating revenues?",
+      "table": {
+        "header": [
+          "million CZK",
+          "2005",
+          "2006",
+          "2007",
+          "2008",
+          "2009"
+        ],
+        "page_title": "Travel Service Airlines",
+        "types": [
+          "text",
+          "text",
+          "real",
+          "real",
+          "real",
+          "real"
+        ],
+        "page_id": 1597347,
+        "id": "2-1597347-1",
+        "section_title": "History",
+        "rows": [
+          [
+            "Operating revenues",
+            "4,391",
+            "4,844",
+            "5,818",
+            "6,511",
+            "7,006"
+          ],
+          [
+            "Operating profit",
+            "40",
+            "73",
+            "205",
+            "384",
+            "344"
+          ],
+          [
+            "Net profit after tax",
+            "(25)",
+            "15",
+            "156",
+            "4",
+            "212"
+          ],
+          [
+            "Assets",
+            "1,074",
+            "1,205",
+            "1,564",
+            "2,226",
+            "1,653"
+          ],
+          [
+            "Equity",
+            "70",
+            "62",
+            "237",
+            "158",
+            "409"
+          ],
+          [
+            "Liabilities",
+            "1,004",
+            "1,143",
+            "1,327",
+            "2,068",
+            "1,245"
+          ]
+        ],
+        "caption": "Selected financial results of Travel Service, a.s.",
+        "headers": [
+          "million CZK",
+          "2005",
+          "2006",
+          "2007",
+          "2008",
+          "2009"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-1597347-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "operating revenues",
+              "value": "Operating revenues",
+              "start": 44,
+              "end": 62
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b4f45ab5aecf430ea5c0e2dcdef0e947a229879821565a178e1ff8708782715b",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4805,
+              "completion_tokens": 20,
+              "total_tokens": 4825,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "operating revenues",
+              "value": "Operating revenues",
+              "start": 44,
+              "end": 62,
+              "clause": "What 2007 number when the million CZK shows operating revenues?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "operating revenues",
+              "value": "Operating revenues",
+              "start": 44,
+              "end": 62,
+              "clause": "What 2007 number when the million CZK shows operating revenues?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "operating revenues",
+              "value": "Operating revenues",
+              "start": 44,
+              "end": 62,
+              "clause": "What 2007 number when the million CZK shows operating revenues?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The condition names the financial metric, and 'Operating revenues' appears as a row label under the 'million CZK' field."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "2f2f6597827a16d794e6f63063cff50319e069127f5403eab12e53914c2f09b5",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4843,
+              "completion_tokens": 47,
+              "total_tokens": 4890,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "operating revenues",
+              "value": "Operating revenues",
+              "start": 44,
+              "end": 62,
+              "clause": "What 2007 number when the million CZK shows operating revenues?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The condition names the financial metric, and 'Operating revenues' appears as a row label under the 'million CZK' field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "bfdb30d792020befffc3f9794a2fcd04b695b924349c66d48804b4a9a2319a8f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4914,
+              "completion_tokens": 9,
+              "total_tokens": 4923,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "operating revenues",
+              "value": "Operating revenues",
+              "start": 44,
+              "end": 62,
+              "clause": "What 2007 number when the million CZK shows operating revenues?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The condition names the financial metric, and 'Operating revenues' appears as a row label under the 'million CZK' field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "547de0697b5776dcf7b24192cb2707f67078819f3406fad6ca4e0795238e215e",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4865,
+              "completion_tokens": 11,
+              "total_tokens": 4876,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "operating revenues",
+              "value": "Operating revenues",
+              "start": 44,
+              "end": 62,
+              "clause": "What 2007 number when the million CZK shows operating revenues?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The condition names the financial metric, and 'Operating revenues' appears as a row label under the 'million CZK' field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "operating revenues",
+              "value": "Operating revenues",
+              "start": 44,
+              "end": 62,
+              "clause": "What 2007 number when the million CZK shows operating revenues?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The condition names the financial metric, and 'Operating revenues' appears as a row label under the 'million CZK' field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "operating revenues",
+              "value": "Operating revenues",
+              "start": 44,
+              "end": 62,
+              "clause": "What 2007 number when the million CZK shows operating revenues?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The condition names the financial metric, and 'Operating revenues' appears as a row label under the 'million CZK' field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              "Operating revenues"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "operating revenues",
+          "value": "Operating revenues",
+          "start": 44,
+          "end": 62
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "operating revenues",
+          "value": "Operating revenues",
+          "start": 44,
+          "end": 62,
+          "clause": "What 2007 number when the million CZK shows operating revenues?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "The condition names the financial metric, and 'Operating revenues' appears as a row label under the 'million CZK' field.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          0,
+          0,
+          "Operating revenues"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8953
+}

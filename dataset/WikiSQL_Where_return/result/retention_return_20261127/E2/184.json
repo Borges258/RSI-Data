@@ -1,0 +1,411 @@
+{
+  "arm": "E2",
+  "position": 184,
+  "example_id": "test:6611:2-14887635-1",
+  "original_index": 6611,
+  "table_id": "2-14887635-1",
+  "question": "What is the Entered service date of the H1 Locomotive?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        0,
+        0,
+        "h1"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "H1"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "H1"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "H1",
+        "value": "H1",
+        "start": 40,
+        "end": 42,
+        "clause": "What is the Entered service date of the H1 Locomotive?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "'H1' identifies the locomotive, matching the Locomotive header and row evidence.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "H1",
+        "value": "H1",
+        "start": 40,
+        "end": 42
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the Entered service date of the H1 Locomotive?",
+      "table": {
+        "header": [
+          "Locomotive",
+          "Delivered as",
+          "Entered service",
+          "Owner",
+          "Status"
+        ],
+        "page_title": "Victorian Railways H class (diesel)",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 14887635,
+        "id": "2-14887635-1",
+        "section_title": "Locomotives",
+        "rows": [
+          [
+            "H1",
+            "T413",
+            "20 December 1968",
+            "Pacific National - Rural and Bulk",
+            "In Service"
+          ],
+          [
+            "H2",
+            "T414",
+            "7 January 1969",
+            "Pacific National - Rural and Bulk",
+            "In Service"
+          ],
+          [
+            "H3",
+            "T415",
+            "7 February 1969",
+            "Pacific National - Rural and Bulk",
+            "In Service"
+          ],
+          [
+            "H4",
+            "T416",
+            "24 February 1969",
+            "Pacific National - Rural and Bulk",
+            "In Service"
+          ],
+          [
+            "H5",
+            "T417",
+            "14 March 1969",
+            "Pacific National - Rural and Bulk",
+            "In Service"
+          ]
+        ],
+        "caption": "Locomotives",
+        "headers": [
+          "Locomotive",
+          "Delivered as",
+          "Entered service",
+          "Owner",
+          "Status"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-14887635-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "H1",
+              "value": "H1",
+              "start": 40,
+              "end": 42
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a8b12c8d1a2e94a35f8ab5b91e49fc5edbe3692fd6ccfab3824bf8f219dd8ece",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4797,
+              "completion_tokens": 19,
+              "total_tokens": 4816,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "H1",
+              "value": "H1",
+              "start": 40,
+              "end": 42,
+              "clause": "What is the Entered service date of the H1 Locomotive?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "H1",
+              "value": "H1",
+              "start": 40,
+              "end": 42,
+              "clause": "What is the Entered service date of the H1 Locomotive?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "H1",
+              "value": "H1",
+              "start": 40,
+              "end": 42,
+              "clause": "What is the Entered service date of the H1 Locomotive?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'H1' identifies the locomotive, matching the Locomotive header and row evidence."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "cecddfbbea12d8699b56a16a3faa3d54fb42b58b670cee0657b668d74e1786c3",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4835,
+              "completion_tokens": 39,
+              "total_tokens": 4874,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "H1",
+              "value": "H1",
+              "start": 40,
+              "end": 42,
+              "clause": "What is the Entered service date of the H1 Locomotive?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'H1' identifies the locomotive, matching the Locomotive header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "733484502dc565fc9a04696facb6164ad3916ad7ac20364f6419764cd7b80329",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4897,
+              "completion_tokens": 9,
+              "total_tokens": 4906,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "H1",
+              "value": "H1",
+              "start": 40,
+              "end": 42,
+              "clause": "What is the Entered service date of the H1 Locomotive?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'H1' identifies the locomotive, matching the Locomotive header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "8988f31c809863a784b3e5ff8c1f28a2e1f9bf593259853131ea9d4ddaaa0946",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4848,
+              "completion_tokens": 11,
+              "total_tokens": 4859,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "H1",
+              "value": "H1",
+              "start": 40,
+              "end": 42,
+              "clause": "What is the Entered service date of the H1 Locomotive?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'H1' identifies the locomotive, matching the Locomotive header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "H1",
+              "value": "H1",
+              "start": 40,
+              "end": 42,
+              "clause": "What is the Entered service date of the H1 Locomotive?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'H1' identifies the locomotive, matching the Locomotive header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "H1",
+              "value": "H1",
+              "start": 40,
+              "end": 42,
+              "clause": "What is the Entered service date of the H1 Locomotive?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'H1' identifies the locomotive, matching the Locomotive header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              "H1"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "H1",
+          "value": "H1",
+          "start": 40,
+          "end": 42
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "H1",
+          "value": "H1",
+          "start": 40,
+          "end": 42,
+          "clause": "What is the Entered service date of the H1 Locomotive?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "'H1' identifies the locomotive, matching the Locomotive header and row evidence.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          0,
+          0,
+          "H1"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8282
+}

@@ -1,0 +1,446 @@
+{
+  "arm": "E2",
+  "position": 39,
+  "example_id": "test:1511:1-16729063-1",
+  "original_index": 1511,
+  "table_id": "1-16729063-1",
+  "question": "What team has draft picks from Mississippi?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        4,
+        0,
+        "Mississippi"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      4,
+      0,
+      "Mississippi"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        0,
+        "Mississippi"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Mississippi",
+        "value": "Mississippi",
+        "start": 31,
+        "end": 42,
+        "clause": "What team has draft picks from Mississippi?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The phrase 'draft picks from Mississippi' refers to the picks' college, and Mississippi appears under the College header.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Mississippi",
+        "value": "Mississippi",
+        "start": 31,
+        "end": 42
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What team has draft picks from Mississippi?",
+      "table": {
+        "header": [
+          "Pick #",
+          "NFL Team",
+          "Player",
+          "Position",
+          "College"
+        ],
+        "page_title": "1984 Denver Broncos season",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "id": "1-16729063-1",
+        "section_title": "NFL Draft",
+        "caption": "NFL Draft",
+        "rows": [
+          [
+            46,
+            "Denver Broncos",
+            "Andre Townsend",
+            "Defensive End",
+            "Mississippi"
+          ],
+          [
+            78,
+            "Denver Broncos",
+            "Tony Lilly",
+            "Defensive Back",
+            "Florida"
+          ],
+          [
+            89,
+            "Denver Broncos",
+            "Randy Robbins",
+            "Defensive Back",
+            "Arizona"
+          ],
+          [
+            159,
+            "Denver Broncos",
+            "Aaron Smith",
+            "Linebacker",
+            "Utah State"
+          ],
+          [
+            186,
+            "Denver Broncos",
+            "Clarence Kay",
+            "Tight end",
+            "Georgia"
+          ],
+          [
+            207,
+            "Denver Broncos",
+            "Winford Hood",
+            "Tackle",
+            "Georgia"
+          ],
+          [
+            218,
+            "Denver Broncos",
+            "Scott Garnett",
+            "Defensive tackle",
+            "Washington"
+          ],
+          [
+            245,
+            "Denver Broncos",
+            "Chris Brewer",
+            "Running back",
+            "Arizona"
+          ],
+          [
+            272,
+            "Denver Broncos",
+            "Bobby Micho",
+            "Tight end",
+            "Texas"
+          ],
+          [
+            299,
+            "Denver Broncos",
+            "Gene Lang",
+            "Running back",
+            "Louisiana State"
+          ]
+        ],
+        "name": "table_16729063_1",
+        "headers": [
+          "Pick #",
+          "NFL Team",
+          "Player",
+          "Position",
+          "College"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-16729063-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Mississippi",
+              "value": "Mississippi",
+              "start": 31,
+              "end": 42
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "9dab53583635899960a28230b8616377530dc6a9a43a1e750b4ca5590d605720",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4823,
+              "completion_tokens": 19,
+              "total_tokens": 4842,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Mississippi",
+              "value": "Mississippi",
+              "start": 31,
+              "end": 42,
+              "clause": "What team has draft picks from Mississippi?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Mississippi",
+              "value": "Mississippi",
+              "start": 31,
+              "end": 42,
+              "clause": "What team has draft picks from Mississippi?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Mississippi",
+              "value": "Mississippi",
+              "start": 31,
+              "end": 42,
+              "clause": "What team has draft picks from Mississippi?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'draft picks from Mississippi' refers to the picks' college, and Mississippi appears under the College header."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b1bc3e3a3ae76937c2a916af3088f6f56beca22d21fcdf87ef42ea3e07da8792",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4854,
+              "completion_tokens": 44,
+              "total_tokens": 4898,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Mississippi",
+              "value": "Mississippi",
+              "start": 31,
+              "end": 42,
+              "clause": "What team has draft picks from Mississippi?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'draft picks from Mississippi' refers to the picks' college, and Mississippi appears under the College header.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d0be81e79470e3e41d7fc230ae1ea8514a03ac83bca21e244341ac2767d79c98",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4922,
+              "completion_tokens": 9,
+              "total_tokens": 4931,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Mississippi",
+              "value": "Mississippi",
+              "start": 31,
+              "end": 42,
+              "clause": "What team has draft picks from Mississippi?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'draft picks from Mississippi' refers to the picks' college, and Mississippi appears under the College header.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d7627db6873158e6cced677dec2a25642551b5e25e4ce044297f4e6623f3cfb6",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4873,
+              "completion_tokens": 11,
+              "total_tokens": 4884,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Mississippi",
+              "value": "Mississippi",
+              "start": 31,
+              "end": 42,
+              "clause": "What team has draft picks from Mississippi?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'draft picks from Mississippi' refers to the picks' college, and Mississippi appears under the College header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Mississippi",
+              "value": "Mississippi",
+              "start": 31,
+              "end": 42,
+              "clause": "What team has draft picks from Mississippi?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'draft picks from Mississippi' refers to the picks' college, and Mississippi appears under the College header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Mississippi",
+              "value": "Mississippi",
+              "start": 31,
+              "end": 42,
+              "clause": "What team has draft picks from Mississippi?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'draft picks from Mississippi' refers to the picks' college, and Mississippi appears under the College header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              0,
+              "Mississippi"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Mississippi",
+          "value": "Mississippi",
+          "start": 31,
+          "end": 42
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Mississippi",
+          "value": "Mississippi",
+          "start": 31,
+          "end": 42,
+          "clause": "What team has draft picks from Mississippi?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The phrase 'draft picks from Mississippi' refers to the picks' college, and Mississippi appears under the College header.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          4,
+          0,
+          "Mississippi"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 11094
+}

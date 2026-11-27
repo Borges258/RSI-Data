@@ -1,0 +1,630 @@
+{
+  "arm": "E2",
+  "position": 355,
+  "example_id": "test:6041:2-1399716-2",
+  "original_index": 6041,
+  "table_id": "2-1399716-2",
+  "question": "What is the number of Apps for Internazionale Club of Brazil?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        0,
+        0,
+        "brazil"
+      ],
+      [
+        1,
+        0,
+        "internazionale"
+      ]
+    ],
+    "agg": 3
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "Internazionale"
+    ],
+    [
+      0,
+      0,
+      "Brazil"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "Internazionale"
+      ],
+      [
+        0,
+        0,
+        "Brazil"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Internazionale",
+        "value": "Internazionale",
+        "start": 31,
+        "end": 45,
+        "clause": "What is the number of Apps for Internazionale Club of Brazil?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "'Internazionale' is identified as the Club, matching the Club header and rows.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "Brazil",
+        "value": "Brazil",
+        "start": 54,
+        "end": 60,
+        "clause": "What is the number of Apps for Internazionale Club of Brazil?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "'Brazil' identifies the national team, matching the National team header and rows.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Internazionale",
+        "value": "Internazionale",
+        "start": 31,
+        "end": 45
+      },
+      {
+        "surface": "Brazil",
+        "value": "Brazil",
+        "start": 54,
+        "end": 60
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the number of Apps for Internazionale Club of Brazil?",
+      "table": {
+        "header": [
+          "National team",
+          "Club",
+          "Season",
+          "Apps",
+          "Goals"
+        ],
+        "page_title": "Júlio César Soares Espíndola",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "real",
+          "real"
+        ],
+        "page_id": 1399716,
+        "id": "2-1399716-2",
+        "section_title": "International",
+        "rows": [
+          [
+            "Brazil",
+            "Flamengo",
+            "2004",
+            "9",
+            "0"
+          ],
+          [
+            "Brazil",
+            "Chievo",
+            "2004–05",
+            "1",
+            "0"
+          ],
+          [
+            "Brazil",
+            "Internazionale",
+            "2005–06",
+            "1",
+            "0"
+          ],
+          [
+            "Brazil",
+            "Internazionale",
+            "2006–07",
+            "2",
+            "0"
+          ],
+          [
+            "Brazil",
+            "Internazionale",
+            "2007–08",
+            "11",
+            "0"
+          ],
+          [
+            "Brazil",
+            "Internazionale",
+            "2008–09",
+            "15",
+            "0"
+          ],
+          [
+            "Brazil",
+            "Internazionale",
+            "2009–10",
+            "14",
+            "0"
+          ],
+          [
+            "Brazil",
+            "Internazionale",
+            "2010–11",
+            "7",
+            "0"
+          ],
+          [
+            "Brazil",
+            "Internazionale",
+            "2011–12",
+            "4",
+            "0"
+          ],
+          [
+            "Brazil",
+            "QPR",
+            "2012–13",
+            "10",
+            "0"
+          ],
+          [
+            "Brazil",
+            "QPR",
+            "2013–14",
+            "1",
+            "0"
+          ],
+          [
+            "Total",
+            "Total",
+            "Total",
+            "75",
+            "0"
+          ]
+        ],
+        "caption": "International",
+        "headers": [
+          "National team",
+          "Club",
+          "Season",
+          "Apps",
+          "Goals"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-1399716-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "Internazionale",
+              "value": "Internazionale",
+              "start": 31,
+              "end": 45
+            },
+            {
+              "surface": "Brazil",
+              "value": "Brazil",
+              "start": 54,
+              "end": 60
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "7e774335df89c12606e6ef2f64691166a81827efc6623a2d1fd9becad8c184d4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4843,
+              "completion_tokens": 27,
+              "total_tokens": 4870,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Internazionale",
+              "value": "Internazionale",
+              "start": 31,
+              "end": 45,
+              "clause": "What is the number of Apps for Internazionale Club of Brazil?"
+            },
+            {
+              "surface": "Brazil",
+              "value": "Brazil",
+              "start": 54,
+              "end": 60,
+              "clause": "What is the number of Apps for Internazionale Club of Brazil?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Internazionale",
+              "value": "Internazionale",
+              "start": 31,
+              "end": 45,
+              "clause": "What is the number of Apps for Internazionale Club of Brazil?"
+            },
+            {
+              "surface": "Brazil",
+              "value": "Brazil",
+              "start": 54,
+              "end": 60,
+              "clause": "What is the number of Apps for Internazionale Club of Brazil?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Internazionale",
+              "value": "Internazionale",
+              "start": 31,
+              "end": 45,
+              "clause": "What is the number of Apps for Internazionale Club of Brazil?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'Internazionale' is identified as the Club, matching the Club header and rows."
+            },
+            {
+              "surface": "Brazil",
+              "value": "Brazil",
+              "start": 54,
+              "end": 60,
+              "clause": "What is the number of Apps for Internazionale Club of Brazil?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'Brazil' identifies the national team, matching the National team header and rows."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f1a939f69ff98bffa02d55e65f7c0e400f1d0346ed64bb24dd156dcdb54e2ea2",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4912,
+              "completion_tokens": 58,
+              "total_tokens": 4970,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Internazionale",
+              "value": "Internazionale",
+              "start": 31,
+              "end": 45,
+              "clause": "What is the number of Apps for Internazionale Club of Brazil?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'Internazionale' is identified as the Club, matching the Club header and rows.",
+              "operator": "="
+            },
+            {
+              "surface": "Brazil",
+              "value": "Brazil",
+              "start": 54,
+              "end": 60,
+              "clause": "What is the number of Apps for Internazionale Club of Brazil?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'Brazil' identifies the national team, matching the National team header and rows.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c520cec94b362bc4c07b14ba75ef5f66bc0afebfee2ca2bfe273fd5e51662fea",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5003,
+              "completion_tokens": 11,
+              "total_tokens": 5014,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Internazionale",
+              "value": "Internazionale",
+              "start": 31,
+              "end": 45,
+              "clause": "What is the number of Apps for Internazionale Club of Brazil?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'Internazionale' is identified as the Club, matching the Club header and rows.",
+              "operator": "="
+            },
+            {
+              "surface": "Brazil",
+              "value": "Brazil",
+              "start": 54,
+              "end": 60,
+              "clause": "What is the number of Apps for Internazionale Club of Brazil?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'Brazil' identifies the national team, matching the National team header and rows.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "98f1da240837fc522c6847ac56fba2d12754764455249ea4b16bec745efb7eff",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4957,
+              "completion_tokens": 13,
+              "total_tokens": 4970,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Internazionale",
+              "value": "Internazionale",
+              "start": 31,
+              "end": 45,
+              "clause": "What is the number of Apps for Internazionale Club of Brazil?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'Internazionale' is identified as the Club, matching the Club header and rows.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Brazil",
+              "value": "Brazil",
+              "start": 54,
+              "end": 60,
+              "clause": "What is the number of Apps for Internazionale Club of Brazil?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'Brazil' identifies the national team, matching the National team header and rows.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Internazionale",
+              "value": "Internazionale",
+              "start": 31,
+              "end": 45,
+              "clause": "What is the number of Apps for Internazionale Club of Brazil?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'Internazionale' is identified as the Club, matching the Club header and rows.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Brazil",
+              "value": "Brazil",
+              "start": 54,
+              "end": 60,
+              "clause": "What is the number of Apps for Internazionale Club of Brazil?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'Brazil' identifies the national team, matching the National team header and rows.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Internazionale",
+              "value": "Internazionale",
+              "start": 31,
+              "end": 45,
+              "clause": "What is the number of Apps for Internazionale Club of Brazil?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'Internazionale' is identified as the Club, matching the Club header and rows.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Brazil",
+              "value": "Brazil",
+              "start": 54,
+              "end": 60,
+              "clause": "What is the number of Apps for Internazionale Club of Brazil?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'Brazil' identifies the national team, matching the National team header and rows.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              "Internazionale"
+            ],
+            [
+              0,
+              0,
+              "Brazil"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Internazionale",
+          "value": "Internazionale",
+          "start": 31,
+          "end": 45
+        },
+        {
+          "surface": "Brazil",
+          "value": "Brazil",
+          "start": 54,
+          "end": 60
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Internazionale",
+          "value": "Internazionale",
+          "start": 31,
+          "end": 45,
+          "clause": "What is the number of Apps for Internazionale Club of Brazil?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "'Internazionale' is identified as the Club, matching the Club header and rows.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "Brazil",
+          "value": "Brazil",
+          "start": 54,
+          "end": 60,
+          "clause": "What is the number of Apps for Internazionale Club of Brazil?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "'Brazil' identifies the national team, matching the National team header and rows.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          1,
+          0,
+          "Internazionale"
+        ],
+        [
+          0,
+          0,
+          "Brazil"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8859
+}

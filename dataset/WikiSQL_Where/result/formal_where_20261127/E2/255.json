@@ -1,0 +1,655 @@
+{
+  "arm": "E2",
+  "position": 255,
+  "example_id": "test:15737:2-12821570-2",
+  "original_index": 15737,
+  "table_id": "2-12821570-2",
+  "question": "What was the highest number of points scored when there was a draw of 2 and when the amount played was 18?",
+  "gold_sql": {
+    "sel": 7,
+    "conds": [
+      [
+        3,
+        0,
+        2
+      ],
+      [
+        2,
+        0,
+        18
+      ]
+    ],
+    "agg": 1
+  },
+  "prediction_conds": [
+    [
+      3,
+      0,
+      2
+    ],
+    [
+      2,
+      0,
+      18
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        0,
+        2
+      ],
+      [
+        2,
+        0,
+        18
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "2",
+        "value": 2,
+        "start": 70,
+        "end": 71,
+        "clause": "What was the highest number of points scored when there was a draw of 2",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The phrase 'a draw of 2' directly refers to the Draw field, and a row has Draw = 2.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "18",
+        "value": 18,
+        "start": 103,
+        "end": 105,
+        "clause": "and when the amount played was 18?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The phrase 'amount played was 18' directly refers to the Played field, which contains 18.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "2",
+        "value": "2",
+        "start": 70,
+        "end": 71
+      },
+      {
+        "surface": "18",
+        "value": "18",
+        "start": 103,
+        "end": 105
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What was the highest number of points scored when there was a draw of 2 and when the amount played was 18?",
+      "table": {
+        "header": [
+          "Place",
+          "Team",
+          "Played",
+          "Draw",
+          "Lost",
+          "Goals Scored",
+          "Goals Conceded",
+          "Points"
+        ],
+        "page_title": "Primera División de Fútbol Profesional Apertura 2007",
+        "types": [
+          "real",
+          "text",
+          "real",
+          "real",
+          "real",
+          "real",
+          "real",
+          "real"
+        ],
+        "page_id": 12821570,
+        "id": "2-12821570-2",
+        "section_title": "Apertura 2007 Standings",
+        "rows": [
+          [
+            "1.",
+            "C.D. Chalatenango",
+            "18",
+            "4",
+            "4",
+            "29",
+            "16",
+            "34"
+          ],
+          [
+            "2.",
+            "C.D. FAS",
+            "18",
+            "3",
+            "6",
+            "27",
+            "21",
+            "30"
+          ],
+          [
+            "3.",
+            "A.D. Isidro Metapán",
+            "18",
+            "5",
+            "5",
+            "31",
+            "24",
+            "29"
+          ],
+          [
+            "4.",
+            "C.D. Luis Ángel Firpo",
+            "18",
+            "6",
+            "5",
+            "23",
+            "17",
+            "27"
+          ],
+          [
+            "5.",
+            "C.D. Vista Hermosa",
+            "18",
+            "3",
+            "7",
+            "24",
+            "25",
+            "27"
+          ],
+          [
+            "6.",
+            "C.D. Águila",
+            "18",
+            "4",
+            "7",
+            "23",
+            "20",
+            "25"
+          ],
+          [
+            "7.",
+            "Alianza F.C.",
+            "18",
+            "6",
+            "6",
+            "26",
+            "28",
+            "24"
+          ],
+          [
+            "8.",
+            "Nejapa F.C.",
+            "18",
+            "7",
+            "6",
+            "31",
+            "34",
+            "22"
+          ],
+          [
+            "9.",
+            "San Salvador F.C.",
+            "16",
+            "6",
+            "9",
+            "20",
+            "35",
+            "15"
+          ],
+          [
+            "10.",
+            "Once Municipal",
+            "18",
+            "2",
+            "12",
+            "8",
+            "22",
+            "14"
+          ]
+        ],
+        "caption": "Apertura 2007 Standings",
+        "headers": [
+          "Place",
+          "Team",
+          "Played",
+          "Draw",
+          "Lost",
+          "Goals Scored",
+          "Goals Conceded",
+          "Points"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-12821570-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "2",
+              "value": "2",
+              "start": 70,
+              "end": 71
+            },
+            {
+              "surface": "18",
+              "value": "18",
+              "start": 103,
+              "end": 105
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c792af6b69b561224d24517717cb315d4c8385c90ffd909c74e82961b7671157",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4935,
+              "completion_tokens": 25,
+              "total_tokens": 4960,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2",
+              "value": "2",
+              "start": 70,
+              "end": 71,
+              "clause": "What was the highest number of points scored when there was a draw of 2"
+            },
+            {
+              "surface": "18",
+              "value": "18",
+              "start": 103,
+              "end": 105,
+              "clause": "and when the amount played was 18?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "2",
+              "value": "2",
+              "start": 70,
+              "end": 71,
+              "clause": "What was the highest number of points scored when there was a draw of 2"
+            },
+            {
+              "surface": "18",
+              "value": "18",
+              "start": 103,
+              "end": 105,
+              "clause": "and when the amount played was 18?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2",
+              "value": "2",
+              "start": 70,
+              "end": 71,
+              "clause": "What was the highest number of points scored when there was a draw of 2",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The phrase 'a draw of 2' directly refers to the Draw field, and a row has Draw = 2."
+            },
+            {
+              "surface": "18",
+              "value": "18",
+              "start": 103,
+              "end": 105,
+              "clause": "and when the amount played was 18?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase 'amount played was 18' directly refers to the Played field, which contains 18."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "61b00805a013a9a643966056fe006d57feb2e8ad6591c8b6a3403795a80f7df4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5001,
+              "completion_tokens": 71,
+              "total_tokens": 5072,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2",
+              "value": "2",
+              "start": 70,
+              "end": 71,
+              "clause": "What was the highest number of points scored when there was a draw of 2",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The phrase 'a draw of 2' directly refers to the Draw field, and a row has Draw = 2.",
+              "operator": "="
+            },
+            {
+              "surface": "18",
+              "value": "18",
+              "start": 103,
+              "end": 105,
+              "clause": "and when the amount played was 18?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase 'amount played was 18' directly refers to the Played field, which contains 18.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "7258eedf0a61267df4dcfddd6fbb70d8b9f5dd5f96b621042cdd40349f1e7b6a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5107,
+              "completion_tokens": 11,
+              "total_tokens": 5118,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2",
+              "value": "2",
+              "start": 70,
+              "end": 71,
+              "clause": "What was the highest number of points scored when there was a draw of 2",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The phrase 'a draw of 2' directly refers to the Draw field, and a row has Draw = 2.",
+              "operator": "="
+            },
+            {
+              "surface": "18",
+              "value": "18",
+              "start": 103,
+              "end": 105,
+              "clause": "and when the amount played was 18?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase 'amount played was 18' directly refers to the Played field, which contains 18.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "14353a68413ac64e35c02fc3a8c2f482bcb6461cf5431c045931bd6ffa523119",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5061,
+              "completion_tokens": 12,
+              "total_tokens": 5073,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2",
+              "value": "2",
+              "start": 70,
+              "end": 71,
+              "clause": "What was the highest number of points scored when there was a draw of 2",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The phrase 'a draw of 2' directly refers to the Draw field, and a row has Draw = 2.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "18",
+              "value": "18",
+              "start": 103,
+              "end": 105,
+              "clause": "and when the amount played was 18?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase 'amount played was 18' directly refers to the Played field, which contains 18.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2",
+              "value": 2,
+              "start": 70,
+              "end": 71,
+              "clause": "What was the highest number of points scored when there was a draw of 2",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The phrase 'a draw of 2' directly refers to the Draw field, and a row has Draw = 2.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "18",
+              "value": 18,
+              "start": 103,
+              "end": 105,
+              "clause": "and when the amount played was 18?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase 'amount played was 18' directly refers to the Played field, which contains 18.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "2",
+              "value": 2,
+              "start": 70,
+              "end": 71,
+              "clause": "What was the highest number of points scored when there was a draw of 2",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The phrase 'a draw of 2' directly refers to the Draw field, and a row has Draw = 2.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "18",
+              "value": 18,
+              "start": 103,
+              "end": 105,
+              "clause": "and when the amount played was 18?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase 'amount played was 18' directly refers to the Played field, which contains 18.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              0,
+              2
+            ],
+            [
+              2,
+              0,
+              18
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "2",
+          "value": "2",
+          "start": 70,
+          "end": 71
+        },
+        {
+          "surface": "18",
+          "value": "18",
+          "start": 103,
+          "end": 105
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "2",
+          "value": 2,
+          "start": 70,
+          "end": 71,
+          "clause": "What was the highest number of points scored when there was a draw of 2",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The phrase 'a draw of 2' directly refers to the Draw field, and a row has Draw = 2.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "18",
+          "value": 18,
+          "start": 103,
+          "end": 105,
+          "clause": "and when the amount played was 18?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The phrase 'amount played was 18' directly refers to the Played field, which contains 18.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          3,
+          0,
+          2
+        ],
+        [
+          2,
+          0,
+          18
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9016
+}

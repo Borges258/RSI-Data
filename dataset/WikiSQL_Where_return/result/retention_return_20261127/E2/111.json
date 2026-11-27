@@ -1,0 +1,467 @@
+{
+  "arm": "E2",
+  "position": 111,
+  "example_id": "test:3954:1-27946889-2",
+  "original_index": 3954,
+  "table_id": "1-27946889-2",
+  "question": "How many contestants are 1.80 mtr. in height? ",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        4,
+        0,
+        "1.80"
+      ]
+    ],
+    "agg": 3
+  },
+  "prediction_conds": [
+    [
+      4,
+      0,
+      "1.80"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        0,
+        "1.80"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "1.80 mtr.",
+        "value": "1.80",
+        "start": 25,
+        "end": 34,
+        "clause": "How many contestants are 1.80 mtr. in height?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The question explicitly asks for height in meters ('mtr.'), matching the 'Height (mtr.)' field and its 1.80 values.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "1.80 mtr.",
+        "value": "1.80",
+        "start": 25,
+        "end": 34
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "How many contestants are 1.80 mtr. in height? ",
+      "table": {
+        "header": [
+          "Represent Province",
+          "Contestant",
+          "Age",
+          "Height (ft.)",
+          "Height (mtr.)",
+          "Hometown"
+        ],
+        "page_title": "Miss Nederland 2010",
+        "types": [
+          "text",
+          "text",
+          "real",
+          "text",
+          "text",
+          "text"
+        ],
+        "id": "1-27946889-2",
+        "section_title": "Official Delegates",
+        "caption": "Official Delegates",
+        "rows": [
+          [
+            "Drenthe",
+            "Bojoura Verwey",
+            24,
+            "5'11\"",
+            "1.82",
+            "Amsterdam"
+          ],
+          [
+            "Flevoland",
+            "Madilon Bos",
+            21,
+            "5'8\"",
+            "1.74",
+            "Almere"
+          ],
+          [
+            "Friesland",
+            "Hester Winkel",
+            25,
+            "5'8\"",
+            "1.74",
+            "Amsterdam"
+          ],
+          [
+            "Gelderland",
+            "Gladys Fraenk",
+            22,
+            "6'0\"",
+            "1.83",
+            "Nijmegen"
+          ],
+          [
+            "Groningen",
+            "Jana Voyvodich",
+            20,
+            "5'11\"",
+            "1.81",
+            "Groningen"
+          ],
+          [
+            "Limburg",
+            "Sherien Sirvania",
+            22,
+            "5'10\"",
+            "1.79",
+            "Hoorn"
+          ],
+          [
+            "North Brabant",
+            "Amanda van de Meule",
+            24,
+            "5'7\"",
+            "1.70",
+            "Capelle"
+          ],
+          [
+            "North Holland",
+            "Desirée van den Berg",
+            23,
+            "5'9\"",
+            "1.76",
+            "Santpoort"
+          ],
+          [
+            "Overijssel",
+            "Petra Smits",
+            23,
+            "5'8\"",
+            "1.73",
+            "Borne"
+          ],
+          [
+            "South Holland",
+            "Sevtap Ergec",
+            22,
+            "5'11\"",
+            "1.80",
+            "Rotterdam"
+          ],
+          [
+            "Utrecht",
+            "Karin de Boer",
+            23,
+            "5'11\"",
+            "1.80",
+            "Woerden"
+          ]
+        ],
+        "name": "table_27946889_2",
+        "headers": [
+          "Represent Province",
+          "Contestant",
+          "Age",
+          "Height (ft.)",
+          "Height (mtr.)",
+          "Hometown"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-27946889-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "1.80 mtr.",
+              "value": "1.80",
+              "start": 25,
+              "end": 34
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e13b6a3577fcd17e9204a473ae532821eefb358a7a456a94cb015d4b6867f90a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4960,
+              "completion_tokens": 23,
+              "total_tokens": 4983,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1.80 mtr.",
+              "value": "1.80",
+              "start": 25,
+              "end": 34,
+              "clause": "How many contestants are 1.80 mtr. in height?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "1.80 mtr.",
+              "value": "1.80",
+              "start": 25,
+              "end": 34,
+              "clause": "How many contestants are 1.80 mtr. in height?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1.80 mtr.",
+              "value": "1.80",
+              "start": 25,
+              "end": 34,
+              "clause": "How many contestants are 1.80 mtr. in height?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly asks for height in meters ('mtr.'), matching the 'Height (mtr.)' field and its 1.80 values."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a2b084e0ecfdb7b8244db6065666cc9751d3d197497b5bc2302c52265f3e9020",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5001,
+              "completion_tokens": 52,
+              "total_tokens": 5053,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1.80 mtr.",
+              "value": "1.80",
+              "start": 25,
+              "end": 34,
+              "clause": "How many contestants are 1.80 mtr. in height?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly asks for height in meters ('mtr.'), matching the 'Height (mtr.)' field and its 1.80 values.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "3ef7790ce15603389b0d6fd4763e21d8de5c7589401156323ff9a24bebf049a9",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5077,
+              "completion_tokens": 9,
+              "total_tokens": 5086,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1.80 mtr.",
+              "value": "1.80",
+              "start": 25,
+              "end": 34,
+              "clause": "How many contestants are 1.80 mtr. in height?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly asks for height in meters ('mtr.'), matching the 'Height (mtr.)' field and its 1.80 values.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "9cf4778989144a430281a98fe4490e2d3703f2180e57dc3407c833fc03a12aa3",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5028,
+              "completion_tokens": 12,
+              "total_tokens": 5040,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1.80 mtr.",
+              "value": "1.80",
+              "start": 25,
+              "end": 34,
+              "clause": "How many contestants are 1.80 mtr. in height?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly asks for height in meters ('mtr.'), matching the 'Height (mtr.)' field and its 1.80 values.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1.80 mtr.",
+              "value": "1.80",
+              "start": 25,
+              "end": 34,
+              "clause": "How many contestants are 1.80 mtr. in height?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly asks for height in meters ('mtr.'), matching the 'Height (mtr.)' field and its 1.80 values.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "1.80 mtr.",
+              "value": "1.80",
+              "start": 25,
+              "end": 34,
+              "clause": "How many contestants are 1.80 mtr. in height?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly asks for height in meters ('mtr.'), matching the 'Height (mtr.)' field and its 1.80 values.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              0,
+              "1.80"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "1.80 mtr.",
+          "value": "1.80",
+          "start": 25,
+          "end": 34
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "1.80 mtr.",
+          "value": "1.80",
+          "start": 25,
+          "end": 34,
+          "clause": "How many contestants are 1.80 mtr. in height?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The question explicitly asks for height in meters ('mtr.'), matching the 'Height (mtr.)' field and its 1.80 values.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          4,
+          0,
+          "1.80"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8235
+}

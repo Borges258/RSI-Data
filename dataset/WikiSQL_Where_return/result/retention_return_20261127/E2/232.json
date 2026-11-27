@@ -1,0 +1,465 @@
+{
+  "arm": "E2",
+  "position": 232,
+  "example_id": "test:9197:2-16458528-1",
+  "original_index": 9197,
+  "table_id": "2-16458528-1",
+  "question": "what is the to par when the score is 69-70-72-72=283?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        3,
+        0,
+        "69-70-72-72=283"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      3,
+      0,
+      "69-70-72-72=283"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        0,
+        "69-70-72-72=283"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "69-70-72-72=283",
+        "value": "69-70-72-72=283",
+        "start": 37,
+        "end": 52,
+        "clause": "what is the to par when the score is 69-70-72-72=283?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The question explicitly says 'the score is 69-70-72-72=283', matching the Score header and row format.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "69-70-72-72=283",
+        "value": "69-70-72-72=283",
+        "start": 37,
+        "end": 52
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "what is the to par when the score is 69-70-72-72=283?",
+      "table": {
+        "header": [
+          "Place",
+          "Player",
+          "Country",
+          "Score",
+          "To par",
+          "Money ( $ )"
+        ],
+        "page_title": "1981 Masters Tournament",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "real"
+        ],
+        "page_id": 16458528,
+        "id": "2-16458528-1",
+        "section_title": "Final leaderboard",
+        "rows": [
+          [
+            "1",
+            "Tom Watson",
+            "United States",
+            "71-68-70-71=280",
+            "–8",
+            "60,000"
+          ],
+          [
+            "T2",
+            "Johnny Miller",
+            "United States",
+            "69-72-73-68=282",
+            "–6",
+            "30,500"
+          ],
+          [
+            "T2",
+            "Jack Nicklaus",
+            "United States",
+            "70-65-75-72=282",
+            "–6",
+            "30,500"
+          ],
+          [
+            "4",
+            "Greg Norman",
+            "Australia",
+            "69-70-72-72=283",
+            "–5",
+            "16,000"
+          ],
+          [
+            "T5",
+            "Tom Kite",
+            "United States",
+            "74-72-70-68=284",
+            "–4",
+            "12,667"
+          ],
+          [
+            "T5",
+            "Jerry Pate",
+            "United States",
+            "71-72-71-70=284",
+            "–4",
+            "12,667"
+          ],
+          [
+            "7",
+            "David Graham",
+            "Australia",
+            "70-70-74-71=285",
+            "–3",
+            "11,167"
+          ],
+          [
+            "T8",
+            "Ben Crenshaw",
+            "United States",
+            "71-72-70-73=286",
+            "–2",
+            "9,667"
+          ],
+          [
+            "T8",
+            "Raymond Floyd",
+            "United States",
+            "75-71-71-69=286",
+            "–2",
+            "9,667"
+          ],
+          [
+            "T8",
+            "John Mahaffey",
+            "United States",
+            "72-71-69-74=286",
+            "–2",
+            "9,667"
+          ]
+        ],
+        "caption": "Final leaderboard",
+        "headers": [
+          "Place",
+          "Player",
+          "Country",
+          "Score",
+          "To par",
+          "Money ( $ )"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-16458528-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "69-70-72-72=283",
+              "value": "69-70-72-72=283",
+              "start": 37,
+              "end": 52
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "08e5c2fd1820130c3342f6e7406a915d7ebd3dd5b740f7b2ae2b76349750e1d2",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 6442,
+              "completion_tokens": 127,
+              "total_tokens": 6569,
+              "prompt_tokens_details": {
+                "cached_tokens": 4480
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 82
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "69-70-72-72=283",
+              "value": "69-70-72-72=283",
+              "start": 37,
+              "end": 52,
+              "clause": "what is the to par when the score is 69-70-72-72=283?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "69-70-72-72=283",
+              "value": "69-70-72-72=283",
+              "start": 37,
+              "end": 52,
+              "clause": "what is the to par when the score is 69-70-72-72=283?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "69-70-72-72=283",
+              "value": "69-70-72-72=283",
+              "start": 37,
+              "end": 52,
+              "clause": "what is the to par when the score is 69-70-72-72=283?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says 'the score is 69-70-72-72=283', matching the Score header and row format."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a300ff2987f407f85669d83083ecdd1c289318f24965982b7ff1ac3655dc63f5",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5012,
+              "completion_tokens": 48,
+              "total_tokens": 5060,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "69-70-72-72=283",
+              "value": "69-70-72-72=283",
+              "start": 37,
+              "end": 52,
+              "clause": "what is the to par when the score is 69-70-72-72=283?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says 'the score is 69-70-72-72=283', matching the Score header and row format.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "1315f26c736e6b1db02b9a1915bb0ebb89e450f08b39dfd74c9563fd72fec973",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 6609,
+              "completion_tokens": 30,
+              "total_tokens": 6639,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 16
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "69-70-72-72=283",
+              "value": "69-70-72-72=283",
+              "start": 37,
+              "end": 52,
+              "clause": "what is the to par when the score is 69-70-72-72=283?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says 'the score is 69-70-72-72=283', matching the Score header and row format.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d33e4be646cfa7e39cef13065bfac07ea1c530b74f23adab3d63bcf6e6de67ae",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5035,
+              "completion_tokens": 18,
+              "total_tokens": 5053,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "69-70-72-72=283",
+              "value": "69-70-72-72=283",
+              "start": 37,
+              "end": 52,
+              "clause": "what is the to par when the score is 69-70-72-72=283?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says 'the score is 69-70-72-72=283', matching the Score header and row format.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "69-70-72-72=283",
+              "value": "69-70-72-72=283",
+              "start": 37,
+              "end": 52,
+              "clause": "what is the to par when the score is 69-70-72-72=283?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says 'the score is 69-70-72-72=283', matching the Score header and row format.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "69-70-72-72=283",
+              "value": "69-70-72-72=283",
+              "start": 37,
+              "end": 52,
+              "clause": "what is the to par when the score is 69-70-72-72=283?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says 'the score is 69-70-72-72=283', matching the Score header and row format.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              0,
+              "69-70-72-72=283"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "69-70-72-72=283",
+          "value": "69-70-72-72=283",
+          "start": 37,
+          "end": 52
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "69-70-72-72=283",
+          "value": "69-70-72-72=283",
+          "start": 37,
+          "end": 52,
+          "clause": "what is the to par when the score is 69-70-72-72=283?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The question explicitly says 'the score is 69-70-72-72=283', matching the Score header and row format.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          3,
+          0,
+          "69-70-72-72=283"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 32765
+}

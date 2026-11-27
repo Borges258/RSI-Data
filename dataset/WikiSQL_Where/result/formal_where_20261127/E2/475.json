@@ -1,0 +1,453 @@
+{
+  "arm": "E2",
+  "position": 475,
+  "example_id": "test:7085:2-15524351-17",
+  "original_index": 7085,
+  "table_id": "2-15524351-17",
+  "question": "What was the attendance when the opponent was virginia?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        1,
+        0,
+        "virginia"
+      ]
+    ],
+    "agg": 4
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "Virginia"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "Virginia"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "virginia",
+        "value": "Virginia",
+        "start": 46,
+        "end": 54,
+        "clause": "What was the attendance when the opponent was virginia?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The question explicitly identifies Virginia as the opponent, matching the Opponent header and row value.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "virginia",
+        "value": "Virginia",
+        "start": 46,
+        "end": 54
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What was the attendance when the opponent was virginia?",
+      "table": {
+        "header": [
+          "Date",
+          "Opponent",
+          "Location",
+          "Result",
+          "Attendance"
+        ],
+        "page_title": "Wake Forest Demon Deacons football, 1970–79",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "real"
+        ],
+        "page_id": 15524351,
+        "id": "2-15524351-17",
+        "section_title": "Schedule",
+        "rows": [
+          [
+            "09/09/1978*",
+            "Virginia",
+            "Groves Stadium • Winston-Salem, NC",
+            "W 14-0",
+            "21,500"
+          ],
+          [
+            "09/16/1978",
+            "Virginia Tech",
+            "Groves Stadium • Winston-Salem, NC",
+            "L 6-28",
+            "22,750"
+          ],
+          [
+            "09/23/1978",
+            "at #10 LSU",
+            "Tiger Stadium • Baton Rouge, LA",
+            "L 11-13",
+            "77,197"
+          ],
+          [
+            "09/30/1978*",
+            "North Carolina State",
+            "Groves Stadium • Winston-Salem, NC",
+            "L 10-34",
+            "29,700"
+          ],
+          [
+            "10/07/1978",
+            "at Purdue",
+            "Ross-Ade Stadium • West Lafayette, IN",
+            "L 7-14",
+            "54,362"
+          ],
+          [
+            "10/14/1978*",
+            "North Carolina",
+            "Groves Stadium • Winston-Salem, NC",
+            "L 29-34",
+            "31,500"
+          ],
+          [
+            "10/21/1978*",
+            "at #6 Maryland",
+            "Byrd Stadium • College Park, MD",
+            "L 0-39",
+            "43,119"
+          ],
+          [
+            "10/28/1978",
+            "at Auburn",
+            "Jordan-Hare Stadium • Auburn, AL",
+            "L 7-21",
+            "52,210"
+          ],
+          [
+            "11/04/1978*",
+            "#16 Clemson",
+            "Groves Stadium • Winston-Salem, NC",
+            "L 6-51",
+            "30,400"
+          ],
+          [
+            "11/11/1978*",
+            "at Duke",
+            "Wallace Wade Stadium • Durham, NC",
+            "L 0-3",
+            "19,825"
+          ],
+          [
+            "11/18/1978",
+            "at South Carolina",
+            "Williams-Brice Stadium • Columbia, SC",
+            "L 14-37",
+            "42,762"
+          ]
+        ],
+        "caption": "Schedule",
+        "headers": [
+          "Date",
+          "Opponent",
+          "Location",
+          "Result",
+          "Attendance"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-15524351-17",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "virginia",
+              "value": "Virginia",
+              "start": 46,
+              "end": 54
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "2468beb60b07f8250bae2d95fca9bc7c8730a2d893d97cc5248a88f1c5e43027",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5012,
+              "completion_tokens": 19,
+              "total_tokens": 5031,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "virginia",
+              "value": "Virginia",
+              "start": 46,
+              "end": 54,
+              "clause": "What was the attendance when the opponent was virginia?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "virginia",
+              "value": "Virginia",
+              "start": 46,
+              "end": 54,
+              "clause": "What was the attendance when the opponent was virginia?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "virginia",
+              "value": "Virginia",
+              "start": 46,
+              "end": 54,
+              "clause": "What was the attendance when the opponent was virginia?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly identifies Virginia as the opponent, matching the Opponent header and row value."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "fd3be3ac5041eb6377cc22327e63d95fa2d9ea51cc48fb18bd6b2d47dc4779cb",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5046,
+              "completion_tokens": 39,
+              "total_tokens": 5085,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "virginia",
+              "value": "Virginia",
+              "start": 46,
+              "end": 54,
+              "clause": "What was the attendance when the opponent was virginia?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly identifies Virginia as the opponent, matching the Opponent header and row value.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "218dbfc4e6e538c3d67e05be461b1d579d2cb2f9ac2e9c01650b6b7bd46adb48",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5109,
+              "completion_tokens": 9,
+              "total_tokens": 5118,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "virginia",
+              "value": "Virginia",
+              "start": 46,
+              "end": 54,
+              "clause": "What was the attendance when the opponent was virginia?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly identifies Virginia as the opponent, matching the Opponent header and row value.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "bb24b705678cecc3277b7a711fe4ae9d801c39ed28f0036d731a2d2e5f1f2d91",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5060,
+              "completion_tokens": 10,
+              "total_tokens": 5070,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "virginia",
+              "value": "Virginia",
+              "start": 46,
+              "end": 54,
+              "clause": "What was the attendance when the opponent was virginia?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly identifies Virginia as the opponent, matching the Opponent header and row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "virginia",
+              "value": "Virginia",
+              "start": 46,
+              "end": 54,
+              "clause": "What was the attendance when the opponent was virginia?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly identifies Virginia as the opponent, matching the Opponent header and row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "virginia",
+              "value": "Virginia",
+              "start": 46,
+              "end": 54,
+              "clause": "What was the attendance when the opponent was virginia?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly identifies Virginia as the opponent, matching the Opponent header and row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              "Virginia"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "virginia",
+          "value": "Virginia",
+          "start": 46,
+          "end": 54
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "virginia",
+          "value": "Virginia",
+          "start": 46,
+          "end": 54,
+          "clause": "What was the attendance when the opponent was virginia?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The question explicitly identifies Virginia as the opponent, matching the Opponent header and row value.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          1,
+          0,
+          "Virginia"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7953
+}

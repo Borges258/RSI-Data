@@ -1,0 +1,451 @@
+{
+  "arm": "E2",
+  "position": 83,
+  "example_id": "test:2930:1-2374338-2",
+  "original_index": 2930,
+  "table_id": "1-2374338-2",
+  "question": "What is every value for Serbs if value for Hungarians is 9.26%?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        5,
+        0,
+        "9.26%"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      5,
+      0,
+      "9.26%"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        5,
+        0,
+        "9.26%"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "9.26%",
+        "value": "9.26%",
+        "start": 57,
+        "end": 62,
+        "clause": "What is every value for Serbs if value for Hungarians is 9.26%?",
+        "columnIndex": 5,
+        "columnCandidates": [
+          5
+        ],
+        "columnMatchReason": "The question explicitly identifies 9.26% as the value for Hungarians, matching the Hungarians header and row evidence.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "9.26%",
+        "value": "9.26%",
+        "start": 57,
+        "end": 62
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is every value for Serbs if value for Hungarians is 9.26%?",
+      "table": {
+        "header": [
+          "Year",
+          "Population",
+          "Serbs",
+          "Germans",
+          "Romanians",
+          "Hungarians",
+          "Croats",
+          "Roma",
+          "Slovaks",
+          "Rest"
+        ],
+        "page_title": "Kovin",
+        "types": [
+          "real",
+          "real",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "id": "1-2374338-2",
+        "section_title": "Major ethnic groups in the municipality",
+        "caption": "Major ethnic groups in the municipality",
+        "rows": [
+          [
+            1910,
+            34034,
+            "45.52%",
+            "19.30%",
+            "16.65%",
+            "15.64%",
+            "0.09%",
+            "1.28%",
+            "0.12%",
+            "1.70%"
+          ],
+          [
+            1931,
+            35600,
+            "50.66%",
+            "20.68%",
+            "n/d",
+            "13.0%",
+            "n/d",
+            "n/d",
+            "n/d",
+            "15.64%"
+          ],
+          [
+            1961,
+            39994,
+            "73.1%",
+            "n/d",
+            "17.6%",
+            "13.59%",
+            "n/d",
+            "0.04%",
+            "0.14%",
+            "5.27%"
+          ],
+          [
+            1991,
+            38263,
+            "73.53%",
+            "0.20%",
+            "4.54%",
+            "10.28%",
+            "0.39%",
+            "2.47%",
+            "0.05%",
+            "8.54%"
+          ],
+          [
+            2002,
+            36802,
+            "76.75%",
+            "0.13%",
+            "3.7%",
+            "9.26%",
+            "0.3%",
+            "3.1%",
+            "0.11%",
+            "7.44%"
+          ]
+        ],
+        "name": "table_2374338_2",
+        "headers": [
+          "Year",
+          "Population",
+          "Serbs",
+          "Germans",
+          "Romanians",
+          "Hungarians",
+          "Croats",
+          "Roma",
+          "Slovaks",
+          "Rest"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-2374338-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "9.26%",
+              "value": "9.26%",
+              "start": 57,
+              "end": 62
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a06f784a66f61f0d8bc584951d74a6236b4c5c16395721c342a940baab807c16",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4946,
+              "completion_tokens": 23,
+              "total_tokens": 4969,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "9.26%",
+              "value": "9.26%",
+              "start": 57,
+              "end": 62,
+              "clause": "What is every value for Serbs if value for Hungarians is 9.26%?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "9.26%",
+              "value": "9.26%",
+              "start": 57,
+              "end": 62,
+              "clause": "What is every value for Serbs if value for Hungarians is 9.26%?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "9.26%",
+              "value": "9.26%",
+              "start": 57,
+              "end": 62,
+              "clause": "What is every value for Serbs if value for Hungarians is 9.26%?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly identifies 9.26% as the value for Hungarians, matching the Hungarians header and row evidence."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c8167eff8a5218be539d336f4c65183cf26a0b5ae8c206927d6315f4d41804ec",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4992,
+              "completion_tokens": 46,
+              "total_tokens": 5038,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "9.26%",
+              "value": "9.26%",
+              "start": 57,
+              "end": 62,
+              "clause": "What is every value for Serbs if value for Hungarians is 9.26%?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly identifies 9.26% as the value for Hungarians, matching the Hungarians header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0e43bc2cdee5cf2a9737efed8954e40f7c03956a1fc8a876e7c3e6383ba0a3a4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5062,
+              "completion_tokens": 9,
+              "total_tokens": 5071,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "9.26%",
+              "value": "9.26%",
+              "start": 57,
+              "end": 62,
+              "clause": "What is every value for Serbs if value for Hungarians is 9.26%?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly identifies 9.26% as the value for Hungarians, matching the Hungarians header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b2f5ebebd8d288c06d25fc1399c51f3b8f245d3cc9d55164ceaeff4390f08afc",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5013,
+              "completion_tokens": 13,
+              "total_tokens": 5026,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "9.26%",
+              "value": "9.26%",
+              "start": 57,
+              "end": 62,
+              "clause": "What is every value for Serbs if value for Hungarians is 9.26%?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly identifies 9.26% as the value for Hungarians, matching the Hungarians header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "9.26%",
+              "value": "9.26%",
+              "start": 57,
+              "end": 62,
+              "clause": "What is every value for Serbs if value for Hungarians is 9.26%?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly identifies 9.26% as the value for Hungarians, matching the Hungarians header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "9.26%",
+              "value": "9.26%",
+              "start": 57,
+              "end": 62,
+              "clause": "What is every value for Serbs if value for Hungarians is 9.26%?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly identifies 9.26% as the value for Hungarians, matching the Hungarians header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              5,
+              0,
+              "9.26%"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "9.26%",
+          "value": "9.26%",
+          "start": 57,
+          "end": 62
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "9.26%",
+          "value": "9.26%",
+          "start": 57,
+          "end": 62,
+          "clause": "What is every value for Serbs if value for Hungarians is 9.26%?",
+          "columnIndex": 5,
+          "columnCandidates": [
+            5
+          ],
+          "columnMatchReason": "The question explicitly identifies 9.26% as the value for Hungarians, matching the Hungarians header and row evidence.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          5,
+          0,
+          "9.26%"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9203
+}

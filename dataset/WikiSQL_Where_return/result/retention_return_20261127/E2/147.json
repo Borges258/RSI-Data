@@ -1,0 +1,581 @@
+{
+  "arm": "E2",
+  "position": 147,
+  "example_id": "test:5289:2-15266104-5",
+  "original_index": 5289,
+  "table_id": "2-15266104-5",
+  "question": "What was the score at Bernardo O'Higgins Cup on May 7, 1961?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        4,
+        0,
+        "bernardo o'higgins cup"
+      ],
+      [
+        0,
+        0,
+        "may 7, 1961"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      4,
+      0,
+      "Bernardo O'Higgins Cup"
+    ],
+    [
+      0,
+      0,
+      "May 7, 1961"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        0,
+        "Bernardo O'Higgins Cup"
+      ],
+      [
+        0,
+        0,
+        "May 7, 1961"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Bernardo O'Higgins Cup",
+        "value": "Bernardo O'Higgins Cup",
+        "start": 22,
+        "end": 44,
+        "clause": "What was the score at Bernardo O'Higgins Cup on May 7",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "Competition named by 'at' and confirmed by Competition cells.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "May 7, 1961",
+        "value": "May 7, 1961",
+        "start": 48,
+        "end": 59,
+        "clause": "What was the score at Bernardo O'Higgins Cup on May 7, 1961?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "Date named by 'on' and confirmed by Date cells.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Bernardo O'Higgins Cup",
+        "value": "Bernardo O'Higgins Cup",
+        "start": 22,
+        "end": 44
+      },
+      {
+        "surface": "May 7, 1961",
+        "value": "May 7, 1961",
+        "start": 48,
+        "end": 59
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What was the score at Bernardo O'Higgins Cup on May 7, 1961?",
+      "table": {
+        "header": [
+          "Date",
+          "Result",
+          "Score",
+          "Brazil scorers",
+          "Competition"
+        ],
+        "page_title": "1961 in Brazilian football",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 15266104,
+        "id": "2-15266104-5",
+        "section_title": "Brazil national team",
+        "rows": [
+          [
+            "April 30, 1961",
+            "W",
+            "2-0",
+            "Coutinho , Pepe",
+            "Taça Oswaldo Cruz"
+          ],
+          [
+            "May 3, 1961",
+            "W",
+            "3-2",
+            "Coutinho (2), Quarentinha",
+            "Taça Oswaldo Cruz"
+          ],
+          [
+            "May 7, 1961",
+            "W",
+            "2-1",
+            "Garrincha , Didi",
+            "Bernardo O'Higgins Cup"
+          ],
+          [
+            "May 11, 1961",
+            "W",
+            "1-0",
+            "Gérson",
+            "Bernardo O'Higgins Cup"
+          ],
+          [
+            "June 29, 1961",
+            "W",
+            "3-2",
+            "Joel , Dida , Henrique Frade",
+            "International Friendly"
+          ]
+        ],
+        "caption": "Brazil national team",
+        "headers": [
+          "Date",
+          "Result",
+          "Score",
+          "Brazil scorers",
+          "Competition"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-15266104-5",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "Bernardo O'Higgins Cup",
+              "value": "Bernardo O'Higgins Cup",
+              "start": 22,
+              "end": 44
+            },
+            {
+              "surface": "May 7, 1961",
+              "value": "May 7, 1961",
+              "start": 48,
+              "end": 59
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "4b0249ba650e19a9f6cb553b978d9720d56a41b18f05474c1f46ea76adbed34c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4819,
+              "completion_tokens": 47,
+              "total_tokens": 4866,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Bernardo O'Higgins Cup",
+              "value": "Bernardo O'Higgins Cup",
+              "start": 22,
+              "end": 44,
+              "clause": "What was the score at Bernardo O'Higgins Cup on May 7"
+            },
+            {
+              "surface": "May 7, 1961",
+              "value": "May 7, 1961",
+              "start": 48,
+              "end": 59,
+              "clause": "What was the score at Bernardo O'Higgins Cup on May 7, 1961?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Bernardo O'Higgins Cup",
+              "value": "Bernardo O'Higgins Cup",
+              "start": 22,
+              "end": 44,
+              "clause": "What was the score at Bernardo O'Higgins Cup on May 7"
+            },
+            {
+              "surface": "May 7, 1961",
+              "value": "May 7, 1961",
+              "start": 48,
+              "end": 59,
+              "clause": "What was the score at Bernardo O'Higgins Cup on May 7, 1961?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Bernardo O'Higgins Cup",
+              "value": "Bernardo O'Higgins Cup",
+              "start": 22,
+              "end": 44,
+              "clause": "What was the score at Bernardo O'Higgins Cup on May 7",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Competition named by 'at' and confirmed by Competition cells."
+            },
+            {
+              "surface": "May 7, 1961",
+              "value": "May 7, 1961",
+              "start": 48,
+              "end": 59,
+              "clause": "What was the score at Bernardo O'Higgins Cup on May 7, 1961?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Date named by 'on' and confirmed by Date cells."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "345cf09579b662fc7c1a131d3eca06bd2780d61e119511f8d40454a427ec772a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4915,
+              "completion_tokens": 49,
+              "total_tokens": 4964,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Bernardo O'Higgins Cup",
+              "value": "Bernardo O'Higgins Cup",
+              "start": 22,
+              "end": 44,
+              "clause": "What was the score at Bernardo O'Higgins Cup on May 7",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Competition named by 'at' and confirmed by Competition cells.",
+              "operator": "="
+            },
+            {
+              "surface": "May 7, 1961",
+              "value": "May 7, 1961",
+              "start": 48,
+              "end": 59,
+              "clause": "What was the score at Bernardo O'Higgins Cup on May 7, 1961?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Date named by 'on' and confirmed by Date cells.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "1317c3969853f5b5caa34d144ab693f46944d47bfe0df5d312e77d05d983cb4a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4999,
+              "completion_tokens": 11,
+              "total_tokens": 5010,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Bernardo O'Higgins Cup",
+              "value": "Bernardo O'Higgins Cup",
+              "start": 22,
+              "end": 44,
+              "clause": "What was the score at Bernardo O'Higgins Cup on May 7",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Competition named by 'at' and confirmed by Competition cells.",
+              "operator": "="
+            },
+            {
+              "surface": "May 7, 1961",
+              "value": "May 7, 1961",
+              "start": 48,
+              "end": 59,
+              "clause": "What was the score at Bernardo O'Higgins Cup on May 7, 1961?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Date named by 'on' and confirmed by Date cells.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d3f16f59f7a8fb4e00a5b153c1c39942ddc41b26f1dc477f9a678bb075cf1cf1",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4953,
+              "completion_tokens": 23,
+              "total_tokens": 4976,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Bernardo O'Higgins Cup",
+              "value": "Bernardo O'Higgins Cup",
+              "start": 22,
+              "end": 44,
+              "clause": "What was the score at Bernardo O'Higgins Cup on May 7",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Competition named by 'at' and confirmed by Competition cells.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "May 7, 1961",
+              "value": "May 7, 1961",
+              "start": 48,
+              "end": 59,
+              "clause": "What was the score at Bernardo O'Higgins Cup on May 7, 1961?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Date named by 'on' and confirmed by Date cells.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Bernardo O'Higgins Cup",
+              "value": "Bernardo O'Higgins Cup",
+              "start": 22,
+              "end": 44,
+              "clause": "What was the score at Bernardo O'Higgins Cup on May 7",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Competition named by 'at' and confirmed by Competition cells.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "May 7, 1961",
+              "value": "May 7, 1961",
+              "start": 48,
+              "end": 59,
+              "clause": "What was the score at Bernardo O'Higgins Cup on May 7, 1961?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Date named by 'on' and confirmed by Date cells.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Bernardo O'Higgins Cup",
+              "value": "Bernardo O'Higgins Cup",
+              "start": 22,
+              "end": 44,
+              "clause": "What was the score at Bernardo O'Higgins Cup on May 7",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Competition named by 'at' and confirmed by Competition cells.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "May 7, 1961",
+              "value": "May 7, 1961",
+              "start": 48,
+              "end": 59,
+              "clause": "What was the score at Bernardo O'Higgins Cup on May 7, 1961?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Date named by 'on' and confirmed by Date cells.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              0,
+              "Bernardo O'Higgins Cup"
+            ],
+            [
+              0,
+              0,
+              "May 7, 1961"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Bernardo O'Higgins Cup",
+          "value": "Bernardo O'Higgins Cup",
+          "start": 22,
+          "end": 44
+        },
+        {
+          "surface": "May 7, 1961",
+          "value": "May 7, 1961",
+          "start": 48,
+          "end": 59
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Bernardo O'Higgins Cup",
+          "value": "Bernardo O'Higgins Cup",
+          "start": 22,
+          "end": 44,
+          "clause": "What was the score at Bernardo O'Higgins Cup on May 7",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "Competition named by 'at' and confirmed by Competition cells.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "May 7, 1961",
+          "value": "May 7, 1961",
+          "start": 48,
+          "end": 59,
+          "clause": "What was the score at Bernardo O'Higgins Cup on May 7, 1961?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "Date named by 'on' and confirmed by Date cells.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          4,
+          0,
+          "Bernardo O'Higgins Cup"
+        ],
+        [
+          0,
+          0,
+          "May 7, 1961"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8485
+}

@@ -1,0 +1,651 @@
+{
+  "arm": "E2",
+  "position": 459,
+  "example_id": "test:15436:2-1251878-1",
+  "original_index": 15436,
+  "table_id": "2-1251878-1",
+  "question": "What is the max fps of a camera with mpix larger than 8.4 and frame size of 4k 16:9?",
+  "gold_sql": {
+    "sel": 5,
+    "conds": [
+      [
+        3,
+        1,
+        8.4
+      ],
+      [
+        0,
+        0,
+        "4k 16:9"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      3,
+      1,
+      8.4
+    ],
+    [
+      0,
+      0,
+      "4K 16:9"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        1,
+        8.4
+      ],
+      [
+        0,
+        0,
+        "4K 16:9"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "8.4",
+        "value": 8.4,
+        "start": 54,
+        "end": 57,
+        "clause": "What is the max fps of a camera with mpix larger than 8.4",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The clause explicitly names mpix, matching the Mpix header; 8.4 is a value in that column.",
+        "operator": ">",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "4k 16:9",
+        "value": "4K 16:9",
+        "start": 76,
+        "end": 83,
+        "clause": "and frame size of 4k 16:9?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "The clause explicitly names frame size, matching the Frame size header; 4K 16:9 is a value in that column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "8.4",
+        "value": "8.4",
+        "start": 54,
+        "end": 57
+      },
+      {
+        "surface": "4k 16:9",
+        "value": "4k 16:9",
+        "start": 76,
+        "end": 83
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the max fps of a camera with mpix larger than 8.4 and frame size of 4k 16:9?",
+      "table": {
+        "header": [
+          "Frame size",
+          "Width",
+          "Height",
+          "Mpix",
+          "Aspect Ratio",
+          "max. fps",
+          "lowest possible REDCODE at 24 fps"
+        ],
+        "page_title": "Red Digital Cinema Camera Company",
+        "types": [
+          "text",
+          "real",
+          "real",
+          "real",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 1251878,
+        "id": "2-1251878-1",
+        "section_title": "NAB 2007",
+        "rows": [
+          [
+            "4.5K",
+            "4480",
+            "1920",
+            "8.6",
+            "2.33:1",
+            "30",
+            "8:1"
+          ],
+          [
+            "4K 16:9",
+            "4096",
+            "2304",
+            "9.4",
+            "1.78:1",
+            "30",
+            "8:1"
+          ],
+          [
+            "4K",
+            "4096",
+            "2048",
+            "8.4",
+            "2:1",
+            "30",
+            "8:1"
+          ],
+          [
+            "4K UHDTV",
+            "3840",
+            "2160",
+            "8.3",
+            "1.78:1",
+            "30",
+            "8:1"
+          ],
+          [
+            "4K ANA",
+            "2816",
+            "2304",
+            "6.5",
+            "2.44:1",
+            "30",
+            "8:1"
+          ],
+          [
+            "3K",
+            "3072",
+            "1728",
+            "5.3",
+            "1.78:1",
+            "60",
+            "8:1"
+          ],
+          [
+            "3K",
+            "3072",
+            "1536",
+            "4.7",
+            "2:1",
+            "60",
+            "8:1"
+          ],
+          [
+            "3K ANA",
+            "2112",
+            "1728",
+            "3.8",
+            "2.44:1",
+            "60",
+            "8:1"
+          ],
+          [
+            "2K",
+            "2048",
+            "1152",
+            "2.4",
+            "1.78:1",
+            "120",
+            "8:1"
+          ],
+          [
+            "2K",
+            "2048",
+            "1024",
+            "2.1",
+            "2:1",
+            "120",
+            "8:1"
+          ],
+          [
+            "2K ANA",
+            "1408",
+            "1152",
+            "1.6",
+            "2.44:1",
+            "120",
+            "8:1"
+          ]
+        ],
+        "caption": "NAB 2007",
+        "headers": [
+          "Frame size",
+          "Width",
+          "Height",
+          "Mpix",
+          "Aspect Ratio",
+          "max. fps",
+          "lowest possible REDCODE at 24 fps"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-1251878-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "8.4",
+              "value": "8.4",
+              "start": 54,
+              "end": 57
+            },
+            {
+              "surface": "4k 16:9",
+              "value": "4k 16:9",
+              "start": 76,
+              "end": 83
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b908485c68f39f31bb8f2ec37f79c2ae6c3ef1d9724fad4f0d9683616697e905",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5012,
+              "completion_tokens": 39,
+              "total_tokens": 5051,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "8.4",
+              "value": "8.4",
+              "start": 54,
+              "end": 57,
+              "clause": "What is the max fps of a camera with mpix larger than 8.4"
+            },
+            {
+              "surface": "4k 16:9",
+              "value": "4k 16:9",
+              "start": 76,
+              "end": 83,
+              "clause": "and frame size of 4k 16:9?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "8.4",
+              "value": "8.4",
+              "start": 54,
+              "end": 57,
+              "clause": "What is the max fps of a camera with mpix larger than 8.4"
+            },
+            {
+              "surface": "4k 16:9",
+              "value": "4k 16:9",
+              "start": 76,
+              "end": 83,
+              "clause": "and frame size of 4k 16:9?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "8.4",
+              "value": "8.4",
+              "start": 54,
+              "end": 57,
+              "clause": "What is the max fps of a camera with mpix larger than 8.4",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly names mpix, matching the Mpix header; 8.4 is a value in that column."
+            },
+            {
+              "surface": "4k 16:9",
+              "value": "4k 16:9",
+              "start": 76,
+              "end": 83,
+              "clause": "and frame size of 4k 16:9?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The clause explicitly names frame size, matching the Frame size header; 4K 16:9 is a value in that column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "3fa1749cee0faeff203fe7e78242737378c440c507244433d7002711f3b09a8b",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5096,
+              "completion_tokens": 76,
+              "total_tokens": 5172,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "8.4",
+              "value": "8.4",
+              "start": 54,
+              "end": 57,
+              "clause": "What is the max fps of a camera with mpix larger than 8.4",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly names mpix, matching the Mpix header; 8.4 is a value in that column.",
+              "operator": ">"
+            },
+            {
+              "surface": "4k 16:9",
+              "value": "4k 16:9",
+              "start": 76,
+              "end": 83,
+              "clause": "and frame size of 4k 16:9?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The clause explicitly names frame size, matching the Frame size header; 4K 16:9 is a value in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "bc11eecc4c4062ac09847b1d6bfbcc815bf0960714434152b634a2d527f342f3",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5207,
+              "completion_tokens": 11,
+              "total_tokens": 5218,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "8.4",
+              "value": 8.4,
+              "start": 54,
+              "end": 57,
+              "clause": "What is the max fps of a camera with mpix larger than 8.4",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly names mpix, matching the Mpix header; 8.4 is a value in that column.",
+              "operator": ">"
+            },
+            {
+              "surface": "4k 16:9",
+              "value": "4K 16:9",
+              "start": 76,
+              "end": 83,
+              "clause": "and frame size of 4k 16:9?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The clause explicitly names frame size, matching the Frame size header; 4K 16:9 is a value in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "1696358e871653a4d6741cc851b60b0787aee63c3fb1039f3f01d798b0228a3d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5161,
+              "completion_tokens": 19,
+              "total_tokens": 5180,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "8.4",
+              "value": "8.4",
+              "start": 54,
+              "end": 57,
+              "clause": "What is the max fps of a camera with mpix larger than 8.4",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly names mpix, matching the Mpix header; 8.4 is a value in that column.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "4k 16:9",
+              "value": "4K 16:9",
+              "start": 76,
+              "end": 83,
+              "clause": "and frame size of 4k 16:9?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The clause explicitly names frame size, matching the Frame size header; 4K 16:9 is a value in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "8.4",
+              "value": 8.4,
+              "start": 54,
+              "end": 57,
+              "clause": "What is the max fps of a camera with mpix larger than 8.4",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly names mpix, matching the Mpix header; 8.4 is a value in that column.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "4k 16:9",
+              "value": "4K 16:9",
+              "start": 76,
+              "end": 83,
+              "clause": "and frame size of 4k 16:9?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The clause explicitly names frame size, matching the Frame size header; 4K 16:9 is a value in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "8.4",
+              "value": 8.4,
+              "start": 54,
+              "end": 57,
+              "clause": "What is the max fps of a camera with mpix larger than 8.4",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly names mpix, matching the Mpix header; 8.4 is a value in that column.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "4k 16:9",
+              "value": "4K 16:9",
+              "start": 76,
+              "end": 83,
+              "clause": "and frame size of 4k 16:9?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The clause explicitly names frame size, matching the Frame size header; 4K 16:9 is a value in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              1,
+              8.4
+            ],
+            [
+              0,
+              0,
+              "4K 16:9"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "8.4",
+          "value": "8.4",
+          "start": 54,
+          "end": 57
+        },
+        {
+          "surface": "4k 16:9",
+          "value": "4k 16:9",
+          "start": 76,
+          "end": 83
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "8.4",
+          "value": 8.4,
+          "start": 54,
+          "end": 57,
+          "clause": "What is the max fps of a camera with mpix larger than 8.4",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The clause explicitly names mpix, matching the Mpix header; 8.4 is a value in that column.",
+          "operator": ">",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "4k 16:9",
+          "value": "4K 16:9",
+          "start": 76,
+          "end": 83,
+          "clause": "and frame size of 4k 16:9?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "The clause explicitly names frame size, matching the Frame size header; 4K 16:9 is a value in that column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          3,
+          1,
+          8.4
+        ],
+        [
+          0,
+          0,
+          "4K 16:9"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9125
+}

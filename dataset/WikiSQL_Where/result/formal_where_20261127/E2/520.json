@@ -1,0 +1,644 @@
+{
+  "arm": "E2",
+  "position": 520,
+  "example_id": "test:12947:2-17747473-1",
+  "original_index": 12947,
+  "table_id": "2-17747473-1",
+  "question": "How many foundeds have stade tunisien as the club, with a capacity greater than 18,000?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        0,
+        0,
+        "stade tunisien"
+      ],
+      [
+        4,
+        1,
+        "18,000"
+      ]
+    ],
+    "agg": 4
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "Stade Tunisien"
+    ],
+    [
+      4,
+      1,
+      "18,000"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "Stade Tunisien"
+      ],
+      [
+        4,
+        1,
+        "18,000"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "stade tunisien",
+        "value": "Stade Tunisien",
+        "start": 23,
+        "end": 37,
+        "clause": "How many foundeds have stade tunisien as the club",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "The clause explicitly says 'as the club', matching the Club header; Stade Tunisien appears in that field.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "greater than 18,000",
+        "value": "18,000",
+        "start": 67,
+        "end": 86,
+        "clause": "with a capacity greater than 18,000?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The clause explicitly says 'capacity greater than', matching the numeric Capacity header.",
+        "operator": ">",
+        "grounded": true,
+        "groundingStatus": "NORMALIZED_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "stade tunisien",
+        "value": "Stade Tunisien",
+        "start": 23,
+        "end": 37
+      },
+      {
+        "surface": "greater than 18,000",
+        "value": "18000",
+        "start": 67,
+        "end": 86
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "How many foundeds have stade tunisien as the club, with a capacity greater than 18,000?",
+      "table": {
+        "header": [
+          "Club",
+          "City",
+          "Founded",
+          "Stadium",
+          "Capacity"
+        ],
+        "page_title": "2007–08 Tunisian Ligue Professionnelle 1",
+        "types": [
+          "text",
+          "text",
+          "real",
+          "text",
+          "real"
+        ],
+        "page_id": 17747473,
+        "id": "2-17747473-1",
+        "section_title": "Club directory and team locations",
+        "rows": [
+          [
+            "Étoile Sportive du Sahel",
+            "Sousse",
+            "1925",
+            "Stade Olympique de Sousse",
+            "25,000"
+          ],
+          [
+            "Club Africain",
+            "Tunis",
+            "1920",
+            "Stade Olympique d'El Menzah-Tunis",
+            "45,000"
+          ],
+          [
+            "Espérance Sportive de Tunis",
+            "Tunis",
+            "1919",
+            "Stade Olympique d'El Menzah-Tunis",
+            "45,000"
+          ],
+          [
+            "Stade Tunisien",
+            "Tunis",
+            "1948",
+            "Stade Chadly Zouiten",
+            "18,000"
+          ],
+          [
+            "Avenir Sportif de La Marsa",
+            "La Marsa",
+            "1939",
+            "Stade Abdelaziz Chtioui",
+            "6,000"
+          ],
+          [
+            "Union Sportive Monastir",
+            "Monastir",
+            "1923",
+            "Stade Mustapha Ben Jannet",
+            "25,000"
+          ],
+          [
+            "Club Sportif Sfaxien",
+            "Sfax",
+            "1928",
+            "Stade Taïeb Mhiri",
+            "18,000"
+          ],
+          [
+            "El-Gawafel Sportives de Gafsa",
+            "Gafsa",
+            "1967",
+            "Stade du 7 Novembre",
+            "12,000"
+          ],
+          [
+            "Olympique de Béja",
+            "Béja",
+            "1929",
+            "Stade Olympique",
+            "8,000"
+          ],
+          [
+            "Club Sportif de Hammam-Lif",
+            "Hammam-Lif",
+            "1944",
+            "Stade Bou Kornine",
+            "8,000"
+          ],
+          [
+            "Espérance Sportive de Zarzis",
+            "Zarzis",
+            "1934",
+            "Stade Jlidi",
+            "7,000"
+          ],
+          [
+            "Bizerte Athletic F.C.",
+            "Bizerte",
+            "1928",
+            "Stade du 15 Octobre",
+            "16,000"
+          ],
+          [
+            "Jendouba Sport",
+            "Jendouba",
+            "1922",
+            "Stade Municipal de Jendouba",
+            "4,000"
+          ],
+          [
+            "Stade Gabésien",
+            "Gabès",
+            "1957",
+            "Stade du Zrig",
+            "15,000"
+          ]
+        ],
+        "caption": "Club directory and team locations",
+        "headers": [
+          "Club",
+          "City",
+          "Founded",
+          "Stadium",
+          "Capacity"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-17747473-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "stade tunisien",
+              "value": "Stade Tunisien",
+              "start": 23,
+              "end": 37
+            },
+            {
+              "surface": "greater than 18,000",
+              "value": "18000",
+              "start": 67,
+              "end": 86
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "be5868f6bc70989eeab8ae16fa342c80e1734f433d4fab82c79becf5d8c5d144",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5066,
+              "completion_tokens": 37,
+              "total_tokens": 5103,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "stade tunisien",
+              "value": "Stade Tunisien",
+              "start": 23,
+              "end": 37,
+              "clause": "How many foundeds have stade tunisien as the club"
+            },
+            {
+              "surface": "greater than 18,000",
+              "value": "18000",
+              "start": 67,
+              "end": 86,
+              "clause": "with a capacity greater than 18,000?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "stade tunisien",
+              "value": "Stade Tunisien",
+              "start": 23,
+              "end": 37,
+              "clause": "How many foundeds have stade tunisien as the club"
+            },
+            {
+              "surface": "greater than 18,000",
+              "value": "18000",
+              "start": 67,
+              "end": 86,
+              "clause": "with a capacity greater than 18,000?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "stade tunisien",
+              "value": "Stade Tunisien",
+              "start": 23,
+              "end": 37,
+              "clause": "How many foundeds have stade tunisien as the club",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The clause explicitly says 'as the club', matching the Club header; Stade Tunisien appears in that field."
+            },
+            {
+              "surface": "greater than 18,000",
+              "value": "18000",
+              "start": 67,
+              "end": 86,
+              "clause": "with a capacity greater than 18,000?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly says 'capacity greater than', matching the numeric Capacity header."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "8921ccc2987142e8fc6539cebf1e8bd6dccf507eff544adaff0f80df5c12ac60",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5140,
+              "completion_tokens": 62,
+              "total_tokens": 5202,
+              "prompt_tokens_details": {
+                "cached_tokens": 4864
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "stade tunisien",
+              "value": "Stade Tunisien",
+              "start": 23,
+              "end": 37,
+              "clause": "How many foundeds have stade tunisien as the club",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The clause explicitly says 'as the club', matching the Club header; Stade Tunisien appears in that field.",
+              "operator": "="
+            },
+            {
+              "surface": "greater than 18,000",
+              "value": "18000",
+              "start": 67,
+              "end": 86,
+              "clause": "with a capacity greater than 18,000?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly says 'capacity greater than', matching the numeric Capacity header.",
+              "operator": ">"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "8de6d4d11ff095ff6d0977e8b0055066e7d1ebc2b7a9c201c28630ad4d7d8498",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5237,
+              "completion_tokens": 11,
+              "total_tokens": 5248,
+              "prompt_tokens_details": {
+                "cached_tokens": 4864
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "stade tunisien",
+              "value": "Stade Tunisien",
+              "start": 23,
+              "end": 37,
+              "clause": "How many foundeds have stade tunisien as the club",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The clause explicitly says 'as the club', matching the Club header; Stade Tunisien appears in that field.",
+              "operator": "="
+            },
+            {
+              "surface": "greater than 18,000",
+              "value": 18000,
+              "start": 67,
+              "end": 86,
+              "clause": "with a capacity greater than 18,000?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly says 'capacity greater than', matching the numeric Capacity header.",
+              "operator": ">"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "1874f4e476eb07b33a1159d0969541c2fba1c538d562374328601599f66f820f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5191,
+              "completion_tokens": 15,
+              "total_tokens": 5206,
+              "prompt_tokens_details": {
+                "cached_tokens": 4864
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "stade tunisien",
+              "value": "Stade Tunisien",
+              "start": 23,
+              "end": 37,
+              "clause": "How many foundeds have stade tunisien as the club",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The clause explicitly says 'as the club', matching the Club header; Stade Tunisien appears in that field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "greater than 18,000",
+              "value": "18,000",
+              "start": 67,
+              "end": 86,
+              "clause": "with a capacity greater than 18,000?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly says 'capacity greater than', matching the numeric Capacity header.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "NORMALIZED_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "stade tunisien",
+              "value": "Stade Tunisien",
+              "start": 23,
+              "end": 37,
+              "clause": "How many foundeds have stade tunisien as the club",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The clause explicitly says 'as the club', matching the Club header; Stade Tunisien appears in that field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "greater than 18,000",
+              "value": "18,000",
+              "start": 67,
+              "end": 86,
+              "clause": "with a capacity greater than 18,000?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly says 'capacity greater than', matching the numeric Capacity header.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "NORMALIZED_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "stade tunisien",
+              "value": "Stade Tunisien",
+              "start": 23,
+              "end": 37,
+              "clause": "How many foundeds have stade tunisien as the club",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The clause explicitly says 'as the club', matching the Club header; Stade Tunisien appears in that field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "greater than 18,000",
+              "value": "18,000",
+              "start": 67,
+              "end": 86,
+              "clause": "with a capacity greater than 18,000?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly says 'capacity greater than', matching the numeric Capacity header.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "NORMALIZED_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              "Stade Tunisien"
+            ],
+            [
+              4,
+              1,
+              "18,000"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "stade tunisien",
+          "value": "Stade Tunisien",
+          "start": 23,
+          "end": 37
+        },
+        {
+          "surface": "greater than 18,000",
+          "value": "18000",
+          "start": 67,
+          "end": 86
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "stade tunisien",
+          "value": "Stade Tunisien",
+          "start": 23,
+          "end": 37,
+          "clause": "How many foundeds have stade tunisien as the club",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "The clause explicitly says 'as the club', matching the Club header; Stade Tunisien appears in that field.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "greater than 18,000",
+          "value": "18,000",
+          "start": 67,
+          "end": 86,
+          "clause": "with a capacity greater than 18,000?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The clause explicitly says 'capacity greater than', matching the numeric Capacity header.",
+          "operator": ">",
+          "grounded": true,
+          "groundingStatus": "NORMALIZED_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          0,
+          0,
+          "Stade Tunisien"
+        ],
+        [
+          4,
+          1,
+          "18,000"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8859
+}

@@ -1,0 +1,584 @@
+{
+  "arm": "E2",
+  "position": 330,
+  "example_id": "test:12902:2-1805191-16",
+  "original_index": 12902,
+  "table_id": "2-1805191-16",
+  "question": "Who is the incumbent that has been in office since before 1996 and was again re-elected?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        4,
+        0,
+        "re-elected"
+      ],
+      [
+        3,
+        2,
+        1996
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      3,
+      2,
+      1996
+    ],
+    [
+      4,
+      0,
+      "Re-elected"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        2,
+        1996
+      ],
+      [
+        4,
+        0,
+        "Re-elected"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "1996",
+        "value": 1996,
+        "start": 58,
+        "end": 62,
+        "clause": "Who is the incumbent that has been in office since before 1996",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "“in office since before 1996” refers to the incumbent's First elected year.",
+        "operator": "<",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "re-elected",
+        "value": "Re-elected",
+        "start": 77,
+        "end": 87,
+        "clause": "and was again re-elected?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "“was again re-elected” describes the election Results.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "1996",
+        "value": "1996",
+        "start": 58,
+        "end": 62
+      },
+      {
+        "surface": "re-elected",
+        "value": "Re-elected",
+        "start": 77,
+        "end": 87
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Who is the incumbent that has been in office since before 1996 and was again re-elected?",
+      "table": {
+        "header": [
+          "District",
+          "Incumbent",
+          "Party",
+          "First elected",
+          "Results"
+        ],
+        "page_title": "United States House of Representatives elections, 2006",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 1805191,
+        "id": "2-1805191-16",
+        "section_title": "Iowa",
+        "rows": [
+          [
+            "Iowa 1",
+            "Jim Nussle",
+            "Republican",
+            "1990",
+            "Retired to run for Governor Democratic gain"
+          ],
+          [
+            "Iowa 2",
+            "Jim Leach",
+            "Republican",
+            "1976",
+            "Lost re-election Democratic gain"
+          ],
+          [
+            "Iowa 3",
+            "Leonard Boswell",
+            "Democratic",
+            "1996",
+            "Re-elected"
+          ],
+          [
+            "Iowa 4",
+            "Tom Latham",
+            "Republican",
+            "1994",
+            "Re-elected"
+          ],
+          [
+            "Iowa 5",
+            "Steve King",
+            "Republican",
+            "2002",
+            "Re-elected"
+          ]
+        ],
+        "caption": "Iowa",
+        "headers": [
+          "District",
+          "Incumbent",
+          "Party",
+          "First elected",
+          "Results"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-1805191-16",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "1996",
+              "value": "1996",
+              "start": 58,
+              "end": 62
+            },
+            {
+              "surface": "re-elected",
+              "value": "Re-elected",
+              "start": 77,
+              "end": 87
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "dda3b3d72c788876810ee8c7a72cb5f78b3db41f15fb6f1002b1d03bdb14522b",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4790,
+              "completion_tokens": 157,
+              "total_tokens": 4947,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 124
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1996",
+              "value": "1996",
+              "start": 58,
+              "end": 62,
+              "clause": "Who is the incumbent that has been in office since before 1996"
+            },
+            {
+              "surface": "re-elected",
+              "value": "Re-elected",
+              "start": 77,
+              "end": 87,
+              "clause": "and was again re-elected?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "1996",
+              "value": "1996",
+              "start": 58,
+              "end": 62,
+              "clause": "Who is the incumbent that has been in office since before 1996"
+            },
+            {
+              "surface": "re-elected",
+              "value": "Re-elected",
+              "start": 77,
+              "end": 87,
+              "clause": "and was again re-elected?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1996",
+              "value": "1996",
+              "start": 58,
+              "end": 62,
+              "clause": "Who is the incumbent that has been in office since before 1996",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "“in office since before 1996” refers to the incumbent's First elected year."
+            },
+            {
+              "surface": "re-elected",
+              "value": "Re-elected",
+              "start": 77,
+              "end": 87,
+              "clause": "and was again re-elected?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "“was again re-elected” describes the election Results."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "cd42b0ac2e6d7c29ae1aa9fa64991159e335d649415fe3de3d6cd7e2247cc7c6",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4858,
+              "completion_tokens": 55,
+              "total_tokens": 4913,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1996",
+              "value": "1996",
+              "start": 58,
+              "end": 62,
+              "clause": "Who is the incumbent that has been in office since before 1996",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "“in office since before 1996” refers to the incumbent's First elected year.",
+              "operator": "<"
+            },
+            {
+              "surface": "re-elected",
+              "value": "Re-elected",
+              "start": 77,
+              "end": 87,
+              "clause": "and was again re-elected?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "“was again re-elected” describes the election Results.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f0e9255e93c969030002f6fe53a4eeb2960a29674ea5f1a4058e528f4d02b8f8",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4948,
+              "completion_tokens": 11,
+              "total_tokens": 4959,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1996",
+              "value": 1996,
+              "start": 58,
+              "end": 62,
+              "clause": "Who is the incumbent that has been in office since before 1996",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "“in office since before 1996” refers to the incumbent's First elected year.",
+              "operator": "<"
+            },
+            {
+              "surface": "re-elected",
+              "value": "Re-elected",
+              "start": 77,
+              "end": 87,
+              "clause": "and was again re-elected?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "“was again re-elected” describes the election Results.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e7aa84fb2c8775b208fd56ecc5af9729c25edc8d02cd14101c18a1b6e13255f3",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4902,
+              "completion_tokens": 15,
+              "total_tokens": 4917,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1996",
+              "value": "1996",
+              "start": 58,
+              "end": 62,
+              "clause": "Who is the incumbent that has been in office since before 1996",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "“in office since before 1996” refers to the incumbent's First elected year.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "re-elected",
+              "value": "Re-elected",
+              "start": 77,
+              "end": 87,
+              "clause": "and was again re-elected?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "“was again re-elected” describes the election Results.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1996",
+              "value": 1996,
+              "start": 58,
+              "end": 62,
+              "clause": "Who is the incumbent that has been in office since before 1996",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "“in office since before 1996” refers to the incumbent's First elected year.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "re-elected",
+              "value": "Re-elected",
+              "start": 77,
+              "end": 87,
+              "clause": "and was again re-elected?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "“was again re-elected” describes the election Results.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "1996",
+              "value": 1996,
+              "start": 58,
+              "end": 62,
+              "clause": "Who is the incumbent that has been in office since before 1996",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "“in office since before 1996” refers to the incumbent's First elected year.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "re-elected",
+              "value": "Re-elected",
+              "start": 77,
+              "end": 87,
+              "clause": "and was again re-elected?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "“was again re-elected” describes the election Results.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              2,
+              1996
+            ],
+            [
+              4,
+              0,
+              "Re-elected"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "1996",
+          "value": "1996",
+          "start": 58,
+          "end": 62
+        },
+        {
+          "surface": "re-elected",
+          "value": "Re-elected",
+          "start": 77,
+          "end": 87
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "1996",
+          "value": 1996,
+          "start": 58,
+          "end": 62,
+          "clause": "Who is the incumbent that has been in office since before 1996",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "“in office since before 1996” refers to the incumbent's First elected year.",
+          "operator": "<",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "re-elected",
+          "value": "Re-elected",
+          "start": 77,
+          "end": 87,
+          "clause": "and was again re-elected?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "“was again re-elected” describes the election Results.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          3,
+          2,
+          1996
+        ],
+        [
+          4,
+          0,
+          "Re-elected"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9906
+}

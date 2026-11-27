@@ -1,0 +1,467 @@
+{
+  "arm": "E2",
+  "position": 374,
+  "example_id": "test:14725:2-12716513-3",
+  "original_index": 14725,
+  "table_id": "2-12716513-3",
+  "question": "Who are the runners-up in 1996?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        1,
+        0,
+        "1996"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "1996"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "1996"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "1996",
+        "value": "1996",
+        "start": 26,
+        "end": 30,
+        "clause": "Who are the runners-up in 1996?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The phrase \"in 1996\" refers to the Year field, and the Year column contains the matching value \"1996\".",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "1996",
+        "value": "1996",
+        "start": 26,
+        "end": 30
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Who are the runners-up in 1996?",
+      "table": {
+        "header": [
+          "Location",
+          "Year",
+          "Champions",
+          "Runners-up",
+          "Score"
+        ],
+        "page_title": "Eurocard Open",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 12716513,
+        "id": "2-12716513-3",
+        "section_title": "Doubles",
+        "rows": [
+          [
+            "Stuttgart",
+            "2001",
+            "Max Mirnyi Sandon Stolle",
+            "Ellis Ferreira Jeff Tarango",
+            "7–6 (7–0) , 7–6 (7–4)"
+          ],
+          [
+            "Stuttgart",
+            "2000",
+            "Jiří Novák David Rikl",
+            "Donald Johnson Piet Norval",
+            "3–6, 6–3, 6–4"
+          ],
+          [
+            "Stuttgart",
+            "1999",
+            "Byron Black Jonas Björkman",
+            "David Adams John-Laffnie de Jager",
+            "6–7 (6–8) , 7–6 (7–2) , 6–0"
+          ],
+          [
+            "Stuttgart",
+            "1998",
+            "Sébastien Lareau Alex O'Brien",
+            "Mahesh Bhupathi Leander Paes",
+            "6–3, 3–6, 7–5"
+          ],
+          [
+            "Stuttgart",
+            "1997",
+            "Mark Woodforde Todd Woodbridge",
+            "Rick Leach Jonathan Stark",
+            "6–3, 6–3"
+          ],
+          [
+            "Stuttgart",
+            "1996",
+            "Sébastien Lareau Alex O'Brien",
+            "Jacco Eltingh Paul Haarhuis",
+            "3–6, 6–4, 6–3"
+          ],
+          [
+            "Essen",
+            "1995 (Oct)",
+            "Jacco Eltingh Paul Haarhuis",
+            "Cyril Suk Daniel Vacek",
+            "6–2, 6–2"
+          ],
+          [
+            "Stuttgart",
+            "1995 (Feb)",
+            "Grant Connell Patrick Galbraith",
+            "Cyril Suk Daniel Vacek",
+            "7–5, 6–4"
+          ],
+          [
+            "Stuttgart",
+            "1994",
+            "David Adams Andrei Olhovskiy",
+            "Grant Connell Patrick Galbraith",
+            "6–7, 6–4, 7–6"
+          ],
+          [
+            "Stuttgart",
+            "1993",
+            "Mark Kratzmann Wally Masur",
+            "Steve DeVries David Macpherson",
+            "6–3, 7–6"
+          ],
+          [
+            "Stuttgart",
+            "1992",
+            "Tom Nijssen Cyril Suk",
+            "John Fitzgerald Anders Järryd",
+            "6–3, 6–7, 6–3"
+          ],
+          [
+            "Stuttgart",
+            "1991",
+            "Sergio Casal Emilio Sánchez",
+            "Jeremy Bates Nick Brown",
+            "6–3, 7–5"
+          ],
+          [
+            "Stuttgart",
+            "1990",
+            "Guy Forget Jakob Hlasek",
+            "Michael Mortensen Tom Nijssen",
+            "6–3, 6–2"
+          ]
+        ],
+        "caption": "Doubles",
+        "headers": [
+          "Location",
+          "Year",
+          "Champions",
+          "Runners-up",
+          "Score"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-12716513-3",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "1996",
+              "value": "1996",
+              "start": 26,
+              "end": 30
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0eddd0b2931f3d96e139469bf14d8650890abfbb3baa511c8cae8b135b25ee5d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5140,
+              "completion_tokens": 19,
+              "total_tokens": 5159,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1996",
+              "value": "1996",
+              "start": 26,
+              "end": 30,
+              "clause": "Who are the runners-up in 1996?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "1996",
+              "value": "1996",
+              "start": 26,
+              "end": 30,
+              "clause": "Who are the runners-up in 1996?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1996",
+              "value": "1996",
+              "start": 26,
+              "end": 30,
+              "clause": "Who are the runners-up in 1996?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase \"in 1996\" refers to the Year field, and the Year column contains the matching value \"1996\"."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "2d9968e502fab5110a94a67934add75db49f16c61b2d1ebafa524c474cdfbb90",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5173,
+              "completion_tokens": 48,
+              "total_tokens": 5221,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1996",
+              "value": "1996",
+              "start": 26,
+              "end": 30,
+              "clause": "Who are the runners-up in 1996?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase \"in 1996\" refers to the Year field, and the Year column contains the matching value \"1996\".",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "475ba0d5fa8bb13bda372e3eb6b79953aecb3ad014263197f2c4e32f569592c4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5245,
+              "completion_tokens": 9,
+              "total_tokens": 5254,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1996",
+              "value": "1996",
+              "start": 26,
+              "end": 30,
+              "clause": "Who are the runners-up in 1996?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase \"in 1996\" refers to the Year field, and the Year column contains the matching value \"1996\".",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ca8804ed0cb7d9cec61023afaf019a78bc9b68a4ba0ce5c1e0f7dad976de3ce0",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5196,
+              "completion_tokens": 11,
+              "total_tokens": 5207,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1996",
+              "value": "1996",
+              "start": 26,
+              "end": 30,
+              "clause": "Who are the runners-up in 1996?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase \"in 1996\" refers to the Year field, and the Year column contains the matching value \"1996\".",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1996",
+              "value": "1996",
+              "start": 26,
+              "end": 30,
+              "clause": "Who are the runners-up in 1996?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase \"in 1996\" refers to the Year field, and the Year column contains the matching value \"1996\".",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "1996",
+              "value": "1996",
+              "start": 26,
+              "end": 30,
+              "clause": "Who are the runners-up in 1996?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase \"in 1996\" refers to the Year field, and the Year column contains the matching value \"1996\".",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              "1996"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "1996",
+          "value": "1996",
+          "start": 26,
+          "end": 30
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "1996",
+          "value": "1996",
+          "start": 26,
+          "end": 30,
+          "clause": "Who are the runners-up in 1996?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The phrase \"in 1996\" refers to the Year field, and the Year column contains the matching value \"1996\".",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          1,
+          0,
+          "1996"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9656
+}

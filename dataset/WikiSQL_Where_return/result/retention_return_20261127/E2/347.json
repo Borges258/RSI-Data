@@ -1,0 +1,461 @@
+{
+  "arm": "E2",
+  "position": 347,
+  "example_id": "test:13661:2-188378-1",
+  "original_index": 13661,
+  "table_id": "2-188378-1",
+  "question": "What's the [A] when the H2PO 4 is 61.7?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        2,
+        0,
+        61.7
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      61.7
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        61.7
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "61.7",
+        "value": 61.7,
+        "start": 34,
+        "end": 38,
+        "clause": "What's the [A] when the H2PO 4 is 61.7?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The question names H2PO4, matching the '[H 2 PO 4 − ]/[A] (%)' header; 61.7 appears in that column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "61.7",
+        "value": "61.7",
+        "start": 34,
+        "end": 38
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What's the [A] when the H2PO 4 is 61.7?",
+      "table": {
+        "header": [
+          "[A] (mol/L)",
+          "[H 3 PO 4 ]/[A] (%)",
+          "[H 2 PO 4 − ]/[A] (%)",
+          "[HPO 4 2− ]/[A] (%)",
+          "[PO 4 3− ]/[A] (%)"
+        ],
+        "page_title": "Phosphoric acid",
+        "types": [
+          "text",
+          "text",
+          "real",
+          "text",
+          "text"
+        ],
+        "page_id": 188378,
+        "id": "2-188378-1",
+        "section_title": "Aqueous solution",
+        "rows": [
+          [
+            "1",
+            "91.7",
+            "8.29",
+            "6.20×10 −6",
+            "1.60×10 −17"
+          ],
+          [
+            "10 −1",
+            "76.1",
+            "23.9",
+            "6.20×10 −5",
+            "5.55×10 −16"
+          ],
+          [
+            "10 −2",
+            "43.1",
+            "56.9",
+            "6.20×10 −4",
+            "2.33×10 −14"
+          ],
+          [
+            "10 −3",
+            "10.6",
+            "89.3",
+            "6.20×10 −3",
+            "1.48×10 −12"
+          ],
+          [
+            "10 −4",
+            "1.30",
+            "98.6",
+            "6.19×10 −2",
+            "1.34×10 −10"
+          ],
+          [
+            "10 −5",
+            "0.133",
+            "99.3",
+            "0.612",
+            "1.30×10 −8"
+          ],
+          [
+            "10 −6",
+            "1.34×10 −2",
+            "94.5",
+            "5.50",
+            "1.11×10 −6"
+          ],
+          [
+            "10 −7",
+            "1.80×10 −3",
+            "74.5",
+            "25.5",
+            "3.02×10 −5"
+          ],
+          [
+            "10 −10",
+            "8.24×10 −4",
+            "61.7",
+            "38.3",
+            "8.18×10 −5"
+          ]
+        ],
+        "caption": "Aqueous solution",
+        "headers": [
+          "[A] (mol/L)",
+          "[H 3 PO 4 ]/[A] (%)",
+          "[H 2 PO 4 − ]/[A] (%)",
+          "[HPO 4 2− ]/[A] (%)",
+          "[PO 4 3− ]/[A] (%)"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-188378-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "61.7",
+              "value": "61.7",
+              "start": 34,
+              "end": 38
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e4a42fcca2ab9ea8f097a004ded7595ccdde2692364fad9b5b621451f9153895",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5028,
+              "completion_tokens": 21,
+              "total_tokens": 5049,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "61.7",
+              "value": "61.7",
+              "start": 34,
+              "end": 38,
+              "clause": "What's the [A] when the H2PO 4 is 61.7?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "61.7",
+              "value": "61.7",
+              "start": 34,
+              "end": 38,
+              "clause": "What's the [A] when the H2PO 4 is 61.7?"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a15a5d5cbf04e9adf5107937e0da0174b007d5c584ebd089c05b33140e0ed35b",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5090,
+              "completion_tokens": 8,
+              "total_tokens": 5098,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          },
+          "count": 1,
+          "recovered": [],
+          "reviewedUncertain": [
+            {
+              "surface": "4",
+              "start": 29,
+              "end": 30
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "61.7",
+              "value": "61.7",
+              "start": 34,
+              "end": 38,
+              "clause": "What's the [A] when the H2PO 4 is 61.7?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question names H2PO4, matching the '[H 2 PO 4 − ]/[A] (%)' header; 61.7 appears in that column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "35e77361622759d7aef644cdde51b0fcc950db045f60fde87f3312ae880dc30d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5071,
+              "completion_tokens": 56,
+              "total_tokens": 5127,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "61.7",
+              "value": "61.7",
+              "start": 34,
+              "end": 38,
+              "clause": "What's the [A] when the H2PO 4 is 61.7?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question names H2PO4, matching the '[H 2 PO 4 − ]/[A] (%)' header; 61.7 appears in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f9bace5bcd8a22917d9a1298dfac56f633c431ef655c41f46e90abba5e10e89f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5151,
+              "completion_tokens": 9,
+              "total_tokens": 5160,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "61.7",
+              "value": 61.7,
+              "start": 34,
+              "end": 38,
+              "clause": "What's the [A] when the H2PO 4 is 61.7?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question names H2PO4, matching the '[H 2 PO 4 − ]/[A] (%)' header; 61.7 appears in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e50f35b04992c9c627da1ab833d10b7381168eafa76cf6557950ba829d9b7952",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5102,
+              "completion_tokens": 11,
+              "total_tokens": 5113,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "61.7",
+              "value": "61.7",
+              "start": 34,
+              "end": 38,
+              "clause": "What's the [A] when the H2PO 4 is 61.7?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question names H2PO4, matching the '[H 2 PO 4 − ]/[A] (%)' header; 61.7 appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "61.7",
+              "value": 61.7,
+              "start": 34,
+              "end": 38,
+              "clause": "What's the [A] when the H2PO 4 is 61.7?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question names H2PO4, matching the '[H 2 PO 4 − ]/[A] (%)' header; 61.7 appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "61.7",
+              "value": 61.7,
+              "start": 34,
+              "end": 38,
+              "clause": "What's the [A] when the H2PO 4 is 61.7?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question names H2PO4, matching the '[H 2 PO 4 − ]/[A] (%)' header; 61.7 appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              61.7
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "61.7",
+          "value": "61.7",
+          "start": 34,
+          "end": 38
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "61.7",
+          "value": 61.7,
+          "start": 34,
+          "end": 38,
+          "clause": "What's the [A] when the H2PO 4 is 61.7?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The question names H2PO4, matching the '[H 2 PO 4 − ]/[A] (%)' header; 61.7 appears in that column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          2,
+          0,
+          61.7
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 11860
+}

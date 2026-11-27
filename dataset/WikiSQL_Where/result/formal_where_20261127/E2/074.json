@@ -1,0 +1,436 @@
+{
+  "arm": "E2",
+  "position": 74,
+  "example_id": "test:4826:2-10775890-4",
+  "original_index": 4826,
+  "table_id": "2-10775890-4",
+  "question": "Who played Fitzroy at their own home?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        2,
+        0,
+        "fitzroy"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "Fitzroy"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "Fitzroy"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Fitzroy",
+        "value": "Fitzroy",
+        "start": 11,
+        "end": 18,
+        "clause": "Who played Fitzroy at their own home?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "Fitzroy is the opponent being played and appears as the Away team; 'their own home' refers to the team sought, not Fitzroy.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Fitzroy",
+        "value": "Fitzroy",
+        "start": 11,
+        "end": 18
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Who played Fitzroy at their own home?",
+      "table": {
+        "header": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ],
+        "page_title": "1960 VFL season",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 10775890,
+        "id": "2-10775890-4",
+        "section_title": "Round 4",
+        "rows": [
+          [
+            "Geelong",
+            "4.14 (38)",
+            "St Kilda",
+            "9.5 (59)",
+            "Kardinia Park",
+            "12,795",
+            "14 May 1960"
+          ],
+          [
+            "Collingwood",
+            "7.13 (55)",
+            "Melbourne",
+            "2.7 (19)",
+            "Victoria Park",
+            "28,263",
+            "14 May 1960"
+          ],
+          [
+            "Carlton",
+            "5.18 (48)",
+            "Hawthorn",
+            "5.7 (37)",
+            "Princes Park",
+            "11,066",
+            "14 May 1960"
+          ],
+          [
+            "South Melbourne",
+            "11.12 (78)",
+            "North Melbourne",
+            "5.8 (38)",
+            "Lake Oval",
+            "7,000",
+            "14 May 1960"
+          ],
+          [
+            "Richmond",
+            "5.6 (36)",
+            "Fitzroy",
+            "6.11 (47)",
+            "Punt Road Oval",
+            "7,500",
+            "14 May 1960"
+          ],
+          [
+            "Footscray",
+            "4.2 (26)",
+            "Essendon",
+            "4.11 (35)",
+            "Western Oval",
+            "24,302",
+            "14 May 1960"
+          ]
+        ],
+        "caption": "Round 4",
+        "headers": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-10775890-4",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Fitzroy",
+              "value": "Fitzroy",
+              "start": 11,
+              "end": 18
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c45cc6248d828263465aa173679c894ae1b80485f6669ef6de422aa8521cbe61",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4901,
+              "completion_tokens": 21,
+              "total_tokens": 4922,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Fitzroy",
+              "value": "Fitzroy",
+              "start": 11,
+              "end": 18,
+              "clause": "Who played Fitzroy at their own home?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Fitzroy",
+              "value": "Fitzroy",
+              "start": 11,
+              "end": 18,
+              "clause": "Who played Fitzroy at their own home?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Fitzroy",
+              "value": "Fitzroy",
+              "start": 11,
+              "end": 18,
+              "clause": "Who played Fitzroy at their own home?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Fitzroy is the opponent being played and appears as the Away team; 'their own home' refers to the team sought, not Fitzroy."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "be786bc976671f3be5614e8fd53322a1008436b46bbfb7a2d5adf87f3946a7ce",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4935,
+              "completion_tokens": 51,
+              "total_tokens": 4986,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Fitzroy",
+              "value": "Fitzroy",
+              "start": 11,
+              "end": 18,
+              "clause": "Who played Fitzroy at their own home?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Fitzroy is the opponent being played and appears as the Away team; 'their own home' refers to the team sought, not Fitzroy.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e58aa2416b562d740d2d3301b1d495351439c7de0585c62b1ce59aa4a4df70b4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5010,
+              "completion_tokens": 9,
+              "total_tokens": 5019,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Fitzroy",
+              "value": "Fitzroy",
+              "start": 11,
+              "end": 18,
+              "clause": "Who played Fitzroy at their own home?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Fitzroy is the opponent being played and appears as the Away team; 'their own home' refers to the team sought, not Fitzroy.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "9c9df42f82fa425a9955a201f2ffa3d66b07df446b36bfbaf8076de62aa045e8",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4961,
+              "completion_tokens": 12,
+              "total_tokens": 4973,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Fitzroy",
+              "value": "Fitzroy",
+              "start": 11,
+              "end": 18,
+              "clause": "Who played Fitzroy at their own home?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Fitzroy is the opponent being played and appears as the Away team; 'their own home' refers to the team sought, not Fitzroy.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Fitzroy",
+              "value": "Fitzroy",
+              "start": 11,
+              "end": 18,
+              "clause": "Who played Fitzroy at their own home?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Fitzroy is the opponent being played and appears as the Away team; 'their own home' refers to the team sought, not Fitzroy.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Fitzroy",
+              "value": "Fitzroy",
+              "start": 11,
+              "end": 18,
+              "clause": "Who played Fitzroy at their own home?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Fitzroy is the opponent being played and appears as the Away team; 'their own home' refers to the team sought, not Fitzroy.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "Fitzroy"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Fitzroy",
+          "value": "Fitzroy",
+          "start": 11,
+          "end": 18
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Fitzroy",
+          "value": "Fitzroy",
+          "start": 11,
+          "end": 18,
+          "clause": "Who played Fitzroy at their own home?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "Fitzroy is the opponent being played and appears as the Away team; 'their own home' refers to the team sought, not Fitzroy.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          2,
+          0,
+          "Fitzroy"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7672
+}

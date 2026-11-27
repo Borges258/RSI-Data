@@ -1,0 +1,645 @@
+{
+  "arm": "E2",
+  "position": 467,
+  "example_id": "test:5689:2-1419115-1",
+  "original_index": 5689,
+  "table_id": "2-1419115-1",
+  "question": "When the population is greater than 146,445 in the county of Carroll, what is the number of households?",
+  "gold_sql": {
+    "sel": 5,
+    "conds": [
+      [
+        4,
+        1,
+        "146,445"
+      ],
+      [
+        0,
+        0,
+        "carroll"
+      ]
+    ],
+    "agg": 4
+  },
+  "prediction_conds": [
+    [
+      4,
+      1,
+      "146,445"
+    ],
+    [
+      0,
+      0,
+      "Carroll"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        1,
+        "146,445"
+      ],
+      [
+        0,
+        0,
+        "Carroll"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "146,445",
+        "value": "146,445",
+        "start": 36,
+        "end": 43,
+        "clause": "When the population is greater than 146,445 in the county of Carroll",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The question explicitly identifies 146,445 as a population threshold, matching the Population header.",
+        "operator": ">",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "Carroll",
+        "value": "Carroll",
+        "start": 61,
+        "end": 68,
+        "clause": "445 in the county of Carroll",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "The question explicitly identifies Carroll as a county, matching the County header.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "146,445",
+        "value": "146445",
+        "start": 36,
+        "end": 43
+      },
+      {
+        "surface": "Carroll",
+        "value": "Carroll",
+        "start": 61,
+        "end": 68
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "When the population is greater than 146,445 in the county of Carroll, what is the number of households?",
+      "table": {
+        "header": [
+          "County",
+          "Per capita income",
+          "Median household income",
+          "Median family income",
+          "Population",
+          "Number of households"
+        ],
+        "page_title": "New Hampshire locations by per capita income",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "real",
+          "real"
+        ],
+        "page_id": 1419115,
+        "id": "2-1419115-1",
+        "section_title": "New Hampshire counties ranked by per capita income",
+        "rows": [
+          [
+            "Rockingham",
+            "$37,422",
+            "$77,470",
+            "$92,835",
+            "295,223",
+            "115,033"
+          ],
+          [
+            "Hillsborough",
+            "$33,653",
+            "$70,591",
+            "$83,636",
+            "400,721",
+            "155,466"
+          ],
+          [
+            "New Hampshire",
+            "$32,357",
+            "$64,664",
+            "$78,310",
+            "1,316,470",
+            "518,973"
+          ],
+          [
+            "Merrimack",
+            "$31,403",
+            "$65,722",
+            "$78,998",
+            "146,445",
+            "57,069"
+          ],
+          [
+            "Belknap",
+            "$29,449",
+            "$56,921",
+            "$67,768",
+            "60,088",
+            "24,766"
+          ],
+          [
+            "Strafford",
+            "$29,405",
+            "$59,082",
+            "$74,319",
+            "123,143",
+            "47,100"
+          ],
+          [
+            "Carroll",
+            "$29,194",
+            "$50,555",
+            "$60,530",
+            "47,818",
+            "21,052"
+          ],
+          [
+            "Grafton",
+            "$29,090",
+            "$53,000",
+            "$66,701",
+            "89,118",
+            "35,986"
+          ],
+          [
+            "United States",
+            "$27,915",
+            "$52,762",
+            "$64,293",
+            "308,745,538",
+            "116,716,292"
+          ],
+          [
+            "Cheshire",
+            "$27,459",
+            "$55,241",
+            "$69,203",
+            "77,117",
+            "30,204"
+          ],
+          [
+            "Sullivan",
+            "$27,223",
+            "$51,678",
+            "$63,682",
+            "43,742",
+            "18,126"
+          ],
+          [
+            "Coos",
+            "$23,580",
+            "$41,087",
+            "$52,676",
+            "33,055",
+            "14,171"
+          ]
+        ],
+        "caption": "New Hampshire counties ranked by per capita income",
+        "headers": [
+          "County",
+          "Per capita income",
+          "Median household income",
+          "Median family income",
+          "Population",
+          "Number of households"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-1419115-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "146,445",
+              "value": "146445",
+              "start": 36,
+              "end": 43
+            },
+            {
+              "surface": "Carroll",
+              "value": "Carroll",
+              "start": 61,
+              "end": 68
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "628a8012a62e67063a5d0b0bebed3fc19eec2fcf9b7ee909cf12cca3a8fed5db",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5044,
+              "completion_tokens": 30,
+              "total_tokens": 5074,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "146,445",
+              "value": "146445",
+              "start": 36,
+              "end": 43,
+              "clause": "When the population is greater than 146,445 in the county of Carroll"
+            },
+            {
+              "surface": "Carroll",
+              "value": "Carroll",
+              "start": 61,
+              "end": 68,
+              "clause": "445 in the county of Carroll"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "146,445",
+              "value": "146445",
+              "start": 36,
+              "end": 43,
+              "clause": "When the population is greater than 146,445 in the county of Carroll"
+            },
+            {
+              "surface": "Carroll",
+              "value": "Carroll",
+              "start": 61,
+              "end": 68,
+              "clause": "445 in the county of Carroll"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "146,445",
+              "value": "146445",
+              "start": 36,
+              "end": 43,
+              "clause": "When the population is greater than 146,445 in the county of Carroll",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly identifies 146,445 as a population threshold, matching the Population header."
+            },
+            {
+              "surface": "Carroll",
+              "value": "Carroll",
+              "start": 61,
+              "end": 68,
+              "clause": "445 in the county of Carroll",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly identifies Carroll as a county, matching the County header."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "140254cbfdbed72da08d38544f4b847eecc82769ec7c3487569433563c570dee",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5111,
+              "completion_tokens": 57,
+              "total_tokens": 5168,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "146,445",
+              "value": "146445",
+              "start": 36,
+              "end": 43,
+              "clause": "When the population is greater than 146,445 in the county of Carroll",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly identifies 146,445 as a population threshold, matching the Population header.",
+              "operator": ">"
+            },
+            {
+              "surface": "Carroll",
+              "value": "Carroll",
+              "start": 61,
+              "end": 68,
+              "clause": "445 in the county of Carroll",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly identifies Carroll as a county, matching the County header.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "1368e4f7b4c642a1b70329392b7e1d6765a778c05ee1749ff08c12c6643335a9",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5203,
+              "completion_tokens": 11,
+              "total_tokens": 5214,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "146,445",
+              "value": "146,445",
+              "start": 36,
+              "end": 43,
+              "clause": "When the population is greater than 146,445 in the county of Carroll",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly identifies 146,445 as a population threshold, matching the Population header.",
+              "operator": ">"
+            },
+            {
+              "surface": "Carroll",
+              "value": "Carroll",
+              "start": 61,
+              "end": 68,
+              "clause": "445 in the county of Carroll",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly identifies Carroll as a county, matching the County header.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "5bd83fe7cbc55205112bb6540e7482462c26dc7762043645ce5779a2c1ef8867",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5157,
+              "completion_tokens": 15,
+              "total_tokens": 5172,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "146,445",
+              "value": "146,445",
+              "start": 36,
+              "end": 43,
+              "clause": "When the population is greater than 146,445 in the county of Carroll",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly identifies 146,445 as a population threshold, matching the Population header.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Carroll",
+              "value": "Carroll",
+              "start": 61,
+              "end": 68,
+              "clause": "445 in the county of Carroll",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly identifies Carroll as a county, matching the County header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "146,445",
+              "value": "146,445",
+              "start": 36,
+              "end": 43,
+              "clause": "When the population is greater than 146,445 in the county of Carroll",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly identifies 146,445 as a population threshold, matching the Population header.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Carroll",
+              "value": "Carroll",
+              "start": 61,
+              "end": 68,
+              "clause": "445 in the county of Carroll",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly identifies Carroll as a county, matching the County header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "146,445",
+              "value": "146,445",
+              "start": 36,
+              "end": 43,
+              "clause": "When the population is greater than 146,445 in the county of Carroll",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly identifies 146,445 as a population threshold, matching the Population header.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Carroll",
+              "value": "Carroll",
+              "start": 61,
+              "end": 68,
+              "clause": "445 in the county of Carroll",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly identifies Carroll as a county, matching the County header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              1,
+              "146,445"
+            ],
+            [
+              0,
+              0,
+              "Carroll"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "146,445",
+          "value": "146445",
+          "start": 36,
+          "end": 43
+        },
+        {
+          "surface": "Carroll",
+          "value": "Carroll",
+          "start": 61,
+          "end": 68
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "146,445",
+          "value": "146,445",
+          "start": 36,
+          "end": 43,
+          "clause": "When the population is greater than 146,445 in the county of Carroll",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The question explicitly identifies 146,445 as a population threshold, matching the Population header.",
+          "operator": ">",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "Carroll",
+          "value": "Carroll",
+          "start": 61,
+          "end": 68,
+          "clause": "445 in the county of Carroll",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "The question explicitly identifies Carroll as a county, matching the County header.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          4,
+          1,
+          "146,445"
+        ],
+        [
+          0,
+          0,
+          "Carroll"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7812
+}

@@ -1,0 +1,462 @@
+{
+  "arm": "E2",
+  "position": 337,
+  "example_id": "test:13225:2-18007110-1",
+  "original_index": 13225,
+  "table_id": "2-18007110-1",
+  "question": "How much money does the player with a score of 74-71-76-76=297 have?",
+  "gold_sql": {
+    "sel": 5,
+    "conds": [
+      [
+        3,
+        0,
+        "74-71-76-76=297"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      3,
+      0,
+      "74-71-76-76=297"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        0,
+        "74-71-76-76=297"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "74-71-76-76=297",
+        "value": "74-71-76-76=297",
+        "start": 47,
+        "end": 62,
+        "clause": "How much money does the player with a score of 74-71-76-76=297 have?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The question explicitly identifies the value as a score, matching the Score column; the exact value appears there for Tommy Armour.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "74-71-76-76=297",
+        "value": "74-71-76-76=297",
+        "start": 47,
+        "end": 62
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "How much money does the player with a score of 74-71-76-76=297 have?",
+      "table": {
+        "header": [
+          "Place",
+          "Player",
+          "Country",
+          "Score",
+          "To par",
+          "Money ( $ )"
+        ],
+        "page_title": "1929 U.S. Open (golf)",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 18007110,
+        "id": "2-18007110-1",
+        "section_title": "Final leaderboard",
+        "rows": [
+          [
+            "T1",
+            "Bobby Jones (a)",
+            "United States",
+            "69-75-71-79=294",
+            "+6",
+            "Playoff"
+          ],
+          [
+            "T1",
+            "Al Espinosa",
+            "United States",
+            "70-72-77-75=294",
+            "+6",
+            "Playoff"
+          ],
+          [
+            "T3",
+            "Gene Sarazen",
+            "United States",
+            "71-71-76-78=296",
+            "+8",
+            "700"
+          ],
+          [
+            "T3",
+            "Denny Shute",
+            "United States",
+            "73-71-76-76=296",
+            "+8",
+            "700"
+          ],
+          [
+            "T5",
+            "Tommy Armour",
+            "Scotland United States",
+            "74-71-76-76=297",
+            "+9",
+            "550"
+          ],
+          [
+            "T5",
+            "George Von Elm (a)",
+            "United States",
+            "79-70-74-74=297",
+            "+9",
+            "0"
+          ],
+          [
+            "7",
+            "Henry Ciuci",
+            "United States",
+            "78-74-72-75=299",
+            "+11",
+            "450"
+          ],
+          [
+            "T8",
+            "Leo Diegel",
+            "United States",
+            "74-74-76-77=301",
+            "+13",
+            "300"
+          ],
+          [
+            "T8",
+            "Peter O'Hara",
+            "United States",
+            "74-76-73-78=301",
+            "+13",
+            "300"
+          ],
+          [
+            "10",
+            "Horton Smith",
+            "United States",
+            "76-77-74-75=302",
+            "+14",
+            "150"
+          ]
+        ],
+        "caption": "Final leaderboard",
+        "headers": [
+          "Place",
+          "Player",
+          "Country",
+          "Score",
+          "To par",
+          "Money ( $ )"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-18007110-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "74-71-76-76=297",
+              "value": "74-71-76-76=297",
+              "start": 47,
+              "end": 62
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "8d9bc8c077b9cc5b75968a37e45b81b96fe41b535a2e77a0cbce6b4a248fbd97",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4952,
+              "completion_tokens": 86,
+              "total_tokens": 5038,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 51
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "74-71-76-76=297",
+              "value": "74-71-76-76=297",
+              "start": 47,
+              "end": 62,
+              "clause": "How much money does the player with a score of 74-71-76-76=297 have?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "74-71-76-76=297",
+              "value": "74-71-76-76=297",
+              "start": 47,
+              "end": 62,
+              "clause": "How much money does the player with a score of 74-71-76-76=297 have?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "74-71-76-76=297",
+              "value": "74-71-76-76=297",
+              "start": 47,
+              "end": 62,
+              "clause": "How much money does the player with a score of 74-71-76-76=297 have?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies the value as a score, matching the Score column; the exact value appears there for Tommy Armour."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d09a2ec9a27c015b115aaf8a14b94fda3527bf9cab151d111a52e191d65e7787",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5011,
+              "completion_tokens": 45,
+              "total_tokens": 5056,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "74-71-76-76=297",
+              "value": "74-71-76-76=297",
+              "start": 47,
+              "end": 62,
+              "clause": "How much money does the player with a score of 74-71-76-76=297 have?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies the value as a score, matching the Score column; the exact value appears there for Tommy Armour.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d711e96f27bb43665fa6a7833b47b1013b9fbfda7139d25e429ae7d375c2cea1",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5080,
+              "completion_tokens": 9,
+              "total_tokens": 5089,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "74-71-76-76=297",
+              "value": "74-71-76-76=297",
+              "start": 47,
+              "end": 62,
+              "clause": "How much money does the player with a score of 74-71-76-76=297 have?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies the value as a score, matching the Score column; the exact value appears there for Tommy Armour.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a68aea274b18d5470018e4af501bb35484530177de2c6fd0a297cf41fdd87758",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5031,
+              "completion_tokens": 18,
+              "total_tokens": 5049,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "74-71-76-76=297",
+              "value": "74-71-76-76=297",
+              "start": 47,
+              "end": 62,
+              "clause": "How much money does the player with a score of 74-71-76-76=297 have?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies the value as a score, matching the Score column; the exact value appears there for Tommy Armour.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "74-71-76-76=297",
+              "value": "74-71-76-76=297",
+              "start": 47,
+              "end": 62,
+              "clause": "How much money does the player with a score of 74-71-76-76=297 have?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies the value as a score, matching the Score column; the exact value appears there for Tommy Armour.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "74-71-76-76=297",
+              "value": "74-71-76-76=297",
+              "start": 47,
+              "end": 62,
+              "clause": "How much money does the player with a score of 74-71-76-76=297 have?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies the value as a score, matching the Score column; the exact value appears there for Tommy Armour.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              0,
+              "74-71-76-76=297"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "74-71-76-76=297",
+          "value": "74-71-76-76=297",
+          "start": 47,
+          "end": 62
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "74-71-76-76=297",
+          "value": "74-71-76-76=297",
+          "start": 47,
+          "end": 62,
+          "clause": "How much money does the player with a score of 74-71-76-76=297 have?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The question explicitly identifies the value as a score, matching the Score column; the exact value appears there for Tommy Armour.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          3,
+          0,
+          "74-71-76-76=297"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8343
+}

@@ -1,0 +1,681 @@
+{
+  "arm": "E2",
+  "position": 559,
+  "example_id": "test:7604:2-1560445-2",
+  "original_index": 7604,
+  "table_id": "2-1560445-2",
+  "question": "What is the average for the 1990s with a total of 1, and 0 in the 1980s?",
+  "gold_sql": {
+    "sel": 8,
+    "conds": [
+      [
+        10,
+        0,
+        1
+      ],
+      [
+        7,
+        0,
+        0
+      ]
+    ],
+    "agg": 5
+  },
+  "prediction_conds": [
+    [
+      10,
+      0,
+      1
+    ],
+    [
+      7,
+      0,
+      0
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        10,
+        0,
+        1
+      ],
+      [
+        7,
+        0,
+        0
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "1",
+        "value": 1,
+        "start": 50,
+        "end": 51,
+        "clause": "What is the average for the 1990s with a total of 1,",
+        "columnIndex": 10,
+        "columnCandidates": [
+          10
+        ],
+        "columnMatchReason": "'a total of 1' directly refers to the 'Total to date' field",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "0",
+        "value": 0,
+        "start": 57,
+        "end": 58,
+        "clause": "and 0 in the 1980s?",
+        "columnIndex": 7,
+        "columnCandidates": [
+          7
+        ],
+        "columnMatchReason": "'0 in the 1980s' directly names the '1980s' field",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "1",
+        "value": "1",
+        "start": 50,
+        "end": 51
+      },
+      {
+        "surface": "0",
+        "value": "0",
+        "start": 57,
+        "end": 58
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the average for the 1990s with a total of 1, and 0 in the 1980s?",
+      "table": {
+        "header": [
+          "1900s",
+          "1920s",
+          "1930s",
+          "1940s",
+          "1950s",
+          "1960s",
+          "1970s",
+          "1980s",
+          "1990s",
+          "2000s to date",
+          "Total to date"
+        ],
+        "page_title": "List of Singapore police officers killed in the line of duty",
+        "types": [
+          "real",
+          "real",
+          "real",
+          "real",
+          "real",
+          "real",
+          "real",
+          "real",
+          "real",
+          "real",
+          "real"
+        ],
+        "page_id": 1560445,
+        "id": "2-1560445-2",
+        "section_title": "Victims' Profile",
+        "rows": [
+          [
+            "0",
+            "0",
+            "0",
+            "1",
+            "0",
+            "0",
+            "1",
+            "0",
+            "1",
+            "1",
+            "4"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "1",
+            "1",
+            "2",
+            "1",
+            "2",
+            "5",
+            "7",
+            "19"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "2",
+            "4",
+            "1",
+            "6",
+            "2",
+            "0",
+            "2",
+            "17"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "2",
+            "1",
+            "3",
+            "1",
+            "7"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "1",
+            "0",
+            "0",
+            "1",
+            "2",
+            "0",
+            "0",
+            "4"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "2",
+            "1",
+            "0",
+            "4",
+            "7"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1",
+            "0",
+            "1"
+          ],
+          [
+            "0",
+            "0",
+            "0",
+            "0",
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1"
+          ],
+          [
+            "2",
+            "8",
+            "3",
+            "26",
+            "15",
+            "0",
+            "3",
+            "2",
+            "1",
+            "0",
+            "62"
+          ]
+        ],
+        "caption": "Victims' Profile",
+        "headers": [
+          "1900s",
+          "1920s",
+          "1930s",
+          "1940s",
+          "1950s",
+          "1960s",
+          "1970s",
+          "1980s",
+          "1990s",
+          "2000s to date",
+          "Total to date"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-1560445-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 50,
+              "end": 51
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 57,
+              "end": 58
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "23983805e43f41cdab381bc9e9300a5e9b9571fb2f38b75e91a86aa09e3e108a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4978,
+              "completion_tokens": 25,
+              "total_tokens": 5003,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 50,
+              "end": 51,
+              "clause": "What is the average for the 1990s with a total of 1,"
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 57,
+              "end": 58,
+              "clause": "and 0 in the 1980s?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 50,
+              "end": 51,
+              "clause": "What is the average for the 1990s with a total of 1,"
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 57,
+              "end": 58,
+              "clause": "and 0 in the 1980s?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 50,
+              "end": 51,
+              "clause": "What is the average for the 1990s with a total of 1,",
+              "columnIndex": 10,
+              "columnCandidates": [
+                10
+              ],
+              "columnMatchReason": "'a total of 1' directly refers to the 'Total to date' field"
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 57,
+              "end": 58,
+              "clause": "and 0 in the 1980s?",
+              "columnIndex": 7,
+              "columnCandidates": [
+                7
+              ],
+              "columnMatchReason": "'0 in the 1980s' directly names the '1980s' field"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "decd1184569d89b30c4fff26ef48cae8992870ada61cc0a63f0d64e6bb44db09",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5046,
+              "completion_tokens": 61,
+              "total_tokens": 5107,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 50,
+              "end": 51,
+              "clause": "What is the average for the 1990s with a total of 1,",
+              "columnIndex": 10,
+              "columnCandidates": [
+                10
+              ],
+              "columnMatchReason": "'a total of 1' directly refers to the 'Total to date' field",
+              "operator": "="
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 57,
+              "end": 58,
+              "clause": "and 0 in the 1980s?",
+              "columnIndex": 7,
+              "columnCandidates": [
+                7
+              ],
+              "columnMatchReason": "'0 in the 1980s' directly names the '1980s' field",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "7f751e62be94c07eb822bca39f5c154234ace25485dce5ba1206093e25843c6c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5139,
+              "completion_tokens": 11,
+              "total_tokens": 5150,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 50,
+              "end": 51,
+              "clause": "What is the average for the 1990s with a total of 1,",
+              "columnIndex": 10,
+              "columnCandidates": [
+                10
+              ],
+              "columnMatchReason": "'a total of 1' directly refers to the 'Total to date' field",
+              "operator": "="
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 57,
+              "end": 58,
+              "clause": "and 0 in the 1980s?",
+              "columnIndex": 7,
+              "columnCandidates": [
+                7
+              ],
+              "columnMatchReason": "'0 in the 1980s' directly names the '1980s' field",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f75cc3af8c9534e6e1469f206f4a29c4ebbb3c708cfde991b6cc80d6da9fabc8",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5095,
+              "completion_tokens": 12,
+              "total_tokens": 5107,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 50,
+              "end": 51,
+              "clause": "What is the average for the 1990s with a total of 1,",
+              "columnIndex": 10,
+              "columnCandidates": [
+                10
+              ],
+              "columnMatchReason": "'a total of 1' directly refers to the 'Total to date' field",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 57,
+              "end": 58,
+              "clause": "and 0 in the 1980s?",
+              "columnIndex": 7,
+              "columnCandidates": [
+                7
+              ],
+              "columnMatchReason": "'0 in the 1980s' directly names the '1980s' field",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1",
+              "value": 1,
+              "start": 50,
+              "end": 51,
+              "clause": "What is the average for the 1990s with a total of 1,",
+              "columnIndex": 10,
+              "columnCandidates": [
+                10
+              ],
+              "columnMatchReason": "'a total of 1' directly refers to the 'Total to date' field",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "0",
+              "value": 0,
+              "start": 57,
+              "end": 58,
+              "clause": "and 0 in the 1980s?",
+              "columnIndex": 7,
+              "columnCandidates": [
+                7
+              ],
+              "columnMatchReason": "'0 in the 1980s' directly names the '1980s' field",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "1",
+              "value": 1,
+              "start": 50,
+              "end": 51,
+              "clause": "What is the average for the 1990s with a total of 1,",
+              "columnIndex": 10,
+              "columnCandidates": [
+                10
+              ],
+              "columnMatchReason": "'a total of 1' directly refers to the 'Total to date' field",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "0",
+              "value": 0,
+              "start": 57,
+              "end": 58,
+              "clause": "and 0 in the 1980s?",
+              "columnIndex": 7,
+              "columnCandidates": [
+                7
+              ],
+              "columnMatchReason": "'0 in the 1980s' directly names the '1980s' field",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              10,
+              0,
+              1
+            ],
+            [
+              7,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "1",
+          "value": "1",
+          "start": 50,
+          "end": 51
+        },
+        {
+          "surface": "0",
+          "value": "0",
+          "start": 57,
+          "end": 58
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "1",
+          "value": 1,
+          "start": 50,
+          "end": 51,
+          "clause": "What is the average for the 1990s with a total of 1,",
+          "columnIndex": 10,
+          "columnCandidates": [
+            10
+          ],
+          "columnMatchReason": "'a total of 1' directly refers to the 'Total to date' field",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "0",
+          "value": 0,
+          "start": 57,
+          "end": 58,
+          "clause": "and 0 in the 1980s?",
+          "columnIndex": 7,
+          "columnCandidates": [
+            7
+          ],
+          "columnMatchReason": "'0 in the 1980s' directly names the '1980s' field",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          10,
+          0,
+          1
+        ],
+        [
+          7,
+          0,
+          0
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8203
+}

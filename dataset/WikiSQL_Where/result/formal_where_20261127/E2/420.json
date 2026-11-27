@@ -1,0 +1,495 @@
+{
+  "arm": "E2",
+  "position": 420,
+  "example_id": "test:11299:2-11716268-1",
+  "original_index": 11299,
+  "table_id": "2-11716268-1",
+  "question": "How many places have more than 33 points?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        3,
+        1,
+        33
+      ]
+    ],
+    "agg": 3
+  },
+  "prediction_conds": [
+    [
+      3,
+      1,
+      33
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        1,
+        33
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "33",
+        "value": 33,
+        "start": 31,
+        "end": 33,
+        "clause": "How many places have more than 33 points?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The question explicitly asks for entries with more than 33 points, matching the Points column.",
+        "operator": ">",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "33",
+        "value": "33",
+        "start": 31,
+        "end": 33
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "How many places have more than 33 points?",
+      "table": {
+        "header": [
+          "Draw",
+          "Artist",
+          "Song",
+          "Points",
+          "Place"
+        ],
+        "page_title": "Bosnia and Herzegovina in the Eurovision Song Contest 1999",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "real",
+          "real"
+        ],
+        "page_id": 11716268,
+        "id": "2-11716268-1",
+        "section_title": "BH Eurosong 1999",
+        "rows": [
+          [
+            "1",
+            "Eldin Huseinbegović",
+            "\"Volio obolio\"",
+            "13",
+            "13"
+          ],
+          [
+            "2",
+            "Beat House",
+            "\"Kunem te ja\"",
+            "39",
+            "6"
+          ],
+          [
+            "3",
+            "Krug",
+            "\"U ritmu novom\"",
+            "33",
+            "8"
+          ],
+          [
+            "4",
+            "Seven Up",
+            "\"Daj spusti se\"",
+            "58",
+            "3"
+          ],
+          [
+            "5",
+            "Dražen Žerić",
+            "\"Proveo bi život ispod mostova\"",
+            "16",
+            "12"
+          ],
+          [
+            "6",
+            "Dunja Galineo & Nurudin Vatrenjak",
+            "\"Budi tu\"",
+            "0",
+            "17"
+          ],
+          [
+            "7",
+            "Sarajevo Old Stars",
+            "\"Šampion\"",
+            "51",
+            "4"
+          ],
+          [
+            "8",
+            "Zejnaida Mesihović",
+            "\"Dala bih ti život\"",
+            "38",
+            "7"
+          ],
+          [
+            "9",
+            "Željka Katavić-Pilj",
+            "\"Bog mi je svjedok\"",
+            "40",
+            "5"
+          ],
+          [
+            "10",
+            "Sanja Volić",
+            "\"Jedini, ljubim te\"",
+            "10",
+            "14"
+          ],
+          [
+            "11",
+            "Seid Memić-Vajta",
+            "\"Stare melodije\"",
+            "19",
+            "11"
+          ],
+          [
+            "12",
+            "Elvana Dučić",
+            "\"Priznat ću ti sve\"",
+            "7",
+            "16"
+          ],
+          [
+            "13",
+            "Hari Mata Hari",
+            "\"Starac i more\"",
+            "70",
+            "1"
+          ],
+          [
+            "14",
+            "Dino & Béatrice",
+            "\"Putnici\"",
+            "65",
+            "2"
+          ],
+          [
+            "15",
+            "Igor",
+            "\"Glumica\"",
+            "28",
+            "9"
+          ],
+          [
+            "16",
+            "Sarajevska Ruža",
+            "\"Želja\"",
+            "10",
+            "14"
+          ],
+          [
+            "17",
+            "Andrej i Romana",
+            "\"Ostavi suze\"",
+            "25",
+            "10"
+          ]
+        ],
+        "caption": "BH Eurosong - 6 March 1999",
+        "headers": [
+          "Draw",
+          "Artist",
+          "Song",
+          "Points",
+          "Place"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-11716268-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "33",
+              "value": "33",
+              "start": 31,
+              "end": 33
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "fad76cf461195eedc8847178ea39395e0fc0d6dea17b300320751224aa2def57",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5033,
+              "completion_tokens": 17,
+              "total_tokens": 5050,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "33",
+              "value": "33",
+              "start": 31,
+              "end": 33,
+              "clause": "How many places have more than 33 points?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "33",
+              "value": "33",
+              "start": 31,
+              "end": 33,
+              "clause": "How many places have more than 33 points?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "33",
+              "value": "33",
+              "start": 31,
+              "end": 33,
+              "clause": "How many places have more than 33 points?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly asks for entries with more than 33 points, matching the Points column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "54569809681b36e810fbd2e064d51c305f8bb85c27f2af8d629ec18234fbeaa2",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5064,
+              "completion_tokens": 39,
+              "total_tokens": 5103,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "33",
+              "value": "33",
+              "start": 31,
+              "end": 33,
+              "clause": "How many places have more than 33 points?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly asks for entries with more than 33 points, matching the Points column.",
+              "operator": ">"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0fa2677b8039cf1363975bef82a9587c2da00fb42d200ff5637291779e70881e",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5127,
+              "completion_tokens": 10,
+              "total_tokens": 5137,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "33",
+              "value": 33,
+              "start": 31,
+              "end": 33,
+              "clause": "How many places have more than 33 points?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly asks for entries with more than 33 points, matching the Points column.",
+              "operator": ">"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0ab8025612cad7893768256682618a853b45ed8d9f1335ec454b664fba22946b",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5078,
+              "completion_tokens": 9,
+              "total_tokens": 5087,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "33",
+              "value": "33",
+              "start": 31,
+              "end": 33,
+              "clause": "How many places have more than 33 points?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly asks for entries with more than 33 points, matching the Points column.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "33",
+              "value": 33,
+              "start": 31,
+              "end": 33,
+              "clause": "How many places have more than 33 points?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly asks for entries with more than 33 points, matching the Points column.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "33",
+              "value": 33,
+              "start": 31,
+              "end": 33,
+              "clause": "How many places have more than 33 points?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly asks for entries with more than 33 points, matching the Points column.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              1,
+              33
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "33",
+          "value": "33",
+          "start": 31,
+          "end": 33
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "33",
+          "value": 33,
+          "start": 31,
+          "end": 33,
+          "clause": "How many places have more than 33 points?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The question explicitly asks for entries with more than 33 points, matching the Points column.",
+          "operator": ">",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          3,
+          1,
+          33
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8297
+}

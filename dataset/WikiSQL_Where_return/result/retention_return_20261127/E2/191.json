@@ -1,0 +1,445 @@
+{
+  "arm": "E2",
+  "position": 191,
+  "example_id": "test:6943:2-15558943-2",
+  "original_index": 6943,
+  "table_id": "2-15558943-2",
+  "question": "The Liberal Ticket listed which candidate when Jack A. Martin was listed on the Free Libertarian Ticket?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        5,
+        0,
+        "jack a. martin"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      5,
+      0,
+      "Jack A. Martin"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        5,
+        0,
+        "Jack A. Martin"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Jack A. Martin",
+        "value": "Jack A. Martin",
+        "start": 47,
+        "end": 61,
+        "clause": "The Liberal Ticket listed which candidate when Jack A. Martin was listed on the Free Libertarian Ticket?",
+        "columnIndex": 5,
+        "columnCandidates": [
+          5
+        ],
+        "columnMatchReason": "The clause explicitly says Jack A. Martin was listed on the Free Libertarian Ticket, matching the 'Free Libertarian ticket' header.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Jack A. Martin",
+        "value": "Jack A. Martin",
+        "start": 47,
+        "end": 61
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "The Liberal Ticket listed which candidate when Jack A. Martin was listed on the Free Libertarian Ticket?",
+      "table": {
+        "header": [
+          "Office",
+          "Democratic ticket",
+          "Republican ticket",
+          "Conservative ticket",
+          "Liberal ticket",
+          "Free Libertarian ticket",
+          "Socialist Labor ticket"
+        ],
+        "page_title": "New York state election, 1974",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 15558943,
+        "id": "2-15558943-2",
+        "section_title": "Result",
+        "rows": [
+          [
+            "Governor",
+            "Hugh L. Carey",
+            "Malcolm Wilson",
+            "Malcolm Wilson",
+            "Hugh L. Carey",
+            "Jerry Tuccille",
+            "John Emanuel"
+          ],
+          [
+            "Lieutenant Governor",
+            "Mary Anne Krupsak",
+            "Ralph G. Caso",
+            "Ralph G. Caso",
+            "Mary Anne Krupsak",
+            "Louis J. Sicilia",
+            "(none)"
+          ],
+          [
+            "Comptroller",
+            "Arthur Levitt",
+            "Stephen May",
+            "Bradley J. Hurd",
+            "Arthur Levitt",
+            "Robert S. Flanzer",
+            "(none)"
+          ],
+          [
+            "Attorney General",
+            "Robert Abrams",
+            "Louis J. Lefkowitz",
+            "Edward F. Campbell",
+            "Louis J. Lefkowitz",
+            "Leland W. Schubert",
+            "(none)"
+          ],
+          [
+            "Judge of the Court of Appeals",
+            "Lawrence H. Cooke",
+            "Louis M. Greenblott",
+            "Henry S. Middendorf, Jr.",
+            "Lawrence H. Cooke",
+            "Melvin J. Hirshowitz",
+            "(none)"
+          ],
+          [
+            "Judge of the Court of Appeals",
+            "Jacob D. Fuchsberg",
+            "Harold A. Stevens",
+            "Harold A. Stevens",
+            "Harold A. Stevens",
+            "Jack A. Martin",
+            "(none)"
+          ],
+          [
+            "U.S. Senator",
+            "Ramsey Clark",
+            "Jacob K. Javits",
+            "Barbara A. Keating",
+            "Jacob K. Javits",
+            "Percy L. Greaves, Jr.",
+            "Robert E. Massi"
+          ]
+        ],
+        "caption": "1974 state election results",
+        "headers": [
+          "Office",
+          "Democratic ticket",
+          "Republican ticket",
+          "Conservative ticket",
+          "Liberal ticket",
+          "Free Libertarian ticket",
+          "Socialist Labor ticket"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-15558943-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Jack A. Martin",
+              "value": "Jack A. Martin",
+              "start": 47,
+              "end": 61
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "11d004fcbd10bc15eba281f82e12d7d7c87517ea4eb94cc742061bc0098815ab",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4989,
+              "completion_tokens": 23,
+              "total_tokens": 5012,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Jack A. Martin",
+              "value": "Jack A. Martin",
+              "start": 47,
+              "end": 61,
+              "clause": "The Liberal Ticket listed which candidate when Jack A. Martin was listed on the Free Libertarian Ticket?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Jack A. Martin",
+              "value": "Jack A. Martin",
+              "start": 47,
+              "end": 61,
+              "clause": "The Liberal Ticket listed which candidate when Jack A. Martin was listed on the Free Libertarian Ticket?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Jack A. Martin",
+              "value": "Jack A. Martin",
+              "start": 47,
+              "end": 61,
+              "clause": "The Liberal Ticket listed which candidate when Jack A. Martin was listed on the Free Libertarian Ticket?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The clause explicitly says Jack A. Martin was listed on the Free Libertarian Ticket, matching the 'Free Libertarian ticket' header."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "99d68308c1d599c81cd08476a4b571b5f068bd043d0ab2954dd72097f060ef96",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5036,
+              "completion_tokens": 48,
+              "total_tokens": 5084,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Jack A. Martin",
+              "value": "Jack A. Martin",
+              "start": 47,
+              "end": 61,
+              "clause": "The Liberal Ticket listed which candidate when Jack A. Martin was listed on the Free Libertarian Ticket?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The clause explicitly says Jack A. Martin was listed on the Free Libertarian Ticket, matching the 'Free Libertarian ticket' header.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ef5b2e37a394c757e633c44a5440e794297875dbc8d652b95e812ed362ebb3b1",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5108,
+              "completion_tokens": 9,
+              "total_tokens": 5117,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Jack A. Martin",
+              "value": "Jack A. Martin",
+              "start": 47,
+              "end": 61,
+              "clause": "The Liberal Ticket listed which candidate when Jack A. Martin was listed on the Free Libertarian Ticket?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The clause explicitly says Jack A. Martin was listed on the Free Libertarian Ticket, matching the 'Free Libertarian ticket' header.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0f219686c7f5cc1bf30d2f1f249e048d8a610f1d2539956322dbdf2bb98263f7",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5059,
+              "completion_tokens": 13,
+              "total_tokens": 5072,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Jack A. Martin",
+              "value": "Jack A. Martin",
+              "start": 47,
+              "end": 61,
+              "clause": "The Liberal Ticket listed which candidate when Jack A. Martin was listed on the Free Libertarian Ticket?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The clause explicitly says Jack A. Martin was listed on the Free Libertarian Ticket, matching the 'Free Libertarian ticket' header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Jack A. Martin",
+              "value": "Jack A. Martin",
+              "start": 47,
+              "end": 61,
+              "clause": "The Liberal Ticket listed which candidate when Jack A. Martin was listed on the Free Libertarian Ticket?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The clause explicitly says Jack A. Martin was listed on the Free Libertarian Ticket, matching the 'Free Libertarian ticket' header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Jack A. Martin",
+              "value": "Jack A. Martin",
+              "start": 47,
+              "end": 61,
+              "clause": "The Liberal Ticket listed which candidate when Jack A. Martin was listed on the Free Libertarian Ticket?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The clause explicitly says Jack A. Martin was listed on the Free Libertarian Ticket, matching the 'Free Libertarian ticket' header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              5,
+              0,
+              "Jack A. Martin"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Jack A. Martin",
+          "value": "Jack A. Martin",
+          "start": 47,
+          "end": 61
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Jack A. Martin",
+          "value": "Jack A. Martin",
+          "start": 47,
+          "end": 61,
+          "clause": "The Liberal Ticket listed which candidate when Jack A. Martin was listed on the Free Libertarian Ticket?",
+          "columnIndex": 5,
+          "columnCandidates": [
+            5
+          ],
+          "columnMatchReason": "The clause explicitly says Jack A. Martin was listed on the Free Libertarian Ticket, matching the 'Free Libertarian ticket' header.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          5,
+          0,
+          "Jack A. Martin"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 10234
+}

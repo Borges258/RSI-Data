@@ -1,0 +1,598 @@
+{
+  "arm": "E2",
+  "position": 303,
+  "example_id": "test:11869:2-10809444-8",
+  "original_index": 11869,
+  "table_id": "2-10809444-8",
+  "question": "What did the away team score in the game with a crowd size larger than 22,000?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        5,
+        1,
+        "22,000"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      5,
+      1,
+      "22,000"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        5,
+        1,
+        "22,000"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "22,000",
+        "value": "22,000",
+        "start": 71,
+        "end": 77,
+        "clause": "What did the away team score in the game with a crowd size larger than 22,000?",
+        "columnIndex": 5,
+        "columnCandidates": [
+          5
+        ],
+        "columnMatchReason": "The phrase \"crowd size larger than 22,000\" directly identifies the Crowd column, which contains crowd-size values.",
+        "operator": ">",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "22,000",
+        "value": "22,000",
+        "start": 71,
+        "end": 77
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What did the away team score in the game with a crowd size larger than 22,000?",
+      "table": {
+        "header": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ],
+        "page_title": "1947 VFL season",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 10809444,
+        "id": "2-10809444-8",
+        "section_title": "Round 8",
+        "rows": [
+          [
+            "Melbourne",
+            "15.15 (105)",
+            "St Kilda",
+            "5.13 (43)",
+            "MCG",
+            "11,000",
+            "7 June 1947"
+          ],
+          [
+            "Hawthorn",
+            "10.15 (75)",
+            "North Melbourne",
+            "10.11 (71)",
+            "Glenferrie Oval",
+            "12,000",
+            "7 June 1947"
+          ],
+          [
+            "Carlton",
+            "16.21 (117)",
+            "Geelong",
+            "7.10 (52)",
+            "Princes Park",
+            "16,000",
+            "7 June 1947"
+          ],
+          [
+            "South Melbourne",
+            "15.9 (99)",
+            "Richmond",
+            "15.13 (103)",
+            "Lake Oval",
+            "24,000",
+            "7 June 1947"
+          ],
+          [
+            "Footscray",
+            "12.11 (83)",
+            "Fitzroy",
+            "7.7 (49)",
+            "Western Oval",
+            "20,000",
+            "7 June 1947"
+          ],
+          [
+            "Essendon",
+            "9.14 (68)",
+            "Collingwood",
+            "11.16 (82)",
+            "Windy Hill",
+            "22,000",
+            "7 June 1947"
+          ]
+        ],
+        "caption": "Round 8",
+        "headers": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-10809444-8",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "22,000",
+              "value": "22,000",
+              "start": 71,
+              "end": 77
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "75c5834e5e2c3480d97cf58508bc87b7244a9c9a636406123c5a722f1350155d",
+            "knowledgeIds": [],
+            "usage": {
+              "attribution": {
+                "items": {
+                  "msg_0c02ef2f4386cb91016b0904686fe887d1abded432ff665ef4": {
+                    "input_tokens": 64,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 64,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0c02ef2f4386cb91016b0904686fe887d1adeaa361131bbe0e": {
+                    "input_tokens": 86,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 86,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0c02ef2f4386cb91016b0904686fe887d1b6fdff008938ec98": {
+                    "input_tokens": 381,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 381,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0c02ef2f4386cb91016b09046d921087d18af3311e885c7210": {
+                    "input_tokens": 0,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 23,
+                    "content": [
+                      {
+                        "input_tokens": 0,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 23
+                      }
+                    ]
+                  },
+                  "rs_0c02ef2f4386cb91016b09046d677087d182f37d38c8c991c0": {
+                    "input_tokens": 2,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 126
+                  }
+                },
+                "request_fields": {
+                  "instructions": {
+                    "input_tokens": 4380,
+                    "cached_tokens": 3968,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0
+                  }
+                }
+              },
+              "prompt_tokens": 4913,
+              "completion_tokens": 149,
+              "total_tokens": 5062,
+              "prompt_tokens_details": {
+                "cache_write_tokens_details": {
+                  "ttl_30m_tokens": 0,
+                  "ttl_12h_tokens": 0
+                },
+                "cached_tokens": 3968
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 126
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "22,000",
+              "value": "22,000",
+              "start": 71,
+              "end": 77,
+              "clause": "What did the away team score in the game with a crowd size larger than 22,000?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "22,000",
+              "value": "22,000",
+              "start": 71,
+              "end": 77,
+              "clause": "What did the away team score in the game with a crowd size larger than 22,000?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "22,000",
+              "value": "22,000",
+              "start": 71,
+              "end": 77,
+              "clause": "What did the away team score in the game with a crowd size larger than 22,000?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The phrase \"crowd size larger than 22,000\" directly identifies the Crowd column, which contains crowd-size values."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "da743c36e86dc678ea9ff607532d8bce2e0b4a78d296c300d3b848a99b300bb1",
+            "knowledgeIds": [],
+            "usage": {
+              "attribution": {
+                "items": {
+                  "msg_011665cd2e020392016b090483866087d18e83af5a3e08cff9": {
+                    "input_tokens": 131,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 131,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_011665cd2e020392016b090483866087d19dd41acc70828e71": {
+                    "input_tokens": 381,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 381,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_011665cd2e020392016b090483866087d1a2417f6d5f179e64": {
+                    "input_tokens": 64,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 64,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_011665cd2e020392016b09048902c487d1b2f88d750d21a116": {
+                    "input_tokens": 0,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 48,
+                    "content": [
+                      {
+                        "input_tokens": 0,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 48
+                      }
+                    ]
+                  },
+                  "rs_011665cd2e020392016b090488d7a487d1bc6f05e9b261f67a": {
+                    "input_tokens": 2,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 46
+                  }
+                },
+                "request_fields": {
+                  "instructions": {
+                    "input_tokens": 4380,
+                    "cached_tokens": 3968,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0
+                  }
+                }
+              },
+              "prompt_tokens": 4958,
+              "completion_tokens": 94,
+              "total_tokens": 5052,
+              "prompt_tokens_details": {
+                "cache_write_tokens_details": {
+                  "ttl_30m_tokens": 0,
+                  "ttl_12h_tokens": 0
+                },
+                "cached_tokens": 3968
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 46
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "22,000",
+              "value": "22,000",
+              "start": 71,
+              "end": 77,
+              "clause": "What did the away team score in the game with a crowd size larger than 22,000?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The phrase \"crowd size larger than 22,000\" directly identifies the Crowd column, which contains crowd-size values.",
+              "operator": ">"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d33450b3707c1f6a639204c954ba09bc5e108024660e8a11cff55ad1e26eaf6d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5028,
+              "completion_tokens": 10,
+              "total_tokens": 5038,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "22,000",
+              "value": "22,000",
+              "start": 71,
+              "end": 77,
+              "clause": "What did the away team score in the game with a crowd size larger than 22,000?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The phrase \"crowd size larger than 22,000\" directly identifies the Crowd column, which contains crowd-size values.",
+              "operator": ">"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a4e1c39cc53ce190e4ea4560cd0b212292c9621914b5f0cf6f55eb94e9510fbb",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4979,
+              "completion_tokens": 12,
+              "total_tokens": 4991,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "22,000",
+              "value": "22,000",
+              "start": 71,
+              "end": 77,
+              "clause": "What did the away team score in the game with a crowd size larger than 22,000?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The phrase \"crowd size larger than 22,000\" directly identifies the Crowd column, which contains crowd-size values.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "22,000",
+              "value": "22,000",
+              "start": 71,
+              "end": 77,
+              "clause": "What did the away team score in the game with a crowd size larger than 22,000?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The phrase \"crowd size larger than 22,000\" directly identifies the Crowd column, which contains crowd-size values.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "22,000",
+              "value": "22,000",
+              "start": 71,
+              "end": 77,
+              "clause": "What did the away team score in the game with a crowd size larger than 22,000?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The phrase \"crowd size larger than 22,000\" directly identifies the Crowd column, which contains crowd-size values.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              5,
+              1,
+              "22,000"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "22,000",
+          "value": "22,000",
+          "start": 71,
+          "end": 77
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "22,000",
+          "value": "22,000",
+          "start": 71,
+          "end": 77,
+          "clause": "What did the away team score in the game with a crowd size larger than 22,000?",
+          "columnIndex": 5,
+          "columnCandidates": [
+            5
+          ],
+          "columnMatchReason": "The phrase \"crowd size larger than 22,000\" directly identifies the Crowd column, which contains crowd-size values.",
+          "operator": ">",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          5,
+          1,
+          "22,000"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 42266
+}

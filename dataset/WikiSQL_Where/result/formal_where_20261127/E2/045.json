@@ -1,0 +1,424 @@
+{
+  "arm": "E2",
+  "position": 45,
+  "example_id": "test:3486:1-26139378-1",
+  "original_index": 3486,
+  "table_id": "1-26139378-1",
+  "question": "What is the original airdate of the episode titled \"Taking it on the Chin\"?",
+  "gold_sql": {
+    "sel": 5,
+    "conds": [
+      [
+        2,
+        0,
+        "\"Taking It on the Chin\""
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "\"Taking It on the Chin\""
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "\"Taking It on the Chin\""
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Taking it on the Chin",
+        "value": "\"Taking It on the Chin\"",
+        "start": 52,
+        "end": 73,
+        "clause": "What is the original airdate of the episode titled \"Taking it on the Chin\"?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The phrase 'episode titled' identifies the Title field, and the value matches a Title cell.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "NORMALIZED_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Taking it on the Chin",
+        "value": "Taking It on the Chin",
+        "start": 52,
+        "end": 73
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the original airdate of the episode titled \"Taking it on the Chin\"?",
+      "table": {
+        "id": "1-26139378-1",
+        "header": [
+          "Episode #",
+          "Series #",
+          "Title",
+          "Director",
+          "Writer",
+          "Original airdate",
+          "Viewers (in millions)"
+        ],
+        "types": [
+          "real",
+          "real",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "rows": [
+          [
+            11,
+            2,
+            "\"Puppy Love\"",
+            "Michael Owen Morris Category:Articles with hCards",
+            "Len Collin Category:Articles with hCards",
+            "2 Cannot handle non-empty timestamp argument! 1999",
+            "8.23"
+          ],
+          [
+            12,
+            3,
+            "\"Destination Unknown\"",
+            "Jim Goddard Category:Articles with hCards",
+            "Steve Bennett Category:Articles with hCards",
+            "9 Cannot handle non-empty timestamp argument! 1999",
+            "8.13"
+          ],
+          [
+            16,
+            7,
+            "\"Chasing the Dragon\"",
+            "Julie Edwards Category:Articles with hCards",
+            "Sam Wheats Category:Articles with hCards",
+            "7 Cannot handle non-empty timestamp argument! 2000",
+            "8.63"
+          ],
+          [
+            20,
+            11,
+            "\"Trust\"",
+            "Jim Goddard Category:Articles with hCards",
+            "Niall Leonard Category:Articles with hCards",
+            "3 Cannot handle non-empty timestamp argument! 2000",
+            "9.67"
+          ],
+          [
+            24,
+            15,
+            "\"Taking It on the Chin\"",
+            "Michael Owen Morris Category:Articles with hCards",
+            "Jeff Povey Category:Articles with hCards",
+            "2 Cannot handle non-empty timestamp argument! 2000",
+            "9.25"
+          ]
+        ],
+        "name": "table_26139378_1",
+        "headers": [
+          "Episode #",
+          "Series #",
+          "Title",
+          "Director",
+          "Writer",
+          "Original airdate",
+          "Viewers (in millions)"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-26139378-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Taking it on the Chin",
+              "value": "Taking It on the Chin",
+              "start": 52,
+              "end": 73
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "aa6f486ba349ad5f08a51e3f4ba268ec9b93dc9fd3ca6ce1a37cda1acc4b6bf9",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4917,
+              "completion_tokens": 25,
+              "total_tokens": 4942,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Taking it on the Chin",
+              "value": "Taking It on the Chin",
+              "start": 52,
+              "end": 73,
+              "clause": "What is the original airdate of the episode titled \"Taking it on the Chin\"?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Taking it on the Chin",
+              "value": "Taking It on the Chin",
+              "start": 52,
+              "end": 73,
+              "clause": "What is the original airdate of the episode titled \"Taking it on the Chin\"?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Taking it on the Chin",
+              "value": "Taking It on the Chin",
+              "start": 52,
+              "end": 73,
+              "clause": "What is the original airdate of the episode titled \"Taking it on the Chin\"?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase 'episode titled' identifies the Title field, and the value matches a Title cell."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ebb321f92b66bd4f940bf005e3d152cdda1df04fc1bcb5cb98a3d29b8c9f5e4b",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4964,
+              "completion_tokens": 40,
+              "total_tokens": 5004,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Taking it on the Chin",
+              "value": "Taking It on the Chin",
+              "start": 52,
+              "end": 73,
+              "clause": "What is the original airdate of the episode titled \"Taking it on the Chin\"?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase 'episode titled' identifies the Title field, and the value matches a Title cell.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a4983fc4eeb404ad1247c2eb9f4b43d5137425b629dcdaa8f72aa102797c7a22",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5028,
+              "completion_tokens": 9,
+              "total_tokens": 5037,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Taking it on the Chin",
+              "value": "Taking It on the Chin",
+              "start": 52,
+              "end": 73,
+              "clause": "What is the original airdate of the episode titled \"Taking it on the Chin\"?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase 'episode titled' identifies the Title field, and the value matches a Title cell.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "7379bfc6320c008b7e7d07dfca7040d05d15460385aa54aef67fbbfb8097c375",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4979,
+              "completion_tokens": 14,
+              "total_tokens": 4993,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Taking it on the Chin",
+              "value": "\"Taking It on the Chin\"",
+              "start": 52,
+              "end": 73,
+              "clause": "What is the original airdate of the episode titled \"Taking it on the Chin\"?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase 'episode titled' identifies the Title field, and the value matches a Title cell.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "NORMALIZED_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Taking it on the Chin",
+              "value": "\"Taking It on the Chin\"",
+              "start": 52,
+              "end": 73,
+              "clause": "What is the original airdate of the episode titled \"Taking it on the Chin\"?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase 'episode titled' identifies the Title field, and the value matches a Title cell.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "NORMALIZED_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Taking it on the Chin",
+              "value": "\"Taking It on the Chin\"",
+              "start": 52,
+              "end": 73,
+              "clause": "What is the original airdate of the episode titled \"Taking it on the Chin\"?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase 'episode titled' identifies the Title field, and the value matches a Title cell.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "NORMALIZED_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "\"Taking It on the Chin\""
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Taking it on the Chin",
+          "value": "Taking It on the Chin",
+          "start": 52,
+          "end": 73
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Taking it on the Chin",
+          "value": "\"Taking It on the Chin\"",
+          "start": 52,
+          "end": 73,
+          "clause": "What is the original airdate of the episode titled \"Taking it on the Chin\"?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The phrase 'episode titled' identifies the Title field, and the value matches a Title cell.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "NORMALIZED_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          2,
+          0,
+          "\"Taking It on the Chin\""
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8125
+}

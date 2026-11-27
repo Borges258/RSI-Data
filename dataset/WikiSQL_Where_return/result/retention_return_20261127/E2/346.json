@@ -1,0 +1,405 @@
+{
+  "arm": "E2",
+  "position": 346,
+  "example_id": "test:13609:2-18811509-3",
+  "original_index": 13609,
+  "table_id": "2-18811509-3",
+  "question": "What is the Year won for the player with a To par of 8?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        4,
+        0,
+        8
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [],
+  "status": "INVALID",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "INVALID",
+    "valid": false,
+    "errors": [
+      "condition 0: nonnumeric value for real column"
+    ],
+    "conditions": [
+      {
+        "surface": "8",
+        "value": "+8",
+        "start": 53,
+        "end": 54,
+        "clause": "What is the Year won for the player with a To par of 8?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The question explicitly identifies the condition field as 'To par'; the table contains '+8' in that column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "stage": "WHERE_CONDITION_VALIDATE",
+    "originalConditions": [
+      {
+        "surface": "8",
+        "value": "8",
+        "start": 53,
+        "end": 54
+      }
+    ],
+    "halt": true,
+    "completed": false,
+    "conds": [],
+    "warnings": [],
+    "request": {
+      "question": "What is the Year won for the player with a To par of 8?",
+      "table": {
+        "header": [
+          "Player",
+          "Country",
+          "Year(s) won",
+          "Total",
+          "To par"
+        ],
+        "page_title": "2009 Open Championship",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "real",
+          "real"
+        ],
+        "page_id": 18811509,
+        "id": "2-18811509-3",
+        "section_title": "Missed the cut",
+        "rows": [
+          [
+            "Ben Curtis",
+            "United States",
+            "2003",
+            "145",
+            "+5"
+          ],
+          [
+            "Todd Hamilton",
+            "United States",
+            "2004",
+            "145",
+            "+5"
+          ],
+          [
+            "Tiger Woods",
+            "United States",
+            "2000 , 2005 , 2006",
+            "145",
+            "+5"
+          ],
+          [
+            "David Duval",
+            "United States",
+            "2001",
+            "147",
+            "+7"
+          ],
+          [
+            "Sandy Lyle",
+            "Scotland",
+            "1985",
+            "148",
+            "+8"
+          ],
+          [
+            "Nick Faldo",
+            "England",
+            "1987 , 1990 , 1992",
+            "151",
+            "+11"
+          ],
+          [
+            "Greg Norman",
+            "Australia",
+            "1986 , 1993",
+            "152",
+            "+12"
+          ]
+        ],
+        "caption": "Missed the cut",
+        "headers": [
+          "Player",
+          "Country",
+          "Year(s) won",
+          "Total",
+          "To par"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-18811509-3",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 9,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "8",
+              "value": "8",
+              "start": 53,
+              "end": 54
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c151db3777e2ad9eea052b0d79ba5265eebf1cf2bf0d1828e1d449edeacacd4e",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4797,
+              "completion_tokens": 17,
+              "total_tokens": 4814,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "8",
+              "value": "8",
+              "start": 53,
+              "end": 54,
+              "clause": "What is the Year won for the player with a To par of 8?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "8",
+              "value": "8",
+              "start": 53,
+              "end": 54,
+              "clause": "What is the Year won for the player with a To par of 8?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "8",
+              "value": "8",
+              "start": 53,
+              "end": 54,
+              "clause": "What is the Year won for the player with a To par of 8?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly identifies the condition field as 'To par'; the table contains '+8' in that column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e5f4c62500733a51cc0676325b20774a2d12242683812d8ed2fa681731663acf",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4834,
+              "completion_tokens": 43,
+              "total_tokens": 4877,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "8",
+              "value": "8",
+              "start": 53,
+              "end": 54,
+              "clause": "What is the Year won for the player with a To par of 8?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly identifies the condition field as 'To par'; the table contains '+8' in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "93cde629de228d6debec2df75eb606a541bac1431b7c1804b9fb1a8817db4005",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4901,
+              "completion_tokens": 9,
+              "total_tokens": 4910,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "8",
+              "value": "+8",
+              "start": 53,
+              "end": 54,
+              "clause": "What is the Year won for the player with a To par of 8?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly identifies the condition field as 'To par'; the table contains '+8' in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "3b5dea8a5e9ecad1aaeac475b126866d91df30a195fd924b36766c1d936319bb",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4852,
+              "completion_tokens": 11,
+              "total_tokens": 4863,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "8",
+              "value": "+8",
+              "start": 53,
+              "end": 54,
+              "clause": "What is the Year won for the player with a To par of 8?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly identifies the condition field as 'To par'; the table contains '+8' in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "8",
+              "value": "+8",
+              "start": 53,
+              "end": 54,
+              "clause": "What is the Year won for the player with a To par of 8?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly identifies the condition field as 'To par'; the table contains '+8' in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "INVALID",
+          "valid": false,
+          "errors": [
+            "condition 0: nonnumeric value for real column"
+          ],
+          "conditions": [
+            {
+              "surface": "8",
+              "value": "+8",
+              "start": 53,
+              "end": 54,
+              "clause": "What is the Year won for the player with a To par of 8?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly identifies the condition field as 'To par'; the table contains '+8' in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "INVALID",
+        "stage": "WHERE_CONDITION_VALIDATE",
+        "halt": true,
+        "completed": false,
+        "errors": [
+          "condition 0: nonnumeric value for real column"
+        ],
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "8",
+          "value": "8",
+          "start": 53,
+          "end": 54
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "8",
+          "value": "+8",
+          "start": 53,
+          "end": 54,
+          "clause": "What is the Year won for the player with a To par of 8?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The question explicitly identifies the condition field as 'To par'; the table contains '+8' in that column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": false,
+  "elapsed_ms": 10265
+}

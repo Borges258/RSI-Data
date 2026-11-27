@@ -1,0 +1,418 @@
+{
+  "arm": "E2",
+  "position": 460,
+  "example_id": "test:15834:2-12441518-1",
+  "original_index": 15834,
+  "table_id": "2-12441518-1",
+  "question": "How many episodes were portrayed by Nick Jonas?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        1,
+        0,
+        "nick jonas"
+      ]
+    ],
+    "agg": 3
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "Nick Jonas"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "Nick Jonas"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Nick Jonas",
+        "value": "Nick Jonas",
+        "start": 36,
+        "end": 46,
+        "clause": "How many episodes were portrayed by Nick Jonas?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The phrase 'portrayed by Nick Jonas' directly matches the 'Portrayed by' header, and the row evidence contains Nick Jonas in that column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Nick Jonas",
+        "value": "Nick Jonas",
+        "start": 36,
+        "end": 46
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "How many episodes were portrayed by Nick Jonas?",
+      "table": {
+        "header": [
+          "Character",
+          "Portrayed by",
+          "Main cast seasons",
+          "Recurring cast seasons",
+          "# of episodes"
+        ],
+        "page_title": "Jonas L.A.",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "real"
+        ],
+        "page_id": 12441518,
+        "id": "2-12441518-1",
+        "section_title": "Cast members",
+        "rows": [
+          [
+            "Nick Lucas",
+            "Nick Jonas",
+            "Seasons 1–2",
+            "Appears in all seasons",
+            "34"
+          ],
+          [
+            "Joe Lucas",
+            "Joe Jonas",
+            "Seasons 1–2",
+            "Appears in all seasons",
+            "34"
+          ],
+          [
+            "Kevin Lucas",
+            "Kevin Jonas",
+            "Seasons 1–2",
+            "Appears in all seasons",
+            "34"
+          ],
+          [
+            "Stella Malone",
+            "Chelsea Kane",
+            "Seasons 1–2",
+            "Appears in all seasons",
+            "34"
+          ],
+          [
+            "Macy Misa",
+            "Nicole Anderson",
+            "Seasons 1–2",
+            "Appears in all seasons",
+            "30"
+          ],
+          [
+            "Tom Lucas",
+            "John Ducey",
+            "Season 1",
+            "Season 2 (episode 9 only)",
+            "22"
+          ]
+        ],
+        "caption": "Cast members",
+        "headers": [
+          "Character",
+          "Portrayed by",
+          "Main cast seasons",
+          "Recurring cast seasons",
+          "# of episodes"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-12441518-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Nick Jonas",
+              "value": "Nick Jonas",
+              "start": 36,
+              "end": 46
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "70c4e56eae93759685ab1301c380e572e26dee2d267d89197ae0b035a1a66fdc",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4812,
+              "completion_tokens": 19,
+              "total_tokens": 4831,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Nick Jonas",
+              "value": "Nick Jonas",
+              "start": 36,
+              "end": 46,
+              "clause": "How many episodes were portrayed by Nick Jonas?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Nick Jonas",
+              "value": "Nick Jonas",
+              "start": 36,
+              "end": 46,
+              "clause": "How many episodes were portrayed by Nick Jonas?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Nick Jonas",
+              "value": "Nick Jonas",
+              "start": 36,
+              "end": 46,
+              "clause": "How many episodes were portrayed by Nick Jonas?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'portrayed by Nick Jonas' directly matches the 'Portrayed by' header, and the row evidence contains Nick Jonas in that column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "5107d6499498c59245a49d5b9626e15a1d31f4302dc214b350f64358464d0195",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4844,
+              "completion_tokens": 53,
+              "total_tokens": 4897,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Nick Jonas",
+              "value": "Nick Jonas",
+              "start": 36,
+              "end": 46,
+              "clause": "How many episodes were portrayed by Nick Jonas?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'portrayed by Nick Jonas' directly matches the 'Portrayed by' header, and the row evidence contains Nick Jonas in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "cbf9fdb074c83e5abeee90440445776a123b6f67665fe797e16673e35ef67037",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4921,
+              "completion_tokens": 9,
+              "total_tokens": 4930,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Nick Jonas",
+              "value": "Nick Jonas",
+              "start": 36,
+              "end": 46,
+              "clause": "How many episodes were portrayed by Nick Jonas?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'portrayed by Nick Jonas' directly matches the 'Portrayed by' header, and the row evidence contains Nick Jonas in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ae3f096c02f13ffb3611ddb1e7e5b79a268baea158a0066f3eac692522cc6344",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4872,
+              "completion_tokens": 11,
+              "total_tokens": 4883,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Nick Jonas",
+              "value": "Nick Jonas",
+              "start": 36,
+              "end": 46,
+              "clause": "How many episodes were portrayed by Nick Jonas?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'portrayed by Nick Jonas' directly matches the 'Portrayed by' header, and the row evidence contains Nick Jonas in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Nick Jonas",
+              "value": "Nick Jonas",
+              "start": 36,
+              "end": 46,
+              "clause": "How many episodes were portrayed by Nick Jonas?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'portrayed by Nick Jonas' directly matches the 'Portrayed by' header, and the row evidence contains Nick Jonas in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Nick Jonas",
+              "value": "Nick Jonas",
+              "start": 36,
+              "end": 46,
+              "clause": "How many episodes were portrayed by Nick Jonas?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'portrayed by Nick Jonas' directly matches the 'Portrayed by' header, and the row evidence contains Nick Jonas in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              "Nick Jonas"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Nick Jonas",
+          "value": "Nick Jonas",
+          "start": 36,
+          "end": 46
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Nick Jonas",
+          "value": "Nick Jonas",
+          "start": 36,
+          "end": 46,
+          "clause": "How many episodes were portrayed by Nick Jonas?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The phrase 'portrayed by Nick Jonas' directly matches the 'Portrayed by' header, and the row evidence contains Nick Jonas in that column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          1,
+          0,
+          "Nick Jonas"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7765
+}

@@ -1,0 +1,588 @@
+{
+  "arm": "E2",
+  "position": 297,
+  "example_id": "test:15139:2-12556269-1",
+  "original_index": 15139,
+  "table_id": "2-12556269-1",
+  "question": "What is the lowest number of bronze medals for a country with less than 1 gold and 0 silver?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        1,
+        2,
+        1
+      ],
+      [
+        2,
+        0,
+        0
+      ]
+    ],
+    "agg": 2
+  },
+  "prediction_conds": [
+    [
+      1,
+      2,
+      1
+    ],
+    [
+      2,
+      0,
+      0
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        2,
+        1
+      ],
+      [
+        2,
+        0,
+        0
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "1",
+        "value": 1,
+        "start": 72,
+        "end": 73,
+        "clause": "What is the lowest number of bronze medals for a country with less than 1 gold",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The clause explicitly says 'less than 1 gold', matching the Gold header.",
+        "operator": "<",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "0",
+        "value": 0,
+        "start": 83,
+        "end": 84,
+        "clause": "and 0 silver?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The clause explicitly says '0 silver', matching the Silver header.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "1",
+        "value": "1",
+        "start": 72,
+        "end": 73
+      },
+      {
+        "surface": "0",
+        "value": "0",
+        "start": 83,
+        "end": 84
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the lowest number of bronze medals for a country with less than 1 gold and 0 silver?",
+      "table": {
+        "header": [
+          "Nation",
+          "Gold",
+          "Silver",
+          "Bronze",
+          "Total"
+        ],
+        "page_title": "Curling at the 2010 Winter Olympics",
+        "types": [
+          "text",
+          "real",
+          "real",
+          "real",
+          "real"
+        ],
+        "page_id": 12556269,
+        "id": "2-12556269-1",
+        "section_title": "Medal table",
+        "rows": [
+          [
+            "Canada (CAN)",
+            "1",
+            "1",
+            "0",
+            "2"
+          ],
+          [
+            "Sweden (SWE)",
+            "1",
+            "0",
+            "0",
+            "1"
+          ],
+          [
+            "Norway (NOR)",
+            "0",
+            "1",
+            "0",
+            "1"
+          ],
+          [
+            "China (CHN)",
+            "0",
+            "0",
+            "1",
+            "1"
+          ],
+          [
+            "Switzerland (SUI)",
+            "0",
+            "0",
+            "1",
+            "1"
+          ],
+          [
+            "Total",
+            "2",
+            "2",
+            "2",
+            "6"
+          ]
+        ],
+        "caption": "Medal table",
+        "headers": [
+          "Nation",
+          "Gold",
+          "Silver",
+          "Bronze",
+          "Total"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-12556269-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 72,
+              "end": 73
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 83,
+              "end": 84
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "4de6569ecf5a4c4e440e77a44b2a161ec8de40edb2e0f0415efe0ac28dd8ea45",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4767,
+              "completion_tokens": 25,
+              "total_tokens": 4792,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 72,
+              "end": 73,
+              "clause": "What is the lowest number of bronze medals for a country with less than 1 gold"
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 83,
+              "end": 84,
+              "clause": "and 0 silver?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 72,
+              "end": 73,
+              "clause": "What is the lowest number of bronze medals for a country with less than 1 gold"
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 83,
+              "end": 84,
+              "clause": "and 0 silver?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 72,
+              "end": 73,
+              "clause": "What is the lowest number of bronze medals for a country with less than 1 gold",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly says 'less than 1 gold', matching the Gold header."
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 83,
+              "end": 84,
+              "clause": "and 0 silver?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The clause explicitly says '0 silver', matching the Silver header."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "1d030f9856c85ecbb22418e1c09aa4ebac70e68918a33b813c9cf7af861b73ce",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4830,
+              "completion_tokens": 54,
+              "total_tokens": 4884,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 72,
+              "end": 73,
+              "clause": "What is the lowest number of bronze medals for a country with less than 1 gold",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly says 'less than 1 gold', matching the Gold header.",
+              "operator": "<"
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 83,
+              "end": 84,
+              "clause": "and 0 silver?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The clause explicitly says '0 silver', matching the Silver header.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "2b3f429a8a06387a3735b56096be416d736b98ba413aa5a0e0b2ae56944e92b4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4919,
+              "completion_tokens": 11,
+              "total_tokens": 4930,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 72,
+              "end": 73,
+              "clause": "What is the lowest number of bronze medals for a country with less than 1 gold",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly says 'less than 1 gold', matching the Gold header.",
+              "operator": "<"
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 83,
+              "end": 84,
+              "clause": "and 0 silver?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The clause explicitly says '0 silver', matching the Silver header.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "efed4675ca48acf70d963579b775a851c18d6367cd70e5fca0630d40fb426d05",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4873,
+              "completion_tokens": 12,
+              "total_tokens": 4885,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 72,
+              "end": 73,
+              "clause": "What is the lowest number of bronze medals for a country with less than 1 gold",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly says 'less than 1 gold', matching the Gold header.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 83,
+              "end": 84,
+              "clause": "and 0 silver?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The clause explicitly says '0 silver', matching the Silver header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1",
+              "value": 1,
+              "start": 72,
+              "end": 73,
+              "clause": "What is the lowest number of bronze medals for a country with less than 1 gold",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly says 'less than 1 gold', matching the Gold header.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "0",
+              "value": 0,
+              "start": 83,
+              "end": 84,
+              "clause": "and 0 silver?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The clause explicitly says '0 silver', matching the Silver header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "1",
+              "value": 1,
+              "start": 72,
+              "end": 73,
+              "clause": "What is the lowest number of bronze medals for a country with less than 1 gold",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly says 'less than 1 gold', matching the Gold header.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "0",
+              "value": 0,
+              "start": 83,
+              "end": 84,
+              "clause": "and 0 silver?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The clause explicitly says '0 silver', matching the Silver header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              2,
+              1
+            ],
+            [
+              2,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "1",
+          "value": "1",
+          "start": 72,
+          "end": 73
+        },
+        {
+          "surface": "0",
+          "value": "0",
+          "start": 83,
+          "end": 84
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "1",
+          "value": 1,
+          "start": 72,
+          "end": 73,
+          "clause": "What is the lowest number of bronze medals for a country with less than 1 gold",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The clause explicitly says 'less than 1 gold', matching the Gold header.",
+          "operator": "<",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "0",
+          "value": 0,
+          "start": 83,
+          "end": 84,
+          "clause": "and 0 silver?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The clause explicitly says '0 silver', matching the Silver header.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          2,
+          0,
+          0
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 11812
+}

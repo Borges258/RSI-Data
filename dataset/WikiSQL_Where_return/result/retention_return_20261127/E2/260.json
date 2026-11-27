@@ -1,0 +1,439 @@
+{
+  "arm": "E2",
+  "position": 260,
+  "example_id": "test:10389:2-11904601-4",
+  "original_index": 10389,
+  "table_id": "2-11904601-4",
+  "question": "What is the year of the disc with a catalogue number mash02?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        0,
+        0,
+        "mash02"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "MASH02"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "MASH02"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "mash02",
+        "value": "MASH02",
+        "start": 53,
+        "end": 59,
+        "clause": "What is the year of the disc with a catalogue number mash02?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "The question explicitly identifies MASH02 as a catalogue number, matching the Catalogue Number header and row evidence.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "mash02",
+        "value": "MASH02",
+        "start": 53,
+        "end": 59
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the year of the disc with a catalogue number mash02?",
+      "table": {
+        "header": [
+          "Catalogue Number",
+          "Artist",
+          "Tracks",
+          "Type",
+          "Year"
+        ],
+        "page_title": "Hospital Records discography",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "real"
+        ],
+        "page_id": 11904601,
+        "id": "2-11904601-4",
+        "section_title": "M*A*S*H Discography",
+        "rows": [
+          [
+            "MASH01",
+            "Child Support",
+            "Twin Peaks / Stop, Look & Listen",
+            "12\"",
+            "2003"
+          ],
+          [
+            "MASH02",
+            "Syncopix",
+            "Soul Secure / Paris",
+            "12\"",
+            "2003"
+          ],
+          [
+            "MASH03",
+            "Konsta",
+            "Flirt / What I Need",
+            "12\"",
+            "2003"
+          ],
+          [
+            "MASH04",
+            "Crisis Loan",
+            "Ice Scream / Rumplestiltskin",
+            "12\"",
+            "2003"
+          ],
+          [
+            "MASH05",
+            "Child Support",
+            "London Zoo / Strawberry Jam",
+            "12\"",
+            "2004"
+          ],
+          [
+            "MASH06",
+            "Crisis Loan",
+            "Caped Crusader / Karachi Kops",
+            "12\"",
+            "2004"
+          ],
+          [
+            "MASH07",
+            "Radar",
+            "Fiece Funk / King Tut",
+            "12\"",
+            "2005"
+          ],
+          [
+            "MASH08",
+            "Various Artists",
+            "M*A*S*H Compilation",
+            "CD",
+            "2005"
+          ],
+          [
+            "MASH09",
+            "Logistics",
+            "Uprock / Static",
+            "12\"",
+            "2005"
+          ]
+        ],
+        "caption": "M*A*S*H Discography",
+        "headers": [
+          "Catalogue Number",
+          "Artist",
+          "Tracks",
+          "Type",
+          "Year"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-11904601-4",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "mash02",
+              "value": "MASH02",
+              "start": 53,
+              "end": 59
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b407452b04cc33149c56900fad12b6b61f05105931bd9b91ecb35b7564859322",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4869,
+              "completion_tokens": 21,
+              "total_tokens": 4890,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "mash02",
+              "value": "MASH02",
+              "start": 53,
+              "end": 59,
+              "clause": "What is the year of the disc with a catalogue number mash02?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "mash02",
+              "value": "MASH02",
+              "start": 53,
+              "end": 59,
+              "clause": "What is the year of the disc with a catalogue number mash02?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "mash02",
+              "value": "MASH02",
+              "start": 53,
+              "end": 59,
+              "clause": "What is the year of the disc with a catalogue number mash02?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly identifies MASH02 as a catalogue number, matching the Catalogue Number header and row evidence."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "5fc4d585f576176947e9553bf3147465ebe796632d01cb01b41b0404c5ba21fe",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4908,
+              "completion_tokens": 42,
+              "total_tokens": 4950,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "mash02",
+              "value": "MASH02",
+              "start": 53,
+              "end": 59,
+              "clause": "What is the year of the disc with a catalogue number mash02?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly identifies MASH02 as a catalogue number, matching the Catalogue Number header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a02aa5702d9872cf604cfb76f5b2d1cac4393bf0262cb602bbe7c6598513801e",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4974,
+              "completion_tokens": 9,
+              "total_tokens": 4983,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "mash02",
+              "value": "MASH02",
+              "start": 53,
+              "end": 59,
+              "clause": "What is the year of the disc with a catalogue number mash02?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly identifies MASH02 as a catalogue number, matching the Catalogue Number header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "6c6cfb302be6b3c8d0dcce83f4d6d9ed6c9517297c88eff7471ba6dc6064f0cb",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4925,
+              "completion_tokens": 12,
+              "total_tokens": 4937,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "mash02",
+              "value": "MASH02",
+              "start": 53,
+              "end": 59,
+              "clause": "What is the year of the disc with a catalogue number mash02?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly identifies MASH02 as a catalogue number, matching the Catalogue Number header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "mash02",
+              "value": "MASH02",
+              "start": 53,
+              "end": 59,
+              "clause": "What is the year of the disc with a catalogue number mash02?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly identifies MASH02 as a catalogue number, matching the Catalogue Number header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "mash02",
+              "value": "MASH02",
+              "start": 53,
+              "end": 59,
+              "clause": "What is the year of the disc with a catalogue number mash02?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly identifies MASH02 as a catalogue number, matching the Catalogue Number header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              "MASH02"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "mash02",
+          "value": "MASH02",
+          "start": 53,
+          "end": 59
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "mash02",
+          "value": "MASH02",
+          "start": 53,
+          "end": 59,
+          "clause": "What is the year of the disc with a catalogue number mash02?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "The question explicitly identifies MASH02 as a catalogue number, matching the Catalogue Number header and row evidence.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          0,
+          0,
+          "MASH02"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7235
+}

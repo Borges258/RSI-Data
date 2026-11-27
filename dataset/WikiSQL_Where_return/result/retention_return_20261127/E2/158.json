@@ -1,0 +1,432 @@
+{
+  "arm": "E2",
+  "position": 158,
+  "example_id": "test:5662:2-13650873-9",
+  "original_index": 5662,
+  "table_id": "2-13650873-9",
+  "question": "What is the court rank of the person with a courtesy title of nagato-no-kami?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        2,
+        0,
+        "nagato-no-kami"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "Nagato-no-kami"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "Nagato-no-kami"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "nagato-no-kami",
+        "value": "Nagato-no-kami",
+        "start": 62,
+        "end": 76,
+        "clause": "What is the court rank of the person with a courtesy title of nagato-no-kami?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The question explicitly identifies Nagato-no-kami as a courtesy title, matching the Courtesy title header and row value.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "nagato-no-kami",
+        "value": "Nagato-no-kami",
+        "start": 62,
+        "end": 76
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the court rank of the person with a courtesy title of nagato-no-kami?",
+      "table": {
+        "header": [
+          "Name",
+          "Tenure",
+          "Courtesy title",
+          "Court Rank",
+          "revenues"
+        ],
+        "page_title": "Sekiyado Domain",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 13650873,
+        "id": "2-13650873-9",
+        "section_title": "List of daimyō",
+        "rows": [
+          [
+            "Kuze Shigeyuki ( 久世重之 ? )",
+            "1705–1720",
+            "Yamato-no-kami",
+            "Lower 4th (従四位下)",
+            "50,000 koku"
+          ],
+          [
+            "Kuze Teruyuki ( 久世暉之 ? )",
+            "1720–1748",
+            "Sanuki-no-kami/Jiju",
+            "Lower 5th (従五位下)",
+            "50,000-->60,000 koku"
+          ],
+          [
+            "Kuze Hiroaki ( 久世広明 ? )",
+            "1748–1785",
+            "Yamato-no-kami",
+            "Lower 5th (従五位下)",
+            "60,000-->58,000 koku"
+          ],
+          [
+            "Kuze Hiroyasu ( 久世広明 ? )",
+            "1785–1817",
+            "Yamato-no-kami",
+            "Lower 5th (従五位下)",
+            "58,000-->68,000 koku"
+          ],
+          [
+            "Kuze Hirotaka ( 久世広運 ? )",
+            "1817–1830",
+            "Nagato-no-kami",
+            "Lower 5th (従五位下)",
+            "68,000 koku"
+          ],
+          [
+            "Kuze Hirochika ( 久世広周 ? )",
+            "1830–1862",
+            "Yamato-no-kami",
+            "Lower 4th (従四位下)",
+            "68,000 koku"
+          ],
+          [
+            "Kuze Hirofumi ( 久世広文 ? )",
+            "1862–1868",
+            "Oki-no-kami",
+            "Lower 5th (従五位下)",
+            "68,000-->48,000 koku"
+          ],
+          [
+            "Kuze Hironari ( 久世広業 ? )",
+            "1868–1871",
+            "x",
+            "Lower 5th (従五位下)",
+            "48,000 koku"
+          ]
+        ],
+        "caption": "List of daimyō",
+        "headers": [
+          "Name",
+          "Tenure",
+          "Courtesy title",
+          "Court Rank",
+          "revenues"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-13650873-9",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "nagato-no-kami",
+              "value": "Nagato-no-kami",
+              "start": 62,
+              "end": 76
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "26e49b5bb566f2ed995da2829c0d374bf5997f50a0501ca4945014e9fcf512c1",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5053,
+              "completion_tokens": 25,
+              "total_tokens": 5078,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "nagato-no-kami",
+              "value": "Nagato-no-kami",
+              "start": 62,
+              "end": 76,
+              "clause": "What is the court rank of the person with a courtesy title of nagato-no-kami?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "nagato-no-kami",
+              "value": "Nagato-no-kami",
+              "start": 62,
+              "end": 76,
+              "clause": "What is the court rank of the person with a courtesy title of nagato-no-kami?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "nagato-no-kami",
+              "value": "Nagato-no-kami",
+              "start": 62,
+              "end": 76,
+              "clause": "What is the court rank of the person with a courtesy title of nagato-no-kami?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies Nagato-no-kami as a courtesy title, matching the Courtesy title header and row value."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "39b99af751ebb8c94b234733bfe1b5ce589b7ca516c4fa03ee02e475aac7a16a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5101,
+              "completion_tokens": 44,
+              "total_tokens": 5145,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "nagato-no-kami",
+              "value": "Nagato-no-kami",
+              "start": 62,
+              "end": 76,
+              "clause": "What is the court rank of the person with a courtesy title of nagato-no-kami?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies Nagato-no-kami as a courtesy title, matching the Courtesy title header and row value.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "34d00894b497536a2ee21867eb4a8e479a19ca05630c5632a1907ec1118ffbe7",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5169,
+              "completion_tokens": 9,
+              "total_tokens": 5178,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "nagato-no-kami",
+              "value": "Nagato-no-kami",
+              "start": 62,
+              "end": 76,
+              "clause": "What is the court rank of the person with a courtesy title of nagato-no-kami?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies Nagato-no-kami as a courtesy title, matching the Courtesy title header and row value.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a0873f6035e36fe3555b200c862c1a3105bd21697afa61260dd0accab162a3be",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5120,
+              "completion_tokens": 14,
+              "total_tokens": 5134,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "nagato-no-kami",
+              "value": "Nagato-no-kami",
+              "start": 62,
+              "end": 76,
+              "clause": "What is the court rank of the person with a courtesy title of nagato-no-kami?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies Nagato-no-kami as a courtesy title, matching the Courtesy title header and row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "nagato-no-kami",
+              "value": "Nagato-no-kami",
+              "start": 62,
+              "end": 76,
+              "clause": "What is the court rank of the person with a courtesy title of nagato-no-kami?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies Nagato-no-kami as a courtesy title, matching the Courtesy title header and row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "nagato-no-kami",
+              "value": "Nagato-no-kami",
+              "start": 62,
+              "end": 76,
+              "clause": "What is the court rank of the person with a courtesy title of nagato-no-kami?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies Nagato-no-kami as a courtesy title, matching the Courtesy title header and row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "Nagato-no-kami"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "nagato-no-kami",
+          "value": "Nagato-no-kami",
+          "start": 62,
+          "end": 76
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "nagato-no-kami",
+          "value": "Nagato-no-kami",
+          "start": 62,
+          "end": 76,
+          "clause": "What is the court rank of the person with a courtesy title of nagato-no-kami?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The question explicitly identifies Nagato-no-kami as a courtesy title, matching the Courtesy title header and row value.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          2,
+          0,
+          "Nagato-no-kami"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7985
+}

@@ -1,0 +1,435 @@
+{
+  "arm": "E2",
+  "position": 531,
+  "example_id": "test:14111:2-18941206-1",
+  "original_index": 14111,
+  "table_id": "2-18941206-1",
+  "question": "What is the enrollment for the school Highland?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        0,
+        0,
+        "highland"
+      ]
+    ],
+    "agg": 4
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "Highland"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "Highland"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Highland",
+        "value": "Highland",
+        "start": 38,
+        "end": 46,
+        "clause": "What is the enrollment for the school Highland?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "The phrase 'the school Highland' identifies Highland as a School value; the School column contains the matching row.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Highland",
+        "value": "Highland",
+        "start": 38,
+        "end": 46
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the enrollment for the school Highland?",
+      "table": {
+        "header": [
+          "School",
+          "Location",
+          "Mascot",
+          "Enrollment",
+          "IHSAA Class",
+          "# / County"
+        ],
+        "page_title": "Northwest Crossroads Conference (IHSAA)",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "real",
+          "text",
+          "text"
+        ],
+        "page_id": 18941206,
+        "id": "2-18941206-1",
+        "section_title": "Membership",
+        "rows": [
+          [
+            "Andrean",
+            "Merrillville",
+            "Fighting '59ers",
+            "671",
+            "2A Football, 3A Basketball",
+            "45 Lake"
+          ],
+          [
+            "Griffith",
+            "Griffith",
+            "Panthers",
+            "961",
+            "4A Football, 3A Basketball",
+            "45 Lake"
+          ],
+          [
+            "Highland",
+            "Highland",
+            "Trojans",
+            "1,224",
+            "4A Football, 4A Basketball",
+            "45 Lake"
+          ],
+          [
+            "Hobart",
+            "Hobart",
+            "Brickies",
+            "1,249",
+            "4A Football, 4A Basketball",
+            "45 Lake"
+          ],
+          [
+            "Kankakee Valley",
+            "Wheatfield",
+            "Kougars",
+            "1,185",
+            "4A Football, 3A Basketball",
+            "37 Jasper"
+          ],
+          [
+            "Lowell",
+            "Lowell",
+            "Red Devils",
+            "1,206",
+            "4A Football, 4A Basketball",
+            "45 Lake"
+          ],
+          [
+            "Munster",
+            "Munster",
+            "Mustangs",
+            "1,637",
+            "5A Football, 4A Basketball",
+            "45 Lake"
+          ]
+        ],
+        "caption": "Membership",
+        "headers": [
+          "School",
+          "Location",
+          "Mascot",
+          "Enrollment",
+          "IHSAA Class",
+          "# / County"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-18941206-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Highland",
+              "value": "Highland",
+              "start": 38,
+              "end": 46
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e995a32fd64790c9fadce5399d10ded1c26ffab6420396d021d47549edf6e1a3",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4871,
+              "completion_tokens": 19,
+              "total_tokens": 4890,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Highland",
+              "value": "Highland",
+              "start": 38,
+              "end": 46,
+              "clause": "What is the enrollment for the school Highland?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Highland",
+              "value": "Highland",
+              "start": 38,
+              "end": 46,
+              "clause": "What is the enrollment for the school Highland?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Highland",
+              "value": "Highland",
+              "start": 38,
+              "end": 46,
+              "clause": "What is the enrollment for the school Highland?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The phrase 'the school Highland' identifies Highland as a School value; the School column contains the matching row."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "dfa23e3e5fdccf630da2b328020d6b88be0fff53eef793ba7149e9acea7e3467",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4903,
+              "completion_tokens": 43,
+              "total_tokens": 4946,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Highland",
+              "value": "Highland",
+              "start": 38,
+              "end": 46,
+              "clause": "What is the enrollment for the school Highland?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The phrase 'the school Highland' identifies Highland as a School value; the School column contains the matching row.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e9a8630041aca6fdcb47c75f2f021b2e2bc77e0d0411473ad3bdf47e60d24d6f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4970,
+              "completion_tokens": 9,
+              "total_tokens": 4979,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Highland",
+              "value": "Highland",
+              "start": 38,
+              "end": 46,
+              "clause": "What is the enrollment for the school Highland?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The phrase 'the school Highland' identifies Highland as a School value; the School column contains the matching row.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a52ca501575a0aec2e11ada8f0fbd0355cebf151b0629a2ab6a4e4bf62849d46",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4921,
+              "completion_tokens": 11,
+              "total_tokens": 4932,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Highland",
+              "value": "Highland",
+              "start": 38,
+              "end": 46,
+              "clause": "What is the enrollment for the school Highland?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The phrase 'the school Highland' identifies Highland as a School value; the School column contains the matching row.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Highland",
+              "value": "Highland",
+              "start": 38,
+              "end": 46,
+              "clause": "What is the enrollment for the school Highland?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The phrase 'the school Highland' identifies Highland as a School value; the School column contains the matching row.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Highland",
+              "value": "Highland",
+              "start": 38,
+              "end": 46,
+              "clause": "What is the enrollment for the school Highland?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The phrase 'the school Highland' identifies Highland as a School value; the School column contains the matching row.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              "Highland"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Highland",
+          "value": "Highland",
+          "start": 38,
+          "end": 46
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Highland",
+          "value": "Highland",
+          "start": 38,
+          "end": 46,
+          "clause": "What is the enrollment for the school Highland?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "The phrase 'the school Highland' identifies Highland as a School value; the School column contains the matching row.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          0,
+          0,
+          "Highland"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9671
+}

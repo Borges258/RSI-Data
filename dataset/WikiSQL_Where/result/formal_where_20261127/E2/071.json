@@ -1,0 +1,956 @@
+{
+  "arm": "E2",
+  "position": 71,
+  "example_id": "test:4631:2-1054502-1",
+  "original_index": 4631,
+  "table_id": "2-1054502-1",
+  "question": "Which competition did Târlea come in 4th place, in 2003 at Budapest, Hungary?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        3,
+        0,
+        "4th"
+      ],
+      [
+        0,
+        1,
+        2003
+      ],
+      [
+        2,
+        0,
+        "budapest, hungary"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [],
+  "status": "GROUNDING_FAILED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "GROUNDING_FAILED",
+    "valid": false,
+    "errors": [
+      "condition 0: invalid column",
+      "condition 0: grounding NO_MATCH"
+    ],
+    "conditions": [
+      {
+        "surface": "Târlea",
+        "value": "Târlea",
+        "start": 22,
+        "end": 28,
+        "clause": "Which competition did Târlea come in 4th place",
+        "columnMatchStatus": "UNRESOLVED",
+        "columnCandidates": [],
+        "columnMatchReason": "Târlea identifies the person/page subject, not a supported table field; no row cell contains it.",
+        "operator": "=",
+        "grounded": false,
+        "groundingStatus": "NO_MATCH"
+      },
+      {
+        "surface": "4th",
+        "value": "4th",
+        "start": 37,
+        "end": 40,
+        "clause": "Which competition did Târlea come in 4th place",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "'come in 4th place' refers to the Position field, and rows contain '4th' there.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "2003",
+        "value": 2003,
+        "start": 51,
+        "end": 55,
+        "clause": "in 2003 at Budapest",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "'in 2003' refers to the Year field, which contains 2003.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "Budapest, Hungary",
+        "value": "Budapest, Hungary",
+        "start": 59,
+        "end": 76,
+        "clause": "in 2003 at Budapest, Hungary?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "'at Budapest, Hungary' refers to the Venue field, which contains that location, despite conflicting with the 2003 condition.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "stage": "WHERE_CONDITION_VALIDATE",
+    "originalConditions": [
+      {
+        "surface": "Târlea",
+        "value": "Târlea",
+        "start": 22,
+        "end": 28
+      },
+      {
+        "surface": "4th",
+        "value": "4th",
+        "start": 37,
+        "end": 40
+      },
+      {
+        "surface": "2003",
+        "value": "2003",
+        "start": 51,
+        "end": 55
+      },
+      {
+        "surface": "Budapest, Hungary",
+        "value": "Budapest, Hungary",
+        "start": 59,
+        "end": 76
+      }
+    ],
+    "halt": true,
+    "completed": false,
+    "conds": [],
+    "warnings": [],
+    "request": {
+      "question": "Which competition did Târlea come in 4th place, in 2003 at Budapest, Hungary?",
+      "table": {
+        "header": [
+          "Year",
+          "Competition",
+          "Venue",
+          "Position",
+          "Notes"
+        ],
+        "page_title": "Ionela Târlea",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 1054502,
+        "id": "2-1054502-1",
+        "section_title": "Achievements",
+        "rows": [
+          [
+            "1992",
+            "World Junior Championships",
+            "Seoul, South Korea",
+            "1st",
+            "4 × 400 m relay"
+          ],
+          [
+            "1993",
+            "European Junior Championships",
+            "San Sebastián, Spain",
+            "1st",
+            "400 m hurdles"
+          ],
+          [
+            "1994",
+            "World Junior Championships",
+            "Lisbon, Portugal",
+            "1st",
+            "400 m hurdles"
+          ],
+          [
+            "1994",
+            "World Junior Championships",
+            "Lisbon, Portugal",
+            "2nd",
+            "4 x 400 m relay"
+          ],
+          [
+            "1995",
+            "European Junior Championships",
+            "Nyíregyháza , Hungary",
+            "1st",
+            "400 m hurdles"
+          ],
+          [
+            "1995",
+            "World University Games",
+            "Fukuoka , Japan",
+            "2nd",
+            "400 m hurdles"
+          ],
+          [
+            "1996",
+            "Olympic Games",
+            "Atlanta, United States",
+            "7th",
+            "400 m hurdles"
+          ],
+          [
+            "1997",
+            "World Indoor Championships",
+            "Paris, France",
+            "4th",
+            "400 m"
+          ],
+          [
+            "1998",
+            "IAAF World Cup",
+            "Johannesburg, South Africa",
+            "4th",
+            "400 m hurdles"
+          ],
+          [
+            "1998",
+            "European Championships",
+            "Budapest, Hungary",
+            "1st",
+            "400 m hurdles"
+          ],
+          [
+            "1998",
+            "European Indoor Championships",
+            "Valencia, Spain",
+            "2nd",
+            "400 m"
+          ],
+          [
+            "1999",
+            "World Indoor Championships",
+            "Maebashi , Japan",
+            "1st",
+            "200 m"
+          ],
+          [
+            "1999",
+            "World University Games",
+            "Palma de Mallorca, Spain",
+            "1st",
+            "400 m"
+          ],
+          [
+            "2000",
+            "Olympic Games",
+            "Sydney, Australia",
+            "6th",
+            "400 m hurdles"
+          ],
+          [
+            "2001",
+            "World Championships",
+            "Edmonton, Canada",
+            "6th",
+            "400 m hurdles"
+          ],
+          [
+            "2001",
+            "Grand Prix Final",
+            "Melbourne, Australia",
+            "6th",
+            "400 m hurdles"
+          ],
+          [
+            "2002",
+            "European Championships",
+            "Munich, Germany",
+            "1st",
+            "400 m hurdles"
+          ],
+          [
+            "2002",
+            "IAAF World Cup",
+            "Madrid, Spain",
+            "4th",
+            "400 m hurdles"
+          ],
+          [
+            "2003",
+            "World Athletics Final",
+            "Monte Carlo, Monaco",
+            "3rd",
+            "400 m hurdles"
+          ],
+          [
+            "2003",
+            "World Championships",
+            "Paris, France",
+            "4th",
+            "400 m hurdles"
+          ],
+          [
+            "2004",
+            "Olympic Games",
+            "Athens, Greece",
+            "2nd",
+            "400 m hurdles"
+          ],
+          [
+            "2004",
+            "World Indoor Championships",
+            "Budapest, Hungary",
+            "4th",
+            "400 m"
+          ],
+          [
+            "2004",
+            "World Indoor Championships",
+            "Budapest, Hungary",
+            "3rd",
+            "4 x 400 m relay"
+          ],
+          [
+            "2004",
+            "World Athletics Final",
+            "Monte Carlo, Monaco",
+            "4th",
+            "400 m hurdles"
+          ]
+        ],
+        "caption": "Achievements",
+        "headers": [
+          "Year",
+          "Competition",
+          "Venue",
+          "Position",
+          "Notes"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-1054502-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 9,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 4,
+          "conditions": [
+            {
+              "surface": "Târlea",
+              "value": "Târlea",
+              "start": 22,
+              "end": 28
+            },
+            {
+              "surface": "4th",
+              "value": "4th",
+              "start": 37,
+              "end": 40
+            },
+            {
+              "surface": "2003",
+              "value": "2003",
+              "start": 51,
+              "end": 55
+            },
+            {
+              "surface": "Budapest, Hungary",
+              "value": "Budapest, Hungary",
+              "start": 59,
+              "end": 76
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ef07a92b640127bae7de7ca6c67fa32aeb03f46904329cbf63e68b46f546dcc1",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5159,
+              "completion_tokens": 55,
+              "total_tokens": 5214,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Târlea",
+              "value": "Târlea",
+              "start": 22,
+              "end": 28,
+              "clause": "Which competition did Târlea come in 4th place"
+            },
+            {
+              "surface": "4th",
+              "value": "4th",
+              "start": 37,
+              "end": 40,
+              "clause": "Which competition did Târlea come in 4th place"
+            },
+            {
+              "surface": "2003",
+              "value": "2003",
+              "start": 51,
+              "end": 55,
+              "clause": "in 2003 at Budapest"
+            },
+            {
+              "surface": "Budapest, Hungary",
+              "value": "Budapest, Hungary",
+              "start": 59,
+              "end": 76,
+              "clause": "in 2003 at Budapest, Hungary?"
+            }
+          ],
+          "count": 4
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Târlea",
+              "value": "Târlea",
+              "start": 22,
+              "end": 28,
+              "clause": "Which competition did Târlea come in 4th place"
+            },
+            {
+              "surface": "4th",
+              "value": "4th",
+              "start": 37,
+              "end": 40,
+              "clause": "Which competition did Târlea come in 4th place"
+            },
+            {
+              "surface": "2003",
+              "value": "2003",
+              "start": 51,
+              "end": 55,
+              "clause": "in 2003 at Budapest"
+            },
+            {
+              "surface": "Budapest, Hungary",
+              "value": "Budapest, Hungary",
+              "start": 59,
+              "end": 76,
+              "clause": "in 2003 at Budapest, Hungary?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Târlea",
+              "value": "Târlea",
+              "start": 22,
+              "end": 28,
+              "clause": "Which competition did Târlea come in 4th place",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [],
+              "columnMatchReason": "Târlea identifies the person/page subject, not a supported table field; no row cell contains it."
+            },
+            {
+              "surface": "4th",
+              "value": "4th",
+              "start": 37,
+              "end": 40,
+              "clause": "Which competition did Târlea come in 4th place",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'come in 4th place' refers to the Position field, and rows contain '4th' there."
+            },
+            {
+              "surface": "2003",
+              "value": "2003",
+              "start": 51,
+              "end": 55,
+              "clause": "in 2003 at Budapest",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'in 2003' refers to the Year field, which contains 2003."
+            },
+            {
+              "surface": "Budapest, Hungary",
+              "value": "Budapest, Hungary",
+              "start": 59,
+              "end": 76,
+              "clause": "in 2003 at Budapest, Hungary?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'at Budapest, Hungary' refers to the Venue field, which contains that location, despite conflicting with the 2003 condition."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "305dff1f42140a2460a0ed50bd05eeb64c4520d213d452a1b46853077765642e",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5293,
+              "completion_tokens": 120,
+              "total_tokens": 5413,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Târlea",
+              "value": "Târlea",
+              "start": 22,
+              "end": 28,
+              "clause": "Which competition did Târlea come in 4th place",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [],
+              "columnMatchReason": "Târlea identifies the person/page subject, not a supported table field; no row cell contains it.",
+              "operator": "="
+            },
+            {
+              "surface": "4th",
+              "value": "4th",
+              "start": 37,
+              "end": 40,
+              "clause": "Which competition did Târlea come in 4th place",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'come in 4th place' refers to the Position field, and rows contain '4th' there.",
+              "operator": "="
+            },
+            {
+              "surface": "2003",
+              "value": "2003",
+              "start": 51,
+              "end": 55,
+              "clause": "in 2003 at Budapest",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'in 2003' refers to the Year field, which contains 2003.",
+              "operator": "="
+            },
+            {
+              "surface": "Budapest, Hungary",
+              "value": "Budapest, Hungary",
+              "start": 59,
+              "end": 76,
+              "clause": "in 2003 at Budapest, Hungary?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'at Budapest, Hungary' refers to the Venue field, which contains that location, despite conflicting with the 2003 condition.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "bf2e53868908fbb9089e44b6c45571231558de3b64ae2b26737480b1d81147d4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5471,
+              "completion_tokens": 15,
+              "total_tokens": 5486,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Târlea",
+              "value": "Târlea",
+              "start": 22,
+              "end": 28,
+              "clause": "Which competition did Târlea come in 4th place",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [],
+              "columnMatchReason": "Târlea identifies the person/page subject, not a supported table field; no row cell contains it.",
+              "operator": "="
+            },
+            {
+              "surface": "4th",
+              "value": "4th",
+              "start": 37,
+              "end": 40,
+              "clause": "Which competition did Târlea come in 4th place",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'come in 4th place' refers to the Position field, and rows contain '4th' there.",
+              "operator": "="
+            },
+            {
+              "surface": "2003",
+              "value": "2003",
+              "start": 51,
+              "end": 55,
+              "clause": "in 2003 at Budapest",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'in 2003' refers to the Year field, which contains 2003.",
+              "operator": "="
+            },
+            {
+              "surface": "Budapest, Hungary",
+              "value": "Budapest, Hungary",
+              "start": 59,
+              "end": 76,
+              "clause": "in 2003 at Budapest, Hungary?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'at Budapest, Hungary' refers to the Venue field, which contains that location, despite conflicting with the 2003 condition.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "11257e2155ad1e056cc9e596a23376c81bf57fd6b84eab4a1267ebec51409d9a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5431,
+              "completion_tokens": 23,
+              "total_tokens": 5454,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Târlea",
+              "value": "Târlea",
+              "start": 22,
+              "end": 28,
+              "clause": "Which competition did Târlea come in 4th place",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [],
+              "columnMatchReason": "Târlea identifies the person/page subject, not a supported table field; no row cell contains it.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH"
+            },
+            {
+              "surface": "4th",
+              "value": "4th",
+              "start": 37,
+              "end": 40,
+              "clause": "Which competition did Târlea come in 4th place",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'come in 4th place' refers to the Position field, and rows contain '4th' there.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2003",
+              "value": "2003",
+              "start": 51,
+              "end": 55,
+              "clause": "in 2003 at Budapest",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'in 2003' refers to the Year field, which contains 2003.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Budapest, Hungary",
+              "value": "Budapest, Hungary",
+              "start": 59,
+              "end": 76,
+              "clause": "in 2003 at Budapest, Hungary?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'at Budapest, Hungary' refers to the Venue field, which contains that location, despite conflicting with the 2003 condition.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Târlea",
+              "value": "Târlea",
+              "start": 22,
+              "end": 28,
+              "clause": "Which competition did Târlea come in 4th place",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [],
+              "columnMatchReason": "Târlea identifies the person/page subject, not a supported table field; no row cell contains it.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH"
+            },
+            {
+              "surface": "4th",
+              "value": "4th",
+              "start": 37,
+              "end": 40,
+              "clause": "Which competition did Târlea come in 4th place",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'come in 4th place' refers to the Position field, and rows contain '4th' there.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2003",
+              "value": 2003,
+              "start": 51,
+              "end": 55,
+              "clause": "in 2003 at Budapest",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'in 2003' refers to the Year field, which contains 2003.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Budapest, Hungary",
+              "value": "Budapest, Hungary",
+              "start": 59,
+              "end": 76,
+              "clause": "in 2003 at Budapest, Hungary?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'at Budapest, Hungary' refers to the Venue field, which contains that location, despite conflicting with the 2003 condition.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "GROUNDING_FAILED",
+          "valid": false,
+          "errors": [
+            "condition 0: invalid column",
+            "condition 0: grounding NO_MATCH"
+          ],
+          "conditions": [
+            {
+              "surface": "Târlea",
+              "value": "Târlea",
+              "start": 22,
+              "end": 28,
+              "clause": "Which competition did Târlea come in 4th place",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [],
+              "columnMatchReason": "Târlea identifies the person/page subject, not a supported table field; no row cell contains it.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH"
+            },
+            {
+              "surface": "4th",
+              "value": "4th",
+              "start": 37,
+              "end": 40,
+              "clause": "Which competition did Târlea come in 4th place",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'come in 4th place' refers to the Position field, and rows contain '4th' there.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2003",
+              "value": 2003,
+              "start": 51,
+              "end": 55,
+              "clause": "in 2003 at Budapest",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'in 2003' refers to the Year field, which contains 2003.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Budapest, Hungary",
+              "value": "Budapest, Hungary",
+              "start": 59,
+              "end": 76,
+              "clause": "in 2003 at Budapest, Hungary?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'at Budapest, Hungary' refers to the Venue field, which contains that location, despite conflicting with the 2003 condition.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "GROUNDING_FAILED",
+        "stage": "WHERE_CONDITION_VALIDATE",
+        "halt": true,
+        "completed": false,
+        "errors": [
+          "condition 0: invalid column",
+          "condition 0: grounding NO_MATCH"
+        ],
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Târlea",
+          "value": "Târlea",
+          "start": 22,
+          "end": 28
+        },
+        {
+          "surface": "4th",
+          "value": "4th",
+          "start": 37,
+          "end": 40
+        },
+        {
+          "surface": "2003",
+          "value": "2003",
+          "start": 51,
+          "end": 55
+        },
+        {
+          "surface": "Budapest, Hungary",
+          "value": "Budapest, Hungary",
+          "start": 59,
+          "end": 76
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Târlea",
+          "value": "Târlea",
+          "start": 22,
+          "end": 28,
+          "clause": "Which competition did Târlea come in 4th place",
+          "columnMatchStatus": "UNRESOLVED",
+          "columnCandidates": [],
+          "columnMatchReason": "Târlea identifies the person/page subject, not a supported table field; no row cell contains it.",
+          "operator": "=",
+          "grounded": false,
+          "groundingStatus": "NO_MATCH"
+        },
+        {
+          "surface": "4th",
+          "value": "4th",
+          "start": 37,
+          "end": 40,
+          "clause": "Which competition did Târlea come in 4th place",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "'come in 4th place' refers to the Position field, and rows contain '4th' there.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "2003",
+          "value": 2003,
+          "start": 51,
+          "end": 55,
+          "clause": "in 2003 at Budapest",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "'in 2003' refers to the Year field, which contains 2003.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "Budapest, Hungary",
+          "value": "Budapest, Hungary",
+          "start": 59,
+          "end": 76,
+          "clause": "in 2003 at Budapest, Hungary?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "'at Budapest, Hungary' refers to the Venue field, which contains that location, despite conflicting with the 2003 condition.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 4
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": false,
+  "elapsed_ms": 10140
+}

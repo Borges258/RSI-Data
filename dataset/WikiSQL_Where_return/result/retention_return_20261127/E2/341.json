@@ -1,0 +1,895 @@
+{
+  "arm": "E2",
+  "position": 341,
+  "example_id": "test:13316:2-18880596-4",
+  "original_index": 13316,
+  "table_id": "2-18880596-4",
+  "question": "What was the 4th day in the year before 2012 that the finish is 33rd?",
+  "gold_sql": {
+    "sel": 5,
+    "conds": [
+      [
+        0,
+        2,
+        2012
+      ],
+      [
+        1,
+        0,
+        "33rd"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      2,
+      2012
+    ],
+    [
+      1,
+      0,
+      "33rd"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        2,
+        2012
+      ],
+      [
+        1,
+        0,
+        "33rd"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "before 2012",
+        "value": 2012,
+        "start": 33,
+        "end": 44,
+        "clause": "What was the 4th day in the year before 2012 that the finish is 33rd?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "The condition refers to the Year field and compares it with 2012.",
+        "operator": "<",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "finish is 33rd",
+        "value": "33rd",
+        "start": 54,
+        "end": 68,
+        "clause": "What was the 4th day in the year before 2012 that the finish is 33rd?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The condition explicitly refers to Finish position and matches 33rd.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "before 2012",
+        "value": "2012",
+        "start": 33,
+        "end": 44
+      },
+      {
+        "surface": "finish is 33rd",
+        "value": "33rd",
+        "start": 54,
+        "end": 68
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What was the 4th day in the year before 2012 that the finish is 33rd?",
+      "table": {
+        "header": [
+          "Year",
+          "Finish position",
+          "1st day",
+          "2nd day",
+          "3rd day",
+          "4th Day"
+        ],
+        "page_title": "Hughes Hall College Boat Club",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 18880596,
+        "id": "2-18880596-4",
+        "section_title": "May Bumps",
+        "rows": [
+          [
+            "2008",
+            "40th",
+            "bumped Darwin",
+            "bumped Magdalene",
+            "bumped 1st & 3rd Trinity",
+            "bumped Jesus"
+          ],
+          [
+            "2009",
+            "36th",
+            "bumped Trinity Hall",
+            "bumped Queens'",
+            "bumped Wolfson",
+            "bumped Girton"
+          ],
+          [
+            "2010",
+            "34th",
+            "rowed-over",
+            "bumped Caius",
+            "rowed-over",
+            "bumped Corpus Christi"
+          ],
+          [
+            "2011",
+            "33rd",
+            "bumped Downing",
+            "bumped Clare",
+            "bumped by Clare",
+            "rowed-over"
+          ],
+          [
+            "2012",
+            "35th",
+            "bumped by Downing",
+            "rowed-over",
+            "rowed-over",
+            "bumped by Caius"
+          ]
+        ],
+        "caption": "May Bumps",
+        "headers": [
+          "Year",
+          "Finish position",
+          "1st day",
+          "2nd day",
+          "3rd day",
+          "4th Day"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-18880596-4",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "before 2012",
+              "value": "2012",
+              "start": 33,
+              "end": 44
+            },
+            {
+              "surface": "finish is 33rd",
+              "value": "33rd",
+              "start": 54,
+              "end": 68
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "928e370db305b8cffdf55a3e2a7d13c1febd13c79f7437c6a58d966f1173f4d5",
+            "knowledgeIds": [],
+            "usage": {
+              "attribution": {
+                "items": {
+                  "msg_0fe385806148a47f016b09052e545087d087cd289df0901cfc": {
+                    "input_tokens": 86,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 86,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0fe385806148a47f016b09052e545087d090d4105f831cb480": {
+                    "input_tokens": 64,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 64,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0fe385806148a47f016b09052e545087d0b9e1320f02a5107d": {
+                    "input_tokens": 303,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 303,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0fe385806148a47f016b09052f056087d092b05f02753733fd": {
+                    "input_tokens": 2,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 34,
+                    "content": [
+                      {
+                        "input_tokens": 2,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 34
+                      }
+                    ]
+                  }
+                },
+                "request_fields": {
+                  "instructions": {
+                    "input_tokens": 4380,
+                    "cached_tokens": 4000,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0
+                  }
+                }
+              },
+              "prompt_tokens": 10749,
+              "completion_tokens": 34,
+              "total_tokens": 10783,
+              "prompt_tokens_details": {
+                "cache_write_tokens_details": {
+                  "ttl_30m_tokens": 0,
+                  "ttl_12h_tokens": 0
+                },
+                "cached_tokens": 9600
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "before 2012",
+              "value": "2012",
+              "start": 33,
+              "end": 44,
+              "clause": "What was the 4th day in the year before 2012 that the finish is 33rd?"
+            },
+            {
+              "surface": "finish is 33rd",
+              "value": "33rd",
+              "start": 54,
+              "end": 68,
+              "clause": "What was the 4th day in the year before 2012 that the finish is 33rd?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "before 2012",
+              "value": "2012",
+              "start": 33,
+              "end": 44,
+              "clause": "What was the 4th day in the year before 2012 that the finish is 33rd?"
+            },
+            {
+              "surface": "finish is 33rd",
+              "value": "33rd",
+              "start": 54,
+              "end": 68,
+              "clause": "What was the 4th day in the year before 2012 that the finish is 33rd?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "before 2012",
+              "value": "2012",
+              "start": 33,
+              "end": 44,
+              "clause": "What was the 4th day in the year before 2012 that the finish is 33rd?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The condition refers to the Year field and compares it with 2012."
+            },
+            {
+              "surface": "finish is 33rd",
+              "value": "33rd",
+              "start": 54,
+              "end": 68,
+              "clause": "What was the 4th day in the year before 2012 that the finish is 33rd?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The condition explicitly refers to Finish position and matches 33rd."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "24a53fb3731ab863da2f726862d4c524dcf2cc255209fca2ce16998b65af3bdc",
+            "knowledgeIds": [],
+            "usage": {
+              "attribution": {
+                "items": {
+                  "msg_0460832e5c9a3926016b090530f95487d08879fe437a3f3983": {
+                    "input_tokens": 303,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 303,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0460832e5c9a3926016b090530f95487d098061b8f72d5567b": {
+                    "input_tokens": 64,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 64,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0460832e5c9a3926016b090530f95487d0a95a3b421a1b5faa": {
+                    "input_tokens": 180,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 180,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0460832e5c9a3926016b09053255ac87d098dac4bef7ef1707": {
+                    "input_tokens": 0,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 55,
+                    "content": [
+                      {
+                        "input_tokens": 0,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 55
+                      }
+                    ]
+                  },
+                  "rs_0460832e5c9a3926016b0905323a1887d0a22eb3fea2bb5f6a": {
+                    "input_tokens": 2,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 44
+                  }
+                },
+                "request_fields": {
+                  "instructions": {
+                    "input_tokens": 4380,
+                    "cached_tokens": 4000,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0
+                  }
+                }
+              },
+              "prompt_tokens": 10843,
+              "completion_tokens": 99,
+              "total_tokens": 10942,
+              "prompt_tokens_details": {
+                "cache_write_tokens_details": {
+                  "ttl_30m_tokens": 0,
+                  "ttl_12h_tokens": 0
+                },
+                "cached_tokens": 9600
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 44
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "before 2012",
+              "value": "2012",
+              "start": 33,
+              "end": 44,
+              "clause": "What was the 4th day in the year before 2012 that the finish is 33rd?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The condition refers to the Year field and compares it with 2012.",
+              "operator": "<"
+            },
+            {
+              "surface": "finish is 33rd",
+              "value": "33rd",
+              "start": 54,
+              "end": 68,
+              "clause": "What was the 4th day in the year before 2012 that the finish is 33rd?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The condition explicitly refers to Finish position and matches 33rd.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "167a146b7a744bb3db3d2240573c661d8df486e17ca0d99158d8e5fa6818493d",
+            "knowledgeIds": [],
+            "usage": {
+              "attribution": {
+                "items": {
+                  "msg_002fb4f9390ada37016b0905350fbc87d0810f16b8991058c1": {
+                    "input_tokens": 303,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 303,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_002fb4f9390ada37016b0905350fbc87d088cac0f80f79ecef": {
+                    "input_tokens": 64,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 64,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_002fb4f9390ada37016b0905350fbc87d09f7ee8506c6244cd": {
+                    "input_tokens": 268,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 268,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_002fb4f9390ada37016b090535c3b487d0a029e0c0dcc0092a": {
+                    "input_tokens": 0,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 13,
+                    "content": [
+                      {
+                        "input_tokens": 0,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 13
+                      }
+                    ]
+                  },
+                  "rs_002fb4f9390ada37016b090535aca487d0a8fb30f68dcac098": {
+                    "input_tokens": 2,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 19
+                  }
+                },
+                "request_fields": {
+                  "instructions": {
+                    "input_tokens": 4380,
+                    "cached_tokens": 4000,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0
+                  }
+                }
+              },
+              "prompt_tokens": 10931,
+              "completion_tokens": 32,
+              "total_tokens": 10963,
+              "prompt_tokens_details": {
+                "cache_write_tokens_details": {
+                  "ttl_30m_tokens": 0,
+                  "ttl_12h_tokens": 0
+                },
+                "cached_tokens": 9600
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 19
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "before 2012",
+              "value": 2012,
+              "start": 33,
+              "end": 44,
+              "clause": "What was the 4th day in the year before 2012 that the finish is 33rd?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The condition refers to the Year field and compares it with 2012.",
+              "operator": "<"
+            },
+            {
+              "surface": "finish is 33rd",
+              "value": "33rd",
+              "start": 54,
+              "end": 68,
+              "clause": "What was the 4th day in the year before 2012 that the finish is 33rd?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The condition explicitly refers to Finish position and matches 33rd.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "45279203d6894dc930eb9862767a0bfc53e145a721967dc5aea32c68bba449b8",
+            "knowledgeIds": [],
+            "usage": {
+              "attribution": {
+                "items": {
+                  "msg_010cb84699a64f83016b09053763a087d08162a050dca839ef": {
+                    "input_tokens": 222,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 222,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_010cb84699a64f83016b09053763a087d09202518ac7f76dcf": {
+                    "input_tokens": 303,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 303,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_010cb84699a64f83016b09053763a087d0be00dbc81bb401c6": {
+                    "input_tokens": 64,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 64,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_010cb84699a64f83016b090537e78487d087c032f7d3746f94": {
+                    "input_tokens": 2,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 14,
+                    "content": [
+                      {
+                        "input_tokens": 2,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 14
+                      }
+                    ]
+                  }
+                },
+                "request_fields": {
+                  "instructions": {
+                    "input_tokens": 4380,
+                    "cached_tokens": 4000,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0
+                  }
+                }
+              },
+              "prompt_tokens": 10885,
+              "completion_tokens": 14,
+              "total_tokens": 10899,
+              "prompt_tokens_details": {
+                "cache_write_tokens_details": {
+                  "ttl_30m_tokens": 0,
+                  "ttl_12h_tokens": 0
+                },
+                "cached_tokens": 9600
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "before 2012",
+              "value": "2012",
+              "start": 33,
+              "end": 44,
+              "clause": "What was the 4th day in the year before 2012 that the finish is 33rd?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The condition refers to the Year field and compares it with 2012.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "finish is 33rd",
+              "value": "33rd",
+              "start": 54,
+              "end": 68,
+              "clause": "What was the 4th day in the year before 2012 that the finish is 33rd?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The condition explicitly refers to Finish position and matches 33rd.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "before 2012",
+              "value": 2012,
+              "start": 33,
+              "end": 44,
+              "clause": "What was the 4th day in the year before 2012 that the finish is 33rd?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The condition refers to the Year field and compares it with 2012.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "finish is 33rd",
+              "value": "33rd",
+              "start": 54,
+              "end": 68,
+              "clause": "What was the 4th day in the year before 2012 that the finish is 33rd?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The condition explicitly refers to Finish position and matches 33rd.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "before 2012",
+              "value": 2012,
+              "start": 33,
+              "end": 44,
+              "clause": "What was the 4th day in the year before 2012 that the finish is 33rd?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The condition refers to the Year field and compares it with 2012.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "finish is 33rd",
+              "value": "33rd",
+              "start": 54,
+              "end": 68,
+              "clause": "What was the 4th day in the year before 2012 that the finish is 33rd?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The condition explicitly refers to Finish position and matches 33rd.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              2,
+              2012
+            ],
+            [
+              1,
+              0,
+              "33rd"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "before 2012",
+          "value": "2012",
+          "start": 33,
+          "end": 44
+        },
+        {
+          "surface": "finish is 33rd",
+          "value": "33rd",
+          "start": 54,
+          "end": 68
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "before 2012",
+          "value": 2012,
+          "start": 33,
+          "end": 44,
+          "clause": "What was the 4th day in the year before 2012 that the finish is 33rd?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "The condition refers to the Year field and compares it with 2012.",
+          "operator": "<",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "finish is 33rd",
+          "value": "33rd",
+          "start": 54,
+          "end": 68,
+          "clause": "What was the 4th day in the year before 2012 that the finish is 33rd?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The condition explicitly refers to Finish position and matches 33rd.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          0,
+          2,
+          2012
+        ],
+        [
+          1,
+          0,
+          "33rd"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 12282
+}

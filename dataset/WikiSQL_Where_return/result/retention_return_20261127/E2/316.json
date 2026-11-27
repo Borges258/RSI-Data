@@ -1,0 +1,418 @@
+{
+  "arm": "E2",
+  "position": 316,
+  "example_id": "test:12313:2-1793728-1",
+  "original_index": 12313,
+  "table_id": "2-1793728-1",
+  "question": "What is the Venue with the Friendly Competition?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        4,
+        0,
+        "friendly"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      4,
+      0,
+      "Friendly"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        0,
+        "Friendly"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Friendly",
+        "value": "Friendly",
+        "start": 27,
+        "end": 35,
+        "clause": "What is the Venue with the Friendly Competition?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The question explicitly qualifies Friendly as the Competition, and the Competition column contains Friendly match values.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Friendly",
+        "value": "Friendly",
+        "start": 27,
+        "end": 35
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the Venue with the Friendly Competition?",
+      "table": {
+        "header": [
+          "Date",
+          "Venue",
+          "Score",
+          "Result",
+          "Competition"
+        ],
+        "page_title": "Jim Brennan",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 1793728,
+        "id": "2-1793728-1",
+        "section_title": "International Goals",
+        "rows": [
+          [
+            "2 September 1999",
+            "Varsity Stadium , Toronto, Canada",
+            "1–0",
+            "1–0",
+            "Friendly match"
+          ],
+          [
+            "9 October 2000",
+            "Winnipeg Soccer Complex , Winnipeg, Canada",
+            "1–0",
+            "1–0",
+            "2002 World Cup Qualification"
+          ],
+          [
+            "12 February 2003",
+            "June 11 Stadium , Tripoli , Libya",
+            "2–1",
+            "4–2",
+            "Friendly match"
+          ],
+          [
+            "13 June 2004",
+            "Richardson Memorial Stadium , Kingston , Canada",
+            "4–0",
+            "4–0",
+            "2006 World Cup Qualification"
+          ],
+          [
+            "16 June 2004",
+            "Richardson Memorial Stadium , Kingston , Canada",
+            "4–0",
+            "4–0",
+            "2006 World Cup Qualification"
+          ],
+          [
+            "1 March 2006",
+            "Ernst Happel Stadium , Vienna, Austria",
+            "1–0",
+            "2–0",
+            "Friendly"
+          ]
+        ],
+        "caption": "International Goals",
+        "headers": [
+          "Date",
+          "Venue",
+          "Score",
+          "Result",
+          "Competition"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-1793728-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Friendly",
+              "value": "Friendly",
+              "start": 27,
+              "end": 35
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "3cb0453d5ad3a27b4512a27d45c51f95d484ed9f19b8be6e203967688607cff8",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4827,
+              "completion_tokens": 17,
+              "total_tokens": 4844,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Friendly",
+              "value": "Friendly",
+              "start": 27,
+              "end": 35,
+              "clause": "What is the Venue with the Friendly Competition?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Friendly",
+              "value": "Friendly",
+              "start": 27,
+              "end": 35,
+              "clause": "What is the Venue with the Friendly Competition?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Friendly",
+              "value": "Friendly",
+              "start": 27,
+              "end": 35,
+              "clause": "What is the Venue with the Friendly Competition?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly qualifies Friendly as the Competition, and the Competition column contains Friendly match values."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c1d1009e46b3a1f6e9863e665fd5b144e36b026d1761657b70c63ae5e5da107d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4857,
+              "completion_tokens": 39,
+              "total_tokens": 4896,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Friendly",
+              "value": "Friendly",
+              "start": 27,
+              "end": 35,
+              "clause": "What is the Venue with the Friendly Competition?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly qualifies Friendly as the Competition, and the Competition column contains Friendly match values.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "6f25c53930f70a401e1cae6cef2bc3942b220472a14b69493b30bbf27b66a654",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4920,
+              "completion_tokens": 9,
+              "total_tokens": 4929,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Friendly",
+              "value": "Friendly",
+              "start": 27,
+              "end": 35,
+              "clause": "What is the Venue with the Friendly Competition?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly qualifies Friendly as the Competition, and the Competition column contains Friendly match values.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "22c32e08cd6bff89df8be62d06791db0c593a3da2682167b9b2429bc2e16fb43",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4871,
+              "completion_tokens": 10,
+              "total_tokens": 4881,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Friendly",
+              "value": "Friendly",
+              "start": 27,
+              "end": 35,
+              "clause": "What is the Venue with the Friendly Competition?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly qualifies Friendly as the Competition, and the Competition column contains Friendly match values.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Friendly",
+              "value": "Friendly",
+              "start": 27,
+              "end": 35,
+              "clause": "What is the Venue with the Friendly Competition?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly qualifies Friendly as the Competition, and the Competition column contains Friendly match values.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Friendly",
+              "value": "Friendly",
+              "start": 27,
+              "end": 35,
+              "clause": "What is the Venue with the Friendly Competition?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly qualifies Friendly as the Competition, and the Competition column contains Friendly match values.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              0,
+              "Friendly"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Friendly",
+          "value": "Friendly",
+          "start": 27,
+          "end": 35
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Friendly",
+          "value": "Friendly",
+          "start": 27,
+          "end": 35,
+          "clause": "What is the Venue with the Friendly Competition?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The question explicitly qualifies Friendly as the Competition, and the Competition column contains Friendly match values.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          4,
+          0,
+          "Friendly"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8015
+}

@@ -1,0 +1,616 @@
+{
+  "arm": "E2",
+  "position": 515,
+  "example_id": "test:12112:2-11467154-1",
+  "original_index": 12112,
+  "table_id": "2-11467154-1",
+  "question": "The song \"Before the Clock Strikes 12\" has 55 points. What number did the song place?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        2,
+        0,
+        "\"before the clock strikes 12\""
+      ],
+      [
+        3,
+        0,
+        55
+      ]
+    ],
+    "agg": 4
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "\"Before The Clock Strikes 12\""
+    ],
+    [
+      3,
+      0,
+      55
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "\"Before The Clock Strikes 12\""
+      ],
+      [
+        3,
+        0,
+        55
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Before the Clock Strikes 12",
+        "value": "\"Before The Clock Strikes 12\"",
+        "start": 10,
+        "end": 37,
+        "clause": "The song \"Before the Clock Strikes 12\" has 55 points. What number did the song place?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The question explicitly identifies \"Before the Clock Strikes 12\" as a song, matching the Song header and row value.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "NORMALIZED_MATCH"
+      },
+      {
+        "surface": "55",
+        "value": 55,
+        "start": 43,
+        "end": 45,
+        "clause": "The song \"Before the Clock Strikes 12\" has 55 points. What number did the song place?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The question explicitly describes 55 as points, matching the Points header and row value.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Before the Clock Strikes 12",
+        "value": "Before the Clock Strikes 12",
+        "start": 10,
+        "end": 37
+      },
+      {
+        "surface": "55",
+        "value": "55",
+        "start": 43,
+        "end": 45
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "The song \"Before the Clock Strikes 12\" has 55 points. What number did the song place?",
+      "table": {
+        "header": [
+          "Draw",
+          "Artist",
+          "Song",
+          "Points",
+          "Place"
+        ],
+        "page_title": "Netherlands in the Eurovision Song Contest 1999",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "real",
+          "real"
+        ],
+        "page_id": 11467154,
+        "id": "2-11467154-1",
+        "section_title": "National final",
+        "rows": [
+          [
+            "1",
+            "All Mixed Up",
+            "\"Forever Night and Day\"",
+            "32",
+            "8"
+          ],
+          [
+            "2",
+            "Tamara",
+            "\"Coming Home\"",
+            "83",
+            "4"
+          ],
+          [
+            "3",
+            "Colors",
+            "\"Positivity\"",
+            "68",
+            "6"
+          ],
+          [
+            "4",
+            "Jane",
+            "\"Dreams\"",
+            "96",
+            "3"
+          ],
+          [
+            "5",
+            "All Of Us",
+            "\"Maybe Love\"",
+            "30",
+            "9"
+          ],
+          [
+            "6",
+            "Donya",
+            "\"Before The Clock Strikes 12\"",
+            "55",
+            "7"
+          ],
+          [
+            "7",
+            "Double Date",
+            "\"E-Mail to Berlin\"",
+            "19",
+            "10"
+          ],
+          [
+            "8",
+            "Roger Happel",
+            "\"Where Is The Time\"",
+            "82",
+            "5"
+          ],
+          [
+            "9",
+            "Deante",
+            "\"We Don't Live Too Long\"",
+            "103",
+            "2"
+          ],
+          [
+            "10",
+            "Marlayne",
+            "\" One Good Reason \"",
+            "248",
+            "1"
+          ]
+        ],
+        "caption": "National final",
+        "headers": [
+          "Draw",
+          "Artist",
+          "Song",
+          "Points",
+          "Place"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-11467154-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "Before the Clock Strikes 12",
+              "value": "Before the Clock Strikes 12",
+              "start": 10,
+              "end": 37
+            },
+            {
+              "surface": "55",
+              "value": "55",
+              "start": 43,
+              "end": 45
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "1cc255c7ec5ca4454a50f1d603f57d861bb1f915a6b2fa462be6e134cf4ced92",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4845,
+              "completion_tokens": 37,
+              "total_tokens": 4882,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Before the Clock Strikes 12",
+              "value": "Before the Clock Strikes 12",
+              "start": 10,
+              "end": 37,
+              "clause": "The song \"Before the Clock Strikes 12\" has 55 points. What number did the song place?"
+            },
+            {
+              "surface": "55",
+              "value": "55",
+              "start": 43,
+              "end": 45,
+              "clause": "The song \"Before the Clock Strikes 12\" has 55 points. What number did the song place?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Before the Clock Strikes 12",
+              "value": "Before the Clock Strikes 12",
+              "start": 10,
+              "end": 37,
+              "clause": "The song \"Before the Clock Strikes 12\" has 55 points. What number did the song place?"
+            },
+            {
+              "surface": "55",
+              "value": "55",
+              "start": 43,
+              "end": 45,
+              "clause": "The song \"Before the Clock Strikes 12\" has 55 points. What number did the song place?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Before the Clock Strikes 12",
+              "value": "Before the Clock Strikes 12",
+              "start": 10,
+              "end": 37,
+              "clause": "The song \"Before the Clock Strikes 12\" has 55 points. What number did the song place?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies \"Before the Clock Strikes 12\" as a song, matching the Song header and row value."
+            },
+            {
+              "surface": "55",
+              "value": "55",
+              "start": 43,
+              "end": 45,
+              "clause": "The song \"Before the Clock Strikes 12\" has 55 points. What number did the song place?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly describes 55 as points, matching the Points header and row value."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "524ca197548831aa509cf90e2bc9bf4c5d4a29ba5550f0eb877db8a58d3d1af7",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4944,
+              "completion_tokens": 67,
+              "total_tokens": 5011,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Before the Clock Strikes 12",
+              "value": "Before the Clock Strikes 12",
+              "start": 10,
+              "end": 37,
+              "clause": "The song \"Before the Clock Strikes 12\" has 55 points. What number did the song place?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies \"Before the Clock Strikes 12\" as a song, matching the Song header and row value.",
+              "operator": "="
+            },
+            {
+              "surface": "55",
+              "value": "55",
+              "start": 43,
+              "end": 45,
+              "clause": "The song \"Before the Clock Strikes 12\" has 55 points. What number did the song place?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly describes 55 as points, matching the Points header and row value.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "af70f668e3776b51d794034f69be2b23a7064ebcd72bc46105b0c609b308a319",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5046,
+              "completion_tokens": 11,
+              "total_tokens": 5057,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Before the Clock Strikes 12",
+              "value": "Before The Clock Strikes 12",
+              "start": 10,
+              "end": 37,
+              "clause": "The song \"Before the Clock Strikes 12\" has 55 points. What number did the song place?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies \"Before the Clock Strikes 12\" as a song, matching the Song header and row value.",
+              "operator": "="
+            },
+            {
+              "surface": "55",
+              "value": 55,
+              "start": 43,
+              "end": 45,
+              "clause": "The song \"Before the Clock Strikes 12\" has 55 points. What number did the song place?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly describes 55 as points, matching the Points header and row value.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "309b678383a6c23142095b562292b5e7433887b81afd7860c4e18414377867c0",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5000,
+              "completion_tokens": 17,
+              "total_tokens": 5017,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Before the Clock Strikes 12",
+              "value": "\"Before The Clock Strikes 12\"",
+              "start": 10,
+              "end": 37,
+              "clause": "The song \"Before the Clock Strikes 12\" has 55 points. What number did the song place?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies \"Before the Clock Strikes 12\" as a song, matching the Song header and row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "NORMALIZED_MATCH"
+            },
+            {
+              "surface": "55",
+              "value": "55",
+              "start": 43,
+              "end": 45,
+              "clause": "The song \"Before the Clock Strikes 12\" has 55 points. What number did the song place?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly describes 55 as points, matching the Points header and row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Before the Clock Strikes 12",
+              "value": "\"Before The Clock Strikes 12\"",
+              "start": 10,
+              "end": 37,
+              "clause": "The song \"Before the Clock Strikes 12\" has 55 points. What number did the song place?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies \"Before the Clock Strikes 12\" as a song, matching the Song header and row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "NORMALIZED_MATCH"
+            },
+            {
+              "surface": "55",
+              "value": 55,
+              "start": 43,
+              "end": 45,
+              "clause": "The song \"Before the Clock Strikes 12\" has 55 points. What number did the song place?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly describes 55 as points, matching the Points header and row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Before the Clock Strikes 12",
+              "value": "\"Before The Clock Strikes 12\"",
+              "start": 10,
+              "end": 37,
+              "clause": "The song \"Before the Clock Strikes 12\" has 55 points. What number did the song place?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies \"Before the Clock Strikes 12\" as a song, matching the Song header and row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "NORMALIZED_MATCH"
+            },
+            {
+              "surface": "55",
+              "value": 55,
+              "start": 43,
+              "end": 45,
+              "clause": "The song \"Before the Clock Strikes 12\" has 55 points. What number did the song place?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly describes 55 as points, matching the Points header and row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "\"Before The Clock Strikes 12\""
+            ],
+            [
+              3,
+              0,
+              55
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Before the Clock Strikes 12",
+          "value": "Before the Clock Strikes 12",
+          "start": 10,
+          "end": 37
+        },
+        {
+          "surface": "55",
+          "value": "55",
+          "start": 43,
+          "end": 45
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Before the Clock Strikes 12",
+          "value": "\"Before The Clock Strikes 12\"",
+          "start": 10,
+          "end": 37,
+          "clause": "The song \"Before the Clock Strikes 12\" has 55 points. What number did the song place?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The question explicitly identifies \"Before the Clock Strikes 12\" as a song, matching the Song header and row value.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "NORMALIZED_MATCH"
+        },
+        {
+          "surface": "55",
+          "value": 55,
+          "start": 43,
+          "end": 45,
+          "clause": "The song \"Before the Clock Strikes 12\" has 55 points. What number did the song place?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The question explicitly describes 55 as points, matching the Points header and row value.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          2,
+          0,
+          "\"Before The Clock Strikes 12\""
+        ],
+        [
+          3,
+          0,
+          55
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 10078
+}

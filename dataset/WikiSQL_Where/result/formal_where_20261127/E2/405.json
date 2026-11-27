@@ -1,0 +1,439 @@
+{
+  "arm": "E2",
+  "position": 405,
+  "example_id": "test:9923:2-16902902-1",
+  "original_index": 9923,
+  "table_id": "2-16902902-1",
+  "question": "What is the sum of complement commander Valkenburg received?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        2,
+        0,
+        "valkenburg"
+      ]
+    ],
+    "agg": 4
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "Valkenburg"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "Valkenburg"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Valkenburg",
+        "value": "Valkenburg",
+        "start": 40,
+        "end": 50,
+        "clause": "What is the sum of complement commander Valkenburg received?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The question explicitly identifies Valkenburg as a commander, matching the Commander header and row evidence.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Valkenburg",
+        "value": "Valkenburg",
+        "start": 40,
+        "end": 50
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the sum of complement commander Valkenburg received?",
+      "table": {
+        "header": [
+          "Ship",
+          "Guns",
+          "Commander",
+          "Complement",
+          "Notes"
+        ],
+        "page_title": "Battle of Saldanha Bay (1796)",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 16902902,
+        "id": "2-16902902-1",
+        "section_title": "Ships surrendered",
+        "rows": [
+          [
+            "Dordrecht",
+            "66",
+            "Lucas",
+            "370",
+            "Ship of the Line"
+          ],
+          [
+            "Revolutie",
+            "66",
+            "Rhynbende",
+            "400",
+            "Ship of the Line"
+          ],
+          [
+            "Admiraal Tromp",
+            "54",
+            "Valkenburg",
+            "280",
+            "Ship of the Line"
+          ],
+          [
+            "Castor",
+            "44",
+            "Clarisse",
+            "240",
+            "frigate"
+          ],
+          [
+            "Braave",
+            "40",
+            "Zoetmans",
+            "234",
+            "Frigate"
+          ],
+          [
+            "Bellona",
+            "28",
+            "Valk",
+            "130",
+            "Frigate"
+          ],
+          [
+            "Sireene",
+            "20",
+            "De Cerf",
+            "130",
+            "Sloop"
+          ],
+          [
+            "Havik",
+            "18",
+            "Bezemer",
+            "76",
+            "Sloop"
+          ],
+          [
+            "Maria",
+            "–",
+            "–",
+            "112",
+            "Storeship"
+          ]
+        ],
+        "caption": "Ships surrendered",
+        "headers": [
+          "Ship",
+          "Guns",
+          "Commander",
+          "Complement",
+          "Notes"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-16902902-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Valkenburg",
+              "value": "Valkenburg",
+              "start": 40,
+              "end": 50
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "fd30994ac74e4be1881975c468fb21047f7d64ac7f1a26fc5ae23cb6a58d6462",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4809,
+              "completion_tokens": 21,
+              "total_tokens": 4830,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Valkenburg",
+              "value": "Valkenburg",
+              "start": 40,
+              "end": 50,
+              "clause": "What is the sum of complement commander Valkenburg received?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Valkenburg",
+              "value": "Valkenburg",
+              "start": 40,
+              "end": 50,
+              "clause": "What is the sum of complement commander Valkenburg received?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Valkenburg",
+              "value": "Valkenburg",
+              "start": 40,
+              "end": 50,
+              "clause": "What is the sum of complement commander Valkenburg received?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies Valkenburg as a commander, matching the Commander header and row evidence."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "1a37d487380a715f46e13062df85762ecf9add18db76a016fdf2ac8290835d74",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4845,
+              "completion_tokens": 39,
+              "total_tokens": 4884,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Valkenburg",
+              "value": "Valkenburg",
+              "start": 40,
+              "end": 50,
+              "clause": "What is the sum of complement commander Valkenburg received?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies Valkenburg as a commander, matching the Commander header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d6ab04b3494db4722087d6f314ee20b567c758e58ae2dfdb5d82c7a4b4d42edd",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4908,
+              "completion_tokens": 9,
+              "total_tokens": 4917,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Valkenburg",
+              "value": "Valkenburg",
+              "start": 40,
+              "end": 50,
+              "clause": "What is the sum of complement commander Valkenburg received?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies Valkenburg as a commander, matching the Commander header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "4537c4f70f6a9752e2590a2575a9a9599f06689496797063b8f06843663736e9",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4859,
+              "completion_tokens": 12,
+              "total_tokens": 4871,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Valkenburg",
+              "value": "Valkenburg",
+              "start": 40,
+              "end": 50,
+              "clause": "What is the sum of complement commander Valkenburg received?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies Valkenburg as a commander, matching the Commander header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Valkenburg",
+              "value": "Valkenburg",
+              "start": 40,
+              "end": 50,
+              "clause": "What is the sum of complement commander Valkenburg received?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies Valkenburg as a commander, matching the Commander header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Valkenburg",
+              "value": "Valkenburg",
+              "start": 40,
+              "end": 50,
+              "clause": "What is the sum of complement commander Valkenburg received?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies Valkenburg as a commander, matching the Commander header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "Valkenburg"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Valkenburg",
+          "value": "Valkenburg",
+          "start": 40,
+          "end": 50
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Valkenburg",
+          "value": "Valkenburg",
+          "start": 40,
+          "end": 50,
+          "clause": "What is the sum of complement commander Valkenburg received?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The question explicitly identifies Valkenburg as a commander, matching the Commander header and row evidence.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          2,
+          0,
+          "Valkenburg"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8656
+}

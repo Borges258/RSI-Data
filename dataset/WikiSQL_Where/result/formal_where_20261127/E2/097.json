@@ -1,0 +1,609 @@
+{
+  "arm": "E2",
+  "position": 97,
+  "example_id": "test:6128:2-14155268-3",
+  "original_index": 6128,
+  "table_id": "2-14155268-3",
+  "question": "Who was born on 10 May 1788 that ceased to be queen?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        1,
+        0,
+        "10 may 1788"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [],
+  "status": "GROUNDING_FAILED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "GROUNDING_FAILED",
+    "valid": false,
+    "errors": [
+      "condition 1: grounding NO_MATCH"
+    ],
+    "conditions": [
+      {
+        "surface": "10 May 1788",
+        "value": "10 May 1788",
+        "start": 16,
+        "end": 27,
+        "clause": "Who was born on 10 May 1788 that ceased to be queen?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The phrase 'born on' identifies the Birth field, whose matching cell is '10 May 1788'.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "ceased to be queen",
+        "value": "ceased to be queen",
+        "start": 33,
+        "end": 51,
+        "clause": "Who was born on 10 May 1788 that ceased to be queen?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The wording directly matches the Ceased to be Queen header.",
+        "operator": "=",
+        "grounded": false,
+        "groundingStatus": "NO_MATCH",
+        "groundingReview": {
+          "column": null,
+          "reason": "The phrase names the 'Ceased to be Queen' field but is not a value in any candidate-column cell; the question does not specify a cessation value to filter on."
+        }
+      }
+    ],
+    "stage": "WHERE_CONDITION_VALIDATE",
+    "originalConditions": [
+      {
+        "surface": "10 May 1788",
+        "value": "10 May 1788",
+        "start": 16,
+        "end": 27
+      },
+      {
+        "surface": "ceased to be queen",
+        "value": "ceased to be queen",
+        "start": 33,
+        "end": 51
+      }
+    ],
+    "halt": true,
+    "completed": false,
+    "conds": [],
+    "warnings": [],
+    "request": {
+      "question": "Who was born on 10 May 1788 that ceased to be queen?",
+      "table": {
+        "header": [
+          "Name",
+          "Birth",
+          "Marriage",
+          "Became Queen",
+          "Ceased to be Queen",
+          "Death",
+          "Spouse"
+        ],
+        "page_title": "List of consorts of Württemberg",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 14155268,
+        "id": "2-14155268-3",
+        "section_title": ", 1806–1918",
+        "rows": [
+          [
+            "Charlotte, Princess Royal",
+            "29 September 1766",
+            "18 May 1797",
+            "1 January 1806 elevated from Electress",
+            "30 October 1816 husband's death",
+            "5 October 1828",
+            "Frederick I"
+          ],
+          [
+            "Catherine Pavlovna of Russia",
+            "10 May 1788",
+            "24 January 1816",
+            "30 October 1816 husband's accession",
+            "19 January 1819",
+            "19 January 1819",
+            "William I"
+          ],
+          [
+            "Pauline Therese of Württemberg",
+            "4 September 1800",
+            "15 April 1820",
+            "15 April 1820",
+            "25 June 1864 husband's death",
+            "10 May 1873",
+            "William I"
+          ],
+          [
+            "Olga Nikolaevna of Russia",
+            "11 September 1822",
+            "13 July 1848",
+            "25 June 1864 husband's accession",
+            "6 October 1891 husband's death",
+            "30 October 1892",
+            "Charles I"
+          ],
+          [
+            "Charlotte of Schaumburg-Lippe",
+            "10 October 1864",
+            "8 April 1886",
+            "6 October 1891 husband's accession",
+            "30 November 1918 husband's abdication",
+            "16 July 1946",
+            "William II"
+          ]
+        ],
+        "caption": ", 1806–1918",
+        "headers": [
+          "Name",
+          "Birth",
+          "Marriage",
+          "Became Queen",
+          "Ceased to be Queen",
+          "Death",
+          "Spouse"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-14155268-3",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 9,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "10 May 1788",
+              "value": "10 May 1788",
+              "start": 16,
+              "end": 27
+            },
+            {
+              "surface": "ceased to be queen",
+              "value": "ceased to be queen",
+              "start": 33,
+              "end": 51
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "7bea08184a6cf1ba8342bc3ab548a095f6208bb346ba6f36e2d844fe3f428240",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4934,
+              "completion_tokens": 39,
+              "total_tokens": 4973,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "10 May 1788",
+              "value": "10 May 1788",
+              "start": 16,
+              "end": 27,
+              "clause": "Who was born on 10 May 1788 that ceased to be queen?"
+            },
+            {
+              "surface": "ceased to be queen",
+              "value": "ceased to be queen",
+              "start": 33,
+              "end": 51,
+              "clause": "Who was born on 10 May 1788 that ceased to be queen?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "10 May 1788",
+              "value": "10 May 1788",
+              "start": 16,
+              "end": 27,
+              "clause": "Who was born on 10 May 1788 that ceased to be queen?"
+            },
+            {
+              "surface": "ceased to be queen",
+              "value": "ceased to be queen",
+              "start": 33,
+              "end": 51,
+              "clause": "Who was born on 10 May 1788 that ceased to be queen?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "10 May 1788",
+              "value": "10 May 1788",
+              "start": 16,
+              "end": 27,
+              "clause": "Who was born on 10 May 1788 that ceased to be queen?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'born on' identifies the Birth field, whose matching cell is '10 May 1788'."
+            },
+            {
+              "surface": "ceased to be queen",
+              "value": "ceased to be queen",
+              "start": 33,
+              "end": 51,
+              "clause": "Who was born on 10 May 1788 that ceased to be queen?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The wording directly matches the Ceased to be Queen header."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "fd7e5b8639d6cc5063bf6fe5400b727ede06e7c2e1615e71b4177d127576b58f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5021,
+              "completion_tokens": 60,
+              "total_tokens": 5081,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "10 May 1788",
+              "value": "10 May 1788",
+              "start": 16,
+              "end": 27,
+              "clause": "Who was born on 10 May 1788 that ceased to be queen?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'born on' identifies the Birth field, whose matching cell is '10 May 1788'.",
+              "operator": "="
+            },
+            {
+              "surface": "ceased to be queen",
+              "value": "ceased to be queen",
+              "start": 33,
+              "end": 51,
+              "clause": "Who was born on 10 May 1788 that ceased to be queen?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The wording directly matches the Ceased to be Queen header.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "6cebf5b86c37d17381f223ac42619f06c85ec57e74227d51930419d6bd6d2c11",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5116,
+              "completion_tokens": 99,
+              "total_tokens": 5215,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 86
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "10 May 1788",
+              "value": "10 May 1788",
+              "start": 16,
+              "end": 27,
+              "clause": "Who was born on 10 May 1788 that ceased to be queen?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'born on' identifies the Birth field, whose matching cell is '10 May 1788'.",
+              "operator": "="
+            },
+            {
+              "surface": "ceased to be queen",
+              "value": "ceased to be queen",
+              "start": 33,
+              "end": 51,
+              "clause": "Who was born on 10 May 1788 that ceased to be queen?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The wording directly matches the Ceased to be Queen header.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "23c7617e62ced98e473d17c428d2debdb7c1a40c0a83089cd671f3aff73a8770",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5070,
+              "completion_tokens": 19,
+              "total_tokens": 5089,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "10 May 1788",
+              "value": "10 May 1788",
+              "start": 16,
+              "end": 27,
+              "clause": "Who was born on 10 May 1788 that ceased to be queen?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'born on' identifies the Birth field, whose matching cell is '10 May 1788'.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "ceased to be queen",
+              "value": "ceased to be queen",
+              "start": 33,
+              "end": 51,
+              "clause": "Who was born on 10 May 1788 that ceased to be queen?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The wording directly matches the Ceased to be Queen header.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": null,
+                "reason": "The phrase names the 'Ceased to be Queen' field but is not a value in any candidate-column cell; the question does not specify a cessation value to filter on."
+              }
+            }
+          ],
+          "reviewModelCalls": [
+            {
+              "model": "gpt-5.6-sol",
+              "promptSha256": "0dbc47bcb7fb2fa4192d72d8bcfb8e726b88a53a5f07a8b09a682317a690457f",
+              "knowledgeIds": [],
+              "usage": {
+                "prompt_tokens": 5026,
+                "completion_tokens": 93,
+                "total_tokens": 5119,
+                "prompt_tokens_details": {
+                  "cached_tokens": 4224
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 44
+                }
+              }
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0dbc47bcb7fb2fa4192d72d8bcfb8e726b88a53a5f07a8b09a682317a690457f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5026,
+              "completion_tokens": 93,
+              "total_tokens": 5119,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 44
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "10 May 1788",
+              "value": "10 May 1788",
+              "start": 16,
+              "end": 27,
+              "clause": "Who was born on 10 May 1788 that ceased to be queen?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'born on' identifies the Birth field, whose matching cell is '10 May 1788'.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "ceased to be queen",
+              "value": "ceased to be queen",
+              "start": 33,
+              "end": 51,
+              "clause": "Who was born on 10 May 1788 that ceased to be queen?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The wording directly matches the Ceased to be Queen header.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": null,
+                "reason": "The phrase names the 'Ceased to be Queen' field but is not a value in any candidate-column cell; the question does not specify a cessation value to filter on."
+              }
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "GROUNDING_FAILED",
+          "valid": false,
+          "errors": [
+            "condition 1: grounding NO_MATCH"
+          ],
+          "conditions": [
+            {
+              "surface": "10 May 1788",
+              "value": "10 May 1788",
+              "start": 16,
+              "end": 27,
+              "clause": "Who was born on 10 May 1788 that ceased to be queen?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'born on' identifies the Birth field, whose matching cell is '10 May 1788'.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "ceased to be queen",
+              "value": "ceased to be queen",
+              "start": 33,
+              "end": 51,
+              "clause": "Who was born on 10 May 1788 that ceased to be queen?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The wording directly matches the Ceased to be Queen header.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": null,
+                "reason": "The phrase names the 'Ceased to be Queen' field but is not a value in any candidate-column cell; the question does not specify a cessation value to filter on."
+              }
+            }
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "GROUNDING_FAILED",
+        "stage": "WHERE_CONDITION_VALIDATE",
+        "halt": true,
+        "completed": false,
+        "errors": [
+          "condition 1: grounding NO_MATCH"
+        ],
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "10 May 1788",
+          "value": "10 May 1788",
+          "start": 16,
+          "end": 27
+        },
+        {
+          "surface": "ceased to be queen",
+          "value": "ceased to be queen",
+          "start": 33,
+          "end": 51
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "10 May 1788",
+          "value": "10 May 1788",
+          "start": 16,
+          "end": 27,
+          "clause": "Who was born on 10 May 1788 that ceased to be queen?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The phrase 'born on' identifies the Birth field, whose matching cell is '10 May 1788'.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "ceased to be queen",
+          "value": "ceased to be queen",
+          "start": 33,
+          "end": 51,
+          "clause": "Who was born on 10 May 1788 that ceased to be queen?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The wording directly matches the Ceased to be Queen header.",
+          "operator": "=",
+          "grounded": false,
+          "groundingStatus": "NO_MATCH",
+          "groundingReview": {
+            "column": null,
+            "reason": "The phrase names the 'Ceased to be Queen' field but is not a value in any candidate-column cell; the question does not specify a cessation value to filter on."
+          }
+        }
+      ],
+      "count": 2
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": false,
+  "elapsed_ms": 11313
+}

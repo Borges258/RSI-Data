@@ -1,0 +1,475 @@
+{
+  "arm": "E2",
+  "position": 7,
+  "example_id": "test:375:1-11926114-1",
+  "original_index": 375,
+  "table_id": "1-11926114-1",
+  "question": "What numbr on the list had a peak rating of 42?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        4,
+        0,
+        42
+      ]
+    ],
+    "agg": 2
+  },
+  "prediction_conds": [
+    [
+      4,
+      0,
+      42
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        0,
+        42
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "42",
+        "value": 42,
+        "start": 44,
+        "end": 46,
+        "clause": "What numbr on the list had a peak rating of 42?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The question explicitly asks for a peak rating of 42; the Peak header matches this meaning and contains 42.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "42",
+        "value": "42",
+        "start": 44,
+        "end": 46
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What numbr on the list had a peak rating of 42?",
+      "table": {
+        "header": [
+          "Rank",
+          "English title",
+          "Chinese title",
+          "Average",
+          "Peak",
+          "Premiere",
+          "Finale",
+          "HK viewers"
+        ],
+        "page_title": "List of TVB series (2008)",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "real",
+          "real",
+          "real",
+          "real",
+          "text"
+        ],
+        "id": "1-11926114-1",
+        "section_title": "Top ten drama series in ratings",
+        "caption": "Highest-rating drama series of 2008",
+        "rows": [
+          [
+            1,
+            "Moonlight Resonance",
+            "溏心風暴之家好月圓",
+            35,
+            50,
+            33,
+            38,
+            "2.22 million"
+          ],
+          [
+            2,
+            "D.I.E.",
+            "古靈精探",
+            34,
+            42,
+            32,
+            37,
+            "2.14 million"
+          ],
+          [
+            3,
+            "Wars of In-Laws II",
+            "野蠻奶奶大戰戈師奶",
+            33,
+            41,
+            33,
+            32,
+            "2.07 million"
+          ],
+          [
+            4,
+            "Forensic Heroes II",
+            "法證先鋒II",
+            32,
+            37,
+            33,
+            34,
+            "2.04 million"
+          ],
+          [
+            5,
+            "Catch Me Now",
+            "原來愛上賊",
+            32,
+            38,
+            31,
+            33,
+            "2.00 million"
+          ],
+          [
+            6,
+            "The Silver Chamber of Sorrows",
+            "银楼金粉",
+            31,
+            40,
+            29,
+            34,
+            "1.93 million"
+          ],
+          [
+            7,
+            "Love Exchange",
+            "疑情別戀",
+            30,
+            35,
+            28,
+            32,
+            "1.91 million"
+          ],
+          [
+            8,
+            "Survivor's Law II",
+            "律政新人王Ⅱ",
+            30,
+            37,
+            26,
+            31,
+            "1.88 million"
+          ],
+          [
+            9,
+            "A Journey Called Life",
+            "金石良缘",
+            30,
+            35,
+            28,
+            32,
+            "1.88 million"
+          ]
+        ],
+        "name": "table_11926114_1",
+        "headers": [
+          "Rank",
+          "English title",
+          "Chinese title",
+          "Average",
+          "Peak",
+          "Premiere",
+          "Finale",
+          "HK viewers"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-11926114-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "42",
+              "value": "42",
+              "start": 44,
+              "end": 46
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ff62dfd3823cd530b3672ec818e9de67eef00176214d76cadf2ba7ff7cd15a16",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4965,
+              "completion_tokens": 17,
+              "total_tokens": 4982,
+              "prompt_tokens_details": {
+                "cached_tokens": 3200
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "42",
+              "value": "42",
+              "start": 44,
+              "end": 46,
+              "clause": "What numbr on the list had a peak rating of 42?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "42",
+              "value": "42",
+              "start": 44,
+              "end": 46,
+              "clause": "What numbr on the list had a peak rating of 42?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "42",
+              "value": "42",
+              "start": 44,
+              "end": 46,
+              "clause": "What numbr on the list had a peak rating of 42?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly asks for a peak rating of 42; the Peak header matches this meaning and contains 42."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "450f94c760b977da542188a8e8c476ebf99f915c1a9d7a2d7ee90373eb2d00af",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5000,
+              "completion_tokens": 44,
+              "total_tokens": 5044,
+              "prompt_tokens_details": {
+                "cached_tokens": 3584
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "42",
+              "value": "42",
+              "start": 44,
+              "end": 46,
+              "clause": "What numbr on the list had a peak rating of 42?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly asks for a peak rating of 42; the Peak header matches this meaning and contains 42.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e118d07263759c27766e06bcb02fccf37108502075495035b896bcdd647702c4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5068,
+              "completion_tokens": 9,
+              "total_tokens": 5077,
+              "prompt_tokens_details": {
+                "cached_tokens": 3200
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "42",
+              "value": 42,
+              "start": 44,
+              "end": 46,
+              "clause": "What numbr on the list had a peak rating of 42?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly asks for a peak rating of 42; the Peak header matches this meaning and contains 42.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "faee022c20857e39d26582c23796db78095fca6523dd21d35e4a152d0235c80e",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5019,
+              "completion_tokens": 9,
+              "total_tokens": 5028,
+              "prompt_tokens_details": {
+                "cached_tokens": 3584
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "42",
+              "value": "42",
+              "start": 44,
+              "end": 46,
+              "clause": "What numbr on the list had a peak rating of 42?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly asks for a peak rating of 42; the Peak header matches this meaning and contains 42.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "42",
+              "value": 42,
+              "start": 44,
+              "end": 46,
+              "clause": "What numbr on the list had a peak rating of 42?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly asks for a peak rating of 42; the Peak header matches this meaning and contains 42.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "42",
+              "value": 42,
+              "start": 44,
+              "end": 46,
+              "clause": "What numbr on the list had a peak rating of 42?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly asks for a peak rating of 42; the Peak header matches this meaning and contains 42.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              0,
+              42
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "42",
+          "value": "42",
+          "start": 44,
+          "end": 46
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "42",
+          "value": 42,
+          "start": 44,
+          "end": 46,
+          "clause": "What numbr on the list had a peak rating of 42?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The question explicitly asks for a peak rating of 42; the Peak header matches this meaning and contains 42.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          4,
+          0,
+          42
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 124062
+}

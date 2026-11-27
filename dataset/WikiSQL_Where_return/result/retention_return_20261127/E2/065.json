@@ -1,0 +1,616 @@
+{
+  "arm": "E2",
+  "position": 65,
+  "example_id": "test:2322:1-2076463-2",
+  "original_index": 2322,
+  "table_id": "1-2076463-2",
+  "question": "where would you find a public university which was founded in 1915?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        2,
+        0,
+        "Public university"
+      ],
+      [
+        5,
+        0,
+        1915
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "Public university"
+    ],
+    [
+      5,
+      0,
+      1915
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "Public university"
+      ],
+      [
+        5,
+        0,
+        1915
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "public university",
+        "value": "Public university",
+        "start": 23,
+        "end": 40,
+        "clause": "where would you find a public university which was founded in 1915?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "Control describes whether the institution is a public university.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "1915",
+        "value": 1915,
+        "start": 62,
+        "end": 66,
+        "clause": "where would you find a public university which was founded in 1915?",
+        "columnIndex": 5,
+        "columnCandidates": [
+          5
+        ],
+        "columnMatchReason": "Founded contains the institution's founding year.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "public university",
+        "value": "public university",
+        "start": 23,
+        "end": 40
+      },
+      {
+        "surface": "1915",
+        "value": "1915",
+        "start": 62,
+        "end": 66
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "where would you find a public university which was founded in 1915?",
+      "table": {
+        "header": [
+          "School",
+          "Location(s)",
+          "Control",
+          "Type",
+          "Enrollment",
+          "Founded"
+        ],
+        "page_title": "List of colleges and universities in Missouri",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "real",
+          "real"
+        ],
+        "id": "1-2076463-2",
+        "section_title": "Public universities",
+        "caption": "Public universities",
+        "rows": [
+          [
+            "Harris-Stowe State University",
+            "St. Louis",
+            "Historically black * Public university",
+            "Baccalaureate College",
+            1854,
+            1857
+          ],
+          [
+            "Lincoln University",
+            "Jefferson City",
+            "Historically black public university",
+            "Master’s colleges and universities",
+            3109,
+            1866
+          ],
+          [
+            "Missouri Southern State University",
+            "Joplin",
+            "Public university",
+            "Baccalaureate College",
+            5264,
+            1937
+          ],
+          [
+            "Missouri State University",
+            "Springfield",
+            "Public university",
+            "Master’s colleges and universities",
+            18748,
+            1905
+          ],
+          [
+            "Missouri Western State University",
+            "St. Joseph",
+            "Public university",
+            "Baccalaureate College",
+            5508,
+            1915
+          ],
+          [
+            "Northwest Missouri State University",
+            "Maryville",
+            "Public university",
+            "Master’s colleges and universities",
+            6687,
+            1905
+          ],
+          [
+            "Southeast Missouri State University",
+            "Cape Girardeau",
+            "Public university",
+            "Master’s colleges and universities",
+            10738,
+            1873
+          ],
+          [
+            "Truman State University",
+            "Kirksville",
+            "Public university",
+            "Master’s colleges and universities",
+            5880,
+            1867
+          ]
+        ],
+        "name": "table_2076463_2",
+        "headers": [
+          "School",
+          "Location(s)",
+          "Control",
+          "Type",
+          "Enrollment",
+          "Founded"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-2076463-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "public university",
+              "value": "public university",
+              "start": 23,
+              "end": 40
+            },
+            {
+              "surface": "1915",
+              "value": "1915",
+              "start": 62,
+              "end": 66
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "8813e7941a9263ba7507c3f5c02c39acf0f64d709d411cf076b288052a0f3045",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4893,
+              "completion_tokens": 65,
+              "total_tokens": 4958,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 34
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "public university",
+              "value": "public university",
+              "start": 23,
+              "end": 40,
+              "clause": "where would you find a public university which was founded in 1915?"
+            },
+            {
+              "surface": "1915",
+              "value": "1915",
+              "start": 62,
+              "end": 66,
+              "clause": "where would you find a public university which was founded in 1915?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "public university",
+              "value": "public university",
+              "start": 23,
+              "end": 40,
+              "clause": "where would you find a public university which was founded in 1915?"
+            },
+            {
+              "surface": "1915",
+              "value": "1915",
+              "start": 62,
+              "end": 66,
+              "clause": "where would you find a public university which was founded in 1915?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "public university",
+              "value": "public university",
+              "start": 23,
+              "end": 40,
+              "clause": "where would you find a public university which was founded in 1915?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Control describes whether the institution is a public university."
+            },
+            {
+              "surface": "1915",
+              "value": "1915",
+              "start": 62,
+              "end": 66,
+              "clause": "where would you find a public university which was founded in 1915?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "Founded contains the institution's founding year."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "3ee5a9a257b40a7be14ec417adc93614f1f4dd0c74eed4167757a403e9195729",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4968,
+              "completion_tokens": 43,
+              "total_tokens": 5011,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "public university",
+              "value": "public university",
+              "start": 23,
+              "end": 40,
+              "clause": "where would you find a public university which was founded in 1915?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Control describes whether the institution is a public university.",
+              "operator": "="
+            },
+            {
+              "surface": "1915",
+              "value": "1915",
+              "start": 62,
+              "end": 66,
+              "clause": "where would you find a public university which was founded in 1915?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "Founded contains the institution's founding year.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0db6319229b9eafb33b7b8747d15e0b675c727aef33b3eaf0d394687b10ebe06",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5046,
+              "completion_tokens": 11,
+              "total_tokens": 5057,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "public university",
+              "value": "Public university",
+              "start": 23,
+              "end": 40,
+              "clause": "where would you find a public university which was founded in 1915?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Control describes whether the institution is a public university.",
+              "operator": "="
+            },
+            {
+              "surface": "1915",
+              "value": 1915,
+              "start": 62,
+              "end": 66,
+              "clause": "where would you find a public university which was founded in 1915?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "Founded contains the institution's founding year.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "7c36749796b5fb287deed9c280ba88d3b9b15d1eeb734f08afa3d744c77ffa4d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5000,
+              "completion_tokens": 13,
+              "total_tokens": 5013,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "public university",
+              "value": "Public university",
+              "start": 23,
+              "end": 40,
+              "clause": "where would you find a public university which was founded in 1915?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Control describes whether the institution is a public university.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "1915",
+              "value": "1915",
+              "start": 62,
+              "end": 66,
+              "clause": "where would you find a public university which was founded in 1915?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "Founded contains the institution's founding year.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "public university",
+              "value": "Public university",
+              "start": 23,
+              "end": 40,
+              "clause": "where would you find a public university which was founded in 1915?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Control describes whether the institution is a public university.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "1915",
+              "value": 1915,
+              "start": 62,
+              "end": 66,
+              "clause": "where would you find a public university which was founded in 1915?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "Founded contains the institution's founding year.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "public university",
+              "value": "Public university",
+              "start": 23,
+              "end": 40,
+              "clause": "where would you find a public university which was founded in 1915?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Control describes whether the institution is a public university.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "1915",
+              "value": 1915,
+              "start": 62,
+              "end": 66,
+              "clause": "where would you find a public university which was founded in 1915?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "Founded contains the institution's founding year.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "Public university"
+            ],
+            [
+              5,
+              0,
+              1915
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "public university",
+          "value": "public university",
+          "start": 23,
+          "end": 40
+        },
+        {
+          "surface": "1915",
+          "value": "1915",
+          "start": 62,
+          "end": 66
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "public university",
+          "value": "Public university",
+          "start": 23,
+          "end": 40,
+          "clause": "where would you find a public university which was founded in 1915?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "Control describes whether the institution is a public university.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "1915",
+          "value": 1915,
+          "start": 62,
+          "end": 66,
+          "clause": "where would you find a public university which was founded in 1915?",
+          "columnIndex": 5,
+          "columnCandidates": [
+            5
+          ],
+          "columnMatchReason": "Founded contains the institution's founding year.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          2,
+          0,
+          "Public university"
+        ],
+        [
+          5,
+          0,
+          1915
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 34969
+}

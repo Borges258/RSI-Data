@@ -1,0 +1,132 @@
+{
+  "arm": "E1",
+  "position": 354,
+  "example_id": "test:13879:2-18823880-4",
+  "original_index": 13879,
+  "table_id": "2-18823880-4",
+  "question": "what is the part number when the release date is january 2011, the frequency is 3.4 ghz and the release price (usd) is $317?",
+  "gold_sql": {
+    "sel": 12,
+    "conds": [
+      [
+        11,
+        0,
+        "january 2011"
+      ],
+      [
+        3,
+        0,
+        "3.4 ghz"
+      ],
+      [
+        13,
+        0,
+        "$317"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      11,
+      0,
+      "January 2011"
+    ],
+    [
+      3,
+      0,
+      "3.4 GHz"
+    ],
+    [
+      13,
+      0,
+      "$317"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": "gpt-5.6-sol",
+  "usage": {
+    "prompt_tokens": 12529,
+    "completion_tokens": 64,
+    "total_tokens": 12593,
+    "prompt_tokens_details": {
+      "cached_tokens": 4224
+    }
+  },
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        11,
+        0,
+        "January 2011"
+      ],
+      [
+        3,
+        0,
+        "3.4 GHz"
+      ],
+      [
+        13,
+        0,
+        "$317"
+      ]
+    ],
+    "explanation": "Three explicit equality filters on release date, frequency, and release price, using exact table literals.",
+    "version": "wikisql-where-prior-v1",
+    "tableId": "2-18823880-4",
+    "knowledgeIds": [
+      "g-eq",
+      "g-gt",
+      "g-lt",
+      "g-inclusive",
+      "g-literal",
+      "g-threshold",
+      "g-and",
+      "g-or",
+      "g-column",
+      "g-count",
+      "g-ambiguous",
+      "t-2-18823880-4-field-0",
+      "t-2-18823880-4-field-1",
+      "t-2-18823880-4-field-2",
+      "t-2-18823880-4-field-3",
+      "t-2-18823880-4-field-4",
+      "t-2-18823880-4-field-5",
+      "t-2-18823880-4-field-6",
+      "t-2-18823880-4-field-7",
+      "t-2-18823880-4-field-8",
+      "t-2-18823880-4-field-9",
+      "t-2-18823880-4-field-10",
+      "t-2-18823880-4-field-11",
+      "t-2-18823880-4-field-12",
+      "t-2-18823880-4-field-13",
+      "d-implicit-eq",
+      "d-explicit-eq",
+      "d-gt",
+      "d-lt-and-gt",
+      "d-with-two",
+      "d-literal-form",
+      "p-text",
+      "p-number",
+      "p-multi",
+      "p-unsupported"
+    ],
+    "promptSha256": "f2b2f09a36db49b8487fc720ed8085b758325285ed373b41a3887a08936c482a",
+    "model": "gpt-5.6-sol",
+    "usage": {
+      "prompt_tokens": 12529,
+      "completion_tokens": 64,
+      "total_tokens": 12593,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      }
+    },
+    "latencyMs": 3943
+  },
+  "source": "where_prior_parse",
+  "safe_completed": true,
+  "elapsed_ms": 3953
+}

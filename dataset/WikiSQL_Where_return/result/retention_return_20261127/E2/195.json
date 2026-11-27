@@ -1,0 +1,459 @@
+{
+  "arm": "E2",
+  "position": 195,
+  "example_id": "test:7147:2-15887683-1",
+  "original_index": 7147,
+  "table_id": "2-15887683-1",
+  "question": "What is the HDTV when the content is general television?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        3,
+        0,
+        "general television"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      3,
+      0,
+      "general television"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        0,
+        "general television"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "general television",
+        "value": "general television",
+        "start": 37,
+        "end": 55,
+        "clause": "What is the HDTV when the content is general television?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The question explicitly says 'the content is general television,' matching the Content header and its row values.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "general television",
+        "value": "general television",
+        "start": 37,
+        "end": 55
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the HDTV when the content is general television?",
+      "table": {
+        "header": [
+          "Television service",
+          "Country",
+          "Language",
+          "Content",
+          "HDTV",
+          "Package/Option"
+        ],
+        "page_title": "Television in Italy",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 15887683,
+        "id": "2-15887683-1",
+        "section_title": "National terrestrial and Sky TG24",
+        "rows": [
+          [
+            "Sky TG 24",
+            "Italy",
+            "Italian",
+            "all news",
+            "no",
+            "Any combination"
+          ],
+          [
+            "Sky TG 24 Active",
+            "Italy",
+            "Italian",
+            "all news",
+            "no",
+            "Any combination"
+          ],
+          [
+            "Rai 1",
+            "Italy",
+            "Italian",
+            "general television",
+            "no",
+            "no ( FTA )"
+          ],
+          [
+            "Rai 2",
+            "Italy",
+            "Italian",
+            "general television",
+            "no",
+            "no ( FTA )"
+          ],
+          [
+            "Rai 3",
+            "Italy",
+            "Italian",
+            "general television",
+            "no",
+            "no ( FTA )"
+          ],
+          [
+            "Rete 4",
+            "Italy",
+            "Italian",
+            "general television",
+            "no",
+            "no ( FTA )"
+          ],
+          [
+            "Canale 5",
+            "Italy",
+            "Italian",
+            "general television",
+            "no",
+            "no ( FTA )"
+          ],
+          [
+            "Italia 1",
+            "Italy",
+            "Italian",
+            "general television",
+            "no",
+            "no ( FTA )"
+          ],
+          [
+            "LA7",
+            "Italy",
+            "Italian",
+            "general television",
+            "no",
+            "no ( FTV )"
+          ],
+          [
+            "MTV",
+            "Italy",
+            "Italian",
+            "general television",
+            "no",
+            "no ( FTV )"
+          ]
+        ],
+        "caption": "National terrestrial and Sky TG24",
+        "headers": [
+          "Television service",
+          "Country",
+          "Language",
+          "Content",
+          "HDTV",
+          "Package/Option"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-15887683-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "general television",
+              "value": "general television",
+              "start": 37,
+              "end": 55
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e13dc3c09a45627bd458dd724935e1ae3267626276323954d4b76193b9e96aa9",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4884,
+              "completion_tokens": 19,
+              "total_tokens": 4903,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "general television",
+              "value": "general television",
+              "start": 37,
+              "end": 55,
+              "clause": "What is the HDTV when the content is general television?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "general television",
+              "value": "general television",
+              "start": 37,
+              "end": 55,
+              "clause": "What is the HDTV when the content is general television?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "general television",
+              "value": "general television",
+              "start": 37,
+              "end": 55,
+              "clause": "What is the HDTV when the content is general television?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says 'the content is general television,' matching the Content header and its row values."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b4805c6f95da777f42e4b675b91328be9d818fb726201f6bbf7d123e234f0143",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4918,
+              "completion_tokens": 41,
+              "total_tokens": 4959,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "general television",
+              "value": "general television",
+              "start": 37,
+              "end": 55,
+              "clause": "What is the HDTV when the content is general television?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says 'the content is general television,' matching the Content header and its row values.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c8549102dafe678042091bfed761302326aef664a2060c1c75402d28f1de5c23",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4983,
+              "completion_tokens": 9,
+              "total_tokens": 4992,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "general television",
+              "value": "general television",
+              "start": 37,
+              "end": 55,
+              "clause": "What is the HDTV when the content is general television?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says 'the content is general television,' matching the Content header and its row values.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "332205b11b42e676011c8c3be97e38472898bdeaf90bcde2b0fbab06a3cd371e",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4934,
+              "completion_tokens": 11,
+              "total_tokens": 4945,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "general television",
+              "value": "general television",
+              "start": 37,
+              "end": 55,
+              "clause": "What is the HDTV when the content is general television?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says 'the content is general television,' matching the Content header and its row values.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "general television",
+              "value": "general television",
+              "start": 37,
+              "end": 55,
+              "clause": "What is the HDTV when the content is general television?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says 'the content is general television,' matching the Content header and its row values.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "general television",
+              "value": "general television",
+              "start": 37,
+              "end": 55,
+              "clause": "What is the HDTV when the content is general television?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says 'the content is general television,' matching the Content header and its row values.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              0,
+              "general television"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "general television",
+          "value": "general television",
+          "start": 37,
+          "end": 55
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "general television",
+          "value": "general television",
+          "start": 37,
+          "end": 55,
+          "clause": "What is the HDTV when the content is general television?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The question explicitly says 'the content is general television,' matching the Content header and its row values.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          3,
+          0,
+          "general television"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7609
+}

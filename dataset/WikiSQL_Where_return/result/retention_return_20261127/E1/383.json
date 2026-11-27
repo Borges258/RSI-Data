@@ -1,0 +1,108 @@
+{
+  "arm": "E1",
+  "position": 383,
+  "example_id": "test:15076:2-1252109-3",
+  "original_index": 15076,
+  "table_id": "2-1252109-3",
+  "question": "What is the least amount of points the entrant Simoniz received before 1960?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        0,
+        2,
+        1960
+      ],
+      [
+        1,
+        0,
+        "simoniz"
+      ]
+    ],
+    "agg": 2
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "Simoniz"
+    ],
+    [
+      0,
+      2,
+      1960
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": "gpt-5.6-sol",
+  "usage": {
+    "prompt_tokens": 9621,
+    "completion_tokens": 66,
+    "total_tokens": 9687,
+    "prompt_tokens_details": {
+      "cached_tokens": 4224
+    }
+  },
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "Simoniz"
+      ],
+      [
+        0,
+        2,
+        1960
+      ]
+    ],
+    "explanation": "Entrant equals Simoniz and 'before 1960' means Year < 1960; 'least' specifies the requested Points aggregation, not a WHERE condition.",
+    "version": "wikisql-where-prior-v1",
+    "tableId": "2-1252109-3",
+    "knowledgeIds": [
+      "g-eq",
+      "g-gt",
+      "g-lt",
+      "g-inclusive",
+      "g-literal",
+      "g-threshold",
+      "g-and",
+      "g-or",
+      "g-column",
+      "g-count",
+      "g-ambiguous",
+      "t-2-1252109-3-field-0",
+      "t-2-1252109-3-field-1",
+      "t-2-1252109-3-field-2",
+      "t-2-1252109-3-field-3",
+      "t-2-1252109-3-field-4",
+      "d-implicit-eq",
+      "d-explicit-eq",
+      "d-gt",
+      "d-lt-and-gt",
+      "d-with-two",
+      "d-literal-form",
+      "p-text",
+      "p-number",
+      "p-multi",
+      "p-unsupported"
+    ],
+    "promptSha256": "a3898b5abf882173f2fb3fce0953e1bf6b3bf2c2f5861c62a03ece99c1bf087d",
+    "model": "gpt-5.6-sol",
+    "usage": {
+      "prompt_tokens": 9621,
+      "completion_tokens": 66,
+      "total_tokens": 9687,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      }
+    },
+    "latencyMs": 2803
+  },
+  "source": "where_prior_parse",
+  "safe_completed": true,
+  "elapsed_ms": 2813
+}

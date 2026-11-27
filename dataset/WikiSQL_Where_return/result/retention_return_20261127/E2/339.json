@@ -1,0 +1,459 @@
+{
+  "arm": "E2",
+  "position": 339,
+  "example_id": "test:13246:2-17841851-1",
+  "original_index": 13246,
+  "table_id": "2-17841851-1",
+  "question": "Which Gold has a Total of 721?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        5,
+        0,
+        721
+      ]
+    ],
+    "agg": 5
+  },
+  "prediction_conds": [
+    [
+      5,
+      0,
+      721
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        5,
+        0,
+        721
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "721",
+        "value": 721,
+        "start": 26,
+        "end": 29,
+        "clause": "Which Gold has a Total of 721?",
+        "columnIndex": 5,
+        "columnCandidates": [
+          5
+        ],
+        "columnMatchReason": "The question explicitly says \"a Total of 721\"; the Total header is column 5 and contains 721.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "721",
+        "value": "721",
+        "start": 26,
+        "end": 29
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Which Gold has a Total of 721?",
+      "table": {
+        "header": [
+          "Rank",
+          "Nation",
+          "Gold",
+          "Silver",
+          "Bronze",
+          "Total"
+        ],
+        "page_title": "2005 East Asian Games",
+        "types": [
+          "text",
+          "text",
+          "real",
+          "real",
+          "real",
+          "real"
+        ],
+        "page_id": 17841851,
+        "id": "2-17841851-1",
+        "section_title": "Medal table",
+        "rows": [
+          [
+            "1",
+            "China (CHN)",
+            "127",
+            "63",
+            "33",
+            "223"
+          ],
+          [
+            "2",
+            "Japan (JPN)",
+            "46",
+            "56",
+            "77",
+            "179"
+          ],
+          [
+            "3",
+            "South Korea (KOR)",
+            "32",
+            "48",
+            "65",
+            "145"
+          ],
+          [
+            "4",
+            "Chinese Taipei (TPE)",
+            "12",
+            "34",
+            "26",
+            "72"
+          ],
+          [
+            "5",
+            "Macau (MAC)",
+            "11",
+            "16",
+            "17",
+            "44"
+          ],
+          [
+            "6",
+            "North Korea (PRK)",
+            "6",
+            "10",
+            "20",
+            "36"
+          ],
+          [
+            "7",
+            "Hong Kong (HKG)",
+            "2",
+            "2",
+            "9",
+            "13"
+          ],
+          [
+            "8",
+            "Mongolia (MGL)",
+            "1",
+            "1",
+            "6",
+            "8"
+          ],
+          [
+            "9",
+            "Guam (GUM)",
+            "0",
+            "0",
+            "1",
+            "1"
+          ],
+          [
+            "Total",
+            "Total",
+            "237",
+            "230",
+            "254",
+            "721"
+          ]
+        ],
+        "caption": "Medal table",
+        "headers": [
+          "Rank",
+          "Nation",
+          "Gold",
+          "Silver",
+          "Bronze",
+          "Total"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-17841851-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "721",
+              "value": "721",
+              "start": 26,
+              "end": 29
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "2e016b008857945e8c4980f77958d7303d4f90c6365c619f0486b066ef13ab1d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4842,
+              "completion_tokens": 17,
+              "total_tokens": 4859,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "721",
+              "value": "721",
+              "start": 26,
+              "end": 29,
+              "clause": "Which Gold has a Total of 721?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "721",
+              "value": "721",
+              "start": 26,
+              "end": 29,
+              "clause": "Which Gold has a Total of 721?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "721",
+              "value": "721",
+              "start": 26,
+              "end": 29,
+              "clause": "Which Gold has a Total of 721?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly says \"a Total of 721\"; the Total header is column 5 and contains 721."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ecb0dd5c33d98d7ce4fee541a0fd7bd76bae18435ccb00460b00d92930295f37",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4872,
+              "completion_tokens": 45,
+              "total_tokens": 4917,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "721",
+              "value": "721",
+              "start": 26,
+              "end": 29,
+              "clause": "Which Gold has a Total of 721?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly says \"a Total of 721\"; the Total header is column 5 and contains 721.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d4d790e738fea517f13f8e92764823f18b7d662e266e0d3eabcb85d1289aa3aa",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4941,
+              "completion_tokens": 9,
+              "total_tokens": 4950,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "721",
+              "value": 721,
+              "start": 26,
+              "end": 29,
+              "clause": "Which Gold has a Total of 721?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly says \"a Total of 721\"; the Total header is column 5 and contains 721.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b7dcab36f4340190a4696966d068ab2fb43b656a6a1c7188db891ef0262fafef",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4892,
+              "completion_tokens": 9,
+              "total_tokens": 4901,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "721",
+              "value": "721",
+              "start": 26,
+              "end": 29,
+              "clause": "Which Gold has a Total of 721?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly says \"a Total of 721\"; the Total header is column 5 and contains 721.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "721",
+              "value": 721,
+              "start": 26,
+              "end": 29,
+              "clause": "Which Gold has a Total of 721?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly says \"a Total of 721\"; the Total header is column 5 and contains 721.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "721",
+              "value": 721,
+              "start": 26,
+              "end": 29,
+              "clause": "Which Gold has a Total of 721?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly says \"a Total of 721\"; the Total header is column 5 and contains 721.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              5,
+              0,
+              721
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "721",
+          "value": "721",
+          "start": 26,
+          "end": 29
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "721",
+          "value": 721,
+          "start": 26,
+          "end": 29,
+          "clause": "Which Gold has a Total of 721?",
+          "columnIndex": 5,
+          "columnCandidates": [
+            5
+          ],
+          "columnMatchReason": "The question explicitly says \"a Total of 721\"; the Total header is column 5 and contains 721.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          5,
+          0,
+          721
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7938
+}

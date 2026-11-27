@@ -1,0 +1,596 @@
+{
+  "arm": "E2",
+  "position": 6,
+  "example_id": "test:456:1-12175755-1",
+  "original_index": 456,
+  "table_id": "1-12175755-1",
+  "question": "What is the song choice when the theme is not aired?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        2,
+        0,
+        "Not Aired"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [],
+  "status": "GROUNDING_FAILED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "GROUNDING_FAILED",
+    "valid": false,
+    "errors": [
+      "condition 0: grounding NO_MATCH"
+    ],
+    "conditions": [
+      {
+        "surface": "not aired",
+        "value": "Not Aired",
+        "start": 42,
+        "end": 51,
+        "clause": "What is the song choice when the theme is not aired?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          {
+            "columnIndex": 2,
+            "header": "Song choice",
+            "evidence": "EXACT_VALUE_MATCH"
+          },
+          {
+            "columnIndex": 3,
+            "header": "Original artist",
+            "evidence": "EXACT_VALUE_MATCH"
+          }
+        ],
+        "columnMatchReason": "The question explicitly constrains the Theme field ('when the theme is not aired'), so it maps to the Theme column despite 'Not Aired' also appearing in other columns.",
+        "operator": "=",
+        "groundingReason": "FIELD_VALUE_CONFLICT",
+        "grounded": false,
+        "groundingStatus": "NO_MATCH",
+        "groundingReview": {
+          "column": null,
+          "reason": "The question explicitly applies \"not aired\" to Theme, but no Theme cell has that value; it appears only in Song choice and Original artist."
+        }
+      }
+    ],
+    "stage": "WHERE_CONDITION_VALIDATE",
+    "originalConditions": [
+      {
+        "surface": "not aired",
+        "value": "Not Aired",
+        "start": 42,
+        "end": 51
+      }
+    ],
+    "halt": true,
+    "completed": false,
+    "conds": [],
+    "warnings": [],
+    "request": {
+      "question": "What is the song choice when the theme is not aired?",
+      "table": {
+        "header": [
+          "Episode",
+          "Theme",
+          "Song choice",
+          "Original artist",
+          "Order #",
+          "Result"
+        ],
+        "page_title": "Carlos Peña (singer)",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "id": "1-12175755-1",
+        "section_title": "Performances/Results",
+        "caption": "Performances/Results",
+        "rows": [
+          [
+            "Audition",
+            "Auditioner's Choice",
+            "\"Sería fácil\"",
+            "Luis Fonsi",
+            "N/A",
+            "Advanced"
+          ],
+          [
+            "Selection Process",
+            "Auditioner's Choice",
+            "Not Aired",
+            "Not Aired",
+            "N/A",
+            "Advanced"
+          ],
+          [
+            "Selection Process",
+            "Auditioner's Choice",
+            "Not Aired",
+            "Not Aired",
+            "N/A",
+            "Advanced"
+          ],
+          [
+            "Workshop #1",
+            "Contestant's Choice",
+            "\"Tu Reputación\"",
+            "Ricardo Arjona",
+            "8",
+            "Advanced"
+          ],
+          [
+            "Top 12",
+            "Contestant's Choice",
+            "\"Usted Se Me Llevo La Vida\"",
+            "Alexandre Pires",
+            "10",
+            "Safe"
+          ],
+          [
+            "Top 10",
+            "Emmanuel Homage",
+            "\"Quiero Dormir Cansado\"",
+            "Emmanuel",
+            "6",
+            "Safe"
+          ],
+          [
+            "Top 8",
+            "Decade They Were Born",
+            "\"Detalles\"",
+            "Roberto Carlos",
+            "7",
+            "Safe"
+          ],
+          [
+            "Top 7",
+            "Ricardo Montaner Homage",
+            "\"Bésame\"",
+            "Ricardo Montaner",
+            "7",
+            "Safe"
+          ],
+          [
+            "Top 6",
+            "Latin Rhythm",
+            "\"Fruta Fresca\"",
+            "Carlos Vives",
+            "3",
+            "Safe"
+          ],
+          [
+            "Top 5",
+            "Boleros and Rancheras",
+            "\"La Media Vuelta\"",
+            "José Alfredo Jiménez",
+            "4",
+            "Safe"
+          ],
+          [
+            "Top 5",
+            "Boleros and Rancheras",
+            "\"Ella\"",
+            "José Alfredo Jiménez",
+            "9",
+            "Safe"
+          ],
+          [
+            "Top 4",
+            "Love songs",
+            "\"Contigo en la Distancia\"",
+            "Luis Miguel",
+            "4",
+            "Safe"
+          ],
+          [
+            "Top 4",
+            "Love songs",
+            "\"Si Tú No Estas\"",
+            "Rosana",
+            "8",
+            "Safe"
+          ],
+          [
+            "Top 3",
+            "Hits Night",
+            "\"Cuándo\"",
+            "Ricardo Arjona",
+            "2",
+            "Safe"
+          ],
+          [
+            "Top 3",
+            "Hits Night",
+            "\"Corazón Partío\"",
+            "Alejandro Sanz",
+            "5",
+            "Safe"
+          ],
+          [
+            "Top 2",
+            "Finale",
+            "\"Con una Canción\"",
+            "Carlos Peña",
+            "1",
+            "Winner"
+          ],
+          [
+            "Top 2",
+            "Finale",
+            "\"Usted Se Me Llevó La Vida\"",
+            "Alexandre Pires",
+            "3",
+            "Winner"
+          ]
+        ],
+        "name": "table_12175755_1",
+        "headers": [
+          "Episode",
+          "Theme",
+          "Song choice",
+          "Original artist",
+          "Order #",
+          "Result"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-12175755-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 9,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "not aired",
+              "value": "Not Aired",
+              "start": 42,
+              "end": 51
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "43ed9e9818df98187d9341eb04e622e25712a676e0bcb3105c4635f163429f68",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5103,
+              "completion_tokens": 74,
+              "total_tokens": 5177,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 52
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "not aired",
+              "value": "Not Aired",
+              "start": 42,
+              "end": 51,
+              "clause": "What is the song choice when the theme is not aired?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "not aired",
+              "value": "Not Aired",
+              "start": 42,
+              "end": 51,
+              "clause": "What is the song choice when the theme is not aired?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "not aired",
+              "value": "Not Aired",
+              "start": 42,
+              "end": 51,
+              "clause": "What is the song choice when the theme is not aired?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly constrains the Theme field ('when the theme is not aired'), so it maps to the Theme column despite 'Not Aired' also appearing in other columns."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b9e70f815992b6ba6f9c4dd5885b3b6c9a50f95942fac3562a880868b40551e4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5139,
+              "completion_tokens": 56,
+              "total_tokens": 5195,
+              "prompt_tokens_details": {
+                "cached_tokens": 4864
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "not aired",
+              "value": "Not Aired",
+              "start": 42,
+              "end": 51,
+              "clause": "What is the song choice when the theme is not aired?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly constrains the Theme field ('when the theme is not aired'), so it maps to the Theme column despite 'Not Aired' also appearing in other columns.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "1fad356e041198acb4f9284349900337ca68104eebd6217fa40f6c96a6a3323c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5219,
+              "completion_tokens": 9,
+              "total_tokens": 5228,
+              "prompt_tokens_details": {
+                "cached_tokens": 4864
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "not aired",
+              "value": "Not Aired",
+              "start": 42,
+              "end": 51,
+              "clause": "What is the song choice when the theme is not aired?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly constrains the Theme field ('when the theme is not aired'), so it maps to the Theme column despite 'Not Aired' also appearing in other columns.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d4b24c4e59cc81468039100a2bf6f62ae60d0310fbb5bc3be3768a12b38313d6",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5170,
+              "completion_tokens": 12,
+              "total_tokens": 5182,
+              "prompt_tokens_details": {
+                "cached_tokens": 4864
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "not aired",
+              "value": "Not Aired",
+              "start": 42,
+              "end": 51,
+              "clause": "What is the song choice when the theme is not aired?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                {
+                  "columnIndex": 2,
+                  "header": "Song choice",
+                  "evidence": "EXACT_VALUE_MATCH"
+                },
+                {
+                  "columnIndex": 3,
+                  "header": "Original artist",
+                  "evidence": "EXACT_VALUE_MATCH"
+                }
+              ],
+              "columnMatchReason": "The question explicitly constrains the Theme field ('when the theme is not aired'), so it maps to the Theme column despite 'Not Aired' also appearing in other columns.",
+              "operator": "=",
+              "groundingReason": "FIELD_VALUE_CONFLICT",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": null,
+                "reason": "The question explicitly applies \"not aired\" to Theme, but no Theme cell has that value; it appears only in Song choice and Original artist."
+              }
+            }
+          ],
+          "reviewModelCalls": [
+            {
+              "model": "gpt-5.6-sol",
+              "promptSha256": "db1262e951de278ec969377ed3ef2989d045e571ddaa6415e2e4dd588d2a7292",
+              "knowledgeIds": [],
+              "usage": {
+                "prompt_tokens": 5292,
+                "completion_tokens": 41,
+                "total_tokens": 5333,
+                "prompt_tokens_details": {
+                  "cached_tokens": 4864
+                }
+              }
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "db1262e951de278ec969377ed3ef2989d045e571ddaa6415e2e4dd588d2a7292",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5292,
+              "completion_tokens": 41,
+              "total_tokens": 5333,
+              "prompt_tokens_details": {
+                "cached_tokens": 4864
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "not aired",
+              "value": "Not Aired",
+              "start": 42,
+              "end": 51,
+              "clause": "What is the song choice when the theme is not aired?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                {
+                  "columnIndex": 2,
+                  "header": "Song choice",
+                  "evidence": "EXACT_VALUE_MATCH"
+                },
+                {
+                  "columnIndex": 3,
+                  "header": "Original artist",
+                  "evidence": "EXACT_VALUE_MATCH"
+                }
+              ],
+              "columnMatchReason": "The question explicitly constrains the Theme field ('when the theme is not aired'), so it maps to the Theme column despite 'Not Aired' also appearing in other columns.",
+              "operator": "=",
+              "groundingReason": "FIELD_VALUE_CONFLICT",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": null,
+                "reason": "The question explicitly applies \"not aired\" to Theme, but no Theme cell has that value; it appears only in Song choice and Original artist."
+              }
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "GROUNDING_FAILED",
+          "valid": false,
+          "errors": [
+            "condition 0: grounding NO_MATCH"
+          ],
+          "conditions": [
+            {
+              "surface": "not aired",
+              "value": "Not Aired",
+              "start": 42,
+              "end": 51,
+              "clause": "What is the song choice when the theme is not aired?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                {
+                  "columnIndex": 2,
+                  "header": "Song choice",
+                  "evidence": "EXACT_VALUE_MATCH"
+                },
+                {
+                  "columnIndex": 3,
+                  "header": "Original artist",
+                  "evidence": "EXACT_VALUE_MATCH"
+                }
+              ],
+              "columnMatchReason": "The question explicitly constrains the Theme field ('when the theme is not aired'), so it maps to the Theme column despite 'Not Aired' also appearing in other columns.",
+              "operator": "=",
+              "groundingReason": "FIELD_VALUE_CONFLICT",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": null,
+                "reason": "The question explicitly applies \"not aired\" to Theme, but no Theme cell has that value; it appears only in Song choice and Original artist."
+              }
+            }
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "GROUNDING_FAILED",
+        "stage": "WHERE_CONDITION_VALIDATE",
+        "halt": true,
+        "completed": false,
+        "errors": [
+          "condition 0: grounding NO_MATCH"
+        ],
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "not aired",
+          "value": "Not Aired",
+          "start": 42,
+          "end": 51
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "not aired",
+          "value": "Not Aired",
+          "start": 42,
+          "end": 51,
+          "clause": "What is the song choice when the theme is not aired?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            {
+              "columnIndex": 2,
+              "header": "Song choice",
+              "evidence": "EXACT_VALUE_MATCH"
+            },
+            {
+              "columnIndex": 3,
+              "header": "Original artist",
+              "evidence": "EXACT_VALUE_MATCH"
+            }
+          ],
+          "columnMatchReason": "The question explicitly constrains the Theme field ('when the theme is not aired'), so it maps to the Theme column despite 'Not Aired' also appearing in other columns.",
+          "operator": "=",
+          "groundingReason": "FIELD_VALUE_CONFLICT",
+          "grounded": false,
+          "groundingStatus": "NO_MATCH",
+          "groundingReview": {
+            "column": null,
+            "reason": "The question explicitly applies \"not aired\" to Theme, but no Theme cell has that value; it appears only in Song choice and Original artist."
+          }
+        }
+      ],
+      "count": 1
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": false,
+  "elapsed_ms": 9860
+}

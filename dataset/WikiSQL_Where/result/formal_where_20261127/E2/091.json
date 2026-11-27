@@ -1,0 +1,896 @@
+{
+  "arm": "E2",
+  "position": 91,
+  "example_id": "test:5640:2-15194788-2",
+  "original_index": 5640,
+  "table_id": "2-15194788-2",
+  "question": "Which stage corresponds to Banesto and Tony Rominger?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        5,
+        0,
+        "banesto"
+      ],
+      [
+        3,
+        0,
+        "tony rominger"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      5,
+      0,
+      "Banesto"
+    ],
+    [
+      2,
+      0,
+      "Tony Rominger"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        5,
+        0,
+        "Banesto"
+      ],
+      [
+        2,
+        0,
+        "Tony Rominger"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Banesto",
+        "value": "Banesto",
+        "start": 27,
+        "end": 34,
+        "clause": "Which stage corresponds to Banesto",
+        "columnIndex": 5,
+        "columnCandidates": [
+          5
+        ],
+        "columnMatchReason": "Banesto is a team and appears as the team classification value.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "Tony Rominger",
+        "value": "Tony Rominger",
+        "start": 39,
+        "end": 52,
+        "clause": "and Tony Rominger?",
+        "columnMatchStatus": "UNRESOLVED",
+        "columnCandidates": [
+          {
+            "columnIndex": 1,
+            "header": "Winner",
+            "evidence": "EXACT_VALUE_MATCH"
+          },
+          {
+            "columnIndex": 2,
+            "header": "General classification",
+            "evidence": "EXACT_VALUE_MATCH"
+          },
+          {
+            "columnIndex": 3,
+            "header": "Points classification",
+            "evidence": "EXACT_VALUE_MATCH"
+          },
+          {
+            "columnIndex": 4,
+            "header": "Mountains classification",
+            "evidence": "EXACT_VALUE_MATCH"
+          }
+        ],
+        "columnMatchReason": "The wording does not distinguish Tony Rominger's role among winner, general, points, or mountains classifications.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH",
+        "groundingReview": {
+          "column": 2,
+          "reason": "Tony Rominger is the general classification leader in rows where Banesto is the team classification leader, making the two values parallel classification fields."
+        },
+        "columnIndex": 2,
+        "columnRecovery": "REVIEWED_FIELD_AND_TABLE_VALUE"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Banesto",
+        "value": "Banesto",
+        "start": 27,
+        "end": 34
+      },
+      {
+        "surface": "Tony Rominger",
+        "value": "Tony Rominger",
+        "start": 39,
+        "end": 52
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Which stage corresponds to Banesto and Tony Rominger?",
+      "table": {
+        "header": [
+          "Stage",
+          "Winner",
+          "General classification",
+          "Points classification",
+          "Mountains classification",
+          "Team classification"
+        ],
+        "page_title": "1994 Vuelta a España",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 15194788,
+        "id": "2-15194788-2",
+        "section_title": "Classification leadership",
+        "rows": [
+          [
+            "P",
+            "Tony Rominger",
+            "Tony Rominger",
+            "Tony Rominger",
+            "not awarded",
+            "Banesto"
+          ],
+          [
+            "1",
+            "Laurent Jalabert",
+            "Tony Rominger",
+            "Tony Rominger",
+            "not awarded",
+            "Banesto"
+          ],
+          [
+            "2",
+            "Laurent Jalabert",
+            "Tony Rominger",
+            "Laurent Jalabert",
+            "José Manuel Uría",
+            "Banesto"
+          ],
+          [
+            "3",
+            "Peter Sagan",
+            "Tony Rominger",
+            "Laurent Jalabert",
+            "Ignacio García Camacho",
+            "Banesto"
+          ],
+          [
+            "4",
+            "Endrio Leoni",
+            "Tony Rominger",
+            "Laurent Jalabert",
+            "Luc Leblanc",
+            "Banesto"
+          ],
+          [
+            "5",
+            "Tony Rominger",
+            "Tony Rominger",
+            "Laurent Jalabert",
+            "Luc Leblanc",
+            "Mapei-CLAS"
+          ],
+          [
+            "6",
+            "Simone Biasci",
+            "Tony Rominger",
+            "Laurent Jalabert",
+            "Luc Leblanc",
+            "Mapei-CLAS"
+          ],
+          [
+            "7",
+            "Tony Rominger",
+            "Tony Rominger",
+            "Laurent Jalabert",
+            "Tony Rominger",
+            "Mapei-CLAS"
+          ],
+          [
+            "8",
+            "Jean-Paul van Poppel",
+            "Tony Rominger",
+            "Laurent Jalabert",
+            "Luc Leblanc",
+            "Banesto"
+          ],
+          [
+            "9",
+            "Ángel Camargo",
+            "Tony Rominger",
+            "Laurent Jalabert",
+            "Tony Rominger",
+            "Banesto"
+          ],
+          [
+            "10",
+            "Tony Rominger",
+            "Tony Rominger",
+            "Tony Rominger",
+            "Tony Rominger",
+            "Mapei-CLAS"
+          ],
+          [
+            "11",
+            "Laurent Jalabert",
+            "Tony Rominger",
+            "Laurent Jalabert",
+            "Tony Rominger",
+            "Mapei-CLAS"
+          ],
+          [
+            "12",
+            "Laurent Jalabert",
+            "Tony Rominger",
+            "Laurent Jalabert",
+            "Tony Rominger",
+            "Mapei-CLAS"
+          ],
+          [
+            "13",
+            "Tony Rominger",
+            "Tony Rominger",
+            "Laurent Jalabert",
+            "Tony Rominger",
+            "Mapei-CLAS"
+          ],
+          [
+            "14",
+            "Alessio Di Basco",
+            "Tony Rominger",
+            "Laurent Jalabert",
+            "Tony Rominger",
+            "Banesto"
+          ],
+          [
+            "15",
+            "Laurent Jalabert",
+            "Tony Rominger",
+            "Laurent Jalabert",
+            "Tony Rominger",
+            "Banesto"
+          ],
+          [
+            "16",
+            "Bart Voskamp",
+            "Tony Rominger",
+            "Laurent Jalabert",
+            "Tony Rominger",
+            "Banesto"
+          ],
+          [
+            "17",
+            "Giuseppe Calcaterra",
+            "Tony Rominger",
+            "Laurent Jalabert",
+            "Luc Leblanc",
+            "Banesto"
+          ],
+          [
+            "18",
+            "Marino Alonso",
+            "Tony Rominger",
+            "Laurent Jalabert",
+            "Luc Leblanc",
+            "Banesto"
+          ],
+          [
+            "19",
+            "Tony Rominger",
+            "Tony Rominger",
+            "Tony Rominger",
+            "Luc Leblanc",
+            "Banesto"
+          ],
+          [
+            "20",
+            "Laurent Jalabert",
+            "Tony Rominger",
+            "Laurent Jalabert",
+            "Luc Leblanc",
+            "Banesto"
+          ],
+          [
+            "Final",
+            "Final",
+            "Tony Rominger",
+            "Laurent Jalabert",
+            "Luc Leblanc",
+            "Banesto"
+          ]
+        ],
+        "caption": "Classification leadership by stage",
+        "headers": [
+          "Stage",
+          "Winner",
+          "General classification",
+          "Points classification",
+          "Mountains classification",
+          "Team classification"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-15194788-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "Banesto",
+              "value": "Banesto",
+              "start": 27,
+              "end": 34
+            },
+            {
+              "surface": "Tony Rominger",
+              "value": "Tony Rominger",
+              "start": 39,
+              "end": 52
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "20fb56d34d644e9c43b906395cdee525c9aaea671756e45d13b612e9a0128444",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5250,
+              "completion_tokens": 31,
+              "total_tokens": 5281,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Banesto",
+              "value": "Banesto",
+              "start": 27,
+              "end": 34,
+              "clause": "Which stage corresponds to Banesto"
+            },
+            {
+              "surface": "Tony Rominger",
+              "value": "Tony Rominger",
+              "start": 39,
+              "end": 52,
+              "clause": "and Tony Rominger?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Banesto",
+              "value": "Banesto",
+              "start": 27,
+              "end": 34,
+              "clause": "Which stage corresponds to Banesto"
+            },
+            {
+              "surface": "Tony Rominger",
+              "value": "Tony Rominger",
+              "start": 39,
+              "end": 52,
+              "clause": "and Tony Rominger?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Banesto",
+              "value": "Banesto",
+              "start": 27,
+              "end": 34,
+              "clause": "Which stage corresponds to Banesto",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "Banesto is a team and appears as the team classification value."
+            },
+            {
+              "surface": "Tony Rominger",
+              "value": "Tony Rominger",
+              "start": 39,
+              "end": 52,
+              "clause": "and Tony Rominger?",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [
+                1,
+                2,
+                3,
+                4
+              ],
+              "columnMatchReason": "The wording does not distinguish Tony Rominger's role among winner, general, points, or mountains classifications."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "97e63636840af2e3800d4e81038a73c50fce6048a0dd39792475c6eab9928301",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5308,
+              "completion_tokens": 444,
+              "total_tokens": 5752,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 378
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Banesto",
+              "value": "Banesto",
+              "start": 27,
+              "end": 34,
+              "clause": "Which stage corresponds to Banesto",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "Banesto is a team and appears as the team classification value.",
+              "operator": "="
+            },
+            {
+              "surface": "Tony Rominger",
+              "value": "Tony Rominger",
+              "start": 39,
+              "end": 52,
+              "clause": "and Tony Rominger?",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [
+                1,
+                2,
+                3,
+                4
+              ],
+              "columnMatchReason": "The wording does not distinguish Tony Rominger's role among winner, general, points, or mountains classifications.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0dbe00fd2720c38f59ac211edf0e106919656f8b26c21fddf079683775bf0ea5",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5412,
+              "completion_tokens": 11,
+              "total_tokens": 5423,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Banesto",
+              "value": "Banesto",
+              "start": 27,
+              "end": 34,
+              "clause": "Which stage corresponds to Banesto",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "Banesto is a team and appears as the team classification value.",
+              "operator": "="
+            },
+            {
+              "surface": "Tony Rominger",
+              "value": "Tony Rominger",
+              "start": 39,
+              "end": 52,
+              "clause": "and Tony Rominger?",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [
+                1,
+                2,
+                3,
+                4
+              ],
+              "columnMatchReason": "The wording does not distinguish Tony Rominger's role among winner, general, points, or mountains classifications.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "73ca263e196757d108934e8b0ec6ac59dd645a4f8c79ab7b9cf812bd2c76c761",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5366,
+              "completion_tokens": 15,
+              "total_tokens": 5381,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Banesto",
+              "value": "Banesto",
+              "start": 27,
+              "end": 34,
+              "clause": "Which stage corresponds to Banesto",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "Banesto is a team and appears as the team classification value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Tony Rominger",
+              "value": "Tony Rominger",
+              "start": 39,
+              "end": 52,
+              "clause": "and Tony Rominger?",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [
+                {
+                  "columnIndex": 1,
+                  "header": "Winner",
+                  "evidence": "EXACT_VALUE_MATCH"
+                },
+                {
+                  "columnIndex": 2,
+                  "header": "General classification",
+                  "evidence": "EXACT_VALUE_MATCH"
+                },
+                {
+                  "columnIndex": 3,
+                  "header": "Points classification",
+                  "evidence": "EXACT_VALUE_MATCH"
+                },
+                {
+                  "columnIndex": 4,
+                  "header": "Mountains classification",
+                  "evidence": "EXACT_VALUE_MATCH"
+                }
+              ],
+              "columnMatchReason": "The wording does not distinguish Tony Rominger's role among winner, general, points, or mountains classifications.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH",
+              "groundingReview": {
+                "column": 2,
+                "reason": "Tony Rominger is the general classification leader in rows where Banesto is the team classification leader, making the two values parallel classification fields."
+              },
+              "columnIndex": 2,
+              "columnRecovery": "REVIEWED_FIELD_AND_TABLE_VALUE"
+            }
+          ],
+          "reviewModelCalls": [
+            {
+              "model": "gpt-5.6-sol",
+              "promptSha256": "e0150ab44bed8e181958a48de9e4e1efe5219483f4c522ca95e789fd169ec9e4",
+              "knowledgeIds": [],
+              "usage": {
+                "prompt_tokens": 5486,
+                "completion_tokens": 213,
+                "total_tokens": 5699,
+                "prompt_tokens_details": {
+                  "cached_tokens": 4224
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 172
+                }
+              }
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e0150ab44bed8e181958a48de9e4e1efe5219483f4c522ca95e789fd169ec9e4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5486,
+              "completion_tokens": 213,
+              "total_tokens": 5699,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 172
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Banesto",
+              "value": "Banesto",
+              "start": 27,
+              "end": 34,
+              "clause": "Which stage corresponds to Banesto",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "Banesto is a team and appears as the team classification value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Tony Rominger",
+              "value": "Tony Rominger",
+              "start": 39,
+              "end": 52,
+              "clause": "and Tony Rominger?",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [
+                {
+                  "columnIndex": 1,
+                  "header": "Winner",
+                  "evidence": "EXACT_VALUE_MATCH"
+                },
+                {
+                  "columnIndex": 2,
+                  "header": "General classification",
+                  "evidence": "EXACT_VALUE_MATCH"
+                },
+                {
+                  "columnIndex": 3,
+                  "header": "Points classification",
+                  "evidence": "EXACT_VALUE_MATCH"
+                },
+                {
+                  "columnIndex": 4,
+                  "header": "Mountains classification",
+                  "evidence": "EXACT_VALUE_MATCH"
+                }
+              ],
+              "columnMatchReason": "The wording does not distinguish Tony Rominger's role among winner, general, points, or mountains classifications.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH",
+              "groundingReview": {
+                "column": 2,
+                "reason": "Tony Rominger is the general classification leader in rows where Banesto is the team classification leader, making the two values parallel classification fields."
+              },
+              "columnIndex": 2,
+              "columnRecovery": "REVIEWED_FIELD_AND_TABLE_VALUE"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Banesto",
+              "value": "Banesto",
+              "start": 27,
+              "end": 34,
+              "clause": "Which stage corresponds to Banesto",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "Banesto is a team and appears as the team classification value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Tony Rominger",
+              "value": "Tony Rominger",
+              "start": 39,
+              "end": 52,
+              "clause": "and Tony Rominger?",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [
+                {
+                  "columnIndex": 1,
+                  "header": "Winner",
+                  "evidence": "EXACT_VALUE_MATCH"
+                },
+                {
+                  "columnIndex": 2,
+                  "header": "General classification",
+                  "evidence": "EXACT_VALUE_MATCH"
+                },
+                {
+                  "columnIndex": 3,
+                  "header": "Points classification",
+                  "evidence": "EXACT_VALUE_MATCH"
+                },
+                {
+                  "columnIndex": 4,
+                  "header": "Mountains classification",
+                  "evidence": "EXACT_VALUE_MATCH"
+                }
+              ],
+              "columnMatchReason": "The wording does not distinguish Tony Rominger's role among winner, general, points, or mountains classifications.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH",
+              "groundingReview": {
+                "column": 2,
+                "reason": "Tony Rominger is the general classification leader in rows where Banesto is the team classification leader, making the two values parallel classification fields."
+              },
+              "columnIndex": 2,
+              "columnRecovery": "REVIEWED_FIELD_AND_TABLE_VALUE"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              5,
+              0,
+              "Banesto"
+            ],
+            [
+              2,
+              0,
+              "Tony Rominger"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Banesto",
+          "value": "Banesto",
+          "start": 27,
+          "end": 34
+        },
+        {
+          "surface": "Tony Rominger",
+          "value": "Tony Rominger",
+          "start": 39,
+          "end": 52
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Banesto",
+          "value": "Banesto",
+          "start": 27,
+          "end": 34,
+          "clause": "Which stage corresponds to Banesto",
+          "columnIndex": 5,
+          "columnCandidates": [
+            5
+          ],
+          "columnMatchReason": "Banesto is a team and appears as the team classification value.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "Tony Rominger",
+          "value": "Tony Rominger",
+          "start": 39,
+          "end": 52,
+          "clause": "and Tony Rominger?",
+          "columnMatchStatus": "UNRESOLVED",
+          "columnCandidates": [
+            {
+              "columnIndex": 1,
+              "header": "Winner",
+              "evidence": "EXACT_VALUE_MATCH"
+            },
+            {
+              "columnIndex": 2,
+              "header": "General classification",
+              "evidence": "EXACT_VALUE_MATCH"
+            },
+            {
+              "columnIndex": 3,
+              "header": "Points classification",
+              "evidence": "EXACT_VALUE_MATCH"
+            },
+            {
+              "columnIndex": 4,
+              "header": "Mountains classification",
+              "evidence": "EXACT_VALUE_MATCH"
+            }
+          ],
+          "columnMatchReason": "The wording does not distinguish Tony Rominger's role among winner, general, points, or mountains classifications.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH",
+          "groundingReview": {
+            "column": 2,
+            "reason": "Tony Rominger is the general classification leader in rows where Banesto is the team classification leader, making the two values parallel classification fields."
+          },
+          "columnIndex": 2,
+          "columnRecovery": "REVIEWED_FIELD_AND_TABLE_VALUE"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          5,
+          0,
+          "Banesto"
+        ],
+        [
+          2,
+          0,
+          "Tony Rominger"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 17015
+}

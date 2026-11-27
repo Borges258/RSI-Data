@@ -1,0 +1,854 @@
+{
+  "arm": "E2",
+  "position": 152,
+  "example_id": "test:11846:2-11206685-2",
+  "original_index": 11846,
+  "table_id": "2-11206685-2",
+  "question": "In guangzhou, who won the game with a score of 1-0?",
+  "gold_sql": {
+    "sel": 5,
+    "conds": [
+      [
+        1,
+        0,
+        "guangzhou"
+      ],
+      [
+        4,
+        0,
+        "1-0"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "Guangzhou"
+    ],
+    [
+      4,
+      0,
+      "1-0"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "Guangzhou"
+      ],
+      [
+        4,
+        0,
+        "1-0"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "guangzhou",
+        "value": "Guangzhou",
+        "start": 3,
+        "end": 12,
+        "clause": "In guangzhou",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The preposition 'In' denotes the game Location, and Guangzhou appears in Location cells.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "1-0",
+        "value": "1-0",
+        "start": 47,
+        "end": 50,
+        "clause": "who won the game with a score of 1-0?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          5
+        ],
+        "columnMatchReason": "The phrase 'won the game with a score of 1-0' refers to the final Result; although 1-0 appears only in Score cells, those cells are intermediate goal scores and conflict with the requested game result.",
+        "operator": "=",
+        "columnRecovery": "VALUE_AND_EXPLICIT_HEADER",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "guangzhou",
+        "value": "Guangzhou",
+        "start": 3,
+        "end": 12
+      },
+      {
+        "surface": "1-0",
+        "value": "1-0",
+        "start": 47,
+        "end": 50
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "In guangzhou, who won the game with a score of 1-0?",
+      "table": {
+        "header": [
+          "Date",
+          "Location",
+          "Lineup",
+          "Assist/pass",
+          "Score",
+          "Result",
+          "Competition"
+        ],
+        "page_title": "Lindsay Tarpley",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 11206685,
+        "id": "2-11206685-2",
+        "section_title": "International goals",
+        "rows": [
+          [
+            "2004-01-30",
+            "Shenzhen",
+            "off 75' ( on Hucles )",
+            "Wambach",
+            "2-0",
+            "3-0",
+            "Four Nations Tournament"
+          ],
+          [
+            "2004-01-30",
+            "Shenzhen",
+            "off 75' ( on Hucles )",
+            "Markgraf",
+            "3-0",
+            "3-0",
+            "Four Nations Tournament"
+          ],
+          [
+            "2004-02-03",
+            "Shenzhen",
+            "90. Start",
+            "MacMillan",
+            "1-0",
+            "2-0",
+            "Friendly"
+          ],
+          [
+            "2004-02-27",
+            "Heredia",
+            "on 46' ( off Boxx )",
+            "unassisted",
+            "5-0",
+            "8-0",
+            "Olympics qualification"
+          ],
+          [
+            "2004-03-05",
+            "Heredia",
+            "off 60' ( on Hamm )",
+            "Parlow",
+            "1-2",
+            "3-2",
+            "Olympics qualification"
+          ],
+          [
+            "2004-03-14",
+            "Ferreiras",
+            "on 46' ( off Foudy )",
+            "Parlow",
+            "5-0",
+            "5-1",
+            "Algarve Cup"
+          ],
+          [
+            "2004-03-20",
+            "Faro",
+            "off 68' ( on Wagner )",
+            "Wambach",
+            "3-1",
+            "4-1",
+            "Algarve Cup"
+          ],
+          [
+            "2004-08-26",
+            "Athens",
+            "off 91' ( on O'Reilly )",
+            "Chastain",
+            "1-0",
+            "2-1",
+            "Olympics"
+          ],
+          [
+            "2006-03-13",
+            "Faro",
+            "off 56' ( on Lloyd )",
+            "unassisted",
+            "3-0",
+            "4-1",
+            "Algarve Cup"
+          ],
+          [
+            "2006-09-13",
+            "Rochester NY",
+            "off 67' ( on Kai )",
+            "Wagner",
+            "2-1",
+            "3-1",
+            "Friendly"
+          ],
+          [
+            "2006-10-01",
+            "Carson CA",
+            "off 63' ( on Rapinoe )",
+            "unassisted",
+            "2-0",
+            "10-0",
+            "Friendly"
+          ],
+          [
+            "2006-10-01",
+            "Carson CA",
+            "off 63' ( on Rapinoe )",
+            "Wagner",
+            "3-0",
+            "10-0",
+            "Friendly"
+          ],
+          [
+            "2006-11-02",
+            "Suwon",
+            "on 46' ( off Lilly )",
+            "Kai",
+            "1-0",
+            "2-0",
+            "Peace Queen Cup"
+          ],
+          [
+            "2007-04-14",
+            "Foxboro MA",
+            "off 68' ( on O'Reilly )",
+            "unassisted",
+            "2-0",
+            "5-0",
+            "Friendly"
+          ],
+          [
+            "2007-05-12",
+            "Frisco",
+            "off 62' ( on O'Reilly )",
+            "Mitts",
+            "2-1",
+            "6-2",
+            "Friendly"
+          ],
+          [
+            "2007-08-12",
+            "Chicago",
+            "off 64' ( on Kai )",
+            "unassisted",
+            "4-0",
+            "6-1",
+            "Friendly"
+          ],
+          [
+            "2007-08-25",
+            "Carson CA",
+            "90. Start",
+            "Rampone",
+            "3-0",
+            "4-0",
+            "Friendly"
+          ],
+          [
+            "2008-01-16",
+            "Guangzhou",
+            "on 64' ( off Lloyd )",
+            "O'Reilly",
+            "3-0",
+            "4-0",
+            "Four Nations Tournament"
+          ],
+          [
+            "2008-01-16",
+            "Guangzhou",
+            "on 64' ( off Lloyd )",
+            "Rodriguez",
+            "4-0",
+            "4-0",
+            "Four Nations Tournament"
+          ],
+          [
+            "2008-01-18",
+            "Guangzhou",
+            "90. Start",
+            "Wambach",
+            "1-0",
+            "4-1",
+            "Four Nations Tournament"
+          ],
+          [
+            "2008-01-18",
+            "Guangzhou",
+            "90. Start",
+            "Wambach",
+            "2-0",
+            "4-1",
+            "Four Nations Tournament"
+          ],
+          [
+            "2008-03-05",
+            "Albufeira",
+            "off 45' ( on Heath )",
+            "Lloyd",
+            "1-0",
+            "4-0",
+            "Algarve Cup"
+          ],
+          [
+            "2008-03-07",
+            "Alvor",
+            "off 45' ( on Heath )",
+            "Cheney",
+            "1-0",
+            "2-0",
+            "Algarve Cup"
+          ],
+          [
+            "2008-05-03",
+            "Birmingham AL",
+            "off 74' ( on O'Reilly )",
+            "unassisted",
+            "1-1",
+            "5-4",
+            "Friendly"
+          ],
+          [
+            "2008-05-03",
+            "Birmingham AL",
+            "off 74' ( on O'Reilly )",
+            "Kai",
+            "3-1",
+            "5-4",
+            "Friendly"
+          ],
+          [
+            "2008-05-10",
+            "Washington",
+            "off 70' ( on Osborne )",
+            "Wambach",
+            "1-0",
+            "6-0",
+            "Friendly"
+          ],
+          [
+            "2008-07-02",
+            "Fredrikstad",
+            "off 81' ( on Rodriguez )",
+            "Wambach",
+            "1-0",
+            "4-0",
+            "Friendly"
+          ],
+          [
+            "2008-08-12",
+            "Shenyang",
+            "90. Start",
+            "unassisted",
+            "3-0",
+            "4-0",
+            "Olympics"
+          ],
+          [
+            "2008-11-01",
+            "Richmond VA",
+            "90. Start",
+            "Wagner",
+            "3-0",
+            "3-1",
+            "Friendly"
+          ],
+          [
+            "2009-05-25",
+            "Toronto",
+            "on 61' ( off Rapinoe )",
+            "unassisted",
+            "3-0",
+            "4-0",
+            "Friendly"
+          ],
+          [
+            "2011-01-23",
+            "Chongqing",
+            "on 31' ( off Rapinoe )",
+            "Cheney",
+            "2-1",
+            "2-1",
+            "Four Nations Tournament"
+          ],
+          [
+            "2011-03-04",
+            "Santo Antonio",
+            "90. Start",
+            "Rodriguez",
+            "1-0",
+            "2-0",
+            "Algarve Cup"
+          ],
+          [
+            "Match Report",
+            "Match Report",
+            "Match Report",
+            "Match Report",
+            "Match Report",
+            "Match Report",
+            "Match Report"
+          ]
+        ],
+        "caption": "International goals",
+        "headers": [
+          "Date",
+          "Location",
+          "Lineup",
+          "Assist/pass",
+          "Score",
+          "Result",
+          "Competition"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-11206685-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "guangzhou",
+              "value": "Guangzhou",
+              "start": 3,
+              "end": 12
+            },
+            {
+              "surface": "1-0",
+              "value": "1-0",
+              "start": 47,
+              "end": 50
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "60f00e88a8ce62773ff7220506c10fbf3f2c34cae058c7918ab56a73b6be55fa",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5823,
+              "completion_tokens": 33,
+              "total_tokens": 5856,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "guangzhou",
+              "value": "Guangzhou",
+              "start": 3,
+              "end": 12,
+              "clause": "In guangzhou"
+            },
+            {
+              "surface": "1-0",
+              "value": "1-0",
+              "start": 47,
+              "end": 50,
+              "clause": "who won the game with a score of 1-0?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "guangzhou",
+              "value": "Guangzhou",
+              "start": 3,
+              "end": 12,
+              "clause": "In guangzhou"
+            },
+            {
+              "surface": "1-0",
+              "value": "1-0",
+              "start": 47,
+              "end": 50,
+              "clause": "who won the game with a score of 1-0?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "guangzhou",
+              "value": "Guangzhou",
+              "start": 3,
+              "end": 12,
+              "clause": "In guangzhou",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The preposition 'In' denotes the game Location, and Guangzhou appears in Location cells."
+            },
+            {
+              "surface": "1-0",
+              "value": "1-0",
+              "start": 47,
+              "end": 50,
+              "clause": "who won the game with a score of 1-0?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The phrase 'won the game with a score of 1-0' refers to the final Result; although 1-0 appears only in Score cells, those cells are intermediate goal scores and conflict with the requested game result."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c7f8a15dcd38becd743349e1c2356e64fd10a14c761dcd68b6ab117a51df2099",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5889,
+              "completion_tokens": 89,
+              "total_tokens": 5978,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "guangzhou",
+              "value": "Guangzhou",
+              "start": 3,
+              "end": 12,
+              "clause": "In guangzhou",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The preposition 'In' denotes the game Location, and Guangzhou appears in Location cells.",
+              "operator": "="
+            },
+            {
+              "surface": "1-0",
+              "value": "1-0",
+              "start": 47,
+              "end": 50,
+              "clause": "who won the game with a score of 1-0?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The phrase 'won the game with a score of 1-0' refers to the final Result; although 1-0 appears only in Score cells, those cells are intermediate goal scores and conflict with the requested game result.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "9f529ba93abe1980facbd2bedb1108d522add11d08b6c62e1367ba5bd8029471",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 6013,
+              "completion_tokens": 11,
+              "total_tokens": 6024,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "guangzhou",
+              "value": "Guangzhou",
+              "start": 3,
+              "end": 12,
+              "clause": "In guangzhou",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The preposition 'In' denotes the game Location, and Guangzhou appears in Location cells.",
+              "operator": "="
+            },
+            {
+              "surface": "1-0",
+              "value": "1-0",
+              "start": 47,
+              "end": 50,
+              "clause": "who won the game with a score of 1-0?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The phrase 'won the game with a score of 1-0' refers to the final Result; although 1-0 appears only in Score cells, those cells are intermediate goal scores and conflict with the requested game result.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "563298f60fa7d8a327929890a43c816c0676f2890b39bb31a7029a9ee6286fa1",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5967,
+              "completion_tokens": 16,
+              "total_tokens": 5983,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "guangzhou",
+              "value": "Guangzhou",
+              "start": 3,
+              "end": 12,
+              "clause": "In guangzhou",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The preposition 'In' denotes the game Location, and Guangzhou appears in Location cells.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "1-0",
+              "value": "1-0",
+              "start": 47,
+              "end": 50,
+              "clause": "who won the game with a score of 1-0?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The phrase 'won the game with a score of 1-0' refers to the final Result; although 1-0 appears only in Score cells, those cells are intermediate goal scores and conflict with the requested game result.",
+              "operator": "=",
+              "columnRecovery": "VALUE_AND_EXPLICIT_HEADER",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "guangzhou",
+              "value": "Guangzhou",
+              "start": 3,
+              "end": 12,
+              "clause": "In guangzhou",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The preposition 'In' denotes the game Location, and Guangzhou appears in Location cells.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "1-0",
+              "value": "1-0",
+              "start": 47,
+              "end": 50,
+              "clause": "who won the game with a score of 1-0?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The phrase 'won the game with a score of 1-0' refers to the final Result; although 1-0 appears only in Score cells, those cells are intermediate goal scores and conflict with the requested game result.",
+              "operator": "=",
+              "columnRecovery": "VALUE_AND_EXPLICIT_HEADER",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "guangzhou",
+              "value": "Guangzhou",
+              "start": 3,
+              "end": 12,
+              "clause": "In guangzhou",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The preposition 'In' denotes the game Location, and Guangzhou appears in Location cells.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "1-0",
+              "value": "1-0",
+              "start": 47,
+              "end": 50,
+              "clause": "who won the game with a score of 1-0?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The phrase 'won the game with a score of 1-0' refers to the final Result; although 1-0 appears only in Score cells, those cells are intermediate goal scores and conflict with the requested game result.",
+              "operator": "=",
+              "columnRecovery": "VALUE_AND_EXPLICIT_HEADER",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              "Guangzhou"
+            ],
+            [
+              4,
+              0,
+              "1-0"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "guangzhou",
+          "value": "Guangzhou",
+          "start": 3,
+          "end": 12
+        },
+        {
+          "surface": "1-0",
+          "value": "1-0",
+          "start": 47,
+          "end": 50
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "guangzhou",
+          "value": "Guangzhou",
+          "start": 3,
+          "end": 12,
+          "clause": "In guangzhou",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The preposition 'In' denotes the game Location, and Guangzhou appears in Location cells.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "1-0",
+          "value": "1-0",
+          "start": 47,
+          "end": 50,
+          "clause": "who won the game with a score of 1-0?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            5
+          ],
+          "columnMatchReason": "The phrase 'won the game with a score of 1-0' refers to the final Result; although 1-0 appears only in Score cells, those cells are intermediate goal scores and conflict with the requested game result.",
+          "operator": "=",
+          "columnRecovery": "VALUE_AND_EXPLICIT_HEADER",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          1,
+          0,
+          "Guangzhou"
+        ],
+        [
+          4,
+          0,
+          "1-0"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8828
+}

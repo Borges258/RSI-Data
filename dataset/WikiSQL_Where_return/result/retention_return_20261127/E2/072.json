@@ -1,0 +1,760 @@
+{
+  "arm": "E2",
+  "position": 72,
+  "example_id": "test:2653:1-2259502-2",
+  "original_index": 2653,
+  "table_id": "1-2259502-2",
+  "question": "Who were the partners in games where the score was 7-5, 2-6, [6-10]?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        6,
+        0,
+        "7-5, 2-6, [6-10]"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      6,
+      0,
+      "7-5, 2-6, [6-10]"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        6,
+        0,
+        "7-5, 2-6, [6-10]"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "7-5, 2-6, [6-10]",
+        "value": "7-5, 2-6, [6-10]",
+        "start": 51,
+        "end": 67,
+        "clause": "Who were the partners in games where the score was 7-5, 2-6, [6-10]?",
+        "columnIndex": 6,
+        "columnCandidates": [
+          6
+        ],
+        "columnMatchReason": "The question explicitly asks for games where the score matches this value, and the Score field is column 6.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "7-5, 2-6, [6-10]",
+        "value": "7-5, 2-6, [6-10]",
+        "start": 51,
+        "end": 67
+      }
+    ],
+    "warnings": [
+      "value model disagreed with extracted question span; original retained"
+    ],
+    "request": {
+      "question": "Who were the partners in games where the score was 7-5, 2-6, [6-10]?",
+      "table": {
+        "header": [
+          "Outcome",
+          "Year",
+          "Championship",
+          "Surface",
+          "Partner",
+          "Opponents",
+          "Score"
+        ],
+        "page_title": "Anna-Lena Grönefeld",
+        "types": [
+          "text",
+          "real",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "id": "1-2259502-2",
+        "section_title": "Doubles (1–5)",
+        "caption": "Doubles (1–5)",
+        "rows": [
+          [
+            "Winner",
+            2005,
+            "Toronto",
+            "Hard",
+            "Martina Navrátilová",
+            "Conchita Martínez Virginia Ruano Pascual",
+            "5–7, 6–3, 6–4"
+          ],
+          [
+            "Runner-up",
+            2006,
+            "San Diego",
+            "Hard",
+            "Meghann Shaughnessy",
+            "Cara Black Rennae Stubbs",
+            "2–6, 2-6"
+          ],
+          [
+            "Runner-up",
+            2006,
+            "Toronto",
+            "Hard",
+            "Cara Black",
+            "Martina Navrátilová Nadia Petrova",
+            "1-6, 2-6"
+          ],
+          [
+            "Runner-up",
+            2012,
+            "Tokyo",
+            "Hard",
+            "Květa Peschke",
+            "Raquel Kops-Jones Abigail Spears",
+            "1-6, 4-6"
+          ],
+          [
+            "Runner-up",
+            2013,
+            "Toronto",
+            "Hard",
+            "Květa Peschke",
+            "Jelena Janković Katarina Srebotnik",
+            "7-5, 2-6, [6-10]"
+          ]
+        ],
+        "name": "table_2259502_2",
+        "headers": [
+          "Outcome",
+          "Year",
+          "Championship",
+          "Surface",
+          "Partner",
+          "Opponents",
+          "Score"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-2259502-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "7-5, 2-6, [6-10]",
+              "value": "7-5, 2-6, [6-10]",
+              "start": 51,
+              "end": 67
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "dab6607b31f16cf19f5fd4da490250bc28514f89c414740e6fac80a702bf0868",
+            "knowledgeIds": [],
+            "usage": {
+              "attribution": {
+                "items": {
+                  "msg_003b3a8d2a731ed8016b08fb0520c087d18659c39a29c3a17f": {
+                    "input_tokens": 64,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 64,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_003b3a8d2a731ed8016b08fb0520c087d1b39e2e4ab1cd0149": {
+                    "input_tokens": 367,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 367,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_003b3a8d2a731ed8016b08fb0520c087d1be0c1909a566b6df": {
+                    "input_tokens": 86,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 86,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_003b3a8d2a731ed8016b08fb0c8f0c87d1b096990d5162df50": {
+                    "input_tokens": 0,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 45,
+                    "content": [
+                      {
+                        "input_tokens": 0,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 45
+                      }
+                    ]
+                  },
+                  "rs_003b3a8d2a731ed8016b08fb0c68b087d1b7d217f78cfb7515": {
+                    "input_tokens": 2,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 86
+                  }
+                },
+                "request_fields": {
+                  "instructions": {
+                    "input_tokens": 4380,
+                    "cached_tokens": 3968,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0
+                  }
+                }
+              },
+              "prompt_tokens": 4899,
+              "completion_tokens": 131,
+              "total_tokens": 5030,
+              "prompt_tokens_details": {
+                "cache_write_tokens_details": {
+                  "ttl_30m_tokens": 0,
+                  "ttl_12h_tokens": 0
+                },
+                "cached_tokens": 3968
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 86
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "7-5, 2-6, [6-10]",
+              "value": "7-5, 2-6, [6-10]",
+              "start": 51,
+              "end": 67,
+              "clause": "Who were the partners in games where the score was 7-5, 2-6, [6-10]?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "7-5, 2-6, [6-10]",
+              "value": "7-5, 2-6, [6-10]",
+              "start": 51,
+              "end": 67,
+              "clause": "Who were the partners in games where the score was 7-5, 2-6, [6-10]?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "7-5, 2-6, [6-10]",
+              "value": "7-5, 2-6, [6-10]",
+              "start": 51,
+              "end": 67,
+              "clause": "Who were the partners in games where the score was 7-5, 2-6, [6-10]?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "The question explicitly asks for games where the score matches this value, and the Score field is column 6."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "3eb370832f5545f30f58eea6c4e8889a479ef243f2ac2df3c74da63384bcede9",
+            "knowledgeIds": [],
+            "usage": {
+              "attribution": {
+                "items": {
+                  "msg_0b55bb1b849ec086016b08fb0eaf0887d18857e8ac834d5dc0": {
+                    "input_tokens": 159,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 159,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0b55bb1b849ec086016b08fb0eaf0887d19ce2c887f4281a91": {
+                    "input_tokens": 64,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 64,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0b55bb1b849ec086016b08fb0eaf0887d1b53af11790c31853": {
+                    "input_tokens": 367,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 367,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0b55bb1b849ec086016b08fb17ec4c87d1bec7e1c91ebe941b": {
+                    "input_tokens": 0,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 45,
+                    "content": [
+                      {
+                        "input_tokens": 0,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 45
+                      }
+                    ]
+                  },
+                  "rs_0b55bb1b849ec086016b08fb17ae9c87d1b5ed224823d32523": {
+                    "input_tokens": 2,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 31
+                  }
+                },
+                "request_fields": {
+                  "instructions": {
+                    "input_tokens": 4380,
+                    "cached_tokens": 3968,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0
+                  }
+                }
+              },
+              "prompt_tokens": 4972,
+              "completion_tokens": 76,
+              "total_tokens": 5048,
+              "prompt_tokens_details": {
+                "cache_write_tokens_details": {
+                  "ttl_30m_tokens": 0,
+                  "ttl_12h_tokens": 0
+                },
+                "cached_tokens": 3968
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 31
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "7-5, 2-6, [6-10]",
+              "value": "7-5, 2-6, [6-10]",
+              "start": 51,
+              "end": 67,
+              "clause": "Who were the partners in games where the score was 7-5, 2-6, [6-10]?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "The question explicitly asks for games where the score matches this value, and the Score field is column 6.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "123c1c9fce20559feda8ca755fa224faa98eb58418f262d63386f43351d99f76",
+            "knowledgeIds": [],
+            "usage": {
+              "attribution": {
+                "items": {
+                  "msg_0d8e09618025420f016b08fb1a60a487d1903a42128138d57e": {
+                    "input_tokens": 64,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 64,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0d8e09618025420f016b08fb1a60a487d195c46d92903bbf2c": {
+                    "input_tokens": 367,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 367,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0d8e09618025420f016b08fb1a60a487d1a87489c453d10cbd": {
+                    "input_tokens": 225,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 225,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0d8e09618025420f016b08fb23a88087d18d5b0c2be4547f2e": {
+                    "input_tokens": 0,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 11,
+                    "content": [
+                      {
+                        "input_tokens": 0,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 11
+                      }
+                    ]
+                  },
+                  "rs_0d8e09618025420f016b08fb237a0087d19c6074c88f2dd876": {
+                    "input_tokens": 2,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 12
+                  }
+                },
+                "request_fields": {
+                  "instructions": {
+                    "input_tokens": 4380,
+                    "cached_tokens": 3968,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0
+                  }
+                }
+              },
+              "prompt_tokens": 5038,
+              "completion_tokens": 23,
+              "total_tokens": 5061,
+              "prompt_tokens_details": {
+                "cache_write_tokens_details": {
+                  "ttl_30m_tokens": 0,
+                  "ttl_12h_tokens": 0
+                },
+                "cached_tokens": 3968
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 12
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "warnings": [
+            "value model disagreed with extracted question span; original retained"
+          ],
+          "conditions": [
+            {
+              "surface": "7-5, 2-6, [6-10]",
+              "value": "7-5, 2-6, [6-10]",
+              "start": 51,
+              "end": 67,
+              "clause": "Who were the partners in games where the score was 7-5, 2-6, [6-10]?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "The question explicitly asks for games where the score matches this value, and the Score field is column 6.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a7630164f73054a9b03558d20475a168a9ebc1f36a4405a8c3e780d206032999",
+            "knowledgeIds": [],
+            "usage": {
+              "attribution": {
+                "items": {
+                  "msg_047b9c581d68173b016b08fb5e0ea487d181393ab72c009377": {
+                    "input_tokens": 64,
+                    "cached_tokens": 61,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 64,
+                        "cached_tokens": 61,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_047b9c581d68173b016b08fb5e0ea487d18f9173b9fdcd0ab4": {
+                    "input_tokens": 367,
+                    "cached_tokens": 348,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 367,
+                        "cached_tokens": 348,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_047b9c581d68173b016b08fb5e0ea487d1a98c9048f872cbc3": {
+                    "input_tokens": 176,
+                    "cached_tokens": 50,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 176,
+                        "cached_tokens": 50,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_047b9c581d68173b016b08fb692a7c87d1838ac1607759d641": {
+                    "input_tokens": 0,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 17,
+                    "content": [
+                      {
+                        "input_tokens": 0,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 17
+                      }
+                    ]
+                  },
+                  "rs_047b9c581d68173b016b08fb68e5bc87d18bbbb4a818fc25cb": {
+                    "input_tokens": 2,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 24
+                  }
+                },
+                "request_fields": {
+                  "instructions": {
+                    "input_tokens": 4380,
+                    "cached_tokens": 4149,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0
+                  }
+                }
+              },
+              "prompt_tokens": 4989,
+              "completion_tokens": 41,
+              "total_tokens": 5030,
+              "prompt_tokens_details": {
+                "cache_write_tokens_details": {
+                  "ttl_30m_tokens": 0,
+                  "ttl_12h_tokens": 0
+                },
+                "cached_tokens": 4608
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 24
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "7-5, 2-6, [6-10]",
+              "value": "7-5, 2-6, [6-10]",
+              "start": 51,
+              "end": 67,
+              "clause": "Who were the partners in games where the score was 7-5, 2-6, [6-10]?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "The question explicitly asks for games where the score matches this value, and the Score field is column 6.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "7-5, 2-6, [6-10]",
+              "value": "7-5, 2-6, [6-10]",
+              "start": 51,
+              "end": 67,
+              "clause": "Who were the partners in games where the score was 7-5, 2-6, [6-10]?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "The question explicitly asks for games where the score matches this value, and the Score field is column 6.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "7-5, 2-6, [6-10]",
+              "value": "7-5, 2-6, [6-10]",
+              "start": 51,
+              "end": 67,
+              "clause": "Who were the partners in games where the score was 7-5, 2-6, [6-10]?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "The question explicitly asks for games where the score matches this value, and the Score field is column 6.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              6,
+              0,
+              "7-5, 2-6, [6-10]"
+            ]
+          ]
+        }
+      },
+      "warnings": [
+        "value model disagreed with extracted question span; original retained"
+      ],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": [
+          "value model disagreed with extracted question span; original retained"
+        ]
+      },
+      "originalConditions": [
+        {
+          "surface": "7-5, 2-6, [6-10]",
+          "value": "7-5, 2-6, [6-10]",
+          "start": 51,
+          "end": 67
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "7-5, 2-6, [6-10]",
+          "value": "7-5, 2-6, [6-10]",
+          "start": 51,
+          "end": 67,
+          "clause": "Who were the partners in games where the score was 7-5, 2-6, [6-10]?",
+          "columnIndex": 6,
+          "columnCandidates": [
+            6
+          ],
+          "columnMatchReason": "The question explicitly asks for games where the score matches this value, and the Score field is column 6.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          6,
+          0,
+          "7-5, 2-6, [6-10]"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 121750
+}

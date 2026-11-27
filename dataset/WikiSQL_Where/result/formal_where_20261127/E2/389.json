@@ -1,0 +1,661 @@
+{
+  "arm": "E2",
+  "position": 389,
+  "example_id": "test:8221:2-16406300-1",
+  "original_index": 8221,
+  "table_id": "2-16406300-1",
+  "question": "What was the total Attendance in weeks previous of 5, playing the Seattle Seahawks?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        0,
+        2,
+        5
+      ],
+      [
+        2,
+        0,
+        "seattle seahawks"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      2,
+      5
+    ],
+    [
+      2,
+      0,
+      "Seattle Seahawks"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        2,
+        5
+      ],
+      [
+        2,
+        0,
+        "Seattle Seahawks"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "5",
+        "value": 5,
+        "start": 51,
+        "end": 52,
+        "clause": "What was the total Attendance in weeks previous of 5",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "'weeks previous of 5' refers to the Week field, whose rows include week 5.",
+        "operator": "<",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "Seattle Seahawks",
+        "value": "Seattle Seahawks",
+        "start": 66,
+        "end": 82,
+        "clause": "playing the Seattle Seahawks?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "'playing the Seattle Seahawks' identifies the Opponent field; its rows contain Seattle Seahawks.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "5",
+        "value": "5",
+        "start": 51,
+        "end": 52
+      },
+      {
+        "surface": "Seattle Seahawks",
+        "value": "Seattle Seahawks",
+        "start": 66,
+        "end": 82
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What was the total Attendance in weeks previous of 5, playing the Seattle Seahawks?",
+      "table": {
+        "header": [
+          "Week",
+          "Date",
+          "Opponent",
+          "Result",
+          "Attendance"
+        ],
+        "page_title": "1989 Los Angeles Raiders season",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "real"
+        ],
+        "page_id": 16406300,
+        "id": "2-16406300-1",
+        "section_title": "Schedule",
+        "rows": [
+          [
+            "1",
+            "September 10, 1989",
+            "San Diego Chargers",
+            "W 40–14",
+            "40,237"
+          ],
+          [
+            "2",
+            "September 17, 1989",
+            "at Kansas City Chiefs",
+            "L 24–19",
+            "71,741"
+          ],
+          [
+            "3",
+            "September 24, 1989",
+            "at Denver Broncos",
+            "L 31–21",
+            "75,754"
+          ],
+          [
+            "4",
+            "October 1, 1989",
+            "Seattle Seahawks",
+            "L 24–20",
+            "44,319"
+          ],
+          [
+            "5",
+            "October 9, 1989",
+            "at New York Jets",
+            "W 14–7",
+            "68,040"
+          ],
+          [
+            "6",
+            "October 15, 1989",
+            "Kansas City Chiefs",
+            "W 20–14",
+            "40,453"
+          ],
+          [
+            "7",
+            "October 22, 1989",
+            "at Philadelphia Eagles",
+            "L 10–7",
+            "64,019"
+          ],
+          [
+            "8",
+            "October 29, 1989",
+            "Washington Redskins",
+            "W 37–24",
+            "52,781"
+          ],
+          [
+            "9",
+            "November 5, 1989",
+            "Cincinnati Bengals",
+            "W 28–7",
+            "51,080"
+          ],
+          [
+            "10",
+            "November 12, 1989",
+            "at San Diego Chargers",
+            "L 14–12",
+            "59,151"
+          ],
+          [
+            "11",
+            "November 19, 1989",
+            "at Houston Oilers",
+            "L 23–7",
+            "59,198"
+          ],
+          [
+            "12",
+            "November 26, 1989",
+            "New England Patriots",
+            "W 24–21",
+            "38,747"
+          ],
+          [
+            "13",
+            "December 3, 1989",
+            "Denver Broncos",
+            "W 16–13",
+            "87,560"
+          ],
+          [
+            "14",
+            "December 10, 1989",
+            "Phoenix Cardinals",
+            "W 16–14",
+            "41,785"
+          ],
+          [
+            "15",
+            "December 17, 1989",
+            "at Seattle Seahawks",
+            "L 23–17",
+            "61,076"
+          ],
+          [
+            "16",
+            "December 24, 1989",
+            "at New York Giants",
+            "L 34–17",
+            "70,306"
+          ]
+        ],
+        "caption": "Schedule",
+        "headers": [
+          "Week",
+          "Date",
+          "Opponent",
+          "Result",
+          "Attendance"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-16406300-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "5",
+              "value": "5",
+              "start": 51,
+              "end": 52
+            },
+            {
+              "surface": "Seattle Seahawks",
+              "value": "Seattle Seahawks",
+              "start": 66,
+              "end": 82
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "38849eafe2e81a6cb9594aae19c9ba4ab016dd8709da10f22d8fe1ccabb2bdd4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5067,
+              "completion_tokens": 120,
+              "total_tokens": 5187,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 91
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "5",
+              "value": "5",
+              "start": 51,
+              "end": 52,
+              "clause": "What was the total Attendance in weeks previous of 5"
+            },
+            {
+              "surface": "Seattle Seahawks",
+              "value": "Seattle Seahawks",
+              "start": 66,
+              "end": 82,
+              "clause": "playing the Seattle Seahawks?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "5",
+              "value": "5",
+              "start": 51,
+              "end": 52,
+              "clause": "What was the total Attendance in weeks previous of 5"
+            },
+            {
+              "surface": "Seattle Seahawks",
+              "value": "Seattle Seahawks",
+              "start": 66,
+              "end": 82,
+              "clause": "playing the Seattle Seahawks?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "5",
+              "value": "5",
+              "start": 51,
+              "end": 52,
+              "clause": "What was the total Attendance in weeks previous of 5",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'weeks previous of 5' refers to the Week field, whose rows include week 5."
+            },
+            {
+              "surface": "Seattle Seahawks",
+              "value": "Seattle Seahawks",
+              "start": 66,
+              "end": 82,
+              "clause": "playing the Seattle Seahawks?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'playing the Seattle Seahawks' identifies the Opponent field; its rows contain Seattle Seahawks."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "8bceaa0e16a41c9c63c99128a43b97a176a58c5a35b679997a6ea3c286fc5867",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5126,
+              "completion_tokens": 63,
+              "total_tokens": 5189,
+              "prompt_tokens_details": {
+                "cached_tokens": 4864
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "5",
+              "value": "5",
+              "start": 51,
+              "end": 52,
+              "clause": "What was the total Attendance in weeks previous of 5",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'weeks previous of 5' refers to the Week field, whose rows include week 5.",
+              "operator": "<"
+            },
+            {
+              "surface": "Seattle Seahawks",
+              "value": "Seattle Seahawks",
+              "start": 66,
+              "end": 82,
+              "clause": "playing the Seattle Seahawks?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'playing the Seattle Seahawks' identifies the Opponent field; its rows contain Seattle Seahawks.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "8c6693240d460b038a4781851fcfbbe9c177a517b108ab757c663163fd52ef84",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5222,
+              "completion_tokens": 11,
+              "total_tokens": 5233,
+              "prompt_tokens_details": {
+                "cached_tokens": 4864
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "5",
+              "value": "5",
+              "start": 51,
+              "end": 52,
+              "clause": "What was the total Attendance in weeks previous of 5",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'weeks previous of 5' refers to the Week field, whose rows include week 5.",
+              "operator": "<"
+            },
+            {
+              "surface": "Seattle Seahawks",
+              "value": "Seattle Seahawks",
+              "start": 66,
+              "end": 82,
+              "clause": "playing the Seattle Seahawks?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'playing the Seattle Seahawks' identifies the Opponent field; its rows contain Seattle Seahawks.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0c3314972be6f1f138330cea7d390bb38deb54198b5d0d01f148eca9cd8e9ffb",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5176,
+              "completion_tokens": 13,
+              "total_tokens": 5189,
+              "prompt_tokens_details": {
+                "cached_tokens": 4864
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "5",
+              "value": "5",
+              "start": 51,
+              "end": 52,
+              "clause": "What was the total Attendance in weeks previous of 5",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'weeks previous of 5' refers to the Week field, whose rows include week 5.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Seattle Seahawks",
+              "value": "Seattle Seahawks",
+              "start": 66,
+              "end": 82,
+              "clause": "playing the Seattle Seahawks?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'playing the Seattle Seahawks' identifies the Opponent field; its rows contain Seattle Seahawks.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "5",
+              "value": 5,
+              "start": 51,
+              "end": 52,
+              "clause": "What was the total Attendance in weeks previous of 5",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'weeks previous of 5' refers to the Week field, whose rows include week 5.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Seattle Seahawks",
+              "value": "Seattle Seahawks",
+              "start": 66,
+              "end": 82,
+              "clause": "playing the Seattle Seahawks?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'playing the Seattle Seahawks' identifies the Opponent field; its rows contain Seattle Seahawks.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "5",
+              "value": 5,
+              "start": 51,
+              "end": 52,
+              "clause": "What was the total Attendance in weeks previous of 5",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'weeks previous of 5' refers to the Week field, whose rows include week 5.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Seattle Seahawks",
+              "value": "Seattle Seahawks",
+              "start": 66,
+              "end": 82,
+              "clause": "playing the Seattle Seahawks?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'playing the Seattle Seahawks' identifies the Opponent field; its rows contain Seattle Seahawks.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              2,
+              5
+            ],
+            [
+              2,
+              0,
+              "Seattle Seahawks"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "5",
+          "value": "5",
+          "start": 51,
+          "end": 52
+        },
+        {
+          "surface": "Seattle Seahawks",
+          "value": "Seattle Seahawks",
+          "start": 66,
+          "end": 82
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "5",
+          "value": 5,
+          "start": 51,
+          "end": 52,
+          "clause": "What was the total Attendance in weeks previous of 5",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "'weeks previous of 5' refers to the Week field, whose rows include week 5.",
+          "operator": "<",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "Seattle Seahawks",
+          "value": "Seattle Seahawks",
+          "start": 66,
+          "end": 82,
+          "clause": "playing the Seattle Seahawks?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "'playing the Seattle Seahawks' identifies the Opponent field; its rows contain Seattle Seahawks.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          0,
+          2,
+          5
+        ],
+        [
+          2,
+          0,
+          "Seattle Seahawks"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9031
+}

@@ -1,0 +1,615 @@
+{
+  "arm": "E2",
+  "position": 473,
+  "example_id": "test:6738:2-14407512-23",
+  "original_index": 6738,
+  "table_id": "2-14407512-23",
+  "question": "How many points have less than 126 2nd and nationality of aut?",
+  "gold_sql": {
+    "sel": 5,
+    "conds": [
+      [
+        4,
+        2,
+        126
+      ],
+      [
+        2,
+        0,
+        "aut"
+      ]
+    ],
+    "agg": 4
+  },
+  "prediction_conds": [
+    [
+      4,
+      2,
+      126
+    ],
+    [
+      2,
+      0,
+      "AUT"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        2,
+        126
+      ],
+      [
+        2,
+        0,
+        "AUT"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "126",
+        "value": 126,
+        "start": 31,
+        "end": 34,
+        "clause": "How many points have less than 126 2nd",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The phrase '126 2nd' explicitly refers to the '2nd (m)' field, with 'less than' as the comparison.",
+        "operator": "<",
+        "grounded": true,
+        "groundingStatus": "NORMALIZED_MATCH"
+      },
+      {
+        "surface": "aut",
+        "value": "AUT",
+        "start": 58,
+        "end": 61,
+        "clause": "and nationality of aut?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The phrase 'nationality of aut' explicitly refers to the 'Nationality' field.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "126",
+        "value": "126",
+        "start": 31,
+        "end": 34
+      },
+      {
+        "surface": "aut",
+        "value": "AUT",
+        "start": 58,
+        "end": 61
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "How many points have less than 126 2nd and nationality of aut?",
+      "table": {
+        "header": [
+          "Rank",
+          "Name",
+          "Nationality",
+          "1st (m)",
+          "2nd (m)",
+          "Points",
+          "Overall NT points",
+          "Overall WC points (Rank)"
+        ],
+        "page_title": "2007–08 FIS Ski Jumping World Cup",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "real",
+          "real",
+          "real",
+          "text",
+          "text"
+        ],
+        "page_id": 14407512,
+        "id": "2-14407512-23",
+        "section_title": "Kuopio",
+        "rows": [
+          [
+            "1",
+            "Janne Ahonen",
+            "FIN",
+            "122.5",
+            "126.0",
+            "248.3",
+            "378.7 (2)",
+            "1098 (3)"
+          ],
+          [
+            "2",
+            "Anders Bardal",
+            "NOR",
+            "117.5",
+            "128.0",
+            "240.4",
+            "373.0 (5)",
+            "788 (5)"
+          ],
+          [
+            "3",
+            "Tom Hilde",
+            "NOR",
+            "121.5",
+            "122.5",
+            "237.2",
+            "373.2 (4)",
+            "1027 (4)"
+          ],
+          [
+            "4",
+            "Gregor Schlierenzauer",
+            "AUT",
+            "114.5",
+            "129.0",
+            "236.8",
+            "374.4 (3)",
+            "1161 (2)"
+          ],
+          [
+            "5",
+            "Janne Happonen",
+            "FIN",
+            "118.0",
+            "125.5",
+            "236.3",
+            "378.9 (1)",
+            "554 (11)"
+          ],
+          [
+            "8",
+            "Thomas Morgenstern",
+            "AUT",
+            "116.0",
+            "124.0",
+            "231.0",
+            "355.1 (9)",
+            "1686 (1)"
+          ]
+        ],
+        "caption": "Kuopio",
+        "headers": [
+          "Rank",
+          "Name",
+          "Nationality",
+          "1st (m)",
+          "2nd (m)",
+          "Points",
+          "Overall NT points",
+          "Overall WC points (Rank)"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-14407512-23",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "126",
+              "value": "126",
+              "start": 31,
+              "end": 34
+            },
+            {
+              "surface": "aut",
+              "value": "AUT",
+              "start": 58,
+              "end": 61
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "714a2db8cdc1ee9a09330b74868824252485273ba426d4a0f975658f85bf7fe1",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4927,
+              "completion_tokens": 25,
+              "total_tokens": 4952,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "126",
+              "value": "126",
+              "start": 31,
+              "end": 34,
+              "clause": "How many points have less than 126 2nd"
+            },
+            {
+              "surface": "aut",
+              "value": "AUT",
+              "start": 58,
+              "end": 61,
+              "clause": "and nationality of aut?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "126",
+              "value": "126",
+              "start": 31,
+              "end": 34,
+              "clause": "How many points have less than 126 2nd"
+            },
+            {
+              "surface": "aut",
+              "value": "AUT",
+              "start": 58,
+              "end": 61,
+              "clause": "and nationality of aut?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "126",
+              "value": "126",
+              "start": 31,
+              "end": 34,
+              "clause": "How many points have less than 126 2nd",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase '126 2nd' explicitly refers to the '2nd (m)' field, with 'less than' as the comparison."
+            },
+            {
+              "surface": "aut",
+              "value": "AUT",
+              "start": 58,
+              "end": 61,
+              "clause": "and nationality of aut?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase 'nationality of aut' explicitly refers to the 'Nationality' field."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "8f3ff2b575a655db23abe26de6c7e8ba76ef56a72272862024d8f359e8c9c0bd",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4984,
+              "completion_tokens": 71,
+              "total_tokens": 5055,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "126",
+              "value": "126",
+              "start": 31,
+              "end": 34,
+              "clause": "How many points have less than 126 2nd",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase '126 2nd' explicitly refers to the '2nd (m)' field, with 'less than' as the comparison.",
+              "operator": "<"
+            },
+            {
+              "surface": "aut",
+              "value": "AUT",
+              "start": 58,
+              "end": 61,
+              "clause": "and nationality of aut?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase 'nationality of aut' explicitly refers to the 'Nationality' field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ba336fd0580ea3dde3f36562eeaddea4cf2c2ff04afeb8aa73f38fd56e53459e",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5090,
+              "completion_tokens": 11,
+              "total_tokens": 5101,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "126",
+              "value": 126,
+              "start": 31,
+              "end": 34,
+              "clause": "How many points have less than 126 2nd",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase '126 2nd' explicitly refers to the '2nd (m)' field, with 'less than' as the comparison.",
+              "operator": "<"
+            },
+            {
+              "surface": "aut",
+              "value": "AUT",
+              "start": 58,
+              "end": 61,
+              "clause": "and nationality of aut?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase 'nationality of aut' explicitly refers to the 'Nationality' field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b881b02ead3ee9696cc581e447dd169e130a31f0de61c6649e7616569fd75989",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5044,
+              "completion_tokens": 12,
+              "total_tokens": 5056,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "126",
+              "value": "126.0",
+              "start": 31,
+              "end": 34,
+              "clause": "How many points have less than 126 2nd",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase '126 2nd' explicitly refers to the '2nd (m)' field, with 'less than' as the comparison.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "NORMALIZED_MATCH"
+            },
+            {
+              "surface": "aut",
+              "value": "AUT",
+              "start": 58,
+              "end": 61,
+              "clause": "and nationality of aut?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase 'nationality of aut' explicitly refers to the 'Nationality' field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "126",
+              "value": 126,
+              "start": 31,
+              "end": 34,
+              "clause": "How many points have less than 126 2nd",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase '126 2nd' explicitly refers to the '2nd (m)' field, with 'less than' as the comparison.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "NORMALIZED_MATCH"
+            },
+            {
+              "surface": "aut",
+              "value": "AUT",
+              "start": 58,
+              "end": 61,
+              "clause": "and nationality of aut?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase 'nationality of aut' explicitly refers to the 'Nationality' field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "126",
+              "value": 126,
+              "start": 31,
+              "end": 34,
+              "clause": "How many points have less than 126 2nd",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase '126 2nd' explicitly refers to the '2nd (m)' field, with 'less than' as the comparison.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "NORMALIZED_MATCH"
+            },
+            {
+              "surface": "aut",
+              "value": "AUT",
+              "start": 58,
+              "end": 61,
+              "clause": "and nationality of aut?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase 'nationality of aut' explicitly refers to the 'Nationality' field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              2,
+              126
+            ],
+            [
+              2,
+              0,
+              "AUT"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "126",
+          "value": "126",
+          "start": 31,
+          "end": 34
+        },
+        {
+          "surface": "aut",
+          "value": "AUT",
+          "start": 58,
+          "end": 61
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "126",
+          "value": 126,
+          "start": 31,
+          "end": 34,
+          "clause": "How many points have less than 126 2nd",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The phrase '126 2nd' explicitly refers to the '2nd (m)' field, with 'less than' as the comparison.",
+          "operator": "<",
+          "grounded": true,
+          "groundingStatus": "NORMALIZED_MATCH"
+        },
+        {
+          "surface": "aut",
+          "value": "AUT",
+          "start": 58,
+          "end": 61,
+          "clause": "and nationality of aut?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The phrase 'nationality of aut' explicitly refers to the 'Nationality' field.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          4,
+          2,
+          126
+        ],
+        [
+          2,
+          0,
+          "AUT"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8500
+}

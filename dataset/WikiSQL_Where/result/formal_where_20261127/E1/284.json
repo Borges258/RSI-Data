@@ -1,0 +1,131 @@
+{
+  "arm": "E1",
+  "position": 284,
+  "example_id": "test:12715:2-18156317-1",
+  "original_index": 12715,
+  "table_id": "2-18156317-1",
+  "question": "When there are more than 126 errors, more than 1253 total attempts, and more than 64 block assists, what is the smallest digs?",
+  "gold_sql": {
+    "sel": 9,
+    "conds": [
+      [
+        4,
+        1,
+        126
+      ],
+      [
+        5,
+        1,
+        1253
+      ],
+      [
+        11,
+        1,
+        64
+      ]
+    ],
+    "agg": 2
+  },
+  "prediction_conds": [
+    [
+      4,
+      1,
+      126
+    ],
+    [
+      5,
+      1,
+      1253
+    ],
+    [
+      11,
+      1,
+      64
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": "gpt-5.6-sol",
+  "usage": {
+    "prompt_tokens": 11703,
+    "completion_tokens": 69,
+    "total_tokens": 11772,
+    "prompt_tokens_details": {
+      "cached_tokens": 4224
+    }
+  },
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        1,
+        126
+      ],
+      [
+        5,
+        1,
+        1253
+      ],
+      [
+        11,
+        1,
+        64
+      ]
+    ],
+    "explanation": "Three explicit AND conditions use strict more-than comparisons on Errors, Total Attempts, and Block Assists; smallest Digs describes the requested result, not a filter.",
+    "version": "wikisql-where-prior-v1",
+    "tableId": "2-18156317-1",
+    "knowledgeIds": [
+      "g-eq",
+      "g-gt",
+      "g-lt",
+      "g-inclusive",
+      "g-literal",
+      "g-threshold",
+      "g-and",
+      "g-or",
+      "g-column",
+      "g-count",
+      "g-ambiguous",
+      "t-2-18156317-1-field-0",
+      "t-2-18156317-1-field-1",
+      "t-2-18156317-1-field-2",
+      "t-2-18156317-1-field-3",
+      "t-2-18156317-1-field-4",
+      "t-2-18156317-1-field-5",
+      "t-2-18156317-1-field-6",
+      "t-2-18156317-1-field-7",
+      "t-2-18156317-1-field-8",
+      "t-2-18156317-1-field-9",
+      "t-2-18156317-1-field-10",
+      "t-2-18156317-1-field-11",
+      "t-2-18156317-1-field-12",
+      "d-implicit-eq",
+      "d-explicit-eq",
+      "d-gt",
+      "d-lt-and-gt",
+      "d-with-two",
+      "d-literal-form",
+      "p-text",
+      "p-number",
+      "p-multi",
+      "p-unsupported"
+    ],
+    "promptSha256": "6ec3252fe57ced8c3a2d0cbd9a7c254431a03139f99622df2c9831221bd31d9e",
+    "model": "gpt-5.6-sol",
+    "usage": {
+      "prompt_tokens": 11703,
+      "completion_tokens": 69,
+      "total_tokens": 11772,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      }
+    },
+    "latencyMs": 2553
+  },
+  "source": "where_prior_parse",
+  "safe_completed": true,
+  "elapsed_ms": 2578
+}

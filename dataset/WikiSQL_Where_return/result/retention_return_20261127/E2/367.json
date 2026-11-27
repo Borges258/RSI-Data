@@ -1,0 +1,616 @@
+{
+  "arm": "E2",
+  "position": 367,
+  "example_id": "test:14359:2-12601456-2",
+  "original_index": 14359,
+  "table_id": "2-12601456-2",
+  "question": "What rank is the transfer for the milan move in 2000?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        4,
+        0,
+        "milan"
+      ],
+      [
+        1,
+        0,
+        2000
+      ]
+    ],
+    "agg": 5
+  },
+  "prediction_conds": [
+    [
+      4,
+      0,
+      "Milan"
+    ],
+    [
+      1,
+      0,
+      2000
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        0,
+        "Milan"
+      ],
+      [
+        1,
+        0,
+        2000
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "milan",
+        "value": "Milan",
+        "start": 34,
+        "end": 39,
+        "clause": "What rank is the transfer for the milan move in 2000?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "“Milan move” denotes the transfer destination; matching rows place Milan under Moving to.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "2000",
+        "value": 2000,
+        "start": 48,
+        "end": 52,
+        "clause": "What rank is the transfer for the milan move in 2000?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "“in 2000” denotes the transfer year, matching the Year column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "milan",
+        "value": "Milan",
+        "start": 34,
+        "end": 39
+      },
+      {
+        "surface": "2000",
+        "value": "2000",
+        "start": 48,
+        "end": 52
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What rank is the transfer for the milan move in 2000?",
+      "table": {
+        "header": [
+          "Rank",
+          "Year",
+          "Name",
+          "Moving from",
+          "Moving to"
+        ],
+        "page_title": "List of most expensive Ukrainian football transfers",
+        "types": [
+          "real",
+          "real",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 12601456,
+        "id": "2-12601456-2",
+        "section_title": "Outgoing transfers",
+        "rows": [
+          [
+            "1",
+            "2013",
+            "Willian",
+            "Shakhtar Donetsk",
+            "Anzhi Makhachkala"
+          ],
+          [
+            "2",
+            "2009",
+            "Dmytro Chygrynskiy",
+            "Shakhtar Donetsk",
+            "Barcelona"
+          ],
+          [
+            "3",
+            "1999",
+            "Andriy Shevchenko",
+            "Dynamo Kyiv",
+            "Milan"
+          ],
+          [
+            "4",
+            "2007",
+            "Anatoliy Tymoschuk",
+            "Shakhtar Donetsk",
+            "Zenit St. Petersburg"
+          ],
+          [
+            "5",
+            "2000",
+            "Serhiy Rebrov",
+            "Dynamo Kyiv",
+            "Tottenham Hotspur"
+          ],
+          [
+            "6",
+            "2007",
+            "Elano",
+            "Shakhtar Donetsk",
+            "Manchester City"
+          ],
+          [
+            "7",
+            "2007",
+            "Matuzalém",
+            "Shakhtar Donetsk",
+            "Real Zaragoza"
+          ],
+          [
+            "8",
+            "2009",
+            "Ismaël Bangoura",
+            "Dynamo Kyiv",
+            "Rennes"
+          ],
+          [
+            "9",
+            "2000",
+            "Kakha Kaladze",
+            "Dynamo Kyiv",
+            "Milan"
+          ],
+          [
+            "10",
+            "2007",
+            "Ciprian Marica",
+            "Shakhtar Donetsk",
+            "Stuttgart"
+          ]
+        ],
+        "caption": "Outgoing transfers",
+        "headers": [
+          "Rank",
+          "Year",
+          "Name",
+          "Moving from",
+          "Moving to"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-12601456-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "milan",
+              "value": "Milan",
+              "start": 34,
+              "end": 39
+            },
+            {
+              "surface": "2000",
+              "value": "2000",
+              "start": 48,
+              "end": 52
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ff01caded72b08de3d15d2bf6f21b826fe1e3d7e1275e44f7fe927ea929696c3",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4885,
+              "completion_tokens": 29,
+              "total_tokens": 4914,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "milan",
+              "value": "Milan",
+              "start": 34,
+              "end": 39,
+              "clause": "What rank is the transfer for the milan move in 2000?"
+            },
+            {
+              "surface": "2000",
+              "value": "2000",
+              "start": 48,
+              "end": 52,
+              "clause": "What rank is the transfer for the milan move in 2000?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "milan",
+              "value": "Milan",
+              "start": 34,
+              "end": 39,
+              "clause": "What rank is the transfer for the milan move in 2000?"
+            },
+            {
+              "surface": "2000",
+              "value": "2000",
+              "start": 48,
+              "end": 52,
+              "clause": "What rank is the transfer for the milan move in 2000?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "milan",
+              "value": "Milan",
+              "start": 34,
+              "end": 39,
+              "clause": "What rank is the transfer for the milan move in 2000?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "“Milan move” denotes the transfer destination; matching rows place Milan under Moving to."
+            },
+            {
+              "surface": "2000",
+              "value": "2000",
+              "start": 48,
+              "end": 52,
+              "clause": "What rank is the transfer for the milan move in 2000?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "“in 2000” denotes the transfer year, matching the Year column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "bcf9f93d5a943d60d8f06cb00f5b1c9b71db89dbdf4385efa0ec26d55c84406b",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4960,
+              "completion_tokens": 59,
+              "total_tokens": 5019,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "milan",
+              "value": "Milan",
+              "start": 34,
+              "end": 39,
+              "clause": "What rank is the transfer for the milan move in 2000?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "“Milan move” denotes the transfer destination; matching rows place Milan under Moving to.",
+              "operator": "="
+            },
+            {
+              "surface": "2000",
+              "value": "2000",
+              "start": 48,
+              "end": 52,
+              "clause": "What rank is the transfer for the milan move in 2000?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "“in 2000” denotes the transfer year, matching the Year column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "48d71db2c3872163eab2a5b1b49401b3857dfbcf35bead885a6938b5b7e645ea",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5054,
+              "completion_tokens": 11,
+              "total_tokens": 5065,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "milan",
+              "value": "Milan",
+              "start": 34,
+              "end": 39,
+              "clause": "What rank is the transfer for the milan move in 2000?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "“Milan move” denotes the transfer destination; matching rows place Milan under Moving to.",
+              "operator": "="
+            },
+            {
+              "surface": "2000",
+              "value": "2000",
+              "start": 48,
+              "end": 52,
+              "clause": "What rank is the transfer for the milan move in 2000?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "“in 2000” denotes the transfer year, matching the Year column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "777a329bee1ea6a22c5d434b7f29cde02bc64d0998d70cb86b5ac68cefa4d64f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5008,
+              "completion_tokens": 14,
+              "total_tokens": 5022,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "milan",
+              "value": "Milan",
+              "start": 34,
+              "end": 39,
+              "clause": "What rank is the transfer for the milan move in 2000?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "“Milan move” denotes the transfer destination; matching rows place Milan under Moving to.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2000",
+              "value": "2000",
+              "start": 48,
+              "end": 52,
+              "clause": "What rank is the transfer for the milan move in 2000?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "“in 2000” denotes the transfer year, matching the Year column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "milan",
+              "value": "Milan",
+              "start": 34,
+              "end": 39,
+              "clause": "What rank is the transfer for the milan move in 2000?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "“Milan move” denotes the transfer destination; matching rows place Milan under Moving to.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2000",
+              "value": 2000,
+              "start": 48,
+              "end": 52,
+              "clause": "What rank is the transfer for the milan move in 2000?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "“in 2000” denotes the transfer year, matching the Year column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "milan",
+              "value": "Milan",
+              "start": 34,
+              "end": 39,
+              "clause": "What rank is the transfer for the milan move in 2000?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "“Milan move” denotes the transfer destination; matching rows place Milan under Moving to.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2000",
+              "value": 2000,
+              "start": 48,
+              "end": 52,
+              "clause": "What rank is the transfer for the milan move in 2000?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "“in 2000” denotes the transfer year, matching the Year column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              0,
+              "Milan"
+            ],
+            [
+              1,
+              0,
+              2000
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "milan",
+          "value": "Milan",
+          "start": 34,
+          "end": 39
+        },
+        {
+          "surface": "2000",
+          "value": "2000",
+          "start": 48,
+          "end": 52
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "milan",
+          "value": "Milan",
+          "start": 34,
+          "end": 39,
+          "clause": "What rank is the transfer for the milan move in 2000?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "“Milan move” denotes the transfer destination; matching rows place Milan under Moving to.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "2000",
+          "value": 2000,
+          "start": 48,
+          "end": 52,
+          "clause": "What rank is the transfer for the milan move in 2000?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "“in 2000” denotes the transfer year, matching the Year column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          4,
+          0,
+          "Milan"
+        ],
+        [
+          1,
+          0,
+          2000
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8453
+}

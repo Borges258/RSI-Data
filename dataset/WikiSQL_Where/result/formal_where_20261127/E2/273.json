@@ -1,0 +1,588 @@
+{
+  "arm": "E2",
+  "position": 273,
+  "example_id": "test:8063:2-1688640-20",
+  "original_index": 8063,
+  "table_id": "2-1688640-20",
+  "question": "WHAT WAS THE LOWEST CAR # WITH SON-E-WA, AND 2012 START YEAR?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        2,
+        0,
+        "son-e-wa"
+      ],
+      [
+        0,
+        0,
+        2012
+      ]
+    ],
+    "agg": 2
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "son-e-wa"
+    ],
+    [
+      0,
+      0,
+      2012
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "son-e-wa"
+      ],
+      [
+        0,
+        0,
+        2012
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "SON-E-WA",
+        "value": "son-e-wa",
+        "start": 31,
+        "end": 39,
+        "clause": "WHAT WAS THE LOWEST CAR # WITH SON-E-WA,",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "SON-E-WA names the current car, matching Current car.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "2012",
+        "value": 2012,
+        "start": 45,
+        "end": 49,
+        "clause": "AND 2012 START YEAR?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "START YEAR refers to Year started, supported by the 2012 row.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "SON-E-WA",
+        "value": "son-e-wa",
+        "start": 31,
+        "end": 39
+      },
+      {
+        "surface": "2012",
+        "value": "2012",
+        "start": 45,
+        "end": 49
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "WHAT WAS THE LOWEST CAR # WITH SON-E-WA, AND 2012 START YEAR?",
+      "table": {
+        "header": [
+          "Year started",
+          "Number of cars",
+          "Current car",
+          "Car #",
+          "Website"
+        ],
+        "page_title": "List of solar car teams",
+        "types": [
+          "real",
+          "real",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 1688640,
+        "id": "2-1688640-20",
+        "section_title": "South Africa",
+        "rows": [
+          [
+            "2011",
+            "2",
+            "Ilanga I.I",
+            "7",
+            "URL"
+          ],
+          [
+            "2010",
+            "2",
+            "Parhelion",
+            "3",
+            "URL"
+          ],
+          [
+            "2008",
+            "1",
+            "Sunna",
+            "15",
+            "URL"
+          ],
+          [
+            "2008",
+            "1",
+            "Sanyo Iritron",
+            "12",
+            "URL"
+          ],
+          [
+            "2009",
+            "1",
+            "tba",
+            "1",
+            "URL"
+          ],
+          [
+            "2012",
+            "1",
+            "son-e-wa",
+            "23",
+            "URL"
+          ]
+        ],
+        "caption": "South Africa",
+        "headers": [
+          "Year started",
+          "Number of cars",
+          "Current car",
+          "Car #",
+          "Website"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-1688640-20",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "SON-E-WA",
+              "value": "son-e-wa",
+              "start": 31,
+              "end": 39
+            },
+            {
+              "surface": "2012",
+              "value": "2012",
+              "start": 45,
+              "end": 49
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "49fe9529816bf67e8647d47530064d2de955f0c99f7c059b6bc6be41c998adef",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4765,
+              "completion_tokens": 32,
+              "total_tokens": 4797,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "SON-E-WA",
+              "value": "son-e-wa",
+              "start": 31,
+              "end": 39,
+              "clause": "WHAT WAS THE LOWEST CAR # WITH SON-E-WA,"
+            },
+            {
+              "surface": "2012",
+              "value": "2012",
+              "start": 45,
+              "end": 49,
+              "clause": "AND 2012 START YEAR?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "SON-E-WA",
+              "value": "son-e-wa",
+              "start": 31,
+              "end": 39,
+              "clause": "WHAT WAS THE LOWEST CAR # WITH SON-E-WA,"
+            },
+            {
+              "surface": "2012",
+              "value": "2012",
+              "start": 45,
+              "end": 49,
+              "clause": "AND 2012 START YEAR?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "SON-E-WA",
+              "value": "son-e-wa",
+              "start": 31,
+              "end": 39,
+              "clause": "WHAT WAS THE LOWEST CAR # WITH SON-E-WA,",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "SON-E-WA names the current car, matching Current car."
+            },
+            {
+              "surface": "2012",
+              "value": "2012",
+              "start": 45,
+              "end": 49,
+              "clause": "AND 2012 START YEAR?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "START YEAR refers to Year started, supported by the 2012 row."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "53614262c0b0a2f2b029eec07513508223d67c05a86e05279c787d752554afb1",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4833,
+              "completion_tokens": 53,
+              "total_tokens": 4886,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "SON-E-WA",
+              "value": "son-e-wa",
+              "start": 31,
+              "end": 39,
+              "clause": "WHAT WAS THE LOWEST CAR # WITH SON-E-WA,",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "SON-E-WA names the current car, matching Current car.",
+              "operator": "="
+            },
+            {
+              "surface": "2012",
+              "value": "2012",
+              "start": 45,
+              "end": 49,
+              "clause": "AND 2012 START YEAR?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "START YEAR refers to Year started, supported by the 2012 row.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "9d6ba13a6b94f998eb8fa04d4a0a42e31fb8dfcfc543a68afbecd9e741ee4136",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4921,
+              "completion_tokens": 11,
+              "total_tokens": 4932,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "SON-E-WA",
+              "value": "son-e-wa",
+              "start": 31,
+              "end": 39,
+              "clause": "WHAT WAS THE LOWEST CAR # WITH SON-E-WA,",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "SON-E-WA names the current car, matching Current car.",
+              "operator": "="
+            },
+            {
+              "surface": "2012",
+              "value": 2012,
+              "start": 45,
+              "end": 49,
+              "clause": "AND 2012 START YEAR?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "START YEAR refers to Year started, supported by the 2012 row.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c5cc5a384811d0645c430e85392123f3f14d0e6a94e9db203417db0cad7cc02a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4875,
+              "completion_tokens": 14,
+              "total_tokens": 4889,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "SON-E-WA",
+              "value": "son-e-wa",
+              "start": 31,
+              "end": 39,
+              "clause": "WHAT WAS THE LOWEST CAR # WITH SON-E-WA,",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "SON-E-WA names the current car, matching Current car.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2012",
+              "value": "2012",
+              "start": 45,
+              "end": 49,
+              "clause": "AND 2012 START YEAR?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "START YEAR refers to Year started, supported by the 2012 row.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "SON-E-WA",
+              "value": "son-e-wa",
+              "start": 31,
+              "end": 39,
+              "clause": "WHAT WAS THE LOWEST CAR # WITH SON-E-WA,",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "SON-E-WA names the current car, matching Current car.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2012",
+              "value": 2012,
+              "start": 45,
+              "end": 49,
+              "clause": "AND 2012 START YEAR?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "START YEAR refers to Year started, supported by the 2012 row.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "SON-E-WA",
+              "value": "son-e-wa",
+              "start": 31,
+              "end": 39,
+              "clause": "WHAT WAS THE LOWEST CAR # WITH SON-E-WA,",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "SON-E-WA names the current car, matching Current car.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2012",
+              "value": 2012,
+              "start": 45,
+              "end": 49,
+              "clause": "AND 2012 START YEAR?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "START YEAR refers to Year started, supported by the 2012 row.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "son-e-wa"
+            ],
+            [
+              0,
+              0,
+              2012
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "SON-E-WA",
+          "value": "son-e-wa",
+          "start": 31,
+          "end": 39
+        },
+        {
+          "surface": "2012",
+          "value": "2012",
+          "start": 45,
+          "end": 49
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "SON-E-WA",
+          "value": "son-e-wa",
+          "start": 31,
+          "end": 39,
+          "clause": "WHAT WAS THE LOWEST CAR # WITH SON-E-WA,",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "SON-E-WA names the current car, matching Current car.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "2012",
+          "value": 2012,
+          "start": 45,
+          "end": 49,
+          "clause": "AND 2012 START YEAR?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "START YEAR refers to Year started, supported by the 2012 row.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          2,
+          0,
+          "son-e-wa"
+        ],
+        [
+          0,
+          0,
+          2012
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7594
+}

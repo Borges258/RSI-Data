@@ -1,0 +1,643 @@
+{
+  "arm": "E2",
+  "position": 300,
+  "example_id": "test:15866:2-1232836-4",
+  "original_index": 15866,
+  "table_id": "2-1232836-4",
+  "question": "Who had fewer goals than 4 during the years of 1996–13?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        0,
+        2,
+        4
+      ],
+      [
+        3,
+        0,
+        "1996–13"
+      ]
+    ],
+    "agg": 2
+  },
+  "prediction_conds": [
+    [
+      4,
+      2,
+      4
+    ],
+    [
+      3,
+      0,
+      "1996–13"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        2,
+        4
+      ],
+      [
+        3,
+        0,
+        "1996–13"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "4",
+        "value": 4,
+        "start": 25,
+        "end": 26,
+        "clause": "Who had fewer goals than 4 during the years of 1996–13?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          {
+            "columnIndex": 0,
+            "header": "Ranking",
+            "evidence": "EXACT_VALUE_MATCH"
+          }
+        ],
+        "columnMatchReason": "'fewer goals than 4' explicitly targets the Goals field",
+        "operator": "<",
+        "groundingReason": "FIELD_VALUE_CONFLICT",
+        "grounded": true,
+        "groundingStatus": "THRESHOLD_LITERAL"
+      },
+      {
+        "surface": "1996–13",
+        "value": "1996–13",
+        "start": 47,
+        "end": 54,
+        "clause": "Who had fewer goals than 4 during the years of 1996–13?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "'during the years of 1996–13' explicitly targets the Years field",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "4",
+        "value": "4",
+        "start": 25,
+        "end": 26
+      },
+      {
+        "surface": "1996–13",
+        "value": "1996–13",
+        "start": 47,
+        "end": 54
+      }
+    ],
+    "warnings": [
+      "condition threshold is not a stored table value: 4"
+    ],
+    "request": {
+      "question": "Who had fewer goals than 4 during the years of 1996–13?",
+      "table": {
+        "header": [
+          "Ranking",
+          "Nationality",
+          "Name",
+          "Years",
+          "Goals"
+        ],
+        "page_title": "Ittihad FC",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "real"
+        ],
+        "page_id": 1232836,
+        "id": "2-1232836-4",
+        "section_title": "Top scorers in AFC competitions",
+        "rows": [
+          [
+            "1",
+            "Saudi Arabia",
+            "Mohammed Noor",
+            "1996–13",
+            "17"
+          ],
+          [
+            "2",
+            "Saudi Arabia",
+            "Naif Hazazi",
+            "2006–13",
+            "14"
+          ],
+          [
+            "3",
+            "Saudi Arabia",
+            "Hamzah Idris",
+            "1997–07",
+            "9"
+          ],
+          [
+            "4",
+            "Algeria",
+            "Abdelmalek Ziaya",
+            "2009–11",
+            "7"
+          ],
+          [
+            "5",
+            "Saudi Arabia",
+            "Marzouk Al-Otaibi",
+            "2000–07",
+            "7"
+          ],
+          [
+            "6",
+            "Saudi Arabia",
+            "Osama Al-Muwallad",
+            "2000–",
+            "6"
+          ],
+          [
+            "7",
+            "Sierra Leone",
+            "Mohammed Kallon",
+            "2005–06",
+            "6"
+          ],
+          [
+            "8",
+            "Morocco",
+            "Ahmed Bahja",
+            "1996–99",
+            "6"
+          ],
+          [
+            "9",
+            "Morocco",
+            "Hicham Aboucherouane",
+            "2008–10",
+            "5"
+          ]
+        ],
+        "caption": "Top scorers in AFC competitions",
+        "headers": [
+          "Ranking",
+          "Nationality",
+          "Name",
+          "Years",
+          "Goals"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-1232836-4",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "4",
+              "value": "4",
+              "start": 25,
+              "end": 26
+            },
+            {
+              "surface": "1996–13",
+              "value": "1996–13",
+              "start": 47,
+              "end": 54
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "368a7da1d9b4a679d05c31f8e8e54c7bb0d0d99c8e39ed32768bd89a690ceeba",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4846,
+              "completion_tokens": 31,
+              "total_tokens": 4877,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "4",
+              "value": "4",
+              "start": 25,
+              "end": 26,
+              "clause": "Who had fewer goals than 4 during the years of 1996–13?"
+            },
+            {
+              "surface": "1996–13",
+              "value": "1996–13",
+              "start": 47,
+              "end": 54,
+              "clause": "Who had fewer goals than 4 during the years of 1996–13?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "4",
+              "value": "4",
+              "start": 25,
+              "end": 26,
+              "clause": "Who had fewer goals than 4 during the years of 1996–13?"
+            },
+            {
+              "surface": "1996–13",
+              "value": "1996–13",
+              "start": 47,
+              "end": 54,
+              "clause": "Who had fewer goals than 4 during the years of 1996–13?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "4",
+              "value": "4",
+              "start": 25,
+              "end": 26,
+              "clause": "Who had fewer goals than 4 during the years of 1996–13?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'fewer goals than 4' explicitly targets the Goals field"
+            },
+            {
+              "surface": "1996–13",
+              "value": "1996–13",
+              "start": 47,
+              "end": 54,
+              "clause": "Who had fewer goals than 4 during the years of 1996–13?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'during the years of 1996–13' explicitly targets the Years field"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d2742c31eb2114a878c6993f2c92cc2d98d0e2a3aa690bfb07d45f399a32117a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4927,
+              "completion_tokens": 55,
+              "total_tokens": 4982,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "4",
+              "value": "4",
+              "start": 25,
+              "end": 26,
+              "clause": "Who had fewer goals than 4 during the years of 1996–13?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'fewer goals than 4' explicitly targets the Goals field",
+              "operator": "<"
+            },
+            {
+              "surface": "1996–13",
+              "value": "1996–13",
+              "start": 47,
+              "end": 54,
+              "clause": "Who had fewer goals than 4 during the years of 1996–13?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'during the years of 1996–13' explicitly targets the Years field",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "3670030a4a3a73dbf6944af0cb8bc56ece57cab0b41b9463a7d40bf82e521fa7",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5014,
+              "completion_tokens": 11,
+              "total_tokens": 5025,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "4",
+              "value": "4",
+              "start": 25,
+              "end": 26,
+              "clause": "Who had fewer goals than 4 during the years of 1996–13?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'fewer goals than 4' explicitly targets the Goals field",
+              "operator": "<"
+            },
+            {
+              "surface": "1996–13",
+              "value": "1996–13",
+              "start": 47,
+              "end": 54,
+              "clause": "Who had fewer goals than 4 during the years of 1996–13?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'during the years of 1996–13' explicitly targets the Years field",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "39f8e72368dd2e2057bcff252ebffadc2cf92c31bae59f53273229fd5039634f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4970,
+              "completion_tokens": 15,
+              "total_tokens": 4985,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "warnings": [
+            "condition threshold is not a stored table value: 4"
+          ],
+          "conditions": [
+            {
+              "surface": "4",
+              "value": "4",
+              "start": 25,
+              "end": 26,
+              "clause": "Who had fewer goals than 4 during the years of 1996–13?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                {
+                  "columnIndex": 0,
+                  "header": "Ranking",
+                  "evidence": "EXACT_VALUE_MATCH"
+                }
+              ],
+              "columnMatchReason": "'fewer goals than 4' explicitly targets the Goals field",
+              "operator": "<",
+              "groundingReason": "FIELD_VALUE_CONFLICT",
+              "grounded": true,
+              "groundingStatus": "THRESHOLD_LITERAL"
+            },
+            {
+              "surface": "1996–13",
+              "value": "1996–13",
+              "start": 47,
+              "end": 54,
+              "clause": "Who had fewer goals than 4 during the years of 1996–13?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'during the years of 1996–13' explicitly targets the Years field",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "4",
+              "value": 4,
+              "start": 25,
+              "end": 26,
+              "clause": "Who had fewer goals than 4 during the years of 1996–13?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                {
+                  "columnIndex": 0,
+                  "header": "Ranking",
+                  "evidence": "EXACT_VALUE_MATCH"
+                }
+              ],
+              "columnMatchReason": "'fewer goals than 4' explicitly targets the Goals field",
+              "operator": "<",
+              "groundingReason": "FIELD_VALUE_CONFLICT",
+              "grounded": true,
+              "groundingStatus": "THRESHOLD_LITERAL"
+            },
+            {
+              "surface": "1996–13",
+              "value": "1996–13",
+              "start": 47,
+              "end": 54,
+              "clause": "Who had fewer goals than 4 during the years of 1996–13?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'during the years of 1996–13' explicitly targets the Years field",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "4",
+              "value": 4,
+              "start": 25,
+              "end": 26,
+              "clause": "Who had fewer goals than 4 during the years of 1996–13?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                {
+                  "columnIndex": 0,
+                  "header": "Ranking",
+                  "evidence": "EXACT_VALUE_MATCH"
+                }
+              ],
+              "columnMatchReason": "'fewer goals than 4' explicitly targets the Goals field",
+              "operator": "<",
+              "groundingReason": "FIELD_VALUE_CONFLICT",
+              "grounded": true,
+              "groundingStatus": "THRESHOLD_LITERAL"
+            },
+            {
+              "surface": "1996–13",
+              "value": "1996–13",
+              "start": 47,
+              "end": 54,
+              "clause": "Who had fewer goals than 4 during the years of 1996–13?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'during the years of 1996–13' explicitly targets the Years field",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              2,
+              4
+            ],
+            [
+              3,
+              0,
+              "1996–13"
+            ]
+          ]
+        }
+      },
+      "warnings": [
+        "condition threshold is not a stored table value: 4"
+      ],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": [
+          "condition threshold is not a stored table value: 4"
+        ]
+      },
+      "originalConditions": [
+        {
+          "surface": "4",
+          "value": "4",
+          "start": 25,
+          "end": 26
+        },
+        {
+          "surface": "1996–13",
+          "value": "1996–13",
+          "start": 47,
+          "end": 54
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "4",
+          "value": 4,
+          "start": 25,
+          "end": 26,
+          "clause": "Who had fewer goals than 4 during the years of 1996–13?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            {
+              "columnIndex": 0,
+              "header": "Ranking",
+              "evidence": "EXACT_VALUE_MATCH"
+            }
+          ],
+          "columnMatchReason": "'fewer goals than 4' explicitly targets the Goals field",
+          "operator": "<",
+          "groundingReason": "FIELD_VALUE_CONFLICT",
+          "grounded": true,
+          "groundingStatus": "THRESHOLD_LITERAL"
+        },
+        {
+          "surface": "1996–13",
+          "value": "1996–13",
+          "start": 47,
+          "end": 54,
+          "clause": "Who had fewer goals than 4 during the years of 1996–13?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "'during the years of 1996–13' explicitly targets the Years field",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          4,
+          2,
+          4
+        ],
+        [
+          3,
+          0,
+          "1996–13"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8985
+}

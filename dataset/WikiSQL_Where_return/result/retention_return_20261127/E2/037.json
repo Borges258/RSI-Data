@@ -1,0 +1,424 @@
+{
+  "arm": "E2",
+  "position": 37,
+  "example_id": "test:1398:1-1601792-4",
+  "original_index": 1398,
+  "table_id": "1-1601792-4",
+  "question": "How many stations are transmitted on frequency 7 uhf?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        1,
+        0,
+        "7 UHF"
+      ]
+    ],
+    "agg": 3
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "7 UHF"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "7 UHF"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "7 uhf",
+        "value": "7 UHF",
+        "start": 47,
+        "end": 52,
+        "clause": "How many stations are transmitted on frequency 7 uhf?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The question explicitly says \"frequency 7 uhf,\" matching the Frequency header and the row value \"7 UHF\".",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "7 uhf",
+        "value": "7 UHF",
+        "start": 47,
+        "end": 52
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "How many stations are transmitted on frequency 7 uhf?",
+      "table": {
+        "id": "1-1601792-4",
+        "header": [
+          "Television Station",
+          "Frequency",
+          "Site",
+          "Transmitted",
+          "Network",
+          "Status",
+          "Country of Region"
+        ],
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "rows": [
+          [
+            "TV1",
+            "28 UHF",
+            "Gunung Ledang",
+            "10 kW/800 kW ERP",
+            "Radio Televisyen Malaysia (RTM)",
+            "National",
+            "Malaysia"
+          ],
+          [
+            "TV2",
+            "7 UHF",
+            "Gunung Ledang",
+            "10 kW/800 kW ERP",
+            "Radio Televisyen Malaysia (RTM)",
+            "National",
+            "Malaysia"
+          ],
+          [
+            "TV3",
+            "12 UHF",
+            "Gunung Ledang",
+            "20 kW",
+            "Media Prima Berhad",
+            "National",
+            "Malaysia"
+          ],
+          [
+            "NTV7",
+            "35 UHF",
+            "Gunung Ledang",
+            "20 kW",
+            "Media Prima Berhad",
+            "National",
+            "Malaysia"
+          ],
+          [
+            "8TV",
+            "48 UHF",
+            "Gunung Ledang",
+            "20 kW",
+            "Media Prima Berhad",
+            "National",
+            "Malaysia"
+          ]
+        ],
+        "name": "table_1601792_4",
+        "headers": [
+          "Television Station",
+          "Frequency",
+          "Site",
+          "Transmitted",
+          "Network",
+          "Status",
+          "Country of Region"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-1601792-4",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "7 uhf",
+              "value": "7 UHF",
+              "start": 47,
+              "end": 52
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ef19150d03a205633eab939d0c4ad1c8ad85bd585bc9cf80a03b89e79a1a1fe6",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4818,
+              "completion_tokens": 21,
+              "total_tokens": 4839,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "7 uhf",
+              "value": "7 UHF",
+              "start": 47,
+              "end": 52,
+              "clause": "How many stations are transmitted on frequency 7 uhf?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "7 uhf",
+              "value": "7 UHF",
+              "start": 47,
+              "end": 52,
+              "clause": "How many stations are transmitted on frequency 7 uhf?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "7 uhf",
+              "value": "7 UHF",
+              "start": 47,
+              "end": 52,
+              "clause": "How many stations are transmitted on frequency 7 uhf?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly says \"frequency 7 uhf,\" matching the Frequency header and the row value \"7 UHF\"."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "40bdd03032a6c8bd65c274536218adb72c0dc0a5094e8c2359beafb2d5388c0a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4855,
+              "completion_tokens": 46,
+              "total_tokens": 4901,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "7 uhf",
+              "value": "7 UHF",
+              "start": 47,
+              "end": 52,
+              "clause": "How many stations are transmitted on frequency 7 uhf?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly says \"frequency 7 uhf,\" matching the Frequency header and the row value \"7 UHF\".",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "261994c7606e834c03d6d6140f0086864f5a0d39f02c890e0ea2dae89d03ee88",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4925,
+              "completion_tokens": 9,
+              "total_tokens": 4934,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "7 uhf",
+              "value": "7 UHF",
+              "start": 47,
+              "end": 52,
+              "clause": "How many stations are transmitted on frequency 7 uhf?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly says \"frequency 7 uhf,\" matching the Frequency header and the row value \"7 UHF\".",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "9172462c006786bff9d51ea2de52264065483898b481da99dc3b9d032f1097e9",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4876,
+              "completion_tokens": 12,
+              "total_tokens": 4888,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "7 uhf",
+              "value": "7 UHF",
+              "start": 47,
+              "end": 52,
+              "clause": "How many stations are transmitted on frequency 7 uhf?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly says \"frequency 7 uhf,\" matching the Frequency header and the row value \"7 UHF\".",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "7 uhf",
+              "value": "7 UHF",
+              "start": 47,
+              "end": 52,
+              "clause": "How many stations are transmitted on frequency 7 uhf?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly says \"frequency 7 uhf,\" matching the Frequency header and the row value \"7 UHF\".",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "7 uhf",
+              "value": "7 UHF",
+              "start": 47,
+              "end": 52,
+              "clause": "How many stations are transmitted on frequency 7 uhf?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly says \"frequency 7 uhf,\" matching the Frequency header and the row value \"7 UHF\".",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              "7 UHF"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "7 uhf",
+          "value": "7 UHF",
+          "start": 47,
+          "end": 52
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "7 uhf",
+          "value": "7 UHF",
+          "start": 47,
+          "end": 52,
+          "clause": "How many stations are transmitted on frequency 7 uhf?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The question explicitly says \"frequency 7 uhf,\" matching the Frequency header and the row value \"7 UHF\".",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          1,
+          0,
+          "7 UHF"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9203
+}

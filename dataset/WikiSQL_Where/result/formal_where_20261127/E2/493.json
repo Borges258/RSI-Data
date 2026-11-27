@@ -1,0 +1,615 @@
+{
+  "arm": "E2",
+  "position": 493,
+  "example_id": "test:9646:2-17589865-2",
+  "original_index": 9646,
+  "table_id": "2-17589865-2",
+  "question": "What is the number of people in attendance when venue shows A, and Di Matteo, M. Hughes were the scorers?",
+  "gold_sql": {
+    "sel": 5,
+    "conds": [
+      [
+        3,
+        0,
+        "a"
+      ],
+      [
+        6,
+        0,
+        "Di Matteo , M. Hughes"
+      ]
+    ],
+    "agg": 4
+  },
+  "prediction_conds": [
+    [
+      3,
+      0,
+      "A"
+    ],
+    [
+      6,
+      0,
+      "Di Matteo , M. Hughes"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        0,
+        "A"
+      ],
+      [
+        6,
+        0,
+        "Di Matteo , M. Hughes"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "A",
+        "value": "A",
+        "start": 60,
+        "end": 61,
+        "clause": "What is the number of people in attendance when venue shows A,",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The question explicitly says the venue shows A, matching the Venue column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "Di Matteo, M. Hughes",
+        "value": "Di Matteo , M. Hughes",
+        "start": 67,
+        "end": 87,
+        "clause": "and Di Matteo, M. Hughes were the scorers?",
+        "columnIndex": 6,
+        "columnCandidates": [
+          6
+        ],
+        "columnMatchReason": "The question explicitly identifies Di Matteo and M. Hughes as the scorers, matching the Scorers column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "A",
+        "value": "A",
+        "start": 60,
+        "end": 61
+      },
+      {
+        "surface": "Di Matteo, M. Hughes",
+        "value": "Di Matteo , M. Hughes",
+        "start": 67,
+        "end": 87
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the number of people in attendance when venue shows A, and Di Matteo, M. Hughes were the scorers?",
+      "table": {
+        "header": [
+          "Date",
+          "Round",
+          "Opponent",
+          "Venue",
+          "Result",
+          "Attendance",
+          "Scorers"
+        ],
+        "page_title": "1996–97 Chelsea F.C. season",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 17589865,
+        "id": "2-17589865-2",
+        "section_title": "FA Cup",
+        "rows": [
+          [
+            "4 January 1997",
+            "R3",
+            "West Bromwich Albion",
+            "H",
+            "3–0",
+            "27,446",
+            "Wise , Zola , Burley"
+          ],
+          [
+            "26 January 1997",
+            "R4",
+            "Liverpool",
+            "H",
+            "4–2",
+            "27,950",
+            "M. Hughes , Zola , Vialli (2)"
+          ],
+          [
+            "16 February 1997",
+            "R5",
+            "Leicester City",
+            "A",
+            "2–2",
+            "19,125",
+            "Di Matteo , M. Hughes"
+          ],
+          [
+            "26 February 1997",
+            "R5 (R)",
+            "Leicester City",
+            "H",
+            "1–0 ( a.e.t. )",
+            "26,053",
+            "Leboeuf ( pen. )"
+          ],
+          [
+            "9 March 1997",
+            "QF",
+            "Portsmouth",
+            "A",
+            "4–1",
+            "15,701",
+            "Wise (2), Zola , M. Hughes"
+          ],
+          [
+            "13 April 1997",
+            "SF",
+            "Wimbledon",
+            "N",
+            "3–0",
+            "32,674",
+            "M. Hughes (2), Zola"
+          ],
+          [
+            "17 May 1997",
+            "F",
+            "Middlesbrough",
+            "N",
+            "2–0",
+            "79,160",
+            "Di Matteo , Newton"
+          ]
+        ],
+        "caption": "FA Cup",
+        "headers": [
+          "Date",
+          "Round",
+          "Opponent",
+          "Venue",
+          "Result",
+          "Attendance",
+          "Scorers"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-17589865-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "A",
+              "value": "A",
+              "start": 60,
+              "end": 61
+            },
+            {
+              "surface": "Di Matteo, M. Hughes",
+              "value": "Di Matteo , M. Hughes",
+              "start": 67,
+              "end": 87
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "318d85a6599399004ce4c355f35432ece5e61e8df4a36e553ae8af80e45da3ee",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4931,
+              "completion_tokens": 35,
+              "total_tokens": 4966,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "A",
+              "value": "A",
+              "start": 60,
+              "end": 61,
+              "clause": "What is the number of people in attendance when venue shows A,"
+            },
+            {
+              "surface": "Di Matteo, M. Hughes",
+              "value": "Di Matteo , M. Hughes",
+              "start": 67,
+              "end": 87,
+              "clause": "and Di Matteo, M. Hughes were the scorers?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "A",
+              "value": "A",
+              "start": 60,
+              "end": 61,
+              "clause": "What is the number of people in attendance when venue shows A,"
+            },
+            {
+              "surface": "Di Matteo, M. Hughes",
+              "value": "Di Matteo , M. Hughes",
+              "start": 67,
+              "end": 87,
+              "clause": "and Di Matteo, M. Hughes were the scorers?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "A",
+              "value": "A",
+              "start": 60,
+              "end": 61,
+              "clause": "What is the number of people in attendance when venue shows A,",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says the venue shows A, matching the Venue column."
+            },
+            {
+              "surface": "Di Matteo, M. Hughes",
+              "value": "Di Matteo , M. Hughes",
+              "start": 67,
+              "end": 87,
+              "clause": "and Di Matteo, M. Hughes were the scorers?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "The question explicitly identifies Di Matteo and M. Hughes as the scorers, matching the Scorers column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "3bf626bc1aa34d8f4aef403cfad67f4d605814ab05c37cfd38575908889b1cd0",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5007,
+              "completion_tokens": 61,
+              "total_tokens": 5068,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "A",
+              "value": "A",
+              "start": 60,
+              "end": 61,
+              "clause": "What is the number of people in attendance when venue shows A,",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says the venue shows A, matching the Venue column.",
+              "operator": "="
+            },
+            {
+              "surface": "Di Matteo, M. Hughes",
+              "value": "Di Matteo , M. Hughes",
+              "start": 67,
+              "end": 87,
+              "clause": "and Di Matteo, M. Hughes were the scorers?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "The question explicitly identifies Di Matteo and M. Hughes as the scorers, matching the Scorers column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "af6c530d502adff52a75bbc3aeddaf0006c5e4bece943899bed80e234c0b5346",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5103,
+              "completion_tokens": 11,
+              "total_tokens": 5114,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "A",
+              "value": "A",
+              "start": 60,
+              "end": 61,
+              "clause": "What is the number of people in attendance when venue shows A,",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says the venue shows A, matching the Venue column.",
+              "operator": "="
+            },
+            {
+              "surface": "Di Matteo, M. Hughes",
+              "value": "Di Matteo , M. Hughes",
+              "start": 67,
+              "end": 87,
+              "clause": "and Di Matteo, M. Hughes were the scorers?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "The question explicitly identifies Di Matteo and M. Hughes as the scorers, matching the Scorers column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "beb2c801880bd5ba7e6fedf803e79f3a9e4f8fde9608e9815dc556e5ad997c6b",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5057,
+              "completion_tokens": 17,
+              "total_tokens": 5074,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "A",
+              "value": "A",
+              "start": 60,
+              "end": 61,
+              "clause": "What is the number of people in attendance when venue shows A,",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says the venue shows A, matching the Venue column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Di Matteo, M. Hughes",
+              "value": "Di Matteo , M. Hughes",
+              "start": 67,
+              "end": 87,
+              "clause": "and Di Matteo, M. Hughes were the scorers?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "The question explicitly identifies Di Matteo and M. Hughes as the scorers, matching the Scorers column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "A",
+              "value": "A",
+              "start": 60,
+              "end": 61,
+              "clause": "What is the number of people in attendance when venue shows A,",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says the venue shows A, matching the Venue column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Di Matteo, M. Hughes",
+              "value": "Di Matteo , M. Hughes",
+              "start": 67,
+              "end": 87,
+              "clause": "and Di Matteo, M. Hughes were the scorers?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "The question explicitly identifies Di Matteo and M. Hughes as the scorers, matching the Scorers column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "A",
+              "value": "A",
+              "start": 60,
+              "end": 61,
+              "clause": "What is the number of people in attendance when venue shows A,",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says the venue shows A, matching the Venue column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Di Matteo, M. Hughes",
+              "value": "Di Matteo , M. Hughes",
+              "start": 67,
+              "end": 87,
+              "clause": "and Di Matteo, M. Hughes were the scorers?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "The question explicitly identifies Di Matteo and M. Hughes as the scorers, matching the Scorers column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              0,
+              "A"
+            ],
+            [
+              6,
+              0,
+              "Di Matteo , M. Hughes"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "A",
+          "value": "A",
+          "start": 60,
+          "end": 61
+        },
+        {
+          "surface": "Di Matteo, M. Hughes",
+          "value": "Di Matteo , M. Hughes",
+          "start": 67,
+          "end": 87
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "A",
+          "value": "A",
+          "start": 60,
+          "end": 61,
+          "clause": "What is the number of people in attendance when venue shows A,",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The question explicitly says the venue shows A, matching the Venue column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "Di Matteo, M. Hughes",
+          "value": "Di Matteo , M. Hughes",
+          "start": 67,
+          "end": 87,
+          "clause": "and Di Matteo, M. Hughes were the scorers?",
+          "columnIndex": 6,
+          "columnCandidates": [
+            6
+          ],
+          "columnMatchReason": "The question explicitly identifies Di Matteo and M. Hughes as the scorers, matching the Scorers column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          3,
+          0,
+          "A"
+        ],
+        [
+          6,
+          0,
+          "Di Matteo , M. Hughes"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 13172
+}

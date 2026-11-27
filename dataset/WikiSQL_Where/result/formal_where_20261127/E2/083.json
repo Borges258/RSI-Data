@@ -1,0 +1,418 @@
+{
+  "arm": "E2",
+  "position": 83,
+  "example_id": "test:5312:2-15211468-2",
+  "original_index": 5312,
+  "table_id": "2-15211468-2",
+  "question": "What is the broadcast date for the episode titled, \"From Hong Kong to Ulaanbaatar\"?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        1,
+        0,
+        "\"from hong kong to ulaanbaatar\""
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "\"From Hong Kong to Ulaanbaatar\""
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "\"From Hong Kong to Ulaanbaatar\""
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "From Hong Kong to Ulaanbaatar",
+        "value": "\"From Hong Kong to Ulaanbaatar\"",
+        "start": 52,
+        "end": 81,
+        "clause": "\"From Hong Kong to Ulaanbaatar\"?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The question identifies an episode by its title, matching the Episode Title header and row evidence.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "From Hong Kong to Ulaanbaatar",
+        "value": "From Hong Kong to Ulaanbaatar",
+        "start": 52,
+        "end": 81
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the broadcast date for the episode titled, \"From Hong Kong to Ulaanbaatar\"?",
+      "table": {
+        "header": [
+          "Episode No.",
+          "Episode Title",
+          "UK Broadcast Date",
+          "Presenter",
+          "Countries Visited"
+        ],
+        "page_title": "Great Railway Journeys",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 15211468,
+        "id": "2-15211468-2",
+        "section_title": "Series 2:   (1994)",
+        "rows": [
+          [
+            "#2.1",
+            "\"From Hong Kong to Ulaanbaatar\"",
+            "1994-01-13",
+            "Clive Anderson",
+            "Hong Kong , China, Mongolia"
+          ],
+          [
+            "#2.2",
+            "\"Cape Town to the Lost City\"",
+            "1994-01-20",
+            "Rian Malan",
+            "South Africa"
+          ],
+          [
+            "#2.3",
+            "\"St. Petersburg to Tashkent\"",
+            "1994-01-27",
+            "Natalia Makarova",
+            "Russia , Uzbekistan"
+          ],
+          [
+            "#2.4",
+            "\"Derry to Kerry\"",
+            "1994-02-03",
+            "Michael Palin",
+            "Northern Ireland , Republic of Ireland"
+          ],
+          [
+            "#2.5",
+            "\"Santos to Santa Cruz\"",
+            "1994-02-10",
+            "Lisa St Aubin de Terán",
+            "Brazil , Bolivia"
+          ],
+          [
+            "#2.6",
+            "\"Karachi to The Khyber Pass\"",
+            "1994-02-17",
+            "Mark Tully",
+            "Pakistan"
+          ]
+        ],
+        "caption": "Series 2:   (1994)",
+        "headers": [
+          "Episode No.",
+          "Episode Title",
+          "UK Broadcast Date",
+          "Presenter",
+          "Countries Visited"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-15211468-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "From Hong Kong to Ulaanbaatar",
+              "value": "From Hong Kong to Ulaanbaatar",
+              "start": 52,
+              "end": 81
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "11f597f7648634d2d217edf94c55b6ae64fe6e12299e8551ebc8cf0310993703",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4887,
+              "completion_tokens": 31,
+              "total_tokens": 4918,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "From Hong Kong to Ulaanbaatar",
+              "value": "From Hong Kong to Ulaanbaatar",
+              "start": 52,
+              "end": 81,
+              "clause": "\"From Hong Kong to Ulaanbaatar\"?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "From Hong Kong to Ulaanbaatar",
+              "value": "From Hong Kong to Ulaanbaatar",
+              "start": 52,
+              "end": 81,
+              "clause": "\"From Hong Kong to Ulaanbaatar\"?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "From Hong Kong to Ulaanbaatar",
+              "value": "From Hong Kong to Ulaanbaatar",
+              "start": 52,
+              "end": 81,
+              "clause": "\"From Hong Kong to Ulaanbaatar\"?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question identifies an episode by its title, matching the Episode Title header and row evidence."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "3f4e0502462957215a98fddffb065f1ed8665117ea93ecc07462c2169f7eb8d1",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4933,
+              "completion_tokens": 39,
+              "total_tokens": 4972,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "From Hong Kong to Ulaanbaatar",
+              "value": "From Hong Kong to Ulaanbaatar",
+              "start": 52,
+              "end": 81,
+              "clause": "\"From Hong Kong to Ulaanbaatar\"?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question identifies an episode by its title, matching the Episode Title header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "439e596b175f7c17827b76124fd6da6bdf097f8f40cbb7e419b2b5db4581a766",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4996,
+              "completion_tokens": 9,
+              "total_tokens": 5005,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "From Hong Kong to Ulaanbaatar",
+              "value": "\"From Hong Kong to Ulaanbaatar\"",
+              "start": 52,
+              "end": 81,
+              "clause": "\"From Hong Kong to Ulaanbaatar\"?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question identifies an episode by its title, matching the Episode Title header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e57dcbeaa97857fc148b711d9a206cdb8af8d98b569547919db4bb8d20c5b910",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4947,
+              "completion_tokens": 19,
+              "total_tokens": 4966,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "From Hong Kong to Ulaanbaatar",
+              "value": "\"From Hong Kong to Ulaanbaatar\"",
+              "start": 52,
+              "end": 81,
+              "clause": "\"From Hong Kong to Ulaanbaatar\"?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question identifies an episode by its title, matching the Episode Title header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "From Hong Kong to Ulaanbaatar",
+              "value": "\"From Hong Kong to Ulaanbaatar\"",
+              "start": 52,
+              "end": 81,
+              "clause": "\"From Hong Kong to Ulaanbaatar\"?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question identifies an episode by its title, matching the Episode Title header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "From Hong Kong to Ulaanbaatar",
+              "value": "\"From Hong Kong to Ulaanbaatar\"",
+              "start": 52,
+              "end": 81,
+              "clause": "\"From Hong Kong to Ulaanbaatar\"?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question identifies an episode by its title, matching the Episode Title header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              "\"From Hong Kong to Ulaanbaatar\""
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "From Hong Kong to Ulaanbaatar",
+          "value": "From Hong Kong to Ulaanbaatar",
+          "start": 52,
+          "end": 81
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "From Hong Kong to Ulaanbaatar",
+          "value": "\"From Hong Kong to Ulaanbaatar\"",
+          "start": 52,
+          "end": 81,
+          "clause": "\"From Hong Kong to Ulaanbaatar\"?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The question identifies an episode by its title, matching the Episode Title header and row evidence.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          1,
+          0,
+          "\"From Hong Kong to Ulaanbaatar\""
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8203
+}

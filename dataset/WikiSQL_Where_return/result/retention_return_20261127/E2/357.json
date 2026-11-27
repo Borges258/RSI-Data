@@ -1,0 +1,418 @@
+{
+  "arm": "E2",
+  "position": 357,
+  "example_id": "test:13972:2-18662695-12",
+  "original_index": 13972,
+  "table_id": "2-18662695-12",
+  "question": "What country has a time of 8:03.61?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        3,
+        0,
+        "8:03.61"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      3,
+      0,
+      "8:03.61"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        0,
+        "8:03.61"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "8:03.61",
+        "value": "8:03.61",
+        "start": 27,
+        "end": 34,
+        "clause": "What country has a time of 8:03.61?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The question explicitly identifies 8:03.61 as a time, matching the Time header and row format.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "8:03.61",
+        "value": "8:03.61",
+        "start": 27,
+        "end": 34
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What country has a time of 8:03.61?",
+      "table": {
+        "header": [
+          "Rank",
+          "Athlete",
+          "Country",
+          "Time",
+          "Notes"
+        ],
+        "page_title": "Rowing at the 2008 Summer Olympics – Women's single sculls",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 18662695,
+        "id": "2-18662695-12",
+        "section_title": "Semifinal C/D 1",
+        "rows": [
+          [
+            "1",
+            "Mayra González",
+            "Cuba",
+            "8:02.10",
+            "FC"
+          ],
+          [
+            "2",
+            "Nuria Domínguez",
+            "Spain",
+            "8:03.61",
+            "FC"
+          ],
+          [
+            "3",
+            "Gabriela Best",
+            "Argentina",
+            "8:09.61",
+            "FC"
+          ],
+          [
+            "4",
+            "Fabiana Beltrame",
+            "Brazil",
+            "8:13.01",
+            "FD"
+          ],
+          [
+            "5",
+            "Shin Yeong-Eun",
+            "South Korea",
+            "8:23.62",
+            "FD"
+          ],
+          [
+            "6",
+            "Elana Hill",
+            "Zimbabwe",
+            "8:34.27",
+            "FE"
+          ]
+        ],
+        "caption": "Semifinal C/D 1",
+        "headers": [
+          "Rank",
+          "Athlete",
+          "Country",
+          "Time",
+          "Notes"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-18662695-12",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "8:03.61",
+              "value": "8:03.61",
+              "start": 27,
+              "end": 34
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d6a08a5df1c3385a2a862864c396e358ce5324223c85094dadec560d955ff0cd",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4797,
+              "completion_tokens": 25,
+              "total_tokens": 4822,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "8:03.61",
+              "value": "8:03.61",
+              "start": 27,
+              "end": 34,
+              "clause": "What country has a time of 8:03.61?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "8:03.61",
+              "value": "8:03.61",
+              "start": 27,
+              "end": 34,
+              "clause": "What country has a time of 8:03.61?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "8:03.61",
+              "value": "8:03.61",
+              "start": 27,
+              "end": 34,
+              "clause": "What country has a time of 8:03.61?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies 8:03.61 as a time, matching the Time header and row format."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "05f54b0b15e74b59fe98638c45d54e871bc8e738921f5d9633ee6bd57f21f6a2",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4839,
+              "completion_tokens": 43,
+              "total_tokens": 4882,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "8:03.61",
+              "value": "8:03.61",
+              "start": 27,
+              "end": 34,
+              "clause": "What country has a time of 8:03.61?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies 8:03.61 as a time, matching the Time header and row format.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a33c269d5f1cf18f4d0e6b0dc73c81fdb097e574598cc8f632bcdee7423e8e3f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4906,
+              "completion_tokens": 9,
+              "total_tokens": 4915,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "8:03.61",
+              "value": "8:03.61",
+              "start": 27,
+              "end": 34,
+              "clause": "What country has a time of 8:03.61?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies 8:03.61 as a time, matching the Time header and row format.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "46c859020c3066fb8444f45ae7358c913d72f661a1a3207badbdf6c7998d356e",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4857,
+              "completion_tokens": 14,
+              "total_tokens": 4871,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "8:03.61",
+              "value": "8:03.61",
+              "start": 27,
+              "end": 34,
+              "clause": "What country has a time of 8:03.61?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies 8:03.61 as a time, matching the Time header and row format.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "8:03.61",
+              "value": "8:03.61",
+              "start": 27,
+              "end": 34,
+              "clause": "What country has a time of 8:03.61?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies 8:03.61 as a time, matching the Time header and row format.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "8:03.61",
+              "value": "8:03.61",
+              "start": 27,
+              "end": 34,
+              "clause": "What country has a time of 8:03.61?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies 8:03.61 as a time, matching the Time header and row format.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              0,
+              "8:03.61"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "8:03.61",
+          "value": "8:03.61",
+          "start": 27,
+          "end": 34
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "8:03.61",
+          "value": "8:03.61",
+          "start": 27,
+          "end": 34,
+          "clause": "What country has a time of 8:03.61?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The question explicitly identifies 8:03.61 as a time, matching the Time header and row format.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          3,
+          0,
+          "8:03.61"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8312
+}

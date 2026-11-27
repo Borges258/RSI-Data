@@ -1,0 +1,740 @@
+{
+  "arm": "E2",
+  "position": 404,
+  "example_id": "test:9713:2-17419587-2",
+  "original_index": 9713,
+  "table_id": "2-17419587-2",
+  "question": "What was the total number of aircrafts in 2011 for sydney airport that was ranked number 1?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        1,
+        0,
+        "sydney airport"
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "agg": 3
+  },
+  "prediction_conds": [],
+  "status": "GROUNDING_FAILED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "GROUNDING_FAILED",
+    "valid": false,
+    "errors": [
+      "condition 0: invalid column",
+      "condition 0: grounding NO_MATCH"
+    ],
+    "conditions": [
+      {
+        "surface": "2011",
+        "value": "2011",
+        "start": 42,
+        "end": 46,
+        "clause": "What was the total number of aircrafts in 2011 for sydney airport that was ranked number 1?",
+        "columnMatchStatus": "UNRESOLVED",
+        "columnCandidates": [],
+        "columnMatchReason": "2011 names the requested measure column, not a WHERE field; no row cell represents year 2011",
+        "operator": "=",
+        "grounded": false,
+        "groundingStatus": "NO_MATCH"
+      },
+      {
+        "surface": "sydney airport",
+        "value": "Sydney Airport",
+        "start": 51,
+        "end": 65,
+        "clause": "What was the total number of aircrafts in 2011 for sydney airport that was ranked number 1?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "Sydney Airport is an airport name and matches the Airport field",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "1",
+        "value": 1,
+        "start": 89,
+        "end": 90,
+        "clause": "What was the total number of aircrafts in 2011 for sydney airport that was ranked number 1?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "ranked number 1 explicitly refers to the Rank field",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "stage": "WHERE_CONDITION_VALIDATE",
+    "originalConditions": [
+      {
+        "surface": "2011",
+        "value": "2011",
+        "start": 42,
+        "end": 46
+      },
+      {
+        "surface": "sydney airport",
+        "value": "Sydney Airport",
+        "start": 51,
+        "end": 65
+      },
+      {
+        "surface": "1",
+        "value": "1",
+        "start": 89,
+        "end": 90
+      }
+    ],
+    "halt": true,
+    "completed": false,
+    "conds": [],
+    "warnings": [],
+    "request": {
+      "question": "What was the total number of aircrafts in 2011 for sydney airport that was ranked number 1?",
+      "table": {
+        "header": [
+          "Rank",
+          "Airport",
+          "Location",
+          "2011",
+          "2010",
+          "2009"
+        ],
+        "page_title": "List of the busiest airports in Australia",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "real",
+          "real",
+          "real"
+        ],
+        "page_id": 17419587,
+        "id": "2-17419587-2",
+        "section_title": "Top 12 by aircraft movements in 2009-2011 calendar years",
+        "rows": [
+          [
+            "1",
+            "Sydney Airport",
+            "Sydney , New South Wales",
+            "310,918",
+            "304,938",
+            "287,480"
+          ],
+          [
+            "2",
+            "Moorabbin Airport",
+            "Melbourne , Victoria",
+            "274,082",
+            "252,218",
+            "310,550"
+          ],
+          [
+            "3",
+            "Jandakot Airport",
+            "Perth , Western Australia",
+            "265,802",
+            "295,516",
+            "358,750"
+          ],
+          [
+            "4",
+            "Bankstown Airport",
+            "Sydney , New South Wales",
+            "243,126",
+            "275,978",
+            "347,266"
+          ],
+          [
+            "5",
+            "Parafield Airport",
+            "Adelaide , South Australia",
+            "206,952",
+            "228,290",
+            "243,522"
+          ],
+          [
+            "6",
+            "Melbourne Airport",
+            "Melbourne , Victoria",
+            "206,284",
+            "205,202",
+            "191,864"
+          ],
+          [
+            "7",
+            "Brisbane Airport",
+            "Brisbane , Queensland",
+            "198,996",
+            "187,956",
+            "179,242"
+          ],
+          [
+            "8",
+            "Perth Airport",
+            "Perth , Western Australia",
+            "136,504",
+            "124,640",
+            "118,704"
+          ],
+          [
+            "9",
+            "Archerfield Airport",
+            "Brisbane , Queensland",
+            "119,312",
+            "118,354",
+            "132,094"
+          ],
+          [
+            "10",
+            "Camden Airport",
+            "Sydney , New South Wales",
+            "104,510",
+            "84,132",
+            "36,766"
+          ],
+          [
+            "11",
+            "Adelaide Airport",
+            "Adelaide , South Australia",
+            "101,478",
+            "101,560",
+            "99,950"
+          ],
+          [
+            "12",
+            "Gold Coast Airport",
+            "Gold Coast , Queensland",
+            "91,204",
+            "107,030",
+            "133,290"
+          ]
+        ],
+        "caption": "Top 12 by aircraft movements in 2009-2011 calendar years",
+        "headers": [
+          "Rank",
+          "Airport",
+          "Location",
+          "2011",
+          "2010",
+          "2009"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-17419587-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 9,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 3,
+          "conditions": [
+            {
+              "surface": "2011",
+              "value": "2011",
+              "start": 42,
+              "end": 46
+            },
+            {
+              "surface": "sydney airport",
+              "value": "Sydney Airport",
+              "start": 51,
+              "end": 65
+            },
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 89,
+              "end": 90
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "58545841eda9b92f2652af3ee9e1caafb388913f747748670e952583e7fc9da9",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5012,
+              "completion_tokens": 38,
+              "total_tokens": 5050,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2011",
+              "value": "2011",
+              "start": 42,
+              "end": 46,
+              "clause": "What was the total number of aircrafts in 2011 for sydney airport that was ranked number 1?"
+            },
+            {
+              "surface": "sydney airport",
+              "value": "Sydney Airport",
+              "start": 51,
+              "end": 65,
+              "clause": "What was the total number of aircrafts in 2011 for sydney airport that was ranked number 1?"
+            },
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 89,
+              "end": 90,
+              "clause": "What was the total number of aircrafts in 2011 for sydney airport that was ranked number 1?"
+            }
+          ],
+          "count": 3
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "2011",
+              "value": "2011",
+              "start": 42,
+              "end": 46,
+              "clause": "What was the total number of aircrafts in 2011 for sydney airport that was ranked number 1?"
+            },
+            {
+              "surface": "sydney airport",
+              "value": "Sydney Airport",
+              "start": 51,
+              "end": 65,
+              "clause": "What was the total number of aircrafts in 2011 for sydney airport that was ranked number 1?"
+            },
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 89,
+              "end": 90,
+              "clause": "What was the total number of aircrafts in 2011 for sydney airport that was ranked number 1?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2011",
+              "value": "2011",
+              "start": 42,
+              "end": 46,
+              "clause": "What was the total number of aircrafts in 2011 for sydney airport that was ranked number 1?",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [],
+              "columnMatchReason": "2011 names the requested measure column, not a WHERE field; no row cell represents year 2011"
+            },
+            {
+              "surface": "sydney airport",
+              "value": "Sydney Airport",
+              "start": 51,
+              "end": 65,
+              "clause": "What was the total number of aircrafts in 2011 for sydney airport that was ranked number 1?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Sydney Airport is an airport name and matches the Airport field"
+            },
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 89,
+              "end": 90,
+              "clause": "What was the total number of aircrafts in 2011 for sydney airport that was ranked number 1?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "ranked number 1 explicitly refers to the Rank field"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d4843e1e5ed9c2cdfac784503df95a67609df459bd149c199385a17c7b27f7b6",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5147,
+              "completion_tokens": 73,
+              "total_tokens": 5220,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2011",
+              "value": "2011",
+              "start": 42,
+              "end": 46,
+              "clause": "What was the total number of aircrafts in 2011 for sydney airport that was ranked number 1?",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [],
+              "columnMatchReason": "2011 names the requested measure column, not a WHERE field; no row cell represents year 2011",
+              "operator": "="
+            },
+            {
+              "surface": "sydney airport",
+              "value": "Sydney Airport",
+              "start": 51,
+              "end": 65,
+              "clause": "What was the total number of aircrafts in 2011 for sydney airport that was ranked number 1?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Sydney Airport is an airport name and matches the Airport field",
+              "operator": "="
+            },
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 89,
+              "end": 90,
+              "clause": "What was the total number of aircrafts in 2011 for sydney airport that was ranked number 1?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "ranked number 1 explicitly refers to the Rank field",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "bf14b7055bd24c4ee19d250456b4a65f83f7d934eaee07aa1511158d8cc6e1f6",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5268,
+              "completion_tokens": 63,
+              "total_tokens": 5331,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 48
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2011",
+              "value": "2011",
+              "start": 42,
+              "end": 46,
+              "clause": "What was the total number of aircrafts in 2011 for sydney airport that was ranked number 1?",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [],
+              "columnMatchReason": "2011 names the requested measure column, not a WHERE field; no row cell represents year 2011",
+              "operator": "="
+            },
+            {
+              "surface": "sydney airport",
+              "value": "Sydney Airport",
+              "start": 51,
+              "end": 65,
+              "clause": "What was the total number of aircrafts in 2011 for sydney airport that was ranked number 1?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Sydney Airport is an airport name and matches the Airport field",
+              "operator": "="
+            },
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 89,
+              "end": 90,
+              "clause": "What was the total number of aircrafts in 2011 for sydney airport that was ranked number 1?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "ranked number 1 explicitly refers to the Rank field",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f838cc2efd8171298792a4cd9fcbcfedc49c30caea142d44cc93a39024a3abb5",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5228,
+              "completion_tokens": 16,
+              "total_tokens": 5244,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2011",
+              "value": "2011",
+              "start": 42,
+              "end": 46,
+              "clause": "What was the total number of aircrafts in 2011 for sydney airport that was ranked number 1?",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [],
+              "columnMatchReason": "2011 names the requested measure column, not a WHERE field; no row cell represents year 2011",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH"
+            },
+            {
+              "surface": "sydney airport",
+              "value": "Sydney Airport",
+              "start": 51,
+              "end": 65,
+              "clause": "What was the total number of aircrafts in 2011 for sydney airport that was ranked number 1?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Sydney Airport is an airport name and matches the Airport field",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 89,
+              "end": 90,
+              "clause": "What was the total number of aircrafts in 2011 for sydney airport that was ranked number 1?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "ranked number 1 explicitly refers to the Rank field",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2011",
+              "value": "2011",
+              "start": 42,
+              "end": 46,
+              "clause": "What was the total number of aircrafts in 2011 for sydney airport that was ranked number 1?",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [],
+              "columnMatchReason": "2011 names the requested measure column, not a WHERE field; no row cell represents year 2011",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH"
+            },
+            {
+              "surface": "sydney airport",
+              "value": "Sydney Airport",
+              "start": 51,
+              "end": 65,
+              "clause": "What was the total number of aircrafts in 2011 for sydney airport that was ranked number 1?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Sydney Airport is an airport name and matches the Airport field",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "1",
+              "value": 1,
+              "start": 89,
+              "end": 90,
+              "clause": "What was the total number of aircrafts in 2011 for sydney airport that was ranked number 1?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "ranked number 1 explicitly refers to the Rank field",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "GROUNDING_FAILED",
+          "valid": false,
+          "errors": [
+            "condition 0: invalid column",
+            "condition 0: grounding NO_MATCH"
+          ],
+          "conditions": [
+            {
+              "surface": "2011",
+              "value": "2011",
+              "start": 42,
+              "end": 46,
+              "clause": "What was the total number of aircrafts in 2011 for sydney airport that was ranked number 1?",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [],
+              "columnMatchReason": "2011 names the requested measure column, not a WHERE field; no row cell represents year 2011",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH"
+            },
+            {
+              "surface": "sydney airport",
+              "value": "Sydney Airport",
+              "start": 51,
+              "end": 65,
+              "clause": "What was the total number of aircrafts in 2011 for sydney airport that was ranked number 1?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Sydney Airport is an airport name and matches the Airport field",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "1",
+              "value": 1,
+              "start": 89,
+              "end": 90,
+              "clause": "What was the total number of aircrafts in 2011 for sydney airport that was ranked number 1?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "ranked number 1 explicitly refers to the Rank field",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "GROUNDING_FAILED",
+        "stage": "WHERE_CONDITION_VALIDATE",
+        "halt": true,
+        "completed": false,
+        "errors": [
+          "condition 0: invalid column",
+          "condition 0: grounding NO_MATCH"
+        ],
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "2011",
+          "value": "2011",
+          "start": 42,
+          "end": 46
+        },
+        {
+          "surface": "sydney airport",
+          "value": "Sydney Airport",
+          "start": 51,
+          "end": 65
+        },
+        {
+          "surface": "1",
+          "value": "1",
+          "start": 89,
+          "end": 90
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "2011",
+          "value": "2011",
+          "start": 42,
+          "end": 46,
+          "clause": "What was the total number of aircrafts in 2011 for sydney airport that was ranked number 1?",
+          "columnMatchStatus": "UNRESOLVED",
+          "columnCandidates": [],
+          "columnMatchReason": "2011 names the requested measure column, not a WHERE field; no row cell represents year 2011",
+          "operator": "=",
+          "grounded": false,
+          "groundingStatus": "NO_MATCH"
+        },
+        {
+          "surface": "sydney airport",
+          "value": "Sydney Airport",
+          "start": 51,
+          "end": 65,
+          "clause": "What was the total number of aircrafts in 2011 for sydney airport that was ranked number 1?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "Sydney Airport is an airport name and matches the Airport field",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "1",
+          "value": 1,
+          "start": 89,
+          "end": 90,
+          "clause": "What was the total number of aircrafts in 2011 for sydney airport that was ranked number 1?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "ranked number 1 explicitly refers to the Rank field",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 3
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": false,
+  "elapsed_ms": 8625
+}

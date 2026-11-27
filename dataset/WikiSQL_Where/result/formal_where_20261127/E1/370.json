@@ -1,0 +1,108 @@
+{
+  "arm": "E1",
+  "position": 370,
+  "example_id": "test:7099:2-15430129-2",
+  "original_index": 7099,
+  "table_id": "2-15430129-2",
+  "question": "How many match values have points under 14 and 0 draws?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        2,
+        2,
+        14
+      ],
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "agg": 3
+  },
+  "prediction_conds": [
+    [
+      2,
+      2,
+      14
+    ],
+    [
+      3,
+      0,
+      0
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": "gpt-5.6-sol",
+  "usage": {
+    "prompt_tokens": 9382,
+    "completion_tokens": 57,
+    "total_tokens": 9439,
+    "prompt_tokens_details": {
+      "cached_tokens": 4224
+    }
+  },
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        2,
+        14
+      ],
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "explanation": "Points under 14 is a strict less-than condition, and 0 draws is equality on Draw; the conditions are joined by AND.",
+    "version": "wikisql-where-prior-v1",
+    "tableId": "2-15430129-2",
+    "knowledgeIds": [
+      "g-eq",
+      "g-gt",
+      "g-lt",
+      "g-inclusive",
+      "g-literal",
+      "g-threshold",
+      "g-and",
+      "g-or",
+      "g-column",
+      "g-count",
+      "g-ambiguous",
+      "t-2-15430129-2-field-0",
+      "t-2-15430129-2-field-1",
+      "t-2-15430129-2-field-2",
+      "t-2-15430129-2-field-3",
+      "t-2-15430129-2-field-4",
+      "d-implicit-eq",
+      "d-explicit-eq",
+      "d-gt",
+      "d-lt-and-gt",
+      "d-with-two",
+      "d-literal-form",
+      "p-text",
+      "p-number",
+      "p-multi",
+      "p-unsupported"
+    ],
+    "promptSha256": "d571567262ddd6bf9f3bbe309fb5d8471395f471dae7f7019df591339b3c5f9d",
+    "model": "gpt-5.6-sol",
+    "usage": {
+      "prompt_tokens": 9382,
+      "completion_tokens": 57,
+      "total_tokens": 9439,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      }
+    },
+    "latencyMs": 2327
+  },
+  "source": "where_prior_parse",
+  "safe_completed": true,
+  "elapsed_ms": 2344
+}

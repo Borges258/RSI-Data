@@ -1,0 +1,818 @@
+{
+  "arm": "E2",
+  "position": 81,
+  "example_id": "test:2902:1-23486853-3",
+  "original_index": 2902,
+  "table_id": "1-23486853-3",
+  "question": "What was the score for game 4?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        0,
+        0,
+        4
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      4
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        4
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "4",
+        "value": 4,
+        "start": 28,
+        "end": 29,
+        "clause": "What was the score for game 4?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "The question identifies the row by game number 4; the Game header and row values support this field.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "4",
+        "value": "4",
+        "start": 28,
+        "end": 29
+      }
+    ],
+    "warnings": [
+      "value model disagreed with extracted question span; original retained"
+    ],
+    "request": {
+      "question": "What was the score for game 4?",
+      "table": {
+        "header": [
+          "Game",
+          "Date",
+          "Opponent",
+          "Score",
+          "Location",
+          "Attendance",
+          "Record",
+          "Points"
+        ],
+        "page_title": "2009–10 Tampa Bay Lightning season",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text",
+          "real",
+          "text",
+          "real"
+        ],
+        "id": "1-23486853-3",
+        "section_title": "Game log",
+        "caption": "Game log",
+        "rows": [
+          [
+            1,
+            "October 3",
+            "Atlanta Thrashers",
+            "6 – 3",
+            "Philips Arena",
+            18545,
+            "0–1–0",
+            0
+          ],
+          [
+            2,
+            "October 6",
+            "Carolina Hurricanes",
+            "2 – 1 (SO)",
+            "RBC Center",
+            16186,
+            "0–1–1",
+            1
+          ],
+          [
+            3,
+            "October 8",
+            "New Jersey Devils",
+            "4 – 3 (SO)",
+            "St. Pete Times Forum",
+            17454,
+            "0–1–2",
+            2
+          ],
+          [
+            4,
+            "October 10",
+            "Carolina Hurricanes",
+            "5 – 2",
+            "St. Pete Times Forum",
+            14212,
+            "1–1–2",
+            4
+          ],
+          [
+            5,
+            "October 12",
+            "Florida Panthers",
+            "3 – 2",
+            "St. Pete Times Forum",
+            14126,
+            "2–1–2",
+            6
+          ],
+          [
+            6,
+            "October 15",
+            "Ottawa Senators",
+            "7 – 1",
+            "Scotiabank Place",
+            17732,
+            "2–2–2",
+            6
+          ],
+          [
+            7,
+            "October 17",
+            "Pittsburgh Penguins",
+            "4 – 1",
+            "Mellon Arena",
+            17132,
+            "2–3–2",
+            6
+          ],
+          [
+            8,
+            "October 22",
+            "San Jose Sharks",
+            "5 – 2",
+            "St. Pete Times Forum",
+            13343,
+            "3–3–2",
+            8
+          ],
+          [
+            9,
+            "October 24",
+            "Buffalo Sabres",
+            "3 – 2 (SO)",
+            "St. Pete Times Forum",
+            15804,
+            "3–3–3",
+            9
+          ],
+          [
+            10,
+            "October 29",
+            "Ottawa Senators",
+            "5 – 2",
+            "St. Pete Times Forum",
+            13213,
+            "4–3–3",
+            11
+          ]
+        ],
+        "name": "table_23486853_3",
+        "headers": [
+          "Game",
+          "Date",
+          "Opponent",
+          "Score",
+          "Location",
+          "Attendance",
+          "Record",
+          "Points"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-23486853-3",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "4",
+              "value": "4",
+              "start": 28,
+              "end": 29
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "274147faf7680ffa0458c36866a8714069a6ca9321bd18c9a81fc96cd4c7c67c",
+            "knowledgeIds": [],
+            "usage": {
+              "attribution": {
+                "items": {
+                  "msg_03a5bf1a31cb853a016b08fbb7099887d187f8423ef9cf73b4": {
+                    "input_tokens": 478,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 478,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_03a5bf1a31cb853a016b08fbb7099887d18eedb133f2f772fd": {
+                    "input_tokens": 64,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 64,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_03a5bf1a31cb853a016b08fbb7099887d19df84a30eaed1e9a": {
+                    "input_tokens": 86,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 86,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_03a5bf1a31cb853a016b08fbbef0b087d19a3d2f5ae4712a6d": {
+                    "input_tokens": 0,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 19,
+                    "content": [
+                      {
+                        "input_tokens": 0,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 19
+                      }
+                    ]
+                  },
+                  "rs_03a5bf1a31cb853a016b08fbbec1a487d199010be3e6dc8ae2": {
+                    "input_tokens": 2,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 50
+                  }
+                },
+                "request_fields": {
+                  "instructions": {
+                    "input_tokens": 4380,
+                    "cached_tokens": 3968,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0
+                  }
+                }
+              },
+              "prompt_tokens": 5010,
+              "completion_tokens": 69,
+              "total_tokens": 5079,
+              "prompt_tokens_details": {
+                "cache_write_tokens_details": {
+                  "ttl_30m_tokens": 0,
+                  "ttl_12h_tokens": 0
+                },
+                "cached_tokens": 3968
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 50
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "4",
+              "value": "4",
+              "start": 28,
+              "end": 29,
+              "clause": "What was the score for game 4?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "4",
+              "value": "4",
+              "start": 28,
+              "end": 29,
+              "clause": "What was the score for game 4?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "4",
+              "value": "4",
+              "start": 28,
+              "end": 29,
+              "clause": "What was the score for game 4?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question identifies the row by game number 4; the Game header and row values support this field."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "554b7d2e6716186a04f55c4fd669d1b9064b9078d7f33629f6cf76a5679e3cc4",
+            "knowledgeIds": [],
+            "usage": {
+              "attribution": {
+                "items": {
+                  "msg_0c0b6f4e0607925a016b08fbc11df087d1975d0ca177118229": {
+                    "input_tokens": 116,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 116,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0c0b6f4e0607925a016b08fbc11df087d19ef42d198f721a6f": {
+                    "input_tokens": 64,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 64,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0c0b6f4e0607925a016b08fbc11df087d1af79620bc82f56af": {
+                    "input_tokens": 478,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 478,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0c0b6f4e0607925a016b08fbcfc7ec87d1ad94d6e873249b69": {
+                    "input_tokens": 0,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 44,
+                    "content": [
+                      {
+                        "input_tokens": 0,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 44
+                      }
+                    ]
+                  },
+                  "rs_0c0b6f4e0607925a016b08fbcf9aa487d197d519723fe86387": {
+                    "input_tokens": 2,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 60
+                  }
+                },
+                "request_fields": {
+                  "instructions": {
+                    "input_tokens": 4380,
+                    "cached_tokens": 3968,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0
+                  }
+                }
+              },
+              "prompt_tokens": 5040,
+              "completion_tokens": 104,
+              "total_tokens": 5144,
+              "prompt_tokens_details": {
+                "cache_write_tokens_details": {
+                  "ttl_30m_tokens": 0,
+                  "ttl_12h_tokens": 0
+                },
+                "cached_tokens": 3968
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 60
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "4",
+              "value": "4",
+              "start": 28,
+              "end": 29,
+              "clause": "What was the score for game 4?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question identifies the row by game number 4; the Game header and row values support this field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "44e78662aa52a03bd2477fb496c5bee3df08baa042cb59123e07481dd849fc2e",
+            "knowledgeIds": [],
+            "usage": {
+              "attribution": {
+                "items": {
+                  "msg_0b6e9cc4e034f325016b08fbe9135887d19e0daf33c7d05ee5": {
+                    "input_tokens": 182,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 182,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0b6e9cc4e034f325016b08fbe9135887d1a2506a2aec129827": {
+                    "input_tokens": 478,
+                    "cached_tokens": 398,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 478,
+                        "cached_tokens": 398,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0b6e9cc4e034f325016b08fbe9135887d1a49f3e9d56a8bb12": {
+                    "input_tokens": 64,
+                    "cached_tokens": 61,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 64,
+                        "cached_tokens": 61,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0b6e9cc4e034f325016b08fbf8da0c87d1ae9b8a001ffcafac": {
+                    "input_tokens": 0,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 11,
+                    "content": [
+                      {
+                        "input_tokens": 0,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 11
+                      }
+                    ]
+                  },
+                  "rs_0b6e9cc4e034f325016b08fbf8c3cc87d18640b5267638e080": {
+                    "input_tokens": 2,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 12
+                  }
+                },
+                "request_fields": {
+                  "instructions": {
+                    "input_tokens": 4380,
+                    "cached_tokens": 4149,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0
+                  }
+                }
+              },
+              "prompt_tokens": 5106,
+              "completion_tokens": 23,
+              "total_tokens": 5129,
+              "prompt_tokens_details": {
+                "cache_write_tokens_details": {
+                  "ttl_30m_tokens": 0,
+                  "ttl_12h_tokens": 0
+                },
+                "cached_tokens": 4608
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 12
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "warnings": [
+            "value model disagreed with extracted question span; original retained"
+          ],
+          "conditions": [
+            {
+              "surface": "4",
+              "value": "4",
+              "start": 28,
+              "end": 29,
+              "clause": "What was the score for game 4?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question identifies the row by game number 4; the Game header and row values support this field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "2a1ededf5ef50d79fcb1bd3057490d0c9f1b1d5a0b78a2b947787c9bfa288287",
+            "knowledgeIds": [],
+            "usage": {
+              "attribution": {
+                "items": {
+                  "msg_084cd73a7140a2e0016b08fbfacefc87d19444949155e1e32d": {
+                    "input_tokens": 64,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 64,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_084cd73a7140a2e0016b08fbfacefc87d1aefc8ac83524035b": {
+                    "input_tokens": 133,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 133,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_084cd73a7140a2e0016b08fbfacefc87d1bfd4c54fd856ad24": {
+                    "input_tokens": 478,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 478,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_084cd73a7140a2e0016b08fc06ee2887d1a5eebe7adb3896e4": {
+                    "input_tokens": 0,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 15,
+                    "content": [
+                      {
+                        "input_tokens": 0,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 15
+                      }
+                    ]
+                  },
+                  "rs_084cd73a7140a2e0016b08fc06a9a887d19f918e45e0671359": {
+                    "input_tokens": 2,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 23
+                  }
+                },
+                "request_fields": {
+                  "instructions": {
+                    "input_tokens": 4380,
+                    "cached_tokens": 3968,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0
+                  }
+                }
+              },
+              "prompt_tokens": 5057,
+              "completion_tokens": 38,
+              "total_tokens": 5095,
+              "prompt_tokens_details": {
+                "cache_write_tokens_details": {
+                  "ttl_30m_tokens": 0,
+                  "ttl_12h_tokens": 0
+                },
+                "cached_tokens": 3968
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 23
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "4",
+              "value": "4",
+              "start": 28,
+              "end": 29,
+              "clause": "What was the score for game 4?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question identifies the row by game number 4; the Game header and row values support this field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "4",
+              "value": 4,
+              "start": 28,
+              "end": 29,
+              "clause": "What was the score for game 4?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question identifies the row by game number 4; the Game header and row values support this field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "4",
+              "value": 4,
+              "start": 28,
+              "end": 29,
+              "clause": "What was the score for game 4?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question identifies the row by game number 4; the Game header and row values support this field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              4
+            ]
+          ]
+        }
+      },
+      "warnings": [
+        "value model disagreed with extracted question span; original retained"
+      ],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": [
+          "value model disagreed with extracted question span; original retained"
+        ]
+      },
+      "originalConditions": [
+        {
+          "surface": "4",
+          "value": "4",
+          "start": 28,
+          "end": 29
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "4",
+          "value": 4,
+          "start": 28,
+          "end": 29,
+          "clause": "What was the score for game 4?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "The question identifies the row by game number 4; the Game header and row values support this field.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          0,
+          0,
+          4
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 82109
+}

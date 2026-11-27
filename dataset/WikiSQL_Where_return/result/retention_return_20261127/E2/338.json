@@ -1,0 +1,591 @@
+{
+  "arm": "E2",
+  "position": 338,
+  "example_id": "test:13238:2-18336411-5",
+  "original_index": 13238,
+  "table_id": "2-18336411-5",
+  "question": "Who was the visitor for Chicago Black Hawks on May 6?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        3,
+        0,
+        "chicago black hawks"
+      ],
+      [
+        0,
+        0,
+        "may 6"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      3,
+      0,
+      "Chicago Black Hawks"
+    ],
+    [
+      0,
+      0,
+      "May 6"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        0,
+        "Chicago Black Hawks"
+      ],
+      [
+        0,
+        0,
+        "May 6"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Chicago Black Hawks",
+        "value": "Chicago Black Hawks",
+        "start": 24,
+        "end": 43,
+        "clause": "Who was the visitor for Chicago Black Hawks on May 6?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The question asks for the visitor for Chicago Black Hawks, so the team is identified as the Home; the May 6 row confirms Chicago Black Hawks in Home.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "May 6",
+        "value": "May 6",
+        "start": 47,
+        "end": 52,
+        "clause": "Who was the visitor for Chicago Black Hawks on May 6?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "May 6 is a date and appears in the Date column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Chicago Black Hawks",
+        "value": "Chicago Black Hawks",
+        "start": 24,
+        "end": 43
+      },
+      {
+        "surface": "May 6",
+        "value": "May 6",
+        "start": 47,
+        "end": 52
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Who was the visitor for Chicago Black Hawks on May 6?",
+      "table": {
+        "header": [
+          "Date",
+          "Visitor",
+          "Score",
+          "Home",
+          "Record"
+        ],
+        "page_title": "1972–73 Chicago Black Hawks season",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 18336411,
+        "id": "2-18336411-5",
+        "section_title": "Montreal Canadiens 4, Chicago Black Hawks 2",
+        "rows": [
+          [
+            "April 29",
+            "Chicago Black Hawks",
+            "3–8",
+            "Montreal Canadiens",
+            "0-1"
+          ],
+          [
+            "May 1",
+            "Chicago Black Hawks",
+            "1–4",
+            "Montreal Canadiens",
+            "0-2"
+          ],
+          [
+            "May 3",
+            "Montreal Canadiens",
+            "4–7",
+            "Chicago Black Hawks",
+            "1-2"
+          ],
+          [
+            "May 6",
+            "Montreal Canadiens",
+            "4–0",
+            "Chicago Black Hawks",
+            "1-3"
+          ],
+          [
+            "May 8",
+            "Chicago Black Hawks",
+            "8–7",
+            "Montreal Canadiens",
+            "2-3"
+          ],
+          [
+            "May 10",
+            "Montreal Canadiens",
+            "6–4",
+            "Chicago Black Hawks",
+            "2-4"
+          ]
+        ],
+        "caption": "Montreal Canadiens 4, Chicago Black Hawks 2",
+        "headers": [
+          "Date",
+          "Visitor",
+          "Score",
+          "Home",
+          "Record"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-18336411-5",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "Chicago Black Hawks",
+              "value": "Chicago Black Hawks",
+              "start": 24,
+              "end": 43
+            },
+            {
+              "surface": "May 6",
+              "value": "May 6",
+              "start": 47,
+              "end": 52
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "6b36c91d7191cf715b10708bc266e0a07ec0cc9d66cf3eeb710f18f16844307d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4810,
+              "completion_tokens": 91,
+              "total_tokens": 4901,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 56
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Chicago Black Hawks",
+              "value": "Chicago Black Hawks",
+              "start": 24,
+              "end": 43,
+              "clause": "Who was the visitor for Chicago Black Hawks on May 6?"
+            },
+            {
+              "surface": "May 6",
+              "value": "May 6",
+              "start": 47,
+              "end": 52,
+              "clause": "Who was the visitor for Chicago Black Hawks on May 6?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Chicago Black Hawks",
+              "value": "Chicago Black Hawks",
+              "start": 24,
+              "end": 43,
+              "clause": "Who was the visitor for Chicago Black Hawks on May 6?"
+            },
+            {
+              "surface": "May 6",
+              "value": "May 6",
+              "start": 47,
+              "end": 52,
+              "clause": "Who was the visitor for Chicago Black Hawks on May 6?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Chicago Black Hawks",
+              "value": "Chicago Black Hawks",
+              "start": 24,
+              "end": 43,
+              "clause": "Who was the visitor for Chicago Black Hawks on May 6?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question asks for the visitor for Chicago Black Hawks, so the team is identified as the Home; the May 6 row confirms Chicago Black Hawks in Home."
+            },
+            {
+              "surface": "May 6",
+              "value": "May 6",
+              "start": 47,
+              "end": 52,
+              "clause": "Who was the visitor for Chicago Black Hawks on May 6?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "May 6 is a date and appears in the Date column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "bc93eca5602d533203bc1c614495a3e6ade074fe0ee8aa046ecd3cc78407052d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4885,
+              "completion_tokens": 70,
+              "total_tokens": 4955,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Chicago Black Hawks",
+              "value": "Chicago Black Hawks",
+              "start": 24,
+              "end": 43,
+              "clause": "Who was the visitor for Chicago Black Hawks on May 6?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question asks for the visitor for Chicago Black Hawks, so the team is identified as the Home; the May 6 row confirms Chicago Black Hawks in Home.",
+              "operator": "="
+            },
+            {
+              "surface": "May 6",
+              "value": "May 6",
+              "start": 47,
+              "end": 52,
+              "clause": "Who was the visitor for Chicago Black Hawks on May 6?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "May 6 is a date and appears in the Date column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "640c5052538701b11031df8a8b480fed8f76cd00802b5b142132e7b8412fe485",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4990,
+              "completion_tokens": 11,
+              "total_tokens": 5001,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Chicago Black Hawks",
+              "value": "Chicago Black Hawks",
+              "start": 24,
+              "end": 43,
+              "clause": "Who was the visitor for Chicago Black Hawks on May 6?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question asks for the visitor for Chicago Black Hawks, so the team is identified as the Home; the May 6 row confirms Chicago Black Hawks in Home.",
+              "operator": "="
+            },
+            {
+              "surface": "May 6",
+              "value": "May 6",
+              "start": 47,
+              "end": 52,
+              "clause": "Who was the visitor for Chicago Black Hawks on May 6?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "May 6 is a date and appears in the Date column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0a072101e45fd2a05e749ad013925afa68c0c460debecbdbadf15756b4a3a2df",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4944,
+              "completion_tokens": 16,
+              "total_tokens": 4960,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Chicago Black Hawks",
+              "value": "Chicago Black Hawks",
+              "start": 24,
+              "end": 43,
+              "clause": "Who was the visitor for Chicago Black Hawks on May 6?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question asks for the visitor for Chicago Black Hawks, so the team is identified as the Home; the May 6 row confirms Chicago Black Hawks in Home.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "May 6",
+              "value": "May 6",
+              "start": 47,
+              "end": 52,
+              "clause": "Who was the visitor for Chicago Black Hawks on May 6?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "May 6 is a date and appears in the Date column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Chicago Black Hawks",
+              "value": "Chicago Black Hawks",
+              "start": 24,
+              "end": 43,
+              "clause": "Who was the visitor for Chicago Black Hawks on May 6?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question asks for the visitor for Chicago Black Hawks, so the team is identified as the Home; the May 6 row confirms Chicago Black Hawks in Home.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "May 6",
+              "value": "May 6",
+              "start": 47,
+              "end": 52,
+              "clause": "Who was the visitor for Chicago Black Hawks on May 6?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "May 6 is a date and appears in the Date column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Chicago Black Hawks",
+              "value": "Chicago Black Hawks",
+              "start": 24,
+              "end": 43,
+              "clause": "Who was the visitor for Chicago Black Hawks on May 6?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question asks for the visitor for Chicago Black Hawks, so the team is identified as the Home; the May 6 row confirms Chicago Black Hawks in Home.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "May 6",
+              "value": "May 6",
+              "start": 47,
+              "end": 52,
+              "clause": "Who was the visitor for Chicago Black Hawks on May 6?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "May 6 is a date and appears in the Date column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              0,
+              "Chicago Black Hawks"
+            ],
+            [
+              0,
+              0,
+              "May 6"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Chicago Black Hawks",
+          "value": "Chicago Black Hawks",
+          "start": 24,
+          "end": 43
+        },
+        {
+          "surface": "May 6",
+          "value": "May 6",
+          "start": 47,
+          "end": 52
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Chicago Black Hawks",
+          "value": "Chicago Black Hawks",
+          "start": 24,
+          "end": 43,
+          "clause": "Who was the visitor for Chicago Black Hawks on May 6?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The question asks for the visitor for Chicago Black Hawks, so the team is identified as the Home; the May 6 row confirms Chicago Black Hawks in Home.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "May 6",
+          "value": "May 6",
+          "start": 47,
+          "end": 52,
+          "clause": "Who was the visitor for Chicago Black Hawks on May 6?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "May 6 is a date and appears in the Date column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          3,
+          0,
+          "Chicago Black Hawks"
+        ],
+        [
+          0,
+          0,
+          "May 6"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8937
+}

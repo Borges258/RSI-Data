@@ -1,0 +1,451 @@
+{
+  "arm": "E2",
+  "position": 329,
+  "example_id": "test:3197:1-2501754-3",
+  "original_index": 3197,
+  "table_id": "1-2501754-3",
+  "question": "What is the production number for the episode named \"mine’s a double\"?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        4,
+        0,
+        "\"Mine’s A Double\""
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      4,
+      0,
+      "\"Mine’s A Double\""
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        0,
+        "\"Mine’s A Double\""
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "mine’s a double",
+        "value": "\"Mine’s A Double\"",
+        "start": 53,
+        "end": 68,
+        "clause": "What is the production number for the episode named \"mine’s a double\"?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The phrase \"episode named\" identifies the Title field, and the row evidence matches \"Mine’s A Double\" in that column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "mine’s a double",
+        "value": "\"Mine’s A Double\"",
+        "start": 53,
+        "end": 68
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the production number for the episode named \"mine’s a double\"?",
+      "table": {
+        "header": [
+          "Episode #",
+          "Production Count",
+          "Original Airdate",
+          "Prod. Code",
+          "Title",
+          "Viewing Figures millions"
+        ],
+        "page_title": "List of My Hero episodes",
+        "types": [
+          "real",
+          "real",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "id": "1-2501754-3",
+        "section_title": "Series 3 (2002)",
+        "caption": "Series 3 (2002)",
+        "rows": [
+          [
+            1,
+            14,
+            "7 June 2002",
+            "ICEB783X",
+            "\"Baby Talk\"",
+            "5.94"
+          ],
+          [
+            2,
+            15,
+            "14 June 2002",
+            "ICEB784R",
+            "\"Zero Tolerance\"",
+            "5.51"
+          ],
+          [
+            3,
+            16,
+            "21 June 2002",
+            "ICEB785K",
+            "\"Pet Rescue\"",
+            "5.99"
+          ],
+          [
+            4,
+            17,
+            "28 June 2002",
+            "ICEB786E",
+            "\"The Older Man\"",
+            "4.96"
+          ],
+          [
+            5,
+            18,
+            "5 July 2002",
+            "ICEB787Y",
+            "\"Puttin’ On The Writs\"",
+            "5.23"
+          ],
+          [
+            6,
+            19,
+            "12 July 2002",
+            "ICEB789L",
+            "\"Shock, Horror!\"",
+            "5.02"
+          ],
+          [
+            7,
+            20,
+            "2 August 2002",
+            "ICEB788S",
+            "\"Little Green Man\"",
+            "5.27"
+          ],
+          [
+            8,
+            21,
+            "9 August 2002",
+            "ICEB791A",
+            "\"Mine’s A Double\"",
+            "5.55"
+          ],
+          [
+            9,
+            22,
+            "16 August 2002",
+            "ICEB790F",
+            "\"A Little Learning\"",
+            "5.64"
+          ]
+        ],
+        "name": "table_2501754_3",
+        "headers": [
+          "Episode #",
+          "Production Count",
+          "Original Airdate",
+          "Prod. Code",
+          "Title",
+          "Viewing Figures millions"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-2501754-3",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "mine’s a double",
+              "value": "\"Mine’s A Double\"",
+              "start": 53,
+              "end": 68
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ec842ec4f52611ca5046fffe838dde1e35c517c53a7065e4e208e128085920fa",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4941,
+              "completion_tokens": 25,
+              "total_tokens": 4966,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "mine’s a double",
+              "value": "\"Mine’s A Double\"",
+              "start": 53,
+              "end": 68,
+              "clause": "What is the production number for the episode named \"mine’s a double\"?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "mine’s a double",
+              "value": "\"Mine’s A Double\"",
+              "start": 53,
+              "end": 68,
+              "clause": "What is the production number for the episode named \"mine’s a double\"?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "mine’s a double",
+              "value": "\"Mine’s A Double\"",
+              "start": 53,
+              "end": 68,
+              "clause": "What is the production number for the episode named \"mine’s a double\"?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase \"episode named\" identifies the Title field, and the row evidence matches \"Mine’s A Double\" in that column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e7f503529c6499bd27e2144f07225aca077610c8ade847b29593f70667d9eeb5",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4986,
+              "completion_tokens": 47,
+              "total_tokens": 5033,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "mine’s a double",
+              "value": "\"Mine’s A Double\"",
+              "start": 53,
+              "end": 68,
+              "clause": "What is the production number for the episode named \"mine’s a double\"?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase \"episode named\" identifies the Title field, and the row evidence matches \"Mine’s A Double\" in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "900771a7ec12501240a3900d64fc30a53bf51a4fceb21ed049e4d4d6ce4cedc8",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5057,
+              "completion_tokens": 9,
+              "total_tokens": 5066,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "mine’s a double",
+              "value": "\"Mine’s A Double\"",
+              "start": 53,
+              "end": 68,
+              "clause": "What is the production number for the episode named \"mine’s a double\"?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase \"episode named\" identifies the Title field, and the row evidence matches \"Mine’s A Double\" in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "78805416ad2dfc726688e8ea442509064ea07844e20223b8a5d8dba6dc5711f8",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5008,
+              "completion_tokens": 15,
+              "total_tokens": 5023,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "mine’s a double",
+              "value": "\"Mine’s A Double\"",
+              "start": 53,
+              "end": 68,
+              "clause": "What is the production number for the episode named \"mine’s a double\"?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase \"episode named\" identifies the Title field, and the row evidence matches \"Mine’s A Double\" in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "mine’s a double",
+              "value": "\"Mine’s A Double\"",
+              "start": 53,
+              "end": 68,
+              "clause": "What is the production number for the episode named \"mine’s a double\"?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase \"episode named\" identifies the Title field, and the row evidence matches \"Mine’s A Double\" in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "mine’s a double",
+              "value": "\"Mine’s A Double\"",
+              "start": 53,
+              "end": 68,
+              "clause": "What is the production number for the episode named \"mine’s a double\"?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase \"episode named\" identifies the Title field, and the row evidence matches \"Mine’s A Double\" in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              0,
+              "\"Mine’s A Double\""
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "mine’s a double",
+          "value": "\"Mine’s A Double\"",
+          "start": 53,
+          "end": 68
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "mine’s a double",
+          "value": "\"Mine’s A Double\"",
+          "start": 53,
+          "end": 68,
+          "clause": "What is the production number for the episode named \"mine’s a double\"?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The phrase \"episode named\" identifies the Title field, and the row evidence matches \"Mine’s A Double\" in that column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          4,
+          0,
+          "\"Mine’s A Double\""
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9781
+}

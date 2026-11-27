@@ -1,0 +1,108 @@
+{
+  "arm": "E1",
+  "position": 413,
+  "example_id": "test:10943:2-11516217-44",
+  "original_index": 10943,
+  "table_id": "2-11516217-44",
+  "question": "What is the total number of runs when the average was less than 31.25 and there were fewer than 24 innings?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        4,
+        2,
+        31.25
+      ],
+      [
+        1,
+        2,
+        24
+      ]
+    ],
+    "agg": 3
+  },
+  "prediction_conds": [
+    [
+      4,
+      2,
+      31.25
+    ],
+    [
+      1,
+      2,
+      24
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": "gpt-5.6-sol",
+  "usage": {
+    "prompt_tokens": 9393,
+    "completion_tokens": 51,
+    "total_tokens": 9444,
+    "prompt_tokens_details": {
+      "cached_tokens": 4224
+    }
+  },
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        2,
+        31.25
+      ],
+      [
+        1,
+        2,
+        24
+      ]
+    ],
+    "explanation": "Average is strictly less than 31.25 and Innings is strictly less than 24.",
+    "version": "wikisql-where-prior-v1",
+    "tableId": "2-11516217-44",
+    "knowledgeIds": [
+      "g-eq",
+      "g-gt",
+      "g-lt",
+      "g-inclusive",
+      "g-literal",
+      "g-threshold",
+      "g-and",
+      "g-or",
+      "g-column",
+      "g-count",
+      "g-ambiguous",
+      "t-2-11516217-44-field-0",
+      "t-2-11516217-44-field-1",
+      "t-2-11516217-44-field-2",
+      "t-2-11516217-44-field-3",
+      "t-2-11516217-44-field-4",
+      "d-implicit-eq",
+      "d-explicit-eq",
+      "d-gt",
+      "d-lt-and-gt",
+      "d-with-two",
+      "d-literal-form",
+      "p-text",
+      "p-number",
+      "p-multi",
+      "p-unsupported"
+    ],
+    "promptSha256": "92709e9e9641e6b66a5c2ffcd2cdc822b8353ec57fbba5dd9653c5bfa046bf93",
+    "model": "gpt-5.6-sol",
+    "usage": {
+      "prompt_tokens": 9393,
+      "completion_tokens": 51,
+      "total_tokens": 9444,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      }
+    },
+    "latencyMs": 2490
+  },
+  "source": "where_prior_parse",
+  "safe_completed": true,
+  "elapsed_ms": 2500
+}

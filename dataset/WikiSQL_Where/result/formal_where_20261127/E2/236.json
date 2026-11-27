@@ -1,0 +1,425 @@
+{
+  "arm": "E2",
+  "position": 236,
+  "example_id": "test:11693:2-11409339-1",
+  "original_index": 11693,
+  "table_id": "2-11409339-1",
+  "question": "What is the latest year in Annecy, France?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        2,
+        0,
+        "Annecy , France"
+      ]
+    ],
+    "agg": 1
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "Annecy , France"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "Annecy , France"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Annecy, France",
+        "value": "Annecy , France",
+        "start": 27,
+        "end": 41,
+        "clause": "What is the latest year in Annecy, France?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The location phrase \"in Annecy, France\" denotes a venue, matching the Venue header and the corresponding row value.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Annecy, France",
+        "value": "Annecy , France",
+        "start": 27,
+        "end": 41
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the latest year in Annecy, France?",
+      "table": {
+        "header": [
+          "Year",
+          "Tournament",
+          "Venue",
+          "Result",
+          "Extra"
+        ],
+        "page_title": "Rudy Bourguignon",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 11409339,
+        "id": "2-11409339-1",
+        "section_title": "Achievements",
+        "rows": [
+          [
+            "1998",
+            "World Junior Championships",
+            "Annecy , France",
+            "9th",
+            "Decathlon"
+          ],
+          [
+            "2005",
+            "Mediterranean Games",
+            "Almería , Spain",
+            "2nd",
+            "Decathlon"
+          ],
+          [
+            "2005",
+            "Décastar",
+            "Talence , France",
+            "6th",
+            "Decathlon"
+          ],
+          [
+            "2006",
+            "Hypo-Meeting",
+            "Götzis , Austria",
+            "DNF",
+            "Decathlon"
+          ],
+          [
+            "2006",
+            "European Championships",
+            "Gothenburg, Sweden",
+            "15th",
+            "Decathlon"
+          ],
+          [
+            "2007",
+            "European Indoor Championships",
+            "Birmingham , England",
+            "7th",
+            "Heptathlon"
+          ],
+          [
+            "2007",
+            "Hypo-Meeting",
+            "Götzis , Austria",
+            "DNF",
+            "Decathlon"
+          ]
+        ],
+        "caption": "Achievements",
+        "headers": [
+          "Year",
+          "Tournament",
+          "Venue",
+          "Result",
+          "Extra"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-11409339-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Annecy, France",
+              "value": "Annecy , France",
+              "start": 27,
+              "end": 41
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "6288bf2f8aafe5169a040e2a8861c8549febf09a6ff40ebb37c635d41614d66a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4798,
+              "completion_tokens": 23,
+              "total_tokens": 4821,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Annecy, France",
+              "value": "Annecy , France",
+              "start": 27,
+              "end": 41,
+              "clause": "What is the latest year in Annecy, France?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Annecy, France",
+              "value": "Annecy , France",
+              "start": 27,
+              "end": 41,
+              "clause": "What is the latest year in Annecy, France?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Annecy, France",
+              "value": "Annecy , France",
+              "start": 27,
+              "end": 41,
+              "clause": "What is the latest year in Annecy, France?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The location phrase \"in Annecy, France\" denotes a venue, matching the Venue header and the corresponding row value."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a6dfa40c56fdb98c309bec1478cdf51efa3481e80c82127f7306d1d36bfa0373",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4836,
+              "completion_tokens": 45,
+              "total_tokens": 4881,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Annecy, France",
+              "value": "Annecy , France",
+              "start": 27,
+              "end": 41,
+              "clause": "What is the latest year in Annecy, France?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The location phrase \"in Annecy, France\" denotes a venue, matching the Venue header and the corresponding row value.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "54666552815573ea145404baa6d0047c82ef63dfedfdc869cb33ad227bdb897e",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4905,
+              "completion_tokens": 9,
+              "total_tokens": 4914,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Annecy, France",
+              "value": "Annecy , France",
+              "start": 27,
+              "end": 41,
+              "clause": "What is the latest year in Annecy, France?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The location phrase \"in Annecy, France\" denotes a venue, matching the Venue header and the corresponding row value.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "92b1df4685f7ff3ca502e59568eae9c2628d03985d189ddde6807d74291039cb",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4856,
+              "completion_tokens": 13,
+              "total_tokens": 4869,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Annecy, France",
+              "value": "Annecy , France",
+              "start": 27,
+              "end": 41,
+              "clause": "What is the latest year in Annecy, France?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The location phrase \"in Annecy, France\" denotes a venue, matching the Venue header and the corresponding row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Annecy, France",
+              "value": "Annecy , France",
+              "start": 27,
+              "end": 41,
+              "clause": "What is the latest year in Annecy, France?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The location phrase \"in Annecy, France\" denotes a venue, matching the Venue header and the corresponding row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Annecy, France",
+              "value": "Annecy , France",
+              "start": 27,
+              "end": 41,
+              "clause": "What is the latest year in Annecy, France?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The location phrase \"in Annecy, France\" denotes a venue, matching the Venue header and the corresponding row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "Annecy , France"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Annecy, France",
+          "value": "Annecy , France",
+          "start": 27,
+          "end": 41
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Annecy, France",
+          "value": "Annecy , France",
+          "start": 27,
+          "end": 41,
+          "clause": "What is the latest year in Annecy, France?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The location phrase \"in Annecy, France\" denotes a venue, matching the Venue header and the corresponding row value.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          2,
+          0,
+          "Annecy , France"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7422
+}

@@ -1,0 +1,435 @@
+{
+  "arm": "E2",
+  "position": 57,
+  "example_id": "test:2011:1-19210115-1",
+  "original_index": 2011,
+  "table_id": "1-19210115-1",
+  "question": "What is the nickname of Drexel University?",
+  "gold_sql": {
+    "sel": 6,
+    "conds": [
+      [
+        0,
+        0,
+        "Drexel University"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "Drexel University"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "Drexel University"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Drexel University",
+        "value": "Drexel University",
+        "start": 24,
+        "end": 41,
+        "clause": "What is the nickname of Drexel University?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "The question identifies Drexel University as the institution, matching the Institution header and row evidence.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Drexel University",
+        "value": "Drexel University",
+        "start": 24,
+        "end": 41
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the nickname of Drexel University?",
+      "table": {
+        "header": [
+          "Institution",
+          "Location",
+          "Founded",
+          "Affiliation",
+          "Enrollment",
+          "Year Joined",
+          "Nickname",
+          "Conference"
+        ],
+        "page_title": "City 6",
+        "types": [
+          "text",
+          "text",
+          "real",
+          "text",
+          "real",
+          "real",
+          "text",
+          "text"
+        ],
+        "id": "1-19210115-1",
+        "section_title": "Institutions",
+        "caption": "Institutions",
+        "rows": [
+          [
+            "Drexel University",
+            "University City",
+            1891,
+            "Private",
+            25500,
+            1986,
+            "Dragons",
+            "Colonial Athletic Association"
+          ],
+          [
+            "La Salle University",
+            "Germantown",
+            1863,
+            "Private/Catholic",
+            7554,
+            1995,
+            "Explorers",
+            "Atlantic 10"
+          ],
+          [
+            "Saint Joseph's University",
+            "West Philadelphia / Lower Merion Township",
+            1851,
+            "Private/Catholic",
+            8800,
+            1986,
+            "Hawks",
+            "Atlantic 10"
+          ],
+          [
+            "Temple University",
+            "North Philadelphia",
+            1884,
+            "Public",
+            38648,
+            1986,
+            "Owls",
+            "American Athletic Conference"
+          ],
+          [
+            "University of Pennsylvania",
+            "University City",
+            1740,
+            "Private",
+            21329,
+            1986,
+            "Quakers",
+            "Ivy League"
+          ]
+        ],
+        "name": "table_19210115_1",
+        "headers": [
+          "Institution",
+          "Location",
+          "Founded",
+          "Affiliation",
+          "Enrollment",
+          "Year Joined",
+          "Nickname",
+          "Conference"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-19210115-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Drexel University",
+              "value": "Drexel University",
+              "start": 24,
+              "end": 41
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "2eccb0fbd78ffc0e137963150a9712200477f9ab6de8d662e7108ffd7c56f2f4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4830,
+              "completion_tokens": 23,
+              "total_tokens": 4853,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Drexel University",
+              "value": "Drexel University",
+              "start": 24,
+              "end": 41,
+              "clause": "What is the nickname of Drexel University?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Drexel University",
+              "value": "Drexel University",
+              "start": 24,
+              "end": 41,
+              "clause": "What is the nickname of Drexel University?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Drexel University",
+              "value": "Drexel University",
+              "start": 24,
+              "end": 41,
+              "clause": "What is the nickname of Drexel University?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question identifies Drexel University as the institution, matching the Institution header and row evidence."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "751e30152873c505a4e4af27174962b864a3ec7ece1b137b8013a592d3a37ee6",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4866,
+              "completion_tokens": 39,
+              "total_tokens": 4905,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Drexel University",
+              "value": "Drexel University",
+              "start": 24,
+              "end": 41,
+              "clause": "What is the nickname of Drexel University?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question identifies Drexel University as the institution, matching the Institution header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "978c36044fd5e467ea591ebbb947b70e7f58ebb991d35d34a667100dc85a6d5f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4929,
+              "completion_tokens": 9,
+              "total_tokens": 4938,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Drexel University",
+              "value": "Drexel University",
+              "start": 24,
+              "end": 41,
+              "clause": "What is the nickname of Drexel University?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question identifies Drexel University as the institution, matching the Institution header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "2371a0ed6bfcf5de57086a018323a2c5af0845dedc286c244747946316babfc0",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4880,
+              "completion_tokens": 13,
+              "total_tokens": 4893,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Drexel University",
+              "value": "Drexel University",
+              "start": 24,
+              "end": 41,
+              "clause": "What is the nickname of Drexel University?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question identifies Drexel University as the institution, matching the Institution header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Drexel University",
+              "value": "Drexel University",
+              "start": 24,
+              "end": 41,
+              "clause": "What is the nickname of Drexel University?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question identifies Drexel University as the institution, matching the Institution header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Drexel University",
+              "value": "Drexel University",
+              "start": 24,
+              "end": 41,
+              "clause": "What is the nickname of Drexel University?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question identifies Drexel University as the institution, matching the Institution header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              "Drexel University"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Drexel University",
+          "value": "Drexel University",
+          "start": 24,
+          "end": 41
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Drexel University",
+          "value": "Drexel University",
+          "start": 24,
+          "end": 41,
+          "clause": "What is the nickname of Drexel University?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "The question identifies Drexel University as the institution, matching the Institution header and row evidence.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          0,
+          0,
+          "Drexel University"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 24609
+}

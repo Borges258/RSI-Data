@@ -1,0 +1,108 @@
+{
+  "arm": "E1",
+  "position": 220,
+  "example_id": "test:7537:2-15386342-2",
+  "original_index": 7537,
+  "table_id": "2-15386342-2",
+  "question": "What is the highest week for Cleveland Browns with 54,205 in attendance?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        2,
+        0,
+        "cleveland browns"
+      ],
+      [
+        4,
+        0,
+        "54,205"
+      ]
+    ],
+    "agg": 1
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "Cleveland Browns"
+    ],
+    [
+      4,
+      0,
+      54205
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": "gpt-5.6-sol",
+  "usage": {
+    "prompt_tokens": 9928,
+    "completion_tokens": 59,
+    "total_tokens": 9987,
+    "prompt_tokens_details": {
+      "cached_tokens": 4224
+    }
+  },
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "Cleveland Browns"
+      ],
+      [
+        4,
+        0,
+        54205
+      ]
+    ],
+    "explanation": "Filters Opponent to Cleveland Browns and Attendance to 54,205; highest describes the requested Week, not a WHERE condition.",
+    "version": "wikisql-where-prior-v1",
+    "tableId": "2-15386342-2",
+    "knowledgeIds": [
+      "g-eq",
+      "g-gt",
+      "g-lt",
+      "g-inclusive",
+      "g-literal",
+      "g-threshold",
+      "g-and",
+      "g-or",
+      "g-column",
+      "g-count",
+      "g-ambiguous",
+      "t-2-15386342-2-field-0",
+      "t-2-15386342-2-field-1",
+      "t-2-15386342-2-field-2",
+      "t-2-15386342-2-field-3",
+      "t-2-15386342-2-field-4",
+      "d-implicit-eq",
+      "d-explicit-eq",
+      "d-gt",
+      "d-lt-and-gt",
+      "d-with-two",
+      "d-literal-form",
+      "p-text",
+      "p-number",
+      "p-multi",
+      "p-unsupported"
+    ],
+    "promptSha256": "bf4d3b0c3ef09250c8134d0ddc9c5375d6e4cff8faca86bb65605361e6ffe7fb",
+    "model": "gpt-5.6-sol",
+    "usage": {
+      "prompt_tokens": 9928,
+      "completion_tokens": 59,
+      "total_tokens": 9987,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      }
+    },
+    "latencyMs": 2435
+  },
+  "source": "where_prior_parse",
+  "safe_completed": true,
+  "elapsed_ms": 2453
+}

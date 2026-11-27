@@ -1,0 +1,436 @@
+{
+  "arm": "E2",
+  "position": 545,
+  "example_id": "test:4750:2-10640687-3",
+  "original_index": 4750,
+  "table_id": "2-10640687-3",
+  "question": "What was the attendance at the St Kilda home game?",
+  "gold_sql": {
+    "sel": 5,
+    "conds": [
+      [
+        0,
+        0,
+        "st kilda"
+      ]
+    ],
+    "agg": 5
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "St Kilda"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "St Kilda"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "St Kilda",
+        "value": "St Kilda",
+        "start": 31,
+        "end": 39,
+        "clause": "What was the attendance at the St Kilda home game?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "'home game' identifies the Home team field, and St Kilda appears there.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "St Kilda",
+        "value": "St Kilda",
+        "start": 31,
+        "end": 39
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What was the attendance at the St Kilda home game?",
+      "table": {
+        "header": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ],
+        "page_title": "1956 VFL season",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 10640687,
+        "id": "2-10640687-3",
+        "section_title": "Round 3",
+        "rows": [
+          [
+            "Footscray",
+            "5.11 (41)",
+            "Melbourne",
+            "9.13 (67)",
+            "Western Oval",
+            "33,265",
+            "28 April 1956"
+          ],
+          [
+            "Fitzroy",
+            "13.16 (94)",
+            "South Melbourne",
+            "10.13 (73)",
+            "Brunswick Street Oval",
+            "18,000",
+            "28 April 1956"
+          ],
+          [
+            "Hawthorn",
+            "15.10 (100)",
+            "Geelong",
+            "16.16 (112)",
+            "Glenferrie Oval",
+            "20,000",
+            "28 April 1956"
+          ],
+          [
+            "North Melbourne",
+            "9.11 (65)",
+            "Essendon",
+            "15.17 (107)",
+            "Arden Street Oval",
+            "15,000",
+            "28 April 1956"
+          ],
+          [
+            "Richmond",
+            "17.12 (114)",
+            "Collingwood",
+            "11.12 (78)",
+            "Punt Road Oval",
+            "30,000",
+            "28 April 1956"
+          ],
+          [
+            "St Kilda",
+            "9.11 (65)",
+            "Carlton",
+            "13.9 (87)",
+            "Junction Oval",
+            "26,400",
+            "28 April 1956"
+          ]
+        ],
+        "caption": "Round 3",
+        "headers": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-10640687-3",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "St Kilda",
+              "value": "St Kilda",
+              "start": 31,
+              "end": 39
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0ddedf5ff9e2e6d7e9c9e53fe3d58d864ad03fa804d6aafb656260c1904e7626",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4910,
+              "completion_tokens": 21,
+              "total_tokens": 4931,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "St Kilda",
+              "value": "St Kilda",
+              "start": 31,
+              "end": 39,
+              "clause": "What was the attendance at the St Kilda home game?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "St Kilda",
+              "value": "St Kilda",
+              "start": 31,
+              "end": 39,
+              "clause": "What was the attendance at the St Kilda home game?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "St Kilda",
+              "value": "St Kilda",
+              "start": 31,
+              "end": 39,
+              "clause": "What was the attendance at the St Kilda home game?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'home game' identifies the Home team field, and St Kilda appears there."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b86961dd2332739daf7c90c9fb753cf1c00927ffb341305e3fe2619837f36a42",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4947,
+              "completion_tokens": 38,
+              "total_tokens": 4985,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "St Kilda",
+              "value": "St Kilda",
+              "start": 31,
+              "end": 39,
+              "clause": "What was the attendance at the St Kilda home game?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'home game' identifies the Home team field, and St Kilda appears there.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c416180b9bae95d0e05c130ba835576dcf376b30b34263b78d194a77e41b4425",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5008,
+              "completion_tokens": 9,
+              "total_tokens": 5017,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "St Kilda",
+              "value": "St Kilda",
+              "start": 31,
+              "end": 39,
+              "clause": "What was the attendance at the St Kilda home game?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'home game' identifies the Home team field, and St Kilda appears there.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e2b47353fbd9dc316fa8b038aa1251a6c1fc831b4fa5edc495da124d2018753f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4959,
+              "completion_tokens": 12,
+              "total_tokens": 4971,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "St Kilda",
+              "value": "St Kilda",
+              "start": 31,
+              "end": 39,
+              "clause": "What was the attendance at the St Kilda home game?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'home game' identifies the Home team field, and St Kilda appears there.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "St Kilda",
+              "value": "St Kilda",
+              "start": 31,
+              "end": 39,
+              "clause": "What was the attendance at the St Kilda home game?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'home game' identifies the Home team field, and St Kilda appears there.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "St Kilda",
+              "value": "St Kilda",
+              "start": 31,
+              "end": 39,
+              "clause": "What was the attendance at the St Kilda home game?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'home game' identifies the Home team field, and St Kilda appears there.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              "St Kilda"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "St Kilda",
+          "value": "St Kilda",
+          "start": 31,
+          "end": 39
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "St Kilda",
+          "value": "St Kilda",
+          "start": 31,
+          "end": 39,
+          "clause": "What was the attendance at the St Kilda home game?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "'home game' identifies the Home team field, and St Kilda appears there.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          0,
+          0,
+          "St Kilda"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8468
+}

@@ -1,0 +1,1067 @@
+{
+  "arm": "E2",
+  "position": 178,
+  "example_id": "test:14505:2-12755231-1",
+  "original_index": 14505,
+  "table_id": "2-12755231-1",
+  "question": "What is the height of the fort peck dam which was built before 1968, is located in the united states and has a dam type of TE ?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        2,
+        2,
+        1968
+      ],
+      [
+        6,
+        0,
+        "te"
+      ],
+      [
+        1,
+        0,
+        "united states"
+      ],
+      [
+        0,
+        0,
+        "fort peck dam"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [],
+  "status": "GROUNDING_FAILED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "GROUNDING_FAILED",
+    "valid": false,
+    "errors": [
+      "condition 1: grounding NO_MATCH",
+      "condition 1: nonnumeric value for real column"
+    ],
+    "conditions": [
+      {
+        "surface": "fort peck dam",
+        "value": "Fort Peck Dam",
+        "start": 26,
+        "end": 39,
+        "clause": "What is the height of the fort peck dam which was built before 1968, is located in the united states",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "Dam name identifies the Name field.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "before 1968",
+        "value": "< 1968",
+        "start": 56,
+        "end": 67,
+        "clause": "What is the height of the fort peck dam which was built before 1968, is located in the united states",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "Built before 1968 constrains the Year field.",
+        "operator": "<",
+        "grounded": false,
+        "groundingStatus": "NO_MATCH",
+        "groundingReview": {
+          "column": 2,
+          "reason": "“Built before 1968” constrains the Year column; Fort Peck Dam’s year is 1940, which satisfies the condition."
+        }
+      },
+      {
+        "surface": "united states",
+        "value": "United States",
+        "start": 87,
+        "end": 100,
+        "clause": "is located in the united states",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "Located in the United States identifies the Country field.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "TE",
+        "value": "TE",
+        "start": 123,
+        "end": 125,
+        "clause": "and has a dam type of TE ?",
+        "columnIndex": 6,
+        "columnCandidates": [
+          6
+        ],
+        "columnMatchReason": "Dam type TE constrains the Type field.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "stage": "WHERE_CONDITION_VALIDATE",
+    "originalConditions": [
+      {
+        "surface": "fort peck dam",
+        "value": "Fort Peck Dam",
+        "start": 26,
+        "end": 39
+      },
+      {
+        "surface": "before 1968",
+        "value": "< 1968",
+        "start": 56,
+        "end": 67
+      },
+      {
+        "surface": "united states",
+        "value": "United States",
+        "start": 87,
+        "end": 100
+      },
+      {
+        "surface": "TE",
+        "value": "TE",
+        "start": 123,
+        "end": 125
+      }
+    ],
+    "halt": true,
+    "completed": false,
+    "conds": [],
+    "warnings": [
+      "value model disagreed with extracted question span; original retained"
+    ],
+    "request": {
+      "question": "What is the height of the fort peck dam which was built before 1968, is located in the united states and has a dam type of TE ?",
+      "table": {
+        "header": [
+          "Name",
+          "Country",
+          "Year",
+          "Structure Height [m]",
+          "Structure Volume [10 6 m 3 ]",
+          "Reservoir Volume [10 9 m 3 ]",
+          "Type"
+        ],
+        "page_title": "List of largest dams in the world",
+        "types": [
+          "text",
+          "text",
+          "real",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 12755231,
+        "id": "2-12755231-1",
+        "section_title": "",
+        "rows": [
+          [
+            "Syncrude Tailings Dam Mildred MLSB",
+            "Canada",
+            "1995",
+            "88",
+            "540/720",
+            "0.35",
+            "TE"
+          ],
+          [
+            "Tarbela Dam",
+            "Pakistan",
+            "1976",
+            "143",
+            "106 /152",
+            "13.7",
+            "TE/ER"
+          ],
+          [
+            "Syncrude Tailings Dam Mildred SWSS",
+            "Canada",
+            "2010",
+            "40-50",
+            "119",
+            "0.25",
+            "TE"
+          ],
+          [
+            "Fort Peck Dam",
+            "United States",
+            "1940",
+            "76.4",
+            "96",
+            "23",
+            "TE"
+          ],
+          [
+            "Atatürk Dam",
+            "Turkey",
+            "1990",
+            "166",
+            "84.5",
+            "48.7",
+            "TE/ER"
+          ],
+          [
+            "Flevoland Dyke",
+            "Netherlands",
+            "1968",
+            "13",
+            "78",
+            "0",
+            "TE/ER"
+          ],
+          [
+            "Oahe Dam",
+            "United States",
+            "1963",
+            "75",
+            "70.3",
+            "29",
+            "TE/ER"
+          ],
+          [
+            "Gardiner Dam",
+            "Canada",
+            "1967",
+            "64",
+            "65.4",
+            "9.4",
+            "TE"
+          ],
+          [
+            "Mangla Dam",
+            "Pakistan",
+            "1967",
+            "138",
+            "65.4",
+            "7.25",
+            "TE or TE/ER"
+          ],
+          [
+            "Oroville Dam",
+            "United States",
+            "1968",
+            "230",
+            "59.6",
+            "4.36",
+            "TE/ER"
+          ],
+          [
+            "San Luis Dam (B F Sisk Dam)",
+            "United States",
+            "1967",
+            "93",
+            "59.6",
+            "2.52",
+            "TE"
+          ],
+          [
+            "Nurek Dam",
+            "Tajikistan",
+            "1980",
+            "300",
+            "54",
+            "10.5",
+            "TE"
+          ],
+          [
+            "Samara Dam ( Kuybyshev Reservoir )",
+            "Russia",
+            "1955",
+            "52",
+            "54",
+            "57.3",
+            "TE or ER"
+          ],
+          [
+            "Garrison Dam ( Lake Sakakawea )",
+            "United States",
+            "1954",
+            "64",
+            "50.8",
+            "29",
+            "TE"
+          ],
+          [
+            "Cochiti Dam",
+            "United States",
+            "1975",
+            "76.5",
+            "50.2",
+            "0.73",
+            "TE"
+          ],
+          [
+            "Aswan Dam",
+            "Egypt",
+            "1970",
+            "111",
+            "44.3",
+            "157",
+            "TE/ER"
+          ],
+          [
+            "W. A. C. Bennett Dam ( Williston Lake )",
+            "Canada",
+            "1968",
+            "186",
+            "43.7",
+            "7.4",
+            "TE"
+          ],
+          [
+            "ASARCO Mission Mine Tailings Dam",
+            "United States",
+            "1973",
+            "30",
+            "40.1",
+            "0",
+            "ER"
+          ],
+          [
+            "Fort Randall Dam ( Lake Francis Case )",
+            "United States",
+            "1953",
+            "50.3",
+            "38.2",
+            "6.7",
+            "TE/ER"
+          ],
+          [
+            "Afsluitdijk",
+            "Netherlands",
+            "1932",
+            "13",
+            "36.5",
+            "5.5",
+            "TE/ER"
+          ],
+          [
+            "San Roque Dam",
+            "Philippines",
+            "2003",
+            "200/210",
+            "35",
+            "0.835",
+            "TE or ER"
+          ]
+        ],
+        "caption": "See also",
+        "headers": [
+          "Name",
+          "Country",
+          "Year",
+          "Structure Height [m]",
+          "Structure Volume [10 6 m 3 ]",
+          "Reservoir Volume [10 9 m 3 ]",
+          "Type"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-12755231-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 9,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 4,
+          "conditions": [
+            {
+              "surface": "fort peck dam",
+              "value": "Fort Peck Dam",
+              "start": 26,
+              "end": 39
+            },
+            {
+              "surface": "before 1968",
+              "value": "< 1968",
+              "start": 56,
+              "end": 67
+            },
+            {
+              "surface": "united states",
+              "value": "United States",
+              "start": 87,
+              "end": 100
+            },
+            {
+              "surface": "TE",
+              "value": "TE",
+              "start": 123,
+              "end": 125
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "927328deedcca12a14b74c5814baaa9cc8ab6d4e84c43b2bfb3765c22bf0bf1e",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5291,
+              "completion_tokens": 55,
+              "total_tokens": 5346,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "fort peck dam",
+              "value": "Fort Peck Dam",
+              "start": 26,
+              "end": 39,
+              "clause": "What is the height of the fort peck dam which was built before 1968, is located in the united states"
+            },
+            {
+              "surface": "before 1968",
+              "value": "< 1968",
+              "start": 56,
+              "end": 67,
+              "clause": "What is the height of the fort peck dam which was built before 1968, is located in the united states"
+            },
+            {
+              "surface": "united states",
+              "value": "United States",
+              "start": 87,
+              "end": 100,
+              "clause": "is located in the united states"
+            },
+            {
+              "surface": "TE",
+              "value": "TE",
+              "start": 123,
+              "end": 125,
+              "clause": "and has a dam type of TE ?"
+            }
+          ],
+          "count": 4
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "fort peck dam",
+              "value": "Fort Peck Dam",
+              "start": 26,
+              "end": 39,
+              "clause": "What is the height of the fort peck dam which was built before 1968, is located in the united states"
+            },
+            {
+              "surface": "before 1968",
+              "value": "< 1968",
+              "start": 56,
+              "end": 67,
+              "clause": "What is the height of the fort peck dam which was built before 1968, is located in the united states"
+            },
+            {
+              "surface": "united states",
+              "value": "United States",
+              "start": 87,
+              "end": 100,
+              "clause": "is located in the united states"
+            },
+            {
+              "surface": "TE",
+              "value": "TE",
+              "start": 123,
+              "end": 125,
+              "clause": "and has a dam type of TE ?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "fort peck dam",
+              "value": "Fort Peck Dam",
+              "start": 26,
+              "end": 39,
+              "clause": "What is the height of the fort peck dam which was built before 1968, is located in the united states",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Dam name identifies the Name field."
+            },
+            {
+              "surface": "before 1968",
+              "value": "< 1968",
+              "start": 56,
+              "end": 67,
+              "clause": "What is the height of the fort peck dam which was built before 1968, is located in the united states",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Built before 1968 constrains the Year field."
+            },
+            {
+              "surface": "united states",
+              "value": "United States",
+              "start": 87,
+              "end": 100,
+              "clause": "is located in the united states",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Located in the United States identifies the Country field."
+            },
+            {
+              "surface": "TE",
+              "value": "TE",
+              "start": 123,
+              "end": 125,
+              "clause": "and has a dam type of TE ?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "Dam type TE constrains the Type field."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "20cd6598676f0870e44f2f347ef87e1c18ad0c93858180acee74151b3089504e",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5448,
+              "completion_tokens": 70,
+              "total_tokens": 5518,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "fort peck dam",
+              "value": "Fort Peck Dam",
+              "start": 26,
+              "end": 39,
+              "clause": "What is the height of the fort peck dam which was built before 1968, is located in the united states",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Dam name identifies the Name field.",
+              "operator": "="
+            },
+            {
+              "surface": "before 1968",
+              "value": "< 1968",
+              "start": 56,
+              "end": 67,
+              "clause": "What is the height of the fort peck dam which was built before 1968, is located in the united states",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Built before 1968 constrains the Year field.",
+              "operator": "<"
+            },
+            {
+              "surface": "united states",
+              "value": "United States",
+              "start": 87,
+              "end": 100,
+              "clause": "is located in the united states",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Located in the United States identifies the Country field.",
+              "operator": "="
+            },
+            {
+              "surface": "TE",
+              "value": "TE",
+              "start": 123,
+              "end": 125,
+              "clause": "and has a dam type of TE ?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "Dam type TE constrains the Type field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a5c45649646d138c1a5ee176023992db1f75a22bc0f3e596f32229e3b0d2984a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5575,
+              "completion_tokens": 15,
+              "total_tokens": 5590,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "warnings": [
+            "value model disagreed with extracted question span; original retained"
+          ],
+          "conditions": [
+            {
+              "surface": "fort peck dam",
+              "value": "Fort Peck Dam",
+              "start": 26,
+              "end": 39,
+              "clause": "What is the height of the fort peck dam which was built before 1968, is located in the united states",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Dam name identifies the Name field.",
+              "operator": "="
+            },
+            {
+              "surface": "before 1968",
+              "value": "< 1968",
+              "start": 56,
+              "end": 67,
+              "clause": "What is the height of the fort peck dam which was built before 1968, is located in the united states",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Built before 1968 constrains the Year field.",
+              "operator": "<"
+            },
+            {
+              "surface": "united states",
+              "value": "United States",
+              "start": 87,
+              "end": 100,
+              "clause": "is located in the united states",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Located in the United States identifies the Country field.",
+              "operator": "="
+            },
+            {
+              "surface": "TE",
+              "value": "TE",
+              "start": 123,
+              "end": 125,
+              "clause": "and has a dam type of TE ?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "Dam type TE constrains the Type field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "df3565a166d37078bb49d20c18d9806b19b3a4a4ee8cee42990864a7e89a7015",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5535,
+              "completion_tokens": 20,
+              "total_tokens": 5555,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "fort peck dam",
+              "value": "Fort Peck Dam",
+              "start": 26,
+              "end": 39,
+              "clause": "What is the height of the fort peck dam which was built before 1968, is located in the united states",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Dam name identifies the Name field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "before 1968",
+              "value": "< 1968",
+              "start": 56,
+              "end": 67,
+              "clause": "What is the height of the fort peck dam which was built before 1968, is located in the united states",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Built before 1968 constrains the Year field.",
+              "operator": "<",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 2,
+                "reason": "“Built before 1968” constrains the Year column; Fort Peck Dam’s year is 1940, which satisfies the condition."
+              }
+            },
+            {
+              "surface": "united states",
+              "value": "United States",
+              "start": 87,
+              "end": 100,
+              "clause": "is located in the united states",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Located in the United States identifies the Country field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "TE",
+              "value": "TE",
+              "start": 123,
+              "end": 125,
+              "clause": "and has a dam type of TE ?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "Dam type TE constrains the Type field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ],
+          "reviewModelCalls": [
+            {
+              "model": "gpt-5.6-sol",
+              "promptSha256": "01b441aacab07c2e6f66377aa16fe884e9c3d4918166bcc62ab43f82224344fe",
+              "knowledgeIds": [],
+              "usage": {
+                "prompt_tokens": 5390,
+                "completion_tokens": 81,
+                "total_tokens": 5471,
+                "prompt_tokens_details": {
+                  "cached_tokens": 4224
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 39
+                }
+              }
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "01b441aacab07c2e6f66377aa16fe884e9c3d4918166bcc62ab43f82224344fe",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5390,
+              "completion_tokens": 81,
+              "total_tokens": 5471,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 39
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "fort peck dam",
+              "value": "Fort Peck Dam",
+              "start": 26,
+              "end": 39,
+              "clause": "What is the height of the fort peck dam which was built before 1968, is located in the united states",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Dam name identifies the Name field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "before 1968",
+              "value": "< 1968",
+              "start": 56,
+              "end": 67,
+              "clause": "What is the height of the fort peck dam which was built before 1968, is located in the united states",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Built before 1968 constrains the Year field.",
+              "operator": "<",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 2,
+                "reason": "“Built before 1968” constrains the Year column; Fort Peck Dam’s year is 1940, which satisfies the condition."
+              }
+            },
+            {
+              "surface": "united states",
+              "value": "United States",
+              "start": 87,
+              "end": 100,
+              "clause": "is located in the united states",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Located in the United States identifies the Country field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "TE",
+              "value": "TE",
+              "start": 123,
+              "end": 125,
+              "clause": "and has a dam type of TE ?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "Dam type TE constrains the Type field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "GROUNDING_FAILED",
+          "valid": false,
+          "errors": [
+            "condition 1: grounding NO_MATCH",
+            "condition 1: nonnumeric value for real column"
+          ],
+          "conditions": [
+            {
+              "surface": "fort peck dam",
+              "value": "Fort Peck Dam",
+              "start": 26,
+              "end": 39,
+              "clause": "What is the height of the fort peck dam which was built before 1968, is located in the united states",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Dam name identifies the Name field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "before 1968",
+              "value": "< 1968",
+              "start": 56,
+              "end": 67,
+              "clause": "What is the height of the fort peck dam which was built before 1968, is located in the united states",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Built before 1968 constrains the Year field.",
+              "operator": "<",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 2,
+                "reason": "“Built before 1968” constrains the Year column; Fort Peck Dam’s year is 1940, which satisfies the condition."
+              }
+            },
+            {
+              "surface": "united states",
+              "value": "United States",
+              "start": 87,
+              "end": 100,
+              "clause": "is located in the united states",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Located in the United States identifies the Country field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "TE",
+              "value": "TE",
+              "start": 123,
+              "end": 125,
+              "clause": "and has a dam type of TE ?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "Dam type TE constrains the Type field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        }
+      },
+      "warnings": [
+        "value model disagreed with extracted question span; original retained"
+      ],
+      "execution": {
+        "status": "GROUNDING_FAILED",
+        "stage": "WHERE_CONDITION_VALIDATE",
+        "halt": true,
+        "completed": false,
+        "errors": [
+          "condition 1: grounding NO_MATCH",
+          "condition 1: nonnumeric value for real column"
+        ],
+        "warnings": [
+          "value model disagreed with extracted question span; original retained"
+        ]
+      },
+      "originalConditions": [
+        {
+          "surface": "fort peck dam",
+          "value": "Fort Peck Dam",
+          "start": 26,
+          "end": 39
+        },
+        {
+          "surface": "before 1968",
+          "value": "< 1968",
+          "start": 56,
+          "end": 67
+        },
+        {
+          "surface": "united states",
+          "value": "United States",
+          "start": 87,
+          "end": 100
+        },
+        {
+          "surface": "TE",
+          "value": "TE",
+          "start": 123,
+          "end": 125
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "fort peck dam",
+          "value": "Fort Peck Dam",
+          "start": 26,
+          "end": 39,
+          "clause": "What is the height of the fort peck dam which was built before 1968, is located in the united states",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "Dam name identifies the Name field.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "before 1968",
+          "value": "< 1968",
+          "start": 56,
+          "end": 67,
+          "clause": "What is the height of the fort peck dam which was built before 1968, is located in the united states",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "Built before 1968 constrains the Year field.",
+          "operator": "<",
+          "grounded": false,
+          "groundingStatus": "NO_MATCH",
+          "groundingReview": {
+            "column": 2,
+            "reason": "“Built before 1968” constrains the Year column; Fort Peck Dam’s year is 1940, which satisfies the condition."
+          }
+        },
+        {
+          "surface": "united states",
+          "value": "United States",
+          "start": 87,
+          "end": 100,
+          "clause": "is located in the united states",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "Located in the United States identifies the Country field.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "TE",
+          "value": "TE",
+          "start": 123,
+          "end": 125,
+          "clause": "and has a dam type of TE ?",
+          "columnIndex": 6,
+          "columnCandidates": [
+            6
+          ],
+          "columnMatchReason": "Dam type TE constrains the Type field.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 4
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": false,
+  "elapsed_ms": 12672
+}

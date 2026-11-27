@@ -1,0 +1,435 @@
+{
+  "arm": "E2",
+  "position": 579,
+  "example_id": "test:12909:2-18007222-1",
+  "original_index": 12909,
+  "table_id": "2-18007222-1",
+  "question": "What is the Total for the Player who won in 1922, 1932?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        2,
+        0,
+        "1922 , 1932"
+      ]
+    ],
+    "agg": 5
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "1922 , 1932"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "1922 , 1932"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "1922, 1932",
+        "value": "1922 , 1932",
+        "start": 44,
+        "end": 54,
+        "clause": "What is the Total for the Player who won in 1922, 1932?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The phrase 'won in 1922, 1932' refers to the years of the player's wins, matching the 'Year(s) won' header and row evidence.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "1922, 1932",
+        "value": "1922 , 1932",
+        "start": 44,
+        "end": 54
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the Total for the Player who won in 1922, 1932?",
+      "table": {
+        "header": [
+          "Player",
+          "Country",
+          "Year(s) won",
+          "Total",
+          "To par",
+          "Finish"
+        ],
+        "page_title": "1939 U.S. Open (golf)",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "real",
+          "real",
+          "text"
+        ],
+        "page_id": 18007222,
+        "id": "2-18007222-1",
+        "section_title": "Made the cut",
+        "rows": [
+          [
+            "Ralph Guldahl",
+            "United States",
+            "1937 , 1938",
+            "288",
+            "+12",
+            "T7"
+          ],
+          [
+            "Olin Dutra",
+            "United States",
+            "1934",
+            "292",
+            "+16",
+            "T16"
+          ],
+          [
+            "Tommy Armour",
+            "United States",
+            "1927",
+            "294",
+            "+18",
+            "T22"
+          ],
+          [
+            "Sam Parks, Jr.",
+            "United States",
+            "1935",
+            "299",
+            "+23",
+            "T38"
+          ],
+          [
+            "Billy Burke",
+            "United States",
+            "1931",
+            "300",
+            "+24",
+            "T42"
+          ],
+          [
+            "Gene Sarazen",
+            "United States",
+            "1922 , 1932",
+            "301",
+            "+25",
+            "T47"
+          ],
+          [
+            "Tony Manero",
+            "United States",
+            "1936",
+            "304",
+            "+28",
+            "T5"
+          ]
+        ],
+        "caption": "Made the cut",
+        "headers": [
+          "Player",
+          "Country",
+          "Year(s) won",
+          "Total",
+          "To par",
+          "Finish"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-18007222-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "1922, 1932",
+              "value": "1922 , 1932",
+              "start": 44,
+              "end": 54
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "46288165e4b486702a98699553f0c1c8224eef2f90acf0044004515292dacbcf",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4826,
+              "completion_tokens": 27,
+              "total_tokens": 4853,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1922, 1932",
+              "value": "1922 , 1932",
+              "start": 44,
+              "end": 54,
+              "clause": "What is the Total for the Player who won in 1922, 1932?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "1922, 1932",
+              "value": "1922 , 1932",
+              "start": 44,
+              "end": 54,
+              "clause": "What is the Total for the Player who won in 1922, 1932?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1922, 1932",
+              "value": "1922 , 1932",
+              "start": 44,
+              "end": 54,
+              "clause": "What is the Total for the Player who won in 1922, 1932?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase 'won in 1922, 1932' refers to the years of the player's wins, matching the 'Year(s) won' header and row evidence."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "490a0a9df9d2451884e9a10f2d7e1ba1c2fda606d06d1326ff27193ba7cab2f1",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4875,
+              "completion_tokens": 56,
+              "total_tokens": 4931,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1922, 1932",
+              "value": "1922 , 1932",
+              "start": 44,
+              "end": 54,
+              "clause": "What is the Total for the Player who won in 1922, 1932?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase 'won in 1922, 1932' refers to the years of the player's wins, matching the 'Year(s) won' header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "280d29280e82f146d4b8473a2bd071fe6ff90cb584665556f17d3a94e13c8141",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4955,
+              "completion_tokens": 9,
+              "total_tokens": 4964,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1922, 1932",
+              "value": "1922 , 1932",
+              "start": 44,
+              "end": 54,
+              "clause": "What is the Total for the Player who won in 1922, 1932?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase 'won in 1922, 1932' refers to the years of the player's wins, matching the 'Year(s) won' header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ab4c51e7f0460ea84a0a9c7b7534b0c3cf238142fcd1a50c31248a25a6d8cf0c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4906,
+              "completion_tokens": 15,
+              "total_tokens": 4921,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1922, 1932",
+              "value": "1922 , 1932",
+              "start": 44,
+              "end": 54,
+              "clause": "What is the Total for the Player who won in 1922, 1932?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase 'won in 1922, 1932' refers to the years of the player's wins, matching the 'Year(s) won' header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1922, 1932",
+              "value": "1922 , 1932",
+              "start": 44,
+              "end": 54,
+              "clause": "What is the Total for the Player who won in 1922, 1932?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase 'won in 1922, 1932' refers to the years of the player's wins, matching the 'Year(s) won' header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "1922, 1932",
+              "value": "1922 , 1932",
+              "start": 44,
+              "end": 54,
+              "clause": "What is the Total for the Player who won in 1922, 1932?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase 'won in 1922, 1932' refers to the years of the player's wins, matching the 'Year(s) won' header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "1922 , 1932"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "1922, 1932",
+          "value": "1922 , 1932",
+          "start": 44,
+          "end": 54
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "1922, 1932",
+          "value": "1922 , 1932",
+          "start": 44,
+          "end": 54,
+          "clause": "What is the Total for the Player who won in 1922, 1932?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The phrase 'won in 1922, 1932' refers to the years of the player's wins, matching the 'Year(s) won' header and row evidence.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          2,
+          0,
+          "1922 , 1932"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8360
+}

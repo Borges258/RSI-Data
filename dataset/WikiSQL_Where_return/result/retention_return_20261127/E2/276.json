@@ -1,0 +1,863 @@
+{
+  "arm": "E2",
+  "position": 276,
+  "example_id": "test:11042:2-1123374-2",
+  "original_index": 11042,
+  "table_id": "2-1123374-2",
+  "question": "What driver shows grid as 18?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        4,
+        0,
+        18
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      4,
+      0,
+      18
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        0,
+        18
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "18",
+        "value": 18,
+        "start": 26,
+        "end": 28,
+        "clause": "What driver shows grid as 18?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The question explicitly names grid, matching the Grid header; value 18 appears in that column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "18",
+        "value": "18",
+        "start": 26,
+        "end": 28
+      }
+    ],
+    "warnings": [
+      "value model disagreed with extracted question span; original retained"
+    ],
+    "request": {
+      "question": "What driver shows grid as 18?",
+      "table": {
+        "header": [
+          "Driver",
+          "Constructor",
+          "Laps",
+          "Time/Retired",
+          "Grid"
+        ],
+        "page_title": "1999 Japanese Grand Prix",
+        "types": [
+          "text",
+          "text",
+          "real",
+          "text",
+          "real"
+        ],
+        "page_id": 1123374,
+        "id": "2-1123374-2",
+        "section_title": "Race",
+        "rows": [
+          [
+            "Mika Häkkinen",
+            "McLaren - Mercedes",
+            "53",
+            "1:31:18.785",
+            "2"
+          ],
+          [
+            "Michael Schumacher",
+            "Ferrari",
+            "53",
+            "+5.015",
+            "1"
+          ],
+          [
+            "Eddie Irvine",
+            "Ferrari",
+            "53",
+            "+1:35.688",
+            "5"
+          ],
+          [
+            "Heinz-Harald Frentzen",
+            "Jordan - Mugen-Honda",
+            "53",
+            "+1:38.635",
+            "4"
+          ],
+          [
+            "Ralf Schumacher",
+            "Williams - Supertec",
+            "53",
+            "+1:39.494",
+            "9"
+          ],
+          [
+            "Jean Alesi",
+            "Sauber - Petronas",
+            "52",
+            "+1 Lap",
+            "10"
+          ],
+          [
+            "Johnny Herbert",
+            "Stewart - Ford",
+            "52",
+            "+1 Lap",
+            "8"
+          ],
+          [
+            "Rubens Barrichello",
+            "Stewart - Ford",
+            "52",
+            "+1 Lap",
+            "13"
+          ],
+          [
+            "Jacques Villeneuve",
+            "BAR - Supertec",
+            "52",
+            "+1 Lap",
+            "11"
+          ],
+          [
+            "Alexander Wurz",
+            "Benetton - Playlife",
+            "52",
+            "+1 Lap",
+            "15"
+          ],
+          [
+            "Pedro Diniz",
+            "Sauber - Petronas",
+            "52",
+            "+1 Lap",
+            "17"
+          ],
+          [
+            "Ricardo Zonta",
+            "BAR - Supertec",
+            "52",
+            "+1 Lap",
+            "18"
+          ],
+          [
+            "Pedro de la Rosa",
+            "Arrows",
+            "51",
+            "+2 Laps",
+            "21"
+          ],
+          [
+            "Giancarlo Fisichella",
+            "Benetton - Playlife",
+            "47",
+            "Engine",
+            "14"
+          ],
+          [
+            "Toranosuke Takagi",
+            "Arrows",
+            "43",
+            "Gearbox",
+            "19"
+          ],
+          [
+            "Luca Badoer",
+            "Minardi - Ford",
+            "43",
+            "Engine",
+            "22"
+          ],
+          [
+            "David Coulthard",
+            "McLaren - Mercedes",
+            "39",
+            "Hydraulics",
+            "3"
+          ],
+          [
+            "Marc Gené",
+            "Minardi - Ford",
+            "31",
+            "Gearbox",
+            "20"
+          ],
+          [
+            "Damon Hill",
+            "Jordan - Mugen-Honda",
+            "21",
+            "Withdrew",
+            "12"
+          ],
+          [
+            "Olivier Panis",
+            "Prost - Peugeot",
+            "19",
+            "Alternator",
+            "6"
+          ],
+          [
+            "Jarno Trulli",
+            "Prost - Peugeot",
+            "3",
+            "Engine",
+            "7"
+          ],
+          [
+            "Alessandro Zanardi",
+            "Williams - Supertec",
+            "0",
+            "Electrical",
+            "16"
+          ]
+        ],
+        "caption": "Race",
+        "headers": [
+          "Driver",
+          "Constructor",
+          "Laps",
+          "Time/Retired",
+          "Grid"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-1123374-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "18",
+              "value": "18",
+              "start": 26,
+              "end": 28
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0b24be630e54cb1679afddcaaf0a2d9f28a7cc982eb503735a768144d6a467b4",
+            "knowledgeIds": [],
+            "usage": {
+              "attribution": {
+                "items": {
+                  "msg_01ba6189a5b47e20016b0903924f5487d0a41f3a2cf77f520a": {
+                    "input_tokens": 86,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 86,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_01ba6189a5b47e20016b0903924f5487d0b1d7ea0d811ad5e0": {
+                    "input_tokens": 549,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 549,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_01ba6189a5b47e20016b0903924f5487d0b26d845b5dfa3223": {
+                    "input_tokens": 64,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 64,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_01ba6189a5b47e20016b09039c5fa487d08aa6ac08c690c9aa": {
+                    "input_tokens": 0,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 19,
+                    "content": [
+                      {
+                        "input_tokens": 0,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 19
+                      }
+                    ]
+                  },
+                  "rs_01ba6189a5b47e20016b09039c1c2487d09f2b320855a2d7a0": {
+                    "input_tokens": 2,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 37
+                  }
+                },
+                "request_fields": {
+                  "instructions": {
+                    "input_tokens": 4380,
+                    "cached_tokens": 4000,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0
+                  }
+                }
+              },
+              "prompt_tokens": 10995,
+              "completion_tokens": 56,
+              "total_tokens": 11051,
+              "prompt_tokens_details": {
+                "cache_write_tokens_details": {
+                  "ttl_30m_tokens": 0,
+                  "ttl_12h_tokens": 0
+                },
+                "cached_tokens": 9600
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 37
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "18",
+              "value": "18",
+              "start": 26,
+              "end": 28,
+              "clause": "What driver shows grid as 18?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "18",
+              "value": "18",
+              "start": 26,
+              "end": 28,
+              "clause": "What driver shows grid as 18?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "18",
+              "value": "18",
+              "start": 26,
+              "end": 28,
+              "clause": "What driver shows grid as 18?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly names grid, matching the Grid header; value 18 appears in that column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d9f34515e87fe50c5d9356658232ac8a230851a347ab1b274e1ad267ecd66de0",
+            "knowledgeIds": [],
+            "usage": {
+              "attribution": {
+                "items": {
+                  "msg_0b9708fa692cafb1016b09039f4aa087d0a34dc98e534ffa22": {
+                    "input_tokens": 64,
+                    "cached_tokens": 60,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 64,
+                        "cached_tokens": 60,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0b9708fa692cafb1016b09039f4aa087d0b468fc562e3a957a": {
+                    "input_tokens": 115,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 115,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0b9708fa692cafb1016b09039f4aa087d0be77e0800fa555b7": {
+                    "input_tokens": 549,
+                    "cached_tokens": 396,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 549,
+                        "cached_tokens": 396,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0b9708fa692cafb1016b0903aa2d7087d096319356c9d8b655": {
+                    "input_tokens": 0,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 42,
+                    "content": [
+                      {
+                        "input_tokens": 0,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 42
+                      }
+                    ]
+                  },
+                  "rs_0b9708fa692cafb1016b0903aa003c87d0897904dc67d818e6": {
+                    "input_tokens": 2,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 29
+                  }
+                },
+                "request_fields": {
+                  "instructions": {
+                    "input_tokens": 4380,
+                    "cached_tokens": 4130,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0
+                  }
+                }
+              },
+              "prompt_tokens": 11920,
+              "completion_tokens": 71,
+              "total_tokens": 11991,
+              "prompt_tokens_details": {
+                "cache_write_tokens_details": {
+                  "ttl_30m_tokens": 0,
+                  "ttl_12h_tokens": 0
+                },
+                "cached_tokens": 11008
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 29
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "18",
+              "value": "18",
+              "start": 26,
+              "end": 28,
+              "clause": "What driver shows grid as 18?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly names grid, matching the Grid header; value 18 appears in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "848791b2789dabcf67a6eefd33eac5b671400c7c727b82f6baba74414a9d0750",
+            "knowledgeIds": [],
+            "usage": {
+              "attribution": {
+                "items": {
+                  "msg_0f9fd9fa8b3a7b74016b0903ad089487d0865de39e6e0066f8": {
+                    "input_tokens": 549,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 549,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0f9fd9fa8b3a7b74016b0903ad089487d0973e6b5c542f4cdc": {
+                    "input_tokens": 179,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 179,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0f9fd9fa8b3a7b74016b0903ad089487d09a09fa6250e8ad57": {
+                    "input_tokens": 64,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 64,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0f9fd9fa8b3a7b74016b0903bbc0dc87d0acad6e2b5599c55f": {
+                    "input_tokens": 0,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 11,
+                    "content": [
+                      {
+                        "input_tokens": 0,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 11
+                      }
+                    ]
+                  },
+                  "rs_0f9fd9fa8b3a7b74016b0903bbab9c87d0a8fcdff0d51f9f38": {
+                    "input_tokens": 2,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 12
+                  }
+                },
+                "request_fields": {
+                  "instructions": {
+                    "input_tokens": 4380,
+                    "cached_tokens": 4000,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0
+                  }
+                }
+              },
+              "prompt_tokens": 11088,
+              "completion_tokens": 23,
+              "total_tokens": 11111,
+              "prompt_tokens_details": {
+                "cache_write_tokens_details": {
+                  "ttl_30m_tokens": 0,
+                  "ttl_12h_tokens": 0
+                },
+                "cached_tokens": 9600
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 12
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "warnings": [
+            "value model disagreed with extracted question span; original retained"
+          ],
+          "conditions": [
+            {
+              "surface": "18",
+              "value": "18",
+              "start": 26,
+              "end": 28,
+              "clause": "What driver shows grid as 18?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly names grid, matching the Grid header; value 18 appears in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c8bd15bbf2dff313933214f8c37b2b89b1b73d06abf9f82e94987306f376648b",
+            "knowledgeIds": [],
+            "usage": {
+              "attribution": {
+                "items": {
+                  "msg_05b9dd87aca22ddf016b0903bd578c87d08f32a80c77af98a5": {
+                    "input_tokens": 549,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 549,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_05b9dd87aca22ddf016b0903bd578c87d0af7a93a024e45156": {
+                    "input_tokens": 64,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 64,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_05b9dd87aca22ddf016b0903bd578c87d0bab49b0d3ef56df3": {
+                    "input_tokens": 130,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 130,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_05b9dd87aca22ddf016b0903ca70e887d0a6a3c64f8299fb78": {
+                    "input_tokens": 0,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 15,
+                    "content": [
+                      {
+                        "input_tokens": 0,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 15
+                      }
+                    ]
+                  },
+                  "rs_05b9dd87aca22ddf016b0903ca436087d09a35b1bde54c6ca8": {
+                    "input_tokens": 2,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 30
+                  }
+                },
+                "request_fields": {
+                  "instructions": {
+                    "input_tokens": 4380,
+                    "cached_tokens": 4000,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0
+                  }
+                }
+              },
+              "prompt_tokens": 11039,
+              "completion_tokens": 45,
+              "total_tokens": 11084,
+              "prompt_tokens_details": {
+                "cache_write_tokens_details": {
+                  "ttl_30m_tokens": 0,
+                  "ttl_12h_tokens": 0
+                },
+                "cached_tokens": 9600
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 30
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "18",
+              "value": "18",
+              "start": 26,
+              "end": 28,
+              "clause": "What driver shows grid as 18?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly names grid, matching the Grid header; value 18 appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "18",
+              "value": 18,
+              "start": 26,
+              "end": 28,
+              "clause": "What driver shows grid as 18?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly names grid, matching the Grid header; value 18 appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "18",
+              "value": 18,
+              "start": 26,
+              "end": 28,
+              "clause": "What driver shows grid as 18?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly names grid, matching the Grid header; value 18 appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              0,
+              18
+            ]
+          ]
+        }
+      },
+      "warnings": [
+        "value model disagreed with extracted question span; original retained"
+      ],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": [
+          "value model disagreed with extracted question span; original retained"
+        ]
+      },
+      "originalConditions": [
+        {
+          "surface": "18",
+          "value": "18",
+          "start": 26,
+          "end": 28
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "18",
+          "value": 18,
+          "start": 26,
+          "end": 28,
+          "clause": "What driver shows grid as 18?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The question explicitly names grid, matching the Grid header; value 18 appears in that column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          4,
+          0,
+          18
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 78125
+}

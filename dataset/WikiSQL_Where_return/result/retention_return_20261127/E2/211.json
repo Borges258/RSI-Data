@@ -1,0 +1,616 @@
+{
+  "arm": "E2",
+  "position": 211,
+  "example_id": "test:7998:2-1724605-1",
+  "original_index": 7998,
+  "table_id": "2-1724605-1",
+  "question": "Which % FPv has First Pref votes larger than 19,684, and Seats of 9?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        3,
+        1,
+        "19,684"
+      ],
+      [
+        1,
+        0,
+        "9"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      3,
+      1,
+      "19,684"
+    ],
+    [
+      1,
+      0,
+      "9"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        1,
+        "19,684"
+      ],
+      [
+        1,
+        0,
+        "9"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "19,684",
+        "value": "19,684",
+        "start": 45,
+        "end": 51,
+        "clause": "Which % FPv has First Pref votes larger than 19,684,",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The clause explicitly names First Pref votes, matching header index 3; 19,684 is the comparison threshold.",
+        "operator": ">",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "9",
+        "value": "9",
+        "start": 66,
+        "end": 67,
+        "clause": "and Seats of 9?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The clause explicitly names Seats, matching header index 1; the Independent row has 9 seats.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "19,684",
+        "value": "19,684",
+        "start": 45,
+        "end": 51
+      },
+      {
+        "surface": "9",
+        "value": "9",
+        "start": 66,
+        "end": 67
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Which % FPv has First Pref votes larger than 19,684, and Seats of 9?",
+      "table": {
+        "header": [
+          "Party",
+          "Seats",
+          "% of seats",
+          "First Pref votes",
+          "% FPv"
+        ],
+        "page_title": "Irish general election, 1922",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 1724605,
+        "id": "2-1724605-1",
+        "section_title": "Result",
+        "rows": [
+          [
+            "Sinn Féin (Pro-Treaty)",
+            "58",
+            "45.3",
+            "239,195",
+            "38.5"
+          ],
+          [
+            "Sinn Féin (Anti-Treaty)",
+            "36",
+            "28.1",
+            "135,310",
+            "21.8"
+          ],
+          [
+            "Labour Party",
+            "17",
+            "13.3",
+            "132,565",
+            "21.3"
+          ],
+          [
+            "Farmers' Party",
+            "7",
+            "5.5",
+            "48,718",
+            "7.8"
+          ],
+          [
+            "Businessmen's Party",
+            "1",
+            "0.8",
+            "14,542",
+            "2.3"
+          ],
+          [
+            "Ratepayers' Association",
+            "0",
+            "0",
+            "2,617",
+            "0.4"
+          ],
+          [
+            "Independent",
+            "9",
+            "7.0",
+            "48,638",
+            "7.8"
+          ],
+          [
+            "Spoilt votes",
+            "Spoilt votes",
+            "Spoilt votes",
+            "19,684",
+            "—"
+          ],
+          [
+            "Total",
+            "128",
+            "100",
+            "641,271",
+            "100"
+          ],
+          [
+            "Electorate/Turnout",
+            "Electorate/Turnout",
+            "Electorate/Turnout",
+            "1,430,104",
+            "62.5%"
+          ]
+        ],
+        "caption": "3rd Irish general election \n – 16 June 1922",
+        "headers": [
+          "Party",
+          "Seats",
+          "% of seats",
+          "First Pref votes",
+          "% FPv"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-1724605-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "19,684",
+              "value": "19,684",
+              "start": 45,
+              "end": 51
+            },
+            {
+              "surface": "9",
+              "value": "9",
+              "start": 66,
+              "end": 67
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f577a6daf1a6b70b58f6fa9da1350cfd16b1565e4e2305b94659be8e3a9c9571",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4908,
+              "completion_tokens": 29,
+              "total_tokens": 4937,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "19,684",
+              "value": "19,684",
+              "start": 45,
+              "end": 51,
+              "clause": "Which % FPv has First Pref votes larger than 19,684,"
+            },
+            {
+              "surface": "9",
+              "value": "9",
+              "start": 66,
+              "end": 67,
+              "clause": "and Seats of 9?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "19,684",
+              "value": "19,684",
+              "start": 45,
+              "end": 51,
+              "clause": "Which % FPv has First Pref votes larger than 19,684,"
+            },
+            {
+              "surface": "9",
+              "value": "9",
+              "start": 66,
+              "end": 67,
+              "clause": "and Seats of 9?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "19,684",
+              "value": "19,684",
+              "start": 45,
+              "end": 51,
+              "clause": "Which % FPv has First Pref votes larger than 19,684,",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly names First Pref votes, matching header index 3; 19,684 is the comparison threshold."
+            },
+            {
+              "surface": "9",
+              "value": "9",
+              "start": 66,
+              "end": 67,
+              "clause": "and Seats of 9?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly names Seats, matching header index 1; the Independent row has 9 seats."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "3921789ee434f5f4b13da04737b16130ff6a6c12d02db836311c82a370f0299c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4974,
+              "completion_tokens": 68,
+              "total_tokens": 5042,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "19,684",
+              "value": "19,684",
+              "start": 45,
+              "end": 51,
+              "clause": "Which % FPv has First Pref votes larger than 19,684,",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly names First Pref votes, matching header index 3; 19,684 is the comparison threshold.",
+              "operator": ">"
+            },
+            {
+              "surface": "9",
+              "value": "9",
+              "start": 66,
+              "end": 67,
+              "clause": "and Seats of 9?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly names Seats, matching header index 1; the Independent row has 9 seats.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c54a290251124dccefabc4df6d28085bd38d33262fc9fa33dfa326f7ed023073",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5077,
+              "completion_tokens": 11,
+              "total_tokens": 5088,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "19,684",
+              "value": "19,684",
+              "start": 45,
+              "end": 51,
+              "clause": "Which % FPv has First Pref votes larger than 19,684,",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly names First Pref votes, matching header index 3; 19,684 is the comparison threshold.",
+              "operator": ">"
+            },
+            {
+              "surface": "9",
+              "value": "9",
+              "start": 66,
+              "end": 67,
+              "clause": "and Seats of 9?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly names Seats, matching header index 1; the Independent row has 9 seats.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "67152004a2177afa6ea30ae99962600998cc8cdf9a901a7ddc6742b5237f323d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5031,
+              "completion_tokens": 14,
+              "total_tokens": 5045,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "19,684",
+              "value": "19,684",
+              "start": 45,
+              "end": 51,
+              "clause": "Which % FPv has First Pref votes larger than 19,684,",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly names First Pref votes, matching header index 3; 19,684 is the comparison threshold.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "9",
+              "value": "9",
+              "start": 66,
+              "end": 67,
+              "clause": "and Seats of 9?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly names Seats, matching header index 1; the Independent row has 9 seats.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "19,684",
+              "value": "19,684",
+              "start": 45,
+              "end": 51,
+              "clause": "Which % FPv has First Pref votes larger than 19,684,",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly names First Pref votes, matching header index 3; 19,684 is the comparison threshold.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "9",
+              "value": "9",
+              "start": 66,
+              "end": 67,
+              "clause": "and Seats of 9?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly names Seats, matching header index 1; the Independent row has 9 seats.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "19,684",
+              "value": "19,684",
+              "start": 45,
+              "end": 51,
+              "clause": "Which % FPv has First Pref votes larger than 19,684,",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly names First Pref votes, matching header index 3; 19,684 is the comparison threshold.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "9",
+              "value": "9",
+              "start": 66,
+              "end": 67,
+              "clause": "and Seats of 9?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly names Seats, matching header index 1; the Independent row has 9 seats.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              1,
+              "19,684"
+            ],
+            [
+              1,
+              0,
+              "9"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "19,684",
+          "value": "19,684",
+          "start": 45,
+          "end": 51
+        },
+        {
+          "surface": "9",
+          "value": "9",
+          "start": 66,
+          "end": 67
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "19,684",
+          "value": "19,684",
+          "start": 45,
+          "end": 51,
+          "clause": "Which % FPv has First Pref votes larger than 19,684,",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The clause explicitly names First Pref votes, matching header index 3; 19,684 is the comparison threshold.",
+          "operator": ">",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "9",
+          "value": "9",
+          "start": 66,
+          "end": 67,
+          "clause": "and Seats of 9?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The clause explicitly names Seats, matching header index 1; the Independent row has 9 seats.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          3,
+          1,
+          "19,684"
+        ],
+        [
+          1,
+          0,
+          "9"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8547
+}

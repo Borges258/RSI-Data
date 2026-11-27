@@ -1,0 +1,882 @@
+{
+  "arm": "E2",
+  "position": 376,
+  "example_id": "test:7221:2-1588821-1",
+  "original_index": 7221,
+  "table_id": "2-1588821-1",
+  "question": "What is the number of floors that have years under 2008 and were named Guinness Tower?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        4,
+        2,
+        2008
+      ],
+      [
+        1,
+        0,
+        "guinness tower"
+      ]
+    ],
+    "agg": 3
+  },
+  "prediction_conds": [
+    [
+      4,
+      2,
+      2008
+    ],
+    [
+      1,
+      0,
+      "Guinness Tower"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        2,
+        2008
+      ],
+      [
+        1,
+        0,
+        "Guinness Tower"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "under 2008",
+        "value": 2008,
+        "start": 45,
+        "end": 55,
+        "clause": "What is the number of floors that have years under 2008",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The phrase 'years under 2008' explicitly refers to the Year field, whose numeric cells include 2008 and earlier years.",
+        "operator": "<",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "Guinness Tower",
+        "value": "Guinness Tower",
+        "start": 71,
+        "end": 85,
+        "clause": "and were named Guinness Tower?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The phrase 'named Guinness Tower' refers to the Name field, and Guinness Tower appears in that column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "under 2008",
+        "value": "2008",
+        "start": 45,
+        "end": 55
+      },
+      {
+        "surface": "Guinness Tower",
+        "value": "Guinness Tower",
+        "start": 71,
+        "end": 85
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the number of floors that have years under 2008 and were named Guinness Tower?",
+      "table": {
+        "header": [
+          "Rank",
+          "Name",
+          "Height m / ft",
+          "Floors",
+          "Year"
+        ],
+        "page_title": "List of tallest buildings in Vancouver",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "real",
+          "real"
+        ],
+        "page_id": 1588821,
+        "id": "2-1588821-1",
+        "section_title": "Tallest buildings",
+        "rows": [
+          [
+            "1",
+            "Living Shangri-La",
+            "201 / 659",
+            "62",
+            "2008"
+          ],
+          [
+            "2",
+            "The Private Residences at Hotel Georgia",
+            "158 / 518",
+            "48",
+            "2012"
+          ],
+          [
+            "3",
+            "One Wall Centre",
+            "150 / 491",
+            "48",
+            "2001"
+          ],
+          [
+            "4",
+            "Shaw Tower",
+            "149 / 489",
+            "41",
+            "2004"
+          ],
+          [
+            "5",
+            "Harbour Centre",
+            "146 / 481",
+            "45",
+            "1977"
+          ],
+          [
+            "6",
+            "Royal Centre",
+            "141 / 464",
+            "37",
+            "1973"
+          ],
+          [
+            "6",
+            "The Melville",
+            "141 / 461",
+            "43",
+            "2007"
+          ],
+          [
+            "8",
+            "Bentall 5",
+            "140 / 460",
+            "34",
+            "2007"
+          ],
+          [
+            "8",
+            "Park Place",
+            "140 / 459",
+            "35",
+            "1984"
+          ],
+          [
+            "8",
+            "Fairmont Pacific Rim",
+            "140 / 458",
+            "44",
+            "2010"
+          ],
+          [
+            "11=",
+            "Granville Square",
+            "138 / 454",
+            "30",
+            "1973"
+          ],
+          [
+            "11=",
+            "Four Bentall Centre",
+            "138 / 454",
+            "35",
+            "1981"
+          ],
+          [
+            "11",
+            "Scotia Tower",
+            "138 / 452",
+            "34",
+            "1977"
+          ],
+          [
+            "14",
+            "TD Tower",
+            "127 / 417",
+            "30",
+            "1972"
+          ],
+          [
+            "15=",
+            "Patina",
+            "126 / 418",
+            "42",
+            "2011"
+          ],
+          [
+            "15=",
+            "Capitol Residences",
+            "126 / 414",
+            "42",
+            "2010"
+          ],
+          [
+            "17",
+            "W-43",
+            "125 / 411",
+            "40",
+            "2009"
+          ],
+          [
+            "18",
+            "Three Bentall Centre",
+            "122 / 400",
+            "32",
+            "1974"
+          ],
+          [
+            "19",
+            "Empire Landmark Hotel",
+            "121 / 396",
+            "42",
+            "1973"
+          ],
+          [
+            "20",
+            "Jameson House",
+            "119 / 381",
+            "38",
+            "2011"
+          ],
+          [
+            "21",
+            "The Ritz",
+            "118 / 388",
+            "37",
+            "2008"
+          ],
+          [
+            "22",
+            "West One",
+            "117 / 384",
+            "38",
+            "2002"
+          ],
+          [
+            "23",
+            "Cathedral Place",
+            "116 / 382",
+            "23",
+            "1991"
+          ],
+          [
+            "24",
+            "West Pender Place 1",
+            "113 / 370",
+            "36",
+            "2011"
+          ],
+          [
+            "25",
+            "Hotel Vancouver",
+            "111 / 363",
+            "17",
+            "1939"
+          ],
+          [
+            "26=",
+            "Venus",
+            "109 / 359",
+            "34",
+            "2000"
+          ],
+          [
+            "26=",
+            "Hyatt Regency Vancouver",
+            "109 / 359",
+            "35",
+            "1973"
+          ],
+          [
+            "26",
+            "Marriott Pinnacle Hotel",
+            "109 / 357",
+            "35",
+            "2000"
+          ],
+          [
+            "29",
+            "Residences on Georgia",
+            "108 / 354",
+            "36",
+            "1998"
+          ],
+          [
+            "30=",
+            "The Pinnacle",
+            "106 / 348",
+            "36",
+            "1996"
+          ],
+          [
+            "30=",
+            "Callisto",
+            "106 / 348",
+            "35",
+            "2004"
+          ],
+          [
+            "30=",
+            "Residences on Georgia",
+            "106 / 348",
+            "36",
+            "1998"
+          ],
+          [
+            "30=",
+            "Dolce",
+            "106 / 348",
+            "31",
+            "2010"
+          ],
+          [
+            "34",
+            "Two Harbour Green",
+            "105 / 345",
+            "31",
+            "2008"
+          ],
+          [
+            "35=",
+            "1177 West Hastings",
+            "104 / 342",
+            "27",
+            "1968"
+          ],
+          [
+            "35=",
+            "Oceanic Plaza",
+            "104 / 342",
+            "26",
+            "1977"
+          ],
+          [
+            "35",
+            "1075 West Georgia",
+            "104 / 340",
+            "27",
+            "1968"
+          ],
+          [
+            "38=",
+            "Landmark 33",
+            "103 / 338",
+            "35",
+            "1998"
+          ],
+          [
+            "38=",
+            "QuayWest Tower I",
+            "103 / 338",
+            "35",
+            "2002"
+          ],
+          [
+            "38",
+            "Elan",
+            "103 / 337",
+            "34",
+            "2008"
+          ],
+          [
+            "41",
+            "Sheraton Wall Centre Hotel",
+            "102 / 335",
+            "35",
+            "1994"
+          ],
+          [
+            "42",
+            "FortisBC Centre",
+            "101 / 332",
+            "24",
+            "1992"
+          ],
+          [
+            "42=",
+            "Paris Place",
+            "101 / 330",
+            "33",
+            "1995"
+          ],
+          [
+            "42=",
+            "HSBC Building",
+            "101 / 330",
+            "23",
+            "1987"
+          ],
+          [
+            "45=",
+            "Canaccord Tower",
+            "100 / 329",
+            "24",
+            "1981"
+          ],
+          [
+            "45=",
+            "Coast Plaza Hotel & Suites",
+            "100 / 329",
+            "32",
+            "1969"
+          ],
+          [
+            "45=",
+            "Carmana Plaza",
+            "100 / 328",
+            "34",
+            "1999"
+          ],
+          [
+            "45=",
+            "Guinness Tower",
+            "100 / 328",
+            "25",
+            "1969"
+          ]
+        ],
+        "caption": "Tallest buildings",
+        "headers": [
+          "Rank",
+          "Name",
+          "Height m / ft",
+          "Floors",
+          "Year"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-1588821-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "under 2008",
+              "value": "2008",
+              "start": 45,
+              "end": 55
+            },
+            {
+              "surface": "Guinness Tower",
+              "value": "Guinness Tower",
+              "start": 71,
+              "end": 85
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "6e364cfcd35f9b28aebb9f37fa472081969d4818cbf4b03ab3d8f11cd646c2f4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5535,
+              "completion_tokens": 35,
+              "total_tokens": 5570,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "under 2008",
+              "value": "2008",
+              "start": 45,
+              "end": 55,
+              "clause": "What is the number of floors that have years under 2008"
+            },
+            {
+              "surface": "Guinness Tower",
+              "value": "Guinness Tower",
+              "start": 71,
+              "end": 85,
+              "clause": "and were named Guinness Tower?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "under 2008",
+              "value": "2008",
+              "start": 45,
+              "end": 55,
+              "clause": "What is the number of floors that have years under 2008"
+            },
+            {
+              "surface": "Guinness Tower",
+              "value": "Guinness Tower",
+              "start": 71,
+              "end": 85,
+              "clause": "and were named Guinness Tower?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "under 2008",
+              "value": "2008",
+              "start": 45,
+              "end": 55,
+              "clause": "What is the number of floors that have years under 2008",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'years under 2008' explicitly refers to the Year field, whose numeric cells include 2008 and earlier years."
+            },
+            {
+              "surface": "Guinness Tower",
+              "value": "Guinness Tower",
+              "start": 71,
+              "end": 85,
+              "clause": "and were named Guinness Tower?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'named Guinness Tower' refers to the Name field, and Guinness Tower appears in that column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ef0231cdfcc3c1f3936fe98791a117cae43f2ad51566e15d49013c7f5d556cb2",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5605,
+              "completion_tokens": 73,
+              "total_tokens": 5678,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "under 2008",
+              "value": "2008",
+              "start": 45,
+              "end": 55,
+              "clause": "What is the number of floors that have years under 2008",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'years under 2008' explicitly refers to the Year field, whose numeric cells include 2008 and earlier years.",
+              "operator": "<"
+            },
+            {
+              "surface": "Guinness Tower",
+              "value": "Guinness Tower",
+              "start": 71,
+              "end": 85,
+              "clause": "and were named Guinness Tower?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'named Guinness Tower' refers to the Name field, and Guinness Tower appears in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "13fdf1f7fe07e096d5561c8264f1e08ed71c491e49bbc34c78c962a04b2ebaeb",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5713,
+              "completion_tokens": 11,
+              "total_tokens": 5724,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "under 2008",
+              "value": 2008,
+              "start": 45,
+              "end": 55,
+              "clause": "What is the number of floors that have years under 2008",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'years under 2008' explicitly refers to the Year field, whose numeric cells include 2008 and earlier years.",
+              "operator": "<"
+            },
+            {
+              "surface": "Guinness Tower",
+              "value": "Guinness Tower",
+              "start": 71,
+              "end": 85,
+              "clause": "and were named Guinness Tower?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'named Guinness Tower' refers to the Name field, and Guinness Tower appears in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "eadb54c098fb6220607dbf1c22144ecf5bf815d618ac05f62d3c92ce67084ae4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5667,
+              "completion_tokens": 16,
+              "total_tokens": 5683,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "under 2008",
+              "value": "2008",
+              "start": 45,
+              "end": 55,
+              "clause": "What is the number of floors that have years under 2008",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'years under 2008' explicitly refers to the Year field, whose numeric cells include 2008 and earlier years.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Guinness Tower",
+              "value": "Guinness Tower",
+              "start": 71,
+              "end": 85,
+              "clause": "and were named Guinness Tower?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'named Guinness Tower' refers to the Name field, and Guinness Tower appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "under 2008",
+              "value": 2008,
+              "start": 45,
+              "end": 55,
+              "clause": "What is the number of floors that have years under 2008",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'years under 2008' explicitly refers to the Year field, whose numeric cells include 2008 and earlier years.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Guinness Tower",
+              "value": "Guinness Tower",
+              "start": 71,
+              "end": 85,
+              "clause": "and were named Guinness Tower?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'named Guinness Tower' refers to the Name field, and Guinness Tower appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "under 2008",
+              "value": 2008,
+              "start": 45,
+              "end": 55,
+              "clause": "What is the number of floors that have years under 2008",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'years under 2008' explicitly refers to the Year field, whose numeric cells include 2008 and earlier years.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Guinness Tower",
+              "value": "Guinness Tower",
+              "start": 71,
+              "end": 85,
+              "clause": "and were named Guinness Tower?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'named Guinness Tower' refers to the Name field, and Guinness Tower appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              2,
+              2008
+            ],
+            [
+              1,
+              0,
+              "Guinness Tower"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "under 2008",
+          "value": "2008",
+          "start": 45,
+          "end": 55
+        },
+        {
+          "surface": "Guinness Tower",
+          "value": "Guinness Tower",
+          "start": 71,
+          "end": 85
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "under 2008",
+          "value": 2008,
+          "start": 45,
+          "end": 55,
+          "clause": "What is the number of floors that have years under 2008",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The phrase 'years under 2008' explicitly refers to the Year field, whose numeric cells include 2008 and earlier years.",
+          "operator": "<",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "Guinness Tower",
+          "value": "Guinness Tower",
+          "start": 71,
+          "end": 85,
+          "clause": "and were named Guinness Tower?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The phrase 'named Guinness Tower' refers to the Name field, and Guinness Tower appears in that column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          4,
+          2,
+          2008
+        ],
+        [
+          1,
+          0,
+          "Guinness Tower"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7735
+}

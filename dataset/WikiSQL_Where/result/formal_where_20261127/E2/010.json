@@ -1,0 +1,435 @@
+{
+  "arm": "E2",
+  "position": 10,
+  "example_id": "test:644:1-13241993-3",
+  "original_index": 644,
+  "table_id": "1-13241993-3",
+  "question": "What's the episode number of \"Anxiety\"?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        1,
+        0,
+        "\"Anxiety\""
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "\"Anxiety\""
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "\"Anxiety\""
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Anxiety",
+        "value": "\"Anxiety\"",
+        "start": 30,
+        "end": 37,
+        "clause": "What's the episode number of \"Anxiety\"?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "\"Anxiety\" is an episode title and appears in the Title column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Anxiety",
+        "value": "\"Anxiety\"",
+        "start": 30,
+        "end": 37
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What's the episode number of \"Anxiety\"?",
+      "table": {
+        "header": [
+          "Episode #",
+          "Title",
+          "Part 1",
+          "Part 2",
+          "Part 3",
+          "Part 4",
+          "Part 5",
+          "Part 6"
+        ],
+        "page_title": "Quarterlife",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "id": "1-13241993-3",
+        "section_title": "Online episodes",
+        "caption": "Online episodes",
+        "rows": [
+          [
+            1,
+            "\"Pilot\"",
+            "November 11, 2007",
+            "November 11, 2007",
+            "November 15, 2007",
+            "November 18, 2007",
+            "November 22, 2007",
+            "November 25, 2007"
+          ],
+          [
+            2,
+            "\"Compromise\"",
+            "November 29, 2007",
+            "December 2, 2007",
+            "December 6, 2007",
+            "December 9, 2007",
+            "December 13, 2007",
+            "December 16, 2007"
+          ],
+          [
+            3,
+            "\"Anxiety\"",
+            "December 20, 2007",
+            "December 23, 2007",
+            "December 27, 2007",
+            "December 30, 2007",
+            "January 3, 2008",
+            "January 6, 2008"
+          ],
+          [
+            4,
+            "\"Goodbyes\"",
+            "January 10, 2008",
+            "January 13, 2008",
+            "January 17, 2008",
+            "January 20, 2008",
+            "January 24, 2008",
+            "January 27, 2008"
+          ],
+          [
+            5,
+            "\"Finding a Voice\"",
+            "January 31, 2008",
+            "February 3, 2008",
+            "February 7, 2008",
+            "February 10, 2008",
+            "February 14, 2008",
+            "February 17, 2008"
+          ]
+        ],
+        "name": "table_13241993_3",
+        "headers": [
+          "Episode #",
+          "Title",
+          "Part 1",
+          "Part 2",
+          "Part 3",
+          "Part 4",
+          "Part 5",
+          "Part 6"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-13241993-3",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Anxiety",
+              "value": "\"Anxiety\"",
+              "start": 30,
+              "end": 37
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "44a31110addfe94717becf4ccdb29635cd3626ba4cd03d14b0e9196849a515a5",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4985,
+              "completion_tokens": 21,
+              "total_tokens": 5006,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Anxiety",
+              "value": "\"Anxiety\"",
+              "start": 30,
+              "end": 37,
+              "clause": "What's the episode number of \"Anxiety\"?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Anxiety",
+              "value": "\"Anxiety\"",
+              "start": 30,
+              "end": 37,
+              "clause": "What's the episode number of \"Anxiety\"?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Anxiety",
+              "value": "\"Anxiety\"",
+              "start": 30,
+              "end": 37,
+              "clause": "What's the episode number of \"Anxiety\"?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "\"Anxiety\" is an episode title and appears in the Title column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "5c6fd2700de98acc19298de338a5f3594a6fcd624827b696a899867f2cc85eab",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5020,
+              "completion_tokens": 36,
+              "total_tokens": 5056,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Anxiety",
+              "value": "\"Anxiety\"",
+              "start": 30,
+              "end": 37,
+              "clause": "What's the episode number of \"Anxiety\"?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "\"Anxiety\" is an episode title and appears in the Title column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c9f17cc8f14f022a74a0f3a73642a530fc56d2f433339b8f21b005903645264b",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5080,
+              "completion_tokens": 9,
+              "total_tokens": 5089,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Anxiety",
+              "value": "\"Anxiety\"",
+              "start": 30,
+              "end": 37,
+              "clause": "What's the episode number of \"Anxiety\"?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "\"Anxiety\" is an episode title and appears in the Title column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f1155364c32f8e690e959a0c6d8780135c5cf9526cef83c2e2a3be59e63256ea",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5031,
+              "completion_tokens": 13,
+              "total_tokens": 5044,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Anxiety",
+              "value": "\"Anxiety\"",
+              "start": 30,
+              "end": 37,
+              "clause": "What's the episode number of \"Anxiety\"?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "\"Anxiety\" is an episode title and appears in the Title column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Anxiety",
+              "value": "\"Anxiety\"",
+              "start": 30,
+              "end": 37,
+              "clause": "What's the episode number of \"Anxiety\"?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "\"Anxiety\" is an episode title and appears in the Title column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Anxiety",
+              "value": "\"Anxiety\"",
+              "start": 30,
+              "end": 37,
+              "clause": "What's the episode number of \"Anxiety\"?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "\"Anxiety\" is an episode title and appears in the Title column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              "\"Anxiety\""
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Anxiety",
+          "value": "\"Anxiety\"",
+          "start": 30,
+          "end": 37
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Anxiety",
+          "value": "\"Anxiety\"",
+          "start": 30,
+          "end": 37,
+          "clause": "What's the episode number of \"Anxiety\"?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "\"Anxiety\" is an episode title and appears in the Title column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          1,
+          0,
+          "\"Anxiety\""
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7484
+}

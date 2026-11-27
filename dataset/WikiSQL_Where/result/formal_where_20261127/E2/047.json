@@ -1,0 +1,598 @@
+{
+  "arm": "E2",
+  "position": 47,
+  "example_id": "test:3536:1-26263954-1",
+  "original_index": 3536,
+  "table_id": "1-26263954-1",
+  "question": "how many revised hepburn when english is roman characters",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        0,
+        0,
+        "Roman characters"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [],
+  "status": "GROUNDING_FAILED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "GROUNDING_FAILED",
+    "valid": false,
+    "errors": [
+      "condition 0: grounding NO_MATCH"
+    ],
+    "conditions": [
+      {
+        "surface": "english",
+        "value": "English",
+        "start": 30,
+        "end": 37,
+        "clause": "how many revised hepburn when english is roman characters",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "The condition explicitly names the English field.",
+        "operator": "=",
+        "grounded": false,
+        "groundingStatus": "NO_MATCH",
+        "groundingReview": {
+          "column": 0,
+          "reason": "The question explicitly uses “English” as the field, and column 0 contains the row value “Roman characters” referenced by the condition."
+        }
+      },
+      {
+        "surface": "roman characters",
+        "value": "Roman characters",
+        "start": 41,
+        "end": 57,
+        "clause": "how many revised hepburn when english is roman characters",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "Roman characters is the value constrained by the named English field.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "stage": "WHERE_CONDITION_VALIDATE",
+    "originalConditions": [
+      {
+        "surface": "english",
+        "value": "English",
+        "start": 30,
+        "end": 37
+      },
+      {
+        "surface": "roman characters",
+        "value": "Roman characters",
+        "start": 41,
+        "end": 57
+      }
+    ],
+    "halt": true,
+    "completed": false,
+    "conds": [],
+    "warnings": [],
+    "request": {
+      "question": "how many revised hepburn when english is roman characters",
+      "table": {
+        "id": "1-26263954-1",
+        "header": [
+          "English",
+          "Japanese",
+          "Kana spelling",
+          "Revised Hepburn",
+          "Kunrei-shiki",
+          "Nihon-shiki"
+        ],
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "rows": [
+          [
+            "Roman characters",
+            "ローマ字",
+            "ローマじ",
+            "rōmaji",
+            "rômazi",
+            "rômazi"
+          ],
+          [
+            "Mount Fuji",
+            "富士山",
+            "ふじさん",
+            "Fujisan",
+            "Huzisan",
+            "Huzisan"
+          ],
+          [
+            "tea",
+            "お茶",
+            "おちゃ",
+            "ocha",
+            "otya",
+            "otya"
+          ],
+          [
+            "governor",
+            "知事",
+            "ちじ",
+            "chiji",
+            "tizi",
+            "tizi"
+          ],
+          [
+            "to shrink",
+            "縮む",
+            "ちぢむ",
+            "chijimu",
+            "tizimu",
+            "tidimu"
+          ]
+        ],
+        "name": "table_26263954_1",
+        "headers": [
+          "English",
+          "Japanese",
+          "Kana spelling",
+          "Revised Hepburn",
+          "Kunrei-shiki",
+          "Nihon-shiki"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-26263954-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 9,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "english",
+              "value": "English",
+              "start": 30,
+              "end": 37
+            },
+            {
+              "surface": "roman characters",
+              "value": "Roman characters",
+              "start": 41,
+              "end": 57
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "468152b7f3751485b77dbf3ea1ada3ff680f2796a805ae9049db071a426618f9",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4783,
+              "completion_tokens": 27,
+              "total_tokens": 4810,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "english",
+              "value": "English",
+              "start": 30,
+              "end": 37,
+              "clause": "how many revised hepburn when english is roman characters"
+            },
+            {
+              "surface": "roman characters",
+              "value": "Roman characters",
+              "start": 41,
+              "end": 57,
+              "clause": "how many revised hepburn when english is roman characters"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "english",
+              "value": "English",
+              "start": 30,
+              "end": 37,
+              "clause": "how many revised hepburn when english is roman characters"
+            },
+            {
+              "surface": "roman characters",
+              "value": "Roman characters",
+              "start": 41,
+              "end": 57,
+              "clause": "how many revised hepburn when english is roman characters"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "english",
+              "value": "English",
+              "start": 30,
+              "end": 37,
+              "clause": "how many revised hepburn when english is roman characters",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The condition explicitly names the English field."
+            },
+            {
+              "surface": "roman characters",
+              "value": "Roman characters",
+              "start": 41,
+              "end": 57,
+              "clause": "how many revised hepburn when english is roman characters",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Roman characters is the value constrained by the named English field."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c636b452a2354c507094b578da4f90d7dda756e2ac145c883a19a471b41cdecb",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4848,
+              "completion_tokens": 45,
+              "total_tokens": 4893,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "english",
+              "value": "English",
+              "start": 30,
+              "end": 37,
+              "clause": "how many revised hepburn when english is roman characters",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The condition explicitly names the English field.",
+              "operator": "="
+            },
+            {
+              "surface": "roman characters",
+              "value": "Roman characters",
+              "start": 41,
+              "end": 57,
+              "clause": "how many revised hepburn when english is roman characters",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Roman characters is the value constrained by the named English field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "bb37feb7ea2ec9bfae2ddef5aba8591b70ed964c43d611c144302489db4d742d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4928,
+              "completion_tokens": 87,
+              "total_tokens": 5015,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 74
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "english",
+              "value": "English",
+              "start": 30,
+              "end": 37,
+              "clause": "how many revised hepburn when english is roman characters",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The condition explicitly names the English field.",
+              "operator": "="
+            },
+            {
+              "surface": "roman characters",
+              "value": "Roman characters",
+              "start": 41,
+              "end": 57,
+              "clause": "how many revised hepburn when english is roman characters",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Roman characters is the value constrained by the named English field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ea9b0bd3c338fae84ddb824871723d6c34432a9d534f6f00e564b990e28c87b5",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4882,
+              "completion_tokens": 13,
+              "total_tokens": 4895,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "english",
+              "value": "English",
+              "start": 30,
+              "end": 37,
+              "clause": "how many revised hepburn when english is roman characters",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The condition explicitly names the English field.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 0,
+                "reason": "The question explicitly uses “English” as the field, and column 0 contains the row value “Roman characters” referenced by the condition."
+              }
+            },
+            {
+              "surface": "roman characters",
+              "value": "Roman characters",
+              "start": 41,
+              "end": 57,
+              "clause": "how many revised hepburn when english is roman characters",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Roman characters is the value constrained by the named English field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ],
+          "reviewModelCalls": [
+            {
+              "model": "gpt-5.6-sol",
+              "promptSha256": "608cde4e283dd6a82652cccc56345e11d54257b9d09a7c40a4be889578a31a67",
+              "knowledgeIds": [],
+              "usage": {
+                "prompt_tokens": 4860,
+                "completion_tokens": 129,
+                "total_tokens": 4989,
+                "prompt_tokens_details": {
+                  "cached_tokens": 4224
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 87
+                }
+              }
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "608cde4e283dd6a82652cccc56345e11d54257b9d09a7c40a4be889578a31a67",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4860,
+              "completion_tokens": 129,
+              "total_tokens": 4989,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 87
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "english",
+              "value": "English",
+              "start": 30,
+              "end": 37,
+              "clause": "how many revised hepburn when english is roman characters",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The condition explicitly names the English field.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 0,
+                "reason": "The question explicitly uses “English” as the field, and column 0 contains the row value “Roman characters” referenced by the condition."
+              }
+            },
+            {
+              "surface": "roman characters",
+              "value": "Roman characters",
+              "start": 41,
+              "end": 57,
+              "clause": "how many revised hepburn when english is roman characters",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Roman characters is the value constrained by the named English field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "GROUNDING_FAILED",
+          "valid": false,
+          "errors": [
+            "condition 0: grounding NO_MATCH"
+          ],
+          "conditions": [
+            {
+              "surface": "english",
+              "value": "English",
+              "start": 30,
+              "end": 37,
+              "clause": "how many revised hepburn when english is roman characters",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The condition explicitly names the English field.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 0,
+                "reason": "The question explicitly uses “English” as the field, and column 0 contains the row value “Roman characters” referenced by the condition."
+              }
+            },
+            {
+              "surface": "roman characters",
+              "value": "Roman characters",
+              "start": 41,
+              "end": 57,
+              "clause": "how many revised hepburn when english is roman characters",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Roman characters is the value constrained by the named English field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "GROUNDING_FAILED",
+        "stage": "WHERE_CONDITION_VALIDATE",
+        "halt": true,
+        "completed": false,
+        "errors": [
+          "condition 0: grounding NO_MATCH"
+        ],
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "english",
+          "value": "English",
+          "start": 30,
+          "end": 37
+        },
+        {
+          "surface": "roman characters",
+          "value": "Roman characters",
+          "start": 41,
+          "end": 57
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "english",
+          "value": "English",
+          "start": 30,
+          "end": 37,
+          "clause": "how many revised hepburn when english is roman characters",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "The condition explicitly names the English field.",
+          "operator": "=",
+          "grounded": false,
+          "groundingStatus": "NO_MATCH",
+          "groundingReview": {
+            "column": 0,
+            "reason": "The question explicitly uses “English” as the field, and column 0 contains the row value “Roman characters” referenced by the condition."
+          }
+        },
+        {
+          "surface": "roman characters",
+          "value": "Roman characters",
+          "start": 41,
+          "end": 57,
+          "clause": "how many revised hepburn when english is roman characters",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "Roman characters is the value constrained by the named English field.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": false,
+  "elapsed_ms": 11390
+}

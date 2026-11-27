@@ -1,0 +1,611 @@
+{
+  "arm": "E2",
+  "position": 245,
+  "example_id": "test:14356:2-12899300-6",
+  "original_index": 14356,
+  "table_id": "2-12899300-6",
+  "question": "What is the highest number of cuts made in a tournament with 0 wins and 0 top 5 placings?",
+  "gold_sql": {
+    "sel": 5,
+    "conds": [
+      [
+        2,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0
+      ]
+    ],
+    "agg": 1
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      0
+    ],
+    [
+      2,
+      0,
+      0
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "0",
+        "value": 0,
+        "start": 61,
+        "end": 62,
+        "clause": "What is the highest number of cuts made in a tournament with 0 wins",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The clause explicitly says '0 wins', matching the Wins header.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "0",
+        "value": 0,
+        "start": 72,
+        "end": 73,
+        "clause": "and 0 top 5 placings?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The clause explicitly says '0 top 5 placings', matching the Top-5 header.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "0",
+        "value": "0",
+        "start": 61,
+        "end": 62
+      },
+      {
+        "surface": "0",
+        "value": "0",
+        "start": 72,
+        "end": 73
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the highest number of cuts made in a tournament with 0 wins and 0 top 5 placings?",
+      "table": {
+        "header": [
+          "Tournament",
+          "Wins",
+          "Top-5",
+          "Top-25",
+          "Events",
+          "Cuts made"
+        ],
+        "page_title": "Jason Dufner",
+        "types": [
+          "text",
+          "real",
+          "real",
+          "real",
+          "real",
+          "real"
+        ],
+        "page_id": 12899300,
+        "id": "2-12899300-6",
+        "section_title": "Summary",
+        "rows": [
+          [
+            "Masters Tournament",
+            "0",
+            "0",
+            "2",
+            "3",
+            "3"
+          ],
+          [
+            "U.S. Open",
+            "0",
+            "2",
+            "2",
+            "7",
+            "5"
+          ],
+          [
+            "The Open Championship",
+            "0",
+            "0",
+            "0",
+            "4",
+            "2"
+          ],
+          [
+            "PGA Championship",
+            "1",
+            "3",
+            "3",
+            "5",
+            "4"
+          ],
+          [
+            "Totals",
+            "1",
+            "5",
+            "7",
+            "19",
+            "14"
+          ]
+        ],
+        "caption": "Summary",
+        "headers": [
+          "Tournament",
+          "Wins",
+          "Top-5",
+          "Top-25",
+          "Events",
+          "Cuts made"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-12899300-6",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 61,
+              "end": 62
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 72,
+              "end": 73
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "7b2ebcba786e520953bdaaa4f1a33c9f846759c75e029fac4d810556af574b88",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4760,
+              "completion_tokens": 25,
+              "total_tokens": 4785,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 61,
+              "end": 62,
+              "clause": "What is the highest number of cuts made in a tournament with 0 wins"
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 72,
+              "end": 73,
+              "clause": "and 0 top 5 placings?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 61,
+              "end": 62,
+              "clause": "What is the highest number of cuts made in a tournament with 0 wins"
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 72,
+              "end": 73,
+              "clause": "and 0 top 5 placings?"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ef576cddd36eb0519ba1a73b750e4381699a599052fe7a477d3797f2bdff393b",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4844,
+              "completion_tokens": 8,
+              "total_tokens": 4852,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          },
+          "count": 2,
+          "recovered": [],
+          "reviewedUncertain": [
+            {
+              "surface": "5",
+              "start": 78,
+              "end": 79
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 61,
+              "end": 62,
+              "clause": "What is the highest number of cuts made in a tournament with 0 wins",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly says '0 wins', matching the Wins header."
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 72,
+              "end": 73,
+              "clause": "and 0 top 5 placings?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The clause explicitly says '0 top 5 placings', matching the Top-5 header."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d0571e2b1c7f5457c7a5275ce1905508380512cf1688051cb345484bb0c7d445",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4825,
+              "completion_tokens": 57,
+              "total_tokens": 4882,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 61,
+              "end": 62,
+              "clause": "What is the highest number of cuts made in a tournament with 0 wins",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly says '0 wins', matching the Wins header.",
+              "operator": "="
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 72,
+              "end": 73,
+              "clause": "and 0 top 5 placings?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The clause explicitly says '0 top 5 placings', matching the Top-5 header.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "18df7d9d597038e4e84106f1f122750aa1cb8633e3bbcc591e639e8252f0ee40",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4917,
+              "completion_tokens": 11,
+              "total_tokens": 4928,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 61,
+              "end": 62,
+              "clause": "What is the highest number of cuts made in a tournament with 0 wins",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly says '0 wins', matching the Wins header.",
+              "operator": "="
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 72,
+              "end": 73,
+              "clause": "and 0 top 5 placings?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The clause explicitly says '0 top 5 placings', matching the Top-5 header.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "471166360874ed3450242bee3ec47de50a4a8eeb19d954424283b198f0a07714",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4871,
+              "completion_tokens": 12,
+              "total_tokens": 4883,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 61,
+              "end": 62,
+              "clause": "What is the highest number of cuts made in a tournament with 0 wins",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly says '0 wins', matching the Wins header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 72,
+              "end": 73,
+              "clause": "and 0 top 5 placings?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The clause explicitly says '0 top 5 placings', matching the Top-5 header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "0",
+              "value": 0,
+              "start": 61,
+              "end": 62,
+              "clause": "What is the highest number of cuts made in a tournament with 0 wins",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly says '0 wins', matching the Wins header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "0",
+              "value": 0,
+              "start": 72,
+              "end": 73,
+              "clause": "and 0 top 5 placings?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The clause explicitly says '0 top 5 placings', matching the Top-5 header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "0",
+              "value": 0,
+              "start": 61,
+              "end": 62,
+              "clause": "What is the highest number of cuts made in a tournament with 0 wins",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly says '0 wins', matching the Wins header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "0",
+              "value": 0,
+              "start": 72,
+              "end": 73,
+              "clause": "and 0 top 5 placings?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The clause explicitly says '0 top 5 placings', matching the Top-5 header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              2,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "0",
+          "value": "0",
+          "start": 61,
+          "end": 62
+        },
+        {
+          "surface": "0",
+          "value": "0",
+          "start": 72,
+          "end": 73
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "0",
+          "value": 0,
+          "start": 61,
+          "end": 62,
+          "clause": "What is the highest number of cuts made in a tournament with 0 wins",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The clause explicitly says '0 wins', matching the Wins header.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "0",
+          "value": 0,
+          "start": 72,
+          "end": 73,
+          "clause": "and 0 top 5 placings?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The clause explicitly says '0 top 5 placings', matching the Top-5 header.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          0
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9953
+}

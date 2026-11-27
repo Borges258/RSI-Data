@@ -1,0 +1,799 @@
+{
+  "arm": "E2",
+  "position": 161,
+  "example_id": "test:12188:2-17798269-3",
+  "original_index": 12188,
+  "table_id": "2-17798269-3",
+  "question": "What was the score for the game played on October 16, with an attendance of 14,945 and a decision of Raycroft?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        4,
+        1,
+        "14,945"
+      ],
+      [
+        3,
+        0,
+        "raycroft"
+      ],
+      [
+        0,
+        0,
+        "october 16"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "October 16"
+    ],
+    [
+      4,
+      0,
+      "14,945"
+    ],
+    [
+      3,
+      0,
+      "Raycroft"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "October 16"
+      ],
+      [
+        4,
+        0,
+        "14,945"
+      ],
+      [
+        3,
+        0,
+        "Raycroft"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "October 16",
+        "value": "October 16",
+        "start": 42,
+        "end": 52,
+        "clause": "What was the score for the game played on October 16, with an attendance of 14,945",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "'played on October 16' identifies the Date field.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "14,945",
+        "value": "14,945",
+        "start": 76,
+        "end": 82,
+        "clause": "with an attendance of 14,945",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "'attendance of 14,945' explicitly identifies the Attendance field.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "Raycroft",
+        "value": "Raycroft",
+        "start": 101,
+        "end": 109,
+        "clause": "and a decision of Raycroft?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "'decision of Raycroft' explicitly identifies the Decision field.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "October 16",
+        "value": "October 16",
+        "start": 42,
+        "end": 52
+      },
+      {
+        "surface": "14,945",
+        "value": "14,945",
+        "start": 76,
+        "end": 82
+      },
+      {
+        "surface": "Raycroft",
+        "value": "Raycroft",
+        "start": 101,
+        "end": 109
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What was the score for the game played on October 16, with an attendance of 14,945 and a decision of Raycroft?",
+      "table": {
+        "header": [
+          "Date",
+          "Opponent",
+          "Score",
+          "Decision",
+          "Attendance",
+          "Record"
+        ],
+        "page_title": "2008–09 Colorado Avalanche season",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 17798269,
+        "id": "2-17798269-3",
+        "section_title": "Game log",
+        "rows": [
+          [
+            "October 9",
+            "Boston Bruins",
+            "5 - 4",
+            "Budaj",
+            "18,007",
+            "0-1-0"
+          ],
+          [
+            "October 12",
+            "@ Edmonton Oilers",
+            "3 - 2",
+            "Budaj",
+            "16,839",
+            "0-2-0"
+          ],
+          [
+            "October 14",
+            "@ Calgary Flames",
+            "5 - 4",
+            "Budaj",
+            "19,289",
+            "0-3-0"
+          ],
+          [
+            "October 16",
+            "Philadelphia Flyers",
+            "5 - 2",
+            "Raycroft",
+            "18,007",
+            "1-3-0"
+          ],
+          [
+            "October 18",
+            "@ Dallas Stars",
+            "5 - 4",
+            "Raycroft",
+            "17,151",
+            "2-3-0"
+          ],
+          [
+            "October 20",
+            "@ Los Angeles Kings",
+            "4 - 3",
+            "Budaj",
+            "13,891",
+            "3-3-0"
+          ],
+          [
+            "October 23",
+            "Edmonton Oilers",
+            "4 - 1",
+            "Budaj",
+            "14,898",
+            "4-3-0"
+          ],
+          [
+            "October 25",
+            "Buffalo Sabres",
+            "2 - 1",
+            "Budaj",
+            "18,007",
+            "5-3-0"
+          ],
+          [
+            "October 28",
+            "@ Calgary Flames",
+            "3 - 0",
+            "Budaj",
+            "19,289",
+            "5-4-0"
+          ],
+          [
+            "October 30",
+            "Columbus Blue Jackets",
+            "4 - 2",
+            "Raycroft",
+            "14,945",
+            "5-5-0"
+          ]
+        ],
+        "caption": "Game log",
+        "headers": [
+          "Date",
+          "Opponent",
+          "Score",
+          "Decision",
+          "Attendance",
+          "Record"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-17798269-3",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 3,
+          "conditions": [
+            {
+              "surface": "October 16",
+              "value": "October 16",
+              "start": 42,
+              "end": 52
+            },
+            {
+              "surface": "14,945",
+              "value": "14,945",
+              "start": 76,
+              "end": 82
+            },
+            {
+              "surface": "Raycroft",
+              "value": "Raycroft",
+              "start": 101,
+              "end": 109
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "431174c5c5004662b4bb3c91fcd7c78dc896c48fb624f72459fe3f5683698a28",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4959,
+              "completion_tokens": 43,
+              "total_tokens": 5002,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "October 16",
+              "value": "October 16",
+              "start": 42,
+              "end": 52,
+              "clause": "What was the score for the game played on October 16, with an attendance of 14,945"
+            },
+            {
+              "surface": "14,945",
+              "value": "14,945",
+              "start": 76,
+              "end": 82,
+              "clause": "with an attendance of 14,945"
+            },
+            {
+              "surface": "Raycroft",
+              "value": "Raycroft",
+              "start": 101,
+              "end": 109,
+              "clause": "and a decision of Raycroft?"
+            }
+          ],
+          "count": 3
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "October 16",
+              "value": "October 16",
+              "start": 42,
+              "end": 52,
+              "clause": "What was the score for the game played on October 16, with an attendance of 14,945"
+            },
+            {
+              "surface": "14,945",
+              "value": "14,945",
+              "start": 76,
+              "end": 82,
+              "clause": "with an attendance of 14,945"
+            },
+            {
+              "surface": "Raycroft",
+              "value": "Raycroft",
+              "start": 101,
+              "end": 109,
+              "clause": "and a decision of Raycroft?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "October 16",
+              "value": "October 16",
+              "start": 42,
+              "end": 52,
+              "clause": "What was the score for the game played on October 16, with an attendance of 14,945",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'played on October 16' identifies the Date field."
+            },
+            {
+              "surface": "14,945",
+              "value": "14,945",
+              "start": 76,
+              "end": 82,
+              "clause": "with an attendance of 14,945",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'attendance of 14,945' explicitly identifies the Attendance field."
+            },
+            {
+              "surface": "Raycroft",
+              "value": "Raycroft",
+              "start": 101,
+              "end": 109,
+              "clause": "and a decision of Raycroft?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'decision of Raycroft' explicitly identifies the Decision field."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "296301e18d16669a4f63bb992d2221932dc142ec5f3383fbad29bf5ea5f51b6b",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5066,
+              "completion_tokens": 67,
+              "total_tokens": 5133,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "October 16",
+              "value": "October 16",
+              "start": 42,
+              "end": 52,
+              "clause": "What was the score for the game played on October 16, with an attendance of 14,945",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'played on October 16' identifies the Date field.",
+              "operator": "="
+            },
+            {
+              "surface": "14,945",
+              "value": "14,945",
+              "start": 76,
+              "end": 82,
+              "clause": "with an attendance of 14,945",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'attendance of 14,945' explicitly identifies the Attendance field.",
+              "operator": "="
+            },
+            {
+              "surface": "Raycroft",
+              "value": "Raycroft",
+              "start": 101,
+              "end": 109,
+              "clause": "and a decision of Raycroft?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'decision of Raycroft' explicitly identifies the Decision field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "da650e9da6a6dbd3bf42a750a4295a490e6875cc5bf27c70ec58a146da81507a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5176,
+              "completion_tokens": 13,
+              "total_tokens": 5189,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "October 16",
+              "value": "October 16",
+              "start": 42,
+              "end": 52,
+              "clause": "What was the score for the game played on October 16, with an attendance of 14,945",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'played on October 16' identifies the Date field.",
+              "operator": "="
+            },
+            {
+              "surface": "14,945",
+              "value": "14,945",
+              "start": 76,
+              "end": 82,
+              "clause": "with an attendance of 14,945",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'attendance of 14,945' explicitly identifies the Attendance field.",
+              "operator": "="
+            },
+            {
+              "surface": "Raycroft",
+              "value": "Raycroft",
+              "start": 101,
+              "end": 109,
+              "clause": "and a decision of Raycroft?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'decision of Raycroft' explicitly identifies the Decision field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "42f06fb988e28924a7b68db3031b0ccae0294c11b5b11ebcdd520f4580afdd2e",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5133,
+              "completion_tokens": 19,
+              "total_tokens": 5152,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "October 16",
+              "value": "October 16",
+              "start": 42,
+              "end": 52,
+              "clause": "What was the score for the game played on October 16, with an attendance of 14,945",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'played on October 16' identifies the Date field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "14,945",
+              "value": "14,945",
+              "start": 76,
+              "end": 82,
+              "clause": "with an attendance of 14,945",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'attendance of 14,945' explicitly identifies the Attendance field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Raycroft",
+              "value": "Raycroft",
+              "start": 101,
+              "end": 109,
+              "clause": "and a decision of Raycroft?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'decision of Raycroft' explicitly identifies the Decision field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "October 16",
+              "value": "October 16",
+              "start": 42,
+              "end": 52,
+              "clause": "What was the score for the game played on October 16, with an attendance of 14,945",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'played on October 16' identifies the Date field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "14,945",
+              "value": "14,945",
+              "start": 76,
+              "end": 82,
+              "clause": "with an attendance of 14,945",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'attendance of 14,945' explicitly identifies the Attendance field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Raycroft",
+              "value": "Raycroft",
+              "start": 101,
+              "end": 109,
+              "clause": "and a decision of Raycroft?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'decision of Raycroft' explicitly identifies the Decision field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "October 16",
+              "value": "October 16",
+              "start": 42,
+              "end": 52,
+              "clause": "What was the score for the game played on October 16, with an attendance of 14,945",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'played on October 16' identifies the Date field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "14,945",
+              "value": "14,945",
+              "start": 76,
+              "end": 82,
+              "clause": "with an attendance of 14,945",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'attendance of 14,945' explicitly identifies the Attendance field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Raycroft",
+              "value": "Raycroft",
+              "start": 101,
+              "end": 109,
+              "clause": "and a decision of Raycroft?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'decision of Raycroft' explicitly identifies the Decision field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              "October 16"
+            ],
+            [
+              4,
+              0,
+              "14,945"
+            ],
+            [
+              3,
+              0,
+              "Raycroft"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "October 16",
+          "value": "October 16",
+          "start": 42,
+          "end": 52
+        },
+        {
+          "surface": "14,945",
+          "value": "14,945",
+          "start": 76,
+          "end": 82
+        },
+        {
+          "surface": "Raycroft",
+          "value": "Raycroft",
+          "start": 101,
+          "end": 109
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "October 16",
+          "value": "October 16",
+          "start": 42,
+          "end": 52,
+          "clause": "What was the score for the game played on October 16, with an attendance of 14,945",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "'played on October 16' identifies the Date field.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "14,945",
+          "value": "14,945",
+          "start": 76,
+          "end": 82,
+          "clause": "with an attendance of 14,945",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "'attendance of 14,945' explicitly identifies the Attendance field.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "Raycroft",
+          "value": "Raycroft",
+          "start": 101,
+          "end": 109,
+          "clause": "and a decision of Raycroft?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "'decision of Raycroft' explicitly identifies the Decision field.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 3,
+      "conds": [
+        [
+          0,
+          0,
+          "October 16"
+        ],
+        [
+          4,
+          0,
+          "14,945"
+        ],
+        [
+          3,
+          0,
+          "Raycroft"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7765
+}

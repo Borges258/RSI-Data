@@ -1,0 +1,432 @@
+{
+  "arm": "E2",
+  "position": 446,
+  "example_id": "test:13615:2-18625553-4",
+  "original_index": 13615,
+  "table_id": "2-18625553-4",
+  "question": "Swimmer Jiao Liuyang has what for the sum of lane?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        2,
+        0,
+        "jiao liuyang"
+      ]
+    ],
+    "agg": 4
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "Jiao Liuyang"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "Jiao Liuyang"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Jiao Liuyang",
+        "value": "Jiao Liuyang",
+        "start": 8,
+        "end": 20,
+        "clause": "Swimmer Jiao Liuyang has what for the sum of lane?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "'Jiao Liuyang' is identified as the swimmer's name, matching the Name header and row evidence.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Jiao Liuyang",
+        "value": "Jiao Liuyang",
+        "start": 8,
+        "end": 20
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Swimmer Jiao Liuyang has what for the sum of lane?",
+      "table": {
+        "header": [
+          "Rank",
+          "Lane",
+          "Name",
+          "Nationality",
+          "Time"
+        ],
+        "page_title": "Swimming at the 2008 Summer Olympics – Women's 200 metre butterfly",
+        "types": [
+          "real",
+          "real",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 18625553,
+        "id": "2-18625553-4",
+        "section_title": "Semifinal 1",
+        "rows": [
+          [
+            "1",
+            "5",
+            "Jiao Liuyang",
+            "China",
+            "2:06.42"
+          ],
+          [
+            "2",
+            "4",
+            "Aurore Mongel",
+            "France",
+            "2:07.21"
+          ],
+          [
+            "3",
+            "2",
+            "Jemma Lowe",
+            "Great Britain",
+            "2:07.87"
+          ],
+          [
+            "4",
+            "3",
+            "Natsumi Hoshi",
+            "Japan",
+            "2:07.93"
+          ],
+          [
+            "5",
+            "6",
+            "Micha Kathrine Østergaard Jensen",
+            "Denmark",
+            "2:09.29"
+          ],
+          [
+            "6",
+            "7",
+            "Audrey Lacroix",
+            "Canada",
+            "2:09.74"
+          ],
+          [
+            "7",
+            "1",
+            "Petra Granlund",
+            "Sweden",
+            "2:09.79"
+          ],
+          [
+            "8",
+            "8",
+            "Kathryn Meaklim",
+            "South Africa",
+            "2:11.74"
+          ]
+        ],
+        "caption": "Semifinal 1",
+        "headers": [
+          "Rank",
+          "Lane",
+          "Name",
+          "Nationality",
+          "Time"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-18625553-4",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Jiao Liuyang",
+              "value": "Jiao Liuyang",
+              "start": 8,
+              "end": 20
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "dc6cb85a7752cee7b653b4b68b1e1bfe9a2766d9531360dd303c4c5dfa239dfb",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4834,
+              "completion_tokens": 23,
+              "total_tokens": 4857,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Jiao Liuyang",
+              "value": "Jiao Liuyang",
+              "start": 8,
+              "end": 20,
+              "clause": "Swimmer Jiao Liuyang has what for the sum of lane?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Jiao Liuyang",
+              "value": "Jiao Liuyang",
+              "start": 8,
+              "end": 20,
+              "clause": "Swimmer Jiao Liuyang has what for the sum of lane?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Jiao Liuyang",
+              "value": "Jiao Liuyang",
+              "start": 8,
+              "end": 20,
+              "clause": "Swimmer Jiao Liuyang has what for the sum of lane?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'Jiao Liuyang' is identified as the swimmer's name, matching the Name header and row evidence."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "68ad2b2e7f1a0d685e92c4fb1e6d3b4c92b4e9b5b8fb441e4a80a28e14ebd323",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4875,
+              "completion_tokens": 43,
+              "total_tokens": 4918,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Jiao Liuyang",
+              "value": "Jiao Liuyang",
+              "start": 8,
+              "end": 20,
+              "clause": "Swimmer Jiao Liuyang has what for the sum of lane?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'Jiao Liuyang' is identified as the swimmer's name, matching the Name header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "5f13b7b18a759d9b6a1b408ad628d518bdac807b1402f3db3575a7c5edc25f7b",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4941,
+              "completion_tokens": 9,
+              "total_tokens": 4950,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Jiao Liuyang",
+              "value": "Jiao Liuyang",
+              "start": 8,
+              "end": 20,
+              "clause": "Swimmer Jiao Liuyang has what for the sum of lane?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'Jiao Liuyang' is identified as the swimmer's name, matching the Name header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "8deac6e3a20f2a63b94233a51cd3e5dcca5745be613d95438010cfed6a8da688",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4892,
+              "completion_tokens": 13,
+              "total_tokens": 4905,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Jiao Liuyang",
+              "value": "Jiao Liuyang",
+              "start": 8,
+              "end": 20,
+              "clause": "Swimmer Jiao Liuyang has what for the sum of lane?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'Jiao Liuyang' is identified as the swimmer's name, matching the Name header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Jiao Liuyang",
+              "value": "Jiao Liuyang",
+              "start": 8,
+              "end": 20,
+              "clause": "Swimmer Jiao Liuyang has what for the sum of lane?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'Jiao Liuyang' is identified as the swimmer's name, matching the Name header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Jiao Liuyang",
+              "value": "Jiao Liuyang",
+              "start": 8,
+              "end": 20,
+              "clause": "Swimmer Jiao Liuyang has what for the sum of lane?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'Jiao Liuyang' is identified as the swimmer's name, matching the Name header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "Jiao Liuyang"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Jiao Liuyang",
+          "value": "Jiao Liuyang",
+          "start": 8,
+          "end": 20
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Jiao Liuyang",
+          "value": "Jiao Liuyang",
+          "start": 8,
+          "end": 20,
+          "clause": "Swimmer Jiao Liuyang has what for the sum of lane?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "'Jiao Liuyang' is identified as the swimmer's name, matching the Name header and row evidence.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          2,
+          0,
+          "Jiao Liuyang"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9125
+}

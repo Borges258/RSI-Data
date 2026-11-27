@@ -1,0 +1,668 @@
+{
+  "arm": "E2",
+  "position": 133,
+  "example_id": "test:9717:2-16882078-2",
+  "original_index": 9717,
+  "table_id": "2-16882078-2",
+  "question": "What is the result for week 12 against the Green Bay Packers?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        0,
+        1,
+        12
+      ],
+      [
+        2,
+        0,
+        "green bay packers"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      12
+    ],
+    [
+      2,
+      0,
+      "Green Bay Packers"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        12
+      ],
+      [
+        2,
+        0,
+        "Green Bay Packers"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "12",
+        "value": 12,
+        "start": 28,
+        "end": 30,
+        "clause": "What is the result for week 12 against the Green Bay Packers?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "The surface '12' is explicitly qualified by 'week', matching the Week column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "Green Bay Packers",
+        "value": "Green Bay Packers",
+        "start": 43,
+        "end": 60,
+        "clause": "What is the result for week 12 against the Green Bay Packers?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "'Green Bay Packers' is the named opposing team, matching the Opponent column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "12",
+        "value": 12,
+        "start": 28,
+        "end": 30
+      },
+      {
+        "surface": "Green Bay Packers",
+        "value": "Green Bay Packers",
+        "start": 43,
+        "end": 60
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the result for week 12 against the Green Bay Packers?",
+      "table": {
+        "header": [
+          "Week",
+          "Date",
+          "Opponent",
+          "Result",
+          "Attendance"
+        ],
+        "page_title": "2001 Tennessee Titans season",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 16882078,
+        "id": "2-16882078-2",
+        "section_title": "Schedule",
+        "rows": [
+          [
+            "1",
+            "September 9, 2001",
+            "Miami Dolphins",
+            "L 23-31",
+            "68,798"
+          ],
+          [
+            "2",
+            "September 23, 2001",
+            "at Jacksonville Jaguars",
+            "L 6-13",
+            "65,994"
+          ],
+          [
+            "3",
+            "Bye",
+            "Bye",
+            "Bye",
+            "Bye"
+          ],
+          [
+            "4",
+            "October 7, 2001",
+            "at Baltimore Ravens",
+            "L 7-26",
+            "69,494"
+          ],
+          [
+            "5",
+            "October 14, 2001",
+            "Tampa Bay Buccaneers",
+            "W 31–28",
+            "68,798"
+          ],
+          [
+            "6",
+            "October 21, 2001",
+            "at Detroit Lions",
+            "W 27–24",
+            "76,940"
+          ],
+          [
+            "7",
+            "October 29, 2001",
+            "at Pittsburgh Steelers",
+            "L 7-34",
+            "63,763"
+          ],
+          [
+            "8",
+            "November 4, 2001",
+            "Jacksonville Jaguars",
+            "W 28–24",
+            "68,798"
+          ],
+          [
+            "9",
+            "November 12, 2001",
+            "Baltimore Ravens",
+            "L 10-16",
+            "68,798"
+          ],
+          [
+            "10",
+            "November 18, 2001",
+            "at Cincinnati Bengals",
+            "W 20–7",
+            "63,865"
+          ],
+          [
+            "11",
+            "November 25, 2001",
+            "Pittsburgh Steelers",
+            "L 24-34",
+            "68,801"
+          ],
+          [
+            "12",
+            "December 2, 2001",
+            "at Cleveland Browns",
+            "W 31–15",
+            "72,818"
+          ],
+          [
+            "13",
+            "December 9, 2001",
+            "at Minnesota Vikings",
+            "L 24-42",
+            "64,271"
+          ],
+          [
+            "14",
+            "December 16, 2001",
+            "Green Bay Packers",
+            "W 26–20",
+            "68,804"
+          ],
+          [
+            "15",
+            "December 22, 2001",
+            "at Oakland Raiders",
+            "W 13–10",
+            "61,934"
+          ],
+          [
+            "16",
+            "December 30, 2001",
+            "Cleveland Browns",
+            "L 38-41",
+            "68,798"
+          ],
+          [
+            "17",
+            "January 6, 2002",
+            "Cincinnati Bengals",
+            "L 21-23",
+            "68,798"
+          ]
+        ],
+        "caption": "Schedule",
+        "headers": [
+          "Week",
+          "Date",
+          "Opponent",
+          "Result",
+          "Attendance"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-16882078-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "12",
+              "value": 12,
+              "start": 28,
+              "end": 30
+            },
+            {
+              "surface": "Green Bay Packers",
+              "value": "Green Bay Packers",
+              "start": 43,
+              "end": 60
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "49dd4db2602e71ecc248a3b7f1779be451c506191561ca44d101c9ec19d9ce71",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5075,
+              "completion_tokens": 87,
+              "total_tokens": 5162,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 56
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "12",
+              "value": 12,
+              "start": 28,
+              "end": 30,
+              "clause": "What is the result for week 12 against the Green Bay Packers?"
+            },
+            {
+              "surface": "Green Bay Packers",
+              "value": "Green Bay Packers",
+              "start": 43,
+              "end": 60,
+              "clause": "What is the result for week 12 against the Green Bay Packers?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "12",
+              "value": 12,
+              "start": 28,
+              "end": 30,
+              "clause": "What is the result for week 12 against the Green Bay Packers?"
+            },
+            {
+              "surface": "Green Bay Packers",
+              "value": "Green Bay Packers",
+              "start": 43,
+              "end": 60,
+              "clause": "What is the result for week 12 against the Green Bay Packers?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "12",
+              "value": 12,
+              "start": 28,
+              "end": 30,
+              "clause": "What is the result for week 12 against the Green Bay Packers?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The surface '12' is explicitly qualified by 'week', matching the Week column."
+            },
+            {
+              "surface": "Green Bay Packers",
+              "value": "Green Bay Packers",
+              "start": 43,
+              "end": 60,
+              "clause": "What is the result for week 12 against the Green Bay Packers?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'Green Bay Packers' is the named opposing team, matching the Opponent column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "8bd2738e55b58df9694539470e0b181c9e19aeefbb54239e143f6e0865a8d900",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5148,
+              "completion_tokens": 59,
+              "total_tokens": 5207,
+              "prompt_tokens_details": {
+                "cached_tokens": 4864
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "12",
+              "value": 12,
+              "start": 28,
+              "end": 30,
+              "clause": "What is the result for week 12 against the Green Bay Packers?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The surface '12' is explicitly qualified by 'week', matching the Week column.",
+              "operator": "="
+            },
+            {
+              "surface": "Green Bay Packers",
+              "value": "Green Bay Packers",
+              "start": 43,
+              "end": 60,
+              "clause": "What is the result for week 12 against the Green Bay Packers?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'Green Bay Packers' is the named opposing team, matching the Opponent column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "06ffe5144fd82b137db8cc63022e867edac0edd0829dd65a3f21701df51eba54",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5241,
+              "completion_tokens": 11,
+              "total_tokens": 5252,
+              "prompt_tokens_details": {
+                "cached_tokens": 4864
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "12",
+              "value": 12,
+              "start": 28,
+              "end": 30,
+              "clause": "What is the result for week 12 against the Green Bay Packers?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The surface '12' is explicitly qualified by 'week', matching the Week column.",
+              "operator": "="
+            },
+            {
+              "surface": "Green Bay Packers",
+              "value": "Green Bay Packers",
+              "start": 43,
+              "end": 60,
+              "clause": "What is the result for week 12 against the Green Bay Packers?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'Green Bay Packers' is the named opposing team, matching the Opponent column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ee4961e48ba6a127f227336c0a2fbf6e7dee43aec0320ce64abc3ff607c57739",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5195,
+              "completion_tokens": 14,
+              "total_tokens": 5209,
+              "prompt_tokens_details": {
+                "cached_tokens": 4864
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "12",
+              "value": "12",
+              "start": 28,
+              "end": 30,
+              "clause": "What is the result for week 12 against the Green Bay Packers?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The surface '12' is explicitly qualified by 'week', matching the Week column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Green Bay Packers",
+              "value": "Green Bay Packers",
+              "start": 43,
+              "end": 60,
+              "clause": "What is the result for week 12 against the Green Bay Packers?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'Green Bay Packers' is the named opposing team, matching the Opponent column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "12",
+              "value": 12,
+              "start": 28,
+              "end": 30,
+              "clause": "What is the result for week 12 against the Green Bay Packers?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The surface '12' is explicitly qualified by 'week', matching the Week column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Green Bay Packers",
+              "value": "Green Bay Packers",
+              "start": 43,
+              "end": 60,
+              "clause": "What is the result for week 12 against the Green Bay Packers?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'Green Bay Packers' is the named opposing team, matching the Opponent column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "12",
+              "value": 12,
+              "start": 28,
+              "end": 30,
+              "clause": "What is the result for week 12 against the Green Bay Packers?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The surface '12' is explicitly qualified by 'week', matching the Week column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Green Bay Packers",
+              "value": "Green Bay Packers",
+              "start": 43,
+              "end": 60,
+              "clause": "What is the result for week 12 against the Green Bay Packers?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'Green Bay Packers' is the named opposing team, matching the Opponent column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              12
+            ],
+            [
+              2,
+              0,
+              "Green Bay Packers"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "12",
+          "value": 12,
+          "start": 28,
+          "end": 30
+        },
+        {
+          "surface": "Green Bay Packers",
+          "value": "Green Bay Packers",
+          "start": 43,
+          "end": 60
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "12",
+          "value": 12,
+          "start": 28,
+          "end": 30,
+          "clause": "What is the result for week 12 against the Green Bay Packers?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "The surface '12' is explicitly qualified by 'week', matching the Week column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "Green Bay Packers",
+          "value": "Green Bay Packers",
+          "start": 43,
+          "end": 60,
+          "clause": "What is the result for week 12 against the Green Bay Packers?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "'Green Bay Packers' is the named opposing team, matching the Opponent column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          0,
+          0,
+          12
+        ],
+        [
+          2,
+          0,
+          "Green Bay Packers"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9125
+}

@@ -1,0 +1,460 @@
+{
+  "arm": "E2",
+  "position": 229,
+  "example_id": "test:8949:2-17245483-4",
+  "original_index": 8949,
+  "table_id": "2-17245483-4",
+  "question": "What was the to par when the score was 69-69=138?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        3,
+        0,
+        "69-69=138"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      3,
+      0,
+      "69-69=138"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        0,
+        "69-69=138"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "69-69=138",
+        "value": "69-69=138",
+        "start": 39,
+        "end": 48,
+        "clause": "What was the to par when the score was 69-69=138?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The question explicitly says 'the score was 69-69=138', matching the Score header and row evidence.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "69-69=138",
+        "value": "69-69=138",
+        "start": 39,
+        "end": 48
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What was the to par when the score was 69-69=138?",
+      "table": {
+        "header": [
+          "Place",
+          "Player",
+          "Country",
+          "Score",
+          "To par"
+        ],
+        "page_title": "1977 U.S. Open (golf)",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 17245483,
+        "id": "2-17245483-4",
+        "section_title": "Second round",
+        "rows": [
+          [
+            "1",
+            "Hubert Green",
+            "United States",
+            "69-67=136",
+            "–4"
+          ],
+          [
+            "2",
+            "Terry Diehl",
+            "United States",
+            "69-68=137",
+            "–3"
+          ],
+          [
+            "3",
+            "Tom Purtzer",
+            "United States",
+            "69-69=138",
+            "–2"
+          ],
+          [
+            "T4",
+            "Sam Adams",
+            "United States",
+            "70-69=139",
+            "–1"
+          ],
+          [
+            "T4",
+            "Rod Funseth",
+            "United States",
+            "69-70=139",
+            "–1"
+          ],
+          [
+            "T4",
+            "Gary Player",
+            "South Africa",
+            "72-67=139",
+            "–1"
+          ],
+          [
+            "T7",
+            "Jay Haas",
+            "United States",
+            "72-68=140",
+            "E"
+          ],
+          [
+            "T7",
+            "Joe Inman",
+            "United States",
+            "70-70=140",
+            "E"
+          ],
+          [
+            "T9",
+            "Wally Armstrong",
+            "United States",
+            "71-70=141",
+            "+1"
+          ],
+          [
+            "T9",
+            "Andy Bean",
+            "United States",
+            "71-70=141",
+            "+1"
+          ],
+          [
+            "T9",
+            "Al Geiberger",
+            "United States",
+            "70-71=141",
+            "+1"
+          ],
+          [
+            "T9",
+            "Peter Oosterhuis",
+            "England",
+            "71-70=141",
+            "+1"
+          ]
+        ],
+        "caption": "Second round",
+        "headers": [
+          "Place",
+          "Player",
+          "Country",
+          "Score",
+          "To par"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-17245483-4",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "69-69=138",
+              "value": "69-69=138",
+              "start": 39,
+              "end": 48
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "df3936411ede53ff78ea1e7d2aa2c22893af3caca3428bb8aa10b8a5677b3d77",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4904,
+              "completion_tokens": 25,
+              "total_tokens": 4929,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "69-69=138",
+              "value": "69-69=138",
+              "start": 39,
+              "end": 48,
+              "clause": "What was the to par when the score was 69-69=138?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "69-69=138",
+              "value": "69-69=138",
+              "start": 39,
+              "end": 48,
+              "clause": "What was the to par when the score was 69-69=138?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "69-69=138",
+              "value": "69-69=138",
+              "start": 39,
+              "end": 48,
+              "clause": "What was the to par when the score was 69-69=138?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says 'the score was 69-69=138', matching the Score header and row evidence."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "72d190e79559e8d15f44e313046f1f275c175f48f0cd3e6d2d9f2c47300c2373",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4949,
+              "completion_tokens": 44,
+              "total_tokens": 4993,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "69-69=138",
+              "value": "69-69=138",
+              "start": 39,
+              "end": 48,
+              "clause": "What was the to par when the score was 69-69=138?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says 'the score was 69-69=138', matching the Score header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a7b167a3d5f4638bf28dadf58ca2c53e2cecdc0b2ab2dceddd1dd1a812a58950",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5017,
+              "completion_tokens": 9,
+              "total_tokens": 5026,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "69-69=138",
+              "value": "69-69=138",
+              "start": 39,
+              "end": 48,
+              "clause": "What was the to par when the score was 69-69=138?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says 'the score was 69-69=138', matching the Score header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "56cb167139a7f0cd642033c746e119f6701b9cdc7b98e35cbf087bf795ade06c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4968,
+              "completion_tokens": 14,
+              "total_tokens": 4982,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "69-69=138",
+              "value": "69-69=138",
+              "start": 39,
+              "end": 48,
+              "clause": "What was the to par when the score was 69-69=138?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says 'the score was 69-69=138', matching the Score header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "69-69=138",
+              "value": "69-69=138",
+              "start": 39,
+              "end": 48,
+              "clause": "What was the to par when the score was 69-69=138?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says 'the score was 69-69=138', matching the Score header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "69-69=138",
+              "value": "69-69=138",
+              "start": 39,
+              "end": 48,
+              "clause": "What was the to par when the score was 69-69=138?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says 'the score was 69-69=138', matching the Score header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              0,
+              "69-69=138"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "69-69=138",
+          "value": "69-69=138",
+          "start": 39,
+          "end": 48
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "69-69=138",
+          "value": "69-69=138",
+          "start": 39,
+          "end": 48,
+          "clause": "What was the to par when the score was 69-69=138?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The question explicitly says 'the score was 69-69=138', matching the Score header and row evidence.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          3,
+          0,
+          "69-69=138"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9906
+}

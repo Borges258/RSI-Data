@@ -1,0 +1,788 @@
+{
+  "arm": "E2",
+  "position": 136,
+  "example_id": "test:4835:2-10560574-2",
+  "original_index": 4835,
+  "table_id": "2-10560574-2",
+  "question": "What was the result of the bodil award winning film from before 2005 in the best actress category?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        0,
+        0,
+        "bodil award"
+      ],
+      [
+        2,
+        0,
+        "best actress"
+      ],
+      [
+        1,
+        0,
+        2005
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "Bodil Award"
+    ],
+    [
+      1,
+      2,
+      2005
+    ],
+    [
+      2,
+      0,
+      "Best Actress"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "Bodil Award"
+      ],
+      [
+        1,
+        2,
+        2005
+      ],
+      [
+        2,
+        0,
+        "Best Actress"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "bodil award",
+        "value": "Bodil Award",
+        "start": 27,
+        "end": 38,
+        "clause": "What was the result of the bodil award winning film from before 2005 in the best actress category?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "Bodil Award identifies the award.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "2005",
+        "value": 2005,
+        "start": 64,
+        "end": 68,
+        "clause": "What was the result of the bodil award winning film from before 2005 in the best actress category?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "Before 2005 specifies the year.",
+        "operator": "<",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "best actress",
+        "value": "Best Actress",
+        "start": 76,
+        "end": 88,
+        "clause": "What was the result of the bodil award winning film from before 2005 in the best actress category?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "Best Actress specifies the category.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "bodil award",
+        "value": "Bodil Award",
+        "start": 27,
+        "end": 38
+      },
+      {
+        "surface": "2005",
+        "value": "2005",
+        "start": 64,
+        "end": 68
+      },
+      {
+        "surface": "best actress",
+        "value": "Best Actress",
+        "start": 76,
+        "end": 88
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What was the result of the bodil award winning film from before 2005 in the best actress category?",
+      "table": {
+        "header": [
+          "Award",
+          "Year",
+          "Category",
+          "Nominated Work",
+          "Result"
+        ],
+        "page_title": "Sonja Richter",
+        "types": [
+          "text",
+          "real",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 10560574,
+        "id": "2-10560574-2",
+        "section_title": "Awards and nominations",
+        "rows": [
+          [
+            "Bodil Award",
+            "2003",
+            "Best Actress",
+            "Open Hearts",
+            "Nominated"
+          ],
+          [
+            "Bodil Award",
+            "2005",
+            "Best Supporting Actress",
+            "In Your Hands",
+            "Nominated"
+          ],
+          [
+            "Bodil Award",
+            "2005",
+            "Best Actress",
+            "Villa Paranoia",
+            "Nominated"
+          ],
+          [
+            "Bodil Award",
+            "2007",
+            "Best Actress",
+            "Cecilie",
+            "Nominated"
+          ],
+          [
+            "Robert Award",
+            "2003",
+            "Best Actress",
+            "Open Hearts",
+            "Nominated"
+          ],
+          [
+            "Robert Award",
+            "2005",
+            "Best Supporting Actress",
+            "In Your Hands",
+            "Nominated"
+          ],
+          [
+            "Robert Award",
+            "2005",
+            "Best Actress",
+            "Villa Paranoia",
+            "Nominated"
+          ],
+          [
+            "Robert Award",
+            "2007",
+            "Best Actress",
+            "Cecilie",
+            "Nominated"
+          ],
+          [
+            "Shooting Stars Award",
+            "2004",
+            "Shooting Star",
+            "—",
+            "Won"
+          ]
+        ],
+        "caption": "Awards and nominations",
+        "headers": [
+          "Award",
+          "Year",
+          "Category",
+          "Nominated Work",
+          "Result"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-10560574-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 3,
+          "conditions": [
+            {
+              "surface": "bodil award",
+              "value": "Bodil Award",
+              "start": 27,
+              "end": 38
+            },
+            {
+              "surface": "2005",
+              "value": "2005",
+              "start": 64,
+              "end": 68
+            },
+            {
+              "surface": "best actress",
+              "value": "Best Actress",
+              "start": 76,
+              "end": 88
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "6b30462c9e2010f9ff0b40bfc6c97cbeeb53a0d565902832b186889b0141011c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 7523,
+              "completion_tokens": 80,
+              "total_tokens": 7603,
+              "completion_tokens_details": {
+                "reasoning_tokens": 43
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "bodil award",
+              "value": "Bodil Award",
+              "start": 27,
+              "end": 38,
+              "clause": "What was the result of the bodil award winning film from before 2005 in the best actress category?"
+            },
+            {
+              "surface": "2005",
+              "value": "2005",
+              "start": 64,
+              "end": 68,
+              "clause": "What was the result of the bodil award winning film from before 2005 in the best actress category?"
+            },
+            {
+              "surface": "best actress",
+              "value": "Best Actress",
+              "start": 76,
+              "end": 88,
+              "clause": "What was the result of the bodil award winning film from before 2005 in the best actress category?"
+            }
+          ],
+          "count": 3
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "bodil award",
+              "value": "Bodil Award",
+              "start": 27,
+              "end": 38,
+              "clause": "What was the result of the bodil award winning film from before 2005 in the best actress category?"
+            },
+            {
+              "surface": "2005",
+              "value": "2005",
+              "start": 64,
+              "end": 68,
+              "clause": "What was the result of the bodil award winning film from before 2005 in the best actress category?"
+            },
+            {
+              "surface": "best actress",
+              "value": "Best Actress",
+              "start": 76,
+              "end": 88,
+              "clause": "What was the result of the bodil award winning film from before 2005 in the best actress category?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "bodil award",
+              "value": "Bodil Award",
+              "start": 27,
+              "end": 38,
+              "clause": "What was the result of the bodil award winning film from before 2005 in the best actress category?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Bodil Award identifies the award."
+            },
+            {
+              "surface": "2005",
+              "value": "2005",
+              "start": 64,
+              "end": 68,
+              "clause": "What was the result of the bodil award winning film from before 2005 in the best actress category?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Before 2005 specifies the year."
+            },
+            {
+              "surface": "best actress",
+              "value": "Best Actress",
+              "start": 76,
+              "end": 88,
+              "clause": "What was the result of the bodil award winning film from before 2005 in the best actress category?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Best Actress specifies the category."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "70a0ba3f88f29eafe1925c20e2d8f5165f420c5c99394bd7f1d6844f2edec81f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 7678,
+              "completion_tokens": 80,
+              "total_tokens": 7758,
+              "prompt_tokens_details": {
+                "cached_tokens": 6144
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 34
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "bodil award",
+              "value": "Bodil Award",
+              "start": 27,
+              "end": 38,
+              "clause": "What was the result of the bodil award winning film from before 2005 in the best actress category?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Bodil Award identifies the award.",
+              "operator": "="
+            },
+            {
+              "surface": "2005",
+              "value": "2005",
+              "start": 64,
+              "end": 68,
+              "clause": "What was the result of the bodil award winning film from before 2005 in the best actress category?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Before 2005 specifies the year.",
+              "operator": "<"
+            },
+            {
+              "surface": "best actress",
+              "value": "Best Actress",
+              "start": 76,
+              "end": 88,
+              "clause": "What was the result of the bodil award winning film from before 2005 in the best actress category?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Best Actress specifies the category.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b73f3648ab633d97fdc21cbb3c686deaefdd150d62216872076c8f12441841e5",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 7784,
+              "completion_tokens": 57,
+              "total_tokens": 7841,
+              "prompt_tokens_details": {
+                "cached_tokens": 6400
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 48
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "bodil award",
+              "value": "Bodil Award",
+              "start": 27,
+              "end": 38,
+              "clause": "What was the result of the bodil award winning film from before 2005 in the best actress category?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Bodil Award identifies the award.",
+              "operator": "="
+            },
+            {
+              "surface": "2005",
+              "value": "2005",
+              "start": 64,
+              "end": 68,
+              "clause": "What was the result of the bodil award winning film from before 2005 in the best actress category?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Before 2005 specifies the year.",
+              "operator": "<"
+            },
+            {
+              "surface": "best actress",
+              "value": "Best Actress",
+              "start": 76,
+              "end": 88,
+              "clause": "What was the result of the bodil award winning film from before 2005 in the best actress category?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Best Actress specifies the category.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "053c3dd83bd5ef4c8d832fc634193e6a54f1bc726d8df33e544c50371d0202a7",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 7738,
+              "completion_tokens": 42,
+              "total_tokens": 7780,
+              "prompt_tokens_details": {
+                "cached_tokens": 6400
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 28
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "bodil award",
+              "value": "Bodil Award",
+              "start": 27,
+              "end": 38,
+              "clause": "What was the result of the bodil award winning film from before 2005 in the best actress category?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Bodil Award identifies the award.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2005",
+              "value": "2005",
+              "start": 64,
+              "end": 68,
+              "clause": "What was the result of the bodil award winning film from before 2005 in the best actress category?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Before 2005 specifies the year.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "best actress",
+              "value": "Best Actress",
+              "start": 76,
+              "end": 88,
+              "clause": "What was the result of the bodil award winning film from before 2005 in the best actress category?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Best Actress specifies the category.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "bodil award",
+              "value": "Bodil Award",
+              "start": 27,
+              "end": 38,
+              "clause": "What was the result of the bodil award winning film from before 2005 in the best actress category?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Bodil Award identifies the award.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2005",
+              "value": 2005,
+              "start": 64,
+              "end": 68,
+              "clause": "What was the result of the bodil award winning film from before 2005 in the best actress category?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Before 2005 specifies the year.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "best actress",
+              "value": "Best Actress",
+              "start": 76,
+              "end": 88,
+              "clause": "What was the result of the bodil award winning film from before 2005 in the best actress category?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Best Actress specifies the category.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "bodil award",
+              "value": "Bodil Award",
+              "start": 27,
+              "end": 38,
+              "clause": "What was the result of the bodil award winning film from before 2005 in the best actress category?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Bodil Award identifies the award.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2005",
+              "value": 2005,
+              "start": 64,
+              "end": 68,
+              "clause": "What was the result of the bodil award winning film from before 2005 in the best actress category?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Before 2005 specifies the year.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "best actress",
+              "value": "Best Actress",
+              "start": 76,
+              "end": 88,
+              "clause": "What was the result of the bodil award winning film from before 2005 in the best actress category?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Best Actress specifies the category.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              "Bodil Award"
+            ],
+            [
+              1,
+              2,
+              2005
+            ],
+            [
+              2,
+              0,
+              "Best Actress"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "bodil award",
+          "value": "Bodil Award",
+          "start": 27,
+          "end": 38
+        },
+        {
+          "surface": "2005",
+          "value": "2005",
+          "start": 64,
+          "end": 68
+        },
+        {
+          "surface": "best actress",
+          "value": "Best Actress",
+          "start": 76,
+          "end": 88
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "bodil award",
+          "value": "Bodil Award",
+          "start": 27,
+          "end": 38,
+          "clause": "What was the result of the bodil award winning film from before 2005 in the best actress category?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "Bodil Award identifies the award.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "2005",
+          "value": 2005,
+          "start": 64,
+          "end": 68,
+          "clause": "What was the result of the bodil award winning film from before 2005 in the best actress category?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "Before 2005 specifies the year.",
+          "operator": "<",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "best actress",
+          "value": "Best Actress",
+          "start": 76,
+          "end": 88,
+          "clause": "What was the result of the bodil award winning film from before 2005 in the best actress category?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "Best Actress specifies the category.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 3,
+      "conds": [
+        [
+          0,
+          0,
+          "Bodil Award"
+        ],
+        [
+          1,
+          2,
+          2005
+        ],
+        [
+          2,
+          0,
+          "Best Actress"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 10719
+}

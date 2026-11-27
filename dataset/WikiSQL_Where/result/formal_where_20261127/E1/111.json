@@ -1,0 +1,108 @@
+{
+  "arm": "E1",
+  "position": 111,
+  "example_id": "test:7374:2-15914761-1",
+  "original_index": 7374,
+  "table_id": "2-15914761-1",
+  "question": "On what date did the audience of 60,092 people watched a game end with a W 21-9?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        4,
+        1,
+        "60,092"
+      ],
+      [
+        3,
+        0,
+        "w 21-9"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      4,
+      0,
+      "60,092"
+    ],
+    [
+      3,
+      0,
+      "W 21-9"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": "gpt-5.6-sol",
+  "usage": {
+    "prompt_tokens": 10064,
+    "completion_tokens": 64,
+    "total_tokens": 10128,
+    "prompt_tokens_details": {
+      "cached_tokens": 4224
+    }
+  },
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        0,
+        "60,092"
+      ],
+      [
+        3,
+        0,
+        "W 21-9"
+      ]
+    ],
+    "explanation": "The question explicitly filters by Attendance 60,092 and Result W 21-9, even though those values occur in different rows.",
+    "version": "wikisql-where-prior-v1",
+    "tableId": "2-15914761-1",
+    "knowledgeIds": [
+      "g-eq",
+      "g-gt",
+      "g-lt",
+      "g-inclusive",
+      "g-literal",
+      "g-threshold",
+      "g-and",
+      "g-or",
+      "g-column",
+      "g-count",
+      "g-ambiguous",
+      "t-2-15914761-1-field-0",
+      "t-2-15914761-1-field-1",
+      "t-2-15914761-1-field-2",
+      "t-2-15914761-1-field-3",
+      "t-2-15914761-1-field-4",
+      "d-implicit-eq",
+      "d-explicit-eq",
+      "d-gt",
+      "d-lt-and-gt",
+      "d-with-two",
+      "d-literal-form",
+      "p-text",
+      "p-number",
+      "p-multi",
+      "p-unsupported"
+    ],
+    "promptSha256": "7bf141c22cc90a425d13c2a6d000ab304bbe5dc5a81873fe051dc1d45d403d5a",
+    "model": "gpt-5.6-sol",
+    "usage": {
+      "prompt_tokens": 10064,
+      "completion_tokens": 64,
+      "total_tokens": 10128,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      }
+    },
+    "latencyMs": 2587
+  },
+  "source": "where_prior_parse",
+  "safe_completed": true,
+  "elapsed_ms": 2625
+}

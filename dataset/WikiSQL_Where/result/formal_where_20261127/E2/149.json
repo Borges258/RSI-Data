@@ -1,0 +1,658 @@
+{
+  "arm": "E2",
+  "position": 149,
+  "example_id": "test:11571:2-11233358-6",
+  "original_index": 11571,
+  "table_id": "2-11233358-6",
+  "question": "What day was the score 3-0 after 2011?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        3,
+        0,
+        "3-0"
+      ],
+      [
+        0,
+        1,
+        2011
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      3,
+      0,
+      "3-0"
+    ],
+    [
+      0,
+      1,
+      2011
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        0,
+        "3-0"
+      ],
+      [
+        0,
+        1,
+        2011
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "3-0",
+        "value": "3-0",
+        "start": 23,
+        "end": 26,
+        "clause": "What day was the score 3-0 after 2011?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "Explicitly described as the score, matching the Score header and score-formatted cells.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "after 2011",
+        "value": 2011,
+        "start": 27,
+        "end": 37,
+        "clause": "What day was the score 3-0 after 2011?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "Temporal comparison refers to year, matching the Year header and numeric year cells.",
+        "operator": ">",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "3-0",
+        "value": "3-0",
+        "start": 23,
+        "end": 26
+      },
+      {
+        "surface": "after 2011",
+        "value": "2011",
+        "start": 27,
+        "end": 37
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What day was the score 3-0 after 2011?",
+      "table": {
+        "header": [
+          "Year",
+          "Date",
+          "Location",
+          "Score",
+          "Result"
+        ],
+        "page_title": "Croatia Fed Cup team",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 11233358,
+        "id": "2-11233358-6",
+        "section_title": "2010s",
+        "rows": [
+          [
+            "2010",
+            "3 Feb",
+            "Lisbon (POR)",
+            "2-1",
+            "Win"
+          ],
+          [
+            "2010",
+            "4 Feb",
+            "Lisbon (POR)",
+            "1-2",
+            "Loss"
+          ],
+          [
+            "2010",
+            "5 Feb",
+            "Lisbon (POR)",
+            "0-3",
+            "Loss"
+          ],
+          [
+            "2010",
+            "6 Feb",
+            "Lisbon (POR)",
+            "1-2",
+            "Loss"
+          ],
+          [
+            "2011",
+            "2 Feb",
+            "Eilat (ISR)",
+            "0-3",
+            "Loss"
+          ],
+          [
+            "2011",
+            "3 Feb",
+            "Eilat (ISR)",
+            "0-3",
+            "Loss"
+          ],
+          [
+            "2011",
+            "4 Feb",
+            "Eilat (ISR)",
+            "3-0",
+            "Win"
+          ],
+          [
+            "2011",
+            "5 Feb",
+            "Eilat (ISR)",
+            "0-2",
+            "Loss"
+          ],
+          [
+            "2012",
+            "1 Feb",
+            "Eilat (ISR)",
+            "1-2",
+            "Loss"
+          ],
+          [
+            "2012",
+            "2 Feb",
+            "Eilat (ISR)",
+            "0-3",
+            "Loss"
+          ],
+          [
+            "2012",
+            "3 Feb",
+            "Eilat (ISR)",
+            "2-1",
+            "Win"
+          ],
+          [
+            "2012",
+            "5 Feb",
+            "Eilat (ISR)",
+            "2-0",
+            "Win"
+          ],
+          [
+            "2013",
+            "6 Feb",
+            "Eilat (ISR)",
+            "2-1",
+            "Win"
+          ],
+          [
+            "2013",
+            "7 Feb",
+            "Eilat (ISR)",
+            "3-0",
+            "Win"
+          ],
+          [
+            "2013",
+            "8 Feb",
+            "Eilat (ISR)",
+            "3-0",
+            "Win"
+          ],
+          [
+            "2013",
+            "9 Feb",
+            "Eilat (ISR)",
+            "1-2",
+            "Loss"
+          ]
+        ],
+        "caption": "2010s",
+        "headers": [
+          "Year",
+          "Date",
+          "Location",
+          "Score",
+          "Result"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-11233358-6",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "3-0",
+              "value": "3-0",
+              "start": 23,
+              "end": 26
+            },
+            {
+              "surface": "after 2011",
+              "value": "2011",
+              "start": 27,
+              "end": 37
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "9b828ff8dea42a0ecb79648f61dd685c5220f313d5346f2cacfb52a49a521b79",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4970,
+              "completion_tokens": 33,
+              "total_tokens": 5003,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "3-0",
+              "value": "3-0",
+              "start": 23,
+              "end": 26,
+              "clause": "What day was the score 3-0 after 2011?"
+            },
+            {
+              "surface": "after 2011",
+              "value": "2011",
+              "start": 27,
+              "end": 37,
+              "clause": "What day was the score 3-0 after 2011?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "3-0",
+              "value": "3-0",
+              "start": 23,
+              "end": 26,
+              "clause": "What day was the score 3-0 after 2011?"
+            },
+            {
+              "surface": "after 2011",
+              "value": "2011",
+              "start": 27,
+              "end": 37,
+              "clause": "What day was the score 3-0 after 2011?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "3-0",
+              "value": "3-0",
+              "start": 23,
+              "end": 26,
+              "clause": "What day was the score 3-0 after 2011?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicitly described as the score, matching the Score header and score-formatted cells."
+            },
+            {
+              "surface": "after 2011",
+              "value": "2011",
+              "start": 27,
+              "end": 37,
+              "clause": "What day was the score 3-0 after 2011?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Temporal comparison refers to year, matching the Year header and numeric year cells."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e571858b9a878fd7e90dfad61f79bfaf1bf58f940c42aa0b1e4496a58a62c4b4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5047,
+              "completion_tokens": 57,
+              "total_tokens": 5104,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "3-0",
+              "value": "3-0",
+              "start": 23,
+              "end": 26,
+              "clause": "What day was the score 3-0 after 2011?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicitly described as the score, matching the Score header and score-formatted cells.",
+              "operator": "="
+            },
+            {
+              "surface": "after 2011",
+              "value": "2011",
+              "start": 27,
+              "end": 37,
+              "clause": "What day was the score 3-0 after 2011?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Temporal comparison refers to year, matching the Year header and numeric year cells.",
+              "operator": ">"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "8bba9389d90db3ee7c81a1d5a2e89caa35be3bfa5ef0b57dbfcd68be186ceee0",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5139,
+              "completion_tokens": 11,
+              "total_tokens": 5150,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "3-0",
+              "value": "3-0",
+              "start": 23,
+              "end": 26,
+              "clause": "What day was the score 3-0 after 2011?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicitly described as the score, matching the Score header and score-formatted cells.",
+              "operator": "="
+            },
+            {
+              "surface": "after 2011",
+              "value": 2011,
+              "start": 27,
+              "end": 37,
+              "clause": "What day was the score 3-0 after 2011?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Temporal comparison refers to year, matching the Year header and numeric year cells.",
+              "operator": ">"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "2e799f088a24465c04d943b4b3d60bf7899e67fc85913d67abf51254da7885e5",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5093,
+              "completion_tokens": 14,
+              "total_tokens": 5107,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "3-0",
+              "value": "3-0",
+              "start": 23,
+              "end": 26,
+              "clause": "What day was the score 3-0 after 2011?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicitly described as the score, matching the Score header and score-formatted cells.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "after 2011",
+              "value": "2011",
+              "start": 27,
+              "end": 37,
+              "clause": "What day was the score 3-0 after 2011?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Temporal comparison refers to year, matching the Year header and numeric year cells.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "3-0",
+              "value": "3-0",
+              "start": 23,
+              "end": 26,
+              "clause": "What day was the score 3-0 after 2011?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicitly described as the score, matching the Score header and score-formatted cells.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "after 2011",
+              "value": 2011,
+              "start": 27,
+              "end": 37,
+              "clause": "What day was the score 3-0 after 2011?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Temporal comparison refers to year, matching the Year header and numeric year cells.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "3-0",
+              "value": "3-0",
+              "start": 23,
+              "end": 26,
+              "clause": "What day was the score 3-0 after 2011?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicitly described as the score, matching the Score header and score-formatted cells.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "after 2011",
+              "value": 2011,
+              "start": 27,
+              "end": 37,
+              "clause": "What day was the score 3-0 after 2011?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Temporal comparison refers to year, matching the Year header and numeric year cells.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              0,
+              "3-0"
+            ],
+            [
+              0,
+              1,
+              2011
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "3-0",
+          "value": "3-0",
+          "start": 23,
+          "end": 26
+        },
+        {
+          "surface": "after 2011",
+          "value": "2011",
+          "start": 27,
+          "end": 37
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "3-0",
+          "value": "3-0",
+          "start": 23,
+          "end": 26,
+          "clause": "What day was the score 3-0 after 2011?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "Explicitly described as the score, matching the Score header and score-formatted cells.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "after 2011",
+          "value": 2011,
+          "start": 27,
+          "end": 37,
+          "clause": "What day was the score 3-0 after 2011?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "Temporal comparison refers to year, matching the Year header and numeric year cells.",
+          "operator": ">",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          3,
+          0,
+          "3-0"
+        ],
+        [
+          0,
+          1,
+          2011
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7468
+}

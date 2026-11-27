@@ -1,0 +1,414 @@
+{
+  "arm": "E2",
+  "position": 127,
+  "example_id": "test:9286:2-169523-2",
+  "original_index": 9286,
+  "table_id": "2-169523-2",
+  "question": "Round 3 with less than 54 for Round 4?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        4,
+        2,
+        "54"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      4,
+      2,
+      "54"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        2,
+        "54"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "54",
+        "value": "54",
+        "start": 23,
+        "end": 25,
+        "clause": "Round 3 with less than 54 for Round 4?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The phrase '54 for Round 4' explicitly associates the condition value 54 with the Round 4 field.",
+        "operator": "<",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "54",
+        "value": "54",
+        "start": 23,
+        "end": 25
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Round 3 with less than 54 for Round 4?",
+      "table": {
+        "header": [
+          "City",
+          "Round 1",
+          "Round 2",
+          "Round 3",
+          "Round 4"
+        ],
+        "page_title": "Bids for the 2012 Summer Olympics",
+        "types": [
+          "text",
+          "real",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 169523,
+        "id": "2-169523-2",
+        "section_title": "Final selection process",
+        "rows": [
+          [
+            "London",
+            "22",
+            "27",
+            "39",
+            "54"
+          ],
+          [
+            "Paris",
+            "21",
+            "25",
+            "33",
+            "50"
+          ],
+          [
+            "Madrid",
+            "20",
+            "32",
+            "31",
+            "—"
+          ],
+          [
+            "New York City",
+            "19",
+            "16",
+            "—",
+            "—"
+          ],
+          [
+            "Moscow",
+            "15",
+            "—",
+            "—",
+            "—"
+          ]
+        ],
+        "caption": "2012 Host City Election – ballot results",
+        "headers": [
+          "City",
+          "Round 1",
+          "Round 2",
+          "Round 3",
+          "Round 4"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-169523-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "54",
+              "value": "54",
+              "start": 23,
+              "end": 25
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d8241839932ab47efd6086049c7ff70b17d60f45d7739068fcdd480a4d39db72",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4746,
+              "completion_tokens": 64,
+              "total_tokens": 4810,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 45
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "54",
+              "value": "54",
+              "start": 23,
+              "end": 25,
+              "clause": "Round 3 with less than 54 for Round 4?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "54",
+              "value": "54",
+              "start": 23,
+              "end": 25,
+              "clause": "Round 3 with less than 54 for Round 4?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "54",
+              "value": "54",
+              "start": 23,
+              "end": 25,
+              "clause": "Round 3 with less than 54 for Round 4?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase '54 for Round 4' explicitly associates the condition value 54 with the Round 4 field."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "2c337b24283e2cb6cec91005afc5d3b8657c94636dd644ebcbdfba4cfa26e378",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4780,
+              "completion_tokens": 44,
+              "total_tokens": 4824,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "54",
+              "value": "54",
+              "start": 23,
+              "end": 25,
+              "clause": "Round 3 with less than 54 for Round 4?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase '54 for Round 4' explicitly associates the condition value 54 with the Round 4 field.",
+              "operator": "<"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0132ff9141a22fec8ae8ce5c7b7ef649f9d8ce217f0b6b295c9cd160a8ed439f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4848,
+              "completion_tokens": 10,
+              "total_tokens": 4858,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "54",
+              "value": "54",
+              "start": 23,
+              "end": 25,
+              "clause": "Round 3 with less than 54 for Round 4?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase '54 for Round 4' explicitly associates the condition value 54 with the Round 4 field.",
+              "operator": "<"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f34ec3947526eb4b31d251500fd07efd23c3ed091994d04084d551588f84426e",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4799,
+              "completion_tokens": 10,
+              "total_tokens": 4809,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "54",
+              "value": "54",
+              "start": 23,
+              "end": 25,
+              "clause": "Round 3 with less than 54 for Round 4?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase '54 for Round 4' explicitly associates the condition value 54 with the Round 4 field.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "54",
+              "value": "54",
+              "start": 23,
+              "end": 25,
+              "clause": "Round 3 with less than 54 for Round 4?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase '54 for Round 4' explicitly associates the condition value 54 with the Round 4 field.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "54",
+              "value": "54",
+              "start": 23,
+              "end": 25,
+              "clause": "Round 3 with less than 54 for Round 4?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase '54 for Round 4' explicitly associates the condition value 54 with the Round 4 field.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              2,
+              "54"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "54",
+          "value": "54",
+          "start": 23,
+          "end": 25
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "54",
+          "value": "54",
+          "start": 23,
+          "end": 25,
+          "clause": "Round 3 with less than 54 for Round 4?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The phrase '54 for Round 4' explicitly associates the condition value 54 with the Round 4 field.",
+          "operator": "<",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          4,
+          2,
+          "54"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8000
+}

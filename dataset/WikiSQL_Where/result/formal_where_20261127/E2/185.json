@@ -1,0 +1,1096 @@
+{
+  "arm": "E2",
+  "position": 185,
+  "example_id": "test:15048:2-12742744-1",
+  "original_index": 15048,
+  "table_id": "2-12742744-1",
+  "question": "Who has a transfer fee larger than 12 from ajax in 2006 while ranked higher than 17?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        3,
+        1,
+        12
+      ],
+      [
+        0,
+        1,
+        17
+      ],
+      [
+        4,
+        1,
+        2006
+      ],
+      [
+        2,
+        0,
+        "ajax"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      3,
+      1,
+      12
+    ],
+    [
+      2,
+      0,
+      "Ajax"
+    ],
+    [
+      4,
+      0,
+      2006
+    ],
+    [
+      0,
+      2,
+      17
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        1,
+        12
+      ],
+      [
+        2,
+        0,
+        "Ajax"
+      ],
+      [
+        4,
+        0,
+        2006
+      ],
+      [
+        0,
+        2,
+        17
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "larger than 12",
+        "value": 12,
+        "start": 23,
+        "end": 37,
+        "clause": "Who has a transfer fee larger than 12 from ajax in 2006 while ranked higher than 17?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "Explicitly modifies transfer fee.",
+        "operator": ">",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "ajax",
+        "value": "Ajax",
+        "start": 43,
+        "end": 47,
+        "clause": "Who has a transfer fee larger than 12 from ajax in 2006 while ranked higher than 17?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "'from ajax' maps to From; Ajax appears in that column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "2006",
+        "value": 2006,
+        "start": 51,
+        "end": 55,
+        "clause": "Who has a transfer fee larger than 12 from ajax in 2006 while ranked higher than 17?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The four-digit value and 'in 2006' indicate Year.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "higher than 17",
+        "value": 17,
+        "start": 69,
+        "end": 83,
+        "clause": "Who has a transfer fee larger than 12 from ajax in 2006 while ranked higher than 17?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "Explicitly modifies rank.",
+        "operator": "<",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "larger than 12",
+        "value": "12",
+        "start": 23,
+        "end": 37
+      },
+      {
+        "surface": "ajax",
+        "value": "ajax",
+        "start": 43,
+        "end": 47
+      },
+      {
+        "surface": "2006",
+        "value": "2006",
+        "start": 51,
+        "end": 55
+      },
+      {
+        "surface": "higher than 17",
+        "value": "17",
+        "start": 69,
+        "end": 83
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Who has a transfer fee larger than 12 from ajax in 2006 while ranked higher than 17?",
+      "table": {
+        "header": [
+          "Rank",
+          "Player",
+          "From",
+          "Transfer fee ( € million)",
+          "Year"
+        ],
+        "page_title": "Dutch football transfer record",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "real",
+          "real"
+        ],
+        "page_id": 12742744,
+        "id": "2-12742744-1",
+        "section_title": "Outgoing transfers",
+        "rows": [
+          [
+            "1",
+            "Ruud van Nistelrooy",
+            "PSV",
+            "30.5",
+            "2001"
+          ],
+          [
+            "2",
+            "Wesley Sneijder",
+            "Ajax",
+            "27",
+            "2007"
+          ],
+          [
+            "2",
+            "Klaas-Jan Huntelaar",
+            "Ajax",
+            "27",
+            "2009"
+          ],
+          [
+            "4",
+            "Luis Suárez",
+            "Ajax",
+            "26.5",
+            "2011"
+          ],
+          [
+            "5",
+            "Kevin Strootman",
+            "PSV",
+            "20",
+            "2013"
+          ],
+          [
+            "5",
+            "Afonso Alves",
+            "Heerenveen",
+            "20",
+            "2008"
+          ],
+          [
+            "7",
+            "Arjen Robben",
+            "PSV",
+            "18.1",
+            "2004"
+          ],
+          [
+            "8",
+            "Cristian Chivu",
+            "Ajax",
+            "18",
+            "2003"
+          ],
+          [
+            "8",
+            "Dirk Kuyt",
+            "Feyenoord",
+            "18",
+            "2006"
+          ],
+          [
+            "10",
+            "Jaap Stam",
+            "PSV",
+            "17",
+            "1998"
+          ],
+          [
+            "10",
+            "Ryan Babel",
+            "Ajax",
+            "17",
+            "2007"
+          ],
+          [
+            "12",
+            "Zlatan Ibrahimović",
+            "Ajax",
+            "16.9",
+            "2004"
+          ],
+          [
+            "13",
+            "Miralem Sulejmani",
+            "Heerenveen",
+            "16.25",
+            "2008"
+          ],
+          [
+            "14",
+            "Dennis Bergkamp",
+            "Ajax",
+            "16",
+            "1993"
+          ],
+          [
+            "15",
+            "Ronaldo",
+            "PSV",
+            "15.5",
+            "1996"
+          ],
+          [
+            "16",
+            "Luuk de Jong",
+            "Twente",
+            "15",
+            "2012"
+          ],
+          [
+            "17",
+            "Wilfried Bony",
+            "Vitesse",
+            "14",
+            "2013"
+          ],
+          [
+            "17",
+            "Balázs Dzsudzsák",
+            "PSV",
+            "14",
+            "2011"
+          ],
+          [
+            "17",
+            "Royston Drenthe",
+            "Feyenoord",
+            "14",
+            "2007"
+          ],
+          [
+            "17",
+            "Heurelho Gomes",
+            "PSV",
+            "14",
+            "2008"
+          ],
+          [
+            "21",
+            "Christian Eriksen",
+            "Ajax",
+            "13,5",
+            "2013"
+          ],
+          [
+            "22",
+            "Strootman & Mertens",
+            "Utrecht",
+            "13",
+            "2011"
+          ],
+          [
+            "23",
+            "Salomon Kalou",
+            "Feyenoord",
+            "12.6",
+            "2006"
+          ],
+          [
+            "24",
+            "Bryan Ruiz",
+            "Twente",
+            "12",
+            "2011"
+          ],
+          [
+            "24",
+            "Ahmed Hossam",
+            "Ajax",
+            "12",
+            "2003"
+          ],
+          [
+            "24",
+            "Thomas Vermaelen",
+            "Ajax",
+            "12",
+            "2009"
+          ],
+          [
+            "24",
+            "Arouna Koné",
+            "PSV",
+            "12",
+            "2007"
+          ],
+          [
+            "28",
+            "Frank de Boer",
+            "Ajax",
+            "11",
+            "1998"
+          ],
+          [
+            "29",
+            "John Heitinga",
+            "Ajax",
+            "10",
+            "2008"
+          ],
+          [
+            "29",
+            "Jefferson Farfán",
+            "PSV",
+            "10",
+            "2008"
+          ]
+        ],
+        "caption": "Outgoing transfers",
+        "headers": [
+          "Rank",
+          "Player",
+          "From",
+          "Transfer fee ( € million)",
+          "Year"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-12742744-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 4,
+          "conditions": [
+            {
+              "surface": "larger than 12",
+              "value": "12",
+              "start": 23,
+              "end": 37
+            },
+            {
+              "surface": "ajax",
+              "value": "ajax",
+              "start": 43,
+              "end": 47
+            },
+            {
+              "surface": "2006",
+              "value": "2006",
+              "start": 51,
+              "end": 55
+            },
+            {
+              "surface": "higher than 17",
+              "value": "17",
+              "start": 69,
+              "end": 83
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "315cfe335cf0a3bb8088bda9364c54e2ae273954e209b4f574e207c04a6fec4a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5181,
+              "completion_tokens": 50,
+              "total_tokens": 5231,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "larger than 12",
+              "value": "12",
+              "start": 23,
+              "end": 37,
+              "clause": "Who has a transfer fee larger than 12 from ajax in 2006 while ranked higher than 17?"
+            },
+            {
+              "surface": "ajax",
+              "value": "ajax",
+              "start": 43,
+              "end": 47,
+              "clause": "Who has a transfer fee larger than 12 from ajax in 2006 while ranked higher than 17?"
+            },
+            {
+              "surface": "2006",
+              "value": "2006",
+              "start": 51,
+              "end": 55,
+              "clause": "Who has a transfer fee larger than 12 from ajax in 2006 while ranked higher than 17?"
+            },
+            {
+              "surface": "higher than 17",
+              "value": "17",
+              "start": 69,
+              "end": 83,
+              "clause": "Who has a transfer fee larger than 12 from ajax in 2006 while ranked higher than 17?"
+            }
+          ],
+          "count": 4
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "larger than 12",
+              "value": "12",
+              "start": 23,
+              "end": 37,
+              "clause": "Who has a transfer fee larger than 12 from ajax in 2006 while ranked higher than 17?"
+            },
+            {
+              "surface": "ajax",
+              "value": "ajax",
+              "start": 43,
+              "end": 47,
+              "clause": "Who has a transfer fee larger than 12 from ajax in 2006 while ranked higher than 17?"
+            },
+            {
+              "surface": "2006",
+              "value": "2006",
+              "start": 51,
+              "end": 55,
+              "clause": "Who has a transfer fee larger than 12 from ajax in 2006 while ranked higher than 17?"
+            },
+            {
+              "surface": "higher than 17",
+              "value": "17",
+              "start": 69,
+              "end": 83,
+              "clause": "Who has a transfer fee larger than 12 from ajax in 2006 while ranked higher than 17?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "larger than 12",
+              "value": "12",
+              "start": 23,
+              "end": 37,
+              "clause": "Who has a transfer fee larger than 12 from ajax in 2006 while ranked higher than 17?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicitly modifies transfer fee."
+            },
+            {
+              "surface": "ajax",
+              "value": "ajax",
+              "start": 43,
+              "end": 47,
+              "clause": "Who has a transfer fee larger than 12 from ajax in 2006 while ranked higher than 17?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'from ajax' maps to From; Ajax appears in that column."
+            },
+            {
+              "surface": "2006",
+              "value": "2006",
+              "start": 51,
+              "end": 55,
+              "clause": "Who has a transfer fee larger than 12 from ajax in 2006 while ranked higher than 17?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The four-digit value and 'in 2006' indicate Year."
+            },
+            {
+              "surface": "higher than 17",
+              "value": "17",
+              "start": 69,
+              "end": 83,
+              "clause": "Who has a transfer fee larger than 12 from ajax in 2006 while ranked higher than 17?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Explicitly modifies rank."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "7d5ce7caa4b26b69bd02bee23f4e81b47a48ed83fc7a49a34c3baa2680b6a8f6",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5359,
+              "completion_tokens": 72,
+              "total_tokens": 5431,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "larger than 12",
+              "value": "12",
+              "start": 23,
+              "end": 37,
+              "clause": "Who has a transfer fee larger than 12 from ajax in 2006 while ranked higher than 17?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicitly modifies transfer fee.",
+              "operator": ">"
+            },
+            {
+              "surface": "ajax",
+              "value": "ajax",
+              "start": 43,
+              "end": 47,
+              "clause": "Who has a transfer fee larger than 12 from ajax in 2006 while ranked higher than 17?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'from ajax' maps to From; Ajax appears in that column.",
+              "operator": "="
+            },
+            {
+              "surface": "2006",
+              "value": "2006",
+              "start": 51,
+              "end": 55,
+              "clause": "Who has a transfer fee larger than 12 from ajax in 2006 while ranked higher than 17?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The four-digit value and 'in 2006' indicate Year.",
+              "operator": "="
+            },
+            {
+              "surface": "higher than 17",
+              "value": "17",
+              "start": 69,
+              "end": 83,
+              "clause": "Who has a transfer fee larger than 12 from ajax in 2006 while ranked higher than 17?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Explicitly modifies rank.",
+              "operator": "<"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b5abc0895a2824b721c4d9a180fa3c3b381cf82264916c0497a911befbd0d925",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5487,
+              "completion_tokens": 16,
+              "total_tokens": 5503,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "larger than 12",
+              "value": 12,
+              "start": 23,
+              "end": 37,
+              "clause": "Who has a transfer fee larger than 12 from ajax in 2006 while ranked higher than 17?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicitly modifies transfer fee.",
+              "operator": ">"
+            },
+            {
+              "surface": "ajax",
+              "value": "Ajax",
+              "start": 43,
+              "end": 47,
+              "clause": "Who has a transfer fee larger than 12 from ajax in 2006 while ranked higher than 17?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'from ajax' maps to From; Ajax appears in that column.",
+              "operator": "="
+            },
+            {
+              "surface": "2006",
+              "value": 2006,
+              "start": 51,
+              "end": 55,
+              "clause": "Who has a transfer fee larger than 12 from ajax in 2006 while ranked higher than 17?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The four-digit value and 'in 2006' indicate Year.",
+              "operator": "="
+            },
+            {
+              "surface": "higher than 17",
+              "value": 17,
+              "start": 69,
+              "end": 83,
+              "clause": "Who has a transfer fee larger than 12 from ajax in 2006 while ranked higher than 17?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Explicitly modifies rank.",
+              "operator": "<"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c4ecd0e1b4640a42c47bd339c8a22d4c6f53e066fe4a95a1fd70730086678563",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5447,
+              "completion_tokens": 16,
+              "total_tokens": 5463,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "larger than 12",
+              "value": "12",
+              "start": 23,
+              "end": 37,
+              "clause": "Who has a transfer fee larger than 12 from ajax in 2006 while ranked higher than 17?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicitly modifies transfer fee.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "ajax",
+              "value": "Ajax",
+              "start": 43,
+              "end": 47,
+              "clause": "Who has a transfer fee larger than 12 from ajax in 2006 while ranked higher than 17?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'from ajax' maps to From; Ajax appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2006",
+              "value": "2006",
+              "start": 51,
+              "end": 55,
+              "clause": "Who has a transfer fee larger than 12 from ajax in 2006 while ranked higher than 17?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The four-digit value and 'in 2006' indicate Year.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "higher than 17",
+              "value": "17",
+              "start": 69,
+              "end": 83,
+              "clause": "Who has a transfer fee larger than 12 from ajax in 2006 while ranked higher than 17?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Explicitly modifies rank.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "larger than 12",
+              "value": 12,
+              "start": 23,
+              "end": 37,
+              "clause": "Who has a transfer fee larger than 12 from ajax in 2006 while ranked higher than 17?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicitly modifies transfer fee.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "ajax",
+              "value": "Ajax",
+              "start": 43,
+              "end": 47,
+              "clause": "Who has a transfer fee larger than 12 from ajax in 2006 while ranked higher than 17?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'from ajax' maps to From; Ajax appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2006",
+              "value": 2006,
+              "start": 51,
+              "end": 55,
+              "clause": "Who has a transfer fee larger than 12 from ajax in 2006 while ranked higher than 17?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The four-digit value and 'in 2006' indicate Year.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "higher than 17",
+              "value": 17,
+              "start": 69,
+              "end": 83,
+              "clause": "Who has a transfer fee larger than 12 from ajax in 2006 while ranked higher than 17?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Explicitly modifies rank.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "larger than 12",
+              "value": 12,
+              "start": 23,
+              "end": 37,
+              "clause": "Who has a transfer fee larger than 12 from ajax in 2006 while ranked higher than 17?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicitly modifies transfer fee.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "ajax",
+              "value": "Ajax",
+              "start": 43,
+              "end": 47,
+              "clause": "Who has a transfer fee larger than 12 from ajax in 2006 while ranked higher than 17?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'from ajax' maps to From; Ajax appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2006",
+              "value": 2006,
+              "start": 51,
+              "end": 55,
+              "clause": "Who has a transfer fee larger than 12 from ajax in 2006 while ranked higher than 17?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The four-digit value and 'in 2006' indicate Year.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "higher than 17",
+              "value": 17,
+              "start": 69,
+              "end": 83,
+              "clause": "Who has a transfer fee larger than 12 from ajax in 2006 while ranked higher than 17?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Explicitly modifies rank.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              1,
+              12
+            ],
+            [
+              2,
+              0,
+              "Ajax"
+            ],
+            [
+              4,
+              0,
+              2006
+            ],
+            [
+              0,
+              2,
+              17
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "larger than 12",
+          "value": "12",
+          "start": 23,
+          "end": 37
+        },
+        {
+          "surface": "ajax",
+          "value": "ajax",
+          "start": 43,
+          "end": 47
+        },
+        {
+          "surface": "2006",
+          "value": "2006",
+          "start": 51,
+          "end": 55
+        },
+        {
+          "surface": "higher than 17",
+          "value": "17",
+          "start": 69,
+          "end": 83
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "larger than 12",
+          "value": 12,
+          "start": 23,
+          "end": 37,
+          "clause": "Who has a transfer fee larger than 12 from ajax in 2006 while ranked higher than 17?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "Explicitly modifies transfer fee.",
+          "operator": ">",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "ajax",
+          "value": "Ajax",
+          "start": 43,
+          "end": 47,
+          "clause": "Who has a transfer fee larger than 12 from ajax in 2006 while ranked higher than 17?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "'from ajax' maps to From; Ajax appears in that column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "2006",
+          "value": 2006,
+          "start": 51,
+          "end": 55,
+          "clause": "Who has a transfer fee larger than 12 from ajax in 2006 while ranked higher than 17?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The four-digit value and 'in 2006' indicate Year.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "higher than 17",
+          "value": 17,
+          "start": 69,
+          "end": 83,
+          "clause": "Who has a transfer fee larger than 12 from ajax in 2006 while ranked higher than 17?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "Explicitly modifies rank.",
+          "operator": "<",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 4,
+      "conds": [
+        [
+          3,
+          1,
+          12
+        ],
+        [
+          2,
+          0,
+          "Ajax"
+        ],
+        [
+          4,
+          0,
+          2006
+        ],
+        [
+          0,
+          2,
+          17
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8875
+}

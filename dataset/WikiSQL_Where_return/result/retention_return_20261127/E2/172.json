@@ -1,0 +1,436 @@
+{
+  "arm": "E2",
+  "position": 172,
+  "example_id": "test:6147:2-14644714-1",
+  "original_index": 6147,
+  "table_id": "2-14644714-1",
+  "question": "What is the purse when Aidan O'brien was the trainer?",
+  "gold_sql": {
+    "sel": 6,
+    "conds": [
+      [
+        3,
+        0,
+        "aidan o'brien"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      3,
+      0,
+      "Aidan O'Brien"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        0,
+        "Aidan O'Brien"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Aidan O'brien",
+        "value": "Aidan O'Brien",
+        "start": 23,
+        "end": 36,
+        "clause": "What is the purse when Aidan O'brien was the trainer?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The question explicitly says Aidan O'Brien was the trainer, matching the Trainer header and row evidence.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Aidan O'brien",
+        "value": "Aidan O'Brien",
+        "start": 23,
+        "end": 36
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the purse when Aidan O'brien was the trainer?",
+      "table": {
+        "header": [
+          "Year",
+          "Winner",
+          "Jockey",
+          "Trainer",
+          "Owner",
+          "Time",
+          "Purse"
+        ],
+        "page_title": "Breeders' Cup Marathon",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 14644714,
+        "id": "2-14644714-1",
+        "section_title": "Winners of the Breeders' Cup Marathon since 2008",
+        "rows": [
+          [
+            "2013",
+            "London Bridge",
+            "Mike Smith",
+            "Jo Hughes",
+            "Eastwind Racing & Martha Trussell",
+            "2:58.32",
+            "$500,000"
+          ],
+          [
+            "2012",
+            "Calidoscopio (ARG)",
+            "Aaron Gryder",
+            "Guillermo Frenkel Santillán",
+            "Stud Dona Pancha",
+            "2:57.25",
+            "$500,000"
+          ],
+          [
+            "2011",
+            "Afleet Again",
+            "Cornelio Velasquez",
+            "Robert E. Reid, Jr.",
+            "Kasey K Racing Stable",
+            "3:00.39",
+            "$500,000"
+          ],
+          [
+            "2010",
+            "Eldaafer",
+            "John Velazquez",
+            "Diane Alvardo",
+            "IEAH Stables and Mansour Albaroudy",
+            "2:59.62",
+            "$500,000"
+          ],
+          [
+            "2009",
+            "Man of Iron",
+            "Johnny Murtagh",
+            "Aidan O'Brien",
+            "Derrick Smith/ Susan Magnier / Michael Tabor",
+            "2:54.11",
+            "$500,000"
+          ],
+          [
+            "2008",
+            "Muhannak",
+            "Pat Smullen",
+            "Ralph Beckett",
+            "Richard Pegum",
+            "2:28.24†",
+            "$500,000"
+          ]
+        ],
+        "caption": "Winners of the Breeders' Cup Marathon since 2008",
+        "headers": [
+          "Year",
+          "Winner",
+          "Jockey",
+          "Trainer",
+          "Owner",
+          "Time",
+          "Purse"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-14644714-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Aidan O'brien",
+              "value": "Aidan O'Brien",
+              "start": 23,
+              "end": 36
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f8ccdf806ff5f869b11a170338f4c9c37a3b143d54947e3acf6dfb4cc18149c4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4934,
+              "completion_tokens": 25,
+              "total_tokens": 4959,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Aidan O'brien",
+              "value": "Aidan O'Brien",
+              "start": 23,
+              "end": 36,
+              "clause": "What is the purse when Aidan O'brien was the trainer?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Aidan O'brien",
+              "value": "Aidan O'Brien",
+              "start": 23,
+              "end": 36,
+              "clause": "What is the purse when Aidan O'brien was the trainer?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Aidan O'brien",
+              "value": "Aidan O'Brien",
+              "start": 23,
+              "end": 36,
+              "clause": "What is the purse when Aidan O'brien was the trainer?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says Aidan O'Brien was the trainer, matching the Trainer header and row evidence."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "97700016277892066072870600883f343fffe57c58dde0eac6d9e249c331239e",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4978,
+              "completion_tokens": 41,
+              "total_tokens": 5019,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Aidan O'brien",
+              "value": "Aidan O'Brien",
+              "start": 23,
+              "end": 36,
+              "clause": "What is the purse when Aidan O'brien was the trainer?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says Aidan O'Brien was the trainer, matching the Trainer header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "8d05247142ef585ba2e6a465893e01a0d587a87740ce2377de8fe629043106b4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5043,
+              "completion_tokens": 9,
+              "total_tokens": 5052,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Aidan O'brien",
+              "value": "Aidan O'Brien",
+              "start": 23,
+              "end": 36,
+              "clause": "What is the purse when Aidan O'brien was the trainer?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says Aidan O'Brien was the trainer, matching the Trainer header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "292b293bdfe33a1b26b40258fdc0d71bee076a4c35089fbc03e83fd3f60db5cd",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4994,
+              "completion_tokens": 13,
+              "total_tokens": 5007,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Aidan O'brien",
+              "value": "Aidan O'Brien",
+              "start": 23,
+              "end": 36,
+              "clause": "What is the purse when Aidan O'brien was the trainer?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says Aidan O'Brien was the trainer, matching the Trainer header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Aidan O'brien",
+              "value": "Aidan O'Brien",
+              "start": 23,
+              "end": 36,
+              "clause": "What is the purse when Aidan O'brien was the trainer?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says Aidan O'Brien was the trainer, matching the Trainer header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Aidan O'brien",
+              "value": "Aidan O'Brien",
+              "start": 23,
+              "end": 36,
+              "clause": "What is the purse when Aidan O'brien was the trainer?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says Aidan O'Brien was the trainer, matching the Trainer header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              0,
+              "Aidan O'Brien"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Aidan O'brien",
+          "value": "Aidan O'Brien",
+          "start": 23,
+          "end": 36
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Aidan O'brien",
+          "value": "Aidan O'Brien",
+          "start": 23,
+          "end": 36,
+          "clause": "What is the purse when Aidan O'brien was the trainer?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The question explicitly says Aidan O'Brien was the trainer, matching the Trainer header and row evidence.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          3,
+          0,
+          "Aidan O'Brien"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8625
+}

@@ -1,0 +1,474 @@
+{
+  "arm": "E2",
+  "position": 465,
+  "example_id": "test:5210:2-15214004-3",
+  "original_index": 5210,
+  "table_id": "2-15214004-3",
+  "question": "How many picks did Mike Zaher have?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        2,
+        0,
+        "mike zaher"
+      ]
+    ],
+    "agg": 4
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "Mike Zaher"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "Mike Zaher"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Mike Zaher",
+        "value": "Mike Zaher",
+        "start": 19,
+        "end": 29,
+        "clause": "How many picks did Mike Zaher have?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "Mike Zaher is the named player, and the Player column contains that exact name.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Mike Zaher",
+        "value": "Mike Zaher",
+        "start": 19,
+        "end": 29
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "How many picks did Mike Zaher have?",
+      "table": {
+        "header": [
+          "Pick #",
+          "MLS Team",
+          "Player",
+          "Position",
+          "Affiliation"
+        ],
+        "page_title": "2008 MLS SuperDraft",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 15214004,
+        "id": "2-15214004-3",
+        "section_title": "Round three",
+        "rows": [
+          [
+            "29",
+            "Los Angeles Galaxy",
+            "Julian Valentin",
+            "D",
+            "Wake Forest"
+          ],
+          [
+            "30",
+            "Toronto FC",
+            "Mike Zaher",
+            "D",
+            "UCLA San Fernando Valley Quakes"
+          ],
+          [
+            "31",
+            "Columbus Crew",
+            "Ryan Miller",
+            "D",
+            "Notre Dame Indiana Invaders"
+          ],
+          [
+            "32",
+            "New York Red Bulls",
+            "Luke Sassano",
+            "M",
+            "California San Jose Frogs"
+          ],
+          [
+            "33",
+            "D.C. United",
+            "Ryan Cordeiro",
+            "M/F",
+            "Connecticut"
+          ],
+          [
+            "34",
+            "Los Angeles Galaxy",
+            "Matt Allen",
+            "GK",
+            "Creighton Des Moines Menace"
+          ],
+          [
+            "35",
+            "Toronto FC",
+            "Joseph Lapira",
+            "F",
+            "Notre Dame Baton Rouge Capitals"
+          ],
+          [
+            "36",
+            "Colorado Rapids",
+            "Adrian Chevannes",
+            "D",
+            "SMU"
+          ],
+          [
+            "37",
+            "Real Salt Lake",
+            "Brennan Tennelle",
+            "M",
+            "UC Santa Barbara"
+          ],
+          [
+            "38",
+            "Chicago Fire",
+            "Dwight Barnett",
+            "F",
+            "Lynn University Cape Cod Crusaders"
+          ],
+          [
+            "39",
+            "Kansas City Wizards",
+            "Matt Marquess",
+            "D",
+            "Santa Clara San Jose Frogs"
+          ],
+          [
+            "40",
+            "Chicago Fire",
+            "Stephen King",
+            "M",
+            "Maryland"
+          ],
+          [
+            "41",
+            "New England Revolution",
+            "Matt Britner",
+            "D",
+            "Brown"
+          ],
+          [
+            "42",
+            "Houston Dynamo",
+            "Geoff Cameron",
+            "M",
+            "Rhode Island Rhode Island Stingrays"
+          ]
+        ],
+        "caption": "Round three",
+        "headers": [
+          "Pick #",
+          "MLS Team",
+          "Player",
+          "Position",
+          "Affiliation"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-15214004-3",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Mike Zaher",
+              "value": "Mike Zaher",
+              "start": 19,
+              "end": 29
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d6e37ce7d08e8d6b9341dc1e072e803bb827e459c77be236334f988cecb674fb",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4923,
+              "completion_tokens": 21,
+              "total_tokens": 4944,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Mike Zaher",
+              "value": "Mike Zaher",
+              "start": 19,
+              "end": 29,
+              "clause": "How many picks did Mike Zaher have?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Mike Zaher",
+              "value": "Mike Zaher",
+              "start": 19,
+              "end": 29,
+              "clause": "How many picks did Mike Zaher have?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Mike Zaher",
+              "value": "Mike Zaher",
+              "start": 19,
+              "end": 29,
+              "clause": "How many picks did Mike Zaher have?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Mike Zaher is the named player, and the Player column contains that exact name."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f8966fee08809d7f01b353e6f230135efaf5a3082c423ae0770df8a00365e7aa",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4957,
+              "completion_tokens": 38,
+              "total_tokens": 4995,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Mike Zaher",
+              "value": "Mike Zaher",
+              "start": 19,
+              "end": 29,
+              "clause": "How many picks did Mike Zaher have?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Mike Zaher is the named player, and the Player column contains that exact name.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b48e77fac8a6acaf812d7ebe359edd1e4e3f687adfab0b692c1e8dd97a623ee4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5019,
+              "completion_tokens": 9,
+              "total_tokens": 5028,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Mike Zaher",
+              "value": "Mike Zaher",
+              "start": 19,
+              "end": 29,
+              "clause": "How many picks did Mike Zaher have?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Mike Zaher is the named player, and the Player column contains that exact name.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c3da7af77c942ba77d5721a65d184c3d990a6a8c8b12355bd46027477cbe3f44",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4970,
+              "completion_tokens": 12,
+              "total_tokens": 4982,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Mike Zaher",
+              "value": "Mike Zaher",
+              "start": 19,
+              "end": 29,
+              "clause": "How many picks did Mike Zaher have?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Mike Zaher is the named player, and the Player column contains that exact name.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Mike Zaher",
+              "value": "Mike Zaher",
+              "start": 19,
+              "end": 29,
+              "clause": "How many picks did Mike Zaher have?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Mike Zaher is the named player, and the Player column contains that exact name.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Mike Zaher",
+              "value": "Mike Zaher",
+              "start": 19,
+              "end": 29,
+              "clause": "How many picks did Mike Zaher have?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Mike Zaher is the named player, and the Player column contains that exact name.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "Mike Zaher"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Mike Zaher",
+          "value": "Mike Zaher",
+          "start": 19,
+          "end": 29
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Mike Zaher",
+          "value": "Mike Zaher",
+          "start": 19,
+          "end": 29,
+          "clause": "How many picks did Mike Zaher have?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "Mike Zaher is the named player, and the Player column contains that exact name.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          2,
+          0,
+          "Mike Zaher"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7719
+}

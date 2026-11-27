@@ -1,0 +1,464 @@
+{
+  "arm": "E2",
+  "position": 19,
+  "example_id": "test:1494:1-16581695-2",
+  "original_index": 1494,
+  "table_id": "1-16581695-2",
+  "question": "What is the number in series for the episode titled \"Kevin's Big Score\"?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        1,
+        0,
+        "\"Kevin's Big Score\""
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "\"Kevin's Big Score\""
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "\"Kevin's Big Score\""
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Kevin's Big Score",
+        "value": "\"Kevin's Big Score\"",
+        "start": 53,
+        "end": 70,
+        "clause": "What is the number in series for the episode titled \"Kevin's Big Score\"?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The phrase 'episode titled' identifies the Title field, and the row value matches the Title cell.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Kevin's Big Score",
+        "value": "Kevin's Big Score",
+        "start": 53,
+        "end": 70
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the number in series for the episode titled \"Kevin's Big Score\"?",
+      "table": {
+        "id": "1-16581695-2",
+        "header": [
+          "No. in series",
+          "Title",
+          "Directed by",
+          "Written by",
+          "Original airdate",
+          "Production code"
+        ],
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "rows": [
+          [
+            "1–2",
+            "\"Ben 10 Returns\"",
+            "Dan Riba and Butch Lukic",
+            "Dwayne McDuffie",
+            "April18,2008",
+            "101–102"
+          ],
+          [
+            "3",
+            "\"Everybody Talks About the Weather\"",
+            "Dan Riba",
+            "Dwayne McDuffie",
+            "April26,2008",
+            "103"
+          ],
+          [
+            "4",
+            "\"Kevin's Big Score\"",
+            "Butch Lukic",
+            "Matt Wayne",
+            "May3,2008",
+            "104"
+          ],
+          [
+            "5",
+            "\"All that Glitters\"",
+            "Dan Riba",
+            "Bob Goodman",
+            "May10,2008",
+            "105"
+          ],
+          [
+            "6",
+            "\"Max Out\"",
+            "Butch Lukic",
+            "Jim Krieg",
+            "May17,2008",
+            "107"
+          ],
+          [
+            "7",
+            "\"Pier Pressure\"",
+            "Dan Riba",
+            "Len Uhley",
+            "May31,2008",
+            "106"
+          ],
+          [
+            "8",
+            "\"What are Little Girls Made of?\"",
+            "Butch Lukic",
+            "Matt Wayne",
+            "June7,2008",
+            "109"
+          ],
+          [
+            "9",
+            "\"The Gauntlet\"",
+            "Dan Riba",
+            "Rob Hoegee",
+            "June14,2008",
+            "110"
+          ],
+          [
+            "10",
+            "\"Paradox\"",
+            "Butch Lukic",
+            "Jim Krieg",
+            "July5,2008",
+            "112"
+          ],
+          [
+            "11",
+            "\"Be-Knighted\"",
+            "Dan Riba",
+            "Stan Berkowitz",
+            "July12,2008",
+            "108"
+          ],
+          [
+            "12",
+            "\"Plumbers' Helpers\"",
+            "Dan Riba",
+            "Len Uhley",
+            "July19,2008",
+            "111"
+          ]
+        ],
+        "name": "table_16581695_2",
+        "headers": [
+          "No. in series",
+          "Title",
+          "Directed by",
+          "Written by",
+          "Original airdate",
+          "Production code"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-16581695-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Kevin's Big Score",
+              "value": "Kevin's Big Score",
+              "start": 53,
+              "end": 70
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "cbca05fe066efe2e5b4cc72edc808d93284b0dae9ec03ec19b38398f3ae56bb0",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4968,
+              "completion_tokens": 23,
+              "total_tokens": 4991,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Kevin's Big Score",
+              "value": "Kevin's Big Score",
+              "start": 53,
+              "end": 70,
+              "clause": "What is the number in series for the episode titled \"Kevin's Big Score\"?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Kevin's Big Score",
+              "value": "Kevin's Big Score",
+              "start": 53,
+              "end": 70,
+              "clause": "What is the number in series for the episode titled \"Kevin's Big Score\"?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Kevin's Big Score",
+              "value": "Kevin's Big Score",
+              "start": 53,
+              "end": 70,
+              "clause": "What is the number in series for the episode titled \"Kevin's Big Score\"?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'episode titled' identifies the Title field, and the row value matches the Title cell."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f34bc711aeed05a4f955dc8e04d016484037c89ad12b0bd0dae01302abe88872",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5012,
+              "completion_tokens": 41,
+              "total_tokens": 5053,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Kevin's Big Score",
+              "value": "Kevin's Big Score",
+              "start": 53,
+              "end": 70,
+              "clause": "What is the number in series for the episode titled \"Kevin's Big Score\"?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'episode titled' identifies the Title field, and the row value matches the Title cell.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "de15d03629848d6d5518fe05ff446d31c6e4b09128f45cab624a475c8b5a0fe0",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5077,
+              "completion_tokens": 9,
+              "total_tokens": 5086,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Kevin's Big Score",
+              "value": "\"Kevin's Big Score\"",
+              "start": 53,
+              "end": 70,
+              "clause": "What is the number in series for the episode titled \"Kevin's Big Score\"?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'episode titled' identifies the Title field, and the row value matches the Title cell.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "bac9a0f32afa7afce492100333d30ef0e8057b00d1c8cc6a4f6908e59ec589db",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5028,
+              "completion_tokens": 15,
+              "total_tokens": 5043,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Kevin's Big Score",
+              "value": "\"Kevin's Big Score\"",
+              "start": 53,
+              "end": 70,
+              "clause": "What is the number in series for the episode titled \"Kevin's Big Score\"?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'episode titled' identifies the Title field, and the row value matches the Title cell.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Kevin's Big Score",
+              "value": "\"Kevin's Big Score\"",
+              "start": 53,
+              "end": 70,
+              "clause": "What is the number in series for the episode titled \"Kevin's Big Score\"?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'episode titled' identifies the Title field, and the row value matches the Title cell.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Kevin's Big Score",
+              "value": "\"Kevin's Big Score\"",
+              "start": 53,
+              "end": 70,
+              "clause": "What is the number in series for the episode titled \"Kevin's Big Score\"?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'episode titled' identifies the Title field, and the row value matches the Title cell.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              "\"Kevin's Big Score\""
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Kevin's Big Score",
+          "value": "Kevin's Big Score",
+          "start": 53,
+          "end": 70
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Kevin's Big Score",
+          "value": "\"Kevin's Big Score\"",
+          "start": 53,
+          "end": 70,
+          "clause": "What is the number in series for the episode titled \"Kevin's Big Score\"?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The phrase 'episode titled' identifies the Title field, and the row value matches the Title cell.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          1,
+          0,
+          "\"Kevin's Big Score\""
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7344
+}

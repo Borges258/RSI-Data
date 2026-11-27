@@ -1,0 +1,459 @@
+{
+  "arm": "E2",
+  "position": 230,
+  "example_id": "test:10283:2-11207040-5",
+  "original_index": 10283,
+  "table_id": "2-11207040-5",
+  "question": "What is the greatest capacity when the largest number in attendance is 6,192?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        3,
+        0,
+        "6,192"
+      ]
+    ],
+    "agg": 1
+  },
+  "prediction_conds": [
+    [
+      3,
+      0,
+      "6,192"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        0,
+        "6,192"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "6,192",
+        "value": "6,192",
+        "start": 71,
+        "end": 76,
+        "clause": "What is the greatest capacity when the largest number in attendance is 6,192?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "'largest number in attendance' refers to the Highest attendance field, whose row evidence includes 6,192.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "6,192",
+        "value": "6,192",
+        "start": 71,
+        "end": 76
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the greatest capacity when the largest number in attendance is 6,192?",
+      "table": {
+        "header": [
+          "Team",
+          "Stadium",
+          "Capacity",
+          "Highest",
+          "Lowest",
+          "Average"
+        ],
+        "page_title": "2007–08 Scottish First Division",
+        "types": [
+          "text",
+          "text",
+          "real",
+          "real",
+          "real",
+          "real"
+        ],
+        "page_id": 11207040,
+        "id": "2-11207040-5",
+        "section_title": "Attendances",
+        "rows": [
+          [
+            "Dundee",
+            "Dens Park",
+            "11,856",
+            "6,192",
+            "3,146",
+            "4,264"
+          ],
+          [
+            "Dunfermline Athletic",
+            "East End Park",
+            "11,998",
+            "4,946",
+            "2,444",
+            "3,754"
+          ],
+          [
+            "St. Johnstone",
+            "McDiarmid Park",
+            "10,673",
+            "6,279",
+            "1,686",
+            "2,969"
+          ],
+          [
+            "Greenock Morton",
+            "Cappielow",
+            "5,741",
+            "3,818",
+            "2,228",
+            "2,727"
+          ],
+          [
+            "Partick Thistle",
+            "Firhill Stadium",
+            "10,887",
+            "4,914",
+            "1,149",
+            "2,591"
+          ],
+          [
+            "Hamilton Academical",
+            "New Douglas Park",
+            "5,396",
+            "5,078",
+            "1,410",
+            "2,468"
+          ],
+          [
+            "Queen of the South",
+            "Palmerston Park",
+            "6,412",
+            "3,005",
+            "1,484",
+            "1,965"
+          ],
+          [
+            "Livingston",
+            "Almondvale Stadium",
+            "10,016",
+            "2,865",
+            "1,125",
+            "1,726"
+          ],
+          [
+            "Clyde",
+            "Broadwood Stadium",
+            "8,006",
+            "1,979",
+            "910",
+            "1,298"
+          ],
+          [
+            "Stirling Albion",
+            "Forthbank Stadium",
+            "3,808",
+            "2,215",
+            "431",
+            "1,166"
+          ]
+        ],
+        "caption": "Attendances",
+        "headers": [
+          "Team",
+          "Stadium",
+          "Capacity",
+          "Highest",
+          "Lowest",
+          "Average"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-11207040-5",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "6,192",
+              "value": "6,192",
+              "start": 71,
+              "end": 76
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "33ad16774a36a25a84d627867466de2c55fa565fe30deb6b57a4ad1244d1731e",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4932,
+              "completion_tokens": 21,
+              "total_tokens": 4953,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "6,192",
+              "value": "6,192",
+              "start": 71,
+              "end": 76,
+              "clause": "What is the greatest capacity when the largest number in attendance is 6,192?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "6,192",
+              "value": "6,192",
+              "start": 71,
+              "end": 76,
+              "clause": "What is the greatest capacity when the largest number in attendance is 6,192?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "6,192",
+              "value": "6,192",
+              "start": 71,
+              "end": 76,
+              "clause": "What is the greatest capacity when the largest number in attendance is 6,192?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'largest number in attendance' refers to the Highest attendance field, whose row evidence includes 6,192."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "962dcd1c284347fc3fde5da7f798eee13a99716940fe67cc9d5e815cc19e5eff",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4974,
+              "completion_tokens": 43,
+              "total_tokens": 5017,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "6,192",
+              "value": "6,192",
+              "start": 71,
+              "end": 76,
+              "clause": "What is the greatest capacity when the largest number in attendance is 6,192?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'largest number in attendance' refers to the Highest attendance field, whose row evidence includes 6,192.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "241806d033c6373981263e5d50eba7bea085685c80fac2e37d2396777cec750f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5040,
+              "completion_tokens": 9,
+              "total_tokens": 5049,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "6,192",
+              "value": "6,192",
+              "start": 71,
+              "end": 76,
+              "clause": "What is the greatest capacity when the largest number in attendance is 6,192?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'largest number in attendance' refers to the Highest attendance field, whose row evidence includes 6,192.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "472e990b71b5c883b2b804bb48d557adafad532c61a3e63e8277897c81a08e5a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4991,
+              "completion_tokens": 12,
+              "total_tokens": 5003,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "6,192",
+              "value": "6,192",
+              "start": 71,
+              "end": 76,
+              "clause": "What is the greatest capacity when the largest number in attendance is 6,192?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'largest number in attendance' refers to the Highest attendance field, whose row evidence includes 6,192.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "6,192",
+              "value": "6,192",
+              "start": 71,
+              "end": 76,
+              "clause": "What is the greatest capacity when the largest number in attendance is 6,192?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'largest number in attendance' refers to the Highest attendance field, whose row evidence includes 6,192.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "6,192",
+              "value": "6,192",
+              "start": 71,
+              "end": 76,
+              "clause": "What is the greatest capacity when the largest number in attendance is 6,192?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'largest number in attendance' refers to the Highest attendance field, whose row evidence includes 6,192.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              0,
+              "6,192"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "6,192",
+          "value": "6,192",
+          "start": 71,
+          "end": 76
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "6,192",
+          "value": "6,192",
+          "start": 71,
+          "end": 76,
+          "clause": "What is the greatest capacity when the largest number in attendance is 6,192?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "'largest number in attendance' refers to the Highest attendance field, whose row evidence includes 6,192.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          3,
+          0,
+          "6,192"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9187
+}

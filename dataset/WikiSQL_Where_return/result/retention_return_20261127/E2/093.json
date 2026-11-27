@@ -1,0 +1,425 @@
+{
+  "arm": "E2",
+  "position": 93,
+  "example_id": "test:3232:1-25085059-1",
+  "original_index": 3232,
+  "table_id": "1-25085059-1",
+  "question": "What CFL team got their draft pick from North Dakota?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        4,
+        0,
+        "North Dakota"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      4,
+      0,
+      "North Dakota"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        0,
+        "North Dakota"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "North Dakota",
+        "value": "North Dakota",
+        "start": 40,
+        "end": 52,
+        "clause": "What CFL team got their draft pick from North Dakota?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The phrase \"from North Dakota\" identifies the draft pick's college; \"North Dakota\" appears in the College column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "North Dakota",
+        "value": "North Dakota",
+        "start": 40,
+        "end": 52
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What CFL team got their draft pick from North Dakota?",
+      "table": {
+        "header": [
+          "Pick #",
+          "CFL Team",
+          "Player",
+          "Position",
+          "College"
+        ],
+        "page_title": "1999 CFL Draft",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "id": "1-25085059-1",
+        "section_title": "Round one",
+        "caption": "Round one",
+        "rows": [
+          [
+            1,
+            "BC Lions",
+            "Rob Meier",
+            "DE",
+            "Washington State"
+          ],
+          [
+            2,
+            "Toronto Argonauts",
+            "David De La Peralle",
+            "OL",
+            "Kentucky"
+          ],
+          [
+            3,
+            "BC Lions",
+            "Greg Lotysz",
+            "OL",
+            "North Dakota"
+          ],
+          [
+            4,
+            "Edmonton Eskimos",
+            "Trevor Bollers",
+            "FB",
+            "Iowa"
+          ],
+          [
+            5,
+            "Montreal Alouettes",
+            "Sylvain Girard",
+            "WR",
+            "Concordia"
+          ],
+          [
+            6,
+            "Montreal Alouettes",
+            "Davis Sanchez",
+            "CB",
+            "Oregon"
+          ],
+          [
+            7,
+            "Hamilton Tiger-Cats",
+            "Corey Grant",
+            "WR",
+            "Wilfrid Laurier"
+          ]
+        ],
+        "name": "table_25085059_1",
+        "headers": [
+          "Pick #",
+          "CFL Team",
+          "Player",
+          "Position",
+          "College"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-25085059-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "North Dakota",
+              "value": "North Dakota",
+              "start": 40,
+              "end": 52
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "3301bce7cf9a5ef4d981d36cee650b0ef658b5e247b9eda7c9faa170a1e48b39",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4794,
+              "completion_tokens": 19,
+              "total_tokens": 4813,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "North Dakota",
+              "value": "North Dakota",
+              "start": 40,
+              "end": 52,
+              "clause": "What CFL team got their draft pick from North Dakota?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "North Dakota",
+              "value": "North Dakota",
+              "start": 40,
+              "end": 52,
+              "clause": "What CFL team got their draft pick from North Dakota?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "North Dakota",
+              "value": "North Dakota",
+              "start": 40,
+              "end": 52,
+              "clause": "What CFL team got their draft pick from North Dakota?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase \"from North Dakota\" identifies the draft pick's college; \"North Dakota\" appears in the College column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "728e59bbf29a7c1f21786aa2d0c5f60d870a960a2f239a4647cfa12a55317fc8",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4828,
+              "completion_tokens": 45,
+              "total_tokens": 4873,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "North Dakota",
+              "value": "North Dakota",
+              "start": 40,
+              "end": 52,
+              "clause": "What CFL team got their draft pick from North Dakota?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase \"from North Dakota\" identifies the draft pick's college; \"North Dakota\" appears in the College column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "eaece764a39b7f8f743d8fce0d5bc4ee505baf5106e90c5dc6bb0e72b4c6f5d2",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4897,
+              "completion_tokens": 9,
+              "total_tokens": 4906,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "North Dakota",
+              "value": "North Dakota",
+              "start": 40,
+              "end": 52,
+              "clause": "What CFL team got their draft pick from North Dakota?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase \"from North Dakota\" identifies the draft pick's college; \"North Dakota\" appears in the College column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0a3ff5963a15ddf59e5537f594f80b4f66b16a78fe1d8e7e663188612272becc",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4848,
+              "completion_tokens": 11,
+              "total_tokens": 4859,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "North Dakota",
+              "value": "North Dakota",
+              "start": 40,
+              "end": 52,
+              "clause": "What CFL team got their draft pick from North Dakota?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase \"from North Dakota\" identifies the draft pick's college; \"North Dakota\" appears in the College column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "North Dakota",
+              "value": "North Dakota",
+              "start": 40,
+              "end": 52,
+              "clause": "What CFL team got their draft pick from North Dakota?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase \"from North Dakota\" identifies the draft pick's college; \"North Dakota\" appears in the College column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "North Dakota",
+              "value": "North Dakota",
+              "start": 40,
+              "end": 52,
+              "clause": "What CFL team got their draft pick from North Dakota?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase \"from North Dakota\" identifies the draft pick's college; \"North Dakota\" appears in the College column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              0,
+              "North Dakota"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "North Dakota",
+          "value": "North Dakota",
+          "start": 40,
+          "end": 52
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "North Dakota",
+          "value": "North Dakota",
+          "start": 40,
+          "end": 52,
+          "clause": "What CFL team got their draft pick from North Dakota?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The phrase \"from North Dakota\" identifies the draft pick's college; \"North Dakota\" appears in the College column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          4,
+          0,
+          "North Dakota"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9609
+}

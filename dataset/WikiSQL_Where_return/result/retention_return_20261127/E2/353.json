@@ -1,0 +1,411 @@
+{
+  "arm": "E2",
+  "position": 353,
+  "example_id": "test:13862:2-18993668-1",
+  "original_index": 13862,
+  "table_id": "2-18993668-1",
+  "question": "What is the listed Tonnage for the Date of 1914?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        0,
+        0,
+        1914
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      1914
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        1914
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "1914",
+        "value": 1914,
+        "start": 43,
+        "end": 47,
+        "clause": "What is the listed Tonnage for the Date of 1914?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "The question explicitly identifies 1914 as the Date, matching the Date header and row value.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "1914",
+        "value": "1914",
+        "start": 43,
+        "end": 47
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the listed Tonnage for the Date of 1914?",
+      "table": {
+        "header": [
+          "Date",
+          "Ships sunk (Pola)",
+          "Tonnage",
+          "U-boats destroyed (KuK)",
+          "U-boats destroyed (Pola)"
+        ],
+        "page_title": "Mediterranean U-boat Campaign (World War I)",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 18993668,
+        "id": "2-18993668-1",
+        "section_title": "Table",
+        "rows": [
+          [
+            "1914",
+            "n/a",
+            "n/a",
+            "none",
+            "n/a"
+          ],
+          [
+            "1915",
+            "102",
+            "350,853",
+            "2",
+            "none"
+          ],
+          [
+            "1916",
+            "415",
+            "1,045,058",
+            "2",
+            "1"
+          ],
+          [
+            "1917",
+            "(not recorded)",
+            "1,514,050",
+            "2",
+            "2"
+          ],
+          [
+            "1918",
+            "325",
+            "761,060",
+            "3",
+            "10"
+          ]
+        ],
+        "caption": "Table",
+        "headers": [
+          "Date",
+          "Ships sunk (Pola)",
+          "Tonnage",
+          "U-boats destroyed (KuK)",
+          "U-boats destroyed (Pola)"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-18993668-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "1914",
+              "value": "1914",
+              "start": 43,
+              "end": 47
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "62cc12c6e78c2ab54c1d0cb6464690396994f6f5fb09615be7df2944cdaa0ea5",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4790,
+              "completion_tokens": 19,
+              "total_tokens": 4809,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1914",
+              "value": "1914",
+              "start": 43,
+              "end": 47,
+              "clause": "What is the listed Tonnage for the Date of 1914?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "1914",
+              "value": "1914",
+              "start": 43,
+              "end": 47,
+              "clause": "What is the listed Tonnage for the Date of 1914?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1914",
+              "value": "1914",
+              "start": 43,
+              "end": 47,
+              "clause": "What is the listed Tonnage for the Date of 1914?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly identifies 1914 as the Date, matching the Date header and row value."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "9f323b042117cd9be4a14e373022b83d6ed6b9802691c3e6cd219245681b66e2",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4828,
+              "completion_tokens": 40,
+              "total_tokens": 4868,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1914",
+              "value": "1914",
+              "start": 43,
+              "end": 47,
+              "clause": "What is the listed Tonnage for the Date of 1914?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly identifies 1914 as the Date, matching the Date header and row value.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "56783c7f6ed66735f4f83223d7d8ebb69cb41a734772f8af068994e92b537f77",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4892,
+              "completion_tokens": 9,
+              "total_tokens": 4901,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1914",
+              "value": "1914",
+              "start": 43,
+              "end": 47,
+              "clause": "What is the listed Tonnage for the Date of 1914?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly identifies 1914 as the Date, matching the Date header and row value.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a3ce345d8b7255fa0c71223c89e349842edd86714fd237ae07989b324bb83c18",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4843,
+              "completion_tokens": 11,
+              "total_tokens": 4854,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1914",
+              "value": "1914",
+              "start": 43,
+              "end": 47,
+              "clause": "What is the listed Tonnage for the Date of 1914?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly identifies 1914 as the Date, matching the Date header and row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1914",
+              "value": 1914,
+              "start": 43,
+              "end": 47,
+              "clause": "What is the listed Tonnage for the Date of 1914?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly identifies 1914 as the Date, matching the Date header and row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "1914",
+              "value": 1914,
+              "start": 43,
+              "end": 47,
+              "clause": "What is the listed Tonnage for the Date of 1914?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly identifies 1914 as the Date, matching the Date header and row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              1914
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "1914",
+          "value": "1914",
+          "start": 43,
+          "end": 47
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "1914",
+          "value": 1914,
+          "start": 43,
+          "end": 47,
+          "clause": "What is the listed Tonnage for the Date of 1914?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "The question explicitly identifies 1914 as the Date, matching the Date header and row value.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          0,
+          0,
+          1914
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8328
+}

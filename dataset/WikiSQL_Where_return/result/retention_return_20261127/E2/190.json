@@ -1,0 +1,425 @@
+{
+  "arm": "E2",
+  "position": 190,
+  "example_id": "test:6847:2-15535243-1",
+  "original_index": 6847,
+  "table_id": "2-15535243-1",
+  "question": "What is the show on Tuesday when the time is 01:00 AM?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        0,
+        0,
+        "tuesday"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "Tuesday"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "Tuesday"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Tuesday",
+        "value": "Tuesday",
+        "start": 20,
+        "end": 27,
+        "clause": "What is the show on Tuesday when the time is 01:00 AM?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "Tuesday is a day value in the Time column, whose rows list weekdays.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Tuesday",
+        "value": "Tuesday",
+        "start": 20,
+        "end": 27
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the show on Tuesday when the time is 01:00 AM?",
+      "table": {
+        "header": [
+          "Time",
+          "00:00 AM",
+          "01:00 AM",
+          "02:00 AM",
+          "05:00 AM"
+        ],
+        "page_title": "Channel V Thailand",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 15535243,
+        "id": "2-15535243-1",
+        "section_title": "Early Hours",
+        "rows": [
+          [
+            "Monday",
+            "Double Shot",
+            "Melosamosorn (VJ Woonsen)",
+            "[V] Tunes",
+            "Asian Hero (VJ Mike)"
+          ],
+          [
+            "Tuesday",
+            "Double Shot",
+            "Melosamosorn (VJ Woonsen)",
+            "[V] Tunes",
+            "Asian Hero (VJ Mike)"
+          ],
+          [
+            "Wednesday",
+            "Double Shot",
+            "Melosamosorn (VJ Woonsen)",
+            "[V] Tunes",
+            "Asian Hero (VJ Mike)"
+          ],
+          [
+            "Thursday",
+            "Double Shot",
+            "Melosamosorn (VJ Woonsen)",
+            "[V] Tunes",
+            "Asian Hero (VJ Mike)"
+          ],
+          [
+            "Friday",
+            "Double Shot",
+            "Melosamosorn (VJ Woonsen)",
+            "[V] Tunes",
+            "Asian Hero (VJ Mike)"
+          ],
+          [
+            "Saturday",
+            "Double Shot",
+            "Melosamosorn (VJ Woonsen)",
+            "[V] Tunes",
+            "Asian Hero (VJ Mike)"
+          ],
+          [
+            "Sunday",
+            "Double Shot",
+            "Melosamosorn (VJ Woonsen)",
+            "[V] Tunes",
+            "Asian Hero (VJ Mike)"
+          ]
+        ],
+        "caption": "Early Hours",
+        "headers": [
+          "Time",
+          "00:00 AM",
+          "01:00 AM",
+          "02:00 AM",
+          "05:00 AM"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-15535243-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Tuesday",
+              "value": "Tuesday",
+              "start": 20,
+              "end": 27
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b97ef52ce53b33efe8078d4f59a31677218eb74ff90ed43a0d4c6f5a2f75c3b9",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4905,
+              "completion_tokens": 17,
+              "total_tokens": 4922,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Tuesday",
+              "value": "Tuesday",
+              "start": 20,
+              "end": 27,
+              "clause": "What is the show on Tuesday when the time is 01:00 AM?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Tuesday",
+              "value": "Tuesday",
+              "start": 20,
+              "end": 27,
+              "clause": "What is the show on Tuesday when the time is 01:00 AM?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Tuesday",
+              "value": "Tuesday",
+              "start": 20,
+              "end": 27,
+              "clause": "What is the show on Tuesday when the time is 01:00 AM?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Tuesday is a day value in the Time column, whose rows list weekdays."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "bc96990476eb00c18b4e66aa1c02c5ab909626e8be3f01e6543b3a71730f1ab0",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4942,
+              "completion_tokens": 36,
+              "total_tokens": 4978,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Tuesday",
+              "value": "Tuesday",
+              "start": 20,
+              "end": 27,
+              "clause": "What is the show on Tuesday when the time is 01:00 AM?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Tuesday is a day value in the Time column, whose rows list weekdays.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "2712f1053a02059913f6ae8ffa1ee4bdf4d5aa2e32eeb76b5f98e8e47bf69803",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5002,
+              "completion_tokens": 9,
+              "total_tokens": 5011,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Tuesday",
+              "value": "Tuesday",
+              "start": 20,
+              "end": 27,
+              "clause": "What is the show on Tuesday when the time is 01:00 AM?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Tuesday is a day value in the Time column, whose rows list weekdays.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "3fa8891ccf785417f25e2dfe7c937e49c0f63d66c20928275b21c1ee909bf2ce",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4953,
+              "completion_tokens": 10,
+              "total_tokens": 4963,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Tuesday",
+              "value": "Tuesday",
+              "start": 20,
+              "end": 27,
+              "clause": "What is the show on Tuesday when the time is 01:00 AM?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Tuesday is a day value in the Time column, whose rows list weekdays.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Tuesday",
+              "value": "Tuesday",
+              "start": 20,
+              "end": 27,
+              "clause": "What is the show on Tuesday when the time is 01:00 AM?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Tuesday is a day value in the Time column, whose rows list weekdays.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Tuesday",
+              "value": "Tuesday",
+              "start": 20,
+              "end": 27,
+              "clause": "What is the show on Tuesday when the time is 01:00 AM?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Tuesday is a day value in the Time column, whose rows list weekdays.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              "Tuesday"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Tuesday",
+          "value": "Tuesday",
+          "start": 20,
+          "end": 27
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Tuesday",
+          "value": "Tuesday",
+          "start": 20,
+          "end": 27,
+          "clause": "What is the show on Tuesday when the time is 01:00 AM?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "Tuesday is a day value in the Time column, whose rows list weekdays.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          0,
+          0,
+          "Tuesday"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7969
+}

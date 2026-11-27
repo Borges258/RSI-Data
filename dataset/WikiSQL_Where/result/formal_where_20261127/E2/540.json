@@ -1,0 +1,581 @@
+{
+  "arm": "E2",
+  "position": 540,
+  "example_id": "test:15180:2-12453414-8",
+  "original_index": 15180,
+  "table_id": "2-12453414-8",
+  "question": "How many saves did the player with a 92.3% save rate and 217 goals have?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        4,
+        0,
+        "92.3%"
+      ],
+      [
+        2,
+        0,
+        217
+      ]
+    ],
+    "agg": 4
+  },
+  "prediction_conds": [
+    [
+      4,
+      0,
+      "92.3%"
+    ],
+    [
+      2,
+      0,
+      217
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        0,
+        "92.3%"
+      ],
+      [
+        2,
+        0,
+        217
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "92.3%",
+        "value": "92.3%",
+        "start": 37,
+        "end": 42,
+        "clause": "How many saves did the player with a 92.3% save rate",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "'92.3% save rate' matches the 'Save %' header and row value.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "217",
+        "value": 217,
+        "start": 57,
+        "end": 60,
+        "clause": "and 217 goals have?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "'217 goals' refers to goals allowed in this goaltending table, matching 'Goals against' and the row value.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "92.3%",
+        "value": "92.3%",
+        "start": 37,
+        "end": 42
+      },
+      {
+        "surface": "217",
+        "value": "217",
+        "start": 57,
+        "end": 60
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "How many saves did the player with a 92.3% save rate and 217 goals have?",
+      "table": {
+        "header": [
+          "Player",
+          "Years",
+          "Goals against",
+          "Saves",
+          "Save %"
+        ],
+        "page_title": "Boston University Terriers men's ice hockey",
+        "types": [
+          "text",
+          "text",
+          "real",
+          "real",
+          "text"
+        ],
+        "page_id": 12453414,
+        "id": "2-12453414-8",
+        "section_title": "Goaltending leaders",
+        "rows": [
+          [
+            "John Curry",
+            "2003-07",
+            "217",
+            "2,606",
+            "92.3%"
+          ],
+          [
+            "Ed Walsh",
+            "1971-74",
+            "160",
+            "1,633",
+            "91.1%"
+          ],
+          [
+            "Tim Regan",
+            "1969-72",
+            "99",
+            "985",
+            "90.9%"
+          ],
+          [
+            "Cleon Daskalakis",
+            "1980-84",
+            "257",
+            "2,440",
+            "90.5%"
+          ],
+          [
+            "Sean Fields",
+            "2000-04",
+            "322",
+            "3,055",
+            "90.5%"
+          ]
+        ],
+        "caption": "Goaltending leaders",
+        "headers": [
+          "Player",
+          "Years",
+          "Goals against",
+          "Saves",
+          "Save %"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-12453414-8",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "92.3%",
+              "value": "92.3%",
+              "start": 37,
+              "end": 42
+            },
+            {
+              "surface": "217",
+              "value": "217",
+              "start": 57,
+              "end": 60
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "4dd9210d4c47bb68e89c1137d4ff32db210d352ac28327764d2bc7652eed2d1c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4786,
+              "completion_tokens": 31,
+              "total_tokens": 4817,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "92.3%",
+              "value": "92.3%",
+              "start": 37,
+              "end": 42,
+              "clause": "How many saves did the player with a 92.3% save rate"
+            },
+            {
+              "surface": "217",
+              "value": "217",
+              "start": 57,
+              "end": 60,
+              "clause": "and 217 goals have?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "92.3%",
+              "value": "92.3%",
+              "start": 37,
+              "end": 42,
+              "clause": "How many saves did the player with a 92.3% save rate"
+            },
+            {
+              "surface": "217",
+              "value": "217",
+              "start": 57,
+              "end": 60,
+              "clause": "and 217 goals have?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "92.3%",
+              "value": "92.3%",
+              "start": 37,
+              "end": 42,
+              "clause": "How many saves did the player with a 92.3% save rate",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'92.3% save rate' matches the 'Save %' header and row value."
+            },
+            {
+              "surface": "217",
+              "value": "217",
+              "start": 57,
+              "end": 60,
+              "clause": "and 217 goals have?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'217 goals' refers to goals allowed in this goaltending table, matching 'Goals against' and the row value."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "56966f46fba7157c9d03e3cdf154a06b58fe2d0eaf650aef091326d6f3ec6e9e",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4854,
+              "completion_tokens": 69,
+              "total_tokens": 4923,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "92.3%",
+              "value": "92.3%",
+              "start": 37,
+              "end": 42,
+              "clause": "How many saves did the player with a 92.3% save rate",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'92.3% save rate' matches the 'Save %' header and row value.",
+              "operator": "="
+            },
+            {
+              "surface": "217",
+              "value": "217",
+              "start": 57,
+              "end": 60,
+              "clause": "and 217 goals have?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'217 goals' refers to goals allowed in this goaltending table, matching 'Goals against' and the row value.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "8d4b69820754c45171ffd66eeac5965790c25b648e2e8e8f5a373ba8d2e3abfc",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4956,
+              "completion_tokens": 11,
+              "total_tokens": 4967,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "92.3%",
+              "value": "92.3%",
+              "start": 37,
+              "end": 42,
+              "clause": "How many saves did the player with a 92.3% save rate",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'92.3% save rate' matches the 'Save %' header and row value.",
+              "operator": "="
+            },
+            {
+              "surface": "217",
+              "value": "217",
+              "start": 57,
+              "end": 60,
+              "clause": "and 217 goals have?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'217 goals' refers to goals allowed in this goaltending table, matching 'Goals against' and the row value.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "cc94976af64d0ef8945f7d0556ddfaaf6d33c0477ccba5ab6e46c24a590f2dce",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4910,
+              "completion_tokens": 15,
+              "total_tokens": 4925,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "92.3%",
+              "value": "92.3%",
+              "start": 37,
+              "end": 42,
+              "clause": "How many saves did the player with a 92.3% save rate",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'92.3% save rate' matches the 'Save %' header and row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "217",
+              "value": "217",
+              "start": 57,
+              "end": 60,
+              "clause": "and 217 goals have?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'217 goals' refers to goals allowed in this goaltending table, matching 'Goals against' and the row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "92.3%",
+              "value": "92.3%",
+              "start": 37,
+              "end": 42,
+              "clause": "How many saves did the player with a 92.3% save rate",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'92.3% save rate' matches the 'Save %' header and row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "217",
+              "value": 217,
+              "start": 57,
+              "end": 60,
+              "clause": "and 217 goals have?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'217 goals' refers to goals allowed in this goaltending table, matching 'Goals against' and the row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "92.3%",
+              "value": "92.3%",
+              "start": 37,
+              "end": 42,
+              "clause": "How many saves did the player with a 92.3% save rate",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'92.3% save rate' matches the 'Save %' header and row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "217",
+              "value": 217,
+              "start": 57,
+              "end": 60,
+              "clause": "and 217 goals have?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'217 goals' refers to goals allowed in this goaltending table, matching 'Goals against' and the row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              0,
+              "92.3%"
+            ],
+            [
+              2,
+              0,
+              217
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "92.3%",
+          "value": "92.3%",
+          "start": 37,
+          "end": 42
+        },
+        {
+          "surface": "217",
+          "value": "217",
+          "start": 57,
+          "end": 60
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "92.3%",
+          "value": "92.3%",
+          "start": 37,
+          "end": 42,
+          "clause": "How many saves did the player with a 92.3% save rate",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "'92.3% save rate' matches the 'Save %' header and row value.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "217",
+          "value": 217,
+          "start": 57,
+          "end": 60,
+          "clause": "and 217 goals have?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "'217 goals' refers to goals allowed in this goaltending table, matching 'Goals against' and the row value.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          4,
+          0,
+          "92.3%"
+        ],
+        [
+          2,
+          0,
+          217
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8797
+}

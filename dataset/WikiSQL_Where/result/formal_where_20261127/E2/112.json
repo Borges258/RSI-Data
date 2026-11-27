@@ -1,0 +1,284 @@
+{
+  "arm": "E2",
+  "position": 112,
+  "example_id": "test:7876:2-17128242-4",
+  "original_index": 7876,
+  "table_id": "2-17128242-4",
+  "question": "WHAT IS THE PLACE THAT HAS SCORE OF 65 OR BETTER, FOR ROCCO MEDIATE?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        3,
+        1,
+        65
+      ],
+      [
+        1,
+        0,
+        "rocco mediate"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [],
+  "status": "CLARIFY",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "CLARIFY",
+    "conditions": [
+      {
+        "surface": "65",
+        "value": "65",
+        "start": 36,
+        "end": 38,
+        "clause": "WHAT IS THE PLACE THAT HAS SCORE OF 65 OR BETTER"
+      },
+      {
+        "surface": "ROCCO MEDIATE",
+        "value": "Rocco Mediate",
+        "start": 54,
+        "end": 67,
+        "clause": "FOR ROCCO MEDIATE?"
+      }
+    ],
+    "count": 2,
+    "stage": "WHERE_MULTI_CONDITION_EXTRACT",
+    "originalConditions": [
+      {
+        "surface": "65",
+        "value": "65",
+        "start": 36,
+        "end": 38
+      },
+      {
+        "surface": "ROCCO MEDIATE",
+        "value": "Rocco Mediate",
+        "start": 54,
+        "end": 67
+      }
+    ],
+    "errors": [
+      "stage stopped with status CLARIFY"
+    ],
+    "halt": true,
+    "completed": false,
+    "conds": [],
+    "warnings": [],
+    "request": {
+      "question": "WHAT IS THE PLACE THAT HAS SCORE OF 65 OR BETTER, FOR ROCCO MEDIATE?",
+      "table": {
+        "header": [
+          "Place",
+          "Player",
+          "Country",
+          "Score",
+          "To par"
+        ],
+        "page_title": "2000 U.S. Open (golf)",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 17128242,
+        "id": "2-17128242-4",
+        "section_title": "First round",
+        "rows": [
+          [
+            "1",
+            "Tiger Woods",
+            "United States",
+            "65",
+            "–6"
+          ],
+          [
+            "2",
+            "Miguel Ángel Jiménez",
+            "Spain",
+            "66",
+            "–5"
+          ],
+          [
+            "3",
+            "John Huston",
+            "United States",
+            "67",
+            "–4"
+          ],
+          [
+            "T4",
+            "Bobby Clampett",
+            "United States",
+            "68",
+            "–3"
+          ],
+          [
+            "T4",
+            "Hale Irwin",
+            "United States",
+            "68",
+            "–3"
+          ],
+          [
+            "T4",
+            "Loren Roberts",
+            "United States",
+            "68",
+            "–3"
+          ],
+          [
+            "T7",
+            "Ángel Cabrera",
+            "Argentina",
+            "69",
+            "–2"
+          ],
+          [
+            "T7",
+            "Nick Faldo",
+            "England",
+            "69",
+            "–2"
+          ],
+          [
+            "T7",
+            "Rocco Mediate",
+            "United States",
+            "69",
+            "–2"
+          ],
+          [
+            "T7",
+            "Hal Sutton",
+            "United States",
+            "69",
+            "–2"
+          ]
+        ],
+        "caption": "First round",
+        "headers": [
+          "Place",
+          "Player",
+          "Country",
+          "Score",
+          "To par"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-17128242-4",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 2,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "65",
+              "value": "65",
+              "start": 36,
+              "end": 38
+            },
+            {
+              "surface": "ROCCO MEDIATE",
+              "value": "Rocco Mediate",
+              "start": 54,
+              "end": 67
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "63bab66fb91170b6d988b3cdb3be532866244f35005cc7d4e82d6eb26786d748",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4836,
+              "completion_tokens": 93,
+              "total_tokens": 4929,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 59
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "CLARIFY",
+          "conditions": [
+            {
+              "surface": "65",
+              "value": "65",
+              "start": 36,
+              "end": 38,
+              "clause": "WHAT IS THE PLACE THAT HAS SCORE OF 65 OR BETTER"
+            },
+            {
+              "surface": "ROCCO MEDIATE",
+              "value": "Rocco Mediate",
+              "start": 54,
+              "end": 67,
+              "clause": "FOR ROCCO MEDIATE?"
+            }
+          ],
+          "count": 2
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "CLARIFY",
+        "stage": "WHERE_MULTI_CONDITION_EXTRACT",
+        "halt": true,
+        "completed": false,
+        "errors": [
+          "stage stopped with status CLARIFY"
+        ],
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "65",
+          "value": "65",
+          "start": 36,
+          "end": 38
+        },
+        {
+          "surface": "ROCCO MEDIATE",
+          "value": "Rocco Mediate",
+          "start": 54,
+          "end": 67
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "65",
+          "value": "65",
+          "start": 36,
+          "end": 38,
+          "clause": "WHAT IS THE PLACE THAT HAS SCORE OF 65 OR BETTER"
+        },
+        {
+          "surface": "ROCCO MEDIATE",
+          "value": "Rocco Mediate",
+          "start": 54,
+          "end": 67,
+          "clause": "FOR ROCCO MEDIATE?"
+        }
+      ],
+      "count": 2
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": false,
+  "elapsed_ms": 3625
+}

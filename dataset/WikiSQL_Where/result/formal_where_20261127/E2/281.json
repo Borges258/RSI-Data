@@ -1,0 +1,436 @@
+{
+  "arm": "E2",
+  "position": 281,
+  "example_id": "test:11560:2-10790651-4",
+  "original_index": 11560,
+  "table_id": "2-10790651-4",
+  "question": "How many people were in attendance at Glenferrie Oval?",
+  "gold_sql": {
+    "sel": 5,
+    "conds": [
+      [
+        4,
+        0,
+        "glenferrie oval"
+      ]
+    ],
+    "agg": 2
+  },
+  "prediction_conds": [
+    [
+      4,
+      0,
+      "Glenferrie Oval"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        0,
+        "Glenferrie Oval"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Glenferrie Oval",
+        "value": "Glenferrie Oval",
+        "start": 38,
+        "end": 53,
+        "clause": "How many people were in attendance at Glenferrie Oval?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The question uses Glenferrie Oval as a location, matching the Venue header and row evidence.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Glenferrie Oval",
+        "value": "Glenferrie Oval",
+        "start": 38,
+        "end": 53
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "How many people were in attendance at Glenferrie Oval?",
+      "table": {
+        "header": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ],
+        "page_title": "1935 VFL season",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 10790651,
+        "id": "2-10790651-4",
+        "section_title": "Round 4",
+        "rows": [
+          [
+            "Hawthorn",
+            "6.17 (53)",
+            "St Kilda",
+            "16.8 (104)",
+            "Glenferrie Oval",
+            "11,000",
+            "18 May 1935"
+          ],
+          [
+            "Fitzroy",
+            "18.16 (124)",
+            "North Melbourne",
+            "10.14 (74)",
+            "Brunswick Street Oval",
+            "13,000",
+            "18 May 1935"
+          ],
+          [
+            "Richmond",
+            "18.20 (128)",
+            "Melbourne",
+            "14.8 (92)",
+            "Punt Road Oval",
+            "15,000",
+            "18 May 1935"
+          ],
+          [
+            "Footscray",
+            "7.8 (50)",
+            "Essendon",
+            "16.5 (101)",
+            "Western Oval",
+            "17,000",
+            "18 May 1935"
+          ],
+          [
+            "Geelong",
+            "14.17 (101)",
+            "Collingwood",
+            "17.13 (115)",
+            "Corio Oval",
+            "13,000",
+            "18 May 1935"
+          ],
+          [
+            "South Melbourne",
+            "13.19 (97)",
+            "Carlton",
+            "14.6 (90)",
+            "Lake Oval",
+            "35,000",
+            "18 May 1935"
+          ]
+        ],
+        "caption": "Round 4",
+        "headers": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-10790651-4",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Glenferrie Oval",
+              "value": "Glenferrie Oval",
+              "start": 38,
+              "end": 53
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "475b168ea9b1f12a8303abc58652512a2d61040aad2416bf9ae55ba42a05c6d8",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4909,
+              "completion_tokens": 27,
+              "total_tokens": 4936,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Glenferrie Oval",
+              "value": "Glenferrie Oval",
+              "start": 38,
+              "end": 53,
+              "clause": "How many people were in attendance at Glenferrie Oval?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Glenferrie Oval",
+              "value": "Glenferrie Oval",
+              "start": 38,
+              "end": 53,
+              "clause": "How many people were in attendance at Glenferrie Oval?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Glenferrie Oval",
+              "value": "Glenferrie Oval",
+              "start": 38,
+              "end": 53,
+              "clause": "How many people were in attendance at Glenferrie Oval?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question uses Glenferrie Oval as a location, matching the Venue header and row evidence."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "7a8751b680fa1d7415715d79ae52b850d2770607be57cf56a1de793a91f659a0",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4953,
+              "completion_tokens": 41,
+              "total_tokens": 4994,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Glenferrie Oval",
+              "value": "Glenferrie Oval",
+              "start": 38,
+              "end": 53,
+              "clause": "How many people were in attendance at Glenferrie Oval?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question uses Glenferrie Oval as a location, matching the Venue header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f03d1d04a1d7691a60e918677c3496abaa03f02b018df2c0d2436c84a7741e6d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5018,
+              "completion_tokens": 9,
+              "total_tokens": 5027,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Glenferrie Oval",
+              "value": "Glenferrie Oval",
+              "start": 38,
+              "end": 53,
+              "clause": "How many people were in attendance at Glenferrie Oval?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question uses Glenferrie Oval as a location, matching the Venue header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "01a1ab8baccfea2f066c7ada1e8f882af43f5f68bb9ae5440bf05dd3c52c4c23",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4969,
+              "completion_tokens": 15,
+              "total_tokens": 4984,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Glenferrie Oval",
+              "value": "Glenferrie Oval",
+              "start": 38,
+              "end": 53,
+              "clause": "How many people were in attendance at Glenferrie Oval?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question uses Glenferrie Oval as a location, matching the Venue header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Glenferrie Oval",
+              "value": "Glenferrie Oval",
+              "start": 38,
+              "end": 53,
+              "clause": "How many people were in attendance at Glenferrie Oval?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question uses Glenferrie Oval as a location, matching the Venue header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Glenferrie Oval",
+              "value": "Glenferrie Oval",
+              "start": 38,
+              "end": 53,
+              "clause": "How many people were in attendance at Glenferrie Oval?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question uses Glenferrie Oval as a location, matching the Venue header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              0,
+              "Glenferrie Oval"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Glenferrie Oval",
+          "value": "Glenferrie Oval",
+          "start": 38,
+          "end": 53
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Glenferrie Oval",
+          "value": "Glenferrie Oval",
+          "start": 38,
+          "end": 53,
+          "clause": "How many people were in attendance at Glenferrie Oval?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The question uses Glenferrie Oval as a location, matching the Venue header and row evidence.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          4,
+          0,
+          "Glenferrie Oval"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8282
+}

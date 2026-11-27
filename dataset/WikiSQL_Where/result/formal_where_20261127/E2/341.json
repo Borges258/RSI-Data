@@ -1,0 +1,427 @@
+{
+  "arm": "E2",
+  "position": 341,
+  "example_id": "test:5181:2-14050485-3",
+  "original_index": 5181,
+  "table_id": "2-14050485-3",
+  "question": "Sfax has a total ordered number of?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        0,
+        0,
+        "sfax"
+      ]
+    ],
+    "agg": 3
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "Sfax"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "Sfax"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Sfax",
+        "value": "Sfax",
+        "start": 0,
+        "end": 4,
+        "clause": "Sfax has a total ordered number of?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "Sfax is the submarine name in the Name column; the question asks for its Ordered value.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Sfax",
+        "value": "Sfax",
+        "start": 0,
+        "end": 4
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Sfax has a total ordered number of?",
+      "table": {
+        "header": [
+          "Name",
+          "Pennant number",
+          "Ordered",
+          "Builder",
+          "Commissioned",
+          "Fate"
+        ],
+        "page_title": "Redoutable-class submarine (1931)",
+        "types": [
+          "text",
+          "text",
+          "real",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 14050485,
+        "id": "2-14050485-3",
+        "section_title": "Third series",
+        "rows": [
+          [
+            "Agosta",
+            "Q178",
+            "1930",
+            "Arsenal de Cherbourg",
+            "30 April 1934",
+            "scuttled, Brest, 18 June 1940"
+          ],
+          [
+            "Sfax",
+            "Q182",
+            "1930",
+            "ACL, Nantes",
+            "6 December 1934",
+            "torpedoed by U-37, 19 December 1940"
+          ],
+          [
+            "Casabianca",
+            "Q183",
+            "1930",
+            "ACL Nantes",
+            "2 February 1935",
+            "survived the war. BU 1952"
+          ],
+          [
+            "Bévéziers",
+            "Q179",
+            "1930",
+            "Arsenal de Cherbourg",
+            "14 October 1935",
+            "sunk, 5 May 1942"
+          ],
+          [
+            "Ouessant",
+            "Q140",
+            "1930",
+            "Arsenal de Cherbourg",
+            "30 November 1936",
+            "scuttled, Brest, 18 June 1940"
+          ],
+          [
+            "Sidi Ferruch",
+            "Q181",
+            "1930",
+            "Arsenal de Cherbourg",
+            "9 July 1937",
+            "sunk, 11 November 1942"
+          ]
+        ],
+        "caption": "Third series",
+        "headers": [
+          "Name",
+          "Pennant number",
+          "Ordered",
+          "Builder",
+          "Commissioned",
+          "Fate"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-14050485-3",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Sfax",
+              "value": "Sfax",
+              "start": 0,
+              "end": 4
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "404142742f23b8101eec6d61e2513d316675bdbef2f0d6d9ca72bd2f887f5473",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4883,
+              "completion_tokens": 19,
+              "total_tokens": 4902,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Sfax",
+              "value": "Sfax",
+              "start": 0,
+              "end": 4,
+              "clause": "Sfax has a total ordered number of?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Sfax",
+              "value": "Sfax",
+              "start": 0,
+              "end": 4,
+              "clause": "Sfax has a total ordered number of?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Sfax",
+              "value": "Sfax",
+              "start": 0,
+              "end": 4,
+              "clause": "Sfax has a total ordered number of?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Sfax is the submarine name in the Name column; the question asks for its Ordered value."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "da8cf7693cad2e9777d2c56a0226174e6dfef0e4136ba385604cbbd2f0c3e916",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4915,
+              "completion_tokens": 40,
+              "total_tokens": 4955,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Sfax",
+              "value": "Sfax",
+              "start": 0,
+              "end": 4,
+              "clause": "Sfax has a total ordered number of?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Sfax is the submarine name in the Name column; the question asks for its Ordered value.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "1cb9b51f1311ba7f566f8a4ab359888763b696892b6b186a5bff785ad2893933",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4979,
+              "completion_tokens": 9,
+              "total_tokens": 4988,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Sfax",
+              "value": "Sfax",
+              "start": 0,
+              "end": 4,
+              "clause": "Sfax has a total ordered number of?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Sfax is the submarine name in the Name column; the question asks for its Ordered value.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "4bd48fcfc2976fad3d070729b660e0f6911887f63a95641aaa1d67565b39e2c3",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4930,
+              "completion_tokens": 11,
+              "total_tokens": 4941,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Sfax",
+              "value": "Sfax",
+              "start": 0,
+              "end": 4,
+              "clause": "Sfax has a total ordered number of?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Sfax is the submarine name in the Name column; the question asks for its Ordered value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Sfax",
+              "value": "Sfax",
+              "start": 0,
+              "end": 4,
+              "clause": "Sfax has a total ordered number of?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Sfax is the submarine name in the Name column; the question asks for its Ordered value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Sfax",
+              "value": "Sfax",
+              "start": 0,
+              "end": 4,
+              "clause": "Sfax has a total ordered number of?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Sfax is the submarine name in the Name column; the question asks for its Ordered value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              "Sfax"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Sfax",
+          "value": "Sfax",
+          "start": 0,
+          "end": 4
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Sfax",
+          "value": "Sfax",
+          "start": 0,
+          "end": 4,
+          "clause": "Sfax has a total ordered number of?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "Sfax is the submarine name in the Name column; the question asks for its Ordered value.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          0,
+          0,
+          "Sfax"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7500
+}

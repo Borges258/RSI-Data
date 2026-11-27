@@ -1,0 +1,439 @@
+{
+  "arm": "E2",
+  "position": 308,
+  "example_id": "test:506:1-12434380-1",
+  "original_index": 506,
+  "table_id": "1-12434380-1",
+  "question": "When was the institution of Kansas city Kansas community college founded?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        0,
+        0,
+        "Kansas City Kansas Community College"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "Kansas City Kansas Community College"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "Kansas City Kansas Community College"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Kansas city Kansas community college",
+        "value": "Kansas City Kansas Community College",
+        "start": 28,
+        "end": 64,
+        "clause": "When was the institution of Kansas city Kansas community college founded?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "The question identifies Kansas City Kansas Community College as the institution, matching the Institution header and row value.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Kansas city Kansas community college",
+        "value": "Kansas City Kansas Community College",
+        "start": 28,
+        "end": 64
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "When was the institution of Kansas city Kansas community college founded?",
+      "table": {
+        "header": [
+          "Institution",
+          "Main Campus Location",
+          "Founded",
+          "Mascot",
+          "School Colors"
+        ],
+        "page_title": "Kansas Jayhawk Community College Conference",
+        "types": [
+          "text",
+          "text",
+          "real",
+          "text",
+          "text"
+        ],
+        "id": "1-12434380-1",
+        "section_title": "Eastern Division",
+        "caption": "Eastern Division",
+        "rows": [
+          [
+            "Allen Community College",
+            "Iola",
+            1923,
+            "Red Devils",
+            "Scarlet & Black"
+          ],
+          [
+            "Coffeyville Community College",
+            "Coffeyville",
+            1923,
+            "Red Ravens",
+            "Red & White"
+          ],
+          [
+            "Cowley College",
+            "Arkansas City",
+            1922,
+            "Tigers",
+            "Orange & Black"
+          ],
+          [
+            "Fort Scott Community College",
+            "Fort Scott",
+            1919,
+            "Greyhounds",
+            "Maroon & Grey"
+          ],
+          [
+            "Highland Community College",
+            "Highland",
+            1858,
+            "Scotties",
+            "Navy & Gold"
+          ],
+          [
+            "Independence Community College",
+            "Independence",
+            1925,
+            "Pirates",
+            "Navy Blue & Vegas Gold"
+          ],
+          [
+            "Johnson County Community College",
+            "Overland Park",
+            1967,
+            "Cavaliers",
+            "Maroon & Gold"
+          ],
+          [
+            "Kansas City Kansas Community College",
+            "Kansas City",
+            1923,
+            "Blue Devils",
+            "Blue, Red & White"
+          ],
+          [
+            "Labette Community College",
+            "Parsons",
+            1923,
+            "Cardinals",
+            "Red & White"
+          ]
+        ],
+        "name": "table_12434380_1",
+        "headers": [
+          "Institution",
+          "Main Campus Location",
+          "Founded",
+          "Mascot",
+          "School Colors"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-12434380-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Kansas city Kansas community college",
+              "value": "Kansas City Kansas Community College",
+              "start": 28,
+              "end": 64
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a094904e5fd545b740d96ce8f005388476a9eb835412daf27d88ba3dd08b69bd",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4863,
+              "completion_tokens": 25,
+              "total_tokens": 4888,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Kansas city Kansas community college",
+              "value": "Kansas City Kansas Community College",
+              "start": 28,
+              "end": 64,
+              "clause": "When was the institution of Kansas city Kansas community college founded?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Kansas city Kansas community college",
+              "value": "Kansas City Kansas Community College",
+              "start": 28,
+              "end": 64,
+              "clause": "When was the institution of Kansas city Kansas community college founded?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Kansas city Kansas community college",
+              "value": "Kansas City Kansas Community College",
+              "start": 28,
+              "end": 64,
+              "clause": "When was the institution of Kansas city Kansas community college founded?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question identifies Kansas City Kansas Community College as the institution, matching the Institution header and row value."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "783c4b6acfade3465983b89e4e79c3b621076441e610bb7b5fbf1f23f8574001",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4904,
+              "completion_tokens": 41,
+              "total_tokens": 4945,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Kansas city Kansas community college",
+              "value": "Kansas City Kansas Community College",
+              "start": 28,
+              "end": 64,
+              "clause": "When was the institution of Kansas city Kansas community college founded?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question identifies Kansas City Kansas Community College as the institution, matching the Institution header and row value.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "5e781f7e69068e4b15afd325bacecf0cb3e15ff57ccf936449e61d2cda3b5063",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4969,
+              "completion_tokens": 9,
+              "total_tokens": 4978,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Kansas city Kansas community college",
+              "value": "Kansas City Kansas Community College",
+              "start": 28,
+              "end": 64,
+              "clause": "When was the institution of Kansas city Kansas community college founded?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question identifies Kansas City Kansas Community College as the institution, matching the Institution header and row value.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "978f51078df0e869aee9580deb4be6ca3db3f9cd5172252bc8d481ed73f7d8a4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4920,
+              "completion_tokens": 14,
+              "total_tokens": 4934,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Kansas city Kansas community college",
+              "value": "Kansas City Kansas Community College",
+              "start": 28,
+              "end": 64,
+              "clause": "When was the institution of Kansas city Kansas community college founded?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question identifies Kansas City Kansas Community College as the institution, matching the Institution header and row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Kansas city Kansas community college",
+              "value": "Kansas City Kansas Community College",
+              "start": 28,
+              "end": 64,
+              "clause": "When was the institution of Kansas city Kansas community college founded?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question identifies Kansas City Kansas Community College as the institution, matching the Institution header and row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Kansas city Kansas community college",
+              "value": "Kansas City Kansas Community College",
+              "start": 28,
+              "end": 64,
+              "clause": "When was the institution of Kansas city Kansas community college founded?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question identifies Kansas City Kansas Community College as the institution, matching the Institution header and row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              "Kansas City Kansas Community College"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Kansas city Kansas community college",
+          "value": "Kansas City Kansas Community College",
+          "start": 28,
+          "end": 64
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Kansas city Kansas community college",
+          "value": "Kansas City Kansas Community College",
+          "start": 28,
+          "end": 64,
+          "clause": "When was the institution of Kansas city Kansas community college founded?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "The question identifies Kansas City Kansas Community College as the institution, matching the Institution header and row value.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          0,
+          0,
+          "Kansas City Kansas Community College"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7875
+}

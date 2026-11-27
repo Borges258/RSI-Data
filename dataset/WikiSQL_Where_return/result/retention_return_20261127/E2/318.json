@@ -1,0 +1,443 @@
+{
+  "arm": "E2",
+  "position": 318,
+  "example_id": "test:12376:2-18270426-2",
+  "original_index": 12376,
+  "table_id": "2-18270426-2",
+  "question": "What day was the circuit Isle of Man?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        1,
+        0,
+        "isle of man"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "Isle of Man"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "Isle of Man"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Isle of Man",
+        "value": "Isle of Man",
+        "start": 25,
+        "end": 36,
+        "clause": "What day was the circuit Isle of Man?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The question explicitly identifies Isle of Man as the circuit, matching the Circuit header and row evidence.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Isle of Man",
+        "value": "Isle of Man",
+        "start": 25,
+        "end": 36
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What day was the circuit Isle of Man?",
+      "table": {
+        "header": [
+          "Name",
+          "Circuit",
+          "Date",
+          "Winning driver",
+          "Winning constructor",
+          "Report"
+        ],
+        "page_title": "1922 Grand Prix season",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 18270426,
+        "id": "2-18270426-2",
+        "section_title": "Other Grands Prix",
+        "rows": [
+          [
+            "Targa Florio",
+            "Madonie",
+            "2 April",
+            "Giulio Masetti",
+            "Mercedes",
+            "Report"
+          ],
+          [
+            "Sardo Circuit",
+            "Cagliari",
+            "30 May",
+            "Ernesto Ceirano",
+            "SCAT",
+            "Report"
+          ],
+          [
+            "Mugello Circuit",
+            "Mugello",
+            "18 June",
+            "Alfieri Maserati",
+            "Isotta-Fraschini",
+            "Report"
+          ],
+          [
+            "Tourist Trophy",
+            "Isle of Man",
+            "22 June",
+            "Jean Chassagne",
+            "Sunbeam",
+            "Report"
+          ],
+          [
+            "Coppa Montenero",
+            "Montenero",
+            "27 August",
+            "Carlo Masetti",
+            "Bugatti",
+            "Report"
+          ],
+          [
+            "Garda Circuit",
+            "Salò",
+            "15 October",
+            "Guido Meregalli",
+            "Diatto",
+            "Report"
+          ],
+          [
+            "Autumn Grand Prix",
+            "Monza",
+            "22 October",
+            "André Dubonnet",
+            "Hispano-Suiza",
+            "Report"
+          ],
+          [
+            "Coppa Florio",
+            "Madonie",
+            "4 November",
+            "André Boillot",
+            "Peugeot",
+            "Report"
+          ]
+        ],
+        "caption": "Other Grands Prix",
+        "headers": [
+          "Name",
+          "Circuit",
+          "Date",
+          "Winning driver",
+          "Winning constructor",
+          "Report"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-18270426-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Isle of Man",
+              "value": "Isle of Man",
+              "start": 25,
+              "end": 36
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "8c3b3932d3b3e9c8e9ffbbf4fb1a21de70f14bf5ea15d243c142e8ef22afd4b1",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4863,
+              "completion_tokens": 23,
+              "total_tokens": 4886,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Isle of Man",
+              "value": "Isle of Man",
+              "start": 25,
+              "end": 36,
+              "clause": "What day was the circuit Isle of Man?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Isle of Man",
+              "value": "Isle of Man",
+              "start": 25,
+              "end": 36,
+              "clause": "What day was the circuit Isle of Man?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Isle of Man",
+              "value": "Isle of Man",
+              "start": 25,
+              "end": 36,
+              "clause": "What day was the circuit Isle of Man?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly identifies Isle of Man as the circuit, matching the Circuit header and row evidence."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "cea3733f355e8b105bbc8e0e94f9624761b0cb4cd7601c91f255444d1ea03560",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4899,
+              "completion_tokens": 40,
+              "total_tokens": 4939,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Isle of Man",
+              "value": "Isle of Man",
+              "start": 25,
+              "end": 36,
+              "clause": "What day was the circuit Isle of Man?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly identifies Isle of Man as the circuit, matching the Circuit header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f0c9ca2bbfdc92299b60faa20c6aeca02de23511207d289bdc41695ccb6205ad",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4963,
+              "completion_tokens": 9,
+              "total_tokens": 4972,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Isle of Man",
+              "value": "Isle of Man",
+              "start": 25,
+              "end": 36,
+              "clause": "What day was the circuit Isle of Man?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly identifies Isle of Man as the circuit, matching the Circuit header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "543519e228144fe7ad254b2748eaa4c7464e009768a8506077c3b39f61d34442",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4914,
+              "completion_tokens": 13,
+              "total_tokens": 4927,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Isle of Man",
+              "value": "Isle of Man",
+              "start": 25,
+              "end": 36,
+              "clause": "What day was the circuit Isle of Man?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly identifies Isle of Man as the circuit, matching the Circuit header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Isle of Man",
+              "value": "Isle of Man",
+              "start": 25,
+              "end": 36,
+              "clause": "What day was the circuit Isle of Man?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly identifies Isle of Man as the circuit, matching the Circuit header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Isle of Man",
+              "value": "Isle of Man",
+              "start": 25,
+              "end": 36,
+              "clause": "What day was the circuit Isle of Man?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly identifies Isle of Man as the circuit, matching the Circuit header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              "Isle of Man"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Isle of Man",
+          "value": "Isle of Man",
+          "start": 25,
+          "end": 36
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Isle of Man",
+          "value": "Isle of Man",
+          "start": 25,
+          "end": 36,
+          "clause": "What day was the circuit Isle of Man?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The question explicitly identifies Isle of Man as the circuit, matching the Circuit header and row evidence.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          1,
+          0,
+          "Isle of Man"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7485
+}

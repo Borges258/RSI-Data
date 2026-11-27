@@ -1,0 +1,701 @@
+{
+  "arm": "E2",
+  "position": 583,
+  "example_id": "test:13773:2-18894139-4",
+  "original_index": 13773,
+  "table_id": "2-18894139-4",
+  "question": "What is the average total for countries with under 3 golds and 0 silvers?",
+  "gold_sql": {
+    "sel": 5,
+    "conds": [
+      [
+        2,
+        2,
+        3
+      ],
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "agg": 5
+  },
+  "prediction_conds": [
+    [
+      2,
+      2,
+      3
+    ],
+    [
+      3,
+      0,
+      0
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        2,
+        3
+      ],
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "under 3",
+        "value": 3,
+        "start": 45,
+        "end": 52,
+        "clause": "What is the average total for countries with under 3 golds",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "'under 3 golds' explicitly refers to the Gold field.",
+        "operator": "<",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "0",
+        "value": 0,
+        "start": 63,
+        "end": 64,
+        "clause": "and 0 silvers?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "'0 silvers' explicitly refers to the Silver field.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "under 3",
+        "value": "3",
+        "start": 45,
+        "end": 52
+      },
+      {
+        "surface": "0",
+        "value": "0",
+        "start": 63,
+        "end": 64
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the average total for countries with under 3 golds and 0 silvers?",
+      "table": {
+        "header": [
+          "Rank",
+          "Nation",
+          "Gold",
+          "Silver",
+          "Bronze",
+          "Total"
+        ],
+        "page_title": "1999 ICF Canoe Sprint World Championships",
+        "types": [
+          "text",
+          "text",
+          "real",
+          "real",
+          "real",
+          "real"
+        ],
+        "page_id": 18894139,
+        "id": "2-18894139-4",
+        "section_title": "Medals table",
+        "rows": [
+          [
+            "1",
+            "Hungary",
+            "6",
+            "2",
+            "8",
+            "16"
+          ],
+          [
+            "2",
+            "Russia",
+            "8",
+            "3",
+            "2",
+            "13"
+          ],
+          [
+            "3",
+            "Poland",
+            "3",
+            "4",
+            "4",
+            "11"
+          ],
+          [
+            "4",
+            "Germany",
+            "2",
+            "4",
+            "5",
+            "11"
+          ],
+          [
+            "5",
+            "Canada",
+            "3",
+            "1",
+            "0",
+            "4"
+          ],
+          [
+            "6",
+            "Czech Republic",
+            "0",
+            "3",
+            "1",
+            "4"
+          ],
+          [
+            "7",
+            "Romania",
+            "0",
+            "2",
+            "2",
+            "4"
+          ],
+          [
+            "8",
+            "Italy",
+            "0",
+            "3",
+            "0",
+            "3"
+          ],
+          [
+            "9",
+            "Australia",
+            "1",
+            "0",
+            "1",
+            "2"
+          ],
+          [
+            "10",
+            "Slovakia",
+            "1",
+            "0",
+            "1",
+            "2"
+          ],
+          [
+            "11",
+            "Israel",
+            "1",
+            "0",
+            "0",
+            "1"
+          ],
+          [
+            "12",
+            "Spain",
+            "1",
+            "0",
+            "0",
+            "1"
+          ],
+          [
+            "13",
+            "Bulgaria",
+            "0",
+            "1",
+            "0",
+            "1"
+          ],
+          [
+            "14",
+            "Cuba",
+            "0",
+            "1",
+            "0",
+            "1"
+          ],
+          [
+            "15",
+            "Norway",
+            "0",
+            "1",
+            "0",
+            "1"
+          ],
+          [
+            "16",
+            "Ukraine",
+            "0",
+            "1",
+            "0",
+            "1"
+          ],
+          [
+            "17",
+            "Denmark",
+            "0",
+            "0",
+            "1",
+            "1"
+          ],
+          [
+            "18",
+            "France",
+            "0",
+            "0",
+            "1",
+            "1"
+          ],
+          [
+            "Total",
+            "Total",
+            "26",
+            "26",
+            "26",
+            "78"
+          ]
+        ],
+        "caption": "Medals table",
+        "headers": [
+          "Rank",
+          "Nation",
+          "Gold",
+          "Silver",
+          "Bronze",
+          "Total"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-18894139-4",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "under 3",
+              "value": "3",
+              "start": 45,
+              "end": 52
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 63,
+              "end": 64
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "21919be5798c8dc262e697f02fbeab4a4938a3fba8eb6f284e9b61af2e459dfe",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4942,
+              "completion_tokens": 27,
+              "total_tokens": 4969,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "under 3",
+              "value": "3",
+              "start": 45,
+              "end": 52,
+              "clause": "What is the average total for countries with under 3 golds"
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 63,
+              "end": 64,
+              "clause": "and 0 silvers?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "under 3",
+              "value": "3",
+              "start": 45,
+              "end": 52,
+              "clause": "What is the average total for countries with under 3 golds"
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 63,
+              "end": 64,
+              "clause": "and 0 silvers?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "under 3",
+              "value": "3",
+              "start": 45,
+              "end": 52,
+              "clause": "What is the average total for countries with under 3 golds",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'under 3 golds' explicitly refers to the Gold field."
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 63,
+              "end": 64,
+              "clause": "and 0 silvers?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'0 silvers' explicitly refers to the Silver field."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "5b835733dc3a3ac9dfd652b1517b023c69057a60498a4f8a89cbb1989cd7e6b6",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5004,
+              "completion_tokens": 51,
+              "total_tokens": 5055,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "under 3",
+              "value": "3",
+              "start": 45,
+              "end": 52,
+              "clause": "What is the average total for countries with under 3 golds",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'under 3 golds' explicitly refers to the Gold field.",
+              "operator": "<"
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 63,
+              "end": 64,
+              "clause": "and 0 silvers?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'0 silvers' explicitly refers to the Silver field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "50cac9c86b92470e80d8dc9a77d47725f93d1c1c24126dbda2745827340f86bd",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5088,
+              "completion_tokens": 11,
+              "total_tokens": 5099,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "under 3",
+              "value": "3",
+              "start": 45,
+              "end": 52,
+              "clause": "What is the average total for countries with under 3 golds",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'under 3 golds' explicitly refers to the Gold field.",
+              "operator": "<"
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 63,
+              "end": 64,
+              "clause": "and 0 silvers?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'0 silvers' explicitly refers to the Silver field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "30d506d7b856c73aba341a281216c37c0ea722ebac293715c18ff0d6780dabdc",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5042,
+              "completion_tokens": 12,
+              "total_tokens": 5054,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "under 3",
+              "value": "3",
+              "start": 45,
+              "end": 52,
+              "clause": "What is the average total for countries with under 3 golds",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'under 3 golds' explicitly refers to the Gold field.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 63,
+              "end": 64,
+              "clause": "and 0 silvers?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'0 silvers' explicitly refers to the Silver field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "under 3",
+              "value": 3,
+              "start": 45,
+              "end": 52,
+              "clause": "What is the average total for countries with under 3 golds",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'under 3 golds' explicitly refers to the Gold field.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "0",
+              "value": 0,
+              "start": 63,
+              "end": 64,
+              "clause": "and 0 silvers?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'0 silvers' explicitly refers to the Silver field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "under 3",
+              "value": 3,
+              "start": 45,
+              "end": 52,
+              "clause": "What is the average total for countries with under 3 golds",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'under 3 golds' explicitly refers to the Gold field.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "0",
+              "value": 0,
+              "start": 63,
+              "end": 64,
+              "clause": "and 0 silvers?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'0 silvers' explicitly refers to the Silver field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              2,
+              3
+            ],
+            [
+              3,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "under 3",
+          "value": "3",
+          "start": 45,
+          "end": 52
+        },
+        {
+          "surface": "0",
+          "value": "0",
+          "start": 63,
+          "end": 64
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "under 3",
+          "value": 3,
+          "start": 45,
+          "end": 52,
+          "clause": "What is the average total for countries with under 3 golds",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "'under 3 golds' explicitly refers to the Gold field.",
+          "operator": "<",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "0",
+          "value": 0,
+          "start": 63,
+          "end": 64,
+          "clause": "and 0 silvers?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "'0 silvers' explicitly refers to the Silver field.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          2,
+          2,
+          3
+        ],
+        [
+          3,
+          0,
+          0
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8359
+}

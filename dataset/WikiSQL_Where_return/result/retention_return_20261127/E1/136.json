@@ -1,0 +1,129 @@
+{
+  "arm": "E1",
+  "position": 136,
+  "example_id": "test:4835:2-10560574-2",
+  "original_index": 4835,
+  "table_id": "2-10560574-2",
+  "question": "What was the result of the bodil award winning film from before 2005 in the best actress category?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        0,
+        0,
+        "bodil award"
+      ],
+      [
+        2,
+        0,
+        "best actress"
+      ],
+      [
+        1,
+        0,
+        2005
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "Bodil Award"
+    ],
+    [
+      1,
+      2,
+      2005
+    ],
+    [
+      2,
+      0,
+      "Best Actress"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": "gpt-5.6-sol",
+  "usage": {
+    "prompt_tokens": 9474,
+    "completion_tokens": 307,
+    "total_tokens": 9781,
+    "prompt_tokens_details": {
+      "cached_tokens": 4224
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 233
+    }
+  },
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "Bodil Award"
+      ],
+      [
+        1,
+        2,
+        2005
+      ],
+      [
+        2,
+        0,
+        "Best Actress"
+      ]
+    ],
+    "explanation": "Filters the Bodil Award, years before 2005, and the Best Actress category; the requested result is an output field rather than an additional condition.",
+    "version": "wikisql-where-prior-v1",
+    "tableId": "2-10560574-2",
+    "knowledgeIds": [
+      "g-eq",
+      "g-gt",
+      "g-lt",
+      "g-inclusive",
+      "g-literal",
+      "g-threshold",
+      "g-and",
+      "g-or",
+      "g-column",
+      "g-count",
+      "g-ambiguous",
+      "t-2-10560574-2-field-0",
+      "t-2-10560574-2-field-1",
+      "t-2-10560574-2-field-2",
+      "t-2-10560574-2-field-3",
+      "t-2-10560574-2-field-4",
+      "d-implicit-eq",
+      "d-explicit-eq",
+      "d-gt",
+      "d-lt-and-gt",
+      "d-with-two",
+      "d-literal-form",
+      "p-text",
+      "p-number",
+      "p-multi",
+      "p-unsupported"
+    ],
+    "promptSha256": "defcb13a26d55169cf9120c7f5915f8314c52767545437e66e05ae7684faa2b6",
+    "model": "gpt-5.6-sol",
+    "usage": {
+      "prompt_tokens": 9474,
+      "completion_tokens": 307,
+      "total_tokens": 9781,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 233
+      }
+    },
+    "latencyMs": 62589
+  },
+  "source": "where_prior_parse",
+  "safe_completed": true,
+  "elapsed_ms": 62594
+}

@@ -1,0 +1,798 @@
+{
+  "arm": "E2",
+  "position": 177,
+  "example_id": "test:6337:2-1442541-7",
+  "original_index": 6337,
+  "table_id": "2-1442541-7",
+  "question": "What is the finish for the chip ganassi racing team that was later than 2010 and a Start of 17?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        5,
+        0,
+        "chip ganassi racing"
+      ],
+      [
+        0,
+        1,
+        2010
+      ],
+      [
+        3,
+        0,
+        "17"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [],
+  "status": "GROUNDING_FAILED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "GROUNDING_FAILED",
+    "valid": false,
+    "errors": [
+      "condition 1: grounding NO_MATCH",
+      "condition 1: nonnumeric value for real column"
+    ],
+    "conditions": [
+      {
+        "surface": "chip ganassi racing",
+        "value": "Chip Ganassi Racing",
+        "start": 27,
+        "end": 46,
+        "clause": "What is the finish for the chip ganassi racing team that was later than 2010",
+        "columnIndex": 5,
+        "columnCandidates": [
+          5
+        ],
+        "columnMatchReason": "The question explicitly identifies Chip Ganassi Racing as the team, matching Team.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "later than 2010",
+        "value": "later than 2010",
+        "start": 61,
+        "end": 76,
+        "clause": "What is the finish for the chip ganassi racing team that was later than 2010",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "Later than 2010 is a temporal comparison against the Year field.",
+        "operator": ">",
+        "grounded": false,
+        "groundingStatus": "NO_MATCH",
+        "groundingReview": {
+          "column": 0,
+          "reason": "“Later than 2010” is a temporal comparison supported by the Year column, which contains 2011, 2012, and 2013."
+        }
+      },
+      {
+        "surface": "17",
+        "value": "17",
+        "start": 92,
+        "end": 94,
+        "clause": "and a Start of 17?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The question explicitly says Start of 17, matching Start.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "stage": "WHERE_CONDITION_VALIDATE",
+    "originalConditions": [
+      {
+        "surface": "chip ganassi racing",
+        "value": "Chip Ganassi Racing",
+        "start": 27,
+        "end": 46
+      },
+      {
+        "surface": "later than 2010",
+        "value": "later than 2010",
+        "start": 61,
+        "end": 76
+      },
+      {
+        "surface": "17",
+        "value": "17",
+        "start": 92,
+        "end": 94
+      }
+    ],
+    "halt": true,
+    "completed": false,
+    "conds": [],
+    "warnings": [],
+    "request": {
+      "question": "What is the finish for the chip ganassi racing team that was later than 2010 and a Start of 17?",
+      "table": {
+        "header": [
+          "Year",
+          "Chassis",
+          "Engine",
+          "Start",
+          "Finish",
+          "Team"
+        ],
+        "page_title": "Dario Franchitti",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 1442541,
+        "id": "2-1442541-7",
+        "section_title": "Indianapolis 500",
+        "rows": [
+          [
+            "2002",
+            "Dallara",
+            "Chevrolet",
+            "28",
+            "19",
+            "Team Green"
+          ],
+          [
+            "2003",
+            "Sat out due to injury",
+            "Sat out due to injury",
+            "Sat out due to injury",
+            "Sat out due to injury",
+            "Andretti Green"
+          ],
+          [
+            "2004",
+            "Dallara",
+            "Honda",
+            "3",
+            "14",
+            "Andretti Green"
+          ],
+          [
+            "2005",
+            "Dallara",
+            "Honda",
+            "6",
+            "6",
+            "Andretti Green"
+          ],
+          [
+            "2006",
+            "Dallara",
+            "Honda",
+            "17",
+            "7",
+            "Andretti Green"
+          ],
+          [
+            "2007",
+            "Dallara",
+            "Honda",
+            "3",
+            "1",
+            "Andretti Green"
+          ],
+          [
+            "2009",
+            "Dallara",
+            "Honda",
+            "3",
+            "7",
+            "Chip Ganassi Racing"
+          ],
+          [
+            "2010",
+            "Dallara",
+            "Honda",
+            "3",
+            "1",
+            "Chip Ganassi Racing"
+          ],
+          [
+            "2011",
+            "Dallara",
+            "Honda",
+            "9",
+            "12",
+            "Chip Ganassi Racing"
+          ],
+          [
+            "2012",
+            "Dallara",
+            "Honda",
+            "16",
+            "1",
+            "Chip Ganassi Racing"
+          ],
+          [
+            "2013",
+            "Dallara",
+            "Honda",
+            "17",
+            "23",
+            "Chip Ganassi Racing"
+          ]
+        ],
+        "caption": "Indianapolis 500",
+        "headers": [
+          "Year",
+          "Chassis",
+          "Engine",
+          "Start",
+          "Finish",
+          "Team"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-1442541-7",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 9,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 3,
+          "conditions": [
+            {
+              "surface": "chip ganassi racing",
+              "value": "Chip Ganassi Racing",
+              "start": 27,
+              "end": 46
+            },
+            {
+              "surface": "later than 2010",
+              "value": "later than 2010",
+              "start": 61,
+              "end": 76
+            },
+            {
+              "surface": "17",
+              "value": "17",
+              "start": 92,
+              "end": 94
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f20af01c9ac2aa196c192902ddbcae238b9b04935ccb0ce312e2c8ca1a75b1d8",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4904,
+              "completion_tokens": 47,
+              "total_tokens": 4951,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "chip ganassi racing",
+              "value": "Chip Ganassi Racing",
+              "start": 27,
+              "end": 46,
+              "clause": "What is the finish for the chip ganassi racing team that was later than 2010"
+            },
+            {
+              "surface": "later than 2010",
+              "value": "later than 2010",
+              "start": 61,
+              "end": 76,
+              "clause": "What is the finish for the chip ganassi racing team that was later than 2010"
+            },
+            {
+              "surface": "17",
+              "value": "17",
+              "start": 92,
+              "end": 94,
+              "clause": "and a Start of 17?"
+            }
+          ],
+          "count": 3
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "chip ganassi racing",
+              "value": "Chip Ganassi Racing",
+              "start": 27,
+              "end": 46,
+              "clause": "What is the finish for the chip ganassi racing team that was later than 2010"
+            },
+            {
+              "surface": "later than 2010",
+              "value": "later than 2010",
+              "start": 61,
+              "end": 76,
+              "clause": "What is the finish for the chip ganassi racing team that was later than 2010"
+            },
+            {
+              "surface": "17",
+              "value": "17",
+              "start": 92,
+              "end": 94,
+              "clause": "and a Start of 17?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "chip ganassi racing",
+              "value": "Chip Ganassi Racing",
+              "start": 27,
+              "end": 46,
+              "clause": "What is the finish for the chip ganassi racing team that was later than 2010",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly identifies Chip Ganassi Racing as the team, matching Team."
+            },
+            {
+              "surface": "later than 2010",
+              "value": "later than 2010",
+              "start": 61,
+              "end": 76,
+              "clause": "What is the finish for the chip ganassi racing team that was later than 2010",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Later than 2010 is a temporal comparison against the Year field."
+            },
+            {
+              "surface": "17",
+              "value": "17",
+              "start": 92,
+              "end": 94,
+              "clause": "and a Start of 17?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says Start of 17, matching Start."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "9d127ca6d9e69f4238ece3e5d153ad34d06518f9fb01b02bf67e724cd6d6f851",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5022,
+              "completion_tokens": 70,
+              "total_tokens": 5092,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "chip ganassi racing",
+              "value": "Chip Ganassi Racing",
+              "start": 27,
+              "end": 46,
+              "clause": "What is the finish for the chip ganassi racing team that was later than 2010",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly identifies Chip Ganassi Racing as the team, matching Team.",
+              "operator": "="
+            },
+            {
+              "surface": "later than 2010",
+              "value": "later than 2010",
+              "start": 61,
+              "end": 76,
+              "clause": "What is the finish for the chip ganassi racing team that was later than 2010",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Later than 2010 is a temporal comparison against the Year field.",
+              "operator": ">"
+            },
+            {
+              "surface": "17",
+              "value": "17",
+              "start": 92,
+              "end": 94,
+              "clause": "and a Start of 17?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says Start of 17, matching Start.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "765d870f0444abf5a15e974ec0248c2c07de12e310259bfdd6b30b54d40da43f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5138,
+              "completion_tokens": 12,
+              "total_tokens": 5150,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "chip ganassi racing",
+              "value": "Chip Ganassi Racing",
+              "start": 27,
+              "end": 46,
+              "clause": "What is the finish for the chip ganassi racing team that was later than 2010",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly identifies Chip Ganassi Racing as the team, matching Team.",
+              "operator": "="
+            },
+            {
+              "surface": "later than 2010",
+              "value": "later than 2010",
+              "start": 61,
+              "end": 76,
+              "clause": "What is the finish for the chip ganassi racing team that was later than 2010",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Later than 2010 is a temporal comparison against the Year field.",
+              "operator": ">"
+            },
+            {
+              "surface": "17",
+              "value": "17",
+              "start": 92,
+              "end": 94,
+              "clause": "and a Start of 17?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says Start of 17, matching Start.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c53be1784c437d75e79030935508a4f27a582fadf8c1961d35b518b0b573acc1",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5095,
+              "completion_tokens": 21,
+              "total_tokens": 5116,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "chip ganassi racing",
+              "value": "Chip Ganassi Racing",
+              "start": 27,
+              "end": 46,
+              "clause": "What is the finish for the chip ganassi racing team that was later than 2010",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly identifies Chip Ganassi Racing as the team, matching Team.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "later than 2010",
+              "value": "later than 2010",
+              "start": 61,
+              "end": 76,
+              "clause": "What is the finish for the chip ganassi racing team that was later than 2010",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Later than 2010 is a temporal comparison against the Year field.",
+              "operator": ">",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 0,
+                "reason": "“Later than 2010” is a temporal comparison supported by the Year column, which contains 2011, 2012, and 2013."
+              }
+            },
+            {
+              "surface": "17",
+              "value": "17",
+              "start": 92,
+              "end": 94,
+              "clause": "and a Start of 17?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says Start of 17, matching Start.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ],
+          "reviewModelCalls": [
+            {
+              "model": "gpt-5.6-sol",
+              "promptSha256": "d8869cb107ac00ba805e49280d950805f4f8bdeb3ceb20d801961cb4293d846c",
+              "knowledgeIds": [],
+              "usage": {
+                "prompt_tokens": 5002,
+                "completion_tokens": 44,
+                "total_tokens": 5046,
+                "prompt_tokens_details": {
+                  "cached_tokens": 4224
+                }
+              }
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d8869cb107ac00ba805e49280d950805f4f8bdeb3ceb20d801961cb4293d846c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5002,
+              "completion_tokens": 44,
+              "total_tokens": 5046,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "chip ganassi racing",
+              "value": "Chip Ganassi Racing",
+              "start": 27,
+              "end": 46,
+              "clause": "What is the finish for the chip ganassi racing team that was later than 2010",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly identifies Chip Ganassi Racing as the team, matching Team.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "later than 2010",
+              "value": "later than 2010",
+              "start": 61,
+              "end": 76,
+              "clause": "What is the finish for the chip ganassi racing team that was later than 2010",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Later than 2010 is a temporal comparison against the Year field.",
+              "operator": ">",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 0,
+                "reason": "“Later than 2010” is a temporal comparison supported by the Year column, which contains 2011, 2012, and 2013."
+              }
+            },
+            {
+              "surface": "17",
+              "value": "17",
+              "start": 92,
+              "end": 94,
+              "clause": "and a Start of 17?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says Start of 17, matching Start.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "GROUNDING_FAILED",
+          "valid": false,
+          "errors": [
+            "condition 1: grounding NO_MATCH",
+            "condition 1: nonnumeric value for real column"
+          ],
+          "conditions": [
+            {
+              "surface": "chip ganassi racing",
+              "value": "Chip Ganassi Racing",
+              "start": 27,
+              "end": 46,
+              "clause": "What is the finish for the chip ganassi racing team that was later than 2010",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly identifies Chip Ganassi Racing as the team, matching Team.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "later than 2010",
+              "value": "later than 2010",
+              "start": 61,
+              "end": 76,
+              "clause": "What is the finish for the chip ganassi racing team that was later than 2010",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Later than 2010 is a temporal comparison against the Year field.",
+              "operator": ">",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 0,
+                "reason": "“Later than 2010” is a temporal comparison supported by the Year column, which contains 2011, 2012, and 2013."
+              }
+            },
+            {
+              "surface": "17",
+              "value": "17",
+              "start": 92,
+              "end": 94,
+              "clause": "and a Start of 17?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says Start of 17, matching Start.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "GROUNDING_FAILED",
+        "stage": "WHERE_CONDITION_VALIDATE",
+        "halt": true,
+        "completed": false,
+        "errors": [
+          "condition 1: grounding NO_MATCH",
+          "condition 1: nonnumeric value for real column"
+        ],
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "chip ganassi racing",
+          "value": "Chip Ganassi Racing",
+          "start": 27,
+          "end": 46
+        },
+        {
+          "surface": "later than 2010",
+          "value": "later than 2010",
+          "start": 61,
+          "end": 76
+        },
+        {
+          "surface": "17",
+          "value": "17",
+          "start": 92,
+          "end": 94
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "chip ganassi racing",
+          "value": "Chip Ganassi Racing",
+          "start": 27,
+          "end": 46,
+          "clause": "What is the finish for the chip ganassi racing team that was later than 2010",
+          "columnIndex": 5,
+          "columnCandidates": [
+            5
+          ],
+          "columnMatchReason": "The question explicitly identifies Chip Ganassi Racing as the team, matching Team.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "later than 2010",
+          "value": "later than 2010",
+          "start": 61,
+          "end": 76,
+          "clause": "What is the finish for the chip ganassi racing team that was later than 2010",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "Later than 2010 is a temporal comparison against the Year field.",
+          "operator": ">",
+          "grounded": false,
+          "groundingStatus": "NO_MATCH",
+          "groundingReview": {
+            "column": 0,
+            "reason": "“Later than 2010” is a temporal comparison supported by the Year column, which contains 2011, 2012, and 2013."
+          }
+        },
+        {
+          "surface": "17",
+          "value": "17",
+          "start": 92,
+          "end": 94,
+          "clause": "and a Start of 17?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The question explicitly says Start of 17, matching Start.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 3
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": false,
+  "elapsed_ms": 11391
+}

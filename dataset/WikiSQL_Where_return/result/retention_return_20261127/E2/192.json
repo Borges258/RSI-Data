@@ -1,0 +1,459 @@
+{
+  "arm": "E2",
+  "position": 192,
+  "example_id": "test:6955:2-159649-2",
+  "original_index": 6955,
+  "table_id": "2-159649-2",
+  "question": "What is the highest number of stories in homes with a height of 42 m.?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        2,
+        0,
+        "42 m."
+      ]
+    ],
+    "agg": 1
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "42 m."
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "42 m."
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "42 m.",
+        "value": "42 m.",
+        "start": 64,
+        "end": 69,
+        "clause": "What is the highest number of stories in homes with a height of 42 m.?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The phrase 'a height of 42 m.' explicitly refers to the Height field, and the Height column contains '42 m.'",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "42 m.",
+        "value": "42 m.",
+        "start": 64,
+        "end": 69
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the highest number of stories in homes with a height of 42 m.?",
+      "table": {
+        "header": [
+          "Name",
+          "Stories",
+          "Height",
+          "Built",
+          "Purpose",
+          "Status"
+        ],
+        "page_title": "Klaipėda",
+        "types": [
+          "text",
+          "real",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 159649,
+        "id": "2-159649-2",
+        "section_title": "Notable buildings",
+        "rows": [
+          [
+            "Pilsotas",
+            "34",
+            "111.9 m.",
+            "2007",
+            "Residential",
+            "Built"
+          ],
+          [
+            "BIG 2 Complex",
+            "25",
+            "72–82 m.",
+            "2009",
+            "Mixed use",
+            "Built"
+          ],
+          [
+            "K Tower",
+            "20",
+            "71.9 m.",
+            "2006",
+            "Office",
+            "Built"
+          ],
+          [
+            "D Tower",
+            "20",
+            "71.9 m.",
+            "2006",
+            "Residential",
+            "Built"
+          ],
+          [
+            "Klaipėdos burė",
+            "22",
+            "66 m.",
+            "2009",
+            "Residential",
+            "Built"
+          ],
+          [
+            "Aukštoji Smeltė",
+            "20",
+            "66 m.",
+            "2009",
+            "Residential",
+            "Under construction"
+          ],
+          [
+            "Minijos Banga",
+            "20",
+            "62.2 m.",
+            "2007",
+            "Residential",
+            "Built"
+          ],
+          [
+            "Neapolis Business Centre",
+            "16",
+            "56.7 m.",
+            "2007",
+            "Office",
+            "Built"
+          ],
+          [
+            "Baltijos Avenue Tower",
+            "15",
+            "50 m.",
+            "2002",
+            "Residential",
+            "Built"
+          ],
+          [
+            "Vėtrungė",
+            "13",
+            "42 m.",
+            "–",
+            "Retail",
+            "Built"
+          ]
+        ],
+        "caption": "Tallest buildings",
+        "headers": [
+          "Name",
+          "Stories",
+          "Height",
+          "Built",
+          "Purpose",
+          "Status"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-159649-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "42 m.",
+              "value": "42 m.",
+              "start": 64,
+              "end": 69
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d0664d95433c526512f188c1f1c1df2e5ca871fb52711f708fa81c3d03de7534",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4868,
+              "completion_tokens": 20,
+              "total_tokens": 4888,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "42 m.",
+              "value": "42 m.",
+              "start": 64,
+              "end": 69,
+              "clause": "What is the highest number of stories in homes with a height of 42 m.?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "42 m.",
+              "value": "42 m.",
+              "start": 64,
+              "end": 69,
+              "clause": "What is the highest number of stories in homes with a height of 42 m.?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "42 m.",
+              "value": "42 m.",
+              "start": 64,
+              "end": 69,
+              "clause": "What is the highest number of stories in homes with a height of 42 m.?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase 'a height of 42 m.' explicitly refers to the Height field, and the Height column contains '42 m.'"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d5b19e637d3980c303d301e3a6fd398a1285dea7249edb186d26b7779ac7e0ac",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4909,
+              "completion_tokens": 47,
+              "total_tokens": 4956,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "42 m.",
+              "value": "42 m.",
+              "start": 64,
+              "end": 69,
+              "clause": "What is the highest number of stories in homes with a height of 42 m.?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase 'a height of 42 m.' explicitly refers to the Height field, and the Height column contains '42 m.'",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ce53d95d415c9307b26c8fe7ec2f5d0ba56dd0b28199be21c237e8d95b5db3f1",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4979,
+              "completion_tokens": 9,
+              "total_tokens": 4988,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "42 m.",
+              "value": "42 m.",
+              "start": 64,
+              "end": 69,
+              "clause": "What is the highest number of stories in homes with a height of 42 m.?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase 'a height of 42 m.' explicitly refers to the Height field, and the Height column contains '42 m.'",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "361ffb43555148105156d8fce37e710d8c9e01b74f9eb256b2b9b53a47b9840f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4931,
+              "completion_tokens": 12,
+              "total_tokens": 4943,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "42 m.",
+              "value": "42 m.",
+              "start": 64,
+              "end": 69,
+              "clause": "What is the highest number of stories in homes with a height of 42 m.?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase 'a height of 42 m.' explicitly refers to the Height field, and the Height column contains '42 m.'",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "42 m.",
+              "value": "42 m.",
+              "start": 64,
+              "end": 69,
+              "clause": "What is the highest number of stories in homes with a height of 42 m.?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase 'a height of 42 m.' explicitly refers to the Height field, and the Height column contains '42 m.'",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "42 m.",
+              "value": "42 m.",
+              "start": 64,
+              "end": 69,
+              "clause": "What is the highest number of stories in homes with a height of 42 m.?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase 'a height of 42 m.' explicitly refers to the Height field, and the Height column contains '42 m.'",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "42 m."
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "42 m.",
+          "value": "42 m.",
+          "start": 64,
+          "end": 69
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "42 m.",
+          "value": "42 m.",
+          "start": 64,
+          "end": 69,
+          "clause": "What is the highest number of stories in homes with a height of 42 m.?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The phrase 'a height of 42 m.' explicitly refers to the Height field, and the Height column contains '42 m.'",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          2,
+          0,
+          "42 m."
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9797
+}

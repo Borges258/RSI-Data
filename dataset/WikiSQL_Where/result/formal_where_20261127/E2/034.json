@@ -1,0 +1,436 @@
+{
+  "arm": "E2",
+  "position": 34,
+  "example_id": "test:2980:1-23963073-1",
+  "original_index": 2980,
+  "table_id": "1-23963073-1",
+  "question": "What was the English translation of \"La Ribambelle Aux Galopingos\"?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        0,
+        0,
+        "\"La Ribambelle aux Galopingos\""
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "\"La Ribambelle aux Galopingos\""
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "\"La Ribambelle aux Galopingos\""
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "La Ribambelle Aux Galopingos",
+        "value": "\"La Ribambelle aux Galopingos\"",
+        "start": 37,
+        "end": 65,
+        "clause": "What was the English translation of \"La Ribambelle Aux Galopingos\"?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "The quoted work is identified by its French title, matching the 'French Title' field; case differences are immaterial.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "NORMALIZED_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "La Ribambelle Aux Galopingos",
+        "value": "La Ribambelle aux Galopingos",
+        "start": 37,
+        "end": 65
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What was the English translation of \"La Ribambelle Aux Galopingos\"?",
+      "table": {
+        "id": "1-23963073-1",
+        "header": [
+          "French Title",
+          "Date of Publication",
+          "English Translation",
+          "Writer",
+          "Artist"
+        ],
+        "types": [
+          "text",
+          "real",
+          "text",
+          "text",
+          "text"
+        ],
+        "rows": [
+          [
+            "\"Opération ciseaux\"",
+            1958,
+            "[Operation Scissors]",
+            "Marcel Denis",
+            "Jo–ël"
+          ],
+          [
+            "\"La Ribambelle gagne du terrain\"",
+            1962,
+            "[The Ribambelle Gains Ground]",
+            "Jean Roba",
+            "Jean Roba"
+          ],
+          [
+            "\"La Ribambelle en Ecosse\"",
+            1962,
+            "[The Ribambelle in Scotland]",
+            "Jean Roba",
+            "Jean Roba"
+          ],
+          [
+            "\"La Ribambelle s’envole\"",
+            1962,
+            "[The Ribambelle Takes Off]",
+            "Jean Roba",
+            "Jean Roba"
+          ],
+          [
+            "\"La Ribambelle engage du monde\"",
+            1964,
+            "[The Ribambelle Recruits]",
+            "Jean Roba",
+            "Jean Roba"
+          ],
+          [
+            "\"La Ribambelle au bassin\"",
+            1964,
+            "[The Ribambelle at the Pond]",
+            "Jean Roba",
+            "Jean Roba"
+          ],
+          [
+            "\"La Ribambelle aux Galopingos\"",
+            1966,
+            "[The Ribambelle at the Galopingos Islands]",
+            "Vicq",
+            "Jean Roba"
+          ],
+          [
+            "\"La Ribambelle enquête\"",
+            1968,
+            "[The Ribambelle Investigates]",
+            "Maurice Tillieux",
+            "Jean Roba"
+          ],
+          [
+            "\"La Ribambelle contre–attaque\"",
+            1975,
+            "[The Ribambelle Strikes Back]",
+            "Maurice Tillieux",
+            "Jean Roba, Jidéhem"
+          ]
+        ],
+        "name": "table_23963073_1",
+        "headers": [
+          "French Title",
+          "Date of Publication",
+          "English Translation",
+          "Writer",
+          "Artist"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-23963073-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "La Ribambelle Aux Galopingos",
+              "value": "La Ribambelle aux Galopingos",
+              "start": 37,
+              "end": 65
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a9dddd6f5e025e5af02372b161265018259107af54dcce3bd7f4df194fe919f3",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4932,
+              "completion_tokens": 31,
+              "total_tokens": 4963,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "La Ribambelle Aux Galopingos",
+              "value": "La Ribambelle aux Galopingos",
+              "start": 37,
+              "end": 65,
+              "clause": "What was the English translation of \"La Ribambelle Aux Galopingos\"?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "La Ribambelle Aux Galopingos",
+              "value": "La Ribambelle aux Galopingos",
+              "start": 37,
+              "end": 65,
+              "clause": "What was the English translation of \"La Ribambelle Aux Galopingos\"?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "La Ribambelle Aux Galopingos",
+              "value": "La Ribambelle aux Galopingos",
+              "start": 37,
+              "end": 65,
+              "clause": "What was the English translation of \"La Ribambelle Aux Galopingos\"?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The quoted work is identified by its French title, matching the 'French Title' field; case differences are immaterial."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "00f18f98f03075b3fe979e0be17d313ba9372c443e6156e976c126c11cb3005b",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4984,
+              "completion_tokens": 45,
+              "total_tokens": 5029,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "La Ribambelle Aux Galopingos",
+              "value": "La Ribambelle aux Galopingos",
+              "start": 37,
+              "end": 65,
+              "clause": "What was the English translation of \"La Ribambelle Aux Galopingos\"?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The quoted work is identified by its French title, matching the 'French Title' field; case differences are immaterial.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e161fbe1e5885df0510c095580a05661e82f04aabebab8004a07683a2cec03e2",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5053,
+              "completion_tokens": 9,
+              "total_tokens": 5062,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "La Ribambelle Aux Galopingos",
+              "value": "La Ribambelle aux Galopingos",
+              "start": 37,
+              "end": 65,
+              "clause": "What was the English translation of \"La Ribambelle Aux Galopingos\"?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The quoted work is identified by its French title, matching the 'French Title' field; case differences are immaterial.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "444e097e96fecd210bb9da3038fa0fe51c3182db6407fc03078d436681ff41eb",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5004,
+              "completion_tokens": 17,
+              "total_tokens": 5021,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "La Ribambelle Aux Galopingos",
+              "value": "\"La Ribambelle aux Galopingos\"",
+              "start": 37,
+              "end": 65,
+              "clause": "What was the English translation of \"La Ribambelle Aux Galopingos\"?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The quoted work is identified by its French title, matching the 'French Title' field; case differences are immaterial.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "NORMALIZED_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "La Ribambelle Aux Galopingos",
+              "value": "\"La Ribambelle aux Galopingos\"",
+              "start": 37,
+              "end": 65,
+              "clause": "What was the English translation of \"La Ribambelle Aux Galopingos\"?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The quoted work is identified by its French title, matching the 'French Title' field; case differences are immaterial.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "NORMALIZED_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "La Ribambelle Aux Galopingos",
+              "value": "\"La Ribambelle aux Galopingos\"",
+              "start": 37,
+              "end": 65,
+              "clause": "What was the English translation of \"La Ribambelle Aux Galopingos\"?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The quoted work is identified by its French title, matching the 'French Title' field; case differences are immaterial.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "NORMALIZED_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              "\"La Ribambelle aux Galopingos\""
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "La Ribambelle Aux Galopingos",
+          "value": "La Ribambelle aux Galopingos",
+          "start": 37,
+          "end": 65
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "La Ribambelle Aux Galopingos",
+          "value": "\"La Ribambelle aux Galopingos\"",
+          "start": 37,
+          "end": 65,
+          "clause": "What was the English translation of \"La Ribambelle Aux Galopingos\"?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "The quoted work is identified by its French title, matching the 'French Title' field; case differences are immaterial.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "NORMALIZED_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          0,
+          0,
+          "\"La Ribambelle aux Galopingos\""
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8079
+}

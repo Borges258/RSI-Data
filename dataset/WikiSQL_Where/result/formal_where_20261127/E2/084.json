@@ -1,0 +1,418 @@
+{
+  "arm": "E2",
+  "position": 84,
+  "example_id": "test:5313:2-15211468-2",
+  "original_index": 5313,
+  "table_id": "2-15211468-2",
+  "question": "What is the broadcast date for the episode titled, \"St. Petersburg to Tashkent\"?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        1,
+        0,
+        "\"st. petersburg to tashkent\""
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "\"St. Petersburg to Tashkent\""
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "\"St. Petersburg to Tashkent\""
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "St. Petersburg to Tashkent",
+        "value": "\"St. Petersburg to Tashkent\"",
+        "start": 52,
+        "end": 78,
+        "clause": "\"St. Petersburg to Tashkent\"?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The question identifies an episode by its title, matching the Episode Title header and row value.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "St. Petersburg to Tashkent",
+        "value": "St. Petersburg to Tashkent",
+        "start": 52,
+        "end": 78
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the broadcast date for the episode titled, \"St. Petersburg to Tashkent\"?",
+      "table": {
+        "header": [
+          "Episode No.",
+          "Episode Title",
+          "UK Broadcast Date",
+          "Presenter",
+          "Countries Visited"
+        ],
+        "page_title": "Great Railway Journeys",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 15211468,
+        "id": "2-15211468-2",
+        "section_title": "Series 2:   (1994)",
+        "rows": [
+          [
+            "#2.1",
+            "\"From Hong Kong to Ulaanbaatar\"",
+            "1994-01-13",
+            "Clive Anderson",
+            "Hong Kong , China, Mongolia"
+          ],
+          [
+            "#2.2",
+            "\"Cape Town to the Lost City\"",
+            "1994-01-20",
+            "Rian Malan",
+            "South Africa"
+          ],
+          [
+            "#2.3",
+            "\"St. Petersburg to Tashkent\"",
+            "1994-01-27",
+            "Natalia Makarova",
+            "Russia , Uzbekistan"
+          ],
+          [
+            "#2.4",
+            "\"Derry to Kerry\"",
+            "1994-02-03",
+            "Michael Palin",
+            "Northern Ireland , Republic of Ireland"
+          ],
+          [
+            "#2.5",
+            "\"Santos to Santa Cruz\"",
+            "1994-02-10",
+            "Lisa St Aubin de Terán",
+            "Brazil , Bolivia"
+          ],
+          [
+            "#2.6",
+            "\"Karachi to The Khyber Pass\"",
+            "1994-02-17",
+            "Mark Tully",
+            "Pakistan"
+          ]
+        ],
+        "caption": "Series 2:   (1994)",
+        "headers": [
+          "Episode No.",
+          "Episode Title",
+          "UK Broadcast Date",
+          "Presenter",
+          "Countries Visited"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-15211468-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "St. Petersburg to Tashkent",
+              "value": "St. Petersburg to Tashkent",
+              "start": 52,
+              "end": 78
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "3c273cfc121b62c41e36058ee5c616a28a3ef2afc06c1b710d78a96fa62b6ce4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4886,
+              "completion_tokens": 29,
+              "total_tokens": 4915,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "St. Petersburg to Tashkent",
+              "value": "St. Petersburg to Tashkent",
+              "start": 52,
+              "end": 78,
+              "clause": "\"St. Petersburg to Tashkent\"?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "St. Petersburg to Tashkent",
+              "value": "St. Petersburg to Tashkent",
+              "start": 52,
+              "end": 78,
+              "clause": "\"St. Petersburg to Tashkent\"?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "St. Petersburg to Tashkent",
+              "value": "St. Petersburg to Tashkent",
+              "start": 52,
+              "end": 78,
+              "clause": "\"St. Petersburg to Tashkent\"?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question identifies an episode by its title, matching the Episode Title header and row value."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "835fad4aee49b279dec83e2c3a1ddd0735bced9467f55c581c99638492f0c3cc",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4929,
+              "completion_tokens": 39,
+              "total_tokens": 4968,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "St. Petersburg to Tashkent",
+              "value": "St. Petersburg to Tashkent",
+              "start": 52,
+              "end": 78,
+              "clause": "\"St. Petersburg to Tashkent\"?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question identifies an episode by its title, matching the Episode Title header and row value.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "44e4cafd17933add815ccf817db2045d3eb0b22e2c38300a03badebe6bdee86b",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4992,
+              "completion_tokens": 9,
+              "total_tokens": 5001,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "St. Petersburg to Tashkent",
+              "value": "\"St. Petersburg to Tashkent\"",
+              "start": 52,
+              "end": 78,
+              "clause": "\"St. Petersburg to Tashkent\"?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question identifies an episode by its title, matching the Episode Title header and row value.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "2be45f85f0cac5f94c2acf034a0813b4b67be484c506152ff1dadf52cc22fbbb",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4943,
+              "completion_tokens": 18,
+              "total_tokens": 4961,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "St. Petersburg to Tashkent",
+              "value": "\"St. Petersburg to Tashkent\"",
+              "start": 52,
+              "end": 78,
+              "clause": "\"St. Petersburg to Tashkent\"?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question identifies an episode by its title, matching the Episode Title header and row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "St. Petersburg to Tashkent",
+              "value": "\"St. Petersburg to Tashkent\"",
+              "start": 52,
+              "end": 78,
+              "clause": "\"St. Petersburg to Tashkent\"?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question identifies an episode by its title, matching the Episode Title header and row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "St. Petersburg to Tashkent",
+              "value": "\"St. Petersburg to Tashkent\"",
+              "start": 52,
+              "end": 78,
+              "clause": "\"St. Petersburg to Tashkent\"?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question identifies an episode by its title, matching the Episode Title header and row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              "\"St. Petersburg to Tashkent\""
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "St. Petersburg to Tashkent",
+          "value": "St. Petersburg to Tashkent",
+          "start": 52,
+          "end": 78
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "St. Petersburg to Tashkent",
+          "value": "\"St. Petersburg to Tashkent\"",
+          "start": 52,
+          "end": 78,
+          "clause": "\"St. Petersburg to Tashkent\"?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The question identifies an episode by its title, matching the Episode Title header and row value.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          1,
+          0,
+          "\"St. Petersburg to Tashkent\""
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 10188
+}

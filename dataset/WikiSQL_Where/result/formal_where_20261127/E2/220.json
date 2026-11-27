@@ -1,0 +1,644 @@
+{
+  "arm": "E2",
+  "position": 220,
+  "example_id": "test:7537:2-15386342-2",
+  "original_index": 7537,
+  "table_id": "2-15386342-2",
+  "question": "What is the highest week for Cleveland Browns with 54,205 in attendance?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        2,
+        0,
+        "cleveland browns"
+      ],
+      [
+        4,
+        0,
+        "54,205"
+      ]
+    ],
+    "agg": 1
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "Cleveland Browns"
+    ],
+    [
+      4,
+      0,
+      "54,205"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "Cleveland Browns"
+      ],
+      [
+        4,
+        0,
+        "54,205"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Cleveland Browns",
+        "value": "Cleveland Browns",
+        "start": 29,
+        "end": 45,
+        "clause": "What is the highest week for Cleveland Browns with 54",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "Cleveland Browns is identified as the opponent, matching the Opponent field.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "54,205",
+        "value": "54,205",
+        "start": 51,
+        "end": 57,
+        "clause": "What is the highest week for Cleveland Browns with 54,205 in attendance?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The question explicitly says 54,205 is attendance, matching the Attendance field.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Cleveland Browns",
+        "value": "Cleveland Browns",
+        "start": 29,
+        "end": 45
+      },
+      {
+        "surface": "54,205",
+        "value": "54,205",
+        "start": 51,
+        "end": 57
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the highest week for Cleveland Browns with 54,205 in attendance?",
+      "table": {
+        "header": [
+          "Week",
+          "Date",
+          "Opponent",
+          "Result",
+          "Attendance"
+        ],
+        "page_title": "1972 San Diego Chargers season",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "real"
+        ],
+        "page_id": 15386342,
+        "id": "2-15386342-2",
+        "section_title": "Schedule",
+        "rows": [
+          [
+            "1",
+            "September 17, 1972",
+            "at San Francisco 49ers",
+            "L 34–3",
+            "59,438"
+          ],
+          [
+            "2",
+            "September 24, 1972",
+            "Denver Broncos",
+            "W 37–14",
+            "49,048"
+          ],
+          [
+            "3",
+            "October 1, 1972",
+            "at Oakland Raiders",
+            "T 17–17",
+            "53,455"
+          ],
+          [
+            "4",
+            "October 8, 1972",
+            "at Baltimore Colts",
+            "W 23–20",
+            "55,459"
+          ],
+          [
+            "5",
+            "October 15, 1972",
+            "at Miami Dolphins",
+            "L 24–10",
+            "80,010"
+          ],
+          [
+            "6",
+            "October 22, 1972",
+            "at Detroit Lions",
+            "L 34–20",
+            "54,371"
+          ],
+          [
+            "7",
+            "October 29, 1972",
+            "Kansas City Chiefs",
+            "L 26–14",
+            "54,533"
+          ],
+          [
+            "8",
+            "November 5, 1972",
+            "Dallas Cowboys",
+            "L 34–28",
+            "54,476"
+          ],
+          [
+            "9",
+            "November 13, 1972",
+            "Cleveland Browns",
+            "L 21–17",
+            "54,205"
+          ],
+          [
+            "10",
+            "November 19, 1972",
+            "at Kansas City Chiefs",
+            "W 27–17",
+            "79,011"
+          ],
+          [
+            "11",
+            "November 26, 1972",
+            "Houston Oilers",
+            "W 34–20",
+            "46,289"
+          ],
+          [
+            "12",
+            "December 3, 1972",
+            "Oakland Raiders",
+            "L 21–19",
+            "54,611"
+          ],
+          [
+            "13",
+            "December 10, 1972",
+            "at Denver Broncos",
+            "L 38–13",
+            "51,478"
+          ],
+          [
+            "14",
+            "December 17, 1972",
+            "Pittsburgh Steelers",
+            "L 24–2",
+            "52,873"
+          ]
+        ],
+        "caption": "Schedule",
+        "headers": [
+          "Week",
+          "Date",
+          "Opponent",
+          "Result",
+          "Attendance"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-15386342-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "Cleveland Browns",
+              "value": "Cleveland Browns",
+              "start": 29,
+              "end": 45
+            },
+            {
+              "surface": "54,205",
+              "value": "54,205",
+              "start": 51,
+              "end": 57
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "65210f38edbb1841501a64d2ec327d938671bf7f751a6446a618ef87a6061e97",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5018,
+              "completion_tokens": 33,
+              "total_tokens": 5051,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Cleveland Browns",
+              "value": "Cleveland Browns",
+              "start": 29,
+              "end": 45,
+              "clause": "What is the highest week for Cleveland Browns with 54"
+            },
+            {
+              "surface": "54,205",
+              "value": "54,205",
+              "start": 51,
+              "end": 57,
+              "clause": "What is the highest week for Cleveland Browns with 54,205 in attendance?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Cleveland Browns",
+              "value": "Cleveland Browns",
+              "start": 29,
+              "end": 45,
+              "clause": "What is the highest week for Cleveland Browns with 54"
+            },
+            {
+              "surface": "54,205",
+              "value": "54,205",
+              "start": 51,
+              "end": 57,
+              "clause": "What is the highest week for Cleveland Browns with 54,205 in attendance?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Cleveland Browns",
+              "value": "Cleveland Browns",
+              "start": 29,
+              "end": 45,
+              "clause": "What is the highest week for Cleveland Browns with 54",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Cleveland Browns is identified as the opponent, matching the Opponent field."
+            },
+            {
+              "surface": "54,205",
+              "value": "54,205",
+              "start": 51,
+              "end": 57,
+              "clause": "What is the highest week for Cleveland Browns with 54,205 in attendance?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly says 54,205 is attendance, matching the Attendance field."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "21d9a289284386bdaa81bbbfadfc78603225b9cd24ea94ba32536307d9f9e879",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5094,
+              "completion_tokens": 56,
+              "total_tokens": 5150,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Cleveland Browns",
+              "value": "Cleveland Browns",
+              "start": 29,
+              "end": 45,
+              "clause": "What is the highest week for Cleveland Browns with 54",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Cleveland Browns is identified as the opponent, matching the Opponent field.",
+              "operator": "="
+            },
+            {
+              "surface": "54,205",
+              "value": "54,205",
+              "start": 51,
+              "end": 57,
+              "clause": "What is the highest week for Cleveland Browns with 54,205 in attendance?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly says 54,205 is attendance, matching the Attendance field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ca52c2c2d3f6dba95dc1ff6057f58328d31ca4f251905543e1157959378fc544",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5185,
+              "completion_tokens": 11,
+              "total_tokens": 5196,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Cleveland Browns",
+              "value": "Cleveland Browns",
+              "start": 29,
+              "end": 45,
+              "clause": "What is the highest week for Cleveland Browns with 54",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Cleveland Browns is identified as the opponent, matching the Opponent field.",
+              "operator": "="
+            },
+            {
+              "surface": "54,205",
+              "value": "54,205",
+              "start": 51,
+              "end": 57,
+              "clause": "What is the highest week for Cleveland Browns with 54,205 in attendance?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly says 54,205 is attendance, matching the Attendance field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "787b17e3b330c9c683b1b12319e5492ac131d0559c0e0d931e79d7cd9d744e30",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5139,
+              "completion_tokens": 16,
+              "total_tokens": 5155,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Cleveland Browns",
+              "value": "Cleveland Browns",
+              "start": 29,
+              "end": 45,
+              "clause": "What is the highest week for Cleveland Browns with 54",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Cleveland Browns is identified as the opponent, matching the Opponent field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "54,205",
+              "value": "54,205",
+              "start": 51,
+              "end": 57,
+              "clause": "What is the highest week for Cleveland Browns with 54,205 in attendance?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly says 54,205 is attendance, matching the Attendance field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Cleveland Browns",
+              "value": "Cleveland Browns",
+              "start": 29,
+              "end": 45,
+              "clause": "What is the highest week for Cleveland Browns with 54",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Cleveland Browns is identified as the opponent, matching the Opponent field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "54,205",
+              "value": "54,205",
+              "start": 51,
+              "end": 57,
+              "clause": "What is the highest week for Cleveland Browns with 54,205 in attendance?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly says 54,205 is attendance, matching the Attendance field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Cleveland Browns",
+              "value": "Cleveland Browns",
+              "start": 29,
+              "end": 45,
+              "clause": "What is the highest week for Cleveland Browns with 54",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Cleveland Browns is identified as the opponent, matching the Opponent field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "54,205",
+              "value": "54,205",
+              "start": 51,
+              "end": 57,
+              "clause": "What is the highest week for Cleveland Browns with 54,205 in attendance?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly says 54,205 is attendance, matching the Attendance field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "Cleveland Browns"
+            ],
+            [
+              4,
+              0,
+              "54,205"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Cleveland Browns",
+          "value": "Cleveland Browns",
+          "start": 29,
+          "end": 45
+        },
+        {
+          "surface": "54,205",
+          "value": "54,205",
+          "start": 51,
+          "end": 57
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Cleveland Browns",
+          "value": "Cleveland Browns",
+          "start": 29,
+          "end": 45,
+          "clause": "What is the highest week for Cleveland Browns with 54",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "Cleveland Browns is identified as the opponent, matching the Opponent field.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "54,205",
+          "value": "54,205",
+          "start": 51,
+          "end": 57,
+          "clause": "What is the highest week for Cleveland Browns with 54,205 in attendance?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The question explicitly says 54,205 is attendance, matching the Attendance field.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          2,
+          0,
+          "Cleveland Browns"
+        ],
+        [
+          4,
+          0,
+          "54,205"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7781
+}

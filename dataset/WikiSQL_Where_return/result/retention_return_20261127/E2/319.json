@@ -1,0 +1,453 @@
+{
+  "arm": "E2",
+  "position": 319,
+  "example_id": "test:12449:2-18191407-18",
+  "original_index": 12449,
+  "table_id": "2-18191407-18",
+  "question": "What were the rank points when the total was 11?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        4,
+        0,
+        "11"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      4,
+      0,
+      "11"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        0,
+        "11"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "11",
+        "value": "11",
+        "start": 45,
+        "end": 47,
+        "clause": "What were the rank points when the total was 11?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The question explicitly says 'the total was 11,' matching the Total header; the row with Total 11 provides supporting evidence.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "11",
+        "value": "11",
+        "start": 45,
+        "end": 47
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What were the rank points when the total was 11?",
+      "table": {
+        "header": [
+          "Shooter",
+          "Event",
+          "Rank points",
+          "Score points",
+          "Total"
+        ],
+        "page_title": "2008 ISSF World Cup Final (rifle and pistol)",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 18191407,
+        "id": "2-18191407-18",
+        "section_title": "Qualification",
+        "rows": [
+          [
+            "Chen Ying ( CHN )",
+            "WCF 2007",
+            "Defending champion",
+            "Defending champion",
+            "Defending champion"
+          ],
+          [
+            "Otryadyn Gündegmaa ( MGL )",
+            "OG Beijing",
+            "Olympic silver medalist",
+            "Olympic silver medalist",
+            "Olympic silver medalist"
+          ],
+          [
+            "Munkhbayar Dorjsuren ( GER )",
+            "OG Beijing",
+            "Olympic bronze medalist",
+            "Olympic bronze medalist",
+            "Olympic bronze medalist"
+          ],
+          [
+            "Guo Wenjun ( CHN )",
+            "WC Munich",
+            "15",
+            "9",
+            "24"
+          ],
+          [
+            "Jasna Šekarić ( SRB )",
+            "WC Beijing",
+            "15",
+            "6",
+            "21"
+          ],
+          [
+            "Mariya Grozdeva ( BUL )",
+            "WC Rio de Janeiro",
+            "15",
+            "4",
+            "19"
+          ],
+          [
+            "Lalita Yauhleuskaya ( AUS )",
+            "WC Munich",
+            "8",
+            "7",
+            "15"
+          ],
+          [
+            "Sławomira Szpek ( POL )",
+            "WC Munich",
+            "10",
+            "5",
+            "15"
+          ],
+          [
+            "Stephanie Tirode ( FRA )",
+            "WC Beijing",
+            "10",
+            "3",
+            "13"
+          ],
+          [
+            "Tsogbadrakhyn Mönkhzul ( MGL )",
+            "WC Beijing",
+            "8",
+            "4",
+            "12"
+          ],
+          [
+            "Sandra Kolly ( SUI )",
+            "WC Rio de Janeiro",
+            "8",
+            "3",
+            "11"
+          ]
+        ],
+        "caption": "Qualification",
+        "headers": [
+          "Shooter",
+          "Event",
+          "Rank points",
+          "Score points",
+          "Total"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-18191407-18",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "11",
+              "value": "11",
+              "start": 45,
+              "end": 47
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f1ffd8c7cc217f5bc6f60190092c5b7fcccfd0b8ba45a9c542a71d9c672a21d2",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4937,
+              "completion_tokens": 17,
+              "total_tokens": 4954,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "11",
+              "value": "11",
+              "start": 45,
+              "end": 47,
+              "clause": "What were the rank points when the total was 11?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "11",
+              "value": "11",
+              "start": 45,
+              "end": 47,
+              "clause": "What were the rank points when the total was 11?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "11",
+              "value": "11",
+              "start": 45,
+              "end": 47,
+              "clause": "What were the rank points when the total was 11?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly says 'the total was 11,' matching the Total header; the row with Total 11 provides supporting evidence."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c3b35dc87cec4c731c57e58726218f516ded784a0d2ba2b561b50fb84f9585c9",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4970,
+              "completion_tokens": 47,
+              "total_tokens": 5017,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "11",
+              "value": "11",
+              "start": 45,
+              "end": 47,
+              "clause": "What were the rank points when the total was 11?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly says 'the total was 11,' matching the Total header; the row with Total 11 provides supporting evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b2b06cb6925fe0bb3e73ad1ab87bfb6def3338df63b4573c6f97badf8922baaa",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5041,
+              "completion_tokens": 9,
+              "total_tokens": 5050,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "11",
+              "value": "11",
+              "start": 45,
+              "end": 47,
+              "clause": "What were the rank points when the total was 11?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly says 'the total was 11,' matching the Total header; the row with Total 11 provides supporting evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b1217ce36cfb0937e6e0e52812198df41cd502a0dd54dff2ca92884657f972d8",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4992,
+              "completion_tokens": 10,
+              "total_tokens": 5002,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "11",
+              "value": "11",
+              "start": 45,
+              "end": 47,
+              "clause": "What were the rank points when the total was 11?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly says 'the total was 11,' matching the Total header; the row with Total 11 provides supporting evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "11",
+              "value": "11",
+              "start": 45,
+              "end": 47,
+              "clause": "What were the rank points when the total was 11?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly says 'the total was 11,' matching the Total header; the row with Total 11 provides supporting evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "11",
+              "value": "11",
+              "start": 45,
+              "end": 47,
+              "clause": "What were the rank points when the total was 11?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly says 'the total was 11,' matching the Total header; the row with Total 11 provides supporting evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              0,
+              "11"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "11",
+          "value": "11",
+          "start": 45,
+          "end": 47
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "11",
+          "value": "11",
+          "start": 45,
+          "end": 47,
+          "clause": "What were the rank points when the total was 11?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The question explicitly says 'the total was 11,' matching the Total header; the row with Total 11 provides supporting evidence.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          4,
+          0,
+          "11"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8047
+}

@@ -1,0 +1,425 @@
+{
+  "arm": "E2",
+  "position": 292,
+  "example_id": "test:11654:2-12014430-1",
+  "original_index": 11654,
+  "table_id": "2-12014430-1",
+  "question": "Which Athlete is from the United Kingdom?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        2,
+        0,
+        "united kingdom"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "United Kingdom"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "United Kingdom"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "United Kingdom",
+        "value": "United Kingdom",
+        "start": 26,
+        "end": 40,
+        "clause": "Which Athlete is from the United Kingdom?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The phrase \"is from\" asks for the athlete's country, matching the Country/State field; the row for Tim Don contains United Kingdom in column 2.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "United Kingdom",
+        "value": "United Kingdom",
+        "start": 26,
+        "end": 40
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Which Athlete is from the United Kingdom?",
+      "table": {
+        "header": [
+          "Year",
+          "Athlete",
+          "Country/State",
+          "Time",
+          "Location"
+        ],
+        "page_title": "Hy-Vee Triathlon",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 12014430,
+        "id": "2-12014430-1",
+        "section_title": "Men's winners",
+        "rows": [
+          [
+            "2007",
+            "Henning, Rasmus Rasmus Henning",
+            "Denmark",
+            "1:50:04",
+            "Des Moines"
+          ],
+          [
+            "2008",
+            "Henning, Rasmus Rasmus Henning (2)",
+            "Denmark",
+            "1:54:21",
+            "West Des Moines"
+          ],
+          [
+            "2009",
+            "Whitfield, Simon Simon Whitfield",
+            "Canada",
+            "1:49:43",
+            "West Des Moines"
+          ],
+          [
+            "2010",
+            "Don, Tim Tim Don",
+            "United Kingdom",
+            "1:50:20",
+            "West Des Moines"
+          ],
+          [
+            "2011",
+            "Bennett, Greg Greg Bennett",
+            "Australia",
+            "1:47:37",
+            "Des Moines"
+          ],
+          [
+            "2012",
+            "Gómez, Javier Javier Gómez",
+            "Spain",
+            "1:51:21",
+            "Des Moines"
+          ],
+          [
+            "2013",
+            "Gómez, Javier Javier Gómez (2)",
+            "Spain",
+            "1:45:57",
+            "Des Moines"
+          ]
+        ],
+        "caption": "Men's winners",
+        "headers": [
+          "Year",
+          "Athlete",
+          "Country/State",
+          "Time",
+          "Location"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-12014430-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "United Kingdom",
+              "value": "United Kingdom",
+              "start": 26,
+              "end": 40
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "00bd83303ebd52d8ee1056e5df7720a1688c7823ae6f171ef2d4660262d2bcdc",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4841,
+              "completion_tokens": 19,
+              "total_tokens": 4860,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "United Kingdom",
+              "value": "United Kingdom",
+              "start": 26,
+              "end": 40,
+              "clause": "Which Athlete is from the United Kingdom?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "United Kingdom",
+              "value": "United Kingdom",
+              "start": 26,
+              "end": 40,
+              "clause": "Which Athlete is from the United Kingdom?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "United Kingdom",
+              "value": "United Kingdom",
+              "start": 26,
+              "end": 40,
+              "clause": "Which Athlete is from the United Kingdom?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase \"is from\" asks for the athlete's country, matching the Country/State field; the row for Tim Don contains United Kingdom in column 2."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "90ea69583da0011628b59f57217fe4a4c65107073f26085b919a5543bfe03415",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4872,
+              "completion_tokens": 54,
+              "total_tokens": 4926,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "United Kingdom",
+              "value": "United Kingdom",
+              "start": 26,
+              "end": 40,
+              "clause": "Which Athlete is from the United Kingdom?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase \"is from\" asks for the athlete's country, matching the Country/State field; the row for Tim Don contains United Kingdom in column 2.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "fbe6deac9d7eda3adc9bac49169277eff6732f8903669cdee39f2cb8a13e1df5",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4950,
+              "completion_tokens": 9,
+              "total_tokens": 4959,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "United Kingdom",
+              "value": "United Kingdom",
+              "start": 26,
+              "end": 40,
+              "clause": "Which Athlete is from the United Kingdom?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase \"is from\" asks for the athlete's country, matching the Country/State field; the row for Tim Don contains United Kingdom in column 2.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f199e25a131d5ab0f76c9ce90884186e612a337bc777b1a710ab1691e1e8cef0",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4901,
+              "completion_tokens": 11,
+              "total_tokens": 4912,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "United Kingdom",
+              "value": "United Kingdom",
+              "start": 26,
+              "end": 40,
+              "clause": "Which Athlete is from the United Kingdom?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase \"is from\" asks for the athlete's country, matching the Country/State field; the row for Tim Don contains United Kingdom in column 2.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "United Kingdom",
+              "value": "United Kingdom",
+              "start": 26,
+              "end": 40,
+              "clause": "Which Athlete is from the United Kingdom?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase \"is from\" asks for the athlete's country, matching the Country/State field; the row for Tim Don contains United Kingdom in column 2.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "United Kingdom",
+              "value": "United Kingdom",
+              "start": 26,
+              "end": 40,
+              "clause": "Which Athlete is from the United Kingdom?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase \"is from\" asks for the athlete's country, matching the Country/State field; the row for Tim Don contains United Kingdom in column 2.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "United Kingdom"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "United Kingdom",
+          "value": "United Kingdom",
+          "start": 26,
+          "end": 40
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "United Kingdom",
+          "value": "United Kingdom",
+          "start": 26,
+          "end": 40,
+          "clause": "Which Athlete is from the United Kingdom?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The phrase \"is from\" asks for the athlete's country, matching the Country/State field; the row for Tim Don contains United Kingdom in column 2.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          2,
+          0,
+          "United Kingdom"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8235
+}

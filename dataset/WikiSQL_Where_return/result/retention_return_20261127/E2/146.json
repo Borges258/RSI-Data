@@ -1,0 +1,595 @@
+{
+  "arm": "E2",
+  "position": 146,
+  "example_id": "test:5255:2-1363000-1",
+  "original_index": 5255,
+  "table_id": "2-1363000-1",
+  "question": "How many storeys in Calgary during 1975-1976?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        2,
+        0,
+        "calgary"
+      ],
+      [
+        0,
+        0,
+        "1975-1976"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "Calgary"
+    ],
+    [
+      0,
+      0,
+      "1975-1976"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "Calgary"
+      ],
+      [
+        0,
+        0,
+        "1975-1976"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Calgary",
+        "value": "Calgary",
+        "start": 20,
+        "end": 27,
+        "clause": "How many storeys in Calgary during 1975-1976?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "Calgary is a city name and appears under the City header.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "1975-1976",
+        "value": "1975-1976",
+        "start": 35,
+        "end": 44,
+        "clause": "How many storeys in Calgary during 1975-1976?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "1975-1976 is a year range and appears under the Years header.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Calgary",
+        "value": "Calgary",
+        "start": 20,
+        "end": 27
+      },
+      {
+        "surface": "1975-1976",
+        "value": "1975-1976",
+        "start": 35,
+        "end": 44
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "How many storeys in Calgary during 1975-1976?",
+      "table": {
+        "header": [
+          "Years",
+          "Building",
+          "City",
+          "Height",
+          "Storeys"
+        ],
+        "page_title": "Former tallest buildings in Canada by province and territory",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "real"
+        ],
+        "page_id": 1363000,
+        "id": "2-1363000-1",
+        "section_title": "Alberta",
+        "rows": [
+          [
+            "1984–present",
+            "Suncor Energy Centre - West",
+            "Calgary",
+            "m (ft)",
+            "52"
+          ],
+          [
+            "1976-1984",
+            "Scotia Centre",
+            "Calgary",
+            "m (ft)",
+            "41"
+          ],
+          [
+            "1975-1976",
+            "Bow Valley Square 2",
+            "Calgary",
+            "m (ft)",
+            "39"
+          ],
+          [
+            "1974-1975",
+            "715 - 5th Avenue SW",
+            "Calgary",
+            "m (ft)",
+            "32"
+          ],
+          [
+            "1971-1974",
+            "TELUS Plaza South",
+            "Edmonton",
+            "m (ft)",
+            "34"
+          ],
+          [
+            "1971",
+            "Coast Edmonton House",
+            "Edmonton",
+            "m (ft)",
+            "45"
+          ],
+          [
+            "1966-1971",
+            "CN Tower, Edmonton",
+            "Edmonton",
+            "m (ft)",
+            "26"
+          ]
+        ],
+        "caption": "Alberta",
+        "headers": [
+          "Years",
+          "Building",
+          "City",
+          "Height",
+          "Storeys"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-1363000-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "Calgary",
+              "value": "Calgary",
+              "start": 20,
+              "end": 27
+            },
+            {
+              "surface": "1975-1976",
+              "value": "1975-1976",
+              "start": 35,
+              "end": 44
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "8125953a8d2ab582416146e0b315175d4553f221a6190e528813f0564eb99e6f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4826,
+              "completion_tokens": 35,
+              "total_tokens": 4861,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Calgary",
+              "value": "Calgary",
+              "start": 20,
+              "end": 27,
+              "clause": "How many storeys in Calgary during 1975-1976?"
+            },
+            {
+              "surface": "1975-1976",
+              "value": "1975-1976",
+              "start": 35,
+              "end": 44,
+              "clause": "How many storeys in Calgary during 1975-1976?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Calgary",
+              "value": "Calgary",
+              "start": 20,
+              "end": 27,
+              "clause": "How many storeys in Calgary during 1975-1976?"
+            },
+            {
+              "surface": "1975-1976",
+              "value": "1975-1976",
+              "start": 35,
+              "end": 44,
+              "clause": "How many storeys in Calgary during 1975-1976?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Calgary",
+              "value": "Calgary",
+              "start": 20,
+              "end": 27,
+              "clause": "How many storeys in Calgary during 1975-1976?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Calgary is a city name and appears under the City header."
+            },
+            {
+              "surface": "1975-1976",
+              "value": "1975-1976",
+              "start": 35,
+              "end": 44,
+              "clause": "How many storeys in Calgary during 1975-1976?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "1975-1976 is a year range and appears under the Years header."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "9e6702d0dfee91409b5ad7cc870342e4e2f4c640b9ed511da2b72b82505fcd16",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4905,
+              "completion_tokens": 54,
+              "total_tokens": 4959,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Calgary",
+              "value": "Calgary",
+              "start": 20,
+              "end": 27,
+              "clause": "How many storeys in Calgary during 1975-1976?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Calgary is a city name and appears under the City header.",
+              "operator": "="
+            },
+            {
+              "surface": "1975-1976",
+              "value": "1975-1976",
+              "start": 35,
+              "end": 44,
+              "clause": "How many storeys in Calgary during 1975-1976?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "1975-1976 is a year range and appears under the Years header.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "fe86f099cda000d1a2b1f4a4a78300726112c0429dbaee7f2818d4e384bfce8d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4994,
+              "completion_tokens": 11,
+              "total_tokens": 5005,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Calgary",
+              "value": "Calgary",
+              "start": 20,
+              "end": 27,
+              "clause": "How many storeys in Calgary during 1975-1976?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Calgary is a city name and appears under the City header.",
+              "operator": "="
+            },
+            {
+              "surface": "1975-1976",
+              "value": "1975-1976",
+              "start": 35,
+              "end": 44,
+              "clause": "How many storeys in Calgary during 1975-1976?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "1975-1976 is a year range and appears under the Years header.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f5ba7aa90dbbeca29e93f66c134c0e3ae400ffbbc0af4c8a2810de6807da5552",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4948,
+              "completion_tokens": 17,
+              "total_tokens": 4965,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Calgary",
+              "value": "Calgary",
+              "start": 20,
+              "end": 27,
+              "clause": "How many storeys in Calgary during 1975-1976?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Calgary is a city name and appears under the City header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "1975-1976",
+              "value": "1975-1976",
+              "start": 35,
+              "end": 44,
+              "clause": "How many storeys in Calgary during 1975-1976?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "1975-1976 is a year range and appears under the Years header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Calgary",
+              "value": "Calgary",
+              "start": 20,
+              "end": 27,
+              "clause": "How many storeys in Calgary during 1975-1976?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Calgary is a city name and appears under the City header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "1975-1976",
+              "value": "1975-1976",
+              "start": 35,
+              "end": 44,
+              "clause": "How many storeys in Calgary during 1975-1976?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "1975-1976 is a year range and appears under the Years header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Calgary",
+              "value": "Calgary",
+              "start": 20,
+              "end": 27,
+              "clause": "How many storeys in Calgary during 1975-1976?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Calgary is a city name and appears under the City header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "1975-1976",
+              "value": "1975-1976",
+              "start": 35,
+              "end": 44,
+              "clause": "How many storeys in Calgary during 1975-1976?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "1975-1976 is a year range and appears under the Years header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "Calgary"
+            ],
+            [
+              0,
+              0,
+              "1975-1976"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Calgary",
+          "value": "Calgary",
+          "start": 20,
+          "end": 27
+        },
+        {
+          "surface": "1975-1976",
+          "value": "1975-1976",
+          "start": 35,
+          "end": 44
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Calgary",
+          "value": "Calgary",
+          "start": 20,
+          "end": 27,
+          "clause": "How many storeys in Calgary during 1975-1976?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "Calgary is a city name and appears under the City header.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "1975-1976",
+          "value": "1975-1976",
+          "start": 35,
+          "end": 44,
+          "clause": "How many storeys in Calgary during 1975-1976?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "1975-1976 is a year range and appears under the Years header.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          2,
+          0,
+          "Calgary"
+        ],
+        [
+          0,
+          0,
+          "1975-1976"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9078
+}

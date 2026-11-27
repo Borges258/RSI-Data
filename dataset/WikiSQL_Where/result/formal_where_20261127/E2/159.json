@@ -1,0 +1,420 @@
+{
+  "arm": "E2",
+  "position": 159,
+  "example_id": "test:12065:2-11677760-15",
+  "original_index": 12065,
+  "table_id": "2-11677760-15",
+  "question": "What college picked someone from The Episcopal Academy?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        2,
+        0,
+        "episcopal academy"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "Episcopal Academy"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "Episcopal Academy"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "The Episcopal Academy",
+        "value": "Episcopal Academy",
+        "start": 33,
+        "end": 54,
+        "clause": "What college picked someone from The Episcopal Academy?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The phrase names the person's school; 'Episcopal Academy' appears in the School column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "The Episcopal Academy",
+        "value": "Episcopal Academy",
+        "start": 33,
+        "end": 54
+      }
+    ],
+    "warnings": [
+      "value model disagreed with extracted question span; original retained"
+    ],
+    "request": {
+      "question": "What college picked someone from The Episcopal Academy?",
+      "table": {
+        "header": [
+          "Player",
+          "Height",
+          "School",
+          "Hometown",
+          "College"
+        ],
+        "page_title": "USA Today All-USA high school basketball team",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 11677760,
+        "id": "2-11677760-15",
+        "section_title": "2006 Boys' team",
+        "rows": [
+          [
+            "Wayne Ellington",
+            "6-5",
+            "Episcopal Academy",
+            "Merion, PA",
+            "North Carolina"
+          ],
+          [
+            "Brandan Wright",
+            "6-9",
+            "Brentwood Academy",
+            "Nashville, TN",
+            "North Carolina"
+          ],
+          [
+            "Thaddeus Young",
+            "6-8",
+            "Mitchell High School",
+            "Memphis, TN",
+            "Georgia Tech"
+          ],
+          [
+            "Sherron Collins",
+            "5-11",
+            "Crane Tech Prep",
+            "Chicago, IL",
+            "Kansas"
+          ],
+          [
+            "Paul Harris",
+            "6-4",
+            "Niagara Falls High School",
+            "Niagara Falls, NY",
+            "Syracuse"
+          ]
+        ],
+        "caption": "2006 Boys' team",
+        "headers": [
+          "Player",
+          "Height",
+          "School",
+          "Hometown",
+          "College"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-11677760-15",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "The Episcopal Academy",
+              "value": "Episcopal Academy",
+              "start": 33,
+              "end": 54
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a8ecce790e227d01f128ce55eb36cdb679f408b61c2bc839e22c813d103436a1",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4784,
+              "completion_tokens": 22,
+              "total_tokens": 4806,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "The Episcopal Academy",
+              "value": "Episcopal Academy",
+              "start": 33,
+              "end": 54,
+              "clause": "What college picked someone from The Episcopal Academy?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "The Episcopal Academy",
+              "value": "Episcopal Academy",
+              "start": 33,
+              "end": 54,
+              "clause": "What college picked someone from The Episcopal Academy?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "The Episcopal Academy",
+              "value": "Episcopal Academy",
+              "start": 33,
+              "end": 54,
+              "clause": "What college picked someone from The Episcopal Academy?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase names the person's school; 'Episcopal Academy' appears in the School column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "723718d859be4b78dc140bcdf17098f3c473c0d0c879f463108bbbaeddfcf8ae",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4819,
+              "completion_tokens": 40,
+              "total_tokens": 4859,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "The Episcopal Academy",
+              "value": "Episcopal Academy",
+              "start": 33,
+              "end": 54,
+              "clause": "What college picked someone from The Episcopal Academy?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase names the person's school; 'Episcopal Academy' appears in the School column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "2606f4fea986ff78642f5bd7fc73a0ef48564918cf3c6dc7eac48290d5508378",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4883,
+              "completion_tokens": 9,
+              "total_tokens": 4892,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "warnings": [
+            "value model disagreed with extracted question span; original retained"
+          ],
+          "conditions": [
+            {
+              "surface": "The Episcopal Academy",
+              "value": "Episcopal Academy",
+              "start": 33,
+              "end": 54,
+              "clause": "What college picked someone from The Episcopal Academy?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase names the person's school; 'Episcopal Academy' appears in the School column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "4852a9180434c26716f74bf20a6653d72eb984efca0c4e6a6abcb162196ab8a3",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4834,
+              "completion_tokens": 12,
+              "total_tokens": 4846,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "The Episcopal Academy",
+              "value": "Episcopal Academy",
+              "start": 33,
+              "end": 54,
+              "clause": "What college picked someone from The Episcopal Academy?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase names the person's school; 'Episcopal Academy' appears in the School column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "The Episcopal Academy",
+              "value": "Episcopal Academy",
+              "start": 33,
+              "end": 54,
+              "clause": "What college picked someone from The Episcopal Academy?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase names the person's school; 'Episcopal Academy' appears in the School column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "The Episcopal Academy",
+              "value": "Episcopal Academy",
+              "start": 33,
+              "end": 54,
+              "clause": "What college picked someone from The Episcopal Academy?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase names the person's school; 'Episcopal Academy' appears in the School column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "Episcopal Academy"
+            ]
+          ]
+        }
+      },
+      "warnings": [
+        "value model disagreed with extracted question span; original retained"
+      ],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": [
+          "value model disagreed with extracted question span; original retained"
+        ]
+      },
+      "originalConditions": [
+        {
+          "surface": "The Episcopal Academy",
+          "value": "Episcopal Academy",
+          "start": 33,
+          "end": 54
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "The Episcopal Academy",
+          "value": "Episcopal Academy",
+          "start": 33,
+          "end": 54,
+          "clause": "What college picked someone from The Episcopal Academy?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The phrase names the person's school; 'Episcopal Academy' appears in the School column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          2,
+          0,
+          "Episcopal Academy"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8219
+}

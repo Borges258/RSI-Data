@@ -1,0 +1,418 @@
+{
+  "arm": "E2",
+  "position": 578,
+  "example_id": "test:12905:2-178389-1",
+  "original_index": 12905,
+  "table_id": "2-178389-1",
+  "question": "what is the year built of  kyrkjebø?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        1,
+        0,
+        "kyrkjebø"
+      ]
+    ],
+    "agg": 5
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "Kyrkjebø"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "Kyrkjebø"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "kyrkjebø",
+        "value": "Kyrkjebø",
+        "start": 27,
+        "end": 35,
+        "clause": "what is the year built of  kyrkjebø?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The question asks for the year built of Kyrkjebø, identifying it as the Sub-Parish (Sogn); the matching row has Church Name 'Kyrkjebø kyrkje' and Location 'Kyrkjebø', but the unqualified name corresponds directly to the sub-parish.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "kyrkjebø",
+        "value": "Kyrkjebø",
+        "start": 27,
+        "end": 35
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "what is the year built of  kyrkjebø?",
+      "table": {
+        "header": [
+          "Parish (Prestegjeld)",
+          "Sub-Parish (Sogn)",
+          "Church Name",
+          "Year Built",
+          "Location of the Church"
+        ],
+        "page_title": "Høyanger",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 178389,
+        "id": "2-178389-1",
+        "section_title": "Churches",
+        "rows": [
+          [
+            "Lavik Parish",
+            "Bjordal og Ortnevik",
+            "Bjordal kyrkje",
+            "1906",
+            "Bjordal"
+          ],
+          [
+            "Lavik Parish",
+            "Bjordal og Ortnevik",
+            "Ortnevik kyrkje",
+            "1925",
+            "Ortnevik"
+          ],
+          [
+            "Lavik Parish",
+            "Høyanger",
+            "Høyanger kyrkje",
+            "1960",
+            "Høyanger"
+          ],
+          [
+            "Lavik Parish",
+            "Kyrkjebø",
+            "Kyrkjebø kyrkje",
+            "1869",
+            "Kyrkjebø"
+          ],
+          [
+            "Lavik Parish",
+            "Kyrkjebø",
+            "Vadheim bedehuskapell",
+            "1916",
+            "Vadheim"
+          ],
+          [
+            "Lavik Parish",
+            "Lavik",
+            "Lavik kyrkje",
+            "1865",
+            "Lavik"
+          ]
+        ],
+        "caption": "Churches in Høyanger",
+        "headers": [
+          "Parish (Prestegjeld)",
+          "Sub-Parish (Sogn)",
+          "Church Name",
+          "Year Built",
+          "Location of the Church"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-178389-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "kyrkjebø",
+              "value": "Kyrkjebø",
+              "start": 27,
+              "end": 35
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "252c15ca9dda539e0aabb66d2d412ddfd7db5a1b68b808eff4481b859dd534b5",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4843,
+              "completion_tokens": 25,
+              "total_tokens": 4868,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "kyrkjebø",
+              "value": "Kyrkjebø",
+              "start": 27,
+              "end": 35,
+              "clause": "what is the year built of  kyrkjebø?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "kyrkjebø",
+              "value": "Kyrkjebø",
+              "start": 27,
+              "end": 35,
+              "clause": "what is the year built of  kyrkjebø?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "kyrkjebø",
+              "value": "Kyrkjebø",
+              "start": 27,
+              "end": 35,
+              "clause": "what is the year built of  kyrkjebø?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question asks for the year built of Kyrkjebø, identifying it as the Sub-Parish (Sogn); the matching row has Church Name 'Kyrkjebø kyrkje' and Location 'Kyrkjebø', but the unqualified name corresponds directly to the sub-parish."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "45da435e8b8f4e49b35e18cb23542e3cccff6645e22d9f01488fa45aac696150",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4884,
+              "completion_tokens": 82,
+              "total_tokens": 4966,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "kyrkjebø",
+              "value": "Kyrkjebø",
+              "start": 27,
+              "end": 35,
+              "clause": "what is the year built of  kyrkjebø?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question asks for the year built of Kyrkjebø, identifying it as the Sub-Parish (Sogn); the matching row has Church Name 'Kyrkjebø kyrkje' and Location 'Kyrkjebø', but the unqualified name corresponds directly to the sub-parish.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "32490ca38627fedd2685c485cb5c9fac56525b12e0127c712b62e28d04b026a6",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4990,
+              "completion_tokens": 9,
+              "total_tokens": 4999,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "kyrkjebø",
+              "value": "Kyrkjebø",
+              "start": 27,
+              "end": 35,
+              "clause": "what is the year built of  kyrkjebø?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question asks for the year built of Kyrkjebø, identifying it as the Sub-Parish (Sogn); the matching row has Church Name 'Kyrkjebø kyrkje' and Location 'Kyrkjebø', but the unqualified name corresponds directly to the sub-parish.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "1721577ebfde41d288446c7d2e756ec66d788d17baf13c9f004ec9c4e7721b1e",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4941,
+              "completion_tokens": 14,
+              "total_tokens": 4955,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "kyrkjebø",
+              "value": "Kyrkjebø",
+              "start": 27,
+              "end": 35,
+              "clause": "what is the year built of  kyrkjebø?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question asks for the year built of Kyrkjebø, identifying it as the Sub-Parish (Sogn); the matching row has Church Name 'Kyrkjebø kyrkje' and Location 'Kyrkjebø', but the unqualified name corresponds directly to the sub-parish.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "kyrkjebø",
+              "value": "Kyrkjebø",
+              "start": 27,
+              "end": 35,
+              "clause": "what is the year built of  kyrkjebø?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question asks for the year built of Kyrkjebø, identifying it as the Sub-Parish (Sogn); the matching row has Church Name 'Kyrkjebø kyrkje' and Location 'Kyrkjebø', but the unqualified name corresponds directly to the sub-parish.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "kyrkjebø",
+              "value": "Kyrkjebø",
+              "start": 27,
+              "end": 35,
+              "clause": "what is the year built of  kyrkjebø?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question asks for the year built of Kyrkjebø, identifying it as the Sub-Parish (Sogn); the matching row has Church Name 'Kyrkjebø kyrkje' and Location 'Kyrkjebø', but the unqualified name corresponds directly to the sub-parish.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              "Kyrkjebø"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "kyrkjebø",
+          "value": "Kyrkjebø",
+          "start": 27,
+          "end": 35
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "kyrkjebø",
+          "value": "Kyrkjebø",
+          "start": 27,
+          "end": 35,
+          "clause": "what is the year built of  kyrkjebø?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The question asks for the year built of Kyrkjebø, identifying it as the Sub-Parish (Sogn); the matching row has Church Name 'Kyrkjebø kyrkje' and Location 'Kyrkjebø', but the unqualified name corresponds directly to the sub-parish.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          1,
+          0,
+          "Kyrkjebø"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 10485
+}

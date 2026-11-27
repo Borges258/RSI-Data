@@ -1,0 +1,114 @@
+{
+  "arm": "E1",
+  "position": 559,
+  "example_id": "test:7604:2-1560445-2",
+  "original_index": 7604,
+  "table_id": "2-1560445-2",
+  "question": "What is the average for the 1990s with a total of 1, and 0 in the 1980s?",
+  "gold_sql": {
+    "sel": 8,
+    "conds": [
+      [
+        10,
+        0,
+        1
+      ],
+      [
+        7,
+        0,
+        0
+      ]
+    ],
+    "agg": 5
+  },
+  "prediction_conds": [
+    [
+      10,
+      0,
+      1
+    ],
+    [
+      7,
+      0,
+      0
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": "gpt-5.6-sol",
+  "usage": {
+    "prompt_tokens": 11219,
+    "completion_tokens": 58,
+    "total_tokens": 11277,
+    "prompt_tokens_details": {
+      "cached_tokens": 4224
+    }
+  },
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        10,
+        0,
+        1
+      ],
+      [
+        7,
+        0,
+        0
+      ]
+    ],
+    "explanation": "Filters rows where Total to date equals 1 and 1980s equals 0; 1990s is the requested averaged column.",
+    "version": "wikisql-where-prior-v1",
+    "tableId": "2-1560445-2",
+    "knowledgeIds": [
+      "g-eq",
+      "g-gt",
+      "g-lt",
+      "g-inclusive",
+      "g-literal",
+      "g-threshold",
+      "g-and",
+      "g-or",
+      "g-column",
+      "g-count",
+      "g-ambiguous",
+      "t-2-1560445-2-field-0",
+      "t-2-1560445-2-field-1",
+      "t-2-1560445-2-field-2",
+      "t-2-1560445-2-field-3",
+      "t-2-1560445-2-field-4",
+      "t-2-1560445-2-field-5",
+      "t-2-1560445-2-field-6",
+      "t-2-1560445-2-field-7",
+      "t-2-1560445-2-field-8",
+      "t-2-1560445-2-field-9",
+      "t-2-1560445-2-field-10",
+      "d-implicit-eq",
+      "d-explicit-eq",
+      "d-gt",
+      "d-lt-and-gt",
+      "d-with-two",
+      "d-literal-form",
+      "p-text",
+      "p-number",
+      "p-multi",
+      "p-unsupported"
+    ],
+    "promptSha256": "e8916e1a3f51c37e6a5956a88fd59b9b1cea9ae90ee0672f3efec94980f862a8",
+    "model": "gpt-5.6-sol",
+    "usage": {
+      "prompt_tokens": 11219,
+      "completion_tokens": 58,
+      "total_tokens": 11277,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      }
+    },
+    "latencyMs": 2319
+  },
+  "source": "where_prior_parse",
+  "safe_completed": true,
+  "elapsed_ms": 2344
+}

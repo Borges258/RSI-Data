@@ -1,0 +1,124 @@
+{
+  "arm": "E1",
+  "position": 351,
+  "example_id": "test:5736:2-14106667-6",
+  "original_index": 5736,
+  "table_id": "2-14106667-6",
+  "question": "How many points did the Flyers have against the New York Islanders with a February bigger than 12, and a game smaller than 60?",
+  "gold_sql": {
+    "sel": 5,
+    "conds": [
+      [
+        1,
+        1,
+        12
+      ],
+      [
+        0,
+        2,
+        60
+      ],
+      [
+        2,
+        0,
+        "new york islanders"
+      ]
+    ],
+    "agg": 3
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "New York Islanders"
+    ],
+    [
+      1,
+      1,
+      12
+    ],
+    [
+      0,
+      2,
+      60
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": "gpt-5.6-sol",
+  "usage": {
+    "prompt_tokens": 9934,
+    "completion_tokens": 62,
+    "total_tokens": 9996,
+    "prompt_tokens_details": {
+      "cached_tokens": 4224
+    }
+  },
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "New York Islanders"
+      ],
+      [
+        1,
+        1,
+        12
+      ],
+      [
+        0,
+        2,
+        60
+      ]
+    ],
+    "explanation": "Opponent equals New York Islanders, February is strictly greater than 12, and Game is strictly less than 60.",
+    "version": "wikisql-where-prior-v1",
+    "tableId": "2-14106667-6",
+    "knowledgeIds": [
+      "g-eq",
+      "g-gt",
+      "g-lt",
+      "g-inclusive",
+      "g-literal",
+      "g-threshold",
+      "g-and",
+      "g-or",
+      "g-column",
+      "g-count",
+      "g-ambiguous",
+      "t-2-14106667-6-field-0",
+      "t-2-14106667-6-field-1",
+      "t-2-14106667-6-field-2",
+      "t-2-14106667-6-field-3",
+      "t-2-14106667-6-field-4",
+      "t-2-14106667-6-field-5",
+      "d-implicit-eq",
+      "d-explicit-eq",
+      "d-gt",
+      "d-lt-and-gt",
+      "d-with-two",
+      "d-literal-form",
+      "p-text",
+      "p-number",
+      "p-multi",
+      "p-unsupported"
+    ],
+    "promptSha256": "266d8477dc6eef2b8f9928e13f1c270752a76796a885e9ac1e0a63d96b6f5e95",
+    "model": "gpt-5.6-sol",
+    "usage": {
+      "prompt_tokens": 9934,
+      "completion_tokens": 62,
+      "total_tokens": 9996,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      }
+    },
+    "latencyMs": 2510
+  },
+  "source": "where_prior_parse",
+  "safe_completed": true,
+  "elapsed_ms": 2531
+}

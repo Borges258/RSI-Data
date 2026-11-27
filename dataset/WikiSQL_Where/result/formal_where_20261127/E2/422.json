@@ -1,0 +1,664 @@
+{
+  "arm": "E2",
+  "position": 422,
+  "example_id": "test:11322:2-11171707-1",
+  "original_index": 11322,
+  "table_id": "2-11171707-1",
+  "question": "What was the week of the December 9, 1961 game with an attendance larger than 41,268?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        1,
+        0,
+        "december 9, 1961"
+      ],
+      [
+        4,
+        1,
+        "41,268"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [],
+  "status": "GROUNDING_FAILED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "GROUNDING_FAILED",
+    "valid": false,
+    "errors": [
+      "condition 1: grounding NO_MATCH",
+      "condition 1: nonnumeric value for real column"
+    ],
+    "conditions": [
+      {
+        "surface": "December 9, 1961",
+        "value": "December 9, 1961",
+        "start": 25,
+        "end": 41,
+        "clause": "What was the week of the December 9, 1961 game with an attendance larger than 41",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The value is a game date and exactly matches a cell in the Date column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "larger than 41,268",
+        "value": "larger than 41,268",
+        "start": 66,
+        "end": 84,
+        "clause": "1961 game with an attendance larger than 41,268?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The question explicitly says attendance, and 41,268 is a numeric value in the Attendance column.",
+        "operator": ">",
+        "grounded": false,
+        "groundingStatus": "NO_MATCH",
+        "groundingReview": {
+          "column": 4,
+          "reason": "The question explicitly identifies attendance, and column 4 is the numeric Attendance field; the literal 41,268 appears there as the comparison threshold."
+        }
+      }
+    ],
+    "stage": "WHERE_CONDITION_VALIDATE",
+    "originalConditions": [
+      {
+        "surface": "December 9, 1961",
+        "value": "December 9, 1961",
+        "start": 25,
+        "end": 41
+      },
+      {
+        "surface": "larger than 41,268",
+        "value": "larger than 41,268",
+        "start": 66,
+        "end": 84
+      }
+    ],
+    "halt": true,
+    "completed": false,
+    "conds": [],
+    "warnings": [
+      "value model disagreed with extracted question span; original retained"
+    ],
+    "request": {
+      "question": "What was the week of the December 9, 1961 game with an attendance larger than 41,268?",
+      "table": {
+        "header": [
+          "Week",
+          "Date",
+          "Opponent",
+          "Result",
+          "Attendance"
+        ],
+        "page_title": "1961 Los Angeles Rams season",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "real"
+        ],
+        "page_id": 11171707,
+        "id": "2-11171707-1",
+        "section_title": "Schedule",
+        "rows": [
+          [
+            "1",
+            "September 17, 1961",
+            "at Baltimore Colts",
+            "L 27-24",
+            "54,259"
+          ],
+          [
+            "2",
+            "September 23, 1961",
+            "Chicago Bears",
+            "L 21-17",
+            "53,315"
+          ],
+          [
+            "3",
+            "October 1, 1961",
+            "Pittsburgh Steelers",
+            "W 24-14",
+            "40,707"
+          ],
+          [
+            "4",
+            "October 8, 1961",
+            "at San Francisco 49ers",
+            "L 35-0",
+            "59,004"
+          ],
+          [
+            "5",
+            "October 15, 1961",
+            "at Detroit Lions",
+            "L 14-13",
+            "45,873"
+          ],
+          [
+            "6",
+            "October 22, 1961",
+            "at New York Giants",
+            "L 24-14",
+            "63,053"
+          ],
+          [
+            "7",
+            "October 29, 1961",
+            "Detroit Lions",
+            "L 28-10",
+            "49,123"
+          ],
+          [
+            "8",
+            "November 5, 1961",
+            "Minnesota Vikings",
+            "W 31-17",
+            "38,594"
+          ],
+          [
+            "9",
+            "November 12, 1961",
+            "San Francisco 49ers",
+            "W 17-7",
+            "63,766"
+          ],
+          [
+            "10",
+            "November 19, 1961",
+            "at Green Bay Packers",
+            "L 35-17",
+            "38,669"
+          ],
+          [
+            "11",
+            "November 26, 1961",
+            "at Chicago Bears",
+            "L 28-24",
+            "45,965"
+          ],
+          [
+            "12",
+            "December 3, 1961",
+            "at Minnesota Vikings",
+            "L 42-21",
+            "30,068"
+          ],
+          [
+            "13",
+            "December 9, 1961",
+            "Baltimore Colts",
+            "W 34-17",
+            "41,268"
+          ],
+          [
+            "14",
+            "December 17, 1961",
+            "Green Bay Packers",
+            "L 24-17",
+            "49,169"
+          ]
+        ],
+        "caption": "Schedule",
+        "headers": [
+          "Week",
+          "Date",
+          "Opponent",
+          "Result",
+          "Attendance"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-11171707-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 9,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "December 9, 1961",
+              "value": "December 9, 1961",
+              "start": 25,
+              "end": 41
+            },
+            {
+              "surface": "larger than 41,268",
+              "value": "larger than 41,268",
+              "start": 66,
+              "end": 84
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0f383b9cc16cadaa81c4b4b958fcee4f2fdca947a6e435440a28e50b26ebc6a0",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5029,
+              "completion_tokens": 49,
+              "total_tokens": 5078,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "December 9, 1961",
+              "value": "December 9, 1961",
+              "start": 25,
+              "end": 41,
+              "clause": "What was the week of the December 9, 1961 game with an attendance larger than 41"
+            },
+            {
+              "surface": "larger than 41,268",
+              "value": "larger than 41,268",
+              "start": 66,
+              "end": 84,
+              "clause": "1961 game with an attendance larger than 41,268?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "December 9, 1961",
+              "value": "December 9, 1961",
+              "start": 25,
+              "end": 41,
+              "clause": "What was the week of the December 9, 1961 game with an attendance larger than 41"
+            },
+            {
+              "surface": "larger than 41,268",
+              "value": "larger than 41,268",
+              "start": 66,
+              "end": 84,
+              "clause": "1961 game with an attendance larger than 41,268?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "December 9, 1961",
+              "value": "December 9, 1961",
+              "start": 25,
+              "end": 41,
+              "clause": "What was the week of the December 9, 1961 game with an attendance larger than 41",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The value is a game date and exactly matches a cell in the Date column."
+            },
+            {
+              "surface": "larger than 41,268",
+              "value": "larger than 41,268",
+              "start": 66,
+              "end": 84,
+              "clause": "1961 game with an attendance larger than 41,268?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly says attendance, and 41,268 is a numeric value in the Attendance column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "2a28a719819123b547c70d8c35946eb408844992a03ead0955e9e7f61a64b50a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5128,
+              "completion_tokens": 61,
+              "total_tokens": 5189,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "December 9, 1961",
+              "value": "December 9, 1961",
+              "start": 25,
+              "end": 41,
+              "clause": "What was the week of the December 9, 1961 game with an attendance larger than 41",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The value is a game date and exactly matches a cell in the Date column.",
+              "operator": "="
+            },
+            {
+              "surface": "larger than 41,268",
+              "value": "larger than 41,268",
+              "start": 66,
+              "end": 84,
+              "clause": "1961 game with an attendance larger than 41,268?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly says attendance, and 41,268 is a numeric value in the Attendance column.",
+              "operator": ">"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "20ad66ddfe036295d43cfd4fdc235494b0c0c853a2b7eb260953c411e5768a6b",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5224,
+              "completion_tokens": 11,
+              "total_tokens": 5235,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "warnings": [
+            "value model disagreed with extracted question span; original retained"
+          ],
+          "conditions": [
+            {
+              "surface": "December 9, 1961",
+              "value": "December 9, 1961",
+              "start": 25,
+              "end": 41,
+              "clause": "What was the week of the December 9, 1961 game with an attendance larger than 41",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The value is a game date and exactly matches a cell in the Date column.",
+              "operator": "="
+            },
+            {
+              "surface": "larger than 41,268",
+              "value": "larger than 41,268",
+              "start": 66,
+              "end": 84,
+              "clause": "1961 game with an attendance larger than 41,268?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly says attendance, and 41,268 is a numeric value in the Attendance column.",
+              "operator": ">"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "4ca46e6c88fd87ba49d0562d568aec8abc8b919813f378f84ac5943d024dcdb9",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5178,
+              "completion_tokens": 20,
+              "total_tokens": 5198,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "December 9, 1961",
+              "value": "December 9, 1961",
+              "start": 25,
+              "end": 41,
+              "clause": "What was the week of the December 9, 1961 game with an attendance larger than 41",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The value is a game date and exactly matches a cell in the Date column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "larger than 41,268",
+              "value": "larger than 41,268",
+              "start": 66,
+              "end": 84,
+              "clause": "1961 game with an attendance larger than 41,268?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly says attendance, and 41,268 is a numeric value in the Attendance column.",
+              "operator": ">",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 4,
+                "reason": "The question explicitly identifies attendance, and column 4 is the numeric Attendance field; the literal 41,268 appears there as the comparison threshold."
+              }
+            }
+          ],
+          "reviewModelCalls": [
+            {
+              "model": "gpt-5.6-sol",
+              "promptSha256": "fbdcc6955c15b4dde134126daf1392d58b3c1a1e82960a4301180f8c73507b67",
+              "knowledgeIds": [],
+              "usage": {
+                "prompt_tokens": 5132,
+                "completion_tokens": 41,
+                "total_tokens": 5173,
+                "prompt_tokens_details": {
+                  "cached_tokens": 4224
+                }
+              }
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "fbdcc6955c15b4dde134126daf1392d58b3c1a1e82960a4301180f8c73507b67",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5132,
+              "completion_tokens": 41,
+              "total_tokens": 5173,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "December 9, 1961",
+              "value": "December 9, 1961",
+              "start": 25,
+              "end": 41,
+              "clause": "What was the week of the December 9, 1961 game with an attendance larger than 41",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The value is a game date and exactly matches a cell in the Date column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "larger than 41,268",
+              "value": "larger than 41,268",
+              "start": 66,
+              "end": 84,
+              "clause": "1961 game with an attendance larger than 41,268?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly says attendance, and 41,268 is a numeric value in the Attendance column.",
+              "operator": ">",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 4,
+                "reason": "The question explicitly identifies attendance, and column 4 is the numeric Attendance field; the literal 41,268 appears there as the comparison threshold."
+              }
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "GROUNDING_FAILED",
+          "valid": false,
+          "errors": [
+            "condition 1: grounding NO_MATCH",
+            "condition 1: nonnumeric value for real column"
+          ],
+          "conditions": [
+            {
+              "surface": "December 9, 1961",
+              "value": "December 9, 1961",
+              "start": 25,
+              "end": 41,
+              "clause": "What was the week of the December 9, 1961 game with an attendance larger than 41",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The value is a game date and exactly matches a cell in the Date column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "larger than 41,268",
+              "value": "larger than 41,268",
+              "start": 66,
+              "end": 84,
+              "clause": "1961 game with an attendance larger than 41,268?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly says attendance, and 41,268 is a numeric value in the Attendance column.",
+              "operator": ">",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 4,
+                "reason": "The question explicitly identifies attendance, and column 4 is the numeric Attendance field; the literal 41,268 appears there as the comparison threshold."
+              }
+            }
+          ]
+        }
+      },
+      "warnings": [
+        "value model disagreed with extracted question span; original retained"
+      ],
+      "execution": {
+        "status": "GROUNDING_FAILED",
+        "stage": "WHERE_CONDITION_VALIDATE",
+        "halt": true,
+        "completed": false,
+        "errors": [
+          "condition 1: grounding NO_MATCH",
+          "condition 1: nonnumeric value for real column"
+        ],
+        "warnings": [
+          "value model disagreed with extracted question span; original retained"
+        ]
+      },
+      "originalConditions": [
+        {
+          "surface": "December 9, 1961",
+          "value": "December 9, 1961",
+          "start": 25,
+          "end": 41
+        },
+        {
+          "surface": "larger than 41,268",
+          "value": "larger than 41,268",
+          "start": 66,
+          "end": 84
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "December 9, 1961",
+          "value": "December 9, 1961",
+          "start": 25,
+          "end": 41,
+          "clause": "What was the week of the December 9, 1961 game with an attendance larger than 41",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The value is a game date and exactly matches a cell in the Date column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "larger than 41,268",
+          "value": "larger than 41,268",
+          "start": 66,
+          "end": 84,
+          "clause": "1961 game with an attendance larger than 41,268?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The question explicitly says attendance, and 41,268 is a numeric value in the Attendance column.",
+          "operator": ">",
+          "grounded": false,
+          "groundingStatus": "NO_MATCH",
+          "groundingReview": {
+            "column": 4,
+            "reason": "The question explicitly identifies attendance, and column 4 is the numeric Attendance field; the literal 41,268 appears there as the comparison threshold."
+          }
+        }
+      ],
+      "count": 2
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": false,
+  "elapsed_ms": 11125
+}

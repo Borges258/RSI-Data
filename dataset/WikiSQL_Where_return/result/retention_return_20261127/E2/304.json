@@ -1,0 +1,436 @@
+{
+  "arm": "E2",
+  "position": 304,
+  "example_id": "test:11894:2-10807673-10",
+  "original_index": 11894,
+  "table_id": "2-10807673-10",
+  "question": "What was Collingwood's away team score?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        0,
+        0,
+        "collingwood"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "Collingwood"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "Collingwood"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Collingwood",
+        "value": "Collingwood",
+        "start": 9,
+        "end": 20,
+        "clause": "What was Collingwood's away team score?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "Collingwood appears as the Home team in the matching row; the possessive identifies the team whose opponent's away score is requested.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Collingwood",
+        "value": "Collingwood",
+        "start": 9,
+        "end": 20
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What was Collingwood's away team score?",
+      "table": {
+        "header": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ],
+        "page_title": "1941 VFL season",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 10807673,
+        "id": "2-10807673-10",
+        "section_title": "Round 10",
+        "rows": [
+          [
+            "Footscray",
+            "12.13 (85)",
+            "Richmond",
+            "14.11 (95)",
+            "Western Oval",
+            "14,000",
+            "5 July 1941"
+          ],
+          [
+            "Collingwood",
+            "10.12 (72)",
+            "South Melbourne",
+            "11.13 (79)",
+            "Victoria Park",
+            "7,500",
+            "5 July 1941"
+          ],
+          [
+            "Carlton",
+            "12.25 (97)",
+            "Geelong",
+            "13.11 (89)",
+            "Princes Park",
+            "7,000",
+            "5 July 1941"
+          ],
+          [
+            "North Melbourne",
+            "13.20 (98)",
+            "Hawthorn",
+            "6.14 (50)",
+            "Arden Street Oval",
+            "3,000",
+            "5 July 1941"
+          ],
+          [
+            "St Kilda",
+            "12.4 (76)",
+            "Fitzroy",
+            "12.6 (78)",
+            "Junction Oval",
+            "7,000",
+            "5 July 1941"
+          ],
+          [
+            "Melbourne",
+            "16.17 (113)",
+            "Essendon",
+            "9.11 (65)",
+            "MCG",
+            "17,000",
+            "5 July 1941"
+          ]
+        ],
+        "caption": "Round 10",
+        "headers": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-10807673-10",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Collingwood",
+              "value": "Collingwood",
+              "start": 9,
+              "end": 20
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "3ba678ddaab7d03aac3045d3ecb9102f261a22009e70ed962cddb9a5d1e750fc",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4901,
+              "completion_tokens": 21,
+              "total_tokens": 4922,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Collingwood",
+              "value": "Collingwood",
+              "start": 9,
+              "end": 20,
+              "clause": "What was Collingwood's away team score?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Collingwood",
+              "value": "Collingwood",
+              "start": 9,
+              "end": 20,
+              "clause": "What was Collingwood's away team score?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Collingwood",
+              "value": "Collingwood",
+              "start": 9,
+              "end": 20,
+              "clause": "What was Collingwood's away team score?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Collingwood appears as the Home team in the matching row; the possessive identifies the team whose opponent's away score is requested."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f6e24656219091f29d006668f014f8f752e7057529112ab28e688ed09891696d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4936,
+              "completion_tokens": 48,
+              "total_tokens": 4984,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Collingwood",
+              "value": "Collingwood",
+              "start": 9,
+              "end": 20,
+              "clause": "What was Collingwood's away team score?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Collingwood appears as the Home team in the matching row; the possessive identifies the team whose opponent's away score is requested.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "343b57cf348639c5c1f51dc69a885a887b9045a593af4dcebc06a928e814283a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5008,
+              "completion_tokens": 9,
+              "total_tokens": 5017,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Collingwood",
+              "value": "Collingwood",
+              "start": 9,
+              "end": 20,
+              "clause": "What was Collingwood's away team score?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Collingwood appears as the Home team in the matching row; the possessive identifies the team whose opponent's away score is requested.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e035657e9783c220f4baed4a45782fd8e71cb86294accc17685ec421d4b8978b",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4959,
+              "completion_tokens": 12,
+              "total_tokens": 4971,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Collingwood",
+              "value": "Collingwood",
+              "start": 9,
+              "end": 20,
+              "clause": "What was Collingwood's away team score?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Collingwood appears as the Home team in the matching row; the possessive identifies the team whose opponent's away score is requested.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Collingwood",
+              "value": "Collingwood",
+              "start": 9,
+              "end": 20,
+              "clause": "What was Collingwood's away team score?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Collingwood appears as the Home team in the matching row; the possessive identifies the team whose opponent's away score is requested.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Collingwood",
+              "value": "Collingwood",
+              "start": 9,
+              "end": 20,
+              "clause": "What was Collingwood's away team score?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Collingwood appears as the Home team in the matching row; the possessive identifies the team whose opponent's away score is requested.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              "Collingwood"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Collingwood",
+          "value": "Collingwood",
+          "start": 9,
+          "end": 20
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Collingwood",
+          "value": "Collingwood",
+          "start": 9,
+          "end": 20,
+          "clause": "What was Collingwood's away team score?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "Collingwood appears as the Home team in the matching row; the possessive identifies the team whose opponent's away score is requested.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          0,
+          0,
+          "Collingwood"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8516
+}

@@ -1,0 +1,436 @@
+{
+  "arm": "E2",
+  "position": 262,
+  "example_id": "test:10473:2-10806852-12",
+  "original_index": 10473,
+  "table_id": "2-10806852-12",
+  "question": "What was the away teams score at Glenferrie Oval?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        4,
+        0,
+        "glenferrie oval"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      4,
+      0,
+      "Glenferrie Oval"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        0,
+        "Glenferrie Oval"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Glenferrie Oval",
+        "value": "Glenferrie Oval",
+        "start": 33,
+        "end": 48,
+        "clause": "What was the away teams score at Glenferrie Oval?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The question uses 'at' to identify a venue, and 'Glenferrie Oval' appears in the Venue column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Glenferrie Oval",
+        "value": "Glenferrie Oval",
+        "start": 33,
+        "end": 48
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What was the away teams score at Glenferrie Oval?",
+      "table": {
+        "header": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ],
+        "page_title": "1939 VFL season",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 10806852,
+        "id": "2-10806852-12",
+        "section_title": "Round 12",
+        "rows": [
+          [
+            "Hawthorn",
+            "11.18 (84)",
+            "St Kilda",
+            "15.17 (107)",
+            "Glenferrie Oval",
+            "18,000",
+            "8 July 1939"
+          ],
+          [
+            "Fitzroy",
+            "10.20 (80)",
+            "North Melbourne",
+            "9.16 (70)",
+            "Brunswick Street Oval",
+            "12,000",
+            "8 July 1939"
+          ],
+          [
+            "Essendon",
+            "17.20 (122)",
+            "Footscray",
+            "18.15 (123)",
+            "Windy Hill",
+            "13,000",
+            "8 July 1939"
+          ],
+          [
+            "Richmond",
+            "13.21 (99)",
+            "Melbourne",
+            "15.16 (106)",
+            "Punt Road Oval",
+            "22,000",
+            "8 July 1939"
+          ],
+          [
+            "Geelong",
+            "18.12 (120)",
+            "Collingwood",
+            "16.13 (109)",
+            "Corio Oval",
+            "10,500",
+            "8 July 1939"
+          ],
+          [
+            "South Melbourne",
+            "12.16 (88)",
+            "Carlton",
+            "16.17 (113)",
+            "Lake Oval",
+            "14,000",
+            "8 July 1939"
+          ]
+        ],
+        "caption": "Round 12",
+        "headers": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-10806852-12",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Glenferrie Oval",
+              "value": "Glenferrie Oval",
+              "start": 33,
+              "end": 48
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ff09ca3a28ff5cd2c221921d8fe124d6dd6ab99c6d01a78a3821f8083e1cc8fe",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4910,
+              "completion_tokens": 27,
+              "total_tokens": 4937,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Glenferrie Oval",
+              "value": "Glenferrie Oval",
+              "start": 33,
+              "end": 48,
+              "clause": "What was the away teams score at Glenferrie Oval?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Glenferrie Oval",
+              "value": "Glenferrie Oval",
+              "start": 33,
+              "end": 48,
+              "clause": "What was the away teams score at Glenferrie Oval?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Glenferrie Oval",
+              "value": "Glenferrie Oval",
+              "start": 33,
+              "end": 48,
+              "clause": "What was the away teams score at Glenferrie Oval?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question uses 'at' to identify a venue, and 'Glenferrie Oval' appears in the Venue column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "47f7fe1599df501cff72375461aa4d3902dc5f1ccafae0d5e7a7c6ff945f5766",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4954,
+              "completion_tokens": 47,
+              "total_tokens": 5001,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Glenferrie Oval",
+              "value": "Glenferrie Oval",
+              "start": 33,
+              "end": 48,
+              "clause": "What was the away teams score at Glenferrie Oval?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question uses 'at' to identify a venue, and 'Glenferrie Oval' appears in the Venue column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "6272456213c6ce1360aaa436d97d89fbfe562227059373b55e4da723c6d81a3c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5025,
+              "completion_tokens": 9,
+              "total_tokens": 5034,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Glenferrie Oval",
+              "value": "Glenferrie Oval",
+              "start": 33,
+              "end": 48,
+              "clause": "What was the away teams score at Glenferrie Oval?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question uses 'at' to identify a venue, and 'Glenferrie Oval' appears in the Venue column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "69ec23ea9ace34bf2d01fde83be6fbac87565f16c1ef82013344dc3bd8d2a3d2",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4976,
+              "completion_tokens": 15,
+              "total_tokens": 4991,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Glenferrie Oval",
+              "value": "Glenferrie Oval",
+              "start": 33,
+              "end": 48,
+              "clause": "What was the away teams score at Glenferrie Oval?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question uses 'at' to identify a venue, and 'Glenferrie Oval' appears in the Venue column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Glenferrie Oval",
+              "value": "Glenferrie Oval",
+              "start": 33,
+              "end": 48,
+              "clause": "What was the away teams score at Glenferrie Oval?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question uses 'at' to identify a venue, and 'Glenferrie Oval' appears in the Venue column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Glenferrie Oval",
+              "value": "Glenferrie Oval",
+              "start": 33,
+              "end": 48,
+              "clause": "What was the away teams score at Glenferrie Oval?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question uses 'at' to identify a venue, and 'Glenferrie Oval' appears in the Venue column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              0,
+              "Glenferrie Oval"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Glenferrie Oval",
+          "value": "Glenferrie Oval",
+          "start": 33,
+          "end": 48
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Glenferrie Oval",
+          "value": "Glenferrie Oval",
+          "start": 33,
+          "end": 48,
+          "clause": "What was the away teams score at Glenferrie Oval?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The question uses 'at' to identify a venue, and 'Glenferrie Oval' appears in the Venue column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          4,
+          0,
+          "Glenferrie Oval"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8125
+}

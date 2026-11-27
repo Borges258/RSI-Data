@@ -1,0 +1,606 @@
+{
+  "arm": "E2",
+  "position": 127,
+  "example_id": "test:4580:2-10750694-7",
+  "original_index": 4580,
+  "table_id": "2-10750694-7",
+  "question": "What is the Date in which the Crowed was over 10,300 and the Home team was Melbourne?",
+  "gold_sql": {
+    "sel": 6,
+    "conds": [
+      [
+        5,
+        1,
+        "10,300"
+      ],
+      [
+        0,
+        0,
+        "melbourne"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      5,
+      1,
+      "10,300"
+    ],
+    [
+      0,
+      0,
+      "Melbourne"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        5,
+        1,
+        "10,300"
+      ],
+      [
+        0,
+        0,
+        "Melbourne"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "10,300",
+        "value": "10,300",
+        "start": 46,
+        "end": 52,
+        "clause": "What is the Date in which the Crowed was over 10,300",
+        "columnIndex": 5,
+        "columnCandidates": [
+          5
+        ],
+        "columnMatchReason": "'Crowed' is a typo for 'Crowd'; the numeric threshold 10,300 matches the Crowd field.",
+        "operator": ">",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "Melbourne",
+        "value": "Melbourne",
+        "start": 75,
+        "end": 84,
+        "clause": "and the Home team was Melbourne?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "The clause explicitly names the Home team field, and Melbourne appears there.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "10,300",
+        "value": "10,300",
+        "start": 46,
+        "end": 52
+      },
+      {
+        "surface": "Melbourne",
+        "value": "Melbourne",
+        "start": 75,
+        "end": 84
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the Date in which the Crowed was over 10,300 and the Home team was Melbourne?",
+      "table": {
+        "header": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ],
+        "page_title": "1952 VFL season",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 10750694,
+        "id": "2-10750694-7",
+        "section_title": "Round 7",
+        "rows": [
+          [
+            "Fitzroy",
+            "8.15 (63)",
+            "St Kilda",
+            "3.6 (24)",
+            "Brunswick Street Oval",
+            "10,300",
+            "7 June 1952"
+          ],
+          [
+            "North Melbourne",
+            "12.8 (80)",
+            "Hawthorn",
+            "7.8 (50)",
+            "Arden Street Oval",
+            "11,000",
+            "7 June 1952"
+          ],
+          [
+            "Melbourne",
+            "12.10 (82)",
+            "Collingwood",
+            "6.14 (50)",
+            "MCG",
+            "58,543",
+            "7 June 1952"
+          ],
+          [
+            "Essendon",
+            "7.18 (60)",
+            "Richmond",
+            "10.9 (69)",
+            "Windy Hill",
+            "29,000",
+            "9 June 1952"
+          ],
+          [
+            "Carlton",
+            "18.12 (120)",
+            "Geelong",
+            "13.15 (93)",
+            "Princes Park",
+            "37,500",
+            "9 June 1952"
+          ],
+          [
+            "South Melbourne",
+            "16.14 (110)",
+            "Footscray",
+            "11.13 (79)",
+            "Lake Oval",
+            "26,000",
+            "9 June 1952"
+          ]
+        ],
+        "caption": "Round 7",
+        "headers": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-10750694-7",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "10,300",
+              "value": "10,300",
+              "start": 46,
+              "end": 52
+            },
+            {
+              "surface": "Melbourne",
+              "value": "Melbourne",
+              "start": 75,
+              "end": 84
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a077331dd2d41dc5d95a432ff95ee20e2bfe8c6763107a4fd14cff2d05e9feef",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4915,
+              "completion_tokens": 31,
+              "total_tokens": 4946,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "10,300",
+              "value": "10,300",
+              "start": 46,
+              "end": 52,
+              "clause": "What is the Date in which the Crowed was over 10,300"
+            },
+            {
+              "surface": "Melbourne",
+              "value": "Melbourne",
+              "start": 75,
+              "end": 84,
+              "clause": "and the Home team was Melbourne?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "10,300",
+              "value": "10,300",
+              "start": 46,
+              "end": 52,
+              "clause": "What is the Date in which the Crowed was over 10,300"
+            },
+            {
+              "surface": "Melbourne",
+              "value": "Melbourne",
+              "start": 75,
+              "end": 84,
+              "clause": "and the Home team was Melbourne?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "10,300",
+              "value": "10,300",
+              "start": 46,
+              "end": 52,
+              "clause": "What is the Date in which the Crowed was over 10,300",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "'Crowed' is a typo for 'Crowd'; the numeric threshold 10,300 matches the Crowd field."
+            },
+            {
+              "surface": "Melbourne",
+              "value": "Melbourne",
+              "start": 75,
+              "end": 84,
+              "clause": "and the Home team was Melbourne?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The clause explicitly names the Home team field, and Melbourne appears there."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b5ea1c1d05ad17b5170bd7b8a731a0c2779167d16b255208b2dcfe53a2ba0ee8",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4984,
+              "completion_tokens": 63,
+              "total_tokens": 5047,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "10,300",
+              "value": "10,300",
+              "start": 46,
+              "end": 52,
+              "clause": "What is the Date in which the Crowed was over 10,300",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "'Crowed' is a typo for 'Crowd'; the numeric threshold 10,300 matches the Crowd field.",
+              "operator": ">"
+            },
+            {
+              "surface": "Melbourne",
+              "value": "Melbourne",
+              "start": 75,
+              "end": 84,
+              "clause": "and the Home team was Melbourne?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The clause explicitly names the Home team field, and Melbourne appears there.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f69069e06b1e5dbc95dd2836764f5ff53d76cc6c732bab336841ba69c8dfd017",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5081,
+              "completion_tokens": 11,
+              "total_tokens": 5092,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "10,300",
+              "value": "10,300",
+              "start": 46,
+              "end": 52,
+              "clause": "What is the Date in which the Crowed was over 10,300",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "'Crowed' is a typo for 'Crowd'; the numeric threshold 10,300 matches the Crowd field.",
+              "operator": ">"
+            },
+            {
+              "surface": "Melbourne",
+              "value": "Melbourne",
+              "start": 75,
+              "end": 84,
+              "clause": "and the Home team was Melbourne?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The clause explicitly names the Home team field, and Melbourne appears there.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a60276c42707b1b9d64fab8f07a38690769446d7bdd4d22b550e749b3623548f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5035,
+              "completion_tokens": 15,
+              "total_tokens": 5050,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "10,300",
+              "value": "10,300",
+              "start": 46,
+              "end": 52,
+              "clause": "What is the Date in which the Crowed was over 10,300",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "'Crowed' is a typo for 'Crowd'; the numeric threshold 10,300 matches the Crowd field.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Melbourne",
+              "value": "Melbourne",
+              "start": 75,
+              "end": 84,
+              "clause": "and the Home team was Melbourne?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The clause explicitly names the Home team field, and Melbourne appears there.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "10,300",
+              "value": "10,300",
+              "start": 46,
+              "end": 52,
+              "clause": "What is the Date in which the Crowed was over 10,300",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "'Crowed' is a typo for 'Crowd'; the numeric threshold 10,300 matches the Crowd field.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Melbourne",
+              "value": "Melbourne",
+              "start": 75,
+              "end": 84,
+              "clause": "and the Home team was Melbourne?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The clause explicitly names the Home team field, and Melbourne appears there.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "10,300",
+              "value": "10,300",
+              "start": 46,
+              "end": 52,
+              "clause": "What is the Date in which the Crowed was over 10,300",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "'Crowed' is a typo for 'Crowd'; the numeric threshold 10,300 matches the Crowd field.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Melbourne",
+              "value": "Melbourne",
+              "start": 75,
+              "end": 84,
+              "clause": "and the Home team was Melbourne?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The clause explicitly names the Home team field, and Melbourne appears there.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              5,
+              1,
+              "10,300"
+            ],
+            [
+              0,
+              0,
+              "Melbourne"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "10,300",
+          "value": "10,300",
+          "start": 46,
+          "end": 52
+        },
+        {
+          "surface": "Melbourne",
+          "value": "Melbourne",
+          "start": 75,
+          "end": 84
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "10,300",
+          "value": "10,300",
+          "start": 46,
+          "end": 52,
+          "clause": "What is the Date in which the Crowed was over 10,300",
+          "columnIndex": 5,
+          "columnCandidates": [
+            5
+          ],
+          "columnMatchReason": "'Crowed' is a typo for 'Crowd'; the numeric threshold 10,300 matches the Crowd field.",
+          "operator": ">",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "Melbourne",
+          "value": "Melbourne",
+          "start": 75,
+          "end": 84,
+          "clause": "and the Home team was Melbourne?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "The clause explicitly names the Home team field, and Melbourne appears there.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          5,
+          1,
+          "10,300"
+        ],
+        [
+          0,
+          0,
+          "Melbourne"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9406
+}

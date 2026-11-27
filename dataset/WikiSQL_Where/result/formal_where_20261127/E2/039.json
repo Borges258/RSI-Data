@@ -1,0 +1,451 @@
+{
+  "arm": "E2",
+  "position": 39,
+  "example_id": "test:3196:1-2501754-4",
+  "original_index": 3196,
+  "table_id": "1-2501754-4",
+  "question": "What was the production count of \"The Mayor of Northolt\"?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        4,
+        0,
+        "\"The Mayor Of Northolt\""
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      4,
+      0,
+      "\"The Mayor Of Northolt\""
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        0,
+        "\"The Mayor Of Northolt\""
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "The Mayor of Northolt",
+        "value": "\"The Mayor Of Northolt\"",
+        "start": 34,
+        "end": 55,
+        "clause": "What was the production count of \"The Mayor of Northolt\"?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The quoted episode name refers to the Title field, and the normalized value matches a row in that column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "The Mayor of Northolt",
+        "value": "\"The Mayor Of Northolt\"",
+        "start": 34,
+        "end": 55
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What was the production count of \"The Mayor of Northolt\"?",
+      "table": {
+        "header": [
+          "Episode #",
+          "Production Count",
+          "Original Airdate",
+          "Prod. Code",
+          "Title",
+          "Viewing figures millions"
+        ],
+        "page_title": "List of My Hero episodes",
+        "types": [
+          "real",
+          "real",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "id": "1-2501754-4",
+        "section_title": "Series 4 (2003)",
+        "caption": "Series 4 (2003)",
+        "rows": [
+          [
+            1,
+            24,
+            "8 August 2003",
+            "ICEC483X",
+            "\"A Sporting Chance\"",
+            "5.19"
+          ],
+          [
+            2,
+            25,
+            "15 August 2003",
+            "ICEC481J",
+            "\"The Living Dead\"",
+            "6.26"
+          ],
+          [
+            3,
+            26,
+            "22 August 2003",
+            "ICEC490F",
+            "\"Taking The Credit\"",
+            "6.40"
+          ],
+          [
+            4,
+            27,
+            "29 August 2003",
+            "ICEC485K",
+            "\"It’s All In The Mind\"",
+            "6.19"
+          ],
+          [
+            5,
+            28,
+            "5 September 2003",
+            "ICEC486E",
+            "\"Space Virus\"",
+            "6.49"
+          ],
+          [
+            6,
+            29,
+            "12 September 2003",
+            "ICEC482D",
+            "\"The Mayor Of Northolt\"",
+            "6.32"
+          ],
+          [
+            7,
+            30,
+            "19 September 2003",
+            "ICEC487Y",
+            "\"Big\"",
+            "6.19"
+          ],
+          [
+            8,
+            31,
+            "26 September 2003",
+            "ICEC484R",
+            "\"The Consultant\"",
+            "6.21"
+          ],
+          [
+            9,
+            32,
+            "3 October 2003",
+            "ICEC489L",
+            "\"The Family Way\"",
+            "6.51"
+          ]
+        ],
+        "name": "table_2501754_4",
+        "headers": [
+          "Episode #",
+          "Production Count",
+          "Original Airdate",
+          "Prod. Code",
+          "Title",
+          "Viewing figures millions"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-2501754-4",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "The Mayor of Northolt",
+              "value": "\"The Mayor Of Northolt\"",
+              "start": 34,
+              "end": 55
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a60ffe5cc29a27ccc2f4b242f28a5e64ed0fb9f6df3e9d8565801bd1995fca33",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4934,
+              "completion_tokens": 27,
+              "total_tokens": 4961,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "The Mayor of Northolt",
+              "value": "\"The Mayor Of Northolt\"",
+              "start": 34,
+              "end": 55,
+              "clause": "What was the production count of \"The Mayor of Northolt\"?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "The Mayor of Northolt",
+              "value": "\"The Mayor Of Northolt\"",
+              "start": 34,
+              "end": 55,
+              "clause": "What was the production count of \"The Mayor of Northolt\"?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "The Mayor of Northolt",
+              "value": "\"The Mayor Of Northolt\"",
+              "start": 34,
+              "end": 55,
+              "clause": "What was the production count of \"The Mayor of Northolt\"?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The quoted episode name refers to the Title field, and the normalized value matches a row in that column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "59ddb633b5358c50f424036fce4acec8655f33375c9c924b984d51fcbd6e3b39",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4979,
+              "completion_tokens": 42,
+              "total_tokens": 5021,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "The Mayor of Northolt",
+              "value": "\"The Mayor Of Northolt\"",
+              "start": 34,
+              "end": 55,
+              "clause": "What was the production count of \"The Mayor of Northolt\"?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The quoted episode name refers to the Title field, and the normalized value matches a row in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ba2b34aac8a7fdbf0e0474e4c9d2a23743c7aa57eb9115747258c9c7508392cc",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5045,
+              "completion_tokens": 9,
+              "total_tokens": 5054,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "The Mayor of Northolt",
+              "value": "\"The Mayor Of Northolt\"",
+              "start": 34,
+              "end": 55,
+              "clause": "What was the production count of \"The Mayor of Northolt\"?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The quoted episode name refers to the Title field, and the normalized value matches a row in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "3fa6fc71e4369ca83cd9ed64243444b31d2e6fa15ce56ccbc9d3778e1eca11ef",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4996,
+              "completion_tokens": 16,
+              "total_tokens": 5012,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "The Mayor of Northolt",
+              "value": "\"The Mayor Of Northolt\"",
+              "start": 34,
+              "end": 55,
+              "clause": "What was the production count of \"The Mayor of Northolt\"?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The quoted episode name refers to the Title field, and the normalized value matches a row in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "The Mayor of Northolt",
+              "value": "\"The Mayor Of Northolt\"",
+              "start": 34,
+              "end": 55,
+              "clause": "What was the production count of \"The Mayor of Northolt\"?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The quoted episode name refers to the Title field, and the normalized value matches a row in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "The Mayor of Northolt",
+              "value": "\"The Mayor Of Northolt\"",
+              "start": 34,
+              "end": 55,
+              "clause": "What was the production count of \"The Mayor of Northolt\"?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The quoted episode name refers to the Title field, and the normalized value matches a row in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              0,
+              "\"The Mayor Of Northolt\""
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "The Mayor of Northolt",
+          "value": "\"The Mayor Of Northolt\"",
+          "start": 34,
+          "end": 55
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "The Mayor of Northolt",
+          "value": "\"The Mayor Of Northolt\"",
+          "start": 34,
+          "end": 55,
+          "clause": "What was the production count of \"The Mayor of Northolt\"?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The quoted episode name refers to the Title field, and the normalized value matches a row in that column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          4,
+          0,
+          "\"The Mayor Of Northolt\""
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7625
+}

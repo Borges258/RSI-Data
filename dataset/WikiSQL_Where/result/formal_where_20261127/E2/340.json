@@ -1,0 +1,436 @@
+{
+  "arm": "E2",
+  "position": 340,
+  "example_id": "test:4556:2-10775890-15",
+  "original_index": 4556,
+  "table_id": "2-10775890-15",
+  "question": "What was the attendance when Fitzroy played as home team?",
+  "gold_sql": {
+    "sel": 5,
+    "conds": [
+      [
+        0,
+        0,
+        "fitzroy"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "Fitzroy"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "Fitzroy"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Fitzroy",
+        "value": "Fitzroy",
+        "start": 29,
+        "end": 36,
+        "clause": "What was the attendance when Fitzroy played as home team?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "The question explicitly says Fitzroy played as the home team, matching the Home team field.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Fitzroy",
+        "value": "Fitzroy",
+        "start": 29,
+        "end": 36
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What was the attendance when Fitzroy played as home team?",
+      "table": {
+        "header": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ],
+        "page_title": "1960 VFL season",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 10775890,
+        "id": "2-10775890-15",
+        "section_title": "Round 15",
+        "rows": [
+          [
+            "North Melbourne",
+            "14.16 (100)",
+            "South Melbourne",
+            "9.20 (74)",
+            "Arden Street Oval",
+            "10,000",
+            "6 August 1960"
+          ],
+          [
+            "Fitzroy",
+            "13.13 (91)",
+            "Richmond",
+            "10.11 (71)",
+            "Brunswick Street Oval",
+            "14,232",
+            "6 August 1960"
+          ],
+          [
+            "Essendon",
+            "14.11 (95)",
+            "Footscray",
+            "8.10 (58)",
+            "Windy Hill",
+            "21,000",
+            "6 August 1960"
+          ],
+          [
+            "St Kilda",
+            "9.16 (70)",
+            "Geelong",
+            "13.9 (87)",
+            "Junction Oval",
+            "16,300",
+            "6 August 1960"
+          ],
+          [
+            "Melbourne",
+            "16.15 (111)",
+            "Collingwood",
+            "9.11 (65)",
+            "MCG",
+            "81,099",
+            "6 August 1960"
+          ],
+          [
+            "Hawthorn",
+            "13.10 (88)",
+            "Carlton",
+            "9.7 (61)",
+            "Glenferrie Oval",
+            "16,000",
+            "6 August 1960"
+          ]
+        ],
+        "caption": "Round 15",
+        "headers": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-10775890-15",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Fitzroy",
+              "value": "Fitzroy",
+              "start": 29,
+              "end": 36
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "9224ad22e00e37c396fdf6cff2248b6116ab9694eb5b73011741fbde88cc484e",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4909,
+              "completion_tokens": 21,
+              "total_tokens": 4930,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Fitzroy",
+              "value": "Fitzroy",
+              "start": 29,
+              "end": 36,
+              "clause": "What was the attendance when Fitzroy played as home team?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Fitzroy",
+              "value": "Fitzroy",
+              "start": 29,
+              "end": 36,
+              "clause": "What was the attendance when Fitzroy played as home team?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Fitzroy",
+              "value": "Fitzroy",
+              "start": 29,
+              "end": 36,
+              "clause": "What was the attendance when Fitzroy played as home team?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly says Fitzroy played as the home team, matching the Home team field."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d9f4f0078cd7c9279f75d3d6cf71f73143c7759f68f299539b6b5a6bbdcb1975",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4946,
+              "completion_tokens": 39,
+              "total_tokens": 4985,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Fitzroy",
+              "value": "Fitzroy",
+              "start": 29,
+              "end": 36,
+              "clause": "What was the attendance when Fitzroy played as home team?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly says Fitzroy played as the home team, matching the Home team field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ca8be83479b5998a1a057058e5c090db7ead615c30e4bc579467f3ff21b2f2d4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5009,
+              "completion_tokens": 9,
+              "total_tokens": 5018,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Fitzroy",
+              "value": "Fitzroy",
+              "start": 29,
+              "end": 36,
+              "clause": "What was the attendance when Fitzroy played as home team?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly says Fitzroy played as the home team, matching the Home team field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "bd21fa060ca7651b40e0a64d21c03d7d2031184212b8c3df1fc061b59413c34e",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4960,
+              "completion_tokens": 12,
+              "total_tokens": 4972,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Fitzroy",
+              "value": "Fitzroy",
+              "start": 29,
+              "end": 36,
+              "clause": "What was the attendance when Fitzroy played as home team?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly says Fitzroy played as the home team, matching the Home team field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Fitzroy",
+              "value": "Fitzroy",
+              "start": 29,
+              "end": 36,
+              "clause": "What was the attendance when Fitzroy played as home team?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly says Fitzroy played as the home team, matching the Home team field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Fitzroy",
+              "value": "Fitzroy",
+              "start": 29,
+              "end": 36,
+              "clause": "What was the attendance when Fitzroy played as home team?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly says Fitzroy played as the home team, matching the Home team field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              "Fitzroy"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Fitzroy",
+          "value": "Fitzroy",
+          "start": 29,
+          "end": 36
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Fitzroy",
+          "value": "Fitzroy",
+          "start": 29,
+          "end": 36,
+          "clause": "What was the attendance when Fitzroy played as home team?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "The question explicitly says Fitzroy played as the home team, matching the Home team field.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          0,
+          0,
+          "Fitzroy"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8203
+}

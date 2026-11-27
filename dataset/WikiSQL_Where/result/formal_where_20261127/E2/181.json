@@ -1,0 +1,469 @@
+{
+  "arm": "E2",
+  "position": 181,
+  "example_id": "test:14626:2-13023925-2",
+  "original_index": 14626,
+  "table_id": "2-13023925-2",
+  "question": "What was the record after the game against the St. Louis Cardinals?",
+  "gold_sql": {
+    "sel": 5,
+    "conds": [
+      [
+        2,
+        0,
+        "st. louis cardinals"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "St. Louis Cardinals"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "St. Louis Cardinals"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "St. Louis Cardinals",
+        "value": "St. Louis Cardinals",
+        "start": 47,
+        "end": 66,
+        "clause": "What was the record after the game against the St. Louis Cardinals?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The team played against is identified by the Opponent field; rows include both 'at St. Louis Cardinals' and 'St. Louis Cardinals'.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "St. Louis Cardinals",
+        "value": "St. Louis Cardinals",
+        "start": 47,
+        "end": 66
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What was the record after the game against the St. Louis Cardinals?",
+      "table": {
+        "header": [
+          "Week",
+          "Date",
+          "Opponent",
+          "Result",
+          "Game site",
+          "Record",
+          "Attendance"
+        ],
+        "page_title": "1982 Washington Redskins season",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "real"
+        ],
+        "page_id": 13023925,
+        "id": "2-13023925-2",
+        "section_title": "Schedule",
+        "rows": [
+          [
+            "1",
+            "September 12, 1982",
+            "at Philadelphia Eagles",
+            "W 37-34 (OT)",
+            "Veterans Stadium",
+            "1–0",
+            "68,885"
+          ],
+          [
+            "2",
+            "September 19, 1982",
+            "at Tampa Bay Buccaneers",
+            "W 21-13",
+            "Tampa Stadium",
+            "2–0",
+            "66,187"
+          ],
+          [
+            "10",
+            "November 21, 1982",
+            "at New York Giants",
+            "W 27-17",
+            "Giants Stadium",
+            "3–0",
+            "70,766"
+          ],
+          [
+            "11",
+            "November 28, 1982",
+            "Philadelphia Eagles",
+            "W 13-9",
+            "RFK Stadium",
+            "4–0",
+            "48,313"
+          ],
+          [
+            "12",
+            "December 5, 1982",
+            "Dallas Cowboys",
+            "L 10-24",
+            "RFK Stadium",
+            "4–1",
+            "54,633"
+          ],
+          [
+            "13",
+            "December 12, 1982",
+            "at St. Louis Cardinals",
+            "W 12-7",
+            "Busch Memorial Stadium",
+            "5–1",
+            "35,308"
+          ],
+          [
+            "14",
+            "December 19, 1982",
+            "New York Giants",
+            "W 15-14",
+            "RFK Stadium",
+            "6–1",
+            "50,030"
+          ],
+          [
+            "15",
+            "December 26, 1982",
+            "at New Orleans Saints",
+            "W 27-10",
+            "Louisiana Superdome",
+            "7–1",
+            "48,667"
+          ],
+          [
+            "16",
+            "January 2, 1983",
+            "St. Louis Cardinals",
+            "W 28-0",
+            "RFK Stadium",
+            "8–1",
+            "55,045"
+          ]
+        ],
+        "caption": "Schedule",
+        "headers": [
+          "Week",
+          "Date",
+          "Opponent",
+          "Result",
+          "Game site",
+          "Record",
+          "Attendance"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-13023925-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "St. Louis Cardinals",
+              "value": "St. Louis Cardinals",
+              "start": 47,
+              "end": 66
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "136c97009a589dbe971b5fca5ae0edbe916f00cc7596bc18a8412be6d50505d1",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4984,
+              "completion_tokens": 23,
+              "total_tokens": 5007,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "St. Louis Cardinals",
+              "value": "St. Louis Cardinals",
+              "start": 47,
+              "end": 66,
+              "clause": "What was the record after the game against the St. Louis Cardinals?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "St. Louis Cardinals",
+              "value": "St. Louis Cardinals",
+              "start": 47,
+              "end": 66,
+              "clause": "What was the record after the game against the St. Louis Cardinals?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "St. Louis Cardinals",
+              "value": "St. Louis Cardinals",
+              "start": 47,
+              "end": 66,
+              "clause": "What was the record after the game against the St. Louis Cardinals?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The team played against is identified by the Opponent field; rows include both 'at St. Louis Cardinals' and 'St. Louis Cardinals'."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "01432a6b7c11ebb01308ed10d4596dd2f20935c9601e4a840b1c204d28d33e20",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5025,
+              "completion_tokens": 50,
+              "total_tokens": 5075,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "St. Louis Cardinals",
+              "value": "St. Louis Cardinals",
+              "start": 47,
+              "end": 66,
+              "clause": "What was the record after the game against the St. Louis Cardinals?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The team played against is identified by the Opponent field; rows include both 'at St. Louis Cardinals' and 'St. Louis Cardinals'.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "9286515394bcc15cbd5664edff35b39ce492bf96d0ec39edeef32ae497a73d55",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5100,
+              "completion_tokens": 39,
+              "total_tokens": 5139,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 28
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "St. Louis Cardinals",
+              "value": "St. Louis Cardinals",
+              "start": 47,
+              "end": 66,
+              "clause": "What was the record after the game against the St. Louis Cardinals?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The team played against is identified by the Opponent field; rows include both 'at St. Louis Cardinals' and 'St. Louis Cardinals'.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f138671e8e938f70cf62dd7fb6a67fefbee3f2d196f8d420d5c880aaa49ab4ff",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5051,
+              "completion_tokens": 56,
+              "total_tokens": 5107,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 41
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "St. Louis Cardinals",
+              "value": "St. Louis Cardinals",
+              "start": 47,
+              "end": 66,
+              "clause": "What was the record after the game against the St. Louis Cardinals?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The team played against is identified by the Opponent field; rows include both 'at St. Louis Cardinals' and 'St. Louis Cardinals'.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "St. Louis Cardinals",
+              "value": "St. Louis Cardinals",
+              "start": 47,
+              "end": 66,
+              "clause": "What was the record after the game against the St. Louis Cardinals?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The team played against is identified by the Opponent field; rows include both 'at St. Louis Cardinals' and 'St. Louis Cardinals'.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "St. Louis Cardinals",
+              "value": "St. Louis Cardinals",
+              "start": 47,
+              "end": 66,
+              "clause": "What was the record after the game against the St. Louis Cardinals?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The team played against is identified by the Opponent field; rows include both 'at St. Louis Cardinals' and 'St. Louis Cardinals'.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "St. Louis Cardinals"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "St. Louis Cardinals",
+          "value": "St. Louis Cardinals",
+          "start": 47,
+          "end": 66
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "St. Louis Cardinals",
+          "value": "St. Louis Cardinals",
+          "start": 47,
+          "end": 66,
+          "clause": "What was the record after the game against the St. Louis Cardinals?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The team played against is identified by the Opponent field; rows include both 'at St. Louis Cardinals' and 'St. Louis Cardinals'.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          2,
+          0,
+          "St. Louis Cardinals"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9516
+}

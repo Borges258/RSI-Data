@@ -1,0 +1,629 @@
+{
+  "arm": "E2",
+  "position": 305,
+  "example_id": "test:11942:2-10824095-13",
+  "original_index": 11942,
+  "table_id": "2-10824095-13",
+  "question": "What away team has more than 23,365 spectators and Carlton as the home team?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        5,
+        1,
+        "23,365"
+      ],
+      [
+        0,
+        0,
+        "carlton"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [],
+  "status": "FLOW_ERROR",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "FLOW_ERROR",
+    "stage": "WHERE_VALUE_EXTRACT",
+    "errors": [
+      "model output count does not match conditions for WHERE_VALUE_EXTRACT"
+    ],
+    "conds": [],
+    "halt": true,
+    "completed": false,
+    "conditions": [
+      {
+        "surface": "more than 23,365",
+        "value": "23,365",
+        "start": 19,
+        "end": 35,
+        "clause": "What away team has more than 23,365 spectators",
+        "columnIndex": 5,
+        "columnCandidates": [
+          5
+        ],
+        "columnMatchReason": "The threshold refers to spectators, which maps to the Crowd column; the qualifying row has 30,346.",
+        "operator": ">"
+      },
+      {
+        "surface": "Carlton",
+        "value": "Carlton",
+        "start": 51,
+        "end": 58,
+        "clause": "and Carlton as the home team?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "Carlton is explicitly identified as the home team, matching Home team.",
+        "operator": "="
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "more than 23,365",
+        "value": "23,365",
+        "start": 19,
+        "end": 35
+      },
+      {
+        "surface": "Carlton",
+        "value": "Carlton",
+        "start": 51,
+        "end": 58
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What away team has more than 23,365 spectators and Carlton as the home team?",
+      "table": {
+        "header": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ],
+        "page_title": "1982 VFL season",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 10824095,
+        "id": "2-10824095-13",
+        "section_title": "Round 13",
+        "rows": [
+          [
+            "Footscray",
+            "16.11 (107)",
+            "Hawthorn",
+            "12.20 (92)",
+            "Western Oval",
+            "10,530",
+            "19 June 1982"
+          ],
+          [
+            "Carlton",
+            "12.26 (98)",
+            "Collingwood",
+            "9.17 (71)",
+            "Princes Park",
+            "30,346",
+            "19 June 1982"
+          ],
+          [
+            "Swans",
+            "30.19 (199)",
+            "St Kilda",
+            "15.13 (103)",
+            "SCG",
+            "10,034",
+            "19 June 1982"
+          ],
+          [
+            "Melbourne",
+            "21.8 (134)",
+            "Geelong",
+            "10.10 (70)",
+            "MCG",
+            "23,365",
+            "19 June 1982"
+          ],
+          [
+            "North Melbourne",
+            "13.10 (88)",
+            "Fitzroy",
+            "11.21 (87)",
+            "Arden Street Oval",
+            "16,000",
+            "19 June 1982"
+          ],
+          [
+            "Richmond",
+            "12.10 (82)",
+            "Essendon",
+            "10.5 (65)",
+            "VFL Park",
+            "64,319",
+            "19 June 1982"
+          ]
+        ],
+        "caption": "Round 13",
+        "headers": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-10824095-13",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 5,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "more than 23,365",
+              "value": "23,365",
+              "start": 19,
+              "end": 35
+            },
+            {
+              "surface": "Carlton",
+              "value": "Carlton",
+              "start": 51,
+              "end": 58
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "3d998a6e55c564499bdc9fead2f6c613f74abe37c055af998abfd169116321ec",
+            "knowledgeIds": [],
+            "usage": {
+              "attribution": {
+                "items": {
+                  "msg_0ec6eda6e81fd813016b0904703f2c87d2855d11faef266557": {
+                    "input_tokens": 377,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 377,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0ec6eda6e81fd813016b0904703f2c87d294ab17bd01eb5f53": {
+                    "input_tokens": 64,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 64,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0ec6eda6e81fd813016b0904703f2c87d2ad764ca135582f4c": {
+                    "input_tokens": 86,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 86,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0ec6eda6e81fd813016b09047084c487d29d5e49fa886acfa4": {
+                    "input_tokens": 2,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 34,
+                    "content": [
+                      {
+                        "input_tokens": 2,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 34
+                      }
+                    ]
+                  }
+                },
+                "request_fields": {
+                  "instructions": {
+                    "input_tokens": 4380,
+                    "cached_tokens": 4000,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0
+                  }
+                }
+              },
+              "prompt_tokens": 10823,
+              "completion_tokens": 34,
+              "total_tokens": 10857,
+              "prompt_tokens_details": {
+                "cache_write_tokens_details": {
+                  "ttl_30m_tokens": 0,
+                  "ttl_12h_tokens": 0
+                },
+                "cached_tokens": 9600
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "more than 23,365",
+              "value": "23,365",
+              "start": 19,
+              "end": 35,
+              "clause": "What away team has more than 23,365 spectators"
+            },
+            {
+              "surface": "Carlton",
+              "value": "Carlton",
+              "start": 51,
+              "end": 58,
+              "clause": "and Carlton as the home team?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "more than 23,365",
+              "value": "23,365",
+              "start": 19,
+              "end": 35,
+              "clause": "What away team has more than 23,365 spectators"
+            },
+            {
+              "surface": "Carlton",
+              "value": "Carlton",
+              "start": 51,
+              "end": 58,
+              "clause": "and Carlton as the home team?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "more than 23,365",
+              "value": "23,365",
+              "start": 19,
+              "end": 35,
+              "clause": "What away team has more than 23,365 spectators",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The threshold refers to spectators, which maps to the Crowd column; the qualifying row has 30,346."
+            },
+            {
+              "surface": "Carlton",
+              "value": "Carlton",
+              "start": 51,
+              "end": 58,
+              "clause": "and Carlton as the home team?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Carlton is explicitly identified as the home team, matching Home team."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a384d65532ab1a0c2c2ff75f49e3db28db75fb2df44cc300de2c10278dbb573c",
+            "knowledgeIds": [],
+            "usage": {
+              "attribution": {
+                "items": {
+                  "msg_002cef5e4ec1df10016b090473bdd887d282becebddc8d2c1b": {
+                    "input_tokens": 377,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 377,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_002cef5e4ec1df10016b090473bdd887d288d42b02f5a9502a": {
+                    "input_tokens": 154,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 154,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_002cef5e4ec1df10016b090473bdd887d2b11d724c03965a08": {
+                    "input_tokens": 64,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 64,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_002cef5e4ec1df10016b09047540fc87d2a9aecb7bf6d6192b": {
+                    "input_tokens": 0,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 63,
+                    "content": [
+                      {
+                        "input_tokens": 0,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 63
+                      }
+                    ]
+                  },
+                  "rs_002cef5e4ec1df10016b09047529d887d2a12a5a6333a1e3ae": {
+                    "input_tokens": 2,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 63
+                  }
+                },
+                "request_fields": {
+                  "instructions": {
+                    "input_tokens": 4380,
+                    "cached_tokens": 4000,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0
+                  }
+                }
+              },
+              "prompt_tokens": 10891,
+              "completion_tokens": 126,
+              "total_tokens": 11017,
+              "prompt_tokens_details": {
+                "cache_write_tokens_details": {
+                  "ttl_30m_tokens": 0,
+                  "ttl_12h_tokens": 0
+                },
+                "cached_tokens": 9600
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 63
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "more than 23,365",
+              "value": "23,365",
+              "start": 19,
+              "end": 35,
+              "clause": "What away team has more than 23,365 spectators",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The threshold refers to spectators, which maps to the Crowd column; the qualifying row has 30,346.",
+              "operator": ">"
+            },
+            {
+              "surface": "Carlton",
+              "value": "Carlton",
+              "start": 51,
+              "end": 58,
+              "clause": "and Carlton as the home team?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Carlton is explicitly identified as the home team, matching Home team.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ce9bccd63b4086524d5a0c8f6f36788c290ffdf8ac0538cc84958a1026996e38",
+            "knowledgeIds": [],
+            "usage": {
+              "attribution": {
+                "items": {
+                  "msg_0f8d23d6b906422e016b090478414887d193bfdef7a896b57c": {
+                    "input_tokens": 377,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 377,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0f8d23d6b906422e016b090478414887d19b680bb726b96a0a": {
+                    "input_tokens": 64,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 64,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0f8d23d6b906422e016b090478414887d1ac840e06be5aba30": {
+                    "input_tokens": 250,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 250,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0f8d23d6b906422e016b090478a03487d183b69a6c9acb6fc4": {
+                    "input_tokens": 2,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 11,
+                    "content": [
+                      {
+                        "input_tokens": 2,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 11
+                      }
+                    ]
+                  }
+                },
+                "request_fields": {
+                  "instructions": {
+                    "input_tokens": 4380,
+                    "cached_tokens": 4000,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0
+                  }
+                }
+              },
+              "prompt_tokens": 10987,
+              "completion_tokens": 11,
+              "total_tokens": 10998,
+              "prompt_tokens_details": {
+                "cache_write_tokens_details": {
+                  "ttl_30m_tokens": 0,
+                  "ttl_12h_tokens": 0
+                },
+                "cached_tokens": 9600
+              }
+            }
+          }
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "FLOW_ERROR",
+        "stage": "WHERE_VALUE_EXTRACT",
+        "halt": true,
+        "completed": false,
+        "errors": [
+          "model output count does not match conditions for WHERE_VALUE_EXTRACT"
+        ],
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "more than 23,365",
+          "value": "23,365",
+          "start": 19,
+          "end": 35
+        },
+        {
+          "surface": "Carlton",
+          "value": "Carlton",
+          "start": 51,
+          "end": 58
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "more than 23,365",
+          "value": "23,365",
+          "start": 19,
+          "end": 35,
+          "clause": "What away team has more than 23,365 spectators",
+          "columnIndex": 5,
+          "columnCandidates": [
+            5
+          ],
+          "columnMatchReason": "The threshold refers to spectators, which maps to the Crowd column; the qualifying row has 30,346.",
+          "operator": ">"
+        },
+        {
+          "surface": "Carlton",
+          "value": "Carlton",
+          "start": 51,
+          "end": 58,
+          "clause": "and Carlton as the home team?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "Carlton is explicitly identified as the home team, matching Home team.",
+          "operator": "="
+        }
+      ],
+      "count": 2
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": false,
+  "elapsed_ms": 15735
+}

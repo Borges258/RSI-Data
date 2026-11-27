@@ -1,0 +1,93 @@
+{
+  "arm": "E1",
+  "position": 464,
+  "example_id": "test:5003:2-14874370-1",
+  "original_index": 5003,
+  "table_id": "2-14874370-1",
+  "question": "What is the total number of Year that has an Album of Remixes?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        2,
+        0,
+        "remixes"
+      ]
+    ],
+    "agg": 4
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "RemixeS"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": "gpt-5.6-sol",
+  "usage": {
+    "prompt_tokens": 9695,
+    "completion_tokens": 50,
+    "total_tokens": 9745,
+    "prompt_tokens_details": {
+      "cached_tokens": 4224
+    }
+  },
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "RemixeS"
+      ]
+    ],
+    "explanation": "The question filters rows where Album equals the table value RemixeS; Year is the requested output, not a filter.",
+    "version": "wikisql-where-prior-v1",
+    "tableId": "2-14874370-1",
+    "knowledgeIds": [
+      "g-eq",
+      "g-gt",
+      "g-lt",
+      "g-inclusive",
+      "g-literal",
+      "g-threshold",
+      "g-and",
+      "g-or",
+      "g-column",
+      "g-count",
+      "g-ambiguous",
+      "t-2-14874370-1-field-0",
+      "t-2-14874370-1-field-1",
+      "t-2-14874370-1-field-2",
+      "t-2-14874370-1-field-3",
+      "t-2-14874370-1-field-4",
+      "d-implicit-eq",
+      "d-explicit-eq",
+      "d-gt",
+      "d-lt-and-gt",
+      "d-with-two",
+      "d-literal-form",
+      "p-text",
+      "p-number",
+      "p-multi",
+      "p-unsupported"
+    ],
+    "promptSha256": "081b6b637bca0949fb07b224929ed531754bc394c3802d573e3a2fd85bd071c0",
+    "model": "gpt-5.6-sol",
+    "usage": {
+      "prompt_tokens": 9695,
+      "completion_tokens": 50,
+      "total_tokens": 9745,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      }
+    },
+    "latencyMs": 2252
+  },
+  "source": "where_prior_parse",
+  "safe_completed": true,
+  "elapsed_ms": 2281
+}

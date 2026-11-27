@@ -1,0 +1,416 @@
+{
+  "arm": "E2",
+  "position": 48,
+  "example_id": "test:3539:1-26263954-1",
+  "original_index": 3539,
+  "table_id": "1-26263954-1",
+  "question": "how many kana spelling when english is mount fuji ",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        0,
+        0,
+        "Mount Fuji"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "Mount Fuji"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "Mount Fuji"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "mount fuji",
+        "value": "Mount Fuji",
+        "start": 39,
+        "end": 49,
+        "clause": "how many kana spelling when english is mount fuji",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "The question explicitly says \"when english is mount fuji,\" and \"Mount Fuji\" appears in the English column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "mount fuji",
+        "value": "Mount Fuji",
+        "start": 39,
+        "end": 49
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "how many kana spelling when english is mount fuji ",
+      "table": {
+        "id": "1-26263954-1",
+        "header": [
+          "English",
+          "Japanese",
+          "Kana spelling",
+          "Revised Hepburn",
+          "Kunrei-shiki",
+          "Nihon-shiki"
+        ],
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "rows": [
+          [
+            "Roman characters",
+            "ローマ字",
+            "ローマじ",
+            "rōmaji",
+            "rômazi",
+            "rômazi"
+          ],
+          [
+            "Mount Fuji",
+            "富士山",
+            "ふじさん",
+            "Fujisan",
+            "Huzisan",
+            "Huzisan"
+          ],
+          [
+            "tea",
+            "お茶",
+            "おちゃ",
+            "ocha",
+            "otya",
+            "otya"
+          ],
+          [
+            "governor",
+            "知事",
+            "ちじ",
+            "chiji",
+            "tizi",
+            "tizi"
+          ],
+          [
+            "to shrink",
+            "縮む",
+            "ちぢむ",
+            "chijimu",
+            "tizimu",
+            "tidimu"
+          ]
+        ],
+        "name": "table_26263954_1",
+        "headers": [
+          "English",
+          "Japanese",
+          "Kana spelling",
+          "Revised Hepburn",
+          "Kunrei-shiki",
+          "Nihon-shiki"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-26263954-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "mount fuji",
+              "value": "Mount Fuji",
+              "start": 39,
+              "end": 49
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d819cfcf179ae324bf2bbb2ccd8a48b1bfca72e9238d5add44d84c929ef1dda8",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4782,
+              "completion_tokens": 20,
+              "total_tokens": 4802,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "mount fuji",
+              "value": "Mount Fuji",
+              "start": 39,
+              "end": 49,
+              "clause": "how many kana spelling when english is mount fuji"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "mount fuji",
+              "value": "Mount Fuji",
+              "start": 39,
+              "end": 49,
+              "clause": "how many kana spelling when english is mount fuji"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "mount fuji",
+              "value": "Mount Fuji",
+              "start": 39,
+              "end": 49,
+              "clause": "how many kana spelling when english is mount fuji",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly says \"when english is mount fuji,\" and \"Mount Fuji\" appears in the English column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "dee9a4a9d63bbb64a07ccb694b9c2cf8ef4cf3414ce3c2d96d036d71d61e754f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4816,
+              "completion_tokens": 44,
+              "total_tokens": 4860,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "mount fuji",
+              "value": "Mount Fuji",
+              "start": 39,
+              "end": 49,
+              "clause": "how many kana spelling when english is mount fuji",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly says \"when english is mount fuji,\" and \"Mount Fuji\" appears in the English column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "05e6882986d4e62542a9d90bab9b8d8f9b7721b075e2ea2cb3184260a913a323",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4884,
+              "completion_tokens": 9,
+              "total_tokens": 4893,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "mount fuji",
+              "value": "Mount Fuji",
+              "start": 39,
+              "end": 49,
+              "clause": "how many kana spelling when english is mount fuji",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly says \"when english is mount fuji,\" and \"Mount Fuji\" appears in the English column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "5d261102abc955388ad61d13288cc21958222ce96223c4981f7f94c25277d82a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4835,
+              "completion_tokens": 11,
+              "total_tokens": 4846,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "mount fuji",
+              "value": "Mount Fuji",
+              "start": 39,
+              "end": 49,
+              "clause": "how many kana spelling when english is mount fuji",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly says \"when english is mount fuji,\" and \"Mount Fuji\" appears in the English column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "mount fuji",
+              "value": "Mount Fuji",
+              "start": 39,
+              "end": 49,
+              "clause": "how many kana spelling when english is mount fuji",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly says \"when english is mount fuji,\" and \"Mount Fuji\" appears in the English column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "mount fuji",
+              "value": "Mount Fuji",
+              "start": 39,
+              "end": 49,
+              "clause": "how many kana spelling when english is mount fuji",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly says \"when english is mount fuji,\" and \"Mount Fuji\" appears in the English column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              "Mount Fuji"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "mount fuji",
+          "value": "Mount Fuji",
+          "start": 39,
+          "end": 49
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "mount fuji",
+          "value": "Mount Fuji",
+          "start": 39,
+          "end": 49,
+          "clause": "how many kana spelling when english is mount fuji",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "The question explicitly says \"when english is mount fuji,\" and \"Mount Fuji\" appears in the English column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          0,
+          0,
+          "Mount Fuji"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7140
+}

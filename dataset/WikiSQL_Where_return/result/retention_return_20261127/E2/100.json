@@ -1,0 +1,443 @@
+{
+  "arm": "E2",
+  "position": 100,
+  "example_id": "test:3407:1-25718552-2",
+  "original_index": 3407,
+  "table_id": "1-25718552-2",
+  "question": "What is the number of wins when ends won is 30?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        5,
+        0,
+        30
+      ]
+    ],
+    "agg": 1
+  },
+  "prediction_conds": [
+    [
+      5,
+      0,
+      30
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        5,
+        0,
+        30
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "30",
+        "value": 30,
+        "start": 44,
+        "end": 46,
+        "clause": "What is the number of wins when ends won is 30?",
+        "columnIndex": 5,
+        "columnCandidates": [
+          5
+        ],
+        "columnMatchReason": "The question explicitly says \"ends won is 30,\" matching the \"Ends Won\" header; the row for Heather Strong has 30 in that column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "30",
+        "value": "30",
+        "start": 44,
+        "end": 46
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the number of wins when ends won is 30?",
+      "table": {
+        "header": [
+          "Skip (Club)",
+          "W",
+          "L",
+          "PF",
+          "PA",
+          "Ends Won",
+          "Ends Lost",
+          "Blank Ends",
+          "Stolen Ends"
+        ],
+        "page_title": "2010 Newfoundland and Labrador Scotties Tournament of Hearts",
+        "types": [
+          "text",
+          "real",
+          "real",
+          "real",
+          "real",
+          "real",
+          "real",
+          "real",
+          "real"
+        ],
+        "id": "1-25718552-2",
+        "section_title": "Standings",
+        "caption": "Standings",
+        "rows": [
+          [
+            "Shelley Nichols (Bally Haly)",
+            5,
+            0,
+            45,
+            30,
+            25,
+            19,
+            1,
+            8
+          ],
+          [
+            "Heather Strong (ReMax)",
+            4,
+            2,
+            49,
+            30,
+            30,
+            18,
+            3,
+            11
+          ],
+          [
+            "Stacie Devereaux (Bally Haly)",
+            4,
+            2,
+            48,
+            34,
+            22,
+            23,
+            4,
+            3
+          ],
+          [
+            "Laura Phillips (ReMax)",
+            2,
+            3,
+            34,
+            36,
+            20,
+            21,
+            3,
+            3
+          ],
+          [
+            "Cindy Miller (Bally Haly)",
+            1,
+            4,
+            17,
+            38,
+            14,
+            22,
+            6,
+            4
+          ]
+        ],
+        "name": "table_25718552_2",
+        "headers": [
+          "Skip (Club)",
+          "W",
+          "L",
+          "PF",
+          "PA",
+          "Ends Won",
+          "Ends Lost",
+          "Blank Ends",
+          "Stolen Ends"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-25718552-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "30",
+              "value": "30",
+              "start": 44,
+              "end": 46
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "1eaa22b0ec28a3c20bd3a09993550dcc7fa67fcdb18adbe4cdd3f3c01a0ee211",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4837,
+              "completion_tokens": 17,
+              "total_tokens": 4854,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "30",
+              "value": "30",
+              "start": 44,
+              "end": 46,
+              "clause": "What is the number of wins when ends won is 30?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "30",
+              "value": "30",
+              "start": 44,
+              "end": 46,
+              "clause": "What is the number of wins when ends won is 30?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "30",
+              "value": "30",
+              "start": 44,
+              "end": 46,
+              "clause": "What is the number of wins when ends won is 30?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly says \"ends won is 30,\" matching the \"Ends Won\" header; the row for Heather Strong has 30 in that column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "29f30d3d2c65de9839f9cbffe3e137f9d7186e814614e8feac638397a0590c02",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4871,
+              "completion_tokens": 52,
+              "total_tokens": 4923,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "30",
+              "value": "30",
+              "start": 44,
+              "end": 46,
+              "clause": "What is the number of wins when ends won is 30?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly says \"ends won is 30,\" matching the \"Ends Won\" header; the row for Heather Strong has 30 in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "65b8b446a6023baab9c3ca91dd1dc7e5692f1f24da211d0301833c7e7ad24385",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4947,
+              "completion_tokens": 9,
+              "total_tokens": 4956,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "30",
+              "value": 30,
+              "start": 44,
+              "end": 46,
+              "clause": "What is the number of wins when ends won is 30?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly says \"ends won is 30,\" matching the \"Ends Won\" header; the row for Heather Strong has 30 in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b7fe07528621e338d154cbe63617a7dd4655904cff16b1ec9307fc1a88d9b850",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4898,
+              "completion_tokens": 9,
+              "total_tokens": 4907,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "30",
+              "value": "30",
+              "start": 44,
+              "end": 46,
+              "clause": "What is the number of wins when ends won is 30?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly says \"ends won is 30,\" matching the \"Ends Won\" header; the row for Heather Strong has 30 in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "30",
+              "value": 30,
+              "start": 44,
+              "end": 46,
+              "clause": "What is the number of wins when ends won is 30?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly says \"ends won is 30,\" matching the \"Ends Won\" header; the row for Heather Strong has 30 in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "30",
+              "value": 30,
+              "start": 44,
+              "end": 46,
+              "clause": "What is the number of wins when ends won is 30?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly says \"ends won is 30,\" matching the \"Ends Won\" header; the row for Heather Strong has 30 in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              5,
+              0,
+              30
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "30",
+          "value": "30",
+          "start": 44,
+          "end": 46
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "30",
+          "value": 30,
+          "start": 44,
+          "end": 46,
+          "clause": "What is the number of wins when ends won is 30?",
+          "columnIndex": 5,
+          "columnCandidates": [
+            5
+          ],
+          "columnMatchReason": "The question explicitly says \"ends won is 30,\" matching the \"Ends Won\" header; the row for Heather Strong has 30 in that column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          5,
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9031
+}

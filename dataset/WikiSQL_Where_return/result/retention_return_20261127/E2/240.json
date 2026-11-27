@@ -1,0 +1,1045 @@
+{
+  "arm": "E2",
+  "position": 240,
+  "example_id": "test:9612:2-172352-2",
+  "original_index": 9612,
+  "table_id": "2-172352-2",
+  "question": "What is Cabinet, when Year is after 1981, when Fractievoorzitter is \"Hans Van Mierlo\", and when Chair is \"W.I.J.M. Vrijhoef\"?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        0,
+        1,
+        1981
+      ],
+      [
+        2,
+        0,
+        "hans van mierlo"
+      ],
+      [
+        4,
+        0,
+        "w.i.j.m. vrijhoef"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      1,
+      1981
+    ],
+    [
+      2,
+      0,
+      "Hans van Mierlo"
+    ],
+    [
+      4,
+      0,
+      "W.I.J.M. Vrijhoef"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        1,
+        1981
+      ],
+      [
+        2,
+        0,
+        "Hans van Mierlo"
+      ],
+      [
+        4,
+        0,
+        "W.I.J.M. Vrijhoef"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "after 1981",
+        "value": 1981,
+        "start": 30,
+        "end": 40,
+        "clause": "when Year is after 1981, when Fractievoorzitter is \"Hans Van Mierlo\",",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "Explicitly qualified by Year; numeric rows support comparison after 1981.",
+        "operator": ">",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "Hans Van Mierlo",
+        "value": "Hans van Mierlo",
+        "start": 69,
+        "end": 84,
+        "clause": "when Fractievoorzitter is \"Hans Van Mierlo\",",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "Explicitly qualified by Fractievoorzitter; matching rows contain Hans van Mierlo in this column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "W.I.J.M. Vrijhoef",
+        "value": "W.I.J.M. Vrijhoef",
+        "start": 106,
+        "end": 123,
+        "clause": "and when Chair is \"W.I.J.M. Vrijhoef\"?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "Explicitly qualified by Chair; matching rows contain W.I.J.M. Vrijhoef in this column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "after 1981",
+        "value": "1981",
+        "start": 30,
+        "end": 40
+      },
+      {
+        "surface": "Hans Van Mierlo",
+        "value": "Hans Van Mierlo",
+        "start": 69,
+        "end": 84
+      },
+      {
+        "surface": "W.I.J.M. Vrijhoef",
+        "value": "W.I.J.M. Vrijhoef",
+        "start": 106,
+        "end": 123
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is Cabinet, when Year is after 1981, when Fractievoorzitter is \"Hans Van Mierlo\", and when Chair is \"W.I.J.M. Vrijhoef\"?",
+      "table": {
+        "header": [
+          "Year",
+          "Lijsttrekker",
+          "Fractievoorzitter",
+          "Cabinet",
+          "Chair"
+        ],
+        "page_title": "Democrats 66",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 172352,
+        "id": "2-172352-2",
+        "section_title": "Representation",
+        "rows": [
+          [
+            "1966",
+            "no elections",
+            "none",
+            "extra-parliamentary",
+            "Hans van Mierlo"
+          ],
+          [
+            "1967",
+            "Hans van Mierlo",
+            "Hans van Mierlo",
+            "opposition",
+            "G. Ringalda"
+          ],
+          [
+            "1968",
+            "no elections",
+            "Hans van Mierlo",
+            "opposition",
+            "H.J. Lookeren-Campagne"
+          ],
+          [
+            "1969",
+            "no elections",
+            "Hans van Mierlo",
+            "opposition",
+            "J.A.P.M. Beekmans"
+          ],
+          [
+            "1970",
+            "no elections",
+            "Hans van Mierlo",
+            "opposition",
+            "J.A.P.M. Beekmans"
+          ],
+          [
+            "1971",
+            "Hans van Mierlo",
+            "Hans van Mierlo",
+            "opposition",
+            "J.A.P.M. Beekmans"
+          ],
+          [
+            "1972",
+            "no elections",
+            "Jan Terlouw",
+            "Hans Gruijters",
+            "R.E. van der Scheer-van Essen"
+          ],
+          [
+            "1973",
+            "no elections",
+            "Jan Terlouw",
+            "Hans Gruijters",
+            "J. ten Brink"
+          ],
+          [
+            "1974",
+            "no elections",
+            "Jan Terlouw",
+            "Hans Gruijters",
+            "J. ten Brink"
+          ],
+          [
+            "1975",
+            "no elections",
+            "Jan Terlouw",
+            "Hans Gruijters",
+            "J. ten Brink"
+          ],
+          [
+            "1976",
+            "no elections",
+            "Jan Terlouw",
+            "Hans Gruijters",
+            "Jan Glastra van Loon"
+          ],
+          [
+            "1977",
+            "Jan Terlouw",
+            "Jan Terlouw",
+            "opposition",
+            "Jan Glastra van Loon"
+          ],
+          [
+            "1978",
+            "no elections",
+            "Jan Terlouw",
+            "opposition",
+            "Jan Glastra van Loon"
+          ],
+          [
+            "1979",
+            "no elections",
+            "Jan Terlouw",
+            "opposition",
+            "Jan Glastra van Loon"
+          ],
+          [
+            "1980",
+            "no elections",
+            "Jan Terlouw",
+            "opposition",
+            "Henk Zeevalking"
+          ],
+          [
+            "1981",
+            "Jan Terlouw",
+            "Laurens-Jan Brinkhorst",
+            "Jan Terlouw",
+            "Henk Zeevalking"
+          ],
+          [
+            "1982",
+            "Jan Terlouw",
+            "Maarten Engwirda",
+            "opposition",
+            "J. Berkom"
+          ],
+          [
+            "1983",
+            "no elections",
+            "Maarten Engwirda",
+            "opposition",
+            "Jacob Kohnstam"
+          ],
+          [
+            "1984",
+            "no elections",
+            "Maarten Engwirda",
+            "opposition",
+            "Jacob Kohnstam"
+          ],
+          [
+            "1985",
+            "no elections",
+            "Maarten Engwirda",
+            "opposition",
+            "Jacob Kohnstam"
+          ],
+          [
+            "1986",
+            "Hans van Mierlo",
+            "Hans van Mierlo",
+            "opposition",
+            "S. van der Loo"
+          ],
+          [
+            "1987",
+            "no elections",
+            "Hans van Mierlo",
+            "opposition",
+            "S. van der Loo"
+          ],
+          [
+            "1988",
+            "no elections",
+            "Hans van Mierlo",
+            "opposition",
+            "S. van der Loo"
+          ],
+          [
+            "1989",
+            "Hans van Mierlo",
+            "Hans van Mierlo",
+            "opposition",
+            "M. de Jager"
+          ],
+          [
+            "1990",
+            "no elections",
+            "Hans van Mierlo",
+            "opposition",
+            "M. de Jager"
+          ],
+          [
+            "1991",
+            "no elections",
+            "Hans van Mierlo",
+            "opposition",
+            "H.J.D. Janssen"
+          ],
+          [
+            "1992",
+            "no elections",
+            "Hans van Mierlo",
+            "opposition",
+            "H.J.D. Janssen"
+          ],
+          [
+            "1993",
+            "no elections",
+            "Hans van Mierlo",
+            "opposition",
+            "W.I.J.M. Vrijhoef"
+          ],
+          [
+            "1994",
+            "Hans van Mierlo",
+            "Gerrit-Jan Wolffensperger",
+            "Hans van Mierlo",
+            "W.I.J.M. Vrijhoef"
+          ],
+          [
+            "1995",
+            "no elections",
+            "Gerrit-Jan Wolffensperger",
+            "Hans van Mierlo",
+            "W.I.J.M. Vrijhoef"
+          ],
+          [
+            "1996",
+            "no elections",
+            "Gerrit-Jan Wolffensperger",
+            "Hans van Mierlo",
+            "W.I.J.M. Vrijhoef"
+          ],
+          [
+            "1997",
+            "no elections",
+            "Thom de Graaf",
+            "Hans van Mierlo",
+            "Tom Kok"
+          ],
+          [
+            "1998",
+            "Els Borst",
+            "Thom de Graaf",
+            "Els Borst",
+            "Tom Kok"
+          ],
+          [
+            "1999",
+            "no elections",
+            "Thom de Graaf",
+            "Els Borst",
+            "Tom Kok"
+          ],
+          [
+            "2000",
+            "no elections",
+            "Thom de Graaf",
+            "Els Borst",
+            "Gerard Schouw"
+          ],
+          [
+            "2001",
+            "no elections",
+            "Thom de Graaf",
+            "Els Borst",
+            "Gerard Schouw"
+          ],
+          [
+            "2002",
+            "Thom de Graaf",
+            "Thom de Graaf",
+            "opposition",
+            "Gerard Schouw"
+          ],
+          [
+            "2003",
+            "Thom de Graaf",
+            "Boris Dittrich",
+            "Thom de Graaf",
+            "Alexander Pechtold"
+          ],
+          [
+            "2004",
+            "no elections",
+            "Boris Dittrich",
+            "Thom de Graaf",
+            "Alexander Pechtold"
+          ],
+          [
+            "2005",
+            "no elections",
+            "Boris Dittrich",
+            "Laurens-Jan Brinkhorst",
+            "Frank Dales"
+          ],
+          [
+            "2006",
+            "Alexander Pechtold",
+            "Lousewies van der Laan",
+            "Laurens-Jan Brinkhorst",
+            "Frank Dales"
+          ],
+          [
+            "2007",
+            "no elections",
+            "Alexander Pechtold",
+            "opposition",
+            "Ingrid van Engelshoven"
+          ],
+          [
+            "2008",
+            "no elections",
+            "Alexander Pechtold",
+            "opposition",
+            "Ingrid van Engelshoven"
+          ],
+          [
+            "2009",
+            "no elections",
+            "Alexander Pechtold",
+            "opposition",
+            "Ingrid van Engelshoven"
+          ],
+          [
+            "2010",
+            "Alexander Pechtold",
+            "Alexander Pechtold",
+            "opposition",
+            "Ingrid van Engelshoven"
+          ],
+          [
+            "2011",
+            "no elections",
+            "Alexander Pechtold",
+            "opposition",
+            "Ingrid van Engelshoven"
+          ],
+          [
+            "2012",
+            "Alexander Pechtold",
+            "Alexander Pechtold",
+            "opposition",
+            "Ingrid van Engelshoven"
+          ]
+        ],
+        "caption": "Representation",
+        "headers": [
+          "Year",
+          "Lijsttrekker",
+          "Fractievoorzitter",
+          "Cabinet",
+          "Chair"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-172352-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 3,
+          "conditions": [
+            {
+              "surface": "after 1981",
+              "value": "1981",
+              "start": 30,
+              "end": 40
+            },
+            {
+              "surface": "Hans Van Mierlo",
+              "value": "Hans Van Mierlo",
+              "start": 69,
+              "end": 84
+            },
+            {
+              "surface": "W.I.J.M. Vrijhoef",
+              "value": "W.I.J.M. Vrijhoef",
+              "start": 106,
+              "end": 123
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "85f6da24cb0dfe7de4b27f76781359c8a88380bd3f4474516e6ffb188f506280",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5829,
+              "completion_tokens": 59,
+              "total_tokens": 5888,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "after 1981",
+              "value": "1981",
+              "start": 30,
+              "end": 40,
+              "clause": "when Year is after 1981, when Fractievoorzitter is \"Hans Van Mierlo\","
+            },
+            {
+              "surface": "Hans Van Mierlo",
+              "value": "Hans Van Mierlo",
+              "start": 69,
+              "end": 84,
+              "clause": "when Fractievoorzitter is \"Hans Van Mierlo\","
+            },
+            {
+              "surface": "W.I.J.M. Vrijhoef",
+              "value": "W.I.J.M. Vrijhoef",
+              "start": 106,
+              "end": 123,
+              "clause": "and when Chair is \"W.I.J.M. Vrijhoef\"?"
+            }
+          ],
+          "count": 3
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "after 1981",
+              "value": "1981",
+              "start": 30,
+              "end": 40,
+              "clause": "when Year is after 1981, when Fractievoorzitter is \"Hans Van Mierlo\","
+            },
+            {
+              "surface": "Hans Van Mierlo",
+              "value": "Hans Van Mierlo",
+              "start": 69,
+              "end": 84,
+              "clause": "when Fractievoorzitter is \"Hans Van Mierlo\","
+            },
+            {
+              "surface": "W.I.J.M. Vrijhoef",
+              "value": "W.I.J.M. Vrijhoef",
+              "start": 106,
+              "end": 123,
+              "clause": "and when Chair is \"W.I.J.M. Vrijhoef\"?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "after 1981",
+              "value": "1981",
+              "start": 30,
+              "end": 40,
+              "clause": "when Year is after 1981, when Fractievoorzitter is \"Hans Van Mierlo\",",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Explicitly qualified by Year; numeric rows support comparison after 1981."
+            },
+            {
+              "surface": "Hans Van Mierlo",
+              "value": "Hans Van Mierlo",
+              "start": 69,
+              "end": 84,
+              "clause": "when Fractievoorzitter is \"Hans Van Mierlo\",",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Explicitly qualified by Fractievoorzitter; matching rows contain Hans van Mierlo in this column."
+            },
+            {
+              "surface": "W.I.J.M. Vrijhoef",
+              "value": "W.I.J.M. Vrijhoef",
+              "start": 106,
+              "end": 123,
+              "clause": "and when Chair is \"W.I.J.M. Vrijhoef\"?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Explicitly qualified by Chair; matching rows contain W.I.J.M. Vrijhoef in this column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "fc7d2c8a22f4ab0e93d7037256e8f6d0fe2b9db529523e916cfc3d1e2278ce3c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5967,
+              "completion_tokens": 86,
+              "total_tokens": 6053,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "after 1981",
+              "value": "1981",
+              "start": 30,
+              "end": 40,
+              "clause": "when Year is after 1981, when Fractievoorzitter is \"Hans Van Mierlo\",",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Explicitly qualified by Year; numeric rows support comparison after 1981.",
+              "operator": ">"
+            },
+            {
+              "surface": "Hans Van Mierlo",
+              "value": "Hans Van Mierlo",
+              "start": 69,
+              "end": 84,
+              "clause": "when Fractievoorzitter is \"Hans Van Mierlo\",",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Explicitly qualified by Fractievoorzitter; matching rows contain Hans van Mierlo in this column.",
+              "operator": "="
+            },
+            {
+              "surface": "W.I.J.M. Vrijhoef",
+              "value": "W.I.J.M. Vrijhoef",
+              "start": 106,
+              "end": 123,
+              "clause": "and when Chair is \"W.I.J.M. Vrijhoef\"?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Explicitly qualified by Chair; matching rows contain W.I.J.M. Vrijhoef in this column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "1245b7d7ea7ffe36e5c6e1cf9630ce7540445d7b9b842de360981721b3e70a4d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 6097,
+              "completion_tokens": 13,
+              "total_tokens": 6110,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "after 1981",
+              "value": "1981",
+              "start": 30,
+              "end": 40,
+              "clause": "when Year is after 1981, when Fractievoorzitter is \"Hans Van Mierlo\",",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Explicitly qualified by Year; numeric rows support comparison after 1981.",
+              "operator": ">"
+            },
+            {
+              "surface": "Hans Van Mierlo",
+              "value": "Hans van Mierlo",
+              "start": 69,
+              "end": 84,
+              "clause": "when Fractievoorzitter is \"Hans Van Mierlo\",",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Explicitly qualified by Fractievoorzitter; matching rows contain Hans van Mierlo in this column.",
+              "operator": "="
+            },
+            {
+              "surface": "W.I.J.M. Vrijhoef",
+              "value": "W.I.J.M. Vrijhoef",
+              "start": 106,
+              "end": 123,
+              "clause": "and when Chair is \"W.I.J.M. Vrijhoef\"?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Explicitly qualified by Chair; matching rows contain W.I.J.M. Vrijhoef in this column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a3059d2992cd208d7b2a98271c95cd8859973ad35ff3af1f9ab7e3c62807af5b",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 6054,
+              "completion_tokens": 26,
+              "total_tokens": 6080,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "after 1981",
+              "value": "1981",
+              "start": 30,
+              "end": 40,
+              "clause": "when Year is after 1981, when Fractievoorzitter is \"Hans Van Mierlo\",",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Explicitly qualified by Year; numeric rows support comparison after 1981.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Hans Van Mierlo",
+              "value": "Hans van Mierlo",
+              "start": 69,
+              "end": 84,
+              "clause": "when Fractievoorzitter is \"Hans Van Mierlo\",",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Explicitly qualified by Fractievoorzitter; matching rows contain Hans van Mierlo in this column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "W.I.J.M. Vrijhoef",
+              "value": "W.I.J.M. Vrijhoef",
+              "start": 106,
+              "end": 123,
+              "clause": "and when Chair is \"W.I.J.M. Vrijhoef\"?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Explicitly qualified by Chair; matching rows contain W.I.J.M. Vrijhoef in this column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "after 1981",
+              "value": 1981,
+              "start": 30,
+              "end": 40,
+              "clause": "when Year is after 1981, when Fractievoorzitter is \"Hans Van Mierlo\",",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Explicitly qualified by Year; numeric rows support comparison after 1981.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Hans Van Mierlo",
+              "value": "Hans van Mierlo",
+              "start": 69,
+              "end": 84,
+              "clause": "when Fractievoorzitter is \"Hans Van Mierlo\",",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Explicitly qualified by Fractievoorzitter; matching rows contain Hans van Mierlo in this column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "W.I.J.M. Vrijhoef",
+              "value": "W.I.J.M. Vrijhoef",
+              "start": 106,
+              "end": 123,
+              "clause": "and when Chair is \"W.I.J.M. Vrijhoef\"?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Explicitly qualified by Chair; matching rows contain W.I.J.M. Vrijhoef in this column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "after 1981",
+              "value": 1981,
+              "start": 30,
+              "end": 40,
+              "clause": "when Year is after 1981, when Fractievoorzitter is \"Hans Van Mierlo\",",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Explicitly qualified by Year; numeric rows support comparison after 1981.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Hans Van Mierlo",
+              "value": "Hans van Mierlo",
+              "start": 69,
+              "end": 84,
+              "clause": "when Fractievoorzitter is \"Hans Van Mierlo\",",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Explicitly qualified by Fractievoorzitter; matching rows contain Hans van Mierlo in this column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "W.I.J.M. Vrijhoef",
+              "value": "W.I.J.M. Vrijhoef",
+              "start": 106,
+              "end": 123,
+              "clause": "and when Chair is \"W.I.J.M. Vrijhoef\"?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Explicitly qualified by Chair; matching rows contain W.I.J.M. Vrijhoef in this column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              1,
+              1981
+            ],
+            [
+              2,
+              0,
+              "Hans van Mierlo"
+            ],
+            [
+              4,
+              0,
+              "W.I.J.M. Vrijhoef"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "after 1981",
+          "value": "1981",
+          "start": 30,
+          "end": 40
+        },
+        {
+          "surface": "Hans Van Mierlo",
+          "value": "Hans Van Mierlo",
+          "start": 69,
+          "end": 84
+        },
+        {
+          "surface": "W.I.J.M. Vrijhoef",
+          "value": "W.I.J.M. Vrijhoef",
+          "start": 106,
+          "end": 123
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "after 1981",
+          "value": 1981,
+          "start": 30,
+          "end": 40,
+          "clause": "when Year is after 1981, when Fractievoorzitter is \"Hans Van Mierlo\",",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "Explicitly qualified by Year; numeric rows support comparison after 1981.",
+          "operator": ">",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "Hans Van Mierlo",
+          "value": "Hans van Mierlo",
+          "start": 69,
+          "end": 84,
+          "clause": "when Fractievoorzitter is \"Hans Van Mierlo\",",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "Explicitly qualified by Fractievoorzitter; matching rows contain Hans van Mierlo in this column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "W.I.J.M. Vrijhoef",
+          "value": "W.I.J.M. Vrijhoef",
+          "start": 106,
+          "end": 123,
+          "clause": "and when Chair is \"W.I.J.M. Vrijhoef\"?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "Explicitly qualified by Chair; matching rows contain W.I.J.M. Vrijhoef in this column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 3,
+      "conds": [
+        [
+          0,
+          1,
+          1981
+        ],
+        [
+          2,
+          0,
+          "Hans van Mierlo"
+        ],
+        [
+          4,
+          0,
+          "W.I.J.M. Vrijhoef"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8672
+}

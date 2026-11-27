@@ -1,0 +1,474 @@
+{
+  "arm": "E2",
+  "position": 323,
+  "example_id": "test:12667:2-17933461-2",
+  "original_index": 12667,
+  "table_id": "2-17933461-2",
+  "question": "Which club has played for 27 seasons at this level?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        1,
+        0,
+        "27 seasons"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "27 seasons"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "27 seasons"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "27 seasons",
+        "value": "27 seasons",
+        "start": 26,
+        "end": 36,
+        "clause": "Which club has played for 27 seasons at this level?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The phrase 'seasons at this level' directly matches the 'Seasons at this level' header, and '27 seasons' appears in that column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "27 seasons",
+        "value": "27 seasons",
+        "start": 26,
+        "end": 36
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Which club has played for 27 seasons at this level?",
+      "table": {
+        "header": [
+          "Clubs",
+          "Seasons at this level",
+          "Settlements",
+          "Season joined league",
+          "Position in 1960/1961"
+        ],
+        "page_title": "1961–62 Primeira Divisão",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 17933461,
+        "id": "2-17933461-2",
+        "section_title": "Details of participants",
+        "rows": [
+          [
+            "Benfica",
+            "28 seasons",
+            "Lisbon",
+            "1934/1935",
+            "1"
+          ],
+          [
+            "Sporting",
+            "28 seasons",
+            "Lisbon",
+            "1934/1935",
+            "2"
+          ],
+          [
+            "FC Porto",
+            "28 seasons",
+            "Porto",
+            "1934/1935",
+            "3"
+          ],
+          [
+            "Belenenses",
+            "28 seasons",
+            "Lisbon",
+            "1934/1935",
+            "5"
+          ],
+          [
+            "Académica",
+            "27 seasons",
+            "Coimbra",
+            "1949/1950",
+            "7"
+          ],
+          [
+            "Vitória Guimarães",
+            "18 seasons",
+            "Guimarães",
+            "1958/1959",
+            "4"
+          ],
+          [
+            "Atlético",
+            "16 seasons",
+            "Lisbon",
+            "1959/1960",
+            "10"
+          ],
+          [
+            "Sporting Covilhã",
+            "13 seasons",
+            "Covilhã",
+            "1958/1959",
+            "9"
+          ],
+          [
+            "Olhanense",
+            "11 seasons",
+            "Olhão",
+            "1961/1962",
+            "Segunda Divisão"
+          ],
+          [
+            "Lusitano Évora",
+            "10 seasons",
+            "Évora",
+            "1952/1953",
+            "11"
+          ],
+          [
+            "CUF",
+            "9 seasons",
+            "Barreiro",
+            "1954/1955",
+            "6"
+          ],
+          [
+            "Salgueiros",
+            "6 seasons",
+            "Porto",
+            "1960/1961",
+            "12"
+          ],
+          [
+            "Leixões",
+            "5 seasons",
+            "Matosinhos",
+            "1959/1960",
+            "8"
+          ],
+          [
+            "Beira Mar",
+            "1 season",
+            "Aveiro",
+            "1961/1962",
+            "Segunda Divisão"
+          ]
+        ],
+        "caption": "Details of participants",
+        "headers": [
+          "Clubs",
+          "Seasons at this level",
+          "Settlements",
+          "Season joined league",
+          "Position in 1960/1961"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-17933461-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "27 seasons",
+              "value": "27 seasons",
+              "start": 26,
+              "end": 36
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "dc0ffa0d31789d2f30f5daf49efac1ede39d784ee970beb59a81be907a1e58b0",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4976,
+              "completion_tokens": 19,
+              "total_tokens": 4995,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "27 seasons",
+              "value": "27 seasons",
+              "start": 26,
+              "end": 36,
+              "clause": "Which club has played for 27 seasons at this level?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "27 seasons",
+              "value": "27 seasons",
+              "start": 26,
+              "end": 36,
+              "clause": "Which club has played for 27 seasons at this level?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "27 seasons",
+              "value": "27 seasons",
+              "start": 26,
+              "end": 36,
+              "clause": "Which club has played for 27 seasons at this level?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'seasons at this level' directly matches the 'Seasons at this level' header, and '27 seasons' appears in that column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c35e00a5d27461d0932789352ac45461598b753147f6d94e7759aacb1aece8c4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5011,
+              "completion_tokens": 52,
+              "total_tokens": 5063,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "27 seasons",
+              "value": "27 seasons",
+              "start": 26,
+              "end": 36,
+              "clause": "Which club has played for 27 seasons at this level?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'seasons at this level' directly matches the 'Seasons at this level' header, and '27 seasons' appears in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d26c94bda264bb66c83829cefbb2579d122be0b2c1f0942d9c0fab35a83ee848",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5087,
+              "completion_tokens": 9,
+              "total_tokens": 5096,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "27 seasons",
+              "value": "27 seasons",
+              "start": 26,
+              "end": 36,
+              "clause": "Which club has played for 27 seasons at this level?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'seasons at this level' directly matches the 'Seasons at this level' header, and '27 seasons' appears in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ad0242906feea2f9a09277b0580c12c57b85b42f8e66497a42fa4c1f815140d4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5038,
+              "completion_tokens": 11,
+              "total_tokens": 5049,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "27 seasons",
+              "value": "27 seasons",
+              "start": 26,
+              "end": 36,
+              "clause": "Which club has played for 27 seasons at this level?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'seasons at this level' directly matches the 'Seasons at this level' header, and '27 seasons' appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "27 seasons",
+              "value": "27 seasons",
+              "start": 26,
+              "end": 36,
+              "clause": "Which club has played for 27 seasons at this level?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'seasons at this level' directly matches the 'Seasons at this level' header, and '27 seasons' appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "27 seasons",
+              "value": "27 seasons",
+              "start": 26,
+              "end": 36,
+              "clause": "Which club has played for 27 seasons at this level?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'seasons at this level' directly matches the 'Seasons at this level' header, and '27 seasons' appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              "27 seasons"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "27 seasons",
+          "value": "27 seasons",
+          "start": 26,
+          "end": 36
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "27 seasons",
+          "value": "27 seasons",
+          "start": 26,
+          "end": 36,
+          "clause": "Which club has played for 27 seasons at this level?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The phrase 'seasons at this level' directly matches the 'Seasons at this level' header, and '27 seasons' appears in that column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          1,
+          0,
+          "27 seasons"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9812
+}

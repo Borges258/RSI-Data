@@ -1,0 +1,218 @@
+{
+  "arm": "E2",
+  "position": 2,
+  "example_id": "test:386:1-11944282-1",
+  "original_index": 386,
+  "table_id": "1-11944282-1",
+  "question": "How many integrated allied-related are there?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        2,
+        0,
+        "Many"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [],
+    "originalConditions": [],
+    "warnings": [],
+    "request": {
+      "question": "How many integrated allied-related are there?",
+      "table": {
+        "header": [
+          "Component",
+          "Integrated",
+          "Allied-Related",
+          "Allied-Unrelated",
+          "Holding"
+        ],
+        "page_title": "Operating model",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "id": "1-11944282-1",
+        "section_title": "Origins in corporate strategy",
+        "caption": "Origins in corporate strategy",
+        "rows": [
+          [
+            "Business Strategy",
+            "One",
+            "Many",
+            "Many",
+            "Many"
+          ],
+          [
+            "Customers",
+            "Same",
+            "Shared",
+            "Some shared",
+            "Many"
+          ],
+          [
+            "Corporate Role",
+            "Resource allocations",
+            "Define Protocols",
+            "Define Protocols",
+            "Financial roll-ups and analysis"
+          ],
+          [
+            "Human Capital",
+            "Common",
+            "Some Shared",
+            "Some Shared",
+            "Independent"
+          ],
+          [
+            "IT Systems",
+            "Common",
+            "Common",
+            "Few, interconnected",
+            "Different"
+          ]
+        ],
+        "name": "table_11944282_1",
+        "headers": [
+          "Component",
+          "Integrated",
+          "Allied-Related",
+          "Allied-Unrelated",
+          "Holding"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-11944282-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 0,
+          "conditions": [],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "51ff22220bd4b6ba04d287db501a4a3c35c61d67ef6cad5e0ed9bdcacac2ab8f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4747,
+              "completion_tokens": 109,
+              "total_tokens": 4856,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 99
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [],
+          "count": 0
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "9e3b43d14f5ff3b7abfc5aa1be8081ff25c4d8abf4426308b79573eda093d5db",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4766,
+              "completion_tokens": 95,
+              "total_tokens": 4861,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 85
+              }
+            }
+          },
+          "count": 0,
+          "recovered": [],
+          "reviewedUncertain": [
+            {
+              "surface": "many",
+              "start": 4,
+              "end": 8
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": []
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": []
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": []
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": []
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": []
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": []
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": []
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [],
+      "conditions": [],
+      "count": 0,
+      "conds": []
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 5954
+}

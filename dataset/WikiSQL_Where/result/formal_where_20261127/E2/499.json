@@ -1,0 +1,609 @@
+{
+  "arm": "E2",
+  "position": 499,
+  "example_id": "test:10108:2-16744814-2",
+  "original_index": 10108,
+  "table_id": "2-16744814-2",
+  "question": "How many silver medals did the team that had 5 bronze and less than 16 gold have?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        3,
+        0,
+        5
+      ],
+      [
+        1,
+        2,
+        16
+      ]
+    ],
+    "agg": 4
+  },
+  "prediction_conds": [
+    [
+      3,
+      0,
+      5
+    ],
+    [
+      1,
+      2,
+      16
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        0,
+        5
+      ],
+      [
+        1,
+        2,
+        16
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "5",
+        "value": 5,
+        "start": 45,
+        "end": 46,
+        "clause": "How many silver medals did the team that had 5 bronze",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The question explicitly describes 5 as bronze medals, matching the Bronze header and a row with Bronze = 5.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "less than 16",
+        "value": 16,
+        "start": 58,
+        "end": 70,
+        "clause": "and less than 16 gold have?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The phrase explicitly qualifies gold as less than 16, matching the Gold header; row evidence includes Gold values below 16.",
+        "operator": "<",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "5",
+        "value": "5",
+        "start": 45,
+        "end": 46
+      },
+      {
+        "surface": "less than 16",
+        "value": "16",
+        "start": 58,
+        "end": 70
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "How many silver medals did the team that had 5 bronze and less than 16 gold have?",
+      "table": {
+        "header": [
+          "Rank",
+          "Gold",
+          "Silver",
+          "Bronze",
+          "Total"
+        ],
+        "page_title": "Asian Junior Volleyball Championship",
+        "types": [
+          "text",
+          "real",
+          "real",
+          "real",
+          "real"
+        ],
+        "page_id": 16744814,
+        "id": "2-16744814-2",
+        "section_title": "Medal table",
+        "rows": [
+          [
+            "1",
+            "6",
+            "2",
+            "1",
+            "9"
+          ],
+          [
+            "2",
+            "4",
+            "2",
+            "2",
+            "8"
+          ],
+          [
+            "3",
+            "3",
+            "5",
+            "2",
+            "10"
+          ],
+          [
+            "4",
+            "3",
+            "3",
+            "5",
+            "11"
+          ],
+          [
+            "5",
+            "0",
+            "2",
+            "3",
+            "5"
+          ],
+          [
+            "6",
+            "0",
+            "1",
+            "1",
+            "2"
+          ],
+          [
+            "7",
+            "0",
+            "1",
+            "0",
+            "1"
+          ],
+          [
+            "8",
+            "0",
+            "0",
+            "1",
+            "1"
+          ],
+          [
+            "Total",
+            "16",
+            "16",
+            "16",
+            "48"
+          ]
+        ],
+        "caption": "Medal table",
+        "headers": [
+          "Rank",
+          "Gold",
+          "Silver",
+          "Bronze",
+          "Total"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-16744814-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "5",
+              "value": "5",
+              "start": 45,
+              "end": 46
+            },
+            {
+              "surface": "less than 16",
+              "value": "16",
+              "start": 58,
+              "end": 70
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "4386a328585f43fb66ce2d563e77b2dbba3a192310697932e3480abf9565491a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4772,
+              "completion_tokens": 28,
+              "total_tokens": 4800,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "5",
+              "value": "5",
+              "start": 45,
+              "end": 46,
+              "clause": "How many silver medals did the team that had 5 bronze"
+            },
+            {
+              "surface": "less than 16",
+              "value": "16",
+              "start": 58,
+              "end": 70,
+              "clause": "and less than 16 gold have?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "5",
+              "value": "5",
+              "start": 45,
+              "end": 46,
+              "clause": "How many silver medals did the team that had 5 bronze"
+            },
+            {
+              "surface": "less than 16",
+              "value": "16",
+              "start": 58,
+              "end": 70,
+              "clause": "and less than 16 gold have?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "5",
+              "value": "5",
+              "start": 45,
+              "end": 46,
+              "clause": "How many silver medals did the team that had 5 bronze",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly describes 5 as bronze medals, matching the Bronze header and a row with Bronze = 5."
+            },
+            {
+              "surface": "less than 16",
+              "value": "16",
+              "start": 58,
+              "end": 70,
+              "clause": "and less than 16 gold have?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase explicitly qualifies gold as less than 16, matching the Gold header; row evidence includes Gold values below 16."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "dfef683d3898fff7b55a5aeaf6a9baa69a2100429e41a730447cc87751f7aef7",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4836,
+              "completion_tokens": 73,
+              "total_tokens": 4909,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "5",
+              "value": "5",
+              "start": 45,
+              "end": 46,
+              "clause": "How many silver medals did the team that had 5 bronze",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly describes 5 as bronze medals, matching the Bronze header and a row with Bronze = 5.",
+              "operator": "="
+            },
+            {
+              "surface": "less than 16",
+              "value": "16",
+              "start": 58,
+              "end": 70,
+              "clause": "and less than 16 gold have?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase explicitly qualifies gold as less than 16, matching the Gold header; row evidence includes Gold values below 16.",
+              "operator": "<"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "45b9ca4e733614a0f67642eae195c82dd12d869c3d5c0d985f5fd63524a641d5",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4944,
+              "completion_tokens": 12,
+              "total_tokens": 4956,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "5",
+              "value": "5",
+              "start": 45,
+              "end": 46,
+              "clause": "How many silver medals did the team that had 5 bronze",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly describes 5 as bronze medals, matching the Bronze header and a row with Bronze = 5.",
+              "operator": "="
+            },
+            {
+              "surface": "less than 16",
+              "value": "16",
+              "start": 58,
+              "end": 70,
+              "clause": "and less than 16 gold have?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase explicitly qualifies gold as less than 16, matching the Gold header; row evidence includes Gold values below 16.",
+              "operator": "<"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "de0ccd74eeb24e756caad7b36bdffd8d8d7a1020bdf95d65b338ee282fb82246",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4898,
+              "completion_tokens": 12,
+              "total_tokens": 4910,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "5",
+              "value": "5",
+              "start": 45,
+              "end": 46,
+              "clause": "How many silver medals did the team that had 5 bronze",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly describes 5 as bronze medals, matching the Bronze header and a row with Bronze = 5.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "less than 16",
+              "value": "16",
+              "start": 58,
+              "end": 70,
+              "clause": "and less than 16 gold have?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase explicitly qualifies gold as less than 16, matching the Gold header; row evidence includes Gold values below 16.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "5",
+              "value": 5,
+              "start": 45,
+              "end": 46,
+              "clause": "How many silver medals did the team that had 5 bronze",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly describes 5 as bronze medals, matching the Bronze header and a row with Bronze = 5.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "less than 16",
+              "value": 16,
+              "start": 58,
+              "end": 70,
+              "clause": "and less than 16 gold have?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase explicitly qualifies gold as less than 16, matching the Gold header; row evidence includes Gold values below 16.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "5",
+              "value": 5,
+              "start": 45,
+              "end": 46,
+              "clause": "How many silver medals did the team that had 5 bronze",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly describes 5 as bronze medals, matching the Bronze header and a row with Bronze = 5.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "less than 16",
+              "value": 16,
+              "start": 58,
+              "end": 70,
+              "clause": "and less than 16 gold have?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase explicitly qualifies gold as less than 16, matching the Gold header; row evidence includes Gold values below 16.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              0,
+              5
+            ],
+            [
+              1,
+              2,
+              16
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "5",
+          "value": "5",
+          "start": 45,
+          "end": 46
+        },
+        {
+          "surface": "less than 16",
+          "value": "16",
+          "start": 58,
+          "end": 70
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "5",
+          "value": 5,
+          "start": 45,
+          "end": 46,
+          "clause": "How many silver medals did the team that had 5 bronze",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The question explicitly describes 5 as bronze medals, matching the Bronze header and a row with Bronze = 5.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "less than 16",
+          "value": 16,
+          "start": 58,
+          "end": 70,
+          "clause": "and less than 16 gold have?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The phrase explicitly qualifies gold as less than 16, matching the Gold header; row evidence includes Gold values below 16.",
+          "operator": "<",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          3,
+          0,
+          5
+        ],
+        [
+          1,
+          2,
+          16
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8875
+}

@@ -1,0 +1,609 @@
+{
+  "arm": "E2",
+  "position": 506,
+  "example_id": "test:11149:2-11484479-1",
+  "original_index": 11149,
+  "table_id": "2-11484479-1",
+  "question": "What year is the result 6th in munich, west germany?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        3,
+        0,
+        "6th"
+      ],
+      [
+        2,
+        0,
+        "Munich , West Germany"
+      ]
+    ],
+    "agg": 4
+  },
+  "prediction_conds": [
+    [
+      3,
+      0,
+      "6th"
+    ],
+    [
+      2,
+      0,
+      "Munich , West Germany"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        0,
+        "6th"
+      ],
+      [
+        2,
+        0,
+        "Munich , West Germany"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "6th",
+        "value": "6th",
+        "start": 24,
+        "end": 27,
+        "clause": "What year is the result 6th in munich",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The question explicitly identifies 6th as the result, matching the Result header and cells.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "munich, west germany",
+        "value": "Munich , West Germany",
+        "start": 31,
+        "end": 51,
+        "clause": "What year is the result 6th in munich, west germany?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "Munich, West Germany is identified as the location, matching the Venue header and cell format.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "6th",
+        "value": "6th",
+        "start": 24,
+        "end": 27
+      },
+      {
+        "surface": "munich, west germany",
+        "value": "Munich , West Germany",
+        "start": 31,
+        "end": 51
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What year is the result 6th in munich, west germany?",
+      "table": {
+        "header": [
+          "Year",
+          "Tournament",
+          "Venue",
+          "Result",
+          "Extra"
+        ],
+        "page_title": "Max Klauß",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 11484479,
+        "id": "2-11484479-1",
+        "section_title": "Achievements",
+        "rows": [
+          [
+            "1966",
+            "European Championships",
+            "Budapest , Hungary",
+            "4th",
+            "Decathlon"
+          ],
+          [
+            "1966",
+            "European Junior Championships",
+            "Odessa , Soviet Union",
+            "1st",
+            "Long jump"
+          ],
+          [
+            "1969",
+            "European Championships",
+            "Athens , Greece",
+            "6th",
+            "Long jump"
+          ],
+          [
+            "1971",
+            "European Championships",
+            "Helsinki , Finland",
+            "1st",
+            "Long jump"
+          ],
+          [
+            "1972",
+            "European Indoor Championships",
+            "Grenoble , France",
+            "1st",
+            "Long jump"
+          ],
+          [
+            "1972",
+            "Olympic Games",
+            "Munich , West Germany",
+            "6th",
+            "Long jump"
+          ],
+          [
+            "1973",
+            "European Indoor Championships",
+            "Rotterdam , Netherlands",
+            "2nd",
+            "Long jump"
+          ],
+          [
+            "1974",
+            "European Indoor Championships",
+            "Gothenburg , Sweden",
+            "3rd",
+            "Long jump"
+          ],
+          [
+            "1974",
+            "European Championships",
+            "Rome , Italy",
+            "7th",
+            "Long jump"
+          ]
+        ],
+        "caption": "Achievements",
+        "headers": [
+          "Year",
+          "Tournament",
+          "Venue",
+          "Result",
+          "Extra"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-11484479-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "6th",
+              "value": "6th",
+              "start": 24,
+              "end": 27
+            },
+            {
+              "surface": "munich, west germany",
+              "value": "Munich , West Germany",
+              "start": 31,
+              "end": 51
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "3a47a890e7aa817974a0a90355d14cd37132a42b5219c11142dc3a1e9b3aaf96",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4832,
+              "completion_tokens": 35,
+              "total_tokens": 4867,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "6th",
+              "value": "6th",
+              "start": 24,
+              "end": 27,
+              "clause": "What year is the result 6th in munich"
+            },
+            {
+              "surface": "munich, west germany",
+              "value": "Munich , West Germany",
+              "start": 31,
+              "end": 51,
+              "clause": "What year is the result 6th in munich, west germany?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "6th",
+              "value": "6th",
+              "start": 24,
+              "end": 27,
+              "clause": "What year is the result 6th in munich"
+            },
+            {
+              "surface": "munich, west germany",
+              "value": "Munich , West Germany",
+              "start": 31,
+              "end": 51,
+              "clause": "What year is the result 6th in munich, west germany?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "6th",
+              "value": "6th",
+              "start": 24,
+              "end": 27,
+              "clause": "What year is the result 6th in munich",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies 6th as the result, matching the Result header and cells."
+            },
+            {
+              "surface": "munich, west germany",
+              "value": "Munich , West Germany",
+              "start": 31,
+              "end": 51,
+              "clause": "What year is the result 6th in munich, west germany?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Munich, West Germany is identified as the location, matching the Venue header and cell format."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "3bca3a25bef98d18c385cbb3692930fd0fb67cdae24dab9987c2537de4fef300",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4909,
+              "completion_tokens": 62,
+              "total_tokens": 4971,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "6th",
+              "value": "6th",
+              "start": 24,
+              "end": 27,
+              "clause": "What year is the result 6th in munich",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies 6th as the result, matching the Result header and cells.",
+              "operator": "="
+            },
+            {
+              "surface": "munich, west germany",
+              "value": "Munich , West Germany",
+              "start": 31,
+              "end": 51,
+              "clause": "What year is the result 6th in munich, west germany?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Munich, West Germany is identified as the location, matching the Venue header and cell format.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "3169f4ed9798cf4781236470dd681b8842d1af66354ce4aeefc768b763a6c3ab",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5006,
+              "completion_tokens": 11,
+              "total_tokens": 5017,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "6th",
+              "value": "6th",
+              "start": 24,
+              "end": 27,
+              "clause": "What year is the result 6th in munich",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies 6th as the result, matching the Result header and cells.",
+              "operator": "="
+            },
+            {
+              "surface": "munich, west germany",
+              "value": "Munich , West Germany",
+              "start": 31,
+              "end": 51,
+              "clause": "What year is the result 6th in munich, west germany?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Munich, West Germany is identified as the location, matching the Venue header and cell format.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d090a7878f71edf4ff0a128506c804a4c3f1fffd099ee0ec189783326a733262",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4960,
+              "completion_tokens": 17,
+              "total_tokens": 4977,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "6th",
+              "value": "6th",
+              "start": 24,
+              "end": 27,
+              "clause": "What year is the result 6th in munich",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies 6th as the result, matching the Result header and cells.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "munich, west germany",
+              "value": "Munich , West Germany",
+              "start": 31,
+              "end": 51,
+              "clause": "What year is the result 6th in munich, west germany?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Munich, West Germany is identified as the location, matching the Venue header and cell format.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "6th",
+              "value": "6th",
+              "start": 24,
+              "end": 27,
+              "clause": "What year is the result 6th in munich",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies 6th as the result, matching the Result header and cells.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "munich, west germany",
+              "value": "Munich , West Germany",
+              "start": 31,
+              "end": 51,
+              "clause": "What year is the result 6th in munich, west germany?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Munich, West Germany is identified as the location, matching the Venue header and cell format.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "6th",
+              "value": "6th",
+              "start": 24,
+              "end": 27,
+              "clause": "What year is the result 6th in munich",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies 6th as the result, matching the Result header and cells.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "munich, west germany",
+              "value": "Munich , West Germany",
+              "start": 31,
+              "end": 51,
+              "clause": "What year is the result 6th in munich, west germany?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Munich, West Germany is identified as the location, matching the Venue header and cell format.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              0,
+              "6th"
+            ],
+            [
+              2,
+              0,
+              "Munich , West Germany"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "6th",
+          "value": "6th",
+          "start": 24,
+          "end": 27
+        },
+        {
+          "surface": "munich, west germany",
+          "value": "Munich , West Germany",
+          "start": 31,
+          "end": 51
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "6th",
+          "value": "6th",
+          "start": 24,
+          "end": 27,
+          "clause": "What year is the result 6th in munich",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The question explicitly identifies 6th as the result, matching the Result header and cells.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "munich, west germany",
+          "value": "Munich , West Germany",
+          "start": 31,
+          "end": 51,
+          "clause": "What year is the result 6th in munich, west germany?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "Munich, West Germany is identified as the location, matching the Venue header and cell format.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          3,
+          0,
+          "6th"
+        ],
+        [
+          2,
+          0,
+          "Munich , West Germany"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8609
+}

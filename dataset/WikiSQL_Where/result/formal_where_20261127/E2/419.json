@@ -1,0 +1,439 @@
+{
+  "arm": "E2",
+  "position": 419,
+  "example_id": "test:11224:2-1157079-1",
+  "original_index": 11224,
+  "table_id": "2-1157079-1",
+  "question": "which year has the toyota tf102 chassis?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        2,
+        0,
+        "toyota tf102"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "Toyota TF102"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "Toyota TF102"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "toyota tf102",
+        "value": "Toyota TF102",
+        "start": 19,
+        "end": 31,
+        "clause": "which year has the toyota tf102 chassis?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The question explicitly identifies Toyota TF102 as a chassis, matching the Chassis header and row evidence.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "toyota tf102",
+        "value": "Toyota TF102",
+        "start": 19,
+        "end": 31
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "which year has the toyota tf102 chassis?",
+      "table": {
+        "header": [
+          "Year",
+          "Entrant",
+          "Chassis",
+          "Engine",
+          "Points"
+        ],
+        "page_title": "Mika Salo",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "real"
+        ],
+        "page_id": 1157079,
+        "id": "2-1157079-1",
+        "section_title": "Complete Formula One results",
+        "rows": [
+          [
+            "1994",
+            "Team Lotus",
+            "Lotus 109",
+            "Mugen Honda V10",
+            "0"
+          ],
+          [
+            "1995",
+            "Nokia Tyrrell Yamaha",
+            "Tyrrell 023",
+            "Yamaha V10",
+            "5"
+          ],
+          [
+            "1996",
+            "Tyrrell Yamaha",
+            "Tyrrell 024",
+            "Yamaha V10",
+            "5"
+          ],
+          [
+            "1997",
+            "Tyrrell",
+            "Tyrrell 025",
+            "Ford V8",
+            "2"
+          ],
+          [
+            "1998",
+            "Danka Zepter Arrows",
+            "Arrows A19",
+            "Arrows V10",
+            "3"
+          ],
+          [
+            "1999",
+            "British American Racing",
+            "BAR 01",
+            "Supertec V10",
+            "10"
+          ],
+          [
+            "1999",
+            "Scuderia Ferrari Marlboro",
+            "Ferrari F399",
+            "Ferrari V10",
+            "10"
+          ],
+          [
+            "2000",
+            "Red Bull Sauber Petronas",
+            "Sauber C19",
+            "Petronas V10",
+            "6"
+          ],
+          [
+            "2002",
+            "Panasonic Toyota Racing",
+            "Toyota TF102",
+            "Toyota V10",
+            "2"
+          ]
+        ],
+        "caption": "Complete Formula One results",
+        "headers": [
+          "Year",
+          "Entrant",
+          "Chassis",
+          "Engine",
+          "Points"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-1157079-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "toyota tf102",
+              "value": "Toyota TF102",
+              "start": 19,
+              "end": 31
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "58a15043621282647602630497b129189af0389826178f833fbc56da59299ef9",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4862,
+              "completion_tokens": 22,
+              "total_tokens": 4884,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "toyota tf102",
+              "value": "Toyota TF102",
+              "start": 19,
+              "end": 31,
+              "clause": "which year has the toyota tf102 chassis?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "toyota tf102",
+              "value": "Toyota TF102",
+              "start": 19,
+              "end": 31,
+              "clause": "which year has the toyota tf102 chassis?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "toyota tf102",
+              "value": "Toyota TF102",
+              "start": 19,
+              "end": 31,
+              "clause": "which year has the toyota tf102 chassis?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies Toyota TF102 as a chassis, matching the Chassis header and row evidence."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a290184dcc30346083d64df38628a6667d57407c17296148ba8c200650bf711e",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4898,
+              "completion_tokens": 41,
+              "total_tokens": 4939,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "toyota tf102",
+              "value": "Toyota TF102",
+              "start": 19,
+              "end": 31,
+              "clause": "which year has the toyota tf102 chassis?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies Toyota TF102 as a chassis, matching the Chassis header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "95ed0f6a09c0b27fc119b392cba2b01eeae58a69f9bedebfad9569cb9d72e7be",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4963,
+              "completion_tokens": 9,
+              "total_tokens": 4972,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "toyota tf102",
+              "value": "Toyota TF102",
+              "start": 19,
+              "end": 31,
+              "clause": "which year has the toyota tf102 chassis?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies Toyota TF102 as a chassis, matching the Chassis header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "9766daf57272ff9018872bf9c2ea2a2fb74b3c347a27faa0551cdb3150efd697",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4914,
+              "completion_tokens": 12,
+              "total_tokens": 4926,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "toyota tf102",
+              "value": "Toyota TF102",
+              "start": 19,
+              "end": 31,
+              "clause": "which year has the toyota tf102 chassis?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies Toyota TF102 as a chassis, matching the Chassis header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "toyota tf102",
+              "value": "Toyota TF102",
+              "start": 19,
+              "end": 31,
+              "clause": "which year has the toyota tf102 chassis?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies Toyota TF102 as a chassis, matching the Chassis header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "toyota tf102",
+              "value": "Toyota TF102",
+              "start": 19,
+              "end": 31,
+              "clause": "which year has the toyota tf102 chassis?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies Toyota TF102 as a chassis, matching the Chassis header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "Toyota TF102"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "toyota tf102",
+          "value": "Toyota TF102",
+          "start": 19,
+          "end": 31
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "toyota tf102",
+          "value": "Toyota TF102",
+          "start": 19,
+          "end": 31,
+          "clause": "which year has the toyota tf102 chassis?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The question explicitly identifies Toyota TF102 as a chassis, matching the Chassis header and row evidence.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          2,
+          0,
+          "Toyota TF102"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8922
+}

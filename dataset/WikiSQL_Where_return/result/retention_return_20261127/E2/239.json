@@ -1,0 +1,653 @@
+{
+  "arm": "E2",
+  "position": 239,
+  "example_id": "test:9591:2-16226584-1",
+  "original_index": 9591,
+  "table_id": "2-16226584-1",
+  "question": "What is the highest Km From Kingston, when Mi From Kingston is less than 108, and when Length Meters is 260.6?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        1,
+        2,
+        108
+      ],
+      [
+        5,
+        0,
+        260.6
+      ]
+    ],
+    "agg": 1
+  },
+  "prediction_conds": [
+    [
+      1,
+      2,
+      108
+    ],
+    [
+      5,
+      0,
+      260.6
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        2,
+        108
+      ],
+      [
+        5,
+        0,
+        260.6
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "108",
+        "value": 108,
+        "start": 73,
+        "end": 76,
+        "clause": "when Mi From Kingston is less than 108,",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "Clause explicitly names 'Mi From Kingston'; header index 1 matches and contains numeric mile values including 108.00.",
+        "operator": "<",
+        "grounded": true,
+        "groundingStatus": "NORMALIZED_MATCH"
+      },
+      {
+        "surface": "260.6",
+        "value": 260.6,
+        "start": 104,
+        "end": 109,
+        "clause": "and when Length Meters is 260.6?",
+        "columnIndex": 5,
+        "columnCandidates": [
+          5
+        ],
+        "columnMatchReason": "Clause explicitly names 'Length Meters'; header index 5 matches and contains 260.6.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "108",
+        "value": "108",
+        "start": 73,
+        "end": 76
+      },
+      {
+        "surface": "260.6",
+        "value": "260.6",
+        "start": 104,
+        "end": 109
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the highest Km From Kingston, when Mi From Kingston is less than 108, and when Length Meters is 260.6?",
+      "table": {
+        "header": [
+          "Name",
+          "Mi from Kingston",
+          "Km from Kingston",
+          "Parish",
+          "Length feet",
+          "Length meters"
+        ],
+        "page_title": "Railways of Jamaica: Kingston to Montego Bay",
+        "types": [
+          "text",
+          "real",
+          "real",
+          "text",
+          "real",
+          "real"
+        ],
+        "page_id": 16226584,
+        "id": "2-16226584-1",
+        "section_title": "Tunnels",
+        "rows": [
+          [
+            "Scotts Pass",
+            "44.25",
+            "71.2",
+            "Clarendon",
+            "70",
+            "21.3"
+          ],
+          [
+            "Scotts Pass",
+            "44.50",
+            "71.6",
+            "Clarendon",
+            "170",
+            "51.8"
+          ],
+          [
+            "Comfort Hall",
+            "65.50",
+            "105.4",
+            "St. Elizabeth",
+            "688",
+            "209.1"
+          ],
+          [
+            "Balaclava",
+            "70.00",
+            "112.6",
+            "St. Elizabeth",
+            "348",
+            "106.1"
+          ],
+          [
+            "Highworth",
+            "84.00",
+            "135.2",
+            "St. Elizabeth",
+            "182",
+            "55.5"
+          ],
+          [
+            "Y S",
+            "84.50",
+            "136.0",
+            "St. Elizabeth",
+            "218",
+            "66.4"
+          ],
+          [
+            "Ipswich",
+            "86.25",
+            "138.8",
+            "St. Elizabeth",
+            "855",
+            "260.6"
+          ],
+          [
+            "Unnamed",
+            "87.75",
+            "141.2",
+            "St. James",
+            "555",
+            "164.6"
+          ],
+          [
+            "Merrywood",
+            "88.50",
+            "142.4",
+            "St. James",
+            "362",
+            "115.8"
+          ],
+          [
+            "Anchovy",
+            "104.50",
+            "168.2",
+            "St. James",
+            "102",
+            "31.1"
+          ],
+          [
+            "Ramble",
+            "108.00",
+            "173.8",
+            "St. James",
+            "182",
+            "55.5"
+          ],
+          [
+            "Bogue Hill",
+            "108.50",
+            "174.6",
+            "St. James",
+            "1276",
+            "388.9"
+          ],
+          [
+            "Bogue Hill",
+            "108.75",
+            "175.0",
+            "St. James",
+            "458",
+            "139.6"
+          ]
+        ],
+        "caption": "Tunnels",
+        "headers": [
+          "Name",
+          "Mi from Kingston",
+          "Km from Kingston",
+          "Parish",
+          "Length feet",
+          "Length meters"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-16226584-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "108",
+              "value": "108",
+              "start": 73,
+              "end": 76
+            },
+            {
+              "surface": "260.6",
+              "value": "260.6",
+              "start": 104,
+              "end": 109
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "6aab35319a52ec494d38263cf940cece697eda7670d75f1637472cb82051c847",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4994,
+              "completion_tokens": 29,
+              "total_tokens": 5023,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "108",
+              "value": "108",
+              "start": 73,
+              "end": 76,
+              "clause": "when Mi From Kingston is less than 108,"
+            },
+            {
+              "surface": "260.6",
+              "value": "260.6",
+              "start": 104,
+              "end": 109,
+              "clause": "and when Length Meters is 260.6?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "108",
+              "value": "108",
+              "start": 73,
+              "end": 76,
+              "clause": "when Mi From Kingston is less than 108,"
+            },
+            {
+              "surface": "260.6",
+              "value": "260.6",
+              "start": 104,
+              "end": 109,
+              "clause": "and when Length Meters is 260.6?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "108",
+              "value": "108",
+              "start": 73,
+              "end": 76,
+              "clause": "when Mi From Kingston is less than 108,",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Clause explicitly names 'Mi From Kingston'; header index 1 matches and contains numeric mile values including 108.00."
+            },
+            {
+              "surface": "260.6",
+              "value": "260.6",
+              "start": 104,
+              "end": 109,
+              "clause": "and when Length Meters is 260.6?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "Clause explicitly names 'Length Meters'; header index 5 matches and contains 260.6."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "5c16739f596ac911315099df43e3f2192848ef201987b2e3edef6149c309ca07",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5060,
+              "completion_tokens": 69,
+              "total_tokens": 5129,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "108",
+              "value": "108",
+              "start": 73,
+              "end": 76,
+              "clause": "when Mi From Kingston is less than 108,",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Clause explicitly names 'Mi From Kingston'; header index 1 matches and contains numeric mile values including 108.00.",
+              "operator": "<"
+            },
+            {
+              "surface": "260.6",
+              "value": "260.6",
+              "start": 104,
+              "end": 109,
+              "clause": "and when Length Meters is 260.6?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "Clause explicitly names 'Length Meters'; header index 5 matches and contains 260.6.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "90b9b89dc58bf448eff27da4e4bcb6b3e5fa453ffcdc3f46b337c1acb0057dea",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5164,
+              "completion_tokens": 11,
+              "total_tokens": 5175,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "108",
+              "value": 108,
+              "start": 73,
+              "end": 76,
+              "clause": "when Mi From Kingston is less than 108,",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Clause explicitly names 'Mi From Kingston'; header index 1 matches and contains numeric mile values including 108.00.",
+              "operator": "<"
+            },
+            {
+              "surface": "260.6",
+              "value": 260.6,
+              "start": 104,
+              "end": 109,
+              "clause": "and when Length Meters is 260.6?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "Clause explicitly names 'Length Meters'; header index 5 matches and contains 260.6.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "912fa657cb417d4f0cf4aab3d0f3dc727b7129571267a36238291eccee92c7ab",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5118,
+              "completion_tokens": 13,
+              "total_tokens": 5131,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "108",
+              "value": "108.00",
+              "start": 73,
+              "end": 76,
+              "clause": "when Mi From Kingston is less than 108,",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Clause explicitly names 'Mi From Kingston'; header index 1 matches and contains numeric mile values including 108.00.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "NORMALIZED_MATCH"
+            },
+            {
+              "surface": "260.6",
+              "value": "260.6",
+              "start": 104,
+              "end": 109,
+              "clause": "and when Length Meters is 260.6?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "Clause explicitly names 'Length Meters'; header index 5 matches and contains 260.6.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "108",
+              "value": 108,
+              "start": 73,
+              "end": 76,
+              "clause": "when Mi From Kingston is less than 108,",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Clause explicitly names 'Mi From Kingston'; header index 1 matches and contains numeric mile values including 108.00.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "NORMALIZED_MATCH"
+            },
+            {
+              "surface": "260.6",
+              "value": 260.6,
+              "start": 104,
+              "end": 109,
+              "clause": "and when Length Meters is 260.6?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "Clause explicitly names 'Length Meters'; header index 5 matches and contains 260.6.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "108",
+              "value": 108,
+              "start": 73,
+              "end": 76,
+              "clause": "when Mi From Kingston is less than 108,",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Clause explicitly names 'Mi From Kingston'; header index 1 matches and contains numeric mile values including 108.00.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "NORMALIZED_MATCH"
+            },
+            {
+              "surface": "260.6",
+              "value": 260.6,
+              "start": 104,
+              "end": 109,
+              "clause": "and when Length Meters is 260.6?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "Clause explicitly names 'Length Meters'; header index 5 matches and contains 260.6.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              2,
+              108
+            ],
+            [
+              5,
+              0,
+              260.6
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "108",
+          "value": "108",
+          "start": 73,
+          "end": 76
+        },
+        {
+          "surface": "260.6",
+          "value": "260.6",
+          "start": 104,
+          "end": 109
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "108",
+          "value": 108,
+          "start": 73,
+          "end": 76,
+          "clause": "when Mi From Kingston is less than 108,",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "Clause explicitly names 'Mi From Kingston'; header index 1 matches and contains numeric mile values including 108.00.",
+          "operator": "<",
+          "grounded": true,
+          "groundingStatus": "NORMALIZED_MATCH"
+        },
+        {
+          "surface": "260.6",
+          "value": 260.6,
+          "start": 104,
+          "end": 109,
+          "clause": "and when Length Meters is 260.6?",
+          "columnIndex": 5,
+          "columnCandidates": [
+            5
+          ],
+          "columnMatchReason": "Clause explicitly names 'Length Meters'; header index 5 matches and contains 260.6.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          1,
+          2,
+          108
+        ],
+        [
+          5,
+          0,
+          260.6
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8844
+}

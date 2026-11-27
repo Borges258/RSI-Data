@@ -1,0 +1,499 @@
+{
+  "arm": "E2",
+  "position": 288,
+  "example_id": "test:11579:2-11766617-6",
+  "original_index": 11579,
+  "table_id": "2-11766617-6",
+  "question": "What day is the team 17–24–5?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        6,
+        0,
+        "17–24–5"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      6,
+      0,
+      "17–24–5"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        6,
+        0,
+        "17–24–5"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "17–24–5",
+        "value": "17–24–5",
+        "start": 21,
+        "end": 28,
+        "clause": "What day is the team 17–24–5?",
+        "columnIndex": 6,
+        "columnCandidates": [
+          6
+        ],
+        "columnMatchReason": "The value is a team win-loss-overtime record and appears in the Record column; the matching row's Date answers the requested day.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "17–24–5",
+        "value": "17–24–5",
+        "start": 21,
+        "end": 28
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What day is the team 17–24–5?",
+      "table": {
+        "header": [
+          "Date",
+          "Visitor",
+          "Score",
+          "Home",
+          "Decision",
+          "Attendance",
+          "Record"
+        ],
+        "page_title": "2007–08 Tampa Bay Lightning season",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 11766617,
+        "id": "2-11766617-6",
+        "section_title": "January",
+        "rows": [
+          [
+            "January 1",
+            "Tampa Bay",
+            "3 – 4",
+            "Toronto",
+            "Ramo",
+            "19,347",
+            "15–21–4"
+          ],
+          [
+            "January 3",
+            "Tampa Bay",
+            "3 – 6",
+            "Montreal",
+            "Ramo",
+            "21,273",
+            "15–22–4"
+          ],
+          [
+            "January 5",
+            "Tampa Bay",
+            "3 – 4",
+            "Ottawa",
+            "Holmqvist",
+            "20,108",
+            "15–22–5"
+          ],
+          [
+            "January 8",
+            "Tampa Bay",
+            "5 – 3",
+            "NY Rangers",
+            "Ramo",
+            "18,200",
+            "16–22–5"
+          ],
+          [
+            "January 10",
+            "Pittsburgh",
+            "4 – 1",
+            "Tampa Bay",
+            "Ramo",
+            "20,426",
+            "16–23–5"
+          ],
+          [
+            "January 12",
+            "Tampa Bay",
+            "5 – 3",
+            "Florida",
+            "Holmqvist",
+            "16,578",
+            "17–23–5"
+          ],
+          [
+            "January 15",
+            "Colorado",
+            "3 – 0",
+            "Tampa Bay",
+            "Ramo",
+            "17,222",
+            "17–24–5"
+          ],
+          [
+            "January 18",
+            "Tampa Bay",
+            "3 – 0",
+            "Pittsburgh",
+            "Holmqvist",
+            "17,132",
+            "18–24–5"
+          ],
+          [
+            "January 19",
+            "Tampa Bay",
+            "2 – 0",
+            "Ottawa",
+            "Holmqvist",
+            "20,091",
+            "19–24–5"
+          ],
+          [
+            "January 22",
+            "Edmonton",
+            "3 – 4",
+            "Tampa Bay",
+            "Holmqvist",
+            "16,799",
+            "20–24–5"
+          ],
+          [
+            "January 24",
+            "Ottawa",
+            "8 – 4",
+            "Tampa Bay",
+            "Ramo",
+            "16,346",
+            "20–25–5"
+          ],
+          [
+            "January 29",
+            "Buffalo",
+            "4 – 2",
+            "Tampa Bay",
+            "Holmqvist",
+            "18,920",
+            "20–26–5"
+          ],
+          [
+            "January 31",
+            "Vancouver",
+            "3 – 4",
+            "Tampa Bay",
+            "Ramo",
+            "17,019",
+            "21–26–5"
+          ]
+        ],
+        "caption": "January",
+        "headers": [
+          "Date",
+          "Visitor",
+          "Score",
+          "Home",
+          "Decision",
+          "Attendance",
+          "Record"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-11766617-6",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "17–24–5",
+              "value": "17–24–5",
+              "start": 21,
+              "end": 28
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "4dc31f78041ba34b2b67f173af5d67628d27d7e4c9d941b45b17a89944839f25",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5070,
+              "completion_tokens": 25,
+              "total_tokens": 5095,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "17–24–5",
+              "value": "17–24–5",
+              "start": 21,
+              "end": 28,
+              "clause": "What day is the team 17–24–5?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "17–24–5",
+              "value": "17–24–5",
+              "start": 21,
+              "end": 28,
+              "clause": "What day is the team 17–24–5?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "17–24–5",
+              "value": "17–24–5",
+              "start": 21,
+              "end": 28,
+              "clause": "What day is the team 17–24–5?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "The value is a team win-loss-overtime record and appears in the Record column; the matching row's Date answers the requested day."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "7f298e0737bc5d3a4e8789bae5ee56ab91fb53f63be64d65ea68dad8ab6edf2b",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5111,
+              "completion_tokens": 48,
+              "total_tokens": 5159,
+              "prompt_tokens_details": {
+                "cached_tokens": 4864
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "17–24–5",
+              "value": "17–24–5",
+              "start": 21,
+              "end": 28,
+              "clause": "What day is the team 17–24–5?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "The value is a team win-loss-overtime record and appears in the Record column; the matching row's Date answers the requested day.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "87568b1880ebc1798e5c9750a63b19e60b5b7a1107de48983f2ef408988f15e7",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5183,
+              "completion_tokens": 9,
+              "total_tokens": 5192,
+              "prompt_tokens_details": {
+                "cached_tokens": 4864
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "17–24–5",
+              "value": "17–24–5",
+              "start": 21,
+              "end": 28,
+              "clause": "What day is the team 17–24–5?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "The value is a team win-loss-overtime record and appears in the Record column; the matching row's Date answers the requested day.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "06874c88e603891b321faf6f877e8f6f79267711bd8438d2aea43cb3d58645f0",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5134,
+              "completion_tokens": 14,
+              "total_tokens": 5148,
+              "prompt_tokens_details": {
+                "cached_tokens": 4864
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "17–24–5",
+              "value": "17–24–5",
+              "start": 21,
+              "end": 28,
+              "clause": "What day is the team 17–24–5?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "The value is a team win-loss-overtime record and appears in the Record column; the matching row's Date answers the requested day.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "17–24–5",
+              "value": "17–24–5",
+              "start": 21,
+              "end": 28,
+              "clause": "What day is the team 17–24–5?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "The value is a team win-loss-overtime record and appears in the Record column; the matching row's Date answers the requested day.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "17–24–5",
+              "value": "17–24–5",
+              "start": 21,
+              "end": 28,
+              "clause": "What day is the team 17–24–5?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "The value is a team win-loss-overtime record and appears in the Record column; the matching row's Date answers the requested day.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              6,
+              0,
+              "17–24–5"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "17–24–5",
+          "value": "17–24–5",
+          "start": 21,
+          "end": 28
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "17–24–5",
+          "value": "17–24–5",
+          "start": 21,
+          "end": 28,
+          "clause": "What day is the team 17–24–5?",
+          "columnIndex": 6,
+          "columnCandidates": [
+            6
+          ],
+          "columnMatchReason": "The value is a team win-loss-overtime record and appears in the Record column; the matching row's Date answers the requested day.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          6,
+          0,
+          "17–24–5"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 10859
+}

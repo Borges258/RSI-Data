@@ -1,0 +1,451 @@
+{
+  "arm": "E2",
+  "position": 333,
+  "example_id": "test:13088:2-18146388-1",
+  "original_index": 13088,
+  "table_id": "2-18146388-1",
+  "question": "What co-singer has sukhwinder singh as the composer?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        4,
+        0,
+        "sukhwinder singh"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      4,
+      0,
+      "Sukhwinder Singh"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        0,
+        "Sukhwinder Singh"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "sukhwinder singh",
+        "value": "Sukhwinder Singh",
+        "start": 19,
+        "end": 35,
+        "clause": "What co-singer has sukhwinder singh as the composer?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The phrase 'as the composer' explicitly identifies the Composer field, and the row evidence contains 'Sukhwinder Singh' in that column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "sukhwinder singh",
+        "value": "Sukhwinder Singh",
+        "start": 19,
+        "end": 35
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What co-singer has sukhwinder singh as the composer?",
+      "table": {
+        "header": [
+          "Year",
+          "Song",
+          "Film",
+          "Co-Singer",
+          "Composer",
+          "Lyricist"
+        ],
+        "page_title": "Kaushiki Chakrabarty",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 18146388,
+        "id": "2-18146388-1",
+        "section_title": "Movies",
+        "rows": [
+          [
+            "2013",
+            "Hridoy Aamar Nache Re",
+            "Shunyo Awnko",
+            "None",
+            "Rabindranath Tagore",
+            "Rabindranath Tagore"
+          ],
+          [
+            "2013",
+            "Aloy Alokmoy Kore",
+            "Shunyo Awnko",
+            "None",
+            "Rabindranath Tagore",
+            "Rabindranath Tagore"
+          ],
+          [
+            "2013",
+            "Emoni Barasha Chhilo Sedin",
+            "Shunyo Awnko",
+            "None",
+            "Kamal Dasgupta",
+            "Pranab Roy"
+          ],
+          [
+            "2013",
+            "Rabso Neha Laage ( Bilaval Bandish )",
+            "Shunyo Awnko",
+            "Ajoy Chakraborty",
+            "Gautam Ghose",
+            "Gautam Ghose"
+          ],
+          [
+            "2012",
+            "Bhalobashi",
+            "Teen Kanya",
+            "None",
+            "Indradeep Dasgupta",
+            "Srijato"
+          ],
+          [
+            "2012",
+            "Rahoon Tere Peechhe Peechhe",
+            "Paanch Adhyay",
+            "None",
+            "Shantanu Moitra",
+            "Swanand Kirkire"
+          ],
+          [
+            "2011",
+            "Paata Jhora Brishti",
+            "Chaplin",
+            "Shaan",
+            "Indradeep Dasgupta",
+            "Srijato"
+          ],
+          [
+            "2011",
+            "Phire Ja Re Mon Ja",
+            "Jaani Dyakha Hawbe",
+            "None",
+            "Indradeep Dasgupta",
+            "Srijato"
+          ],
+          [
+            "2005",
+            "Vaishnava Jan To",
+            "Water",
+            "Ajoy Chakraborty",
+            "Sukhwinder Singh",
+            "Sukhwinder Singh"
+          ]
+        ],
+        "caption": "Movies",
+        "headers": [
+          "Year",
+          "Song",
+          "Film",
+          "Co-Singer",
+          "Composer",
+          "Lyricist"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-18146388-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "sukhwinder singh",
+              "value": "Sukhwinder Singh",
+              "start": 19,
+              "end": 35
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c5f6c97a3459756fe8f2daa6f70e48e641e3e14473d61ec50f42ed1a6c5e05d3",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4982,
+              "completion_tokens": 26,
+              "total_tokens": 5008,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "sukhwinder singh",
+              "value": "Sukhwinder Singh",
+              "start": 19,
+              "end": 35,
+              "clause": "What co-singer has sukhwinder singh as the composer?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "sukhwinder singh",
+              "value": "Sukhwinder Singh",
+              "start": 19,
+              "end": 35,
+              "clause": "What co-singer has sukhwinder singh as the composer?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "sukhwinder singh",
+              "value": "Sukhwinder Singh",
+              "start": 19,
+              "end": 35,
+              "clause": "What co-singer has sukhwinder singh as the composer?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'as the composer' explicitly identifies the Composer field, and the row evidence contains 'Sukhwinder Singh' in that column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e3ea564f6c1f778fab5be0ba3536dcefa40fdbf4adf44993cd9b46988351dabf",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5027,
+              "completion_tokens": 50,
+              "total_tokens": 5077,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "sukhwinder singh",
+              "value": "Sukhwinder Singh",
+              "start": 19,
+              "end": 35,
+              "clause": "What co-singer has sukhwinder singh as the composer?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'as the composer' explicitly identifies the Composer field, and the row evidence contains 'Sukhwinder Singh' in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ca6892ebe356b585c77d1539ea3f0ecbe7d6e1b9f0ac0bc2d2d136a2676f47d8",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5101,
+              "completion_tokens": 9,
+              "total_tokens": 5110,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "sukhwinder singh",
+              "value": "Sukhwinder Singh",
+              "start": 19,
+              "end": 35,
+              "clause": "What co-singer has sukhwinder singh as the composer?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'as the composer' explicitly identifies the Composer field, and the row evidence contains 'Sukhwinder Singh' in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "6e49920be44b9daa59f40b9198da1b2514b6fb208be6e6a66c485c11cd266cb5",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5052,
+              "completion_tokens": 14,
+              "total_tokens": 5066,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "sukhwinder singh",
+              "value": "Sukhwinder Singh",
+              "start": 19,
+              "end": 35,
+              "clause": "What co-singer has sukhwinder singh as the composer?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'as the composer' explicitly identifies the Composer field, and the row evidence contains 'Sukhwinder Singh' in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "sukhwinder singh",
+              "value": "Sukhwinder Singh",
+              "start": 19,
+              "end": 35,
+              "clause": "What co-singer has sukhwinder singh as the composer?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'as the composer' explicitly identifies the Composer field, and the row evidence contains 'Sukhwinder Singh' in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "sukhwinder singh",
+              "value": "Sukhwinder Singh",
+              "start": 19,
+              "end": 35,
+              "clause": "What co-singer has sukhwinder singh as the composer?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'as the composer' explicitly identifies the Composer field, and the row evidence contains 'Sukhwinder Singh' in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              0,
+              "Sukhwinder Singh"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "sukhwinder singh",
+          "value": "Sukhwinder Singh",
+          "start": 19,
+          "end": 35
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "sukhwinder singh",
+          "value": "Sukhwinder Singh",
+          "start": 19,
+          "end": 35,
+          "clause": "What co-singer has sukhwinder singh as the composer?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The phrase 'as the composer' explicitly identifies the Composer field, and the row evidence contains 'Sukhwinder Singh' in that column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          4,
+          0,
+          "Sukhwinder Singh"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8922
+}

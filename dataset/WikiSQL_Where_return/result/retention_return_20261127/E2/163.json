@@ -1,0 +1,419 @@
+{
+  "arm": "E2",
+  "position": 163,
+  "example_id": "test:5882:2-15166232-2",
+  "original_index": 5882,
+  "table_id": "2-15166232-2",
+  "question": "On what Date of the race was Nesta Carter the Athlete?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        2,
+        0,
+        "nesta carter"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "Nesta Carter"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "Nesta Carter"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Nesta Carter",
+        "value": "Nesta Carter",
+        "start": 29,
+        "end": 41,
+        "clause": "On what Date of the race was Nesta Carter the Athlete?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The question explicitly identifies Nesta Carter as the Athlete, matching the Athlete header and row value.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Nesta Carter",
+        "value": "Nesta Carter",
+        "start": 29,
+        "end": 41
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "On what Date of the race was Nesta Carter the Athlete?",
+      "table": {
+        "header": [
+          "Rank",
+          "Time",
+          "Athlete",
+          "Nation",
+          "Date",
+          "Location"
+        ],
+        "page_title": "Athletics in Jamaica",
+        "types": [
+          "real",
+          "real",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 15166232,
+        "id": "2-15166232-2",
+        "section_title": "Top 5 Jamaican 100 m athletes — men",
+        "rows": [
+          [
+            "1",
+            "9.58",
+            "Usain Bolt",
+            "Jamaica",
+            "16 August 2009",
+            "Berlin , Germany"
+          ],
+          [
+            "2",
+            "9.69",
+            "Yohan Blake",
+            "Jamaica",
+            "23 August 2012",
+            "Lausanne , Switzerland"
+          ],
+          [
+            "3",
+            "9.72",
+            "Asafa Powell",
+            "Jamaica",
+            "2 September 2008",
+            "Lausanne , Switzerland"
+          ],
+          [
+            "4",
+            "9.78",
+            "Nesta Carter",
+            "Jamaica",
+            "29 August 2010",
+            "Rieti , Italy"
+          ],
+          [
+            "5",
+            "9.80",
+            "Steve Mullings",
+            "Jamaica",
+            "4 June 2011",
+            "Eugene , USA"
+          ]
+        ],
+        "caption": "Top 5 Jamaican 100 m athletes — men",
+        "headers": [
+          "Rank",
+          "Time",
+          "Athlete",
+          "Nation",
+          "Date",
+          "Location"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-15166232-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Nesta Carter",
+              "value": "Nesta Carter",
+              "start": 29,
+              "end": 41
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "947d057f077208e8cb5e3aa5287dd162ad6de17c07f6ae659b7fdd406b642552",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4817,
+              "completion_tokens": 19,
+              "total_tokens": 4836,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Nesta Carter",
+              "value": "Nesta Carter",
+              "start": 29,
+              "end": 41,
+              "clause": "On what Date of the race was Nesta Carter the Athlete?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Nesta Carter",
+              "value": "Nesta Carter",
+              "start": 29,
+              "end": 41,
+              "clause": "On what Date of the race was Nesta Carter the Athlete?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Nesta Carter",
+              "value": "Nesta Carter",
+              "start": 29,
+              "end": 41,
+              "clause": "On what Date of the race was Nesta Carter the Athlete?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies Nesta Carter as the Athlete, matching the Athlete header and row value."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "9c7351255fe2789f07cd3e0ef4722f4e78955a823faf68dd64e973b921be40dd",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4852,
+              "completion_tokens": 39,
+              "total_tokens": 4891,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Nesta Carter",
+              "value": "Nesta Carter",
+              "start": 29,
+              "end": 41,
+              "clause": "On what Date of the race was Nesta Carter the Athlete?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies Nesta Carter as the Athlete, matching the Athlete header and row value.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f954a4bd03a643f9af6f49beed72c99ca215c29971952fa8169d1229706699d5",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4915,
+              "completion_tokens": 9,
+              "total_tokens": 4924,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Nesta Carter",
+              "value": "Nesta Carter",
+              "start": 29,
+              "end": 41,
+              "clause": "On what Date of the race was Nesta Carter the Athlete?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies Nesta Carter as the Athlete, matching the Athlete header and row value.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "df10742362b94144f4e4e3687b5540c990aa8019ceea82ae968385655bbdf96c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4866,
+              "completion_tokens": 11,
+              "total_tokens": 4877,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Nesta Carter",
+              "value": "Nesta Carter",
+              "start": 29,
+              "end": 41,
+              "clause": "On what Date of the race was Nesta Carter the Athlete?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies Nesta Carter as the Athlete, matching the Athlete header and row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Nesta Carter",
+              "value": "Nesta Carter",
+              "start": 29,
+              "end": 41,
+              "clause": "On what Date of the race was Nesta Carter the Athlete?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies Nesta Carter as the Athlete, matching the Athlete header and row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Nesta Carter",
+              "value": "Nesta Carter",
+              "start": 29,
+              "end": 41,
+              "clause": "On what Date of the race was Nesta Carter the Athlete?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies Nesta Carter as the Athlete, matching the Athlete header and row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "Nesta Carter"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Nesta Carter",
+          "value": "Nesta Carter",
+          "start": 29,
+          "end": 41
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Nesta Carter",
+          "value": "Nesta Carter",
+          "start": 29,
+          "end": 41,
+          "clause": "On what Date of the race was Nesta Carter the Athlete?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The question explicitly identifies Nesta Carter as the Athlete, matching the Athlete header and row value.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          2,
+          0,
+          "Nesta Carter"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7688
+}

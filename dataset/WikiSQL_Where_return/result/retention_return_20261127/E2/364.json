@@ -1,0 +1,439 @@
+{
+  "arm": "E2",
+  "position": 364,
+  "example_id": "test:14301:2-18508174-2",
+  "original_index": 14301,
+  "table_id": "2-18508174-2",
+  "question": "What is the world record when the 138 kg is 137kg?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        3,
+        0,
+        "137kg"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      3,
+      0,
+      "137kg"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        0,
+        "137kg"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "137kg",
+        "value": "137kg",
+        "start": 44,
+        "end": 49,
+        "clause": "What is the world record when the 138 kg is 137kg?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The question names the '138kg' header as the field, and 137kg appears in that column's row evidence.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "137kg",
+        "value": "137kg",
+        "start": 44,
+        "end": 49
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the world record when the 138 kg is 137kg?",
+      "table": {
+        "header": [
+          "World record",
+          "Snatch",
+          "Halil Mutlu ( TUR )",
+          "138kg",
+          "Antalya , Turkey"
+        ],
+        "page_title": "Weightlifting at the 2008 Summer Olympics – Men's 56 kg",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 18508174,
+        "id": "2-18508174-2",
+        "section_title": "Records",
+        "rows": [
+          [
+            "Clean & Jerk",
+            "Halil Mutlu ( TUR )",
+            "168kg",
+            "Trenčín , Slovakia",
+            "24 April 2001"
+          ],
+          [
+            "Total",
+            "Halil Mutlu ( TUR )",
+            "305kg",
+            "Sydney , Australia",
+            "16 September 2000"
+          ],
+          [
+            "Olympic record",
+            "Snatch",
+            "Halil Mutlu ( TUR )",
+            "137kg",
+            "Sydney , Australia"
+          ],
+          [
+            "Olympic record",
+            "Clean & Jerk",
+            "Halil Mutlu ( TUR )",
+            "167kg",
+            "Sydney , Australia"
+          ],
+          [
+            "Olympic record",
+            "Total",
+            "Halil Mutlu ( TUR )",
+            "305kg",
+            "Sydney , Australia"
+          ]
+        ],
+        "caption": "Records",
+        "headers": [
+          "World record",
+          "Snatch",
+          "Halil Mutlu ( TUR )",
+          "138kg",
+          "Antalya , Turkey"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-18508174-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "137kg",
+              "value": "137kg",
+              "start": 44,
+              "end": 49
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "cae80c3d27892f042d31dcbfe6ef6c6619c5cf2e3592ce84af8882fb6d2d6057",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4820,
+              "completion_tokens": 94,
+              "total_tokens": 4914,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 73
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "137kg",
+              "value": "137kg",
+              "start": 44,
+              "end": 49,
+              "clause": "What is the world record when the 138 kg is 137kg?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "137kg",
+              "value": "137kg",
+              "start": 44,
+              "end": 49,
+              "clause": "What is the world record when the 138 kg is 137kg?"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d19adae15a38a6aed31f48c84b9ab8a9d57501703442cd07ee0df015a5c2a58c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4877,
+              "completion_tokens": 8,
+              "total_tokens": 4885,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          },
+          "count": 1,
+          "recovered": [],
+          "reviewedUncertain": [
+            {
+              "surface": "138",
+              "start": 34,
+              "end": 37
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "137kg",
+              "value": "137kg",
+              "start": 44,
+              "end": 49,
+              "clause": "What is the world record when the 138 kg is 137kg?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question names the '138kg' header as the field, and 137kg appears in that column's row evidence."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e195362a5fa0fb23b0d9c1efebc8bb953a9e628df1788eeb4daff6edd028cd30",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4858,
+              "completion_tokens": 118,
+              "total_tokens": 4976,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 70
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "137kg",
+              "value": "137kg",
+              "start": 44,
+              "end": 49,
+              "clause": "What is the world record when the 138 kg is 137kg?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question names the '138kg' header as the field, and 137kg appears in that column's row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "bc039d7bb2100fd00096651627dc69314a8b14d8ef24ac2929c6dbda24f081e4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4928,
+              "completion_tokens": 9,
+              "total_tokens": 4937,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "137kg",
+              "value": "137kg",
+              "start": 44,
+              "end": 49,
+              "clause": "What is the world record when the 138 kg is 137kg?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question names the '138kg' header as the field, and 137kg appears in that column's row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "cf6861728ecddb428186e42a032d9631d7adf1a6eb6674b93eb30b92a5089b00",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4879,
+              "completion_tokens": 11,
+              "total_tokens": 4890,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "137kg",
+              "value": "137kg",
+              "start": 44,
+              "end": 49,
+              "clause": "What is the world record when the 138 kg is 137kg?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question names the '138kg' header as the field, and 137kg appears in that column's row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "137kg",
+              "value": "137kg",
+              "start": 44,
+              "end": 49,
+              "clause": "What is the world record when the 138 kg is 137kg?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question names the '138kg' header as the field, and 137kg appears in that column's row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "137kg",
+              "value": "137kg",
+              "start": 44,
+              "end": 49,
+              "clause": "What is the world record when the 138 kg is 137kg?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question names the '138kg' header as the field, and 137kg appears in that column's row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              0,
+              "137kg"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "137kg",
+          "value": "137kg",
+          "start": 44,
+          "end": 49
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "137kg",
+          "value": "137kg",
+          "start": 44,
+          "end": 49,
+          "clause": "What is the world record when the 138 kg is 137kg?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The question names the '138kg' header as the field, and 137kg appears in that column's row evidence.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          3,
+          0,
+          "137kg"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 12484
+}

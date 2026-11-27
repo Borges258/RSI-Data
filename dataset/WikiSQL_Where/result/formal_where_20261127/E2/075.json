@@ -1,0 +1,640 @@
+{
+  "arm": "E2",
+  "position": 75,
+  "example_id": "test:4863:2-10648431-3",
+  "original_index": 4863,
+  "table_id": "2-10648431-3",
+  "question": "How many golds for Canada (12 total)?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        5,
+        1,
+        12
+      ],
+      [
+        1,
+        0,
+        "canada"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "Canada"
+    ],
+    [
+      5,
+      0,
+      12
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "Canada"
+      ],
+      [
+        5,
+        0,
+        12
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Canada",
+        "value": "Canada",
+        "start": 19,
+        "end": 25,
+        "clause": "How many golds for Canada (12 total)?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "Canada is the nation being queried, matching the Nation field.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "12",
+        "value": 12,
+        "start": 27,
+        "end": 29,
+        "clause": "How many golds for Canada (12 total)?",
+        "columnIndex": 5,
+        "columnCandidates": [
+          5
+        ],
+        "columnMatchReason": "The question explicitly labels 12 as total, matching the Total field despite Canada's current row showing 24.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Canada",
+        "value": "Canada",
+        "start": 19,
+        "end": 25
+      },
+      {
+        "surface": "12",
+        "value": "12",
+        "start": 27,
+        "end": 29
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "How many golds for Canada (12 total)?",
+      "table": {
+        "header": [
+          "Rank",
+          "Nation",
+          "Gold",
+          "Silver",
+          "Bronze",
+          "Total"
+        ],
+        "page_title": "Athletics at the 1967 Pan American Games",
+        "types": [
+          "real",
+          "text",
+          "real",
+          "real",
+          "real",
+          "real"
+        ],
+        "page_id": 10648431,
+        "id": "2-10648431-3",
+        "section_title": "Medal table",
+        "rows": [
+          [
+            "1",
+            "United States",
+            "30",
+            "18",
+            "6",
+            "54"
+          ],
+          [
+            "2",
+            "Canada",
+            "3",
+            "9",
+            "12",
+            "24"
+          ],
+          [
+            "3",
+            "Cuba",
+            "2",
+            "3",
+            "7",
+            "12"
+          ],
+          [
+            "4",
+            "Venezuela",
+            "0",
+            "2",
+            "0",
+            "2"
+          ],
+          [
+            "5",
+            "Mexico",
+            "0",
+            "1",
+            "2",
+            "3"
+          ],
+          [
+            "6",
+            "Brazil",
+            "0",
+            "1",
+            "1",
+            "2"
+          ],
+          [
+            "6",
+            "Colombia",
+            "0",
+            "1",
+            "1",
+            "2"
+          ],
+          [
+            "8",
+            "Jamaica",
+            "0",
+            "0",
+            "3",
+            "3"
+          ],
+          [
+            "9",
+            "Trinidad and Tobago",
+            "0",
+            "0",
+            "1",
+            "1"
+          ],
+          [
+            "9",
+            "Peru",
+            "0",
+            "0",
+            "1",
+            "1"
+          ],
+          [
+            "9",
+            "Argentina",
+            "0",
+            "0",
+            "1",
+            "1"
+          ]
+        ],
+        "caption": "Medal table",
+        "headers": [
+          "Rank",
+          "Nation",
+          "Gold",
+          "Silver",
+          "Bronze",
+          "Total"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-10648431-3",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "Canada",
+              "value": "Canada",
+              "start": 19,
+              "end": 25
+            },
+            {
+              "surface": "12",
+              "value": "12",
+              "start": 27,
+              "end": 29
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "2c06890281bfb18dc0d3fba2fd3d6e8d0e115a9932c06d9baacb2951105c7c59",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4829,
+              "completion_tokens": 113,
+              "total_tokens": 4942,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 86
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Canada",
+              "value": "Canada",
+              "start": 19,
+              "end": 25,
+              "clause": "How many golds for Canada (12 total)?"
+            },
+            {
+              "surface": "12",
+              "value": "12",
+              "start": 27,
+              "end": 29,
+              "clause": "How many golds for Canada (12 total)?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Canada",
+              "value": "Canada",
+              "start": 19,
+              "end": 25,
+              "clause": "How many golds for Canada (12 total)?"
+            },
+            {
+              "surface": "12",
+              "value": "12",
+              "start": 27,
+              "end": 29,
+              "clause": "How many golds for Canada (12 total)?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Canada",
+              "value": "Canada",
+              "start": 19,
+              "end": 25,
+              "clause": "How many golds for Canada (12 total)?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Canada is the nation being queried, matching the Nation field."
+            },
+            {
+              "surface": "12",
+              "value": "12",
+              "start": 27,
+              "end": 29,
+              "clause": "How many golds for Canada (12 total)?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly labels 12 as total, matching the Total field despite Canada's current row showing 24."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c48317e73d0cd17e57511ec2f623a428fd03fbef887029082dcae3ff03925902",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4892,
+              "completion_tokens": 58,
+              "total_tokens": 4950,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Canada",
+              "value": "Canada",
+              "start": 19,
+              "end": 25,
+              "clause": "How many golds for Canada (12 total)?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Canada is the nation being queried, matching the Nation field.",
+              "operator": "="
+            },
+            {
+              "surface": "12",
+              "value": "12",
+              "start": 27,
+              "end": 29,
+              "clause": "How many golds for Canada (12 total)?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly labels 12 as total, matching the Total field despite Canada's current row showing 24.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f3655fc28e970a75537e44f5340004ab1343b8ce9d8894c2d209d331a350992d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4983,
+              "completion_tokens": 11,
+              "total_tokens": 4994,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Canada",
+              "value": "Canada",
+              "start": 19,
+              "end": 25,
+              "clause": "How many golds for Canada (12 total)?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Canada is the nation being queried, matching the Nation field.",
+              "operator": "="
+            },
+            {
+              "surface": "12",
+              "value": 12,
+              "start": 27,
+              "end": 29,
+              "clause": "How many golds for Canada (12 total)?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly labels 12 as total, matching the Total field despite Canada's current row showing 24.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "9340aaa5a210224fab230b66d36138ec37d9401206bc75b80fb127375fa18500",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4937,
+              "completion_tokens": 11,
+              "total_tokens": 4948,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Canada",
+              "value": "Canada",
+              "start": 19,
+              "end": 25,
+              "clause": "How many golds for Canada (12 total)?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Canada is the nation being queried, matching the Nation field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "12",
+              "value": "12",
+              "start": 27,
+              "end": 29,
+              "clause": "How many golds for Canada (12 total)?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly labels 12 as total, matching the Total field despite Canada's current row showing 24.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Canada",
+              "value": "Canada",
+              "start": 19,
+              "end": 25,
+              "clause": "How many golds for Canada (12 total)?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Canada is the nation being queried, matching the Nation field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "12",
+              "value": 12,
+              "start": 27,
+              "end": 29,
+              "clause": "How many golds for Canada (12 total)?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly labels 12 as total, matching the Total field despite Canada's current row showing 24.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Canada",
+              "value": "Canada",
+              "start": 19,
+              "end": 25,
+              "clause": "How many golds for Canada (12 total)?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Canada is the nation being queried, matching the Nation field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "12",
+              "value": 12,
+              "start": 27,
+              "end": 29,
+              "clause": "How many golds for Canada (12 total)?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly labels 12 as total, matching the Total field despite Canada's current row showing 24.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              "Canada"
+            ],
+            [
+              5,
+              0,
+              12
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Canada",
+          "value": "Canada",
+          "start": 19,
+          "end": 25
+        },
+        {
+          "surface": "12",
+          "value": "12",
+          "start": 27,
+          "end": 29
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Canada",
+          "value": "Canada",
+          "start": 19,
+          "end": 25,
+          "clause": "How many golds for Canada (12 total)?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "Canada is the nation being queried, matching the Nation field.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "12",
+          "value": 12,
+          "start": 27,
+          "end": 29,
+          "clause": "How many golds for Canada (12 total)?",
+          "columnIndex": 5,
+          "columnCandidates": [
+            5
+          ],
+          "columnMatchReason": "The question explicitly labels 12 as total, matching the Total field despite Canada's current row showing 24.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          1,
+          0,
+          "Canada"
+        ],
+        [
+          5,
+          0,
+          12
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9031
+}

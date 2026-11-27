@@ -1,0 +1,967 @@
+{
+  "arm": "E2",
+  "position": 54,
+  "example_id": "test:1947:1-186468-1",
+  "original_index": 1947,
+  "table_id": "1-186468-1",
+  "question": "When 5.5 is the l-band what is the v-band?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        1,
+        0,
+        "5.5"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [],
+  "status": "GROUNDING_FAILED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "GROUNDING_FAILED",
+    "valid": false,
+    "errors": [
+      "condition 0: invalid column",
+      "condition 0: grounding NO_MATCH"
+    ],
+    "conditions": [
+      {
+        "surface": "5.5",
+        "value": "5.5",
+        "start": 5,
+        "end": 8,
+        "clause": "When 5.5 is the l-band what is the v-band?",
+        "columnMatchStatus": "UNRESOLVED",
+        "columnCandidates": [
+          {
+            "columnIndex": 1,
+            "header": "K-band",
+            "evidence": "EXACT_VALUE_MATCH"
+          }
+        ],
+        "columnMatchReason": "L-band is not a schema header; the table only has K-band, Ka-band, Q-band, V-band, and W-band.",
+        "operator": "=",
+        "grounded": false,
+        "groundingStatus": "NO_MATCH",
+        "groundingReview": {
+          "column": null,
+          "reason": "The question refers to an L-band, which is not a table header; K-band is only an exact value match and is not supported by the stated field."
+        }
+      }
+    ],
+    "stage": "WHERE_CONDITION_VALIDATE",
+    "originalConditions": [
+      {
+        "surface": "5.5",
+        "value": "5.5",
+        "start": 5,
+        "end": 8
+      }
+    ],
+    "halt": true,
+    "completed": false,
+    "conds": [],
+    "warnings": [
+      "value model disagreed with extracted question span; original retained"
+    ],
+    "request": {
+      "question": "When 5.5 is the l-band what is the v-band?",
+      "table": {
+        "header": [
+          "Property",
+          "K-band",
+          "Ka-band",
+          "Q-band",
+          "V-band",
+          "W-band"
+        ],
+        "page_title": "Wilkinson Microwave Anisotropy Probe",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "id": "1-186468-1",
+        "section_title": "Spacecraft",
+        "caption": "Properties of WMAP at different frequencies",
+        "rows": [
+          [
+            "Central wavelength (mm)",
+            "13",
+            "9.1",
+            "7.3",
+            "4.9",
+            "3.2"
+          ],
+          [
+            "Central frequency ( GHz )",
+            "23",
+            "33",
+            "41",
+            "61",
+            "94"
+          ],
+          [
+            "Bandwidth (GHz)",
+            "5.5",
+            "7.0",
+            "8.3",
+            "14.0",
+            "20.5"
+          ],
+          [
+            "Beam size (arcminutes)",
+            "52.8",
+            "39.6",
+            "30.6",
+            "21",
+            "13.2"
+          ],
+          [
+            "Number of radiometers",
+            "2",
+            "2",
+            "4",
+            "4",
+            "8"
+          ],
+          [
+            "System temperature ( K )",
+            "29",
+            "39",
+            "59",
+            "92",
+            "145"
+          ]
+        ],
+        "name": "table_186468_1",
+        "headers": [
+          "Property",
+          "K-band",
+          "Ka-band",
+          "Q-band",
+          "V-band",
+          "W-band"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-186468-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 9,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "5.5",
+              "value": "5.5",
+              "start": 5,
+              "end": 8
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "7b64398400aa5eb53018d6eb9c7c8cb17576e49ce4616ccedf9cce573e0b6078",
+            "knowledgeIds": [],
+            "usage": {
+              "attribution": {
+                "items": {
+                  "msg_0dce8beb4ea05c64016b08f99cae8487d2804db4b14179b3fa": {
+                    "input_tokens": 64,
+                    "cached_tokens": 60,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 64,
+                        "cached_tokens": 60,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0dce8beb4ea05c64016b08f99cae8487d292614618292de449": {
+                    "input_tokens": 285,
+                    "cached_tokens": 155,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 285,
+                        "cached_tokens": 155,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0dce8beb4ea05c64016b08f99cae8487d2b98f30178d4190c5": {
+                    "input_tokens": 86,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 86,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0dce8beb4ea05c64016b08f9abd3dc87d2a7661e2187527c05": {
+                    "input_tokens": 0,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 23,
+                    "content": [
+                      {
+                        "input_tokens": 0,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 23
+                      }
+                    ]
+                  },
+                  "rs_0dce8beb4ea05c64016b08f9ab8f7c87d2b6e15c3cdd25137b": {
+                    "input_tokens": 2,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 125
+                  }
+                },
+                "request_fields": {
+                  "instructions": {
+                    "input_tokens": 4380,
+                    "cached_tokens": 4137,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0
+                  }
+                }
+              },
+              "prompt_tokens": 4817,
+              "completion_tokens": 148,
+              "total_tokens": 4965,
+              "prompt_tokens_details": {
+                "cache_write_tokens_details": {
+                  "ttl_30m_tokens": 0,
+                  "ttl_12h_tokens": 0
+                },
+                "cached_tokens": 4352
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 125
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "5.5",
+              "value": "5.5",
+              "start": 5,
+              "end": 8,
+              "clause": "When 5.5 is the l-band what is the v-band?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "5.5",
+              "value": "5.5",
+              "start": 5,
+              "end": 8,
+              "clause": "When 5.5 is the l-band what is the v-band?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "5.5",
+              "value": "5.5",
+              "start": 5,
+              "end": 8,
+              "clause": "When 5.5 is the l-band what is the v-band?",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [],
+              "columnMatchReason": "L-band is not a schema header; the table only has K-band, Ka-band, Q-band, V-band, and W-band."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "1447d254aefd220f5550d9fa4a40227e7c7fedb373ce79e7aa52d75eece4d01f",
+            "knowledgeIds": [],
+            "usage": {
+              "attribution": {
+                "items": {
+                  "msg_07f6b6d2ca44a4ea016b08f9ae30e087d2a1e225061c7a7cf9": {
+                    "input_tokens": 285,
+                    "cached_tokens": 155,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 285,
+                        "cached_tokens": 155,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_07f6b6d2ca44a4ea016b08f9ae30e087d2a8cbd9b9808b6e94": {
+                    "input_tokens": 126,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 126,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_07f6b6d2ca44a4ea016b08f9ae30e087d2bd6058038e74f172": {
+                    "input_tokens": 64,
+                    "cached_tokens": 60,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 64,
+                        "cached_tokens": 60,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_07f6b6d2ca44a4ea016b08f9d2463c87d2abb60fdcddd77b50": {
+                    "input_tokens": 0,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 49,
+                    "content": [
+                      {
+                        "input_tokens": 0,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 49
+                      }
+                    ]
+                  },
+                  "rs_07f6b6d2ca44a4ea016b08f9d219ac87d2b1eace6550467dc9": {
+                    "input_tokens": 2,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 150
+                  }
+                },
+                "request_fields": {
+                  "instructions": {
+                    "input_tokens": 4380,
+                    "cached_tokens": 4137,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0
+                  }
+                }
+              },
+              "prompt_tokens": 4857,
+              "completion_tokens": 199,
+              "total_tokens": 5056,
+              "prompt_tokens_details": {
+                "cache_write_tokens_details": {
+                  "ttl_30m_tokens": 0,
+                  "ttl_12h_tokens": 0
+                },
+                "cached_tokens": 4352
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 150
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "5.5",
+              "value": "5.5",
+              "start": 5,
+              "end": 8,
+              "clause": "When 5.5 is the l-band what is the v-band?",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [],
+              "columnMatchReason": "L-band is not a schema header; the table only has K-band, Ka-band, Q-band, V-band, and W-band.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "1c4f9029c3caaa526c9424df8408dfff23ae44da71dee8246f53d801a6624399",
+            "knowledgeIds": [],
+            "usage": {
+              "attribution": {
+                "items": {
+                  "msg_0f3f18331e8f85f6016b08f9d5792887d289d1537398743681": {
+                    "input_tokens": 202,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 202,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0f3f18331e8f85f6016b08f9d5792887d29f54fb2361a3b6ff": {
+                    "input_tokens": 64,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 64,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0f3f18331e8f85f6016b08f9d5792887d2b53f17a649f78aef": {
+                    "input_tokens": 285,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 285,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0f3f18331e8f85f6016b08f9eb19e087d2af38e9b0d56373fa": {
+                    "input_tokens": 0,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 11,
+                    "content": [
+                      {
+                        "input_tokens": 0,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 11
+                      }
+                    ]
+                  },
+                  "rs_0f3f18331e8f85f6016b08f9eaed3487d2b5c9116d41686a6d": {
+                    "input_tokens": 2,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 36
+                  }
+                },
+                "request_fields": {
+                  "instructions": {
+                    "input_tokens": 4380,
+                    "cached_tokens": 3968,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0
+                  }
+                }
+              },
+              "prompt_tokens": 4933,
+              "completion_tokens": 47,
+              "total_tokens": 4980,
+              "prompt_tokens_details": {
+                "cache_write_tokens_details": {
+                  "ttl_30m_tokens": 0,
+                  "ttl_12h_tokens": 0
+                },
+                "cached_tokens": 3968
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 36
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "warnings": [
+            "value model disagreed with extracted question span; original retained"
+          ],
+          "conditions": [
+            {
+              "surface": "5.5",
+              "value": "5.5",
+              "start": 5,
+              "end": 8,
+              "clause": "When 5.5 is the l-band what is the v-band?",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [],
+              "columnMatchReason": "L-band is not a schema header; the table only has K-band, Ka-band, Q-band, V-band, and W-band.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "fcd4ccbaee7a4a270617250d0fbb558710836bad80483785ecb2b0ea5780b25d",
+            "knowledgeIds": [],
+            "usage": {
+              "attribution": {
+                "items": {
+                  "msg_020cfcfc7170b11d016b08f9ec8c3487d2843e8bf6a2f1b243": {
+                    "input_tokens": 64,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 64,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_020cfcfc7170b11d016b08f9ec8c3487d291607f018e31f4ba": {
+                    "input_tokens": 153,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 153,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_020cfcfc7170b11d016b08f9ec8c3487d2be9ba8a587d77468": {
+                    "input_tokens": 285,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 285,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_020cfcfc7170b11d016b08f9fb857487d29d7dee881433f7d3": {
+                    "input_tokens": 0,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 13,
+                    "content": [
+                      {
+                        "input_tokens": 0,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 13
+                      }
+                    ]
+                  },
+                  "rs_020cfcfc7170b11d016b08f9fb57a087d297c628e5b328bea7": {
+                    "input_tokens": 2,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 75
+                  }
+                },
+                "request_fields": {
+                  "instructions": {
+                    "input_tokens": 4380,
+                    "cached_tokens": 3968,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0
+                  }
+                }
+              },
+              "prompt_tokens": 4884,
+              "completion_tokens": 88,
+              "total_tokens": 4972,
+              "prompt_tokens_details": {
+                "cache_write_tokens_details": {
+                  "ttl_30m_tokens": 0,
+                  "ttl_12h_tokens": 0
+                },
+                "cached_tokens": 3968
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 75
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "5.5",
+              "value": "5.5",
+              "start": 5,
+              "end": 8,
+              "clause": "When 5.5 is the l-band what is the v-band?",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [
+                {
+                  "columnIndex": 1,
+                  "header": "K-band",
+                  "evidence": "EXACT_VALUE_MATCH"
+                }
+              ],
+              "columnMatchReason": "L-band is not a schema header; the table only has K-band, Ka-band, Q-band, V-band, and W-band.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": null,
+                "reason": "The question refers to an L-band, which is not a table header; K-band is only an exact value match and is not supported by the stated field."
+              }
+            }
+          ],
+          "reviewModelCalls": [
+            {
+              "model": "gpt-5.6-sol",
+              "promptSha256": "f855bf0f27a99453212d75304867caa766eea97fa341ad5110a30907a7e2a3dd",
+              "knowledgeIds": [],
+              "usage": {
+                "attribution": {
+                  "items": {
+                    "msg_07cc239f417fde6d016b08f9fcf90087d29b85c2640a95202f": {
+                      "input_tokens": 285,
+                      "cached_tokens": 0,
+                      "cache_write_tokens": 0,
+                      "output_tokens": 0,
+                      "content": [
+                        {
+                          "input_tokens": 285,
+                          "cached_tokens": 0,
+                          "cache_write_tokens": 0,
+                          "output_tokens": 0
+                        }
+                      ]
+                    },
+                    "msg_07cc239f417fde6d016b08f9fcf90087d2aacdf838eafd2649": {
+                      "input_tokens": 64,
+                      "cached_tokens": 0,
+                      "cache_write_tokens": 0,
+                      "output_tokens": 0,
+                      "content": [
+                        {
+                          "input_tokens": 64,
+                          "cached_tokens": 0,
+                          "cache_write_tokens": 0,
+                          "output_tokens": 0
+                        }
+                      ]
+                    },
+                    "msg_07cc239f417fde6d016b08f9fcf90087d2bdf8df5363553c79": {
+                      "input_tokens": 231,
+                      "cached_tokens": 0,
+                      "cache_write_tokens": 0,
+                      "output_tokens": 0,
+                      "content": [
+                        {
+                          "input_tokens": 231,
+                          "cached_tokens": 0,
+                          "cache_write_tokens": 0,
+                          "output_tokens": 0
+                        }
+                      ]
+                    },
+                    "msg_07cc239f417fde6d016b08fa0c11b887d29c71a636993e5af3": {
+                      "input_tokens": 0,
+                      "cached_tokens": 0,
+                      "cache_write_tokens": 0,
+                      "output_tokens": 46,
+                      "content": [
+                        {
+                          "input_tokens": 0,
+                          "cached_tokens": 0,
+                          "cache_write_tokens": 0,
+                          "output_tokens": 46
+                        }
+                      ]
+                    },
+                    "rs_07cc239f417fde6d016b08fa0be5c087d2972c4aac1a7a746f": {
+                      "input_tokens": 2,
+                      "cached_tokens": 0,
+                      "cache_write_tokens": 0,
+                      "output_tokens": 168
+                    }
+                  },
+                  "request_fields": {
+                    "instructions": {
+                      "input_tokens": 4380,
+                      "cached_tokens": 3968,
+                      "cache_write_tokens": 0,
+                      "output_tokens": 0
+                    }
+                  }
+                },
+                "prompt_tokens": 4962,
+                "completion_tokens": 214,
+                "total_tokens": 5176,
+                "prompt_tokens_details": {
+                  "cache_write_tokens_details": {
+                    "ttl_30m_tokens": 0,
+                    "ttl_12h_tokens": 0
+                  },
+                  "cached_tokens": 3968
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 168
+                }
+              }
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f855bf0f27a99453212d75304867caa766eea97fa341ad5110a30907a7e2a3dd",
+            "knowledgeIds": [],
+            "usage": {
+              "attribution": {
+                "items": {
+                  "msg_07cc239f417fde6d016b08f9fcf90087d29b85c2640a95202f": {
+                    "input_tokens": 285,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 285,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_07cc239f417fde6d016b08f9fcf90087d2aacdf838eafd2649": {
+                    "input_tokens": 64,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 64,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_07cc239f417fde6d016b08f9fcf90087d2bdf8df5363553c79": {
+                    "input_tokens": 231,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 231,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_07cc239f417fde6d016b08fa0c11b887d29c71a636993e5af3": {
+                    "input_tokens": 0,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 46,
+                    "content": [
+                      {
+                        "input_tokens": 0,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 46
+                      }
+                    ]
+                  },
+                  "rs_07cc239f417fde6d016b08fa0be5c087d2972c4aac1a7a746f": {
+                    "input_tokens": 2,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 168
+                  }
+                },
+                "request_fields": {
+                  "instructions": {
+                    "input_tokens": 4380,
+                    "cached_tokens": 3968,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0
+                  }
+                }
+              },
+              "prompt_tokens": 4962,
+              "completion_tokens": 214,
+              "total_tokens": 5176,
+              "prompt_tokens_details": {
+                "cache_write_tokens_details": {
+                  "ttl_30m_tokens": 0,
+                  "ttl_12h_tokens": 0
+                },
+                "cached_tokens": 3968
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 168
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "5.5",
+              "value": "5.5",
+              "start": 5,
+              "end": 8,
+              "clause": "When 5.5 is the l-band what is the v-band?",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [
+                {
+                  "columnIndex": 1,
+                  "header": "K-band",
+                  "evidence": "EXACT_VALUE_MATCH"
+                }
+              ],
+              "columnMatchReason": "L-band is not a schema header; the table only has K-band, Ka-band, Q-band, V-band, and W-band.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": null,
+                "reason": "The question refers to an L-band, which is not a table header; K-band is only an exact value match and is not supported by the stated field."
+              }
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "GROUNDING_FAILED",
+          "valid": false,
+          "errors": [
+            "condition 0: invalid column",
+            "condition 0: grounding NO_MATCH"
+          ],
+          "conditions": [
+            {
+              "surface": "5.5",
+              "value": "5.5",
+              "start": 5,
+              "end": 8,
+              "clause": "When 5.5 is the l-band what is the v-band?",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [
+                {
+                  "columnIndex": 1,
+                  "header": "K-band",
+                  "evidence": "EXACT_VALUE_MATCH"
+                }
+              ],
+              "columnMatchReason": "L-band is not a schema header; the table only has K-band, Ka-band, Q-band, V-band, and W-band.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": null,
+                "reason": "The question refers to an L-band, which is not a table header; K-band is only an exact value match and is not supported by the stated field."
+              }
+            }
+          ]
+        }
+      },
+      "warnings": [
+        "value model disagreed with extracted question span; original retained"
+      ],
+      "execution": {
+        "status": "GROUNDING_FAILED",
+        "stage": "WHERE_CONDITION_VALIDATE",
+        "halt": true,
+        "completed": false,
+        "errors": [
+          "condition 0: invalid column",
+          "condition 0: grounding NO_MATCH"
+        ],
+        "warnings": [
+          "value model disagreed with extracted question span; original retained"
+        ]
+      },
+      "originalConditions": [
+        {
+          "surface": "5.5",
+          "value": "5.5",
+          "start": 5,
+          "end": 8
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "5.5",
+          "value": "5.5",
+          "start": 5,
+          "end": 8,
+          "clause": "When 5.5 is the l-band what is the v-band?",
+          "columnMatchStatus": "UNRESOLVED",
+          "columnCandidates": [
+            {
+              "columnIndex": 1,
+              "header": "K-band",
+              "evidence": "EXACT_VALUE_MATCH"
+            }
+          ],
+          "columnMatchReason": "L-band is not a schema header; the table only has K-band, Ka-band, Q-band, V-band, and W-band.",
+          "operator": "=",
+          "grounded": false,
+          "groundingStatus": "NO_MATCH",
+          "groundingReview": {
+            "column": null,
+            "reason": "The question refers to an L-band, which is not a table header; K-band is only an exact value match and is not supported by the stated field."
+          }
+        }
+      ],
+      "count": 1
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": false,
+  "elapsed_ms": 132437
+}

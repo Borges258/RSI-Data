@@ -1,0 +1,472 @@
+{
+  "arm": "E2",
+  "position": 52,
+  "example_id": "test:3668:1-26808178-1",
+  "original_index": 3668,
+  "table_id": "1-26808178-1",
+  "question": "Who wrote \"pocket pussy\"?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        1,
+        0,
+        "\"Pocket Pussy\""
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "\"Pocket Pussy\""
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "\"Pocket Pussy\""
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "pocket pussy",
+        "value": "\"Pocket Pussy\"",
+        "start": 11,
+        "end": 23,
+        "clause": "Who wrote \"pocket pussy\"?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The quoted phrase names an episode, matching the Title field; the row with Title \"Pocket Pussy\" supplies the requested writer.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "NORMALIZED_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "pocket pussy",
+        "value": "Pocket Pussy",
+        "start": 11,
+        "end": 23
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Who wrote \"pocket pussy\"?",
+      "table": {
+        "id": "1-26808178-1",
+        "header": [
+          "Series #",
+          "Title",
+          "Directed by",
+          "Written by",
+          "Original air date",
+          "U.S. viewers (millions)"
+        ],
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "rows": [
+          [
+            1,
+            "\"It's Called Hazing, Look It Up\"",
+            "Brian Robbins",
+            "Eric Falconer, Chris Romano",
+            "January11,2010",
+            "N/A"
+          ],
+          [
+            2,
+            "\"Promise Ring\"",
+            "Lev L. Spiro",
+            "Eric Falconer, Chris Romano",
+            "January12,2010",
+            "N/A"
+          ],
+          [
+            3,
+            "\"Pocket Pussy\"",
+            "Brian Robbins",
+            "Eric Falconer, Chris Romano",
+            "January19,2010",
+            "N/A"
+          ],
+          [
+            4,
+            "\"Rivalry Weekend\"",
+            "Lev L. Spiro",
+            "Eric Falconer, Chris Romano",
+            "January26,2010",
+            "N/A"
+          ],
+          [
+            5,
+            "\"There's Only One Second Best\"",
+            "Jeff Melman",
+            "Drew Hancock & JD Ryznar",
+            "February2,2010",
+            "0.887"
+          ],
+          [
+            6,
+            "\"The Drug Olympics\"",
+            "Clark Mathis",
+            "Eric Falconer, Chris Romano",
+            "February9,2010",
+            "N/A"
+          ],
+          [
+            7,
+            "\"The Legend of the Golden Arm\"",
+            "John Fortenberry",
+            "Brian Burns",
+            "February16,2010",
+            "0.810"
+          ],
+          [
+            8,
+            "\"LAX\"",
+            "Clark Mathis",
+            "Chip Hall",
+            "February23,2010",
+            "N/A"
+          ],
+          [
+            9,
+            "\"Midterms\"",
+            "Ken Whittingham",
+            "Drew Hancock & J.D. Ryznar",
+            "March2,2010",
+            "N/A"
+          ],
+          [
+            10,
+            "\"Marathon Monday\"",
+            "Jay Chandrasekhar",
+            "Chip Hall",
+            "March9,2010",
+            "N/A"
+          ],
+          [
+            11,
+            "\"Ransom\"",
+            "Clark Mathis",
+            "Chip Hall",
+            "March16,2010",
+            "0.734"
+          ],
+          [
+            12,
+            "\"Piss Test\"",
+            "John Fortenberry",
+            "Drew Hancock & J.D. Ryznar",
+            "March23,2010",
+            "0.750"
+          ]
+        ],
+        "name": "table_26808178_1",
+        "headers": [
+          "Series #",
+          "Title",
+          "Directed by",
+          "Written by",
+          "Original air date",
+          "U.S. viewers (millions)"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-26808178-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "pocket pussy",
+              "value": "Pocket Pussy",
+              "start": 11,
+              "end": 23
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "fce7e461db1464b9fc453e6c938b4039fe1fbbca862a7705f76af6eb43ba87eb",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5030,
+              "completion_tokens": 20,
+              "total_tokens": 5050,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "pocket pussy",
+              "value": "Pocket Pussy",
+              "start": 11,
+              "end": 23,
+              "clause": "Who wrote \"pocket pussy\"?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "pocket pussy",
+              "value": "Pocket Pussy",
+              "start": 11,
+              "end": 23,
+              "clause": "Who wrote \"pocket pussy\"?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "pocket pussy",
+              "value": "Pocket Pussy",
+              "start": 11,
+              "end": 23,
+              "clause": "Who wrote \"pocket pussy\"?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The quoted phrase names an episode, matching the Title field; the row with Title \"Pocket Pussy\" supplies the requested writer."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "30b3b7f8ee313736a9ca8c3d35fb2ad6ecd2e5364c47f0419b7f63f7027e8a82",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5062,
+              "completion_tokens": 46,
+              "total_tokens": 5108,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "pocket pussy",
+              "value": "Pocket Pussy",
+              "start": 11,
+              "end": 23,
+              "clause": "Who wrote \"pocket pussy\"?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The quoted phrase names an episode, matching the Title field; the row with Title \"Pocket Pussy\" supplies the requested writer.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "2bb8f707f3ae261ba91921f1f81e9b9725202f64bb2a48e34877461e1bd7e50e",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5132,
+              "completion_tokens": 9,
+              "total_tokens": 5141,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "pocket pussy",
+              "value": "Pocket Pussy",
+              "start": 11,
+              "end": 23,
+              "clause": "Who wrote \"pocket pussy\"?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The quoted phrase names an episode, matching the Title field; the row with Title \"Pocket Pussy\" supplies the requested writer.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "35c35b401a200e6342b71e5c4458bf16d8384eb022aaa9910e34ed4a1ec0ed8a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5083,
+              "completion_tokens": 11,
+              "total_tokens": 5094,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "pocket pussy",
+              "value": "\"Pocket Pussy\"",
+              "start": 11,
+              "end": 23,
+              "clause": "Who wrote \"pocket pussy\"?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The quoted phrase names an episode, matching the Title field; the row with Title \"Pocket Pussy\" supplies the requested writer.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "NORMALIZED_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "pocket pussy",
+              "value": "\"Pocket Pussy\"",
+              "start": 11,
+              "end": 23,
+              "clause": "Who wrote \"pocket pussy\"?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The quoted phrase names an episode, matching the Title field; the row with Title \"Pocket Pussy\" supplies the requested writer.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "NORMALIZED_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "pocket pussy",
+              "value": "\"Pocket Pussy\"",
+              "start": 11,
+              "end": 23,
+              "clause": "Who wrote \"pocket pussy\"?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The quoted phrase names an episode, matching the Title field; the row with Title \"Pocket Pussy\" supplies the requested writer.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "NORMALIZED_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              "\"Pocket Pussy\""
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "pocket pussy",
+          "value": "Pocket Pussy",
+          "start": 11,
+          "end": 23
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "pocket pussy",
+          "value": "\"Pocket Pussy\"",
+          "start": 11,
+          "end": 23,
+          "clause": "Who wrote \"pocket pussy\"?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The quoted phrase names an episode, matching the Title field; the row with Title \"Pocket Pussy\" supplies the requested writer.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "NORMALIZED_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          1,
+          0,
+          "\"Pocket Pussy\""
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8703
+}

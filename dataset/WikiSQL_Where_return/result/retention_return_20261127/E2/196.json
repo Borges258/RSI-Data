@@ -1,0 +1,786 @@
+{
+  "arm": "E2",
+  "position": 196,
+  "example_id": "test:7165:2-15600368-2",
+  "original_index": 7165,
+  "table_id": "2-15600368-2",
+  "question": "Who was the artist for the album, Christmas under the reunion label with the guitar?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        3,
+        0,
+        "reunion"
+      ],
+      [
+        4,
+        0,
+        "guitar"
+      ],
+      [
+        2,
+        0,
+        "christmas"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "Christmas"
+    ],
+    [
+      3,
+      0,
+      "Reunion"
+    ],
+    [
+      4,
+      0,
+      "Guitar"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "Christmas"
+      ],
+      [
+        3,
+        0,
+        "Reunion"
+      ],
+      [
+        4,
+        0,
+        "Guitar"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Christmas",
+        "value": "Christmas",
+        "start": 34,
+        "end": 43,
+        "clause": "Christmas under the reunion label with the guitar?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "Christmas is identified as the album title.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "reunion",
+        "value": "Reunion",
+        "start": 54,
+        "end": 61,
+        "clause": "Christmas under the reunion label with the guitar?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "Reunion is explicitly described as the label.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "guitar",
+        "value": "Guitar",
+        "start": 77,
+        "end": 83,
+        "clause": "Christmas under the reunion label with the guitar?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "Guitar is described as the performance credit.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Christmas",
+        "value": "Christmas",
+        "start": 34,
+        "end": 43
+      },
+      {
+        "surface": "reunion",
+        "value": "Reunion",
+        "start": 54,
+        "end": 61
+      },
+      {
+        "surface": "guitar",
+        "value": "Guitar",
+        "start": 77,
+        "end": 83
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Who was the artist for the album, Christmas under the reunion label with the guitar?",
+      "table": {
+        "header": [
+          "Year",
+          "Artist",
+          "Album",
+          "Label",
+          "Credit"
+        ],
+        "page_title": "Rob Graves",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 15600368,
+        "id": "2-15600368-2",
+        "section_title": "Performance credits",
+        "rows": [
+          [
+            "2001",
+            "Newsong",
+            "The Christmas Shoes",
+            "Reunion",
+            "Guitar"
+          ],
+          [
+            "2002",
+            "Plus One",
+            "Obvious",
+            "Reunion",
+            "Guitar"
+          ],
+          [
+            "2002",
+            "Joy Williams",
+            "By Surprise",
+            "Reunion",
+            "Guitar, Bass, Bouzouki"
+          ],
+          [
+            "2002",
+            "Plus One",
+            "Christmas",
+            "Reunion",
+            "Guitar"
+          ],
+          [
+            "2003",
+            "Natalie Grant",
+            "Deeper Life",
+            "Curb",
+            "Guitar, Mandolin, Clappers"
+          ],
+          [
+            "2003",
+            "Avalon",
+            "Testify to Love",
+            "Sparrow",
+            "Guitar"
+          ],
+          [
+            "2003",
+            "Casting Crowns",
+            "Casting Crowns",
+            "Beach Street",
+            "Guitar"
+          ],
+          [
+            "2005",
+            "Casting Crowns",
+            "Lifesong",
+            "Reunion",
+            "Guitar"
+          ],
+          [
+            "2006",
+            "Ana Laura",
+            "Ana Laura",
+            "Reunion",
+            "Guitar, Piano, Keyboards, Vocals"
+          ],
+          [
+            "2006",
+            "Red",
+            "End of Silence",
+            "Essential",
+            "Piano"
+          ]
+        ],
+        "caption": "Performance credits",
+        "headers": [
+          "Year",
+          "Artist",
+          "Album",
+          "Label",
+          "Credit"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-15600368-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 3,
+          "conditions": [
+            {
+              "surface": "Christmas",
+              "value": "Christmas",
+              "start": 34,
+              "end": 43
+            },
+            {
+              "surface": "reunion",
+              "value": "Reunion",
+              "start": 54,
+              "end": 61
+            },
+            {
+              "surface": "guitar",
+              "value": "Guitar",
+              "start": 77,
+              "end": 83
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "7645ac6cf561fb48a22f1d80f5ebaa38cbb0073e4954dad3281c6518569bfee0",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4852,
+              "completion_tokens": 37,
+              "total_tokens": 4889,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Christmas",
+              "value": "Christmas",
+              "start": 34,
+              "end": 43,
+              "clause": "Christmas under the reunion label with the guitar?"
+            },
+            {
+              "surface": "reunion",
+              "value": "Reunion",
+              "start": 54,
+              "end": 61,
+              "clause": "Christmas under the reunion label with the guitar?"
+            },
+            {
+              "surface": "guitar",
+              "value": "Guitar",
+              "start": 77,
+              "end": 83,
+              "clause": "Christmas under the reunion label with the guitar?"
+            }
+          ],
+          "count": 3
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Christmas",
+              "value": "Christmas",
+              "start": 34,
+              "end": 43,
+              "clause": "Christmas under the reunion label with the guitar?"
+            },
+            {
+              "surface": "reunion",
+              "value": "Reunion",
+              "start": 54,
+              "end": 61,
+              "clause": "Christmas under the reunion label with the guitar?"
+            },
+            {
+              "surface": "guitar",
+              "value": "Guitar",
+              "start": 77,
+              "end": 83,
+              "clause": "Christmas under the reunion label with the guitar?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Christmas",
+              "value": "Christmas",
+              "start": 34,
+              "end": 43,
+              "clause": "Christmas under the reunion label with the guitar?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Christmas is identified as the album title."
+            },
+            {
+              "surface": "reunion",
+              "value": "Reunion",
+              "start": 54,
+              "end": 61,
+              "clause": "Christmas under the reunion label with the guitar?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Reunion is explicitly described as the label."
+            },
+            {
+              "surface": "guitar",
+              "value": "Guitar",
+              "start": 77,
+              "end": 83,
+              "clause": "Christmas under the reunion label with the guitar?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Guitar is described as the performance credit."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "26ede059c5e5dd866c81f07fa97f05fec8bb94930e08b4e0efdf3a696ea8e38b",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4944,
+              "completion_tokens": 55,
+              "total_tokens": 4999,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Christmas",
+              "value": "Christmas",
+              "start": 34,
+              "end": 43,
+              "clause": "Christmas under the reunion label with the guitar?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Christmas is identified as the album title.",
+              "operator": "="
+            },
+            {
+              "surface": "reunion",
+              "value": "Reunion",
+              "start": 54,
+              "end": 61,
+              "clause": "Christmas under the reunion label with the guitar?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Reunion is explicitly described as the label.",
+              "operator": "="
+            },
+            {
+              "surface": "guitar",
+              "value": "Guitar",
+              "start": 77,
+              "end": 83,
+              "clause": "Christmas under the reunion label with the guitar?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Guitar is described as the performance credit.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f17bf81064fafd23d7257bf4b1ad1049fa0a9693cd2e24cc5c0132b8c438eb6c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5045,
+              "completion_tokens": 13,
+              "total_tokens": 5058,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Christmas",
+              "value": "Christmas",
+              "start": 34,
+              "end": 43,
+              "clause": "Christmas under the reunion label with the guitar?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Christmas is identified as the album title.",
+              "operator": "="
+            },
+            {
+              "surface": "reunion",
+              "value": "Reunion",
+              "start": 54,
+              "end": 61,
+              "clause": "Christmas under the reunion label with the guitar?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Reunion is explicitly described as the label.",
+              "operator": "="
+            },
+            {
+              "surface": "guitar",
+              "value": "Guitar",
+              "start": 77,
+              "end": 83,
+              "clause": "Christmas under the reunion label with the guitar?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Guitar is described as the performance credit.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "bd5b1238f0a91e3a579ee64bc9be3fff2da4f9d75521e302e9e629c9e9e5f6ac",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5002,
+              "completion_tokens": 16,
+              "total_tokens": 5018,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Christmas",
+              "value": "Christmas",
+              "start": 34,
+              "end": 43,
+              "clause": "Christmas under the reunion label with the guitar?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Christmas is identified as the album title.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "reunion",
+              "value": "Reunion",
+              "start": 54,
+              "end": 61,
+              "clause": "Christmas under the reunion label with the guitar?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Reunion is explicitly described as the label.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "guitar",
+              "value": "Guitar",
+              "start": 77,
+              "end": 83,
+              "clause": "Christmas under the reunion label with the guitar?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Guitar is described as the performance credit.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Christmas",
+              "value": "Christmas",
+              "start": 34,
+              "end": 43,
+              "clause": "Christmas under the reunion label with the guitar?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Christmas is identified as the album title.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "reunion",
+              "value": "Reunion",
+              "start": 54,
+              "end": 61,
+              "clause": "Christmas under the reunion label with the guitar?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Reunion is explicitly described as the label.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "guitar",
+              "value": "Guitar",
+              "start": 77,
+              "end": 83,
+              "clause": "Christmas under the reunion label with the guitar?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Guitar is described as the performance credit.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Christmas",
+              "value": "Christmas",
+              "start": 34,
+              "end": 43,
+              "clause": "Christmas under the reunion label with the guitar?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Christmas is identified as the album title.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "reunion",
+              "value": "Reunion",
+              "start": 54,
+              "end": 61,
+              "clause": "Christmas under the reunion label with the guitar?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Reunion is explicitly described as the label.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "guitar",
+              "value": "Guitar",
+              "start": 77,
+              "end": 83,
+              "clause": "Christmas under the reunion label with the guitar?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Guitar is described as the performance credit.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "Christmas"
+            ],
+            [
+              3,
+              0,
+              "Reunion"
+            ],
+            [
+              4,
+              0,
+              "Guitar"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Christmas",
+          "value": "Christmas",
+          "start": 34,
+          "end": 43
+        },
+        {
+          "surface": "reunion",
+          "value": "Reunion",
+          "start": 54,
+          "end": 61
+        },
+        {
+          "surface": "guitar",
+          "value": "Guitar",
+          "start": 77,
+          "end": 83
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Christmas",
+          "value": "Christmas",
+          "start": 34,
+          "end": 43,
+          "clause": "Christmas under the reunion label with the guitar?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "Christmas is identified as the album title.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "reunion",
+          "value": "Reunion",
+          "start": 54,
+          "end": 61,
+          "clause": "Christmas under the reunion label with the guitar?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "Reunion is explicitly described as the label.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "guitar",
+          "value": "Guitar",
+          "start": 77,
+          "end": 83,
+          "clause": "Christmas under the reunion label with the guitar?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "Guitar is described as the performance credit.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 3,
+      "conds": [
+        [
+          2,
+          0,
+          "Christmas"
+        ],
+        [
+          3,
+          0,
+          "Reunion"
+        ],
+        [
+          4,
+          0,
+          "Guitar"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8625
+}

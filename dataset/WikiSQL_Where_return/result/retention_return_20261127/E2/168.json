@@ -1,0 +1,483 @@
+{
+  "arm": "E2",
+  "position": 168,
+  "example_id": "test:5992:2-1524633-6",
+  "original_index": 5992,
+  "table_id": "2-1524633-6",
+  "question": "Which Total matches is the highest one that has Points % of 70%?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        5,
+        0,
+        "70%"
+      ]
+    ],
+    "agg": 1
+  },
+  "prediction_conds": [
+    [
+      5,
+      0,
+      "70%"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        5,
+        0,
+        "70%"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "70%",
+        "value": "70%",
+        "start": 60,
+        "end": 63,
+        "clause": "Which Total matches is the highest one that has Points % of 70%?",
+        "columnIndex": 5,
+        "columnCandidates": [
+          5
+        ],
+        "columnMatchReason": "The question explicitly constrains 'Points %' to 70%, matching the Points % header and its 70% cell.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "70%",
+        "value": "70%",
+        "start": 60,
+        "end": 63
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Which Total matches is the highest one that has Points % of 70%?",
+      "table": {
+        "header": [
+          "Year",
+          "Total matches",
+          "Total W-L-H",
+          "Singles W-L-H",
+          "Points won",
+          "Points %"
+        ],
+        "page_title": "Laura Davies",
+        "types": [
+          "text",
+          "real",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 1524633,
+        "id": "2-1524633-6",
+        "section_title": "Solheim Cup record",
+        "rows": [
+          [
+            "Career",
+            "46",
+            "22-18-6",
+            "5-5-2",
+            "25",
+            "54.35%"
+          ],
+          [
+            "1990",
+            "3",
+            "2-1-0",
+            "1-0-0 def. R. Jones 3&2",
+            "2",
+            "66.7%"
+          ],
+          [
+            "1992",
+            "3",
+            "3-0-0",
+            "1-0-0 def. B. Burton 4&2",
+            "3",
+            "100%"
+          ],
+          [
+            "1994",
+            "3",
+            "1-2-0",
+            "0-1-0 lost to B. Burton 1 dn",
+            "1",
+            "33.3%"
+          ],
+          [
+            "1996",
+            "5",
+            "3-2-0",
+            "0-1-0 lost to M. McGann 3&2",
+            "3",
+            "60%"
+          ],
+          [
+            "1998",
+            "5",
+            "3-1-1",
+            "1-0-0 def. P. Hurst 1 up",
+            "3.5",
+            "70%"
+          ],
+          [
+            "2000",
+            "4",
+            "1-2-1",
+            "0-1-0 lost to K. Robbins 3&2",
+            "1.5",
+            "37.5%"
+          ],
+          [
+            "2002",
+            "5",
+            "2-3-0",
+            "0-1-0 lost to M. Mallon 3&2",
+            "2",
+            "40%"
+          ],
+          [
+            "2003",
+            "4",
+            "1-2-1",
+            "1-0-0 def. M. Mallon, conceded on 15",
+            "1.5",
+            "37.5%"
+          ],
+          [
+            "2005",
+            "5",
+            "3-2-0",
+            "0-1-0 lost to P. Creamer 7&5",
+            "3",
+            "60%"
+          ],
+          [
+            "2007",
+            "4",
+            "2-1-1",
+            "1-0-0 def B. Lincicome 4&3",
+            "2.5",
+            "62.5%"
+          ],
+          [
+            "2009",
+            "2",
+            "0-1-1",
+            "0-0-1 halved with B. Lang",
+            "0.5",
+            "25%"
+          ],
+          [
+            "2011",
+            "3",
+            "1-1-1",
+            "0-0-1 halved with J. Inkster",
+            "1.5",
+            "50%"
+          ]
+        ],
+        "caption": "Solheim Cup record",
+        "headers": [
+          "Year",
+          "Total matches",
+          "Total W-L-H",
+          "Singles W-L-H",
+          "Points won",
+          "Points %"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-1524633-6",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "70%",
+              "value": "70%",
+              "start": 60,
+              "end": 63
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ed5db8b316fdc09e7d791b0973f309a5b1d284295c99f2355e74c431dec4f4fd",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5123,
+              "completion_tokens": 19,
+              "total_tokens": 5142,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "70%",
+              "value": "70%",
+              "start": 60,
+              "end": 63,
+              "clause": "Which Total matches is the highest one that has Points % of 70%?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "70%",
+              "value": "70%",
+              "start": 60,
+              "end": 63,
+              "clause": "Which Total matches is the highest one that has Points % of 70%?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "70%",
+              "value": "70%",
+              "start": 60,
+              "end": 63,
+              "clause": "Which Total matches is the highest one that has Points % of 70%?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly constrains 'Points %' to 70%, matching the Points % header and its 70% cell."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d397ce8569eef6222281f434d18138cb568f56a480d957f50d068359e5e7ecc9",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5162,
+              "completion_tokens": 46,
+              "total_tokens": 5208,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "70%",
+              "value": "70%",
+              "start": 60,
+              "end": 63,
+              "clause": "Which Total matches is the highest one that has Points % of 70%?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly constrains 'Points %' to 70%, matching the Points % header and its 70% cell.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "dd4f9965bccdd53c5df5be1adb8a6c29ae8b86932d3f10835ec906a4b8758442",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5232,
+              "completion_tokens": 9,
+              "total_tokens": 5241,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "70%",
+              "value": "70%",
+              "start": 60,
+              "end": 63,
+              "clause": "Which Total matches is the highest one that has Points % of 70%?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly constrains 'Points %' to 70%, matching the Points % header and its 70% cell.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "1d51c51eef998931f481f82f7888f9ae6187d34a1ca6667007e740c6d6513ff6",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5183,
+              "completion_tokens": 11,
+              "total_tokens": 5194,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "70%",
+              "value": "70%",
+              "start": 60,
+              "end": 63,
+              "clause": "Which Total matches is the highest one that has Points % of 70%?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly constrains 'Points %' to 70%, matching the Points % header and its 70% cell.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "70%",
+              "value": "70%",
+              "start": 60,
+              "end": 63,
+              "clause": "Which Total matches is the highest one that has Points % of 70%?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly constrains 'Points %' to 70%, matching the Points % header and its 70% cell.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "70%",
+              "value": "70%",
+              "start": 60,
+              "end": 63,
+              "clause": "Which Total matches is the highest one that has Points % of 70%?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly constrains 'Points %' to 70%, matching the Points % header and its 70% cell.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              5,
+              0,
+              "70%"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "70%",
+          "value": "70%",
+          "start": 60,
+          "end": 63
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "70%",
+          "value": "70%",
+          "start": 60,
+          "end": 63,
+          "clause": "Which Total matches is the highest one that has Points % of 70%?",
+          "columnIndex": 5,
+          "columnCandidates": [
+            5
+          ],
+          "columnMatchReason": "The question explicitly constrains 'Points %' to 70%, matching the Points % header and its 70% cell.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          5,
+          0,
+          "70%"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8812
+}

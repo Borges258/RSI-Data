@@ -1,0 +1,109 @@
+{
+  "arm": "E1",
+  "position": 394,
+  "example_id": "test:15595:2-12207474-5",
+  "original_index": 15595,
+  "table_id": "2-12207474-5",
+  "question": "Who was the opponent in the game where the attendance was larger than 23,230 and the record was 56-37?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        4,
+        1,
+        "23,230"
+      ],
+      [
+        5,
+        0,
+        "56-37"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      4,
+      1,
+      23230
+    ],
+    [
+      5,
+      0,
+      "56-37"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": "gpt-5.6-sol",
+  "usage": {
+    "prompt_tokens": 11033,
+    "completion_tokens": 53,
+    "total_tokens": 11086,
+    "prompt_tokens_details": {
+      "cached_tokens": 4224
+    }
+  },
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        1,
+        23230
+      ],
+      [
+        5,
+        0,
+        "56-37"
+      ]
+    ],
+    "explanation": "Attendance is strictly greater than 23,230 and Record equals the table value 56-37.",
+    "version": "wikisql-where-prior-v1",
+    "tableId": "2-12207474-5",
+    "knowledgeIds": [
+      "g-eq",
+      "g-gt",
+      "g-lt",
+      "g-inclusive",
+      "g-literal",
+      "g-threshold",
+      "g-and",
+      "g-or",
+      "g-column",
+      "g-count",
+      "g-ambiguous",
+      "t-2-12207474-5-field-0",
+      "t-2-12207474-5-field-1",
+      "t-2-12207474-5-field-2",
+      "t-2-12207474-5-field-3",
+      "t-2-12207474-5-field-4",
+      "t-2-12207474-5-field-5",
+      "d-implicit-eq",
+      "d-explicit-eq",
+      "d-gt",
+      "d-lt-and-gt",
+      "d-with-two",
+      "d-literal-form",
+      "p-text",
+      "p-number",
+      "p-multi",
+      "p-unsupported"
+    ],
+    "promptSha256": "01e2f94885866976637924c986000c17cca2756afda4b390ed83d2523aa709fd",
+    "model": "gpt-5.6-sol",
+    "usage": {
+      "prompt_tokens": 11033,
+      "completion_tokens": 53,
+      "total_tokens": 11086,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      }
+    },
+    "latencyMs": 3079
+  },
+  "source": "where_prior_parse",
+  "safe_completed": true,
+  "elapsed_ms": 3094
+}

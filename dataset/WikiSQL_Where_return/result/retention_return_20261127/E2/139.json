@@ -1,0 +1,436 @@
+{
+  "arm": "E2",
+  "position": 139,
+  "example_id": "test:4878:2-10640687-18",
+  "original_index": 4878,
+  "table_id": "2-10640687-18",
+  "question": "What venue featured essendon as home team?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        0,
+        0,
+        "essendon"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "Essendon"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "Essendon"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "essendon",
+        "value": "Essendon",
+        "start": 20,
+        "end": 28,
+        "clause": "What venue featured essendon as home team?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "The question explicitly identifies Essendon as the home team, matching the Home team field.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "essendon",
+        "value": "Essendon",
+        "start": 20,
+        "end": 28
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What venue featured essendon as home team?",
+      "table": {
+        "header": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ],
+        "page_title": "1956 VFL season",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 10640687,
+        "id": "2-10640687-18",
+        "section_title": "Round 18",
+        "rows": [
+          [
+            "Richmond",
+            "16.9 (105)",
+            "St Kilda",
+            "16.14 (110)",
+            "Punt Road Oval",
+            "15,000",
+            "18 August 1956"
+          ],
+          [
+            "Fitzroy",
+            "9.16 (70)",
+            "Hawthorn",
+            "10.17 (77)",
+            "Brunswick Street Oval",
+            "7,500",
+            "18 August 1956"
+          ],
+          [
+            "Essendon",
+            "14.13 (97)",
+            "Geelong",
+            "9.15 (69)",
+            "Windy Hill",
+            "16,500",
+            "18 August 1956"
+          ],
+          [
+            "Collingwood",
+            "9.6 (60)",
+            "Melbourne",
+            "10.13 (73)",
+            "Victoria Park",
+            "31,089",
+            "18 August 1956"
+          ],
+          [
+            "Carlton",
+            "6.9 (45)",
+            "Footscray",
+            "8.14 (62)",
+            "Princes Park",
+            "44,878",
+            "18 August 1956"
+          ],
+          [
+            "South Melbourne",
+            "13.9 (87)",
+            "North Melbourne",
+            "7.13 (55)",
+            "Lake Oval",
+            "10,000",
+            "18 August 1956"
+          ]
+        ],
+        "caption": "Round 18",
+        "headers": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-10640687-18",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "essendon",
+              "value": "Essendon",
+              "start": 20,
+              "end": 28
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ed11026a6f1d94e426a4a88ca510064f43407204036bb77de01c504f8d95e114",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4902,
+              "completion_tokens": 19,
+              "total_tokens": 4921,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "essendon",
+              "value": "Essendon",
+              "start": 20,
+              "end": 28,
+              "clause": "What venue featured essendon as home team?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "essendon",
+              "value": "Essendon",
+              "start": 20,
+              "end": 28,
+              "clause": "What venue featured essendon as home team?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "essendon",
+              "value": "Essendon",
+              "start": 20,
+              "end": 28,
+              "clause": "What venue featured essendon as home team?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly identifies Essendon as the home team, matching the Home team field."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "5256f94410e74b712f6b8bb67ef2f50b637cdae99ac67c6e09558265b5b6f031",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4934,
+              "completion_tokens": 38,
+              "total_tokens": 4972,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "essendon",
+              "value": "Essendon",
+              "start": 20,
+              "end": 28,
+              "clause": "What venue featured essendon as home team?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly identifies Essendon as the home team, matching the Home team field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ce021c5c4e08260c972e82e9285f6614996304151248f61fba6a47417ecca8e4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4996,
+              "completion_tokens": 9,
+              "total_tokens": 5005,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "essendon",
+              "value": "Essendon",
+              "start": 20,
+              "end": 28,
+              "clause": "What venue featured essendon as home team?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly identifies Essendon as the home team, matching the Home team field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ac24b6b746ba1ffe75abb311352fe93283e34ed594691c467170a836d51b8e2c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4947,
+              "completion_tokens": 11,
+              "total_tokens": 4958,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "essendon",
+              "value": "Essendon",
+              "start": 20,
+              "end": 28,
+              "clause": "What venue featured essendon as home team?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly identifies Essendon as the home team, matching the Home team field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "essendon",
+              "value": "Essendon",
+              "start": 20,
+              "end": 28,
+              "clause": "What venue featured essendon as home team?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly identifies Essendon as the home team, matching the Home team field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "essendon",
+              "value": "Essendon",
+              "start": 20,
+              "end": 28,
+              "clause": "What venue featured essendon as home team?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly identifies Essendon as the home team, matching the Home team field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              "Essendon"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "essendon",
+          "value": "Essendon",
+          "start": 20,
+          "end": 28
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "essendon",
+          "value": "Essendon",
+          "start": 20,
+          "end": 28,
+          "clause": "What venue featured essendon as home team?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "The question explicitly identifies Essendon as the home team, matching the Home team field.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          0,
+          0,
+          "Essendon"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8469
+}

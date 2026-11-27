@@ -1,0 +1,439 @@
+{
+  "arm": "E2",
+  "position": 187,
+  "example_id": "test:6725:2-14721214-2",
+  "original_index": 6725,
+  "table_id": "2-14721214-2",
+  "question": "Who was the opponent in the game that was attended by 48,000 people?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        4,
+        0,
+        "48,000"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      4,
+      0,
+      "48,000"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        0,
+        "48,000"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "48,000",
+        "value": "48,000",
+        "start": 54,
+        "end": 60,
+        "clause": "Who was the opponent in the game that was attended by 48,000 people?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The phrase 'attended by 48,000 people' refers to the Attendance field, and 48,000 appears in that column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "48,000",
+        "value": "48,000",
+        "start": 54,
+        "end": 60
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Who was the opponent in the game that was attended by 48,000 people?",
+      "table": {
+        "header": [
+          "Date",
+          "Opponent#",
+          "Site",
+          "Result",
+          "Attendance"
+        ],
+        "page_title": "Minnesota Golden Gophers football under Clarence Spears",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 14721214,
+        "id": "2-14721214-2",
+        "section_title": "Schedule",
+        "rows": [
+          [
+            "10/02/1926",
+            "North Dakota",
+            "Memorial Stadium • Minneapolis, MN",
+            "W51-0",
+            "18,000"
+          ],
+          [
+            "10/09/1926",
+            "Notre Dame",
+            "Memorial Stadium • Minneapolis, MN",
+            "L7-20",
+            "54,000"
+          ],
+          [
+            "10/16/1926",
+            "at Michigan",
+            "Ferry Field • Ann Arbor, MI",
+            "L0-20",
+            "48,000"
+          ],
+          [
+            "10/23/1926",
+            "Wabash",
+            "Memorial Stadium • Minneapolis, MN",
+            "W67-7",
+            "16,000"
+          ],
+          [
+            "10/30/1926",
+            "at Wisconsin",
+            "Camp Randall Stadium • Madison, WI",
+            "W16-10",
+            "42,000"
+          ],
+          [
+            "11/06/1926",
+            "at Iowa",
+            "Iowa Field • Iowa City, IA",
+            "W41-0",
+            "30,000"
+          ],
+          [
+            "11/13/1926",
+            "Butler",
+            "Memorial Stadium • Minneapolis, MN",
+            "W81-0",
+            "8,000"
+          ],
+          [
+            "11/20/1926",
+            "Michigan",
+            "Memorial Stadium • Minneapolis, MN",
+            "L6-7",
+            "58,000"
+          ],
+          [
+            "*Non-conference game. Homecoming.",
+            "*Non-conference game. Homecoming.",
+            "*Non-conference game. Homecoming.",
+            "*Non-conference game. Homecoming.",
+            "*Non-conference game. Homecoming."
+          ]
+        ],
+        "caption": "Schedule",
+        "headers": [
+          "Date",
+          "Opponent#",
+          "Site",
+          "Result",
+          "Attendance"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-14721214-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "48,000",
+              "value": "48,000",
+              "start": 54,
+              "end": 60
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a18d2083322d2df697eff9134724bb84b1f728f6cae757ec0cd4708c4ab22dd1",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4945,
+              "completion_tokens": 21,
+              "total_tokens": 4966,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "48,000",
+              "value": "48,000",
+              "start": 54,
+              "end": 60,
+              "clause": "Who was the opponent in the game that was attended by 48,000 people?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "48,000",
+              "value": "48,000",
+              "start": 54,
+              "end": 60,
+              "clause": "Who was the opponent in the game that was attended by 48,000 people?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "48,000",
+              "value": "48,000",
+              "start": 54,
+              "end": 60,
+              "clause": "Who was the opponent in the game that was attended by 48,000 people?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'attended by 48,000 people' refers to the Attendance field, and 48,000 appears in that column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "95cf99463ff4861c2454f7b0278b86a4f77bd51b71c0dbd3b459f56baf04480b",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4987,
+              "completion_tokens": 49,
+              "total_tokens": 5036,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "48,000",
+              "value": "48,000",
+              "start": 54,
+              "end": 60,
+              "clause": "Who was the opponent in the game that was attended by 48,000 people?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'attended by 48,000 people' refers to the Attendance field, and 48,000 appears in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "fbe97eb4ee0c1c61a57ed6ef1bb02f304f3c09c2a0b4dc04aabec18befa6f466",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5060,
+              "completion_tokens": 9,
+              "total_tokens": 5069,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "48,000",
+              "value": "48,000",
+              "start": 54,
+              "end": 60,
+              "clause": "Who was the opponent in the game that was attended by 48,000 people?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'attended by 48,000 people' refers to the Attendance field, and 48,000 appears in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "2638054ce9e9df63e25abca97d9021a2ea484011ea7bfad6aeb6dad45077f7f4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5011,
+              "completion_tokens": 12,
+              "total_tokens": 5023,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "48,000",
+              "value": "48,000",
+              "start": 54,
+              "end": 60,
+              "clause": "Who was the opponent in the game that was attended by 48,000 people?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'attended by 48,000 people' refers to the Attendance field, and 48,000 appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "48,000",
+              "value": "48,000",
+              "start": 54,
+              "end": 60,
+              "clause": "Who was the opponent in the game that was attended by 48,000 people?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'attended by 48,000 people' refers to the Attendance field, and 48,000 appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "48,000",
+              "value": "48,000",
+              "start": 54,
+              "end": 60,
+              "clause": "Who was the opponent in the game that was attended by 48,000 people?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'attended by 48,000 people' refers to the Attendance field, and 48,000 appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              0,
+              "48,000"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "48,000",
+          "value": "48,000",
+          "start": 54,
+          "end": 60
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "48,000",
+          "value": "48,000",
+          "start": 54,
+          "end": 60,
+          "clause": "Who was the opponent in the game that was attended by 48,000 people?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The phrase 'attended by 48,000 people' refers to the Attendance field, and 48,000 appears in that column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          4,
+          0,
+          "48,000"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8719
+}

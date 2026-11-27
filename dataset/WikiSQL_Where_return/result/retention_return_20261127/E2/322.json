@@ -1,0 +1,481 @@
+{
+  "arm": "E2",
+  "position": 322,
+  "example_id": "test:12648:2-182410-10",
+  "original_index": 12648,
+  "table_id": "2-182410-10",
+  "question": "What is the position when the channel shows channel 4?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        1,
+        0,
+        "channel 4"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "Channel 4"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "Channel 4"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "channel 4",
+        "value": "Channel 4",
+        "start": 44,
+        "end": 53,
+        "clause": "What is the position when the channel shows channel 4?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The condition explicitly refers to the Channel field, and the row evidence contains 'Channel 4' in column 1.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "channel 4",
+        "value": "Channel 4",
+        "start": 44,
+        "end": 53
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the position when the channel shows channel 4?",
+      "table": {
+        "header": [
+          "Position",
+          "Channel",
+          "Analogue terrestrial channel",
+          "Digital terrestrial channel",
+          "Internet"
+        ],
+        "page_title": "Television in the United Kingdom",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 182410,
+        "id": "2-182410-10",
+        "section_title": "Availability of channels from various providers",
+        "rows": [
+          [
+            "1",
+            "BBC One",
+            "1",
+            "1 50 (HD)",
+            "bbc.co.uk"
+          ],
+          [
+            "2",
+            "ITV",
+            "3",
+            "3 33 (+1) 51 (HD)",
+            "ITV - itv.com"
+          ],
+          [
+            "3",
+            "BBC Two",
+            "2",
+            "2",
+            "bbc.co.uk"
+          ],
+          [
+            "4",
+            "Channel 4",
+            "4 N/A (in Wales)",
+            "4 8 (in Wales) 13 (+1) 52 (HD, not Wales)",
+            "channel4.com"
+          ],
+          [
+            "4",
+            "S4C",
+            "N/A",
+            "4 (in Wales) 53 (HD, in Wales) N/A (rest of UK)",
+            "s4c.co.uk"
+          ],
+          [
+            "5",
+            "Channel 5",
+            "5",
+            "5 44 (+1)",
+            "N/A"
+          ],
+          [
+            "6",
+            "ITV3",
+            "N/A",
+            "10",
+            "itv.com"
+          ],
+          [
+            "7",
+            "ITV2",
+            "N/A",
+            "6 27 (+1)",
+            "itv.com"
+          ],
+          [
+            "8",
+            "E4",
+            "N/A",
+            "28 29 (+1)",
+            "e4.com"
+          ],
+          [
+            "9",
+            "Sky Sports 1",
+            "N/A",
+            "N/A",
+            "skysports.com"
+          ],
+          [
+            "10",
+            "Sky1",
+            "N/A",
+            "N/A",
+            "sky.com"
+          ],
+          [
+            "11",
+            "CBeebies",
+            "N/A",
+            "71",
+            "bbc.co.uk"
+          ],
+          [
+            "12",
+            "ITV4",
+            "N/A",
+            "24",
+            "itv.com"
+          ],
+          [
+            "13",
+            "BBC Three",
+            "N/A",
+            "7",
+            "bbc.co.uk"
+          ],
+          [
+            "14",
+            "Dave",
+            "N/A",
+            "12 25 (ja vu)",
+            "dave.uktv.co.uk"
+          ]
+        ],
+        "caption": "Availability of channels from various providers with channel numbers",
+        "headers": [
+          "Position",
+          "Channel",
+          "Analogue terrestrial channel",
+          "Digital terrestrial channel",
+          "Internet"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-182410-10",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "channel 4",
+              "value": "Channel 4",
+              "start": 44,
+              "end": 53
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "6583fce7ab017db439f68afb805e7429f2eb339b8ff8e5bbf56ac834397f4a0f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5001,
+              "completion_tokens": 21,
+              "total_tokens": 5022,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "channel 4",
+              "value": "Channel 4",
+              "start": 44,
+              "end": 53,
+              "clause": "What is the position when the channel shows channel 4?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "channel 4",
+              "value": "Channel 4",
+              "start": 44,
+              "end": 53,
+              "clause": "What is the position when the channel shows channel 4?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "channel 4",
+              "value": "Channel 4",
+              "start": 44,
+              "end": 53,
+              "clause": "What is the position when the channel shows channel 4?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The condition explicitly refers to the Channel field, and the row evidence contains 'Channel 4' in column 1."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "30b69df6b60391ec2d01abc70fc7d17f6e6913174c4a958ff2817a6c7a6da1b7",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5038,
+              "completion_tokens": 45,
+              "total_tokens": 5083,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "channel 4",
+              "value": "Channel 4",
+              "start": 44,
+              "end": 53,
+              "clause": "What is the position when the channel shows channel 4?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The condition explicitly refers to the Channel field, and the row evidence contains 'Channel 4' in column 1.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "fe3689df35fdf658d72bb6f9d73309cea5bfbaf328297ca502fcf9560f3c2dcf",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5107,
+              "completion_tokens": 9,
+              "total_tokens": 5116,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "channel 4",
+              "value": "Channel 4",
+              "start": 44,
+              "end": 53,
+              "clause": "What is the position when the channel shows channel 4?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The condition explicitly refers to the Channel field, and the row evidence contains 'Channel 4' in column 1.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "fb48e51e0ff90c485fb5586461a9d15efa2fd8bceb88bbe6116599bd4657d4dd",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5058,
+              "completion_tokens": 12,
+              "total_tokens": 5070,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "channel 4",
+              "value": "Channel 4",
+              "start": 44,
+              "end": 53,
+              "clause": "What is the position when the channel shows channel 4?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The condition explicitly refers to the Channel field, and the row evidence contains 'Channel 4' in column 1.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "channel 4",
+              "value": "Channel 4",
+              "start": 44,
+              "end": 53,
+              "clause": "What is the position when the channel shows channel 4?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The condition explicitly refers to the Channel field, and the row evidence contains 'Channel 4' in column 1.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "channel 4",
+              "value": "Channel 4",
+              "start": 44,
+              "end": 53,
+              "clause": "What is the position when the channel shows channel 4?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The condition explicitly refers to the Channel field, and the row evidence contains 'Channel 4' in column 1.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              "Channel 4"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "channel 4",
+          "value": "Channel 4",
+          "start": 44,
+          "end": 53
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "channel 4",
+          "value": "Channel 4",
+          "start": 44,
+          "end": 53,
+          "clause": "What is the position when the channel shows channel 4?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The condition explicitly refers to the Channel field, and the row evidence contains 'Channel 4' in column 1.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          1,
+          0,
+          "Channel 4"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8234
+}

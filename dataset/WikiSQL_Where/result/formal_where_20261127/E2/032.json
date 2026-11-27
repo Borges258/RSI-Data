@@ -1,0 +1,429 @@
+{
+  "arm": "E2",
+  "position": 32,
+  "example_id": "test:2919:1-23585197-3",
+  "original_index": 2919,
+  "table_id": "1-23585197-3",
+  "question": "What is the position of \"kärleken vänder allt\" (the love turns everything)?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        1,
+        0,
+        "\"Kärleken vänder allt\" (The love turns everything)"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "\"Kärleken vänder allt\" (The love turns everything)"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "\"Kärleken vänder allt\" (The love turns everything)"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "\"kärleken vänder allt\"",
+        "value": "\"Kärleken vänder allt\" (The love turns everything)",
+        "start": 24,
+        "end": 46,
+        "clause": "What is the position of \"kärleken vänder allt\" (the love turns everything)?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The condition names a song title, matching the 'Song (English translation)' field and its bilingual row value.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "\"kärleken vänder allt\"",
+        "value": "\"Kärleken vänder allt\" (The love turns everything)",
+        "start": 24,
+        "end": 46
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the position of \"kärleken vänder allt\" (the love turns everything)?",
+      "table": {
+        "id": "1-23585197-3",
+        "header": [
+          "Artist",
+          "Song (English translation)",
+          "Songwriter(s)",
+          "Position",
+          "Date Eliminated"
+        ],
+        "types": [
+          "text",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "rows": [
+          [
+            "MiSt",
+            "\"Come and Get Me Now\"",
+            "Mia Terngård, Stefan Lebert",
+            1,
+            "Winner (12 November)"
+          ],
+          [
+            "Jessica Friberg",
+            "\"Break Free\"",
+            "Jessica Friberg, Johannes Hansson",
+            2,
+            "12 November"
+          ],
+          [
+            "Adam Sandahl",
+            "\"Kärleken vänder allt\" (The love turns everything)",
+            "Adam Sandahl",
+            3,
+            "12 November"
+          ],
+          [
+            "Genjor McNell",
+            "\"My Kind of Love\"",
+            "Jörgen Frinell",
+            4,
+            "11 November"
+          ],
+          [
+            "Ingela Hemming",
+            "\"Love for People\"",
+            "Ingela Hemming",
+            5,
+            "10 November"
+          ],
+          [
+            "Mark",
+            "\"I'll Make You Want Me\"",
+            "Mark Woznicki",
+            6,
+            "9 November"
+          ],
+          [
+            "Johan Skoog",
+            "\"När vi har landat\" (Once we have landed)",
+            "Johan Skoog, Martin Hägglund",
+            7,
+            "8 November"
+          ],
+          [
+            "Siberia",
+            "\"Hot for the Night\"",
+            "Peter Månsson",
+            8,
+            "7 November"
+          ]
+        ],
+        "name": "table_23585197_3",
+        "headers": [
+          "Artist",
+          "Song (English translation)",
+          "Songwriter(s)",
+          "Position",
+          "Date Eliminated"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-23585197-3",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "\"kärleken vänder allt\"",
+              "value": "\"Kärleken vänder allt\" (The love turns everything)",
+              "start": 24,
+              "end": 46
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f7b4f7572ff50a26f99e7227916b306f5321c001e53dd1e9b22e4954e04e97ac",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4883,
+              "completion_tokens": 37,
+              "total_tokens": 4920,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "\"kärleken vänder allt\"",
+              "value": "\"Kärleken vänder allt\" (The love turns everything)",
+              "start": 24,
+              "end": 46,
+              "clause": "What is the position of \"kärleken vänder allt\" (the love turns everything)?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "\"kärleken vänder allt\"",
+              "value": "\"Kärleken vänder allt\" (The love turns everything)",
+              "start": 24,
+              "end": 46,
+              "clause": "What is the position of \"kärleken vänder allt\" (the love turns everything)?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "\"kärleken vänder allt\"",
+              "value": "\"Kärleken vänder allt\" (The love turns everything)",
+              "start": 24,
+              "end": 46,
+              "clause": "What is the position of \"kärleken vänder allt\" (the love turns everything)?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The condition names a song title, matching the 'Song (English translation)' field and its bilingual row value."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "7a327da0a611c0476ceb8a906ff37791235e911dab3341993b117d0b75ef213e",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4944,
+              "completion_tokens": 43,
+              "total_tokens": 4987,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "\"kärleken vänder allt\"",
+              "value": "\"Kärleken vänder allt\" (The love turns everything)",
+              "start": 24,
+              "end": 46,
+              "clause": "What is the position of \"kärleken vänder allt\" (the love turns everything)?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The condition names a song title, matching the 'Song (English translation)' field and its bilingual row value.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d258d824eea01b86c81928553edbbd4c97d213d4f3fc0b10667d4a12d2f0df5e",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5010,
+              "completion_tokens": 9,
+              "total_tokens": 5019,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "\"kärleken vänder allt\"",
+              "value": "\"Kärleken vänder allt\" (The love turns everything)",
+              "start": 24,
+              "end": 46,
+              "clause": "What is the position of \"kärleken vänder allt\" (the love turns everything)?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The condition names a song title, matching the 'Song (English translation)' field and its bilingual row value.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a725cc42ec39ddc6339736a6acff163d1f81d68378e4002ec1bdf05d02ff2001",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4961,
+              "completion_tokens": 23,
+              "total_tokens": 4984,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "\"kärleken vänder allt\"",
+              "value": "\"Kärleken vänder allt\" (The love turns everything)",
+              "start": 24,
+              "end": 46,
+              "clause": "What is the position of \"kärleken vänder allt\" (the love turns everything)?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The condition names a song title, matching the 'Song (English translation)' field and its bilingual row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "\"kärleken vänder allt\"",
+              "value": "\"Kärleken vänder allt\" (The love turns everything)",
+              "start": 24,
+              "end": 46,
+              "clause": "What is the position of \"kärleken vänder allt\" (the love turns everything)?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The condition names a song title, matching the 'Song (English translation)' field and its bilingual row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "\"kärleken vänder allt\"",
+              "value": "\"Kärleken vänder allt\" (The love turns everything)",
+              "start": 24,
+              "end": 46,
+              "clause": "What is the position of \"kärleken vänder allt\" (the love turns everything)?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The condition names a song title, matching the 'Song (English translation)' field and its bilingual row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              "\"Kärleken vänder allt\" (The love turns everything)"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "\"kärleken vänder allt\"",
+          "value": "\"Kärleken vänder allt\" (The love turns everything)",
+          "start": 24,
+          "end": 46
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "\"kärleken vänder allt\"",
+          "value": "\"Kärleken vänder allt\" (The love turns everything)",
+          "start": 24,
+          "end": 46,
+          "clause": "What is the position of \"kärleken vänder allt\" (the love turns everything)?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The condition names a song title, matching the 'Song (English translation)' field and its bilingual row value.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          1,
+          0,
+          "\"Kärleken vänder allt\" (The love turns everything)"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7906
+}

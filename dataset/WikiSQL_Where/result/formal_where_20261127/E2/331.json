@@ -1,0 +1,445 @@
+{
+  "arm": "E2",
+  "position": 331,
+  "example_id": "test:3416:1-25737761-4",
+  "original_index": 3416,
+  "table_id": "1-25737761-4",
+  "question": "How many items are listed under the column 'viewing figure' for \"the looking glass\"?",
+  "gold_sql": {
+    "sel": 6,
+    "conds": [
+      [
+        2,
+        0,
+        "\"The Looking Glass\""
+      ]
+    ],
+    "agg": 3
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "\"The Looking Glass\""
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "\"The Looking Glass\""
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "the looking glass",
+        "value": "\"The Looking Glass\"",
+        "start": 65,
+        "end": 82,
+        "clause": "How many items are listed under the column 'viewing figure' for \"the looking glass\"?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "\"The Looking Glass\" is an episode title and matches the Episode column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "NORMALIZED_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "the looking glass",
+        "value": "The Looking Glass",
+        "start": 65,
+        "end": 82
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "How many items are listed under the column 'viewing figure' for \"the looking glass\"?",
+      "table": {
+        "header": [
+          "No.",
+          "#",
+          "Episode",
+          "Writer",
+          "Director",
+          "Original air date",
+          "Viewing figure"
+        ],
+        "page_title": "List of Being Human episodes",
+        "types": [
+          "real",
+          "real",
+          "text",
+          "text",
+          "text",
+          "text",
+          "real"
+        ],
+        "id": "1-25737761-4",
+        "section_title": "Series 2 (2010)",
+        "caption": "Series 2 (2010)",
+        "rows": [
+          [
+            8,
+            1,
+            "\"Cure and Contagion\"",
+            "Toby Whithouse",
+            "Colin Teague",
+            "10January2010",
+            1613000
+          ],
+          [
+            9,
+            2,
+            "\"Serve God, Love Me and Mend\"",
+            "Toby Whithouse",
+            "Colin Teague",
+            "17January2010",
+            1279000
+          ],
+          [
+            10,
+            3,
+            "\"Long Live The King\"",
+            "Lucy Catherine",
+            "Colin Teague",
+            "24January2010",
+            1207000
+          ],
+          [
+            11,
+            4,
+            "\"Educating Creature\"",
+            "Jamie Mathieson",
+            "Kenny Glenaan",
+            "31January2010",
+            1105000
+          ],
+          [
+            12,
+            5,
+            "\"The Looking Glass\"",
+            "Tony Basgallop",
+            "Kenny Glenaan",
+            "7February2010",
+            1230000
+          ],
+          [
+            13,
+            6,
+            "\"In The Morning\"",
+            "Lisa McGee",
+            "Charles Martin",
+            "14February2010",
+            902000
+          ],
+          [
+            14,
+            7,
+            "\"Damage\"",
+            "Toby Whithouse",
+            "Charles Martin",
+            "21February2010",
+            1087000
+          ]
+        ],
+        "name": "table_25737761_4",
+        "headers": [
+          "No.",
+          "#",
+          "Episode",
+          "Writer",
+          "Director",
+          "Original air date",
+          "Viewing figure"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-25737761-4",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "the looking glass",
+              "value": "The Looking Glass",
+              "start": 65,
+              "end": 82
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "26f96f60fd8fec011f8b8252aba884bb8ae1be7bcf83eff8088fe099052453da",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4907,
+              "completion_tokens": 21,
+              "total_tokens": 4928,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "the looking glass",
+              "value": "The Looking Glass",
+              "start": 65,
+              "end": 82,
+              "clause": "How many items are listed under the column 'viewing figure' for \"the looking glass\"?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "the looking glass",
+              "value": "The Looking Glass",
+              "start": 65,
+              "end": 82,
+              "clause": "How many items are listed under the column 'viewing figure' for \"the looking glass\"?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "the looking glass",
+              "value": "The Looking Glass",
+              "start": 65,
+              "end": 82,
+              "clause": "How many items are listed under the column 'viewing figure' for \"the looking glass\"?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "\"The Looking Glass\" is an episode title and matches the Episode column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "32bdb56c02351f12291d5dead61958b62b42805db499dddaf8e975c4ee0dd3cb",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4952,
+              "completion_tokens": 36,
+              "total_tokens": 4988,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "the looking glass",
+              "value": "The Looking Glass",
+              "start": 65,
+              "end": 82,
+              "clause": "How many items are listed under the column 'viewing figure' for \"the looking glass\"?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "\"The Looking Glass\" is an episode title and matches the Episode column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "376fd5977a61ed32e9610b2387332c073e723e85c5866866c9420957082ac4b5",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5012,
+              "completion_tokens": 9,
+              "total_tokens": 5021,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "the looking glass",
+              "value": "The Looking Glass",
+              "start": 65,
+              "end": 82,
+              "clause": "How many items are listed under the column 'viewing figure' for \"the looking glass\"?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "\"The Looking Glass\" is an episode title and matches the Episode column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "8864465493a5102e3e7708add58efc90234ce3ee948e85269c629bf770eec22c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4963,
+              "completion_tokens": 12,
+              "total_tokens": 4975,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "the looking glass",
+              "value": "\"The Looking Glass\"",
+              "start": 65,
+              "end": 82,
+              "clause": "How many items are listed under the column 'viewing figure' for \"the looking glass\"?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "\"The Looking Glass\" is an episode title and matches the Episode column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "NORMALIZED_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "the looking glass",
+              "value": "\"The Looking Glass\"",
+              "start": 65,
+              "end": 82,
+              "clause": "How many items are listed under the column 'viewing figure' for \"the looking glass\"?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "\"The Looking Glass\" is an episode title and matches the Episode column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "NORMALIZED_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "the looking glass",
+              "value": "\"The Looking Glass\"",
+              "start": 65,
+              "end": 82,
+              "clause": "How many items are listed under the column 'viewing figure' for \"the looking glass\"?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "\"The Looking Glass\" is an episode title and matches the Episode column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "NORMALIZED_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "\"The Looking Glass\""
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "the looking glass",
+          "value": "The Looking Glass",
+          "start": 65,
+          "end": 82
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "the looking glass",
+          "value": "\"The Looking Glass\"",
+          "start": 65,
+          "end": 82,
+          "clause": "How many items are listed under the column 'viewing figure' for \"the looking glass\"?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "\"The Looking Glass\" is an episode title and matches the Episode column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "NORMALIZED_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          2,
+          0,
+          "\"The Looking Glass\""
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7844
+}

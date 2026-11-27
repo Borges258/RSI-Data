@@ -1,0 +1,630 @@
+{
+  "arm": "E2",
+  "position": 312,
+  "example_id": "test:12140:2-18228282-12",
+  "original_index": 12140,
+  "table_id": "2-18228282-12",
+  "question": "What's the position of the player with a Height of 2.06 and club of Triumph Lyubertsy?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        1,
+        0,
+        2.06
+      ],
+      [
+        4,
+        0,
+        "triumph lyubertsy"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      2.06
+    ],
+    [
+      4,
+      0,
+      "Triumph Lyubertsy"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        2.06
+      ],
+      [
+        4,
+        0,
+        "Triumph Lyubertsy"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "2.06",
+        "value": 2.06,
+        "start": 51,
+        "end": 55,
+        "clause": "What's the position of the player with a Height of 2.06",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The question explicitly labels 2.06 as Height, matching the Height column and numeric row values.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "Triumph Lyubertsy",
+        "value": "Triumph Lyubertsy",
+        "start": 68,
+        "end": 85,
+        "clause": "and club of Triumph Lyubertsy?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The question refers to club, matching Current Club; Triumph Lyubertsy appears in that column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "2.06",
+        "value": "2.06",
+        "start": 51,
+        "end": 55
+      },
+      {
+        "surface": "Triumph Lyubertsy",
+        "value": "Triumph Lyubertsy",
+        "start": 68,
+        "end": 85
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What's the position of the player with a Height of 2.06 and club of Triumph Lyubertsy?",
+      "table": {
+        "header": [
+          "Player",
+          "Height",
+          "Position",
+          "Year born (Age)",
+          "Current Club"
+        ],
+        "page_title": "FIBA World Olympic Qualifying Tournament for Men 2008 squads",
+        "types": [
+          "text",
+          "real",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 18228282,
+        "id": "2-18228282-12",
+        "section_title": "",
+        "rows": [
+          [
+            "Željko Zagorac",
+            "2.04",
+            "F/C",
+            "March 9, 1981 (age32)",
+            "Helios Domžale"
+          ],
+          [
+            "Jaka Lakovič",
+            "1.86",
+            "PG",
+            "July 9, 1978 (age35)",
+            "FC Barcelona"
+          ],
+          [
+            "Jaka Klobučar",
+            "1.99",
+            "PG/SG",
+            "August 19, 1987 (age26)",
+            "Union Olimpija"
+          ],
+          [
+            "Sani Bečirovič",
+            "1.95",
+            "SG",
+            "May 19, 1981 (age32)",
+            "Lottomatica Roma"
+          ],
+          [
+            "Rasho Nesterovič",
+            "2.13",
+            "C",
+            "May 30, 1976 (age37)",
+            "Indiana Pacers"
+          ],
+          [
+            "Goran Dragić",
+            "1.90",
+            "PG",
+            "May 6, 1986 (age27)",
+            "Union Olimpija"
+          ],
+          [
+            "Uroš Slokar",
+            "2.06",
+            "PF/C",
+            "May 14, 1983 (age30)",
+            "Triumph Lyubertsy"
+          ],
+          [
+            "Nebojša Joksimović",
+            "1.93",
+            "SG",
+            "November 17, 1981 (age32)",
+            "Hemofarm"
+          ],
+          [
+            "Emir Preldžič",
+            "2.06",
+            "SF/PF",
+            "September 6, 1987 (age26)",
+            "Fenerbahçe"
+          ],
+          [
+            "Domen Lorbek",
+            "1.98",
+            "SG",
+            "March 6, 1985 (age28)",
+            "MMT Estudiantes"
+          ],
+          [
+            "Dragisa Drobnjak",
+            "2.00",
+            "F",
+            "November 5, 1977 (age36)",
+            "Turów Zgorzelec"
+          ],
+          [
+            "Miha Zupan",
+            "2.06",
+            "PF/C",
+            "September 13, 1982 (age31)",
+            "Union Olimpija"
+          ]
+        ],
+        "caption": "",
+        "headers": [
+          "Player",
+          "Height",
+          "Position",
+          "Year born (Age)",
+          "Current Club"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-18228282-12",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "2.06",
+              "value": "2.06",
+              "start": 51,
+              "end": 55
+            },
+            {
+              "surface": "Triumph Lyubertsy",
+              "value": "Triumph Lyubertsy",
+              "start": 68,
+              "end": 85
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "8b6ea2632ccad7a89b656b0fb1057e95673e0ad13bed09b81130167c8dc6ceb8",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5055,
+              "completion_tokens": 37,
+              "total_tokens": 5092,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2.06",
+              "value": "2.06",
+              "start": 51,
+              "end": 55,
+              "clause": "What's the position of the player with a Height of 2.06"
+            },
+            {
+              "surface": "Triumph Lyubertsy",
+              "value": "Triumph Lyubertsy",
+              "start": 68,
+              "end": 85,
+              "clause": "and club of Triumph Lyubertsy?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "2.06",
+              "value": "2.06",
+              "start": 51,
+              "end": 55,
+              "clause": "What's the position of the player with a Height of 2.06"
+            },
+            {
+              "surface": "Triumph Lyubertsy",
+              "value": "Triumph Lyubertsy",
+              "start": 68,
+              "end": 85,
+              "clause": "and club of Triumph Lyubertsy?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2.06",
+              "value": "2.06",
+              "start": 51,
+              "end": 55,
+              "clause": "What's the position of the player with a Height of 2.06",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly labels 2.06 as Height, matching the Height column and numeric row values."
+            },
+            {
+              "surface": "Triumph Lyubertsy",
+              "value": "Triumph Lyubertsy",
+              "start": 68,
+              "end": 85,
+              "clause": "and club of Triumph Lyubertsy?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question refers to club, matching Current Club; Triumph Lyubertsy appears in that column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d95b6877812e4743a5f00fb53099cd45efc46165b435b74e203bb67292698468",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5130,
+              "completion_tokens": 64,
+              "total_tokens": 5194,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2.06",
+              "value": "2.06",
+              "start": 51,
+              "end": 55,
+              "clause": "What's the position of the player with a Height of 2.06",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly labels 2.06 as Height, matching the Height column and numeric row values.",
+              "operator": "="
+            },
+            {
+              "surface": "Triumph Lyubertsy",
+              "value": "Triumph Lyubertsy",
+              "start": 68,
+              "end": 85,
+              "clause": "and club of Triumph Lyubertsy?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question refers to club, matching Current Club; Triumph Lyubertsy appears in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0b5f92ec81bc0a3832f9be3397c572dd26270c89d668d126d38ec86e79720680",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5229,
+              "completion_tokens": 11,
+              "total_tokens": 5240,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2.06",
+              "value": 2.06,
+              "start": 51,
+              "end": 55,
+              "clause": "What's the position of the player with a Height of 2.06",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly labels 2.06 as Height, matching the Height column and numeric row values.",
+              "operator": "="
+            },
+            {
+              "surface": "Triumph Lyubertsy",
+              "value": "Triumph Lyubertsy",
+              "start": 68,
+              "end": 85,
+              "clause": "and club of Triumph Lyubertsy?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question refers to club, matching Current Club; Triumph Lyubertsy appears in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "def1d9d99fb400a8a49558f6b204f15eee8e401deb8e4df5066bb07a4a93932a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5183,
+              "completion_tokens": 18,
+              "total_tokens": 5201,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2.06",
+              "value": "2.06",
+              "start": 51,
+              "end": 55,
+              "clause": "What's the position of the player with a Height of 2.06",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly labels 2.06 as Height, matching the Height column and numeric row values.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Triumph Lyubertsy",
+              "value": "Triumph Lyubertsy",
+              "start": 68,
+              "end": 85,
+              "clause": "and club of Triumph Lyubertsy?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question refers to club, matching Current Club; Triumph Lyubertsy appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2.06",
+              "value": 2.06,
+              "start": 51,
+              "end": 55,
+              "clause": "What's the position of the player with a Height of 2.06",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly labels 2.06 as Height, matching the Height column and numeric row values.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Triumph Lyubertsy",
+              "value": "Triumph Lyubertsy",
+              "start": 68,
+              "end": 85,
+              "clause": "and club of Triumph Lyubertsy?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question refers to club, matching Current Club; Triumph Lyubertsy appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "2.06",
+              "value": 2.06,
+              "start": 51,
+              "end": 55,
+              "clause": "What's the position of the player with a Height of 2.06",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly labels 2.06 as Height, matching the Height column and numeric row values.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Triumph Lyubertsy",
+              "value": "Triumph Lyubertsy",
+              "start": 68,
+              "end": 85,
+              "clause": "and club of Triumph Lyubertsy?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question refers to club, matching Current Club; Triumph Lyubertsy appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              2.06
+            ],
+            [
+              4,
+              0,
+              "Triumph Lyubertsy"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "2.06",
+          "value": "2.06",
+          "start": 51,
+          "end": 55
+        },
+        {
+          "surface": "Triumph Lyubertsy",
+          "value": "Triumph Lyubertsy",
+          "start": 68,
+          "end": 85
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "2.06",
+          "value": 2.06,
+          "start": 51,
+          "end": 55,
+          "clause": "What's the position of the player with a Height of 2.06",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The question explicitly labels 2.06 as Height, matching the Height column and numeric row values.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "Triumph Lyubertsy",
+          "value": "Triumph Lyubertsy",
+          "start": 68,
+          "end": 85,
+          "clause": "and club of Triumph Lyubertsy?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The question refers to club, matching Current Club; Triumph Lyubertsy appears in that column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          1,
+          0,
+          2.06
+        ],
+        [
+          4,
+          0,
+          "Triumph Lyubertsy"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9516
+}

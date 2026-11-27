@@ -1,0 +1,1388 @@
+{
+  "arm": "E2",
+  "position": 291,
+  "example_id": "test:11625:2-1205243-11",
+  "original_index": 11625,
+  "table_id": "2-1205243-11",
+  "question": "What is the total number of goals that Malaysia scored where they played more than 1 game, had more than 1 draw, lost fewer than 19 games, and had more than 3 goals scored against them?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        2,
+        2,
+        19
+      ],
+      [
+        4,
+        1,
+        3
+      ]
+    ],
+    "agg": 3
+  },
+  "prediction_conds": [
+    [
+      0,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      1
+    ],
+    [
+      2,
+      2,
+      19
+    ],
+    [
+      4,
+      1,
+      3
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        2,
+        2,
+        19
+      ],
+      [
+        4,
+        1,
+        3
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "1",
+        "value": 1,
+        "start": 83,
+        "end": 84,
+        "clause": "What is the total number of goals that Malaysia scored where they played more than 1 game, had more than 1 draw, lost fewer than 19 games,",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "'played ... game' maps directly to Games played",
+        "operator": ">",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "1",
+        "value": 1,
+        "start": 105,
+        "end": 106,
+        "clause": "had more than 1 draw, lost fewer than 19 games,",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "'draw' maps directly to Drawn*",
+        "operator": ">",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "19",
+        "value": 19,
+        "start": 129,
+        "end": 131,
+        "clause": "lost fewer than 19 games,",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "'lost ... games' maps directly to Lost",
+        "operator": "<",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "3",
+        "value": 3,
+        "start": 157,
+        "end": 158,
+        "clause": "and had more than 3 goals scored against them?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "'goals scored against them' maps directly to Goals against",
+        "operator": ">",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "1",
+        "value": "1",
+        "start": 83,
+        "end": 84
+      },
+      {
+        "surface": "1",
+        "value": "1",
+        "start": 105,
+        "end": 106
+      },
+      {
+        "surface": "19",
+        "value": "19",
+        "start": 129,
+        "end": 131
+      },
+      {
+        "surface": "3",
+        "value": "3",
+        "start": 157,
+        "end": 158
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the total number of goals that Malaysia scored where they played more than 1 game, had more than 1 draw, lost fewer than 19 games, and had more than 3 goals scored against them?",
+      "table": {
+        "header": [
+          "Games played",
+          "Drawn*",
+          "Lost",
+          "Goals for",
+          "Goals against",
+          "Goals difference"
+        ],
+        "page_title": "Malaysia national football team",
+        "types": [
+          "real",
+          "real",
+          "real",
+          "real",
+          "real",
+          "text"
+        ],
+        "page_id": 1205243,
+        "id": "2-1205243-11",
+        "section_title": "FIFA 'A' international matches",
+        "rows": [
+          [
+            "1",
+            "0",
+            "0",
+            "6",
+            "0",
+            "+6"
+          ],
+          [
+            "7",
+            "0",
+            "6",
+            "1",
+            "19",
+            "–18"
+          ],
+          [
+            "9",
+            "3",
+            "4",
+            "14",
+            "20",
+            "–6"
+          ],
+          [
+            "7",
+            "1",
+            "1",
+            "10",
+            "3",
+            "+7"
+          ],
+          [
+            "3",
+            "1",
+            "2",
+            "2",
+            "5",
+            "–3"
+          ],
+          [
+            "1",
+            "0",
+            "1",
+            "0",
+            "4",
+            "–4"
+          ],
+          [
+            "10",
+            "0",
+            "0",
+            "44",
+            "3",
+            "+41"
+          ],
+          [
+            "23",
+            "3",
+            "8",
+            "40",
+            "29",
+            "+11"
+          ],
+          [
+            "1",
+            "0",
+            "1",
+            "0",
+            "5",
+            "–5"
+          ],
+          [
+            "7",
+            "1",
+            "0",
+            "33",
+            "5",
+            "+28"
+          ],
+          [
+            "11",
+            "2",
+            "9",
+            "3",
+            "32",
+            "–31"
+          ],
+          [
+            "10",
+            "2",
+            "2",
+            "22",
+            "10",
+            "+12"
+          ],
+          [
+            "1",
+            "0",
+            "1",
+            "2",
+            "4",
+            "–2"
+          ],
+          [
+            "3",
+            "0",
+            "2",
+            "3",
+            "7",
+            "–4"
+          ],
+          [
+            "1",
+            "0",
+            "1",
+            "1",
+            "2",
+            "–1"
+          ],
+          [
+            "1",
+            "0",
+            "1",
+            "0",
+            "3",
+            "–3"
+          ],
+          [
+            "21",
+            "5",
+            "6",
+            "33",
+            "24",
+            "+9"
+          ],
+          [
+            "22",
+            "6",
+            "6",
+            "45",
+            "27",
+            "+16"
+          ],
+          [
+            "56",
+            "19",
+            "18",
+            "82",
+            "75",
+            "+7"
+          ],
+          [
+            "5",
+            "0",
+            "5",
+            "0",
+            "11",
+            "–11"
+          ],
+          [
+            "8",
+            "3",
+            "5",
+            "3",
+            "14",
+            "–11"
+          ],
+          [
+            "2",
+            "0",
+            "2",
+            "3",
+            "11",
+            "–8"
+          ],
+          [
+            "1",
+            "0",
+            "1",
+            "0",
+            "2",
+            "–2"
+          ],
+          [
+            "22",
+            "7",
+            "7",
+            "31",
+            "26",
+            "+5"
+          ],
+          [
+            "3",
+            "2",
+            "1",
+            "0",
+            "1",
+            "–1"
+          ],
+          [
+            "1",
+            "1",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "9",
+            "1",
+            "2",
+            "17",
+            "8",
+            "+9"
+          ],
+          [
+            "12",
+            "2",
+            "8",
+            "8",
+            "29",
+            "–21"
+          ],
+          [
+            "11",
+            "2",
+            "1",
+            "36",
+            "5",
+            "+31"
+          ],
+          [
+            "2",
+            "0",
+            "0",
+            "9",
+            "0",
+            "+9"
+          ],
+          [
+            "1",
+            "0",
+            "0",
+            "3",
+            "1",
+            "+2"
+          ],
+          [
+            "3",
+            "2",
+            "1",
+            "2",
+            "2",
+            "0"
+          ],
+          [
+            "1",
+            "0",
+            "1",
+            "0",
+            "1",
+            "–1"
+          ],
+          [
+            "2",
+            "0",
+            "0",
+            "14",
+            "0",
+            "+14"
+          ],
+          [
+            "3",
+            "0",
+            "0",
+            "8",
+            "1",
+            "+7"
+          ],
+          [
+            "3",
+            "0",
+            "2",
+            "3",
+            "8",
+            "–5"
+          ],
+          [
+            "46",
+            "8",
+            "17",
+            "84",
+            "65",
+            "+19"
+          ],
+          [
+            "6",
+            "0",
+            "1",
+            "21",
+            "0",
+            "+21"
+          ],
+          [
+            "13",
+            "2",
+            "9",
+            "9",
+            "31",
+            "–22"
+          ],
+          [
+            "8",
+            "3",
+            "4",
+            "5",
+            "14",
+            "–9"
+          ],
+          [
+            "5",
+            "0",
+            "4",
+            "2",
+            "6",
+            "–4"
+          ],
+          [
+            "4",
+            "0",
+            "1",
+            "15",
+            "4",
+            "+11"
+          ],
+          [
+            "3",
+            "0",
+            "2",
+            "4",
+            "6",
+            "–2"
+          ],
+          [
+            "2",
+            "0",
+            "0",
+            "15",
+            "2",
+            "+13"
+          ],
+          [
+            "15",
+            "3",
+            "1",
+            "59",
+            "3",
+            "+56"
+          ],
+          [
+            "6",
+            "3",
+            "3",
+            "3",
+            "11",
+            "–8"
+          ],
+          [
+            "10",
+            "2",
+            "7",
+            "8",
+            "21",
+            "–13"
+          ],
+          [
+            "1",
+            "0",
+            "0",
+            "1",
+            "0",
+            "+1"
+          ],
+          [
+            "48",
+            "16",
+            "13",
+            "75",
+            "55",
+            "+20"
+          ],
+          [
+            "54",
+            "9",
+            "34",
+            "47",
+            "98",
+            "–51"
+          ],
+          [
+            "13",
+            "3",
+            "3",
+            "27",
+            "15",
+            "+12"
+          ],
+          [
+            "7",
+            "0",
+            "1",
+            "23",
+            "6",
+            "+17"
+          ],
+          [
+            "1",
+            "0",
+            "1",
+            "1",
+            "3",
+            "–2"
+          ],
+          [
+            "2",
+            "0",
+            "0",
+            "9",
+            "3",
+            "+6"
+          ],
+          [
+            "75",
+            "27",
+            "19",
+            "108",
+            "90",
+            "+18"
+          ],
+          [
+            "1",
+            "0",
+            "0",
+            "5",
+            "0",
+            "+5"
+          ],
+          [
+            "6",
+            "0",
+            "4",
+            "4",
+            "10",
+            "–6"
+          ],
+          [
+            "1",
+            "0",
+            "0",
+            "3",
+            "0",
+            "+3"
+          ],
+          [
+            "1",
+            "0",
+            "1",
+            "0",
+            "6",
+            "–6"
+          ],
+          [
+            "6",
+            "0",
+            "6",
+            "2",
+            "21",
+            "–19"
+          ],
+          [
+            "13",
+            "3",
+            "6",
+            "11",
+            "12",
+            "–1"
+          ],
+          [
+            "2",
+            "0",
+            "0",
+            "3",
+            "1",
+            "+2"
+          ]
+        ],
+        "caption": "Titles",
+        "headers": [
+          "Games played",
+          "Drawn*",
+          "Lost",
+          "Goals for",
+          "Goals against",
+          "Goals difference"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-1205243-11",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 4,
+          "conditions": [
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 83,
+              "end": 84
+            },
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 105,
+              "end": 106
+            },
+            {
+              "surface": "19",
+              "value": "19",
+              "start": 129,
+              "end": 131
+            },
+            {
+              "surface": "3",
+              "value": "3",
+              "start": 157,
+              "end": 158
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b71238ba17da9f2a4fb2d4644126063400f3d71235b664817a038b56a1d1d4aa",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5551,
+              "completion_tokens": 119,
+              "total_tokens": 5670,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 76
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 83,
+              "end": 84,
+              "clause": "What is the total number of goals that Malaysia scored where they played more than 1 game, had more than 1 draw, lost fewer than 19 games,"
+            },
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 105,
+              "end": 106,
+              "clause": "had more than 1 draw, lost fewer than 19 games,"
+            },
+            {
+              "surface": "19",
+              "value": "19",
+              "start": 129,
+              "end": 131,
+              "clause": "lost fewer than 19 games,"
+            },
+            {
+              "surface": "3",
+              "value": "3",
+              "start": 157,
+              "end": 158,
+              "clause": "and had more than 3 goals scored against them?"
+            }
+          ],
+          "count": 4
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 83,
+              "end": 84,
+              "clause": "What is the total number of goals that Malaysia scored where they played more than 1 game, had more than 1 draw, lost fewer than 19 games,"
+            },
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 105,
+              "end": 106,
+              "clause": "had more than 1 draw, lost fewer than 19 games,"
+            },
+            {
+              "surface": "19",
+              "value": "19",
+              "start": 129,
+              "end": 131,
+              "clause": "lost fewer than 19 games,"
+            },
+            {
+              "surface": "3",
+              "value": "3",
+              "start": 157,
+              "end": 158,
+              "clause": "and had more than 3 goals scored against them?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 83,
+              "end": 84,
+              "clause": "What is the total number of goals that Malaysia scored where they played more than 1 game, had more than 1 draw, lost fewer than 19 games,",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'played ... game' maps directly to Games played"
+            },
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 105,
+              "end": 106,
+              "clause": "had more than 1 draw, lost fewer than 19 games,",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'draw' maps directly to Drawn*"
+            },
+            {
+              "surface": "19",
+              "value": "19",
+              "start": 129,
+              "end": 131,
+              "clause": "lost fewer than 19 games,",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'lost ... games' maps directly to Lost"
+            },
+            {
+              "surface": "3",
+              "value": "3",
+              "start": 157,
+              "end": 158,
+              "clause": "and had more than 3 goals scored against them?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'goals scored against them' maps directly to Goals against"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "3c2c59ad44de32f6f1126d84231843a5ec247584bf7b82198adfa7f4008e098d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5697,
+              "completion_tokens": 76,
+              "total_tokens": 5773,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 83,
+              "end": 84,
+              "clause": "What is the total number of goals that Malaysia scored where they played more than 1 game, had more than 1 draw, lost fewer than 19 games,",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'played ... game' maps directly to Games played",
+              "operator": ">"
+            },
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 105,
+              "end": 106,
+              "clause": "had more than 1 draw, lost fewer than 19 games,",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'draw' maps directly to Drawn*",
+              "operator": ">"
+            },
+            {
+              "surface": "19",
+              "value": "19",
+              "start": 129,
+              "end": 131,
+              "clause": "lost fewer than 19 games,",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'lost ... games' maps directly to Lost",
+              "operator": "<"
+            },
+            {
+              "surface": "3",
+              "value": "3",
+              "start": 157,
+              "end": 158,
+              "clause": "and had more than 3 goals scored against them?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'goals scored against them' maps directly to Goals against",
+              "operator": ">"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "68afa5bdcbd39ab7a3478c24179da7518ebf135823bd90bc43b64133d2aec972",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5823,
+              "completion_tokens": 16,
+              "total_tokens": 5839,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 83,
+              "end": 84,
+              "clause": "What is the total number of goals that Malaysia scored where they played more than 1 game, had more than 1 draw, lost fewer than 19 games,",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'played ... game' maps directly to Games played",
+              "operator": ">"
+            },
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 105,
+              "end": 106,
+              "clause": "had more than 1 draw, lost fewer than 19 games,",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'draw' maps directly to Drawn*",
+              "operator": ">"
+            },
+            {
+              "surface": "19",
+              "value": "19",
+              "start": 129,
+              "end": 131,
+              "clause": "lost fewer than 19 games,",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'lost ... games' maps directly to Lost",
+              "operator": "<"
+            },
+            {
+              "surface": "3",
+              "value": "3",
+              "start": 157,
+              "end": 158,
+              "clause": "and had more than 3 goals scored against them?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'goals scored against them' maps directly to Goals against",
+              "operator": ">"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "4c3b962d4a53f50aa67249491680d5b009f58169ee3c768921fc5b4a1c764894",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5787,
+              "completion_tokens": 16,
+              "total_tokens": 5803,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 83,
+              "end": 84,
+              "clause": "What is the total number of goals that Malaysia scored where they played more than 1 game, had more than 1 draw, lost fewer than 19 games,",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'played ... game' maps directly to Games played",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 105,
+              "end": 106,
+              "clause": "had more than 1 draw, lost fewer than 19 games,",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'draw' maps directly to Drawn*",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "19",
+              "value": "19",
+              "start": 129,
+              "end": 131,
+              "clause": "lost fewer than 19 games,",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'lost ... games' maps directly to Lost",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "3",
+              "value": "3",
+              "start": 157,
+              "end": 158,
+              "clause": "and had more than 3 goals scored against them?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'goals scored against them' maps directly to Goals against",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1",
+              "value": 1,
+              "start": 83,
+              "end": 84,
+              "clause": "What is the total number of goals that Malaysia scored where they played more than 1 game, had more than 1 draw, lost fewer than 19 games,",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'played ... game' maps directly to Games played",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "1",
+              "value": 1,
+              "start": 105,
+              "end": 106,
+              "clause": "had more than 1 draw, lost fewer than 19 games,",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'draw' maps directly to Drawn*",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "19",
+              "value": 19,
+              "start": 129,
+              "end": 131,
+              "clause": "lost fewer than 19 games,",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'lost ... games' maps directly to Lost",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "3",
+              "value": 3,
+              "start": 157,
+              "end": 158,
+              "clause": "and had more than 3 goals scored against them?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'goals scored against them' maps directly to Goals against",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "1",
+              "value": 1,
+              "start": 83,
+              "end": 84,
+              "clause": "What is the total number of goals that Malaysia scored where they played more than 1 game, had more than 1 draw, lost fewer than 19 games,",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'played ... game' maps directly to Games played",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "1",
+              "value": 1,
+              "start": 105,
+              "end": 106,
+              "clause": "had more than 1 draw, lost fewer than 19 games,",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'draw' maps directly to Drawn*",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "19",
+              "value": 19,
+              "start": 129,
+              "end": 131,
+              "clause": "lost fewer than 19 games,",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'lost ... games' maps directly to Lost",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "3",
+              "value": 3,
+              "start": 157,
+              "end": 158,
+              "clause": "and had more than 3 goals scored against them?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'goals scored against them' maps directly to Goals against",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              19
+            ],
+            [
+              4,
+              1,
+              3
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "1",
+          "value": "1",
+          "start": 83,
+          "end": 84
+        },
+        {
+          "surface": "1",
+          "value": "1",
+          "start": 105,
+          "end": 106
+        },
+        {
+          "surface": "19",
+          "value": "19",
+          "start": 129,
+          "end": 131
+        },
+        {
+          "surface": "3",
+          "value": "3",
+          "start": 157,
+          "end": 158
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "1",
+          "value": 1,
+          "start": 83,
+          "end": 84,
+          "clause": "What is the total number of goals that Malaysia scored where they played more than 1 game, had more than 1 draw, lost fewer than 19 games,",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "'played ... game' maps directly to Games played",
+          "operator": ">",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "1",
+          "value": 1,
+          "start": 105,
+          "end": 106,
+          "clause": "had more than 1 draw, lost fewer than 19 games,",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "'draw' maps directly to Drawn*",
+          "operator": ">",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "19",
+          "value": 19,
+          "start": 129,
+          "end": 131,
+          "clause": "lost fewer than 19 games,",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "'lost ... games' maps directly to Lost",
+          "operator": "<",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "3",
+          "value": 3,
+          "start": 157,
+          "end": 158,
+          "clause": "and had more than 3 goals scored against them?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "'goals scored against them' maps directly to Goals against",
+          "operator": ">",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 4,
+      "conds": [
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          19
+        ],
+        [
+          4,
+          1,
+          3
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 12093
+}

@@ -1,0 +1,512 @@
+{
+  "arm": "E2",
+  "position": 587,
+  "example_id": "test:14428:2-12877449-8",
+  "original_index": 14428,
+  "table_id": "2-12877449-8",
+  "question": "Which Championship total is over 13?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        1,
+        1,
+        13
+      ]
+    ],
+    "agg": 5
+  },
+  "prediction_conds": [
+    [
+      4,
+      1,
+      13
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        1,
+        13
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "13",
+        "value": 13,
+        "start": 33,
+        "end": 35,
+        "clause": "Which Championship total is over 13?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The phrase 'total is over 13' targets the Total field; Championship describes the scoring context, while 13 is also present in the Total column.",
+        "operator": ">",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "13",
+        "value": "13",
+        "start": 33,
+        "end": 35
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Which Championship total is over 13?",
+      "table": {
+        "header": [
+          "Name",
+          "Championship",
+          "FA Cup",
+          "League Cup",
+          "Total"
+        ],
+        "page_title": "2006–07 Reading F.C. season",
+        "types": [
+          "text",
+          "real",
+          "real",
+          "real",
+          "real"
+        ],
+        "page_id": 12877449,
+        "id": "2-12877449-8",
+        "section_title": "Top scorers",
+        "rows": [
+          [
+            "Leroy Lita",
+            "7",
+            "4",
+            "3",
+            "14"
+          ],
+          [
+            "Kevin Doyle",
+            "13",
+            "0",
+            "0",
+            "13"
+          ],
+          [
+            "Steve Sidwell",
+            "4",
+            "0",
+            "0",
+            "4"
+          ],
+          [
+            "Stephen Hunt",
+            "4",
+            "0",
+            "0",
+            "4"
+          ],
+          [
+            "Seol Ki-Hyeon",
+            "4",
+            "0",
+            "0",
+            "4"
+          ],
+          [
+            "s Own goal",
+            "4",
+            "0",
+            "0",
+            "4"
+          ],
+          [
+            "Brynjar Gunnarsson",
+            "3",
+            "1",
+            "0",
+            "4"
+          ],
+          [
+            "Dave Kitson",
+            "2",
+            "2",
+            "0",
+            "4"
+          ],
+          [
+            "Shane Long",
+            "2",
+            "1",
+            "1",
+            "4"
+          ],
+          [
+            "James Harper",
+            "3",
+            "0",
+            "0",
+            "3"
+          ],
+          [
+            "Ívar Ingimarsson",
+            "2",
+            "0",
+            "0",
+            "2"
+          ],
+          [
+            "Ulises de la Cruz",
+            "1",
+            "0",
+            "0",
+            "1"
+          ],
+          [
+            "John Oster",
+            "1",
+            "0",
+            "0",
+            "1"
+          ],
+          [
+            "Ibrahima Sonko",
+            "1",
+            "0",
+            "0",
+            "1"
+          ],
+          [
+            "Nicky Shorey",
+            "1",
+            "0",
+            "0",
+            "1"
+          ],
+          [
+            "André Bikey",
+            "0",
+            "1",
+            "0",
+            "1"
+          ],
+          [
+            "Sam Sodje",
+            "0",
+            "1",
+            "0",
+            "1"
+          ],
+          [
+            "Péter Máté",
+            "0",
+            "0",
+            "1",
+            "1"
+          ],
+          [
+            "TOTALS",
+            "54",
+            "9",
+            "6",
+            "69"
+          ]
+        ],
+        "caption": "Top scorers",
+        "headers": [
+          "Name",
+          "Championship",
+          "FA Cup",
+          "League Cup",
+          "Total"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-12877449-8",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "13",
+              "value": "13",
+              "start": 33,
+              "end": 35
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a5caa6c18a9cced2297c62015e9ea03ecf8cb609e9b1326c8a49f234a85944c3",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4930,
+              "completion_tokens": 67,
+              "total_tokens": 4997,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 48
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "13",
+              "value": "13",
+              "start": 33,
+              "end": 35,
+              "clause": "Which Championship total is over 13?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "13",
+              "value": "13",
+              "start": 33,
+              "end": 35,
+              "clause": "Which Championship total is over 13?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "13",
+              "value": "13",
+              "start": 33,
+              "end": 35,
+              "clause": "Which Championship total is over 13?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'total is over 13' targets the Total field; Championship describes the scoring context, while 13 is also present in the Total column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e14a81c80555f38add7dfb452f8b5da976c6ac6d05e32f45dcb1e22ff7a66f06",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4959,
+              "completion_tokens": 52,
+              "total_tokens": 5011,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "13",
+              "value": "13",
+              "start": 33,
+              "end": 35,
+              "clause": "Which Championship total is over 13?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'total is over 13' targets the Total field; Championship describes the scoring context, while 13 is also present in the Total column.",
+              "operator": ">"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "afa9d48c239fed1bdf5b4f05040228105af4d544fc6d92490cf264ca1af5324e",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5035,
+              "completion_tokens": 10,
+              "total_tokens": 5045,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "13",
+              "value": "13",
+              "start": 33,
+              "end": 35,
+              "clause": "Which Championship total is over 13?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'total is over 13' targets the Total field; Championship describes the scoring context, while 13 is also present in the Total column.",
+              "operator": ">"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "02385c22e6cd3de74f60d626cca602001fd16fc641ddacd92fc36f3d2d57a8c9",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4986,
+              "completion_tokens": 10,
+              "total_tokens": 4996,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "13",
+              "value": "13",
+              "start": 33,
+              "end": 35,
+              "clause": "Which Championship total is over 13?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'total is over 13' targets the Total field; Championship describes the scoring context, while 13 is also present in the Total column.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "13",
+              "value": 13,
+              "start": 33,
+              "end": 35,
+              "clause": "Which Championship total is over 13?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'total is over 13' targets the Total field; Championship describes the scoring context, while 13 is also present in the Total column.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "13",
+              "value": 13,
+              "start": 33,
+              "end": 35,
+              "clause": "Which Championship total is over 13?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'total is over 13' targets the Total field; Championship describes the scoring context, while 13 is also present in the Total column.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              1,
+              13
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "13",
+          "value": "13",
+          "start": 33,
+          "end": 35
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "13",
+          "value": 13,
+          "start": 33,
+          "end": 35,
+          "clause": "Which Championship total is over 13?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The phrase 'total is over 13' targets the Total field; Championship describes the scoring context, while 13 is also present in the Total column.",
+          "operator": ">",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          4,
+          1,
+          13
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 10297
+}

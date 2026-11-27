@@ -1,0 +1,502 @@
+{
+  "arm": "E2",
+  "position": 410,
+  "example_id": "test:10679:2-1122413-1",
+  "original_index": 10679,
+  "table_id": "2-1122413-1",
+  "question": "What's the total grid of Bruce Mclaren?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        0,
+        0,
+        "bruce mclaren"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "Bruce McLaren"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "Bruce McLaren"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Bruce Mclaren",
+        "value": "Bruce McLaren",
+        "start": 25,
+        "end": 38,
+        "clause": "What's the total grid of Bruce Mclaren?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "Bruce McLaren is the driver whose Grid value is requested; it matches the Driver column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Bruce Mclaren",
+        "value": "Bruce McLaren",
+        "start": 25,
+        "end": 38
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What's the total grid of Bruce Mclaren?",
+      "table": {
+        "header": [
+          "Driver",
+          "Constructor",
+          "Laps",
+          "Time/Retired",
+          "Grid"
+        ],
+        "page_title": "1969 United States Grand Prix",
+        "types": [
+          "text",
+          "text",
+          "real",
+          "text",
+          "real"
+        ],
+        "page_id": 1122413,
+        "id": "2-1122413-1",
+        "section_title": "Classification",
+        "rows": [
+          [
+            "Jochen Rindt",
+            "Lotus - Ford",
+            "108",
+            "1:57:56.84",
+            "1"
+          ],
+          [
+            "Piers Courage",
+            "Brabham - Ford",
+            "108",
+            "+ 46.99",
+            "9"
+          ],
+          [
+            "John Surtees",
+            "BRM",
+            "106",
+            "+ 2 Laps",
+            "11"
+          ],
+          [
+            "Jack Brabham",
+            "Brabham - Ford",
+            "106",
+            "+ 2 Laps",
+            "18"
+          ],
+          [
+            "Pedro Rodríguez",
+            "Ferrari",
+            "101",
+            "+ 7 Laps",
+            "12"
+          ],
+          [
+            "Silvio Moser",
+            "Brabham - Ford",
+            "98",
+            "+ 10 Laps",
+            "17"
+          ],
+          [
+            "Johnny Servoz-Gavin",
+            "Matra - Ford",
+            "92",
+            "Not Classified",
+            "15"
+          ],
+          [
+            "Graham Hill",
+            "Lotus - Ford",
+            "90",
+            "Accident",
+            "4"
+          ],
+          [
+            "Jacky Ickx",
+            "Brabham - Ford",
+            "77",
+            "Engine",
+            "8"
+          ],
+          [
+            "George Eaton",
+            "BRM",
+            "76",
+            "Engine",
+            "9"
+          ],
+          [
+            "Jean-Pierre Beltoise",
+            "Matra - Ford",
+            "72",
+            "Engine",
+            "7"
+          ],
+          [
+            "Denny Hulme",
+            "McLaren - Ford",
+            "52",
+            "Gearbox",
+            "2"
+          ],
+          [
+            "Jackie Stewart",
+            "Matra - Ford",
+            "35",
+            "Engine",
+            "3"
+          ],
+          [
+            "Pete Lovely",
+            "Lotus - Ford",
+            "25",
+            "Halfshaft",
+            "16"
+          ],
+          [
+            "Jackie Oliver",
+            "BRM",
+            "23",
+            "Engine",
+            "14"
+          ],
+          [
+            "Jo Siffert",
+            "Lotus - Ford",
+            "3",
+            "Fuel System",
+            "13"
+          ],
+          [
+            "Mario Andretti",
+            "Lotus - Ford",
+            "3",
+            "Suspension",
+            "5"
+          ],
+          [
+            "Bruce McLaren",
+            "McLaren - Ford",
+            "0",
+            "Engine",
+            "6"
+          ]
+        ],
+        "caption": "Classification",
+        "headers": [
+          "Driver",
+          "Constructor",
+          "Laps",
+          "Time/Retired",
+          "Grid"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-1122413-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Bruce Mclaren",
+              "value": "Bruce McLaren",
+              "start": 25,
+              "end": 38
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e36b636136a5f94642063db715de4de6c5ab93d5564c508d28f7b83900bae4c0",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4986,
+              "completion_tokens": 22,
+              "total_tokens": 5008,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Bruce Mclaren",
+              "value": "Bruce McLaren",
+              "start": 25,
+              "end": 38,
+              "clause": "What's the total grid of Bruce Mclaren?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Bruce Mclaren",
+              "value": "Bruce McLaren",
+              "start": 25,
+              "end": 38,
+              "clause": "What's the total grid of Bruce Mclaren?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Bruce Mclaren",
+              "value": "Bruce McLaren",
+              "start": 25,
+              "end": 38,
+              "clause": "What's the total grid of Bruce Mclaren?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Bruce McLaren is the driver whose Grid value is requested; it matches the Driver column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "aeb6534a64c36ab5cab7fd1623aa0e2bbf85949e6a2834417890acfe45948dd1",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5022,
+              "completion_tokens": 39,
+              "total_tokens": 5061,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Bruce Mclaren",
+              "value": "Bruce McLaren",
+              "start": 25,
+              "end": 38,
+              "clause": "What's the total grid of Bruce Mclaren?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Bruce McLaren is the driver whose Grid value is requested; it matches the Driver column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "1a7f2c5517deb98fc0af5ed8aff6ea64a7b9f7510311261d6c89af9c31f78498",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5085,
+              "completion_tokens": 9,
+              "total_tokens": 5094,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Bruce Mclaren",
+              "value": "Bruce McLaren",
+              "start": 25,
+              "end": 38,
+              "clause": "What's the total grid of Bruce Mclaren?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Bruce McLaren is the driver whose Grid value is requested; it matches the Driver column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "cbc78ec8a90002a8ae1f5c1dd0bbb2646455c2f994cf156bf11e531cf7fbd8cc",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5036,
+              "completion_tokens": 12,
+              "total_tokens": 5048,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Bruce Mclaren",
+              "value": "Bruce McLaren",
+              "start": 25,
+              "end": 38,
+              "clause": "What's the total grid of Bruce Mclaren?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Bruce McLaren is the driver whose Grid value is requested; it matches the Driver column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Bruce Mclaren",
+              "value": "Bruce McLaren",
+              "start": 25,
+              "end": 38,
+              "clause": "What's the total grid of Bruce Mclaren?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Bruce McLaren is the driver whose Grid value is requested; it matches the Driver column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Bruce Mclaren",
+              "value": "Bruce McLaren",
+              "start": 25,
+              "end": 38,
+              "clause": "What's the total grid of Bruce Mclaren?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Bruce McLaren is the driver whose Grid value is requested; it matches the Driver column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              "Bruce McLaren"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Bruce Mclaren",
+          "value": "Bruce McLaren",
+          "start": 25,
+          "end": 38
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Bruce Mclaren",
+          "value": "Bruce McLaren",
+          "start": 25,
+          "end": 38,
+          "clause": "What's the total grid of Bruce Mclaren?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "Bruce McLaren is the driver whose Grid value is requested; it matches the Driver column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          0,
+          0,
+          "Bruce McLaren"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8500
+}

@@ -1,0 +1,491 @@
+{
+  "arm": "E2",
+  "position": 271,
+  "example_id": "test:7600:2-16002877-1",
+  "original_index": 7600,
+  "table_id": "2-16002877-1",
+  "question": "What is the fewest number of silvers have 0 golds?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        2,
+        0,
+        0
+      ]
+    ],
+    "agg": 2
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      0
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        0
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "0",
+        "value": 0,
+        "start": 42,
+        "end": 43,
+        "clause": "What is the fewest number of silvers have 0 golds?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The condition '0 golds' explicitly refers to the Gold field; column 2 contains gold-medal counts.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "0",
+        "value": "0",
+        "start": 42,
+        "end": 43
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the fewest number of silvers have 0 golds?",
+      "table": {
+        "header": [
+          "Rank",
+          "Nation",
+          "Gold",
+          "Silver",
+          "Bronze",
+          "Total"
+        ],
+        "page_title": "1973 World Wrestling Championships",
+        "types": [
+          "text",
+          "text",
+          "real",
+          "real",
+          "real",
+          "real"
+        ],
+        "page_id": 16002877,
+        "id": "2-16002877-1",
+        "section_title": "Medal table",
+        "rows": [
+          [
+            "1",
+            "Soviet Union",
+            "11",
+            "5",
+            "2",
+            "18"
+          ],
+          [
+            "2",
+            "Iran",
+            "3",
+            "0",
+            "2",
+            "5"
+          ],
+          [
+            "3",
+            "Bulgaria",
+            "2",
+            "3",
+            "4",
+            "9"
+          ],
+          [
+            "4",
+            "Poland",
+            "2",
+            "3",
+            "1",
+            "6"
+          ],
+          [
+            "5",
+            "Romania",
+            "1",
+            "1",
+            "1",
+            "3"
+          ],
+          [
+            "6",
+            "United States",
+            "1",
+            "0",
+            "1",
+            "2"
+          ],
+          [
+            "7",
+            "East Germany",
+            "0",
+            "2",
+            "2",
+            "4"
+          ],
+          [
+            "8",
+            "Yugoslavia",
+            "0",
+            "2",
+            "0",
+            "2"
+          ],
+          [
+            "9",
+            "Hungary",
+            "0",
+            "1",
+            "3",
+            "4"
+          ],
+          [
+            "10",
+            "Czechoslovakia",
+            "0",
+            "1",
+            "1",
+            "2"
+          ],
+          [
+            "10",
+            "Mongolia",
+            "0",
+            "1",
+            "1",
+            "2"
+          ],
+          [
+            "10",
+            "Sweden",
+            "0",
+            "1",
+            "1",
+            "2"
+          ],
+          [
+            "13",
+            "Japan",
+            "0",
+            "0",
+            "1",
+            "1"
+          ],
+          [
+            "Total",
+            "Total",
+            "20",
+            "20",
+            "20",
+            "60"
+          ]
+        ],
+        "caption": "Medal table",
+        "headers": [
+          "Rank",
+          "Nation",
+          "Gold",
+          "Silver",
+          "Bronze",
+          "Total"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-16002877-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 42,
+              "end": 43
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "9b71e777b0cbdf7a44a9ce60ed467abd1cae8bc48ba3e9c356e1b4ca6060743b",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4877,
+              "completion_tokens": 17,
+              "total_tokens": 4894,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 42,
+              "end": 43,
+              "clause": "What is the fewest number of silvers have 0 golds?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 42,
+              "end": 43,
+              "clause": "What is the fewest number of silvers have 0 golds?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 42,
+              "end": 43,
+              "clause": "What is the fewest number of silvers have 0 golds?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The condition '0 golds' explicitly refers to the Gold field; column 2 contains gold-medal counts."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "51e01b34340752ebd23b1b67bc5307c3afd37b6f0805d896a251d72ca3595993",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4913,
+              "completion_tokens": 44,
+              "total_tokens": 4957,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 42,
+              "end": 43,
+              "clause": "What is the fewest number of silvers have 0 golds?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The condition '0 golds' explicitly refers to the Gold field; column 2 contains gold-medal counts.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "df2514cb730d6a0b5e7c8b654fa228e1a41e3f226ed5fa85307586472d86deea",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4981,
+              "completion_tokens": 9,
+              "total_tokens": 4990,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 42,
+              "end": 43,
+              "clause": "What is the fewest number of silvers have 0 golds?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The condition '0 golds' explicitly refers to the Gold field; column 2 contains gold-medal counts.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "85e0d21e84ab5563a9f493f8c3805ee3e3f47a1639cb6286440045dde44bca22",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4932,
+              "completion_tokens": 10,
+              "total_tokens": 4942,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 42,
+              "end": 43,
+              "clause": "What is the fewest number of silvers have 0 golds?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The condition '0 golds' explicitly refers to the Gold field; column 2 contains gold-medal counts.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "0",
+              "value": 0,
+              "start": 42,
+              "end": 43,
+              "clause": "What is the fewest number of silvers have 0 golds?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The condition '0 golds' explicitly refers to the Gold field; column 2 contains gold-medal counts.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "0",
+              "value": 0,
+              "start": 42,
+              "end": 43,
+              "clause": "What is the fewest number of silvers have 0 golds?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The condition '0 golds' explicitly refers to the Gold field; column 2 contains gold-medal counts.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "0",
+          "value": "0",
+          "start": 42,
+          "end": 43
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "0",
+          "value": 0,
+          "start": 42,
+          "end": 43,
+          "clause": "What is the fewest number of silvers have 0 golds?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The condition '0 golds' explicitly refers to the Gold field; column 2 contains gold-medal counts.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          2,
+          0,
+          0
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7906
+}

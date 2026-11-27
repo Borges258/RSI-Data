@@ -1,0 +1,446 @@
+{
+  "arm": "E2",
+  "position": 396,
+  "example_id": "test:15708:2-1235746-1",
+  "original_index": 15708,
+  "table_id": "2-1235746-1",
+  "question": "What year did Cooper Car Company enter?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        1,
+        0,
+        "cooper car company"
+      ]
+    ],
+    "agg": 5
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "Cooper Car Company"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "Cooper Car Company"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Cooper Car Company",
+        "value": "Cooper Car Company",
+        "start": 14,
+        "end": 32,
+        "clause": "What year did Cooper Car Company enter?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The named entity is the entrant; it matches the Entrant header and row evidence.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Cooper Car Company",
+        "value": "Cooper Car Company",
+        "start": 14,
+        "end": 32
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What year did Cooper Car Company enter?",
+      "table": {
+        "header": [
+          "Year",
+          "Entrant",
+          "Chassis",
+          "Engine",
+          "Points"
+        ],
+        "page_title": "John Love (racing driver)",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "real"
+        ],
+        "page_id": 1235746,
+        "id": "2-1235746-1",
+        "section_title": "Complete Formula One World Championship results",
+        "rows": [
+          [
+            "1962",
+            "John Love",
+            "Cooper T55",
+            "Climax Straight-4",
+            "0"
+          ],
+          [
+            "1963",
+            "John Love",
+            "Cooper T55",
+            "Climax Straight-4",
+            "0"
+          ],
+          [
+            "1964",
+            "Cooper Car Company",
+            "Cooper T73",
+            "Climax V8",
+            "0"
+          ],
+          [
+            "1965",
+            "John Love",
+            "Cooper T55",
+            "Climax Straight-4",
+            "0"
+          ],
+          [
+            "1967",
+            "John Love",
+            "Cooper T79",
+            "Climax Straight-4",
+            "6"
+          ],
+          [
+            "1968",
+            "Team Gunston",
+            "Brabham BT20",
+            "Repco V8",
+            "0"
+          ],
+          [
+            "1969",
+            "Team Gunston",
+            "Lotus 49",
+            "Cosworth V8",
+            "0"
+          ],
+          [
+            "1970",
+            "Team Gunston",
+            "Lotus 49",
+            "Cosworth V8",
+            "0"
+          ],
+          [
+            "1971",
+            "Team Peco/Gunston",
+            "March 701",
+            "Cosworth V8",
+            "0"
+          ],
+          [
+            "1972",
+            "Team Gunston",
+            "Surtees TS9",
+            "Cosworth V8",
+            "0"
+          ]
+        ],
+        "caption": "Complete Formula One World Championship results",
+        "headers": [
+          "Year",
+          "Entrant",
+          "Chassis",
+          "Engine",
+          "Points"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-1235746-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Cooper Car Company",
+              "value": "Cooper Car Company",
+              "start": 14,
+              "end": 32
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b93d60ca669a9b9294b89c9ada25cabd3e492d02450e78a1191a31c732a6830f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4876,
+              "completion_tokens": 23,
+              "total_tokens": 4899,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Cooper Car Company",
+              "value": "Cooper Car Company",
+              "start": 14,
+              "end": 32,
+              "clause": "What year did Cooper Car Company enter?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Cooper Car Company",
+              "value": "Cooper Car Company",
+              "start": 14,
+              "end": 32,
+              "clause": "What year did Cooper Car Company enter?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Cooper Car Company",
+              "value": "Cooper Car Company",
+              "start": 14,
+              "end": 32,
+              "clause": "What year did Cooper Car Company enter?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The named entity is the entrant; it matches the Entrant header and row evidence."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a1c0333fa0f2fb16b3e0e433e6b4719bd3591dc7638d0dd0926eca0a00474de3",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4911,
+              "completion_tokens": 38,
+              "total_tokens": 4949,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Cooper Car Company",
+              "value": "Cooper Car Company",
+              "start": 14,
+              "end": 32,
+              "clause": "What year did Cooper Car Company enter?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The named entity is the entrant; it matches the Entrant header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "3b663f91e693c8365214641fb9c7c6092a50b23f6f427a2f34090d2dcc93a0b6",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4973,
+              "completion_tokens": 9,
+              "total_tokens": 4982,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Cooper Car Company",
+              "value": "Cooper Car Company",
+              "start": 14,
+              "end": 32,
+              "clause": "What year did Cooper Car Company enter?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The named entity is the entrant; it matches the Entrant header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "027b3c7149d3ddc310b34c2e38a5abeb047c17123a402f5a4366daa7b4a45448",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4924,
+              "completion_tokens": 13,
+              "total_tokens": 4937,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Cooper Car Company",
+              "value": "Cooper Car Company",
+              "start": 14,
+              "end": 32,
+              "clause": "What year did Cooper Car Company enter?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The named entity is the entrant; it matches the Entrant header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Cooper Car Company",
+              "value": "Cooper Car Company",
+              "start": 14,
+              "end": 32,
+              "clause": "What year did Cooper Car Company enter?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The named entity is the entrant; it matches the Entrant header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Cooper Car Company",
+              "value": "Cooper Car Company",
+              "start": 14,
+              "end": 32,
+              "clause": "What year did Cooper Car Company enter?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The named entity is the entrant; it matches the Entrant header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              "Cooper Car Company"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Cooper Car Company",
+          "value": "Cooper Car Company",
+          "start": 14,
+          "end": 32
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Cooper Car Company",
+          "value": "Cooper Car Company",
+          "start": 14,
+          "end": 32,
+          "clause": "What year did Cooper Car Company enter?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The named entity is the entrant; it matches the Entrant header and row evidence.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          1,
+          0,
+          "Cooper Car Company"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7469
+}

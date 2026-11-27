@@ -1,0 +1,467 @@
+{
+  "arm": "E2",
+  "position": 241,
+  "example_id": "test:13752:2-18639024-10",
+  "original_index": 13752,
+  "table_id": "2-18639024-10",
+  "question": "Which player from A-League 39 (110) has the highest games per goal?",
+  "gold_sql": {
+    "sel": 5,
+    "conds": [
+      [
+        2,
+        0,
+        "39 (110)"
+      ]
+    ],
+    "agg": 1
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "39 (110)"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "39 (110)"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "39 (110)",
+        "value": "39 (110)",
+        "start": 27,
+        "end": 35,
+        "clause": "Which player from A-League 39 (110) has the highest games per goal?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The question explicitly says \"A-League 39 (110)\", matching the A-League header and Danny Allsopp's cell.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "39 (110)",
+        "value": "39 (110)",
+        "start": 27,
+        "end": 35
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Which player from A-League 39 (110) has the highest games per goal?",
+      "table": {
+        "header": [
+          "Name",
+          "Years",
+          "A-League",
+          "Finals",
+          "Total",
+          "Games per goal"
+        ],
+        "page_title": "Melbourne Victory records and statistics",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "real"
+        ],
+        "page_id": 18639024,
+        "id": "2-18639024-10",
+        "section_title": "Leading Scorers",
+        "rows": [
+          [
+            "Archie Thompson",
+            "2005/06 -",
+            "61 (149)",
+            "8 (11)",
+            "70 (170)",
+            "2.43"
+          ],
+          [
+            "Danny Allsopp",
+            "2005/06 - 2009",
+            "39 (110)",
+            "3 (7)",
+            "46 (128)",
+            "2.72"
+          ],
+          [
+            "Carlos Hernández",
+            "2007/08 - 2011/12",
+            "33 (114)",
+            "3 (9)",
+            "38 (134)",
+            "3.53"
+          ],
+          [
+            "Kevin Muscat",
+            "2005/06 - 2010/2011",
+            "28 (113)",
+            "0 (9)",
+            "34 (138)",
+            "4.00"
+          ],
+          [
+            "Robbie Kruse",
+            "2009/10 - 2010/2011",
+            "15 (36)",
+            "1 (3)",
+            "16 (47)",
+            "2.88"
+          ],
+          [
+            "Marco Rojas",
+            "2011/12 - 2012/13",
+            "14 (49)",
+            "0 (2)",
+            "14 (51)",
+            "3.64"
+          ],
+          [
+            "Mark Milligan",
+            "2011/12 -",
+            "9 (30)",
+            "1 (2)",
+            "10 (32)",
+            "3.20"
+          ],
+          [
+            "Tom Pondeljak",
+            "2008/09 - 2011/2012",
+            "7 (72)",
+            "1 (6)",
+            "9 (86)",
+            "9.56"
+          ],
+          [
+            "Rodrigo Vargas",
+            "2006/07 - 2011/2012",
+            "7 (129)",
+            "0 (10)",
+            "9 (153)",
+            "17.00"
+          ],
+          [
+            "Harry Kewell",
+            "2011/2012",
+            "8 (24)",
+            "0 (0)",
+            "8 (24)",
+            "3.00"
+          ],
+          [
+            "Mate Dugandzic",
+            "2009/2010 - 2010/2011",
+            "7 (36)",
+            "0 (1)",
+            "8 (40)",
+            "4.88"
+          ]
+        ],
+        "caption": "Leading Scorers",
+        "headers": [
+          "Name",
+          "Years",
+          "A-League",
+          "Finals",
+          "Total",
+          "Games per goal"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-18639024-10",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "39 (110)",
+              "value": "39 (110)",
+              "start": 27,
+              "end": 35
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "46c7d3ea5f22cbff0a109eec548638b6c28c8bd4493317bcefef3d444a4ab229",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5069,
+              "completion_tokens": 23,
+              "total_tokens": 5092,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "39 (110)",
+              "value": "39 (110)",
+              "start": 27,
+              "end": 35,
+              "clause": "Which player from A-League 39 (110) has the highest games per goal?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "39 (110)",
+              "value": "39 (110)",
+              "start": 27,
+              "end": 35,
+              "clause": "Which player from A-League 39 (110) has the highest games per goal?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "39 (110)",
+              "value": "39 (110)",
+              "start": 27,
+              "end": 35,
+              "clause": "Which player from A-League 39 (110) has the highest games per goal?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly says \"A-League 39 (110)\", matching the A-League header and Danny Allsopp's cell."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "bc75c6efd924a37499c749d100cc3ec594f043e563d24ec7bcc90e0f5a8e021a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5114,
+              "completion_tokens": 49,
+              "total_tokens": 5163,
+              "prompt_tokens_details": {
+                "cached_tokens": 4864
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "39 (110)",
+              "value": "39 (110)",
+              "start": 27,
+              "end": 35,
+              "clause": "Which player from A-League 39 (110) has the highest games per goal?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly says \"A-League 39 (110)\", matching the A-League header and Danny Allsopp's cell.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "66809a20e09ea0a0c032e9f14736ebc13da34a9b630cbae5b64ec385f9947518",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5187,
+              "completion_tokens": 9,
+              "total_tokens": 5196,
+              "prompt_tokens_details": {
+                "cached_tokens": 4864
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "39 (110)",
+              "value": "39 (110)",
+              "start": 27,
+              "end": 35,
+              "clause": "Which player from A-League 39 (110) has the highest games per goal?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly says \"A-League 39 (110)\", matching the A-League header and Danny Allsopp's cell.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "9ce0af5cc20db8aa9c9937357d7882bf66f3db59b7d514c97e136798cb9fb2d4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5138,
+              "completion_tokens": 13,
+              "total_tokens": 5151,
+              "prompt_tokens_details": {
+                "cached_tokens": 4864
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "39 (110)",
+              "value": "39 (110)",
+              "start": 27,
+              "end": 35,
+              "clause": "Which player from A-League 39 (110) has the highest games per goal?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly says \"A-League 39 (110)\", matching the A-League header and Danny Allsopp's cell.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "39 (110)",
+              "value": "39 (110)",
+              "start": 27,
+              "end": 35,
+              "clause": "Which player from A-League 39 (110) has the highest games per goal?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly says \"A-League 39 (110)\", matching the A-League header and Danny Allsopp's cell.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "39 (110)",
+              "value": "39 (110)",
+              "start": 27,
+              "end": 35,
+              "clause": "Which player from A-League 39 (110) has the highest games per goal?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly says \"A-League 39 (110)\", matching the A-League header and Danny Allsopp's cell.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "39 (110)"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "39 (110)",
+          "value": "39 (110)",
+          "start": 27,
+          "end": 35
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "39 (110)",
+          "value": "39 (110)",
+          "start": 27,
+          "end": 35,
+          "clause": "Which player from A-League 39 (110) has the highest games per goal?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The question explicitly says \"A-League 39 (110)\", matching the A-League header and Danny Allsopp's cell.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          2,
+          0,
+          "39 (110)"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7375
+}

@@ -1,0 +1,803 @@
+{
+  "arm": "E2",
+  "position": 253,
+  "example_id": "test:10110:2-16384648-2",
+  "original_index": 10110,
+  "table_id": "2-16384648-2",
+  "question": "what is the team nickname when joined tschl is 2010 and home arena is kettering rec center and the team website is dayton hockey?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        3,
+        0,
+        2010
+      ],
+      [
+        4,
+        0,
+        "kettering rec center"
+      ],
+      [
+        6,
+        0,
+        "dayton hockey"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      3,
+      0,
+      2010
+    ],
+    [
+      4,
+      0,
+      "Kettering Rec Center"
+    ],
+    [
+      6,
+      0,
+      "Dayton Hockey"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        0,
+        2010
+      ],
+      [
+        4,
+        0,
+        "Kettering Rec Center"
+      ],
+      [
+        6,
+        0,
+        "Dayton Hockey"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "2010",
+        "value": 2010,
+        "start": 47,
+        "end": 51,
+        "clause": "what is the team nickname when joined tschl is 2010",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The clause explicitly names 'joined tschl', matching the Joined TSCHL header; rows contain 2010 in column 3.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "kettering rec center",
+        "value": "Kettering Rec Center",
+        "start": 70,
+        "end": 90,
+        "clause": "and home arena is kettering rec center",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The clause explicitly names 'home arena', matching the Home Arena header; Kettering Rec Center appears in column 4.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "dayton hockey",
+        "value": "Dayton Hockey",
+        "start": 115,
+        "end": 128,
+        "clause": "and the team website is dayton hockey?",
+        "columnIndex": 6,
+        "columnCandidates": [
+          6
+        ],
+        "columnMatchReason": "The clause explicitly names 'team website', matching the Team Website header; Dayton Hockey appears in column 6.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "2010",
+        "value": "2010",
+        "start": 47,
+        "end": 51
+      },
+      {
+        "surface": "kettering rec center",
+        "value": "Kettering Rec Center",
+        "start": 70,
+        "end": 90
+      },
+      {
+        "surface": "dayton hockey",
+        "value": "Dayton Hockey",
+        "start": 115,
+        "end": 128
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "what is the team nickname when joined tschl is 2010 and home arena is kettering rec center and the team website is dayton hockey?",
+      "table": {
+        "header": [
+          "Institution",
+          "Location",
+          "Team Nickname",
+          "Joined TSCHL",
+          "Home Arena",
+          "Capacity",
+          "Team Website"
+        ],
+        "page_title": "Tri-State Collegiate Hockey League",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "real",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 16384648,
+        "id": "2-16384648-2",
+        "section_title": "Current teams",
+        "rows": [
+          [
+            "University of Akron",
+            "Akron, OH",
+            "Zips",
+            "2010",
+            "Center Ice Sports Complex",
+            "900",
+            "Zips Hockey"
+          ],
+          [
+            "University of Cincinnati",
+            "Cincinnati, OH",
+            "Bearcats",
+            "2010",
+            "Cincinnati Gardens",
+            "10,208",
+            "Cincinnati Hockey"
+          ],
+          [
+            "University of Dayton",
+            "Dayton, OH",
+            "Flyers",
+            "2010",
+            "Kettering Rec Center",
+            "700",
+            "Dayton Hockey"
+          ],
+          [
+            "Indiana University of Pennsylvania",
+            "Indiana, PA",
+            "Crimson Hawks",
+            "2010",
+            "S&T Bank Arena",
+            "1,000",
+            "IUP Hockey"
+          ],
+          [
+            "Ohio University",
+            "Athens, OH",
+            "Bobcats",
+            "2011",
+            "Bird Arena",
+            "2,000",
+            "Ohio Hockey"
+          ],
+          [
+            "University of Toledo",
+            "Toledo, OH",
+            "Rockets",
+            "2010",
+            "Team Toledo Ice House",
+            "1,100",
+            "Toledo Hockey"
+          ],
+          [
+            "University of Pittsburgh",
+            "Pittsburgh, PA",
+            "Panthers",
+            "2010",
+            "BladeRunners Harmarville",
+            "1,200",
+            "Pitt Hockey"
+          ],
+          [
+            "West Virginia University",
+            "Morgantown, WV",
+            "Mountaineers",
+            "2010",
+            "Morgantown Municipal Ice Arena",
+            "500",
+            "WVU Hockey"
+          ],
+          [
+            "Wright State University",
+            "Fairborn, OH",
+            "Raiders",
+            "2010",
+            "Kettering Rec Center",
+            "700",
+            "WSU Hockey"
+          ]
+        ],
+        "caption": "Current teams",
+        "headers": [
+          "Institution",
+          "Location",
+          "Team Nickname",
+          "Joined TSCHL",
+          "Home Arena",
+          "Capacity",
+          "Team Website"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-16384648-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 3,
+          "conditions": [
+            {
+              "surface": "2010",
+              "value": "2010",
+              "start": 47,
+              "end": 51
+            },
+            {
+              "surface": "kettering rec center",
+              "value": "Kettering Rec Center",
+              "start": 70,
+              "end": 90
+            },
+            {
+              "surface": "dayton hockey",
+              "value": "Dayton Hockey",
+              "start": 115,
+              "end": 128
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "5c4bb83221d638c23421f7553eace97c08aab2d01b7d1ad73c8bb770b5be97aa",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4968,
+              "completion_tokens": 46,
+              "total_tokens": 5014,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2010",
+              "value": "2010",
+              "start": 47,
+              "end": 51,
+              "clause": "what is the team nickname when joined tschl is 2010"
+            },
+            {
+              "surface": "kettering rec center",
+              "value": "Kettering Rec Center",
+              "start": 70,
+              "end": 90,
+              "clause": "and home arena is kettering rec center"
+            },
+            {
+              "surface": "dayton hockey",
+              "value": "Dayton Hockey",
+              "start": 115,
+              "end": 128,
+              "clause": "and the team website is dayton hockey?"
+            }
+          ],
+          "count": 3
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "2010",
+              "value": "2010",
+              "start": 47,
+              "end": 51,
+              "clause": "what is the team nickname when joined tschl is 2010"
+            },
+            {
+              "surface": "kettering rec center",
+              "value": "Kettering Rec Center",
+              "start": 70,
+              "end": 90,
+              "clause": "and home arena is kettering rec center"
+            },
+            {
+              "surface": "dayton hockey",
+              "value": "Dayton Hockey",
+              "start": 115,
+              "end": 128,
+              "clause": "and the team website is dayton hockey?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2010",
+              "value": "2010",
+              "start": 47,
+              "end": 51,
+              "clause": "what is the team nickname when joined tschl is 2010",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly names 'joined tschl', matching the Joined TSCHL header; rows contain 2010 in column 3."
+            },
+            {
+              "surface": "kettering rec center",
+              "value": "Kettering Rec Center",
+              "start": 70,
+              "end": 90,
+              "clause": "and home arena is kettering rec center",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly names 'home arena', matching the Home Arena header; Kettering Rec Center appears in column 4."
+            },
+            {
+              "surface": "dayton hockey",
+              "value": "Dayton Hockey",
+              "start": 115,
+              "end": 128,
+              "clause": "and the team website is dayton hockey?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "The clause explicitly names 'team website', matching the Team Website header; Dayton Hockey appears in column 6."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c2d5deab8c2cfd831e0118ae257878a9a99fa528a3259fb991eaffab41181cf6",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5072,
+              "completion_tokens": 103,
+              "total_tokens": 5175,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2010",
+              "value": "2010",
+              "start": 47,
+              "end": 51,
+              "clause": "what is the team nickname when joined tschl is 2010",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly names 'joined tschl', matching the Joined TSCHL header; rows contain 2010 in column 3.",
+              "operator": "="
+            },
+            {
+              "surface": "kettering rec center",
+              "value": "Kettering Rec Center",
+              "start": 70,
+              "end": 90,
+              "clause": "and home arena is kettering rec center",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly names 'home arena', matching the Home Arena header; Kettering Rec Center appears in column 4.",
+              "operator": "="
+            },
+            {
+              "surface": "dayton hockey",
+              "value": "Dayton Hockey",
+              "start": 115,
+              "end": 128,
+              "clause": "and the team website is dayton hockey?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "The clause explicitly names 'team website', matching the Team Website header; Dayton Hockey appears in column 6.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "559d943b6aa7a97522969687b8a499a7a3117f0c1af5f8f9b78991a650a1628f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5221,
+              "completion_tokens": 13,
+              "total_tokens": 5234,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2010",
+              "value": "2010",
+              "start": 47,
+              "end": 51,
+              "clause": "what is the team nickname when joined tschl is 2010",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly names 'joined tschl', matching the Joined TSCHL header; rows contain 2010 in column 3.",
+              "operator": "="
+            },
+            {
+              "surface": "kettering rec center",
+              "value": "Kettering Rec Center",
+              "start": 70,
+              "end": 90,
+              "clause": "and home arena is kettering rec center",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly names 'home arena', matching the Home Arena header; Kettering Rec Center appears in column 4.",
+              "operator": "="
+            },
+            {
+              "surface": "dayton hockey",
+              "value": "Dayton Hockey",
+              "start": 115,
+              "end": 128,
+              "clause": "and the team website is dayton hockey?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "The clause explicitly names 'team website', matching the Team Website header; Dayton Hockey appears in column 6.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "7e3d610826584820b8bcfd96c089529df814d3a41e66067012c8a3b49edcf7df",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5178,
+              "completion_tokens": 21,
+              "total_tokens": 5199,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2010",
+              "value": "2010",
+              "start": 47,
+              "end": 51,
+              "clause": "what is the team nickname when joined tschl is 2010",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly names 'joined tschl', matching the Joined TSCHL header; rows contain 2010 in column 3.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "kettering rec center",
+              "value": "Kettering Rec Center",
+              "start": 70,
+              "end": 90,
+              "clause": "and home arena is kettering rec center",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly names 'home arena', matching the Home Arena header; Kettering Rec Center appears in column 4.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "dayton hockey",
+              "value": "Dayton Hockey",
+              "start": 115,
+              "end": 128,
+              "clause": "and the team website is dayton hockey?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "The clause explicitly names 'team website', matching the Team Website header; Dayton Hockey appears in column 6.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2010",
+              "value": 2010,
+              "start": 47,
+              "end": 51,
+              "clause": "what is the team nickname when joined tschl is 2010",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly names 'joined tschl', matching the Joined TSCHL header; rows contain 2010 in column 3.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "kettering rec center",
+              "value": "Kettering Rec Center",
+              "start": 70,
+              "end": 90,
+              "clause": "and home arena is kettering rec center",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly names 'home arena', matching the Home Arena header; Kettering Rec Center appears in column 4.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "dayton hockey",
+              "value": "Dayton Hockey",
+              "start": 115,
+              "end": 128,
+              "clause": "and the team website is dayton hockey?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "The clause explicitly names 'team website', matching the Team Website header; Dayton Hockey appears in column 6.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "2010",
+              "value": 2010,
+              "start": 47,
+              "end": 51,
+              "clause": "what is the team nickname when joined tschl is 2010",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly names 'joined tschl', matching the Joined TSCHL header; rows contain 2010 in column 3.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "kettering rec center",
+              "value": "Kettering Rec Center",
+              "start": 70,
+              "end": 90,
+              "clause": "and home arena is kettering rec center",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly names 'home arena', matching the Home Arena header; Kettering Rec Center appears in column 4.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "dayton hockey",
+              "value": "Dayton Hockey",
+              "start": 115,
+              "end": 128,
+              "clause": "and the team website is dayton hockey?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "The clause explicitly names 'team website', matching the Team Website header; Dayton Hockey appears in column 6.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              0,
+              2010
+            ],
+            [
+              4,
+              0,
+              "Kettering Rec Center"
+            ],
+            [
+              6,
+              0,
+              "Dayton Hockey"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "2010",
+          "value": "2010",
+          "start": 47,
+          "end": 51
+        },
+        {
+          "surface": "kettering rec center",
+          "value": "Kettering Rec Center",
+          "start": 70,
+          "end": 90
+        },
+        {
+          "surface": "dayton hockey",
+          "value": "Dayton Hockey",
+          "start": 115,
+          "end": 128
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "2010",
+          "value": 2010,
+          "start": 47,
+          "end": 51,
+          "clause": "what is the team nickname when joined tschl is 2010",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The clause explicitly names 'joined tschl', matching the Joined TSCHL header; rows contain 2010 in column 3.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "kettering rec center",
+          "value": "Kettering Rec Center",
+          "start": 70,
+          "end": 90,
+          "clause": "and home arena is kettering rec center",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The clause explicitly names 'home arena', matching the Home Arena header; Kettering Rec Center appears in column 4.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "dayton hockey",
+          "value": "Dayton Hockey",
+          "start": 115,
+          "end": 128,
+          "clause": "and the team website is dayton hockey?",
+          "columnIndex": 6,
+          "columnCandidates": [
+            6
+          ],
+          "columnMatchReason": "The clause explicitly names 'team website', matching the Team Website header; Dayton Hockey appears in column 6.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 3,
+      "conds": [
+        [
+          3,
+          0,
+          2010
+        ],
+        [
+          4,
+          0,
+          "Kettering Rec Center"
+        ],
+        [
+          6,
+          0,
+          "Dayton Hockey"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 10046
+}

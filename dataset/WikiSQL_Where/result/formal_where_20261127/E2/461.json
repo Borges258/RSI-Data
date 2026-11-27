@@ -1,0 +1,451 @@
+{
+  "arm": "E2",
+  "position": 461,
+  "example_id": "test:4394:2-10125431-14",
+  "original_index": 4394,
+  "table_id": "2-10125431-14",
+  "question": "What is total number of wins for England?",
+  "gold_sql": {
+    "sel": 5,
+    "conds": [
+      [
+        1,
+        0,
+        "england"
+      ]
+    ],
+    "agg": 4
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "England"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "England"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "England",
+        "value": "England",
+        "start": 33,
+        "end": 40,
+        "clause": "What is total number of wins for England?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "England is a nation in the Nation column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "England",
+        "value": "England",
+        "start": 33,
+        "end": 40
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is total number of wins for England?",
+      "table": {
+        "header": [
+          "Rank",
+          "Nation",
+          "Gold",
+          "Silver",
+          "Bronze",
+          "Total"
+        ],
+        "page_title": "1979 IAAF World Cross Country Championships",
+        "types": [
+          "text",
+          "text",
+          "real",
+          "real",
+          "real",
+          "real"
+        ],
+        "page_id": 10125431,
+        "id": "2-10125431-14",
+        "section_title": "Medal table (unofficial)",
+        "rows": [
+          [
+            "1",
+            "England",
+            "1",
+            "2",
+            "1",
+            "4"
+          ],
+          [
+            "2",
+            "Ireland",
+            "1",
+            "1",
+            "0",
+            "2"
+          ],
+          [
+            "3",
+            "United States",
+            "1",
+            "0",
+            "1",
+            "2"
+          ],
+          [
+            "4",
+            "Belgium",
+            "1",
+            "0",
+            "0",
+            "1"
+          ],
+          [
+            "4",
+            "Norway",
+            "1",
+            "0",
+            "0",
+            "1"
+          ],
+          [
+            "4",
+            "Spain",
+            "1",
+            "0",
+            "0",
+            "1"
+          ],
+          [
+            "7",
+            "Soviet Union",
+            "0",
+            "2",
+            "4",
+            "6"
+          ],
+          [
+            "8",
+            "Poland",
+            "0",
+            "1",
+            "0",
+            "1"
+          ],
+          [
+            "Total",
+            "Total",
+            "6",
+            "6",
+            "6",
+            "18"
+          ]
+        ],
+        "caption": "",
+        "headers": [
+          "Rank",
+          "Nation",
+          "Gold",
+          "Silver",
+          "Bronze",
+          "Total"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-10125431-14",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "England",
+              "value": "England",
+              "start": 33,
+              "end": 40
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "dc20060bf840d423700fcb8a7686dcffcb3bdb29df37ed720a110cf4c5a684bb",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4796,
+              "completion_tokens": 17,
+              "total_tokens": 4813,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "England",
+              "value": "England",
+              "start": 33,
+              "end": 40,
+              "clause": "What is total number of wins for England?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "England",
+              "value": "England",
+              "start": 33,
+              "end": 40,
+              "clause": "What is total number of wins for England?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "England",
+              "value": "England",
+              "start": 33,
+              "end": 40,
+              "clause": "What is total number of wins for England?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "England is a nation in the Nation column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "63304f3e025897cac690d5bc25109a102b09ab81ab6d4c99d591fcb1a2e42149",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4826,
+              "completion_tokens": 30,
+              "total_tokens": 4856,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "England",
+              "value": "England",
+              "start": 33,
+              "end": 40,
+              "clause": "What is total number of wins for England?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "England is a nation in the Nation column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0e05e30a8bd60d6119f91a7995c87970838c66edf0e45557e52d37fd48b81822",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4880,
+              "completion_tokens": 9,
+              "total_tokens": 4889,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "England",
+              "value": "England",
+              "start": 33,
+              "end": 40,
+              "clause": "What is total number of wins for England?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "England is a nation in the Nation column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d4f2fe020f0051d7e29e006e50d87117ac09c272857d3771d90861f3ddaf650a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4831,
+              "completion_tokens": 10,
+              "total_tokens": 4841,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "England",
+              "value": "England",
+              "start": 33,
+              "end": 40,
+              "clause": "What is total number of wins for England?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "England is a nation in the Nation column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "England",
+              "value": "England",
+              "start": 33,
+              "end": 40,
+              "clause": "What is total number of wins for England?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "England is a nation in the Nation column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "England",
+              "value": "England",
+              "start": 33,
+              "end": 40,
+              "clause": "What is total number of wins for England?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "England is a nation in the Nation column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              "England"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "England",
+          "value": "England",
+          "start": 33,
+          "end": 40
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "England",
+          "value": "England",
+          "start": 33,
+          "end": 40,
+          "clause": "What is total number of wins for England?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "England is a nation in the Nation column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          1,
+          0,
+          "England"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8016
+}

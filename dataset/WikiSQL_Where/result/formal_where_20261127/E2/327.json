@@ -1,0 +1,436 @@
+{
+  "arm": "E2",
+  "position": 327,
+  "example_id": "test:2979:1-23963073-1",
+  "original_index": 2979,
+  "table_id": "1-23963073-1",
+  "question": "How many English translations were made for the story originally titled \"La Ribambelle Enquête\"?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        0,
+        0,
+        "\"La Ribambelle enquête\""
+      ]
+    ],
+    "agg": 3
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "\"La Ribambelle enquête\""
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "\"La Ribambelle enquête\""
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "La Ribambelle Enquête",
+        "value": "\"La Ribambelle enquête\"",
+        "start": 73,
+        "end": 94,
+        "clause": "How many English translations were made for the story originally titled \"La Ribambelle Enquête\"?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "\"originally titled\" refers to the French Title field, and the row contains the matching title \"La Ribambelle enquête\".",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "NORMALIZED_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "La Ribambelle Enquête",
+        "value": "La Ribambelle enquête",
+        "start": 73,
+        "end": 94
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "How many English translations were made for the story originally titled \"La Ribambelle Enquête\"?",
+      "table": {
+        "id": "1-23963073-1",
+        "header": [
+          "French Title",
+          "Date of Publication",
+          "English Translation",
+          "Writer",
+          "Artist"
+        ],
+        "types": [
+          "text",
+          "real",
+          "text",
+          "text",
+          "text"
+        ],
+        "rows": [
+          [
+            "\"Opération ciseaux\"",
+            1958,
+            "[Operation Scissors]",
+            "Marcel Denis",
+            "Jo–ël"
+          ],
+          [
+            "\"La Ribambelle gagne du terrain\"",
+            1962,
+            "[The Ribambelle Gains Ground]",
+            "Jean Roba",
+            "Jean Roba"
+          ],
+          [
+            "\"La Ribambelle en Ecosse\"",
+            1962,
+            "[The Ribambelle in Scotland]",
+            "Jean Roba",
+            "Jean Roba"
+          ],
+          [
+            "\"La Ribambelle s’envole\"",
+            1962,
+            "[The Ribambelle Takes Off]",
+            "Jean Roba",
+            "Jean Roba"
+          ],
+          [
+            "\"La Ribambelle engage du monde\"",
+            1964,
+            "[The Ribambelle Recruits]",
+            "Jean Roba",
+            "Jean Roba"
+          ],
+          [
+            "\"La Ribambelle au bassin\"",
+            1964,
+            "[The Ribambelle at the Pond]",
+            "Jean Roba",
+            "Jean Roba"
+          ],
+          [
+            "\"La Ribambelle aux Galopingos\"",
+            1966,
+            "[The Ribambelle at the Galopingos Islands]",
+            "Vicq",
+            "Jean Roba"
+          ],
+          [
+            "\"La Ribambelle enquête\"",
+            1968,
+            "[The Ribambelle Investigates]",
+            "Maurice Tillieux",
+            "Jean Roba"
+          ],
+          [
+            "\"La Ribambelle contre–attaque\"",
+            1975,
+            "[The Ribambelle Strikes Back]",
+            "Maurice Tillieux",
+            "Jean Roba, Jidéhem"
+          ]
+        ],
+        "name": "table_23963073_1",
+        "headers": [
+          "French Title",
+          "Date of Publication",
+          "English Translation",
+          "Writer",
+          "Artist"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-23963073-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "La Ribambelle Enquête",
+              "value": "La Ribambelle enquête",
+              "start": 73,
+              "end": 94
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "127d142d1f234b470d859a0b2acd5396a78756236ac1dec83d4f085bae0ac697",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4935,
+              "completion_tokens": 26,
+              "total_tokens": 4961,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "La Ribambelle Enquête",
+              "value": "La Ribambelle enquête",
+              "start": 73,
+              "end": 94,
+              "clause": "How many English translations were made for the story originally titled \"La Ribambelle Enquête\"?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "La Ribambelle Enquête",
+              "value": "La Ribambelle enquête",
+              "start": 73,
+              "end": 94,
+              "clause": "How many English translations were made for the story originally titled \"La Ribambelle Enquête\"?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "La Ribambelle Enquête",
+              "value": "La Ribambelle enquête",
+              "start": 73,
+              "end": 94,
+              "clause": "How many English translations were made for the story originally titled \"La Ribambelle Enquête\"?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "\"originally titled\" refers to the French Title field, and the row contains the matching title \"La Ribambelle enquête\"."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "cfad4ef440396a225a6e9df56c3456f9353472af9cbfa01d51ff554ff57e9ed8",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4985,
+              "completion_tokens": 48,
+              "total_tokens": 5033,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "La Ribambelle Enquête",
+              "value": "La Ribambelle enquête",
+              "start": 73,
+              "end": 94,
+              "clause": "How many English translations were made for the story originally titled \"La Ribambelle Enquête\"?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "\"originally titled\" refers to the French Title field, and the row contains the matching title \"La Ribambelle enquête\".",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b022ad7cf4c95ee026ab399f73cf17bb24bfee41b4e99e6789b935d7d43e6b07",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5057,
+              "completion_tokens": 9,
+              "total_tokens": 5066,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "La Ribambelle Enquête",
+              "value": "La Ribambelle enquête",
+              "start": 73,
+              "end": 94,
+              "clause": "How many English translations were made for the story originally titled \"La Ribambelle Enquête\"?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "\"originally titled\" refers to the French Title field, and the row contains the matching title \"La Ribambelle enquête\".",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "5a470227a7dcd8dd759ef05f1f1c30632a06fa823ae98b4df4e7e5cedd037790",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5008,
+              "completion_tokens": 14,
+              "total_tokens": 5022,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "La Ribambelle Enquête",
+              "value": "\"La Ribambelle enquête\"",
+              "start": 73,
+              "end": 94,
+              "clause": "How many English translations were made for the story originally titled \"La Ribambelle Enquête\"?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "\"originally titled\" refers to the French Title field, and the row contains the matching title \"La Ribambelle enquête\".",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "NORMALIZED_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "La Ribambelle Enquête",
+              "value": "\"La Ribambelle enquête\"",
+              "start": 73,
+              "end": 94,
+              "clause": "How many English translations were made for the story originally titled \"La Ribambelle Enquête\"?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "\"originally titled\" refers to the French Title field, and the row contains the matching title \"La Ribambelle enquête\".",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "NORMALIZED_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "La Ribambelle Enquête",
+              "value": "\"La Ribambelle enquête\"",
+              "start": 73,
+              "end": 94,
+              "clause": "How many English translations were made for the story originally titled \"La Ribambelle Enquête\"?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "\"originally titled\" refers to the French Title field, and the row contains the matching title \"La Ribambelle enquête\".",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "NORMALIZED_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              "\"La Ribambelle enquête\""
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "La Ribambelle Enquête",
+          "value": "La Ribambelle enquête",
+          "start": 73,
+          "end": 94
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "La Ribambelle Enquête",
+          "value": "\"La Ribambelle enquête\"",
+          "start": 73,
+          "end": 94,
+          "clause": "How many English translations were made for the story originally titled \"La Ribambelle Enquête\"?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "\"originally titled\" refers to the French Title field, and the row contains the matching title \"La Ribambelle enquête\".",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "NORMALIZED_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          0,
+          0,
+          "\"La Ribambelle enquête\""
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 11781
+}

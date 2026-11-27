@@ -1,0 +1,491 @@
+{
+  "arm": "E2",
+  "position": 143,
+  "example_id": "test:5176:2-15198842-14",
+  "original_index": 5176,
+  "table_id": "2-15198842-14",
+  "question": "What position is drafted from Grambling?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        5,
+        0,
+        "grambling"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      5,
+      0,
+      "Grambling"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        5,
+        0,
+        "Grambling"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Grambling",
+        "value": "Grambling",
+        "start": 30,
+        "end": 39,
+        "clause": "What position is drafted from Grambling?",
+        "columnIndex": 5,
+        "columnCandidates": [
+          5
+        ],
+        "columnMatchReason": "The preposition 'from' identifies Grambling as the college a player was drafted from, and the College column contains Grambling.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Grambling",
+        "value": "Grambling",
+        "start": 30,
+        "end": 39
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What position is drafted from Grambling?",
+      "table": {
+        "header": [
+          "Round",
+          "Pick #",
+          "Overall",
+          "Name",
+          "Position",
+          "College"
+        ],
+        "page_title": "Atlanta Falcons draft history",
+        "types": [
+          "real",
+          "real",
+          "real",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 15198842,
+        "id": "2-15198842-14",
+        "section_title": "",
+        "rows": [
+          [
+            "1",
+            "17",
+            "17",
+            "Don Smith",
+            "Defensive End",
+            "Miami (FL)"
+          ],
+          [
+            "2",
+            "21",
+            "49",
+            "Pat Howell",
+            "Guard",
+            "USC"
+          ],
+          [
+            "3",
+            "17",
+            "75",
+            "James Mayberry",
+            "Running Back",
+            "Colorado"
+          ],
+          [
+            "3",
+            "23",
+            "79",
+            "William Andrews",
+            "Running Back",
+            "Auburn"
+          ],
+          [
+            "4",
+            "18",
+            "100",
+            "Lynn Cain",
+            "Running Back",
+            "USC"
+          ],
+          [
+            "4",
+            "19",
+            "101",
+            "Charles Johnson [ disambiguation needed ]",
+            "Defensive Back",
+            "Grambling"
+          ],
+          [
+            "5",
+            "17",
+            "127",
+            "Mike Zele",
+            "Defensive Tackle",
+            "Kent State"
+          ],
+          [
+            "6",
+            "17",
+            "154",
+            "Mike Moroski",
+            "Quarterback",
+            "UC Davis"
+          ],
+          [
+            "7",
+            "21",
+            "186",
+            "Roger Westlund",
+            "Offensive Tackle",
+            "Washington"
+          ],
+          [
+            "8",
+            "20",
+            "212",
+            "Keith Miller",
+            "Linebacker",
+            "Northeastern State (OK)"
+          ],
+          [
+            "9",
+            "19",
+            "239",
+            "Dave Parkin",
+            "Defensive Back",
+            "Utah State"
+          ],
+          [
+            "10",
+            "18",
+            "266",
+            "Bruce Beekley",
+            "Linebacker",
+            "Oregon"
+          ],
+          [
+            "11",
+            "17",
+            "292",
+            "Bill Leer",
+            "Center",
+            "Colorado State"
+          ],
+          [
+            "12",
+            "20",
+            "323",
+            "Stuart Walker",
+            "Linebacker",
+            "Colorado"
+          ]
+        ],
+        "caption": "",
+        "headers": [
+          "Round",
+          "Pick #",
+          "Overall",
+          "Name",
+          "Position",
+          "College"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-15198842-14",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Grambling",
+              "value": "Grambling",
+              "start": 30,
+              "end": 39
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "1ab5d8f576980f4de344752bcc6edad958888a7066dc140811a41ae705c6c140",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4913,
+              "completion_tokens": 19,
+              "total_tokens": 4932,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Grambling",
+              "value": "Grambling",
+              "start": 30,
+              "end": 39,
+              "clause": "What position is drafted from Grambling?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Grambling",
+              "value": "Grambling",
+              "start": 30,
+              "end": 39,
+              "clause": "What position is drafted from Grambling?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Grambling",
+              "value": "Grambling",
+              "start": 30,
+              "end": 39,
+              "clause": "What position is drafted from Grambling?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The preposition 'from' identifies Grambling as the college a player was drafted from, and the College column contains Grambling."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "21976fcb1d76972e6681fde3e13a1226551500ff6502282e76b7b32cabd1583d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4944,
+              "completion_tokens": 47,
+              "total_tokens": 4991,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Grambling",
+              "value": "Grambling",
+              "start": 30,
+              "end": 39,
+              "clause": "What position is drafted from Grambling?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The preposition 'from' identifies Grambling as the college a player was drafted from, and the College column contains Grambling.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "82bcbf399d3b5a312c5bc2e77a4649515f46c4aac542a3d7f318bba1f452c7f0",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5015,
+              "completion_tokens": 9,
+              "total_tokens": 5024,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Grambling",
+              "value": "Grambling",
+              "start": 30,
+              "end": 39,
+              "clause": "What position is drafted from Grambling?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The preposition 'from' identifies Grambling as the college a player was drafted from, and the College column contains Grambling.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b55bc86eb833aa537b2a2d0aea8af786408e1cf0e6b8fc0a6bd07eef1e05cdb7",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4966,
+              "completion_tokens": 11,
+              "total_tokens": 4977,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Grambling",
+              "value": "Grambling",
+              "start": 30,
+              "end": 39,
+              "clause": "What position is drafted from Grambling?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The preposition 'from' identifies Grambling as the college a player was drafted from, and the College column contains Grambling.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Grambling",
+              "value": "Grambling",
+              "start": 30,
+              "end": 39,
+              "clause": "What position is drafted from Grambling?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The preposition 'from' identifies Grambling as the college a player was drafted from, and the College column contains Grambling.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Grambling",
+              "value": "Grambling",
+              "start": 30,
+              "end": 39,
+              "clause": "What position is drafted from Grambling?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The preposition 'from' identifies Grambling as the college a player was drafted from, and the College column contains Grambling.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              5,
+              0,
+              "Grambling"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Grambling",
+          "value": "Grambling",
+          "start": 30,
+          "end": 39
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Grambling",
+          "value": "Grambling",
+          "start": 30,
+          "end": 39,
+          "clause": "What position is drafted from Grambling?",
+          "columnIndex": 5,
+          "columnCandidates": [
+            5
+          ],
+          "columnMatchReason": "The preposition 'from' identifies Grambling as the college a player was drafted from, and the College column contains Grambling.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          5,
+          0,
+          "Grambling"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7125
+}

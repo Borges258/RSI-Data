@@ -1,0 +1,411 @@
+{
+  "arm": "E2",
+  "position": 225,
+  "example_id": "test:8618:2-16275828-7",
+  "original_index": 8618,
+  "table_id": "2-16275828-7",
+  "question": "What was the sanction of the event at Nashville, Illinois?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        1,
+        0,
+        "nashville, illinois"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "Nashville, Illinois"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "Nashville, Illinois"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Nashville, Illinois",
+        "value": "Nashville, Illinois",
+        "start": 38,
+        "end": 57,
+        "clause": "What was the sanction of the event at Nashville, Illinois?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The location phrase \"at Nashville, Illinois\" identifies the Location field, and the matching row contains that exact value in column 1.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Nashville, Illinois",
+        "value": "Nashville, Illinois",
+        "start": 38,
+        "end": 57
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What was the sanction of the event at Nashville, Illinois?",
+      "table": {
+        "header": [
+          "Track Name",
+          "Location",
+          "Length",
+          "Sanction",
+          "Program"
+        ],
+        "page_title": "Motorsport in Illinois",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 16275828,
+        "id": "2-16275828-7",
+        "section_title": "Motocross Tracks",
+        "rows": [
+          [
+            "Belleville Enduro Team",
+            "Belleville, Illinois",
+            "Multiple tracks",
+            "AMA",
+            "Various programs throughout the year"
+          ],
+          [
+            "Motosports Park",
+            "Byron, Illinois",
+            "Multiple Tracks",
+            "AMA",
+            "Various programs throughout the year"
+          ],
+          [
+            "Lincoln Trail Motosports",
+            "Casey, Illinois",
+            "Multiple tracks",
+            "AMA",
+            "Various programs throughout the year"
+          ],
+          [
+            "South Fork Dirt Riders",
+            "Taylorville, Illinois",
+            "Multiple Tracks",
+            "AMA",
+            "Various programs throughout the year"
+          ],
+          [
+            "Triple R Motocross",
+            "Nashville, Illinois",
+            "Multiple tracks",
+            "AMA",
+            "Various programs throughout the year"
+          ]
+        ],
+        "caption": "Motocross Tracks",
+        "headers": [
+          "Track Name",
+          "Location",
+          "Length",
+          "Sanction",
+          "Program"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-16275828-7",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Nashville, Illinois",
+              "value": "Nashville, Illinois",
+              "start": 38,
+              "end": 57
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0ebdc6882dce89bb2c8f0d49ca7d39cf7448cb396ce8059131932142a20f9c16",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4784,
+              "completion_tokens": 25,
+              "total_tokens": 4809,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Nashville, Illinois",
+              "value": "Nashville, Illinois",
+              "start": 38,
+              "end": 57,
+              "clause": "What was the sanction of the event at Nashville, Illinois?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Nashville, Illinois",
+              "value": "Nashville, Illinois",
+              "start": 38,
+              "end": 57,
+              "clause": "What was the sanction of the event at Nashville, Illinois?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Nashville, Illinois",
+              "value": "Nashville, Illinois",
+              "start": 38,
+              "end": 57,
+              "clause": "What was the sanction of the event at Nashville, Illinois?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The location phrase \"at Nashville, Illinois\" identifies the Location field, and the matching row contains that exact value in column 1."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b4d267b4021b9c2d467fb7551a5cfd04a93f6df5c65c0730525090bd85be37e6",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4825,
+              "completion_tokens": 48,
+              "total_tokens": 4873,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Nashville, Illinois",
+              "value": "Nashville, Illinois",
+              "start": 38,
+              "end": 57,
+              "clause": "What was the sanction of the event at Nashville, Illinois?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The location phrase \"at Nashville, Illinois\" identifies the Location field, and the matching row contains that exact value in column 1.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "08a43db5b6c133330d5039292e8a44a966a8af0b299f0e86ba27c9e725fdfaa7",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4897,
+              "completion_tokens": 9,
+              "total_tokens": 4906,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Nashville, Illinois",
+              "value": "Nashville, Illinois",
+              "start": 38,
+              "end": 57,
+              "clause": "What was the sanction of the event at Nashville, Illinois?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The location phrase \"at Nashville, Illinois\" identifies the Location field, and the matching row contains that exact value in column 1.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "dfd0cb620670f5a9867a577849ac3d2f94fd62de7d1a48823a7732803c3b7813",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4848,
+              "completion_tokens": 14,
+              "total_tokens": 4862,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Nashville, Illinois",
+              "value": "Nashville, Illinois",
+              "start": 38,
+              "end": 57,
+              "clause": "What was the sanction of the event at Nashville, Illinois?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The location phrase \"at Nashville, Illinois\" identifies the Location field, and the matching row contains that exact value in column 1.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Nashville, Illinois",
+              "value": "Nashville, Illinois",
+              "start": 38,
+              "end": 57,
+              "clause": "What was the sanction of the event at Nashville, Illinois?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The location phrase \"at Nashville, Illinois\" identifies the Location field, and the matching row contains that exact value in column 1.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Nashville, Illinois",
+              "value": "Nashville, Illinois",
+              "start": 38,
+              "end": 57,
+              "clause": "What was the sanction of the event at Nashville, Illinois?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The location phrase \"at Nashville, Illinois\" identifies the Location field, and the matching row contains that exact value in column 1.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              "Nashville, Illinois"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Nashville, Illinois",
+          "value": "Nashville, Illinois",
+          "start": 38,
+          "end": 57
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Nashville, Illinois",
+          "value": "Nashville, Illinois",
+          "start": 38,
+          "end": 57,
+          "clause": "What was the sanction of the event at Nashville, Illinois?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The location phrase \"at Nashville, Illinois\" identifies the Location field, and the matching row contains that exact value in column 1.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          1,
+          0,
+          "Nashville, Illinois"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8735
+}

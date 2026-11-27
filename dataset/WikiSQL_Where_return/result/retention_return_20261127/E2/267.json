@@ -1,0 +1,418 @@
+{
+  "arm": "E2",
+  "position": 267,
+  "example_id": "test:10670:2-11888143-1",
+  "original_index": 10670,
+  "table_id": "2-11888143-1",
+  "question": "Which country is ranked 24?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        4,
+        0,
+        "24"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      4,
+      0,
+      "24"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        0,
+        "24"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "24",
+        "value": "24",
+        "start": 24,
+        "end": 26,
+        "clause": "Which country is ranked 24?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The wording 'ranked 24' identifies the Rank field, and the Rank column contains '24'.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "24",
+        "value": "24",
+        "start": 24,
+        "end": 26
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Which country is ranked 24?",
+      "table": {
+        "header": [
+          "Publication",
+          "Country",
+          "Accolade",
+          "Year",
+          "Rank"
+        ],
+        "page_title": "Northern Lites",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 11888143,
+        "id": "2-11888143-1",
+        "section_title": "Accolades",
+        "rows": [
+          [
+            "Iguana Music",
+            "Spain",
+            "Songs '99",
+            "1999",
+            "7"
+          ],
+          [
+            "John Peel show, BBC Radio 1",
+            "United Kingdom",
+            "John Peel's Festive 50",
+            "1999",
+            "24"
+          ],
+          [
+            "Melody Maker",
+            "United Kingdom",
+            "Single of the Week 15 May 1999",
+            "1999",
+            "–"
+          ],
+          [
+            "NME",
+            "United Kingdom",
+            "Single of the Week 8 May 1999",
+            "1999",
+            "–"
+          ],
+          [
+            "NME",
+            "United Kingdom",
+            "Singles of 1999",
+            "1999",
+            "3"
+          ],
+          [
+            "Select",
+            "United Kingdom",
+            "Singles of 1999",
+            "1999",
+            "22"
+          ]
+        ],
+        "caption": "Accolades",
+        "headers": [
+          "Publication",
+          "Country",
+          "Accolade",
+          "Year",
+          "Rank"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-11888143-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "24",
+              "value": "24",
+              "start": 24,
+              "end": 26
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "231518739c0129703d9703bf0e6c71a4069758b0a0fb0a7a4e7fb086d43770bb",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4786,
+              "completion_tokens": 17,
+              "total_tokens": 4803,
+              "prompt_tokens_details": {
+                "cached_tokens": 3200
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "24",
+              "value": "24",
+              "start": 24,
+              "end": 26,
+              "clause": "Which country is ranked 24?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "24",
+              "value": "24",
+              "start": 24,
+              "end": 26,
+              "clause": "Which country is ranked 24?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "24",
+              "value": "24",
+              "start": 24,
+              "end": 26,
+              "clause": "Which country is ranked 24?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The wording 'ranked 24' identifies the Rank field, and the Rank column contains '24'."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b961086506a20ccfdca7500cb0b5d94d866c65bc156104830de5e36cf81f0ce6",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4814,
+              "completion_tokens": 42,
+              "total_tokens": 4856,
+              "prompt_tokens_details": {
+                "cached_tokens": 3200
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "24",
+              "value": "24",
+              "start": 24,
+              "end": 26,
+              "clause": "Which country is ranked 24?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The wording 'ranked 24' identifies the Rank field, and the Rank column contains '24'.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "cbd50644cc7312c0233ac2823ec7216e6a8ef4e493e08a4b510a1647597f459a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4881,
+              "completion_tokens": 9,
+              "total_tokens": 4890,
+              "prompt_tokens_details": {
+                "cached_tokens": 3200
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "24",
+              "value": "24",
+              "start": 24,
+              "end": 26,
+              "clause": "Which country is ranked 24?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The wording 'ranked 24' identifies the Rank field, and the Rank column contains '24'.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "2841c46668f8e86c88ed0fb4a0eb50ce6af4efd90a7e4e6cb3a68097235b303f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4832,
+              "completion_tokens": 10,
+              "total_tokens": 4842,
+              "prompt_tokens_details": {
+                "cached_tokens": 3200
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "24",
+              "value": "24",
+              "start": 24,
+              "end": 26,
+              "clause": "Which country is ranked 24?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The wording 'ranked 24' identifies the Rank field, and the Rank column contains '24'.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "24",
+              "value": "24",
+              "start": 24,
+              "end": 26,
+              "clause": "Which country is ranked 24?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The wording 'ranked 24' identifies the Rank field, and the Rank column contains '24'.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "24",
+              "value": "24",
+              "start": 24,
+              "end": 26,
+              "clause": "Which country is ranked 24?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The wording 'ranked 24' identifies the Rank field, and the Rank column contains '24'.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              0,
+              "24"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "24",
+          "value": "24",
+          "start": 24,
+          "end": 26
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "24",
+          "value": "24",
+          "start": 24,
+          "end": 26,
+          "clause": "Which country is ranked 24?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The wording 'ranked 24' identifies the Rank field, and the Rank column contains '24'.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          4,
+          0,
+          "24"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 18859
+}

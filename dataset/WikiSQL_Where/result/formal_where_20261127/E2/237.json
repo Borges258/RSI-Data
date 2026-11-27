@@ -1,0 +1,425 @@
+{
+  "arm": "E2",
+  "position": 237,
+  "example_id": "test:11779:2-11163017-5",
+  "original_index": 11779,
+  "table_id": "2-11163017-5",
+  "question": "What is Ivaiporã, pr's biggest population?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        0,
+        0,
+        "Ivaiporã , PR"
+      ]
+    ],
+    "agg": 1
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "Ivaiporã , PR"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "Ivaiporã , PR"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Ivaiporã, pr",
+        "value": "Ivaiporã , PR",
+        "start": 8,
+        "end": 20,
+        "clause": "What is Ivaiporã, pr's biggest population?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "The condition names a town/city, and the normalized value matches the Town/City field.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Ivaiporã, pr",
+        "value": "Ivaiporã , PR",
+        "start": 8,
+        "end": 20
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is Ivaiporã, pr's biggest population?",
+      "table": {
+        "header": [
+          "Town/City",
+          "Population",
+          "Operator",
+          "First year",
+          "Duration"
+        ],
+        "page_title": "Free public transport",
+        "types": [
+          "text",
+          "real",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 11163017,
+        "id": "2-11163017-5",
+        "section_title": "Brazil",
+        "rows": [
+          [
+            "Agudos , SP",
+            "36,700",
+            "local government",
+            "2011",
+            "since 2011"
+          ],
+          [
+            "Ivaiporã , PR",
+            "31,812",
+            "local government",
+            "2011",
+            "since 2011"
+          ],
+          [
+            "Porto Real , RJ",
+            "16,574",
+            "local government",
+            "2011",
+            "since 2011"
+          ],
+          [
+            "Potirendaba , SP",
+            "15,449",
+            "local government",
+            "1998",
+            "since 1998"
+          ],
+          [
+            "Paulínia , SP",
+            "86,800",
+            "local government",
+            "2013",
+            "since 2013"
+          ],
+          [
+            "Muzambinho , MG",
+            "21,975",
+            "local government",
+            "2011",
+            "since 2011"
+          ],
+          [
+            "Pitanga , PR",
+            "32,645",
+            "local government",
+            "2012",
+            "since 2012"
+          ]
+        ],
+        "caption": "Brazil",
+        "headers": [
+          "Town/City",
+          "Population",
+          "Operator",
+          "First year",
+          "Duration"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-11163017-5",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Ivaiporã, pr",
+              "value": "Ivaiporã , PR",
+              "start": 8,
+              "end": 20
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "811534740e45caefb1eba5c833348ac70709365622d2da9ffc99b198478a5092",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4821,
+              "completion_tokens": 29,
+              "total_tokens": 4850,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Ivaiporã, pr",
+              "value": "Ivaiporã , PR",
+              "start": 8,
+              "end": 20,
+              "clause": "What is Ivaiporã, pr's biggest population?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Ivaiporã, pr",
+              "value": "Ivaiporã , PR",
+              "start": 8,
+              "end": 20,
+              "clause": "What is Ivaiporã, pr's biggest population?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Ivaiporã, pr",
+              "value": "Ivaiporã , PR",
+              "start": 8,
+              "end": 20,
+              "clause": "What is Ivaiporã, pr's biggest population?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The condition names a town/city, and the normalized value matches the Town/City field."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "bd2b0f1912d768561856fde0448234ae1b7e3026bb9bab579da6e5c2cda2b4f3",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4867,
+              "completion_tokens": 40,
+              "total_tokens": 4907,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Ivaiporã, pr",
+              "value": "Ivaiporã , PR",
+              "start": 8,
+              "end": 20,
+              "clause": "What is Ivaiporã, pr's biggest population?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The condition names a town/city, and the normalized value matches the Town/City field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "1da5785654238386b49aec6a348fc772b5d3307249be6e0a5a6506a585779acf",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4931,
+              "completion_tokens": 9,
+              "total_tokens": 4940,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Ivaiporã, pr",
+              "value": "Ivaiporã , PR",
+              "start": 8,
+              "end": 20,
+              "clause": "What is Ivaiporã, pr's biggest population?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The condition names a town/city, and the normalized value matches the Town/City field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "af2fb76bf6ff64530da680791e67164e8b259e9a0965f2fb7ed7b8507a5d0f37",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4882,
+              "completion_tokens": 16,
+              "total_tokens": 4898,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Ivaiporã, pr",
+              "value": "Ivaiporã , PR",
+              "start": 8,
+              "end": 20,
+              "clause": "What is Ivaiporã, pr's biggest population?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The condition names a town/city, and the normalized value matches the Town/City field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Ivaiporã, pr",
+              "value": "Ivaiporã , PR",
+              "start": 8,
+              "end": 20,
+              "clause": "What is Ivaiporã, pr's biggest population?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The condition names a town/city, and the normalized value matches the Town/City field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Ivaiporã, pr",
+              "value": "Ivaiporã , PR",
+              "start": 8,
+              "end": 20,
+              "clause": "What is Ivaiporã, pr's biggest population?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The condition names a town/city, and the normalized value matches the Town/City field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              "Ivaiporã , PR"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Ivaiporã, pr",
+          "value": "Ivaiporã , PR",
+          "start": 8,
+          "end": 20
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Ivaiporã, pr",
+          "value": "Ivaiporã , PR",
+          "start": 8,
+          "end": 20,
+          "clause": "What is Ivaiporã, pr's biggest population?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "The condition names a town/city, and the normalized value matches the Town/City field.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          0,
+          0,
+          "Ivaiporã , PR"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8328
+}

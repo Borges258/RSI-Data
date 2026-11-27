@@ -1,0 +1,425 @@
+{
+  "arm": "E2",
+  "position": 367,
+  "example_id": "test:6822:2-15640438-3",
+  "original_index": 6822,
+  "table_id": "2-15640438-3",
+  "question": "What was the Attendance on 31 January 1987?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        0,
+        0,
+        "31 january 1987"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "31 January 1987"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "31 January 1987"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "31 January 1987",
+        "value": "31 January 1987",
+        "start": 27,
+        "end": 42,
+        "clause": "What was the Attendance on 31 January 1987?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "The date phrase after 'on' identifies the Date field, and the exact value appears in that column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "31 January 1987",
+        "value": "31 January 1987",
+        "start": 27,
+        "end": 42
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What was the Attendance on 31 January 1987?",
+      "table": {
+        "header": [
+          "Date",
+          "Opponent",
+          "Venue",
+          "Result",
+          "Attendance"
+        ],
+        "page_title": "1986–87 Dundee United F.C. season",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "real"
+        ],
+        "page_id": 15640438,
+        "id": "2-15640438-3",
+        "section_title": "Tennent's Scottish Cup",
+        "rows": [
+          [
+            "31 January 1987",
+            "Airdrieonians",
+            "H",
+            "1–1",
+            "9,169"
+          ],
+          [
+            "9 February 1987",
+            "Airdrieonians",
+            "A",
+            "2–1",
+            "5,000"
+          ],
+          [
+            "12 February 1987",
+            "Brechin City",
+            "A",
+            "1–0",
+            "19,355"
+          ],
+          [
+            "14 March 1987",
+            "Forfar Athletic",
+            "H",
+            "2–2",
+            "7,985"
+          ],
+          [
+            "24 March 1987",
+            "Forfar Athletic",
+            "A",
+            "2–0",
+            "8,139"
+          ],
+          [
+            "11 April 1987",
+            "Dundee",
+            "N",
+            "3–2",
+            "13,913"
+          ],
+          [
+            "14 May 1987",
+            "St. Mirren",
+            "N",
+            "0–1",
+            "51,782"
+          ]
+        ],
+        "caption": "Tennent's Scottish Cup",
+        "headers": [
+          "Date",
+          "Opponent",
+          "Venue",
+          "Result",
+          "Attendance"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-15640438-3",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "31 January 1987",
+              "value": "31 January 1987",
+              "start": 27,
+              "end": 42
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "cfdb62d17c34e3a9514ad6da0b9870bd39e3f2587c3c0c0057cf51a7b83fd363",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4823,
+              "completion_tokens": 25,
+              "total_tokens": 4848,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "31 January 1987",
+              "value": "31 January 1987",
+              "start": 27,
+              "end": 42,
+              "clause": "What was the Attendance on 31 January 1987?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "31 January 1987",
+              "value": "31 January 1987",
+              "start": 27,
+              "end": 42,
+              "clause": "What was the Attendance on 31 January 1987?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "31 January 1987",
+              "value": "31 January 1987",
+              "start": 27,
+              "end": 42,
+              "clause": "What was the Attendance on 31 January 1987?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The date phrase after 'on' identifies the Date field, and the exact value appears in that column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "bd5a0a32b4758c2e5b0a0ff1c099edc43176bb82f8b41bd559e3f512b0a9cbbd",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4864,
+              "completion_tokens": 42,
+              "total_tokens": 4906,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "31 January 1987",
+              "value": "31 January 1987",
+              "start": 27,
+              "end": 42,
+              "clause": "What was the Attendance on 31 January 1987?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The date phrase after 'on' identifies the Date field, and the exact value appears in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "07a76360f494dee1f4a57da5466b5470aaedf08c38a63945b99fac33f0c6dcdd",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4930,
+              "completion_tokens": 9,
+              "total_tokens": 4939,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "31 January 1987",
+              "value": "31 January 1987",
+              "start": 27,
+              "end": 42,
+              "clause": "What was the Attendance on 31 January 1987?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The date phrase after 'on' identifies the Date field, and the exact value appears in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "39961c16b1e18cd5d1eb9dcb403784fde31167ba45bc6eee3a5d2f8a0b3cbec5",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4881,
+              "completion_tokens": 14,
+              "total_tokens": 4895,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "31 January 1987",
+              "value": "31 January 1987",
+              "start": 27,
+              "end": 42,
+              "clause": "What was the Attendance on 31 January 1987?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The date phrase after 'on' identifies the Date field, and the exact value appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "31 January 1987",
+              "value": "31 January 1987",
+              "start": 27,
+              "end": 42,
+              "clause": "What was the Attendance on 31 January 1987?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The date phrase after 'on' identifies the Date field, and the exact value appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "31 January 1987",
+              "value": "31 January 1987",
+              "start": 27,
+              "end": 42,
+              "clause": "What was the Attendance on 31 January 1987?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The date phrase after 'on' identifies the Date field, and the exact value appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              "31 January 1987"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "31 January 1987",
+          "value": "31 January 1987",
+          "start": 27,
+          "end": 42
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "31 January 1987",
+          "value": "31 January 1987",
+          "start": 27,
+          "end": 42,
+          "clause": "What was the Attendance on 31 January 1987?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "The date phrase after 'on' identifies the Date field, and the exact value appears in that column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          0,
+          0,
+          "31 January 1987"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8047
+}

@@ -1,0 +1,596 @@
+{
+  "arm": "E2",
+  "position": 240,
+  "example_id": "test:13432:2-1859-1",
+  "original_index": 13432,
+  "table_id": "2-1859-1",
+  "question": "Which 2009 has a 2012 larger than 9,265?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        0,
+        1,
+        "9,265"
+      ]
+    ],
+    "agg": 1
+  },
+  "prediction_conds": [],
+  "status": "GROUNDING_FAILED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "GROUNDING_FAILED",
+    "valid": false,
+    "errors": [
+      "condition 0: grounding NO_MATCH"
+    ],
+    "conditions": [
+      {
+        "surface": "2012",
+        "value": 2012,
+        "start": 17,
+        "end": 21,
+        "clause": "Which 2009 has a 2012 larger than 9",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "The clause explicitly names the 2012 column as the field being compared.",
+        "operator": "=",
+        "grounded": false,
+        "groundingStatus": "NO_MATCH",
+        "groundingReview": {
+          "column": 0,
+          "reason": "The question explicitly uses 2012 as the field whose values are compared against 9,265; 2012 is the header of column 0."
+        }
+      },
+      {
+        "surface": "9,265",
+        "value": "9,265",
+        "start": 34,
+        "end": 39,
+        "clause": "Which 2009 has a 2012 larger than 9,265?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "9,265 is the comparison threshold for the explicitly named 2012 column, not evidence for a different field.",
+        "operator": ">",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "stage": "WHERE_CONDITION_VALIDATE",
+    "originalConditions": [
+      {
+        "surface": "2012",
+        "value": "2012",
+        "start": 17,
+        "end": 21
+      },
+      {
+        "surface": "9,265",
+        "value": "9,265",
+        "start": 34,
+        "end": 39
+      }
+    ],
+    "halt": true,
+    "completed": false,
+    "conds": [],
+    "warnings": [],
+    "request": {
+      "question": "Which 2009 has a 2012 larger than 9,265?",
+      "table": {
+        "header": [
+          "2012",
+          "2011",
+          "2010",
+          "2009",
+          "2008"
+        ],
+        "page_title": "Arizona State University",
+        "types": [
+          "real",
+          "real",
+          "real",
+          "real",
+          "real"
+        ],
+        "page_id": 1859,
+        "id": "2-1859-1",
+        "section_title": "Admissions",
+        "rows": [
+          [
+            "30,696",
+            "29,722",
+            "29,785",
+            "28,304",
+            "27,089"
+          ],
+          [
+            "26,986",
+            "26,452",
+            "25,795",
+            "25,616",
+            "24,473"
+          ],
+          [
+            "87.9",
+            "88.9",
+            "86.6",
+            "90.5",
+            "90.3"
+          ],
+          [
+            "9,265",
+            "9,254",
+            "9,544",
+            "9,344",
+            "9,707"
+          ],
+          [
+            "3.42",
+            "3.41",
+            "3.39",
+            "3.38",
+            "3.41"
+          ]
+        ],
+        "caption": "Admissions",
+        "headers": [
+          "2012",
+          "2011",
+          "2010",
+          "2009",
+          "2008"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-1859-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 9,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "2012",
+              "value": "2012",
+              "start": 17,
+              "end": 21
+            },
+            {
+              "surface": "9,265",
+              "value": "9,265",
+              "start": 34,
+              "end": 39
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "716f858657b87cd521165fba51673e438bfb453b331d615ba371bca6c39ba7ca",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4775,
+              "completion_tokens": 31,
+              "total_tokens": 4806,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2012",
+              "value": "2012",
+              "start": 17,
+              "end": 21,
+              "clause": "Which 2009 has a 2012 larger than 9"
+            },
+            {
+              "surface": "9,265",
+              "value": "9,265",
+              "start": 34,
+              "end": 39,
+              "clause": "Which 2009 has a 2012 larger than 9,265?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "2012",
+              "value": "2012",
+              "start": 17,
+              "end": 21,
+              "clause": "Which 2009 has a 2012 larger than 9"
+            },
+            {
+              "surface": "9,265",
+              "value": "9,265",
+              "start": 34,
+              "end": 39,
+              "clause": "Which 2009 has a 2012 larger than 9,265?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2012",
+              "value": "2012",
+              "start": 17,
+              "end": 21,
+              "clause": "Which 2009 has a 2012 larger than 9",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The clause explicitly names the 2012 column as the field being compared."
+            },
+            {
+              "surface": "9,265",
+              "value": "9,265",
+              "start": 34,
+              "end": 39,
+              "clause": "Which 2009 has a 2012 larger than 9,265?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "9,265 is the comparison threshold for the explicitly named 2012 column, not evidence for a different field."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "9d8954fbae2ff572bfd4928d71b3f87b07871c245839fec60e5d231045a8a913",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4851,
+              "completion_tokens": 152,
+              "total_tokens": 5003,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 87
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2012",
+              "value": "2012",
+              "start": 17,
+              "end": 21,
+              "clause": "Which 2009 has a 2012 larger than 9",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The clause explicitly names the 2012 column as the field being compared.",
+              "operator": "="
+            },
+            {
+              "surface": "9,265",
+              "value": "9,265",
+              "start": 34,
+              "end": 39,
+              "clause": "Which 2009 has a 2012 larger than 9,265?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "9,265 is the comparison threshold for the explicitly named 2012 column, not evidence for a different field.",
+              "operator": ">"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e1bf3fa9482c634cd78f48a47baacdea14177e598d598bab526ca367f4fc81d3",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4949,
+              "completion_tokens": 147,
+              "total_tokens": 5096,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 134
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2012",
+              "value": "2012",
+              "start": 17,
+              "end": 21,
+              "clause": "Which 2009 has a 2012 larger than 9",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The clause explicitly names the 2012 column as the field being compared.",
+              "operator": "="
+            },
+            {
+              "surface": "9,265",
+              "value": "9,265",
+              "start": 34,
+              "end": 39,
+              "clause": "Which 2009 has a 2012 larger than 9,265?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "9,265 is the comparison threshold for the explicitly named 2012 column, not evidence for a different field.",
+              "operator": ">"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "be7ff5ed3a6719afaeb00bcf203a1d84d69a445e6b7aabbdff6ccb41e69df32e",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4903,
+              "completion_tokens": 15,
+              "total_tokens": 4918,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2012",
+              "value": "2012",
+              "start": 17,
+              "end": 21,
+              "clause": "Which 2009 has a 2012 larger than 9",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The clause explicitly names the 2012 column as the field being compared.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 0,
+                "reason": "The question explicitly uses 2012 as the field whose values are compared against 9,265; 2012 is the header of column 0."
+              }
+            },
+            {
+              "surface": "9,265",
+              "value": "9,265",
+              "start": 34,
+              "end": 39,
+              "clause": "Which 2009 has a 2012 larger than 9,265?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "9,265 is the comparison threshold for the explicitly named 2012 column, not evidence for a different field.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ],
+          "reviewModelCalls": [
+            {
+              "model": "gpt-5.6-sol",
+              "promptSha256": "2f58d4a85a20d7c896ba058033b9a787613b346becb46cb7979a6398dee4d60c",
+              "knowledgeIds": [],
+              "usage": {
+                "prompt_tokens": 4863,
+                "completion_tokens": 175,
+                "total_tokens": 5038,
+                "prompt_tokens_details": {
+                  "cached_tokens": 4224
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 130
+                }
+              }
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "2f58d4a85a20d7c896ba058033b9a787613b346becb46cb7979a6398dee4d60c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4863,
+              "completion_tokens": 175,
+              "total_tokens": 5038,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 130
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2012",
+              "value": 2012,
+              "start": 17,
+              "end": 21,
+              "clause": "Which 2009 has a 2012 larger than 9",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The clause explicitly names the 2012 column as the field being compared.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 0,
+                "reason": "The question explicitly uses 2012 as the field whose values are compared against 9,265; 2012 is the header of column 0."
+              }
+            },
+            {
+              "surface": "9,265",
+              "value": "9,265",
+              "start": 34,
+              "end": 39,
+              "clause": "Which 2009 has a 2012 larger than 9,265?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "9,265 is the comparison threshold for the explicitly named 2012 column, not evidence for a different field.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "GROUNDING_FAILED",
+          "valid": false,
+          "errors": [
+            "condition 0: grounding NO_MATCH"
+          ],
+          "conditions": [
+            {
+              "surface": "2012",
+              "value": 2012,
+              "start": 17,
+              "end": 21,
+              "clause": "Which 2009 has a 2012 larger than 9",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The clause explicitly names the 2012 column as the field being compared.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 0,
+                "reason": "The question explicitly uses 2012 as the field whose values are compared against 9,265; 2012 is the header of column 0."
+              }
+            },
+            {
+              "surface": "9,265",
+              "value": "9,265",
+              "start": 34,
+              "end": 39,
+              "clause": "Which 2009 has a 2012 larger than 9,265?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "9,265 is the comparison threshold for the explicitly named 2012 column, not evidence for a different field.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "GROUNDING_FAILED",
+        "stage": "WHERE_CONDITION_VALIDATE",
+        "halt": true,
+        "completed": false,
+        "errors": [
+          "condition 0: grounding NO_MATCH"
+        ],
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "2012",
+          "value": "2012",
+          "start": 17,
+          "end": 21
+        },
+        {
+          "surface": "9,265",
+          "value": "9,265",
+          "start": 34,
+          "end": 39
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "2012",
+          "value": 2012,
+          "start": 17,
+          "end": 21,
+          "clause": "Which 2009 has a 2012 larger than 9",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "The clause explicitly names the 2012 column as the field being compared.",
+          "operator": "=",
+          "grounded": false,
+          "groundingStatus": "NO_MATCH",
+          "groundingReview": {
+            "column": 0,
+            "reason": "The question explicitly uses 2012 as the field whose values are compared against 9,265; 2012 is the header of column 0."
+          }
+        },
+        {
+          "surface": "9,265",
+          "value": "9,265",
+          "start": 34,
+          "end": 39,
+          "clause": "Which 2009 has a 2012 larger than 9,265?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "9,265 is the comparison threshold for the explicitly named 2012 column, not evidence for a different field.",
+          "operator": ">",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": false,
+  "elapsed_ms": 17391
+}

@@ -1,0 +1,595 @@
+{
+  "arm": "E2",
+  "position": 293,
+  "example_id": "test:11655:2-12014430-1",
+  "original_index": 11655,
+  "table_id": "2-12014430-1",
+  "question": "Which country had des moines as the location in 2011?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        4,
+        0,
+        "des moines"
+      ],
+      [
+        0,
+        0,
+        2011
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      4,
+      0,
+      "Des Moines"
+    ],
+    [
+      0,
+      0,
+      2011
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        0,
+        "Des Moines"
+      ],
+      [
+        0,
+        0,
+        2011
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "des moines",
+        "value": "Des Moines",
+        "start": 18,
+        "end": 28,
+        "clause": "Which country had des moines as the location in 2011?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "Explicitly described as the location; matches Location cells.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "2011",
+        "value": 2011,
+        "start": 48,
+        "end": 52,
+        "clause": "Which country had des moines as the location in 2011?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "Year expression; 2011 appears in the Year column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "des moines",
+        "value": "Des Moines",
+        "start": 18,
+        "end": 28
+      },
+      {
+        "surface": "2011",
+        "value": "2011",
+        "start": 48,
+        "end": 52
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Which country had des moines as the location in 2011?",
+      "table": {
+        "header": [
+          "Year",
+          "Athlete",
+          "Country/State",
+          "Time",
+          "Location"
+        ],
+        "page_title": "Hy-Vee Triathlon",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 12014430,
+        "id": "2-12014430-1",
+        "section_title": "Men's winners",
+        "rows": [
+          [
+            "2007",
+            "Henning, Rasmus Rasmus Henning",
+            "Denmark",
+            "1:50:04",
+            "Des Moines"
+          ],
+          [
+            "2008",
+            "Henning, Rasmus Rasmus Henning (2)",
+            "Denmark",
+            "1:54:21",
+            "West Des Moines"
+          ],
+          [
+            "2009",
+            "Whitfield, Simon Simon Whitfield",
+            "Canada",
+            "1:49:43",
+            "West Des Moines"
+          ],
+          [
+            "2010",
+            "Don, Tim Tim Don",
+            "United Kingdom",
+            "1:50:20",
+            "West Des Moines"
+          ],
+          [
+            "2011",
+            "Bennett, Greg Greg Bennett",
+            "Australia",
+            "1:47:37",
+            "Des Moines"
+          ],
+          [
+            "2012",
+            "Gómez, Javier Javier Gómez",
+            "Spain",
+            "1:51:21",
+            "Des Moines"
+          ],
+          [
+            "2013",
+            "Gómez, Javier Javier Gómez (2)",
+            "Spain",
+            "1:45:57",
+            "Des Moines"
+          ]
+        ],
+        "caption": "Men's winners",
+        "headers": [
+          "Year",
+          "Athlete",
+          "Country/State",
+          "Time",
+          "Location"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-12014430-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "des moines",
+              "value": "Des Moines",
+              "start": 18,
+              "end": 28
+            },
+            {
+              "surface": "2011",
+              "value": "2011",
+              "start": 48,
+              "end": 52
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "42b305065e556947f6f6d6be00a65a54559cc8ab4a4b687016a9e64db78856bb",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4847,
+              "completion_tokens": 30,
+              "total_tokens": 4877,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "des moines",
+              "value": "Des Moines",
+              "start": 18,
+              "end": 28,
+              "clause": "Which country had des moines as the location in 2011?"
+            },
+            {
+              "surface": "2011",
+              "value": "2011",
+              "start": 48,
+              "end": 52,
+              "clause": "Which country had des moines as the location in 2011?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "des moines",
+              "value": "Des Moines",
+              "start": 18,
+              "end": 28,
+              "clause": "Which country had des moines as the location in 2011?"
+            },
+            {
+              "surface": "2011",
+              "value": "2011",
+              "start": 48,
+              "end": 52,
+              "clause": "Which country had des moines as the location in 2011?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "des moines",
+              "value": "Des Moines",
+              "start": 18,
+              "end": 28,
+              "clause": "Which country had des moines as the location in 2011?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Explicitly described as the location; matches Location cells."
+            },
+            {
+              "surface": "2011",
+              "value": "2011",
+              "start": 48,
+              "end": 52,
+              "clause": "Which country had des moines as the location in 2011?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Year expression; 2011 appears in the Year column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "94ebfc28d5b402e8caf9e3b11e6ffb29cb3fb316234df2114704999fa0b453c1",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4921,
+              "completion_tokens": 48,
+              "total_tokens": 4969,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "des moines",
+              "value": "Des Moines",
+              "start": 18,
+              "end": 28,
+              "clause": "Which country had des moines as the location in 2011?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Explicitly described as the location; matches Location cells.",
+              "operator": "="
+            },
+            {
+              "surface": "2011",
+              "value": "2011",
+              "start": 48,
+              "end": 52,
+              "clause": "Which country had des moines as the location in 2011?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Year expression; 2011 appears in the Year column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "2b046b49f7bc54d0d787d575d9230de722e3cc083157a11899bd7adb9f69376c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5004,
+              "completion_tokens": 11,
+              "total_tokens": 5015,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "des moines",
+              "value": "Des Moines",
+              "start": 18,
+              "end": 28,
+              "clause": "Which country had des moines as the location in 2011?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Explicitly described as the location; matches Location cells.",
+              "operator": "="
+            },
+            {
+              "surface": "2011",
+              "value": 2011,
+              "start": 48,
+              "end": 52,
+              "clause": "Which country had des moines as the location in 2011?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Year expression; 2011 appears in the Year column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e9c743819298a938dea2aa85becf98b82104083e0f1f278653b93d936e2d2f9f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4958,
+              "completion_tokens": 13,
+              "total_tokens": 4971,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "des moines",
+              "value": "Des Moines",
+              "start": 18,
+              "end": 28,
+              "clause": "Which country had des moines as the location in 2011?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Explicitly described as the location; matches Location cells.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2011",
+              "value": "2011",
+              "start": 48,
+              "end": 52,
+              "clause": "Which country had des moines as the location in 2011?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Year expression; 2011 appears in the Year column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "des moines",
+              "value": "Des Moines",
+              "start": 18,
+              "end": 28,
+              "clause": "Which country had des moines as the location in 2011?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Explicitly described as the location; matches Location cells.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2011",
+              "value": 2011,
+              "start": 48,
+              "end": 52,
+              "clause": "Which country had des moines as the location in 2011?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Year expression; 2011 appears in the Year column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "des moines",
+              "value": "Des Moines",
+              "start": 18,
+              "end": 28,
+              "clause": "Which country had des moines as the location in 2011?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Explicitly described as the location; matches Location cells.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2011",
+              "value": 2011,
+              "start": 48,
+              "end": 52,
+              "clause": "Which country had des moines as the location in 2011?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Year expression; 2011 appears in the Year column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              0,
+              "Des Moines"
+            ],
+            [
+              0,
+              0,
+              2011
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "des moines",
+          "value": "Des Moines",
+          "start": 18,
+          "end": 28
+        },
+        {
+          "surface": "2011",
+          "value": "2011",
+          "start": 48,
+          "end": 52
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "des moines",
+          "value": "Des Moines",
+          "start": 18,
+          "end": 28,
+          "clause": "Which country had des moines as the location in 2011?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "Explicitly described as the location; matches Location cells.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "2011",
+          "value": 2011,
+          "start": 48,
+          "end": 52,
+          "clause": "Which country had des moines as the location in 2011?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "Year expression; 2011 appears in the Year column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          4,
+          0,
+          "Des Moines"
+        ],
+        [
+          0,
+          0,
+          2011
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 10343
+}

@@ -1,0 +1,617 @@
+{
+  "arm": "E2",
+  "position": 15,
+  "example_id": "test:669:1-1340667-3",
+  "original_index": 669,
+  "table_id": "1-1340667-3",
+  "question": " how many 1st day with 3rd day being bumped st. catharine's",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        4,
+        0,
+        "bumped St. Catharine's"
+      ]
+    ],
+    "agg": 3
+  },
+  "prediction_conds": [],
+  "status": "GROUNDING_FAILED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "GROUNDING_FAILED",
+    "valid": false,
+    "errors": [
+      "condition 0: grounding NO_MATCH"
+    ],
+    "conditions": [
+      {
+        "surface": "3rd day",
+        "value": "3rd day",
+        "start": 23,
+        "end": 30,
+        "clause": "how many 1st day with 3rd day being bumped st. catharine's",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "Explicitly names the '3rd day' header in the WHERE phrase.",
+        "operator": "=",
+        "grounded": false,
+        "groundingStatus": "NO_MATCH",
+        "groundingReview": {
+          "column": 4,
+          "reason": "The question explicitly uses '3rd day' as the field, and that column contains the relevant 'bumped St. Catharine's' row value; '3rd day' is a header reference, not the condition value."
+        }
+      },
+      {
+        "surface": "bumped st. catharine's",
+        "value": "bumped St. Catharine's",
+        "start": 37,
+        "end": 59,
+        "clause": "how many 1st day with 3rd day being bumped st. catharine's",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "'bumped St. Catharine's' is the value governed by '3rd day being', and it appears in the 3rd day column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "stage": "WHERE_CONDITION_VALIDATE",
+    "originalConditions": [
+      {
+        "surface": "3rd day",
+        "value": "3rd day",
+        "start": 23,
+        "end": 30
+      },
+      {
+        "surface": "bumped st. catharine's",
+        "value": "bumped St. Catharine's",
+        "start": 37,
+        "end": 59
+      }
+    ],
+    "halt": true,
+    "completed": false,
+    "conds": [],
+    "warnings": [],
+    "request": {
+      "question": " how many 1st day with 3rd day being bumped st. catharine's",
+      "table": {
+        "header": [
+          "Year",
+          "Finish position",
+          "1st day",
+          "2nd day",
+          "3rd day",
+          "4th Day"
+        ],
+        "page_title": "Trinity Hall Boat Club",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "id": "1-1340667-3",
+        "section_title": "Women",
+        "caption": "Women",
+        "rows": [
+          [
+            2003,
+            "8th",
+            "bumped by Lady Margaret",
+            "rowed-over",
+            "bumped St. Catharine's",
+            "rowed-over"
+          ],
+          [
+            2004,
+            "10th",
+            "bumped by Clare",
+            "rowed-over",
+            "rowed-over",
+            "bumped by Girton"
+          ],
+          [
+            2005,
+            "8th",
+            "rowed-over",
+            "bumped Downing",
+            "rowed-over",
+            "bumped Newnham"
+          ],
+          [
+            2006,
+            "5th",
+            "bumped Lady Margaret",
+            "rowed over",
+            "bumped Clare",
+            "bumped Girton"
+          ],
+          [
+            2007,
+            "8th",
+            "rowed-over",
+            "bumped by Newnham",
+            "bumped by Girton",
+            "bumped by 1st & 3rd Trinity"
+          ],
+          [
+            2008,
+            "12th",
+            "bumped by Lady Margaret",
+            "bumped by Clare",
+            "bumped by Downing",
+            "bumped by Christ's"
+          ],
+          [
+            2009,
+            "16th",
+            "bumped by Queens'",
+            "bumped by Magdalene",
+            "bumped by Churchill",
+            "bumped by St. Catharine's"
+          ]
+        ],
+        "name": "table_1340667_3",
+        "headers": [
+          "Year",
+          "Finish position",
+          "1st day",
+          "2nd day",
+          "3rd day",
+          "4th Day"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-1340667-3",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 9,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "3rd day",
+              "value": "3rd day",
+              "start": 23,
+              "end": 30
+            },
+            {
+              "surface": "bumped st. catharine's",
+              "value": "bumped St. Catharine's",
+              "start": 37,
+              "end": 59
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b85c15728fd6d8dc553084023798db32a4d1e50ef673234821fbc81abbce0c15",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4900,
+              "completion_tokens": 41,
+              "total_tokens": 4941,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "3rd day",
+              "value": "3rd day",
+              "start": 23,
+              "end": 30,
+              "clause": "how many 1st day with 3rd day being bumped st. catharine's"
+            },
+            {
+              "surface": "bumped st. catharine's",
+              "value": "bumped St. Catharine's",
+              "start": 37,
+              "end": 59,
+              "clause": "how many 1st day with 3rd day being bumped st. catharine's"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "3rd day",
+              "value": "3rd day",
+              "start": 23,
+              "end": 30,
+              "clause": "how many 1st day with 3rd day being bumped st. catharine's"
+            },
+            {
+              "surface": "bumped st. catharine's",
+              "value": "bumped St. Catharine's",
+              "start": 37,
+              "end": 59,
+              "clause": "how many 1st day with 3rd day being bumped st. catharine's"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "3rd day",
+              "value": "3rd day",
+              "start": 23,
+              "end": 30,
+              "clause": "how many 1st day with 3rd day being bumped st. catharine's",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Explicitly names the '3rd day' header in the WHERE phrase."
+            },
+            {
+              "surface": "bumped st. catharine's",
+              "value": "bumped St. Catharine's",
+              "start": 37,
+              "end": 59,
+              "clause": "how many 1st day with 3rd day being bumped st. catharine's",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'bumped St. Catharine's' is the value governed by '3rd day being', and it appears in the 3rd day column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0eae72f4c272b9d0fce3ead0a0f1d6a2307677cf61e6304d6cd6e38e1217dc08",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4997,
+              "completion_tokens": 219,
+              "total_tokens": 5216,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 146
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "3rd day",
+              "value": "3rd day",
+              "start": 23,
+              "end": 30,
+              "clause": "how many 1st day with 3rd day being bumped st. catharine's",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Explicitly names the '3rd day' header in the WHERE phrase.",
+              "operator": "="
+            },
+            {
+              "surface": "bumped st. catharine's",
+              "value": "bumped St. Catharine's",
+              "start": 37,
+              "end": 59,
+              "clause": "how many 1st day with 3rd day being bumped st. catharine's",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'bumped St. Catharine's' is the value governed by '3rd day being', and it appears in the 3rd day column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b31dbc31d61e08ada049c862f6125ab489ea681d6c0393df784adc9668d2dc97",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5102,
+              "completion_tokens": 11,
+              "total_tokens": 5113,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "3rd day",
+              "value": "3rd day",
+              "start": 23,
+              "end": 30,
+              "clause": "how many 1st day with 3rd day being bumped st. catharine's",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Explicitly names the '3rd day' header in the WHERE phrase.",
+              "operator": "="
+            },
+            {
+              "surface": "bumped st. catharine's",
+              "value": "bumped St. Catharine's",
+              "start": 37,
+              "end": 59,
+              "clause": "how many 1st day with 3rd day being bumped st. catharine's",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'bumped St. Catharine's' is the value governed by '3rd day being', and it appears in the 3rd day column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "663f4c1830f63b4d91ebb02992e291cbed4f36cdea5eebabb4c6a13b789ea83d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5056,
+              "completion_tokens": 20,
+              "total_tokens": 5076,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "3rd day",
+              "value": "3rd day",
+              "start": 23,
+              "end": 30,
+              "clause": "how many 1st day with 3rd day being bumped st. catharine's",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Explicitly names the '3rd day' header in the WHERE phrase.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 4,
+                "reason": "The question explicitly uses '3rd day' as the field, and that column contains the relevant 'bumped St. Catharine's' row value; '3rd day' is a header reference, not the condition value."
+              }
+            },
+            {
+              "surface": "bumped st. catharine's",
+              "value": "bumped St. Catharine's",
+              "start": 37,
+              "end": 59,
+              "clause": "how many 1st day with 3rd day being bumped st. catharine's",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'bumped St. Catharine's' is the value governed by '3rd day being', and it appears in the 3rd day column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ],
+          "reviewModelCalls": [
+            {
+              "model": "gpt-5.6-sol",
+              "promptSha256": "39be17bbcc924a6bcd0f4512870e2309409c02ffe8361f6724ede6f55de46584",
+              "knowledgeIds": [],
+              "usage": {
+                "prompt_tokens": 4997,
+                "completion_tokens": 166,
+                "total_tokens": 5163,
+                "prompt_tokens_details": {
+                  "cached_tokens": 4224
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 106
+                }
+              }
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "39be17bbcc924a6bcd0f4512870e2309409c02ffe8361f6724ede6f55de46584",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4997,
+              "completion_tokens": 166,
+              "total_tokens": 5163,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 106
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "3rd day",
+              "value": "3rd day",
+              "start": 23,
+              "end": 30,
+              "clause": "how many 1st day with 3rd day being bumped st. catharine's",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Explicitly names the '3rd day' header in the WHERE phrase.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 4,
+                "reason": "The question explicitly uses '3rd day' as the field, and that column contains the relevant 'bumped St. Catharine's' row value; '3rd day' is a header reference, not the condition value."
+              }
+            },
+            {
+              "surface": "bumped st. catharine's",
+              "value": "bumped St. Catharine's",
+              "start": 37,
+              "end": 59,
+              "clause": "how many 1st day with 3rd day being bumped st. catharine's",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'bumped St. Catharine's' is the value governed by '3rd day being', and it appears in the 3rd day column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "GROUNDING_FAILED",
+          "valid": false,
+          "errors": [
+            "condition 0: grounding NO_MATCH"
+          ],
+          "conditions": [
+            {
+              "surface": "3rd day",
+              "value": "3rd day",
+              "start": 23,
+              "end": 30,
+              "clause": "how many 1st day with 3rd day being bumped st. catharine's",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Explicitly names the '3rd day' header in the WHERE phrase.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 4,
+                "reason": "The question explicitly uses '3rd day' as the field, and that column contains the relevant 'bumped St. Catharine's' row value; '3rd day' is a header reference, not the condition value."
+              }
+            },
+            {
+              "surface": "bumped st. catharine's",
+              "value": "bumped St. Catharine's",
+              "start": 37,
+              "end": 59,
+              "clause": "how many 1st day with 3rd day being bumped st. catharine's",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'bumped St. Catharine's' is the value governed by '3rd day being', and it appears in the 3rd day column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "GROUNDING_FAILED",
+        "stage": "WHERE_CONDITION_VALIDATE",
+        "halt": true,
+        "completed": false,
+        "errors": [
+          "condition 0: grounding NO_MATCH"
+        ],
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "3rd day",
+          "value": "3rd day",
+          "start": 23,
+          "end": 30
+        },
+        {
+          "surface": "bumped st. catharine's",
+          "value": "bumped St. Catharine's",
+          "start": 37,
+          "end": 59
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "3rd day",
+          "value": "3rd day",
+          "start": 23,
+          "end": 30,
+          "clause": "how many 1st day with 3rd day being bumped st. catharine's",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "Explicitly names the '3rd day' header in the WHERE phrase.",
+          "operator": "=",
+          "grounded": false,
+          "groundingStatus": "NO_MATCH",
+          "groundingReview": {
+            "column": 4,
+            "reason": "The question explicitly uses '3rd day' as the field, and that column contains the relevant 'bumped St. Catharine's' row value; '3rd day' is a header reference, not the condition value."
+          }
+        },
+        {
+          "surface": "bumped st. catharine's",
+          "value": "bumped St. Catharine's",
+          "start": 37,
+          "end": 59,
+          "clause": "how many 1st day with 3rd day being bumped st. catharine's",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "'bumped St. Catharine's' is the value governed by '3rd day being', and it appears in the 3rd day column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": false,
+  "elapsed_ms": 17640
+}

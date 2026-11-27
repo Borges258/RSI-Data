@@ -1,0 +1,940 @@
+{
+  "arm": "E2",
+  "position": 179,
+  "example_id": "test:14576:2-13012881-1",
+  "original_index": 14576,
+  "table_id": "2-13012881-1",
+  "question": "How many sets were played in the tournament that had 4R in 2011 and 2R in 2008?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        4,
+        0,
+        "4r"
+      ],
+      [
+        2,
+        0,
+        "2r"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [],
+  "status": "GROUNDING_FAILED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "GROUNDING_FAILED",
+    "valid": false,
+    "errors": [
+      "condition 1: grounding NO_MATCH",
+      "condition 3: grounding NO_MATCH"
+    ],
+    "conditions": [
+      {
+        "surface": "4R",
+        "value": "4R",
+        "start": 53,
+        "end": 55,
+        "clause": "How many sets were played in the tournament that had 4R in 2011",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "4R is the tournament result specified for the 2011 field.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "2011",
+        "value": "2011",
+        "start": 59,
+        "end": 63,
+        "clause": "How many sets were played in the tournament that had 4R in 2011",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "2011 explicitly names the 2011 column for the paired result condition.",
+        "operator": "=",
+        "grounded": false,
+        "groundingStatus": "NO_MATCH",
+        "groundingReview": {
+          "column": null,
+          "reason": "2011 identifies the column header, not a cell value; the intended condition is 2011 = 4R, so the supplied literal conflicts with the cells."
+        }
+      },
+      {
+        "surface": "2R",
+        "value": "2R",
+        "start": 68,
+        "end": 70,
+        "clause": "and 2R in 2008?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "2R is the tournament result specified for the 2008 field.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "2008",
+        "value": "2008",
+        "start": 74,
+        "end": 78,
+        "clause": "and 2R in 2008?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "2008 explicitly names the 2008 column for the paired result condition.",
+        "operator": "=",
+        "grounded": false,
+        "groundingStatus": "NO_MATCH",
+        "groundingReview": {
+          "column": 2,
+          "reason": "The clause '2R in 2008' explicitly refers to the 2008 header, and that column contains a 2R value for French Open."
+        }
+      }
+    ],
+    "stage": "WHERE_CONDITION_VALIDATE",
+    "originalConditions": [
+      {
+        "surface": "4R",
+        "value": "4R",
+        "start": 53,
+        "end": 55
+      },
+      {
+        "surface": "2011",
+        "value": "2011",
+        "start": 59,
+        "end": 63
+      },
+      {
+        "surface": "2R",
+        "value": "2R",
+        "start": 68,
+        "end": 70
+      },
+      {
+        "surface": "2008",
+        "value": "2008",
+        "start": 74,
+        "end": 78
+      }
+    ],
+    "halt": true,
+    "completed": false,
+    "conds": [],
+    "warnings": [],
+    "request": {
+      "question": "How many sets were played in the tournament that had 4R in 2011 and 2R in 2008?",
+      "table": {
+        "header": [
+          "Tournament",
+          "2007",
+          "2008",
+          "2009",
+          "2011",
+          "2012",
+          "2013"
+        ],
+        "page_title": "Ekaterina Makarova",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 13012881,
+        "id": "2-13012881-1",
+        "section_title": "Singles",
+        "rows": [
+          [
+            "Grand Slam Tournaments",
+            "Grand Slam Tournaments",
+            "Grand Slam Tournaments",
+            "Grand Slam Tournaments",
+            "Grand Slam Tournaments",
+            "Grand Slam Tournaments",
+            "Grand Slam Tournaments"
+          ],
+          [
+            "Australian Open",
+            "A",
+            "3R",
+            "2R",
+            "4R",
+            "QF",
+            "QF"
+          ],
+          [
+            "French Open",
+            "LQ",
+            "2R",
+            "1R",
+            "4R",
+            "1R",
+            "1R"
+          ],
+          [
+            "Wimbledon",
+            "LQ",
+            "1R",
+            "2R",
+            "1R",
+            "2R",
+            "3R"
+          ],
+          [
+            "US Open",
+            "3R",
+            "3R",
+            "1R",
+            "1R",
+            "3R",
+            "QF"
+          ]
+        ],
+        "caption": "Singles",
+        "headers": [
+          "Tournament",
+          "2007",
+          "2008",
+          "2009",
+          "2011",
+          "2012",
+          "2013"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-13012881-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 9,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 4,
+          "conditions": [
+            {
+              "surface": "4R",
+              "value": "4R",
+              "start": 53,
+              "end": 55
+            },
+            {
+              "surface": "2011",
+              "value": "2011",
+              "start": 59,
+              "end": 63
+            },
+            {
+              "surface": "2R",
+              "value": "2R",
+              "start": 68,
+              "end": 70
+            },
+            {
+              "surface": "2008",
+              "value": "2008",
+              "start": 74,
+              "end": 78
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "13e8d14e2f9745e51270572c132e56d7de347c9fc47608c3447d730afa2b3c06",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4822,
+              "completion_tokens": 49,
+              "total_tokens": 4871,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "4R",
+              "value": "4R",
+              "start": 53,
+              "end": 55,
+              "clause": "How many sets were played in the tournament that had 4R in 2011"
+            },
+            {
+              "surface": "2011",
+              "value": "2011",
+              "start": 59,
+              "end": 63,
+              "clause": "How many sets were played in the tournament that had 4R in 2011"
+            },
+            {
+              "surface": "2R",
+              "value": "2R",
+              "start": 68,
+              "end": 70,
+              "clause": "and 2R in 2008?"
+            },
+            {
+              "surface": "2008",
+              "value": "2008",
+              "start": 74,
+              "end": 78,
+              "clause": "and 2R in 2008?"
+            }
+          ],
+          "count": 4
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "4R",
+              "value": "4R",
+              "start": 53,
+              "end": 55,
+              "clause": "How many sets were played in the tournament that had 4R in 2011"
+            },
+            {
+              "surface": "2011",
+              "value": "2011",
+              "start": 59,
+              "end": 63,
+              "clause": "How many sets were played in the tournament that had 4R in 2011"
+            },
+            {
+              "surface": "2R",
+              "value": "2R",
+              "start": 68,
+              "end": 70,
+              "clause": "and 2R in 2008?"
+            },
+            {
+              "surface": "2008",
+              "value": "2008",
+              "start": 74,
+              "end": 78,
+              "clause": "and 2R in 2008?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "4R",
+              "value": "4R",
+              "start": 53,
+              "end": 55,
+              "clause": "How many sets were played in the tournament that had 4R in 2011",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "4R is the tournament result specified for the 2011 field."
+            },
+            {
+              "surface": "2011",
+              "value": "2011",
+              "start": 59,
+              "end": 63,
+              "clause": "How many sets were played in the tournament that had 4R in 2011",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "2011 explicitly names the 2011 column for the paired result condition."
+            },
+            {
+              "surface": "2R",
+              "value": "2R",
+              "start": 68,
+              "end": 70,
+              "clause": "and 2R in 2008?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "2R is the tournament result specified for the 2008 field."
+            },
+            {
+              "surface": "2008",
+              "value": "2008",
+              "start": 74,
+              "end": 78,
+              "clause": "and 2R in 2008?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "2008 explicitly names the 2008 column for the paired result condition."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "1ffe170ec0767b13400bc1e8643dea6bee0c13c584e4b0e11eed5aadee3e3f94",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4963,
+              "completion_tokens": 91,
+              "total_tokens": 5054,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "4R",
+              "value": "4R",
+              "start": 53,
+              "end": 55,
+              "clause": "How many sets were played in the tournament that had 4R in 2011",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "4R is the tournament result specified for the 2011 field.",
+              "operator": "="
+            },
+            {
+              "surface": "2011",
+              "value": "2011",
+              "start": 59,
+              "end": 63,
+              "clause": "How many sets were played in the tournament that had 4R in 2011",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "2011 explicitly names the 2011 column for the paired result condition.",
+              "operator": "="
+            },
+            {
+              "surface": "2R",
+              "value": "2R",
+              "start": 68,
+              "end": 70,
+              "clause": "and 2R in 2008?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "2R is the tournament result specified for the 2008 field.",
+              "operator": "="
+            },
+            {
+              "surface": "2008",
+              "value": "2008",
+              "start": 74,
+              "end": 78,
+              "clause": "and 2R in 2008?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "2008 explicitly names the 2008 column for the paired result condition.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "daccd99153acd6d521e3e904acc2a4907d7dbfa419b3e0d540ff5f2227d4ffcc",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5111,
+              "completion_tokens": 15,
+              "total_tokens": 5126,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "4R",
+              "value": "4R",
+              "start": 53,
+              "end": 55,
+              "clause": "How many sets were played in the tournament that had 4R in 2011",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "4R is the tournament result specified for the 2011 field.",
+              "operator": "="
+            },
+            {
+              "surface": "2011",
+              "value": "2011",
+              "start": 59,
+              "end": 63,
+              "clause": "How many sets were played in the tournament that had 4R in 2011",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "2011 explicitly names the 2011 column for the paired result condition.",
+              "operator": "="
+            },
+            {
+              "surface": "2R",
+              "value": "2R",
+              "start": 68,
+              "end": 70,
+              "clause": "and 2R in 2008?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "2R is the tournament result specified for the 2008 field.",
+              "operator": "="
+            },
+            {
+              "surface": "2008",
+              "value": "2008",
+              "start": 74,
+              "end": 78,
+              "clause": "and 2R in 2008?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "2008 explicitly names the 2008 column for the paired result condition.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d9a29e71f0fe3cbb5973117c10d362b0fc4b37fa49d39d5a36dbf97521e945dd",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5071,
+              "completion_tokens": 20,
+              "total_tokens": 5091,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "4R",
+              "value": "4R",
+              "start": 53,
+              "end": 55,
+              "clause": "How many sets were played in the tournament that had 4R in 2011",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "4R is the tournament result specified for the 2011 field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2011",
+              "value": "2011",
+              "start": 59,
+              "end": 63,
+              "clause": "How many sets were played in the tournament that had 4R in 2011",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "2011 explicitly names the 2011 column for the paired result condition.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": null,
+                "reason": "2011 identifies the column header, not a cell value; the intended condition is 2011 = 4R, so the supplied literal conflicts with the cells."
+              }
+            },
+            {
+              "surface": "2R",
+              "value": "2R",
+              "start": 68,
+              "end": 70,
+              "clause": "and 2R in 2008?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "2R is the tournament result specified for the 2008 field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2008",
+              "value": "2008",
+              "start": 74,
+              "end": 78,
+              "clause": "and 2R in 2008?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "2008 explicitly names the 2008 column for the paired result condition.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 2,
+                "reason": "The clause '2R in 2008' explicitly refers to the 2008 header, and that column contains a 2R value for French Open."
+              }
+            }
+          ],
+          "reviewModelCalls": [
+            {
+              "model": "gpt-5.6-sol",
+              "promptSha256": "019b75da0d563a7c908504c3574e3a2715d24434e204af90b08c9fd62ddfa0b2",
+              "knowledgeIds": [],
+              "usage": {
+                "prompt_tokens": 4914,
+                "completion_tokens": 142,
+                "total_tokens": 5056,
+                "prompt_tokens_details": {
+                  "cached_tokens": 4608
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 95
+                }
+              }
+            },
+            {
+              "model": "gpt-5.6-sol",
+              "promptSha256": "6aed626a61b5cdeac815b1f9d846495c2971e669ca3fd41f1d285c4dceaccdfd",
+              "knowledgeIds": [],
+              "usage": {
+                "prompt_tokens": 4906,
+                "completion_tokens": 101,
+                "total_tokens": 5007,
+                "prompt_tokens_details": {
+                  "cached_tokens": 4608
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 55
+                }
+              }
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "019b75da0d563a7c908504c3574e3a2715d24434e204af90b08c9fd62ddfa0b2",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4914,
+              "completion_tokens": 142,
+              "total_tokens": 5056,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 95
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "4R",
+              "value": "4R",
+              "start": 53,
+              "end": 55,
+              "clause": "How many sets were played in the tournament that had 4R in 2011",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "4R is the tournament result specified for the 2011 field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2011",
+              "value": "2011",
+              "start": 59,
+              "end": 63,
+              "clause": "How many sets were played in the tournament that had 4R in 2011",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "2011 explicitly names the 2011 column for the paired result condition.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": null,
+                "reason": "2011 identifies the column header, not a cell value; the intended condition is 2011 = 4R, so the supplied literal conflicts with the cells."
+              }
+            },
+            {
+              "surface": "2R",
+              "value": "2R",
+              "start": 68,
+              "end": 70,
+              "clause": "and 2R in 2008?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "2R is the tournament result specified for the 2008 field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2008",
+              "value": "2008",
+              "start": 74,
+              "end": 78,
+              "clause": "and 2R in 2008?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "2008 explicitly names the 2008 column for the paired result condition.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 2,
+                "reason": "The clause '2R in 2008' explicitly refers to the 2008 header, and that column contains a 2R value for French Open."
+              }
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "GROUNDING_FAILED",
+          "valid": false,
+          "errors": [
+            "condition 1: grounding NO_MATCH",
+            "condition 3: grounding NO_MATCH"
+          ],
+          "conditions": [
+            {
+              "surface": "4R",
+              "value": "4R",
+              "start": 53,
+              "end": 55,
+              "clause": "How many sets were played in the tournament that had 4R in 2011",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "4R is the tournament result specified for the 2011 field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2011",
+              "value": "2011",
+              "start": 59,
+              "end": 63,
+              "clause": "How many sets were played in the tournament that had 4R in 2011",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "2011 explicitly names the 2011 column for the paired result condition.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": null,
+                "reason": "2011 identifies the column header, not a cell value; the intended condition is 2011 = 4R, so the supplied literal conflicts with the cells."
+              }
+            },
+            {
+              "surface": "2R",
+              "value": "2R",
+              "start": 68,
+              "end": 70,
+              "clause": "and 2R in 2008?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "2R is the tournament result specified for the 2008 field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2008",
+              "value": "2008",
+              "start": 74,
+              "end": 78,
+              "clause": "and 2R in 2008?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "2008 explicitly names the 2008 column for the paired result condition.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 2,
+                "reason": "The clause '2R in 2008' explicitly refers to the 2008 header, and that column contains a 2R value for French Open."
+              }
+            }
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "GROUNDING_FAILED",
+        "stage": "WHERE_CONDITION_VALIDATE",
+        "halt": true,
+        "completed": false,
+        "errors": [
+          "condition 1: grounding NO_MATCH",
+          "condition 3: grounding NO_MATCH"
+        ],
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "4R",
+          "value": "4R",
+          "start": 53,
+          "end": 55
+        },
+        {
+          "surface": "2011",
+          "value": "2011",
+          "start": 59,
+          "end": 63
+        },
+        {
+          "surface": "2R",
+          "value": "2R",
+          "start": 68,
+          "end": 70
+        },
+        {
+          "surface": "2008",
+          "value": "2008",
+          "start": 74,
+          "end": 78
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "4R",
+          "value": "4R",
+          "start": 53,
+          "end": 55,
+          "clause": "How many sets were played in the tournament that had 4R in 2011",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "4R is the tournament result specified for the 2011 field.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "2011",
+          "value": "2011",
+          "start": 59,
+          "end": 63,
+          "clause": "How many sets were played in the tournament that had 4R in 2011",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "2011 explicitly names the 2011 column for the paired result condition.",
+          "operator": "=",
+          "grounded": false,
+          "groundingStatus": "NO_MATCH",
+          "groundingReview": {
+            "column": null,
+            "reason": "2011 identifies the column header, not a cell value; the intended condition is 2011 = 4R, so the supplied literal conflicts with the cells."
+          }
+        },
+        {
+          "surface": "2R",
+          "value": "2R",
+          "start": 68,
+          "end": 70,
+          "clause": "and 2R in 2008?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "2R is the tournament result specified for the 2008 field.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "2008",
+          "value": "2008",
+          "start": 74,
+          "end": 78,
+          "clause": "and 2R in 2008?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "2008 explicitly names the 2008 column for the paired result condition.",
+          "operator": "=",
+          "grounded": false,
+          "groundingStatus": "NO_MATCH",
+          "groundingReview": {
+            "column": 2,
+            "reason": "The clause '2R in 2008' explicitly refers to the 2008 header, and that column contains a 2R value for French Open."
+          }
+        }
+      ],
+      "count": 4
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": false,
+  "elapsed_ms": 15031
+}

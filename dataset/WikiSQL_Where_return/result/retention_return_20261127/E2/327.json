@@ -1,0 +1,605 @@
+{
+  "arm": "E2",
+  "position": 327,
+  "example_id": "test:12775:2-18007241-1",
+  "original_index": 12775,
+  "table_id": "2-18007241-1",
+  "question": "Can you tell me the average Money ($) that has the To par larger than 14, and the Player of ed dudley?",
+  "gold_sql": {
+    "sel": 5,
+    "conds": [
+      [
+        4,
+        1,
+        14
+      ],
+      [
+        1,
+        0,
+        "ed dudley"
+      ]
+    ],
+    "agg": 5
+  },
+  "prediction_conds": [],
+  "status": "INVALID",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "INVALID",
+    "valid": false,
+    "errors": [
+      "condition 0: nonnumeric value for real column"
+    ],
+    "conditions": [
+      {
+        "surface": "14",
+        "value": "+14",
+        "start": 70,
+        "end": 72,
+        "clause": "Can you tell me the average Money ($) that has the To par larger than 14,",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The clause explicitly names 'To par', matching header index 4; its numeric cells include +14 and +15.",
+        "operator": ">",
+        "grounded": true,
+        "groundingStatus": "NORMALIZED_MATCH"
+      },
+      {
+        "surface": "ed dudley",
+        "value": "Ed Dudley",
+        "start": 92,
+        "end": 101,
+        "clause": "and the Player of ed dudley?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The clause explicitly names 'Player', matching header index 1; the row value 'Ed Dudley' appears in that column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "stage": "WHERE_CONDITION_VALIDATE",
+    "originalConditions": [
+      {
+        "surface": "14",
+        "value": "14",
+        "start": 70,
+        "end": 72
+      },
+      {
+        "surface": "ed dudley",
+        "value": "Ed Dudley",
+        "start": 92,
+        "end": 101
+      }
+    ],
+    "halt": true,
+    "completed": false,
+    "conds": [],
+    "warnings": [],
+    "request": {
+      "question": "Can you tell me the average Money ($) that has the To par larger than 14, and the Player of ed dudley?",
+      "table": {
+        "header": [
+          "Place",
+          "Player",
+          "Country",
+          "Score",
+          "To par",
+          "Money ( $ )"
+        ],
+        "page_title": "1941 U.S. Open (golf)",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "real",
+          "real"
+        ],
+        "page_id": 18007241,
+        "id": "2-18007241-1",
+        "section_title": "Final leaderboard",
+        "rows": [
+          [
+            "1",
+            "Craig Wood",
+            "United States",
+            "73-71-70-70=284",
+            "+4",
+            "1,000"
+          ],
+          [
+            "2",
+            "Denny Shute",
+            "United States",
+            "69-75-72-71=287",
+            "+7",
+            "800"
+          ],
+          [
+            "T3",
+            "Johnny Bulla",
+            "United States",
+            "75-71-72-71=289",
+            "+9",
+            "650"
+          ],
+          [
+            "T3",
+            "Ben Hogan",
+            "United States",
+            "74-77-68-70=289",
+            "+9",
+            "650"
+          ],
+          [
+            "T5",
+            "Herman Barron",
+            "United States",
+            "75-71-74-71=291",
+            "+11",
+            "413"
+          ],
+          [
+            "T5",
+            "Paul Runyan",
+            "United States",
+            "73-72-71-75=291",
+            "+11",
+            "413"
+          ],
+          [
+            "T7",
+            "Dutch Harrison",
+            "United States",
+            "70-82-71-71=294",
+            "+14",
+            "216"
+          ],
+          [
+            "T7",
+            "Harold McSpaden",
+            "United States",
+            "71-75-74-74=294",
+            "+14",
+            "216"
+          ],
+          [
+            "T7",
+            "Gene Sarazen",
+            "United States",
+            "74-73-72-75=294",
+            "+14",
+            "216"
+          ],
+          [
+            "T10",
+            "Ed Dudley",
+            "United States",
+            "74-74-74-73=295",
+            "+15",
+            "125"
+          ],
+          [
+            "T10",
+            "Lloyd Mangrum",
+            "United States",
+            "73-74-72-76=295",
+            "+15",
+            "125"
+          ],
+          [
+            "T10",
+            "Dick Metz",
+            "United States",
+            "71-74-76-74=295",
+            "+15",
+            "125"
+          ]
+        ],
+        "caption": "Final leaderboard",
+        "headers": [
+          "Place",
+          "Player",
+          "Country",
+          "Score",
+          "To par",
+          "Money ( $ )"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-18007241-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 9,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "14",
+              "value": "14",
+              "start": 70,
+              "end": 72
+            },
+            {
+              "surface": "ed dudley",
+              "value": "Ed Dudley",
+              "start": 92,
+              "end": 101
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "78214828a108c128bed48662d4d10159f0a0349e01dc4307eea0d220e69e5137",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4997,
+              "completion_tokens": 29,
+              "total_tokens": 5026,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "14",
+              "value": "14",
+              "start": 70,
+              "end": 72,
+              "clause": "Can you tell me the average Money ($) that has the To par larger than 14,"
+            },
+            {
+              "surface": "ed dudley",
+              "value": "Ed Dudley",
+              "start": 92,
+              "end": 101,
+              "clause": "and the Player of ed dudley?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "14",
+              "value": "14",
+              "start": 70,
+              "end": 72,
+              "clause": "Can you tell me the average Money ($) that has the To par larger than 14,"
+            },
+            {
+              "surface": "ed dudley",
+              "value": "Ed Dudley",
+              "start": 92,
+              "end": 101,
+              "clause": "and the Player of ed dudley?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "14",
+              "value": "14",
+              "start": 70,
+              "end": 72,
+              "clause": "Can you tell me the average Money ($) that has the To par larger than 14,",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly names 'To par', matching header index 4; its numeric cells include +14 and +15."
+            },
+            {
+              "surface": "ed dudley",
+              "value": "Ed Dudley",
+              "start": 92,
+              "end": 101,
+              "clause": "and the Player of ed dudley?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly names 'Player', matching header index 1; the row value 'Ed Dudley' appears in that column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "6f8b2f7ec0bb7fd0a12e08e03d82b6cccbd8dd6e3cd720574483561a172188a7",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5069,
+              "completion_tokens": 75,
+              "total_tokens": 5144,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "14",
+              "value": "14",
+              "start": 70,
+              "end": 72,
+              "clause": "Can you tell me the average Money ($) that has the To par larger than 14,",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly names 'To par', matching header index 4; its numeric cells include +14 and +15.",
+              "operator": ">"
+            },
+            {
+              "surface": "ed dudley",
+              "value": "Ed Dudley",
+              "start": 92,
+              "end": 101,
+              "clause": "and the Player of ed dudley?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly names 'Player', matching header index 1; the row value 'Ed Dudley' appears in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "02fa3708c5bf61477467147a2ba52dbddab5d62ecfe5396208a0fef322a8af0a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5179,
+              "completion_tokens": 11,
+              "total_tokens": 5190,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "14",
+              "value": 14,
+              "start": 70,
+              "end": 72,
+              "clause": "Can you tell me the average Money ($) that has the To par larger than 14,",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly names 'To par', matching header index 4; its numeric cells include +14 and +15.",
+              "operator": ">"
+            },
+            {
+              "surface": "ed dudley",
+              "value": "Ed Dudley",
+              "start": 92,
+              "end": 101,
+              "clause": "and the Player of ed dudley?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly names 'Player', matching header index 1; the row value 'Ed Dudley' appears in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f9d662b09be18f31d6faa2da4e4a2178589ef30c757ef6bebd4152144b495d3e",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5133,
+              "completion_tokens": 14,
+              "total_tokens": 5147,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "14",
+              "value": "+14",
+              "start": 70,
+              "end": 72,
+              "clause": "Can you tell me the average Money ($) that has the To par larger than 14,",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly names 'To par', matching header index 4; its numeric cells include +14 and +15.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "NORMALIZED_MATCH"
+            },
+            {
+              "surface": "ed dudley",
+              "value": "Ed Dudley",
+              "start": 92,
+              "end": 101,
+              "clause": "and the Player of ed dudley?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly names 'Player', matching header index 1; the row value 'Ed Dudley' appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "14",
+              "value": "+14",
+              "start": 70,
+              "end": 72,
+              "clause": "Can you tell me the average Money ($) that has the To par larger than 14,",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly names 'To par', matching header index 4; its numeric cells include +14 and +15.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "NORMALIZED_MATCH"
+            },
+            {
+              "surface": "ed dudley",
+              "value": "Ed Dudley",
+              "start": 92,
+              "end": 101,
+              "clause": "and the Player of ed dudley?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly names 'Player', matching header index 1; the row value 'Ed Dudley' appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "INVALID",
+          "valid": false,
+          "errors": [
+            "condition 0: nonnumeric value for real column"
+          ],
+          "conditions": [
+            {
+              "surface": "14",
+              "value": "+14",
+              "start": 70,
+              "end": 72,
+              "clause": "Can you tell me the average Money ($) that has the To par larger than 14,",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly names 'To par', matching header index 4; its numeric cells include +14 and +15.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "NORMALIZED_MATCH"
+            },
+            {
+              "surface": "ed dudley",
+              "value": "Ed Dudley",
+              "start": 92,
+              "end": 101,
+              "clause": "and the Player of ed dudley?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly names 'Player', matching header index 1; the row value 'Ed Dudley' appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "INVALID",
+        "stage": "WHERE_CONDITION_VALIDATE",
+        "halt": true,
+        "completed": false,
+        "errors": [
+          "condition 0: nonnumeric value for real column"
+        ],
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "14",
+          "value": "14",
+          "start": 70,
+          "end": 72
+        },
+        {
+          "surface": "ed dudley",
+          "value": "Ed Dudley",
+          "start": 92,
+          "end": 101
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "14",
+          "value": "+14",
+          "start": 70,
+          "end": 72,
+          "clause": "Can you tell me the average Money ($) that has the To par larger than 14,",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The clause explicitly names 'To par', matching header index 4; its numeric cells include +14 and +15.",
+          "operator": ">",
+          "grounded": true,
+          "groundingStatus": "NORMALIZED_MATCH"
+        },
+        {
+          "surface": "ed dudley",
+          "value": "Ed Dudley",
+          "start": 92,
+          "end": 101,
+          "clause": "and the Player of ed dudley?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The clause explicitly names 'Player', matching header index 1; the row value 'Ed Dudley' appears in that column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": false,
+  "elapsed_ms": 9593
+}

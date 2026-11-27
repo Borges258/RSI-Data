@@ -1,0 +1,451 @@
+{
+  "arm": "E2",
+  "position": 40,
+  "example_id": "test:3199:1-2501754-3",
+  "original_index": 3199,
+  "table_id": "1-2501754-3",
+  "question": "List the 1st air date for the episode titled \"baby talk\".",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        4,
+        0,
+        "\"Baby Talk\""
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      4,
+      0,
+      "\"Baby Talk\""
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        0,
+        "\"Baby Talk\""
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "baby talk",
+        "value": "\"Baby Talk\"",
+        "start": 46,
+        "end": 55,
+        "clause": "List the 1st air date for the episode titled \"baby talk\".",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The phrase \"episode titled\" identifies the Title field, and the row evidence contains \"Baby Talk\" under that header.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "baby talk",
+        "value": "\"Baby Talk\"",
+        "start": 46,
+        "end": 55
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "List the 1st air date for the episode titled \"baby talk\".",
+      "table": {
+        "header": [
+          "Episode #",
+          "Production Count",
+          "Original Airdate",
+          "Prod. Code",
+          "Title",
+          "Viewing Figures millions"
+        ],
+        "page_title": "List of My Hero episodes",
+        "types": [
+          "real",
+          "real",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "id": "1-2501754-3",
+        "section_title": "Series 3 (2002)",
+        "caption": "Series 3 (2002)",
+        "rows": [
+          [
+            1,
+            14,
+            "7 June 2002",
+            "ICEB783X",
+            "\"Baby Talk\"",
+            "5.94"
+          ],
+          [
+            2,
+            15,
+            "14 June 2002",
+            "ICEB784R",
+            "\"Zero Tolerance\"",
+            "5.51"
+          ],
+          [
+            3,
+            16,
+            "21 June 2002",
+            "ICEB785K",
+            "\"Pet Rescue\"",
+            "5.99"
+          ],
+          [
+            4,
+            17,
+            "28 June 2002",
+            "ICEB786E",
+            "\"The Older Man\"",
+            "4.96"
+          ],
+          [
+            5,
+            18,
+            "5 July 2002",
+            "ICEB787Y",
+            "\"Puttin’ On The Writs\"",
+            "5.23"
+          ],
+          [
+            6,
+            19,
+            "12 July 2002",
+            "ICEB789L",
+            "\"Shock, Horror!\"",
+            "5.02"
+          ],
+          [
+            7,
+            20,
+            "2 August 2002",
+            "ICEB788S",
+            "\"Little Green Man\"",
+            "5.27"
+          ],
+          [
+            8,
+            21,
+            "9 August 2002",
+            "ICEB791A",
+            "\"Mine’s A Double\"",
+            "5.55"
+          ],
+          [
+            9,
+            22,
+            "16 August 2002",
+            "ICEB790F",
+            "\"A Little Learning\"",
+            "5.64"
+          ]
+        ],
+        "name": "table_2501754_3",
+        "headers": [
+          "Episode #",
+          "Production Count",
+          "Original Airdate",
+          "Prod. Code",
+          "Title",
+          "Viewing Figures millions"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-2501754-3",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "baby talk",
+              "value": "\"Baby Talk\"",
+              "start": 46,
+              "end": 55
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "1d15d46c0e8fc6cee665debe0d806105ae9265d9e2158b5e5bd5fef02594913b",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4940,
+              "completion_tokens": 21,
+              "total_tokens": 4961,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "baby talk",
+              "value": "\"Baby Talk\"",
+              "start": 46,
+              "end": 55,
+              "clause": "List the 1st air date for the episode titled \"baby talk\"."
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "baby talk",
+              "value": "\"Baby Talk\"",
+              "start": 46,
+              "end": 55,
+              "clause": "List the 1st air date for the episode titled \"baby talk\"."
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "baby talk",
+              "value": "\"Baby Talk\"",
+              "start": 46,
+              "end": 55,
+              "clause": "List the 1st air date for the episode titled \"baby talk\".",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase \"episode titled\" identifies the Title field, and the row evidence contains \"Baby Talk\" under that header."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0806317a9b2f9b833d328cf43ecac4ac4c5ddbaa6c2a6c7009001d4291fb6eda",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4981,
+              "completion_tokens": 45,
+              "total_tokens": 5026,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "baby talk",
+              "value": "\"Baby Talk\"",
+              "start": 46,
+              "end": 55,
+              "clause": "List the 1st air date for the episode titled \"baby talk\".",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase \"episode titled\" identifies the Title field, and the row evidence contains \"Baby Talk\" under that header.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "062a3c6f437b99f64312eb72f34f4bb45738d4dc2e95cc200130a2f2fa070047",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5049,
+              "completion_tokens": 9,
+              "total_tokens": 5058,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "baby talk",
+              "value": "\"Baby Talk\"",
+              "start": 46,
+              "end": 55,
+              "clause": "List the 1st air date for the episode titled \"baby talk\".",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase \"episode titled\" identifies the Title field, and the row evidence contains \"Baby Talk\" under that header.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "09d70bd5f6f51ad99a603ee3f91d7597835bf02608db8b7cb441f8bbc97be41d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5000,
+              "completion_tokens": 13,
+              "total_tokens": 5013,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "baby talk",
+              "value": "\"Baby Talk\"",
+              "start": 46,
+              "end": 55,
+              "clause": "List the 1st air date for the episode titled \"baby talk\".",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase \"episode titled\" identifies the Title field, and the row evidence contains \"Baby Talk\" under that header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "baby talk",
+              "value": "\"Baby Talk\"",
+              "start": 46,
+              "end": 55,
+              "clause": "List the 1st air date for the episode titled \"baby talk\".",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase \"episode titled\" identifies the Title field, and the row evidence contains \"Baby Talk\" under that header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "baby talk",
+              "value": "\"Baby Talk\"",
+              "start": 46,
+              "end": 55,
+              "clause": "List the 1st air date for the episode titled \"baby talk\".",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase \"episode titled\" identifies the Title field, and the row evidence contains \"Baby Talk\" under that header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              0,
+              "\"Baby Talk\""
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "baby talk",
+          "value": "\"Baby Talk\"",
+          "start": 46,
+          "end": 55
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "baby talk",
+          "value": "\"Baby Talk\"",
+          "start": 46,
+          "end": 55,
+          "clause": "List the 1st air date for the episode titled \"baby talk\".",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The phrase \"episode titled\" identifies the Title field, and the row evidence contains \"Baby Talk\" under that header.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          4,
+          0,
+          "\"Baby Talk\""
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7234
+}

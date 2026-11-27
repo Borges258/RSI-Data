@@ -1,0 +1,606 @@
+{
+  "arm": "E2",
+  "position": 136,
+  "example_id": "test:10135:2-10790397-3",
+  "original_index": 10135,
+  "table_id": "2-10790397-3",
+  "question": "Which home team had a crowd size of 14,000 at Junction Oval?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        5,
+        1,
+        "14,000"
+      ],
+      [
+        4,
+        0,
+        "junction oval"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      5,
+      0,
+      "14,000"
+    ],
+    [
+      4,
+      0,
+      "Junction Oval"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        5,
+        0,
+        "14,000"
+      ],
+      [
+        4,
+        0,
+        "Junction Oval"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "14,000",
+        "value": "14,000",
+        "start": 36,
+        "end": 42,
+        "clause": "Which home team had a crowd size of 14,000 at Junction Oval?",
+        "columnIndex": 5,
+        "columnCandidates": [
+          5
+        ],
+        "columnMatchReason": "'crowd size' maps to the Crowd field; 14,000 appears in that column",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "Junction Oval",
+        "value": "Junction Oval",
+        "start": 46,
+        "end": 59,
+        "clause": "000 at Junction Oval?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "'at Junction Oval' identifies the Venue field; Junction Oval appears in that column",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "14,000",
+        "value": "14000",
+        "start": 36,
+        "end": 42
+      },
+      {
+        "surface": "Junction Oval",
+        "value": "Junction Oval",
+        "start": 46,
+        "end": 59
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Which home team had a crowd size of 14,000 at Junction Oval?",
+      "table": {
+        "header": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ],
+        "page_title": "1933 VFL season",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 10790397,
+        "id": "2-10790397-3",
+        "section_title": "Round 3",
+        "rows": [
+          [
+            "Footscray",
+            "6.14 (50)",
+            "Richmond",
+            "4.10 (34)",
+            "Western Oval",
+            "12,500",
+            "13 May 1933"
+          ],
+          [
+            "Collingwood",
+            "10.11 (71)",
+            "South Melbourne",
+            "9.3 (57)",
+            "Victoria Park",
+            "10,000",
+            "13 May 1933"
+          ],
+          [
+            "Carlton",
+            "8.9 (57)",
+            "Geelong",
+            "13.16 (94)",
+            "Princes Park",
+            "14,000",
+            "13 May 1933"
+          ],
+          [
+            "North Melbourne",
+            "10.15 (75)",
+            "Hawthorn",
+            "10.7 (67)",
+            "Arden Street Oval",
+            "5,000",
+            "13 May 1933"
+          ],
+          [
+            "St Kilda",
+            "9.5 (59)",
+            "Fitzroy",
+            "21.17 (143)",
+            "Junction Oval",
+            "9,000",
+            "13 May 1933"
+          ],
+          [
+            "Melbourne",
+            "15.9 (99)",
+            "Essendon",
+            "10.10 (70)",
+            "MCG",
+            "9,479",
+            "13 May 1933"
+          ]
+        ],
+        "caption": "Round 3",
+        "headers": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-10790397-3",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "14,000",
+              "value": "14000",
+              "start": 36,
+              "end": 42
+            },
+            {
+              "surface": "Junction Oval",
+              "value": "Junction Oval",
+              "start": 46,
+              "end": 59
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "6b644330f77641d2999c50d1f5175e2ee61d74eddb47ae91bcbe5a1f039b5ab3",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4907,
+              "completion_tokens": 32,
+              "total_tokens": 4939,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "14,000",
+              "value": "14000",
+              "start": 36,
+              "end": 42,
+              "clause": "Which home team had a crowd size of 14,000 at Junction Oval?"
+            },
+            {
+              "surface": "Junction Oval",
+              "value": "Junction Oval",
+              "start": 46,
+              "end": 59,
+              "clause": "000 at Junction Oval?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "14,000",
+              "value": "14000",
+              "start": 36,
+              "end": 42,
+              "clause": "Which home team had a crowd size of 14,000 at Junction Oval?"
+            },
+            {
+              "surface": "Junction Oval",
+              "value": "Junction Oval",
+              "start": 46,
+              "end": 59,
+              "clause": "000 at Junction Oval?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "14,000",
+              "value": "14000",
+              "start": 36,
+              "end": 42,
+              "clause": "Which home team had a crowd size of 14,000 at Junction Oval?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "'crowd size' maps to the Crowd field; 14,000 appears in that column"
+            },
+            {
+              "surface": "Junction Oval",
+              "value": "Junction Oval",
+              "start": 46,
+              "end": 59,
+              "clause": "000 at Junction Oval?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'at Junction Oval' identifies the Venue field; Junction Oval appears in that column"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "350080238ea46d2fb12d441da8fc004d5fbf30d16b0479a8d34d1daccaa5ad35",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4976,
+              "completion_tokens": 61,
+              "total_tokens": 5037,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "14,000",
+              "value": "14000",
+              "start": 36,
+              "end": 42,
+              "clause": "Which home team had a crowd size of 14,000 at Junction Oval?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "'crowd size' maps to the Crowd field; 14,000 appears in that column",
+              "operator": "="
+            },
+            {
+              "surface": "Junction Oval",
+              "value": "Junction Oval",
+              "start": 46,
+              "end": 59,
+              "clause": "000 at Junction Oval?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'at Junction Oval' identifies the Venue field; Junction Oval appears in that column",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "efc1dc5f049c61d0ebb74b7044bb94a51eb568a7f44c899bf7620f9154a0a2b3",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5069,
+              "completion_tokens": 11,
+              "total_tokens": 5080,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "14,000",
+              "value": "14,000",
+              "start": 36,
+              "end": 42,
+              "clause": "Which home team had a crowd size of 14,000 at Junction Oval?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "'crowd size' maps to the Crowd field; 14,000 appears in that column",
+              "operator": "="
+            },
+            {
+              "surface": "Junction Oval",
+              "value": "Junction Oval",
+              "start": 46,
+              "end": 59,
+              "clause": "000 at Junction Oval?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'at Junction Oval' identifies the Venue field; Junction Oval appears in that column",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "76b5182a10ff70424c3c8e11a4af4c354cf4196392346df640fc13a84788e77f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5025,
+              "completion_tokens": 16,
+              "total_tokens": 5041,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "14,000",
+              "value": "14,000",
+              "start": 36,
+              "end": 42,
+              "clause": "Which home team had a crowd size of 14,000 at Junction Oval?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "'crowd size' maps to the Crowd field; 14,000 appears in that column",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Junction Oval",
+              "value": "Junction Oval",
+              "start": 46,
+              "end": 59,
+              "clause": "000 at Junction Oval?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'at Junction Oval' identifies the Venue field; Junction Oval appears in that column",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "14,000",
+              "value": "14,000",
+              "start": 36,
+              "end": 42,
+              "clause": "Which home team had a crowd size of 14,000 at Junction Oval?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "'crowd size' maps to the Crowd field; 14,000 appears in that column",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Junction Oval",
+              "value": "Junction Oval",
+              "start": 46,
+              "end": 59,
+              "clause": "000 at Junction Oval?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'at Junction Oval' identifies the Venue field; Junction Oval appears in that column",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "14,000",
+              "value": "14,000",
+              "start": 36,
+              "end": 42,
+              "clause": "Which home team had a crowd size of 14,000 at Junction Oval?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "'crowd size' maps to the Crowd field; 14,000 appears in that column",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Junction Oval",
+              "value": "Junction Oval",
+              "start": 46,
+              "end": 59,
+              "clause": "000 at Junction Oval?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'at Junction Oval' identifies the Venue field; Junction Oval appears in that column",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              5,
+              0,
+              "14,000"
+            ],
+            [
+              4,
+              0,
+              "Junction Oval"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "14,000",
+          "value": "14000",
+          "start": 36,
+          "end": 42
+        },
+        {
+          "surface": "Junction Oval",
+          "value": "Junction Oval",
+          "start": 46,
+          "end": 59
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "14,000",
+          "value": "14,000",
+          "start": 36,
+          "end": 42,
+          "clause": "Which home team had a crowd size of 14,000 at Junction Oval?",
+          "columnIndex": 5,
+          "columnCandidates": [
+            5
+          ],
+          "columnMatchReason": "'crowd size' maps to the Crowd field; 14,000 appears in that column",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "Junction Oval",
+          "value": "Junction Oval",
+          "start": 46,
+          "end": 59,
+          "clause": "000 at Junction Oval?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "'at Junction Oval' identifies the Venue field; Junction Oval appears in that column",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          5,
+          0,
+          "14,000"
+        ],
+        [
+          4,
+          0,
+          "Junction Oval"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8156
+}

@@ -1,0 +1,411 @@
+{
+  "arm": "E2",
+  "position": 298,
+  "example_id": "test:11749:2-11677066-1",
+  "original_index": 11749,
+  "table_id": "2-11677066-1",
+  "question": "Tell me the version for 1940-45",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        1,
+        0,
+        "1940-45"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "1940-45"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "1940-45"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "1940-45",
+        "value": "1940-45",
+        "start": 24,
+        "end": 31,
+        "clause": "Tell me the version for 1940-45",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The range 1940-45 denotes a year span, matching the Year header and the ECG row's Year cell.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "1940-45",
+        "value": "1940-45",
+        "start": 24,
+        "end": 31
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Tell me the version for 1940-45",
+      "table": {
+        "header": [
+          "Version",
+          "Year",
+          "Bore x stroke",
+          "Displacement",
+          "Power"
+        ],
+        "page_title": "Volvo sidevalve straight-6 engine",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 11677066,
+        "id": "2-11677066-1",
+        "section_title": "",
+        "rows": [
+          [
+            "DB",
+            "1929-32",
+            "76.2x110 mm",
+            "cc (cuin)",
+            "hp (kW; PS)"
+          ],
+          [
+            "EB",
+            "1932-35",
+            "79.4x110 mm",
+            "cc (cuin)",
+            "hp (kW; PS)"
+          ],
+          [
+            "EC",
+            "1935-45",
+            "84.14x110 mm",
+            "cc (cuin)",
+            "hp (kW; PS)"
+          ],
+          [
+            "ECG",
+            "1940-45",
+            "84.14x110 mm",
+            "cc (cuin)",
+            "hp (kW; PS)"
+          ],
+          [
+            "ED",
+            "1946-58",
+            "84.14x110 mm",
+            "cc (cuin)",
+            "hp (kW; PS)"
+          ]
+        ],
+        "caption": "See also",
+        "headers": [
+          "Version",
+          "Year",
+          "Bore x stroke",
+          "Displacement",
+          "Power"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-11677066-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "1940-45",
+              "value": "1940-45",
+              "start": 24,
+              "end": 31
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "edd554a6aebbcbac54bd3977a7be6a9b733a7de76541da8881fc39f5566f847c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4815,
+              "completion_tokens": 23,
+              "total_tokens": 4838,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1940-45",
+              "value": "1940-45",
+              "start": 24,
+              "end": 31,
+              "clause": "Tell me the version for 1940-45"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "1940-45",
+              "value": "1940-45",
+              "start": 24,
+              "end": 31,
+              "clause": "Tell me the version for 1940-45"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1940-45",
+              "value": "1940-45",
+              "start": 24,
+              "end": 31,
+              "clause": "Tell me the version for 1940-45",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The range 1940-45 denotes a year span, matching the Year header and the ECG row's Year cell."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "dc2c1811353b2fa9f9ba23c9209821d349f39278f2fc71a6e12db91fa6f0fcad",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4852,
+              "completion_tokens": 45,
+              "total_tokens": 4897,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1940-45",
+              "value": "1940-45",
+              "start": 24,
+              "end": 31,
+              "clause": "Tell me the version for 1940-45",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The range 1940-45 denotes a year span, matching the Year header and the ECG row's Year cell.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ebc612563b9b8569209070571479ab350bdbe580da7943d65929183b8077b280",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4921,
+              "completion_tokens": 9,
+              "total_tokens": 4930,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1940-45",
+              "value": "1940-45",
+              "start": 24,
+              "end": 31,
+              "clause": "Tell me the version for 1940-45",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The range 1940-45 denotes a year span, matching the Year header and the ECG row's Year cell.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "7155524c0a150b1e64de5a557f589ec41693a5014358b4f25de46a39f7698eb9",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4872,
+              "completion_tokens": 13,
+              "total_tokens": 4885,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1940-45",
+              "value": "1940-45",
+              "start": 24,
+              "end": 31,
+              "clause": "Tell me the version for 1940-45",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The range 1940-45 denotes a year span, matching the Year header and the ECG row's Year cell.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1940-45",
+              "value": "1940-45",
+              "start": 24,
+              "end": 31,
+              "clause": "Tell me the version for 1940-45",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The range 1940-45 denotes a year span, matching the Year header and the ECG row's Year cell.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "1940-45",
+              "value": "1940-45",
+              "start": 24,
+              "end": 31,
+              "clause": "Tell me the version for 1940-45",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The range 1940-45 denotes a year span, matching the Year header and the ECG row's Year cell.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              "1940-45"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "1940-45",
+          "value": "1940-45",
+          "start": 24,
+          "end": 31
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "1940-45",
+          "value": "1940-45",
+          "start": 24,
+          "end": 31,
+          "clause": "Tell me the version for 1940-45",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The range 1940-45 denotes a year span, matching the Year header and the ECG row's Year cell.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          1,
+          0,
+          "1940-45"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 12156
+}

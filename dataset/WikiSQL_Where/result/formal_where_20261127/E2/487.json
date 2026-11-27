@@ -1,0 +1,474 @@
+{
+  "arm": "E2",
+  "position": 487,
+  "example_id": "test:9112:2-17311408-7",
+  "original_index": 9112,
+  "table_id": "2-17311408-7",
+  "question": "How many games had Montreal Canadiens as an opponent?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        2,
+        0,
+        "montreal canadiens"
+      ]
+    ],
+    "agg": 4
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "Montreal Canadiens"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "Montreal Canadiens"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Montreal Canadiens",
+        "value": "Montreal Canadiens",
+        "start": 19,
+        "end": 37,
+        "clause": "How many games had Montreal Canadiens as an opponent?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The question explicitly identifies Montreal Canadiens as an opponent, matching the Opponent header and its row values.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Montreal Canadiens",
+        "value": "Montreal Canadiens",
+        "start": 19,
+        "end": 37
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "How many games had Montreal Canadiens as an opponent?",
+      "table": {
+        "header": [
+          "Game",
+          "March",
+          "Opponent",
+          "Score",
+          "Record"
+        ],
+        "page_title": "1967–68 New York Rangers season",
+        "types": [
+          "real",
+          "real",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 17311408,
+        "id": "2-17311408-7",
+        "section_title": "Schedule and Results",
+        "rows": [
+          [
+            "61",
+            "2",
+            "Philadelphia Flyers",
+            "4 - 0",
+            "31-19-11"
+          ],
+          [
+            "62",
+            "3",
+            "Chicago Black Hawks",
+            "4 - 0",
+            "32-19-11"
+          ],
+          [
+            "63",
+            "6",
+            "Detroit Red Wings",
+            "6 - 1",
+            "33-19-11"
+          ],
+          [
+            "64",
+            "9",
+            "@ Minnesota North Stars",
+            "1 - 1",
+            "33-19-12"
+          ],
+          [
+            "65",
+            "10",
+            "Los Angeles Kings",
+            "4 - 3",
+            "33-20-12"
+          ],
+          [
+            "66",
+            "13",
+            "Boston Bruins",
+            "2 - 1",
+            "33-21-12"
+          ],
+          [
+            "67",
+            "14",
+            "@ Montreal Canadiens",
+            "3 - 1",
+            "33-22-12"
+          ],
+          [
+            "68",
+            "17",
+            "Pittsburgh Penguins",
+            "3 - 0",
+            "34-22-12"
+          ],
+          [
+            "69",
+            "20",
+            "@ Chicago Black Hawks",
+            "5 - 3",
+            "35-22-12"
+          ],
+          [
+            "70",
+            "23",
+            "@ Toronto Maple Leafs",
+            "3 - 1",
+            "35-23-12"
+          ],
+          [
+            "71",
+            "24",
+            "Toronto Maple Leafs",
+            "4 - 2",
+            "36-23-12"
+          ],
+          [
+            "72",
+            "28",
+            "@ Boston Bruins",
+            "5 - 4",
+            "37-23-12"
+          ],
+          [
+            "73",
+            "30",
+            "@ Detroit Red Wings",
+            "3 - 1",
+            "38-23-12"
+          ],
+          [
+            "74",
+            "31",
+            "Montreal Canadiens",
+            "4 - 2",
+            "39-23-12"
+          ]
+        ],
+        "caption": "Schedule and Results",
+        "headers": [
+          "Game",
+          "March",
+          "Opponent",
+          "Score",
+          "Record"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-17311408-7",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Montreal Canadiens",
+              "value": "Montreal Canadiens",
+              "start": 19,
+              "end": 37
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "17b1af0bb956c33814ee8e7b96bc5451edaea2c3eb547c9587f37e0c1e2f4ad1",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4948,
+              "completion_tokens": 21,
+              "total_tokens": 4969,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Montreal Canadiens",
+              "value": "Montreal Canadiens",
+              "start": 19,
+              "end": 37,
+              "clause": "How many games had Montreal Canadiens as an opponent?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Montreal Canadiens",
+              "value": "Montreal Canadiens",
+              "start": 19,
+              "end": 37,
+              "clause": "How many games had Montreal Canadiens as an opponent?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Montreal Canadiens",
+              "value": "Montreal Canadiens",
+              "start": 19,
+              "end": 37,
+              "clause": "How many games had Montreal Canadiens as an opponent?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies Montreal Canadiens as an opponent, matching the Opponent header and its row values."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "644662f10d7460881af89d373c88d95ed435d6cc378dca59ba551e6f07209272",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4983,
+              "completion_tokens": 41,
+              "total_tokens": 5024,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Montreal Canadiens",
+              "value": "Montreal Canadiens",
+              "start": 19,
+              "end": 37,
+              "clause": "How many games had Montreal Canadiens as an opponent?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies Montreal Canadiens as an opponent, matching the Opponent header and its row values.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "8cb330ea765afe8e2708e11cee3b6246810154c4cb2da2f4a7979a29d1ef2fd5",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5048,
+              "completion_tokens": 9,
+              "total_tokens": 5057,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Montreal Canadiens",
+              "value": "Montreal Canadiens",
+              "start": 19,
+              "end": 37,
+              "clause": "How many games had Montreal Canadiens as an opponent?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies Montreal Canadiens as an opponent, matching the Opponent header and its row values.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "288d313cc1910f22af8ff9ced439edbfb74b56231427d60f863729aed8a56497",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4999,
+              "completion_tokens": 12,
+              "total_tokens": 5011,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Montreal Canadiens",
+              "value": "Montreal Canadiens",
+              "start": 19,
+              "end": 37,
+              "clause": "How many games had Montreal Canadiens as an opponent?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies Montreal Canadiens as an opponent, matching the Opponent header and its row values.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Montreal Canadiens",
+              "value": "Montreal Canadiens",
+              "start": 19,
+              "end": 37,
+              "clause": "How many games had Montreal Canadiens as an opponent?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies Montreal Canadiens as an opponent, matching the Opponent header and its row values.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Montreal Canadiens",
+              "value": "Montreal Canadiens",
+              "start": 19,
+              "end": 37,
+              "clause": "How many games had Montreal Canadiens as an opponent?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies Montreal Canadiens as an opponent, matching the Opponent header and its row values.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "Montreal Canadiens"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Montreal Canadiens",
+          "value": "Montreal Canadiens",
+          "start": 19,
+          "end": 37
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Montreal Canadiens",
+          "value": "Montreal Canadiens",
+          "start": 19,
+          "end": 37,
+          "clause": "How many games had Montreal Canadiens as an opponent?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The question explicitly identifies Montreal Canadiens as an opponent, matching the Opponent header and its row values.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          2,
+          0,
+          "Montreal Canadiens"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9579
+}

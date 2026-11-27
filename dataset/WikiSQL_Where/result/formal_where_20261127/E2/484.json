@@ -1,0 +1,454 @@
+{
+  "arm": "E2",
+  "position": 484,
+  "example_id": "test:8982:2-16388478-2",
+  "original_index": 8982,
+  "table_id": "2-16388478-2",
+  "question": "What were the Away team Kangaroos Crowd totals?",
+  "gold_sql": {
+    "sel": 5,
+    "conds": [
+      [
+        2,
+        0,
+        "kangaroos"
+      ]
+    ],
+    "agg": 4
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "Kangaroos"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "Kangaroos"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Kangaroos",
+        "value": "Kangaroos",
+        "start": 24,
+        "end": 33,
+        "clause": "What were the Away team Kangaroos Crowd totals?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The question explicitly identifies Kangaroos as the Away team, matching the 'Away team' header and row evidence.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Kangaroos",
+        "value": "Kangaroos",
+        "start": 24,
+        "end": 33
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What were the Away team Kangaroos Crowd totals?",
+      "table": {
+        "header": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Ground",
+          "Crowd",
+          "Date"
+        ],
+        "page_title": "2002 Wizard Home Loans Cup",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 16388478,
+        "id": "2-16388478-2",
+        "section_title": "Round 1",
+        "rows": [
+          [
+            "St Kilda",
+            "16.13 (109)",
+            "Melbourne",
+            "5.11 (41)",
+            "Colonial Stadium",
+            "13,814",
+            "Friday, 15 February"
+          ],
+          [
+            "Fremantle",
+            "13.9 (87)",
+            "Western Bulldogs",
+            "10.8 (68)",
+            "Subiaco Oval",
+            "13,304",
+            "Friday, 15 February"
+          ],
+          [
+            "Geelong",
+            "12.7 (79)",
+            "Richmond",
+            "7.13 (55)",
+            "Baytec Stadium",
+            "11,531",
+            "Saturday, 16 February"
+          ],
+          [
+            "Carlton",
+            "12.9 (81)",
+            "West Coast",
+            "17.14 (116)",
+            "Optus Oval",
+            "5,217",
+            "Saturday, 16 February"
+          ],
+          [
+            "Brisbane Lions",
+            "14.7 (91)",
+            "Adelaide",
+            "14.9 (93)",
+            "Gabba",
+            "17,236",
+            "Saturday, 16 February"
+          ],
+          [
+            "Hawthorn",
+            "13.10 (88)",
+            "Kangaroos",
+            "11.10 (76)",
+            "York Park",
+            "12,861",
+            "Sunday, 17 February"
+          ],
+          [
+            "Sydney",
+            "18.11 (119)",
+            "Collingwood",
+            "5.9 (39)",
+            "Manuka Oval",
+            "7,826",
+            "Sunday, 17 February"
+          ],
+          [
+            "Port Adelaide",
+            "13.8 (86)",
+            "Essendon",
+            "8.10 (58)",
+            "Football Park",
+            "15,576",
+            "Sunday, 17 February"
+          ]
+        ],
+        "caption": "Round 1",
+        "headers": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Ground",
+          "Crowd",
+          "Date"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-16388478-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Kangaroos",
+              "value": "Kangaroos",
+              "start": 24,
+              "end": 33
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f11797f31a124bc3918105a8296eda0c525a22b158d9b7613ff1158d49ef6f4a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4975,
+              "completion_tokens": 23,
+              "total_tokens": 4998,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Kangaroos",
+              "value": "Kangaroos",
+              "start": 24,
+              "end": 33,
+              "clause": "What were the Away team Kangaroos Crowd totals?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Kangaroos",
+              "value": "Kangaroos",
+              "start": 24,
+              "end": 33,
+              "clause": "What were the Away team Kangaroos Crowd totals?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Kangaroos",
+              "value": "Kangaroos",
+              "start": 24,
+              "end": 33,
+              "clause": "What were the Away team Kangaroos Crowd totals?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies Kangaroos as the Away team, matching the 'Away team' header and row evidence."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f91284164b8b901220ceb8d06830a327edf364fa0413d5c83e3c349979184157",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5013,
+              "completion_tokens": 44,
+              "total_tokens": 5057,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Kangaroos",
+              "value": "Kangaroos",
+              "start": 24,
+              "end": 33,
+              "clause": "What were the Away team Kangaroos Crowd totals?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies Kangaroos as the Away team, matching the 'Away team' header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "4947679ac895bea0b3725abfa5c8d018c646a0c4d5fd458fcde0e3867e1ec53c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5081,
+              "completion_tokens": 9,
+              "total_tokens": 5090,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Kangaroos",
+              "value": "Kangaroos",
+              "start": 24,
+              "end": 33,
+              "clause": "What were the Away team Kangaroos Crowd totals?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies Kangaroos as the Away team, matching the 'Away team' header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "76902d0b0a819c89b2ede464f08e22a4d1e6b0043e252a760651ad798b70f1bf",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5032,
+              "completion_tokens": 13,
+              "total_tokens": 5045,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Kangaroos",
+              "value": "Kangaroos",
+              "start": 24,
+              "end": 33,
+              "clause": "What were the Away team Kangaroos Crowd totals?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies Kangaroos as the Away team, matching the 'Away team' header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Kangaroos",
+              "value": "Kangaroos",
+              "start": 24,
+              "end": 33,
+              "clause": "What were the Away team Kangaroos Crowd totals?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies Kangaroos as the Away team, matching the 'Away team' header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Kangaroos",
+              "value": "Kangaroos",
+              "start": 24,
+              "end": 33,
+              "clause": "What were the Away team Kangaroos Crowd totals?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies Kangaroos as the Away team, matching the 'Away team' header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "Kangaroos"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Kangaroos",
+          "value": "Kangaroos",
+          "start": 24,
+          "end": 33
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Kangaroos",
+          "value": "Kangaroos",
+          "start": 24,
+          "end": 33,
+          "clause": "What were the Away team Kangaroos Crowd totals?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The question explicitly identifies Kangaroos as the Away team, matching the 'Away team' header and row evidence.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          2,
+          0,
+          "Kangaroos"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8234
+}

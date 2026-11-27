@@ -1,0 +1,424 @@
+{
+  "arm": "E2",
+  "position": 18,
+  "example_id": "test:777:1-1342338-6",
+  "original_index": 777,
+  "table_id": "1-1342338-6",
+  "question": "What is the result for california 2?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        0,
+        0,
+        "California 2"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "California 2"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "California 2"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "california 2",
+        "value": "California 2",
+        "start": 23,
+        "end": 35,
+        "clause": "What is the result for california 2?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "The question uses California 2 to identify the district, and that value appears in the District column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "california 2",
+        "value": "California 2",
+        "start": 23,
+        "end": 35
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the result for california 2?",
+      "table": {
+        "id": "1-1342338-6",
+        "header": [
+          "District",
+          "Incumbent",
+          "Party",
+          "Elected",
+          "Result",
+          "Candidates"
+        ],
+        "types": [
+          "text",
+          "text",
+          "text",
+          "real",
+          "text",
+          "text"
+        ],
+        "rows": [
+          [
+            "California 1",
+            "Clarence F. Lea",
+            "Democratic",
+            1916,
+            "Re-elected",
+            "Clarence F. Lea (D) (unopposed)"
+          ],
+          [
+            "California 2",
+            "Harry Lane Englebright",
+            "Republican",
+            1926,
+            "Re-elected",
+            "Harry Lane Englebright (R) (unopposed)"
+          ],
+          [
+            "California 3",
+            "Charles F. Curry, Jr.",
+            "Republican",
+            1930,
+            "Lost-re-election Democratic gain",
+            "Frank H. Buck (D) 56.8% Charles F. Curry (R) 43.2%"
+          ],
+          [
+            "California 5",
+            "Richard J. Welch",
+            "Republican",
+            1926,
+            "Re-elected",
+            "Richard J. Welch (R) (unopposed)"
+          ],
+          [
+            "California 6",
+            "Albert E. Carter",
+            "Republican",
+            1924,
+            "Re-elected",
+            "Albert E. Carter (R) (unopposed)"
+          ],
+          [
+            "California 8",
+            "Arthur M. Free",
+            "Republican",
+            1920,
+            "Lost-re-election Democratic gain",
+            "John J. McGrath (D) 56.9% Arthur M. Free (R) 43.1%"
+          ]
+        ],
+        "name": "table_1342338_6",
+        "headers": [
+          "District",
+          "Incumbent",
+          "Party",
+          "Elected",
+          "Result",
+          "Candidates"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-1342338-6",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "california 2",
+              "value": "California 2",
+              "start": 23,
+              "end": 35
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "085e071c617bd025b315b7e422aa18a2a62b4d4e236fad7c8340abc249aa7652",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4888,
+              "completion_tokens": 22,
+              "total_tokens": 4910,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "california 2",
+              "value": "California 2",
+              "start": 23,
+              "end": 35,
+              "clause": "What is the result for california 2?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "california 2",
+              "value": "California 2",
+              "start": 23,
+              "end": 35,
+              "clause": "What is the result for california 2?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "california 2",
+              "value": "California 2",
+              "start": 23,
+              "end": 35,
+              "clause": "What is the result for california 2?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question uses California 2 to identify the district, and that value appears in the District column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "dc0f1eb2ced4c44b7909f91eafbc1606962af333ed9d5f708451263ee542a824",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4923,
+              "completion_tokens": 41,
+              "total_tokens": 4964,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "california 2",
+              "value": "California 2",
+              "start": 23,
+              "end": 35,
+              "clause": "What is the result for california 2?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question uses California 2 to identify the district, and that value appears in the District column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e320351212d744a6117088e4ed598ceda6c5daae98d7dd0900e4a1d2ce7c69ca",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4988,
+              "completion_tokens": 9,
+              "total_tokens": 4997,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "california 2",
+              "value": "California 2",
+              "start": 23,
+              "end": 35,
+              "clause": "What is the result for california 2?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question uses California 2 to identify the district, and that value appears in the District column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "3a25a950250d0221513d2c5f659efab07e75061c42740cf68e9ba04a5875a93f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4939,
+              "completion_tokens": 12,
+              "total_tokens": 4951,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "california 2",
+              "value": "California 2",
+              "start": 23,
+              "end": 35,
+              "clause": "What is the result for california 2?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question uses California 2 to identify the district, and that value appears in the District column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "california 2",
+              "value": "California 2",
+              "start": 23,
+              "end": 35,
+              "clause": "What is the result for california 2?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question uses California 2 to identify the district, and that value appears in the District column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "california 2",
+              "value": "California 2",
+              "start": 23,
+              "end": 35,
+              "clause": "What is the result for california 2?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question uses California 2 to identify the district, and that value appears in the District column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              "California 2"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "california 2",
+          "value": "California 2",
+          "start": 23,
+          "end": 35
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "california 2",
+          "value": "California 2",
+          "start": 23,
+          "end": 35,
+          "clause": "What is the result for california 2?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "The question uses California 2 to identify the district, and that value appears in the District column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          0,
+          0,
+          "California 2"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8657
+}

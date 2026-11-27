@@ -1,0 +1,460 @@
+{
+  "arm": "E2",
+  "position": 398,
+  "example_id": "test:15829:2-13073611-1",
+  "original_index": 15829,
+  "table_id": "2-13073611-1",
+  "question": "WHich Places have a score smaller than 69?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        3,
+        2,
+        69
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      3,
+      2,
+      69
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        2,
+        69
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "69",
+        "value": 69,
+        "start": 39,
+        "end": 41,
+        "clause": "WHich Places have a score smaller than 69?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The question explicitly says 'score smaller than 69', matching the Score header at index 3; its numeric cells include 69.",
+        "operator": "<",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "69",
+        "value": "69",
+        "start": 39,
+        "end": 41
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "WHich Places have a score smaller than 69?",
+      "table": {
+        "header": [
+          "Place",
+          "Player",
+          "Country",
+          "Score",
+          "To par"
+        ],
+        "page_title": "1953 Masters Tournament",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 13073611,
+        "id": "2-13073611-1",
+        "section_title": "First round",
+        "rows": [
+          [
+            "1",
+            "Chick Harbert",
+            "United States",
+            "68",
+            "–4"
+          ],
+          [
+            "T2",
+            "Al Besselink",
+            "United States",
+            "69",
+            "–3"
+          ],
+          [
+            "T2",
+            "Ed Oliver",
+            "United States",
+            "69",
+            "–3"
+          ],
+          [
+            "T4",
+            "Ben Hogan",
+            "United States",
+            "70",
+            "–2"
+          ],
+          [
+            "T4",
+            "Milan Marusic",
+            "United States",
+            "70",
+            "–2"
+          ],
+          [
+            "T6",
+            "Tommy Bolt",
+            "United States",
+            "71",
+            "–1"
+          ],
+          [
+            "T6",
+            "Bob Hamilton",
+            "United States",
+            "71",
+            "–1"
+          ],
+          [
+            "T6",
+            "Ted Kroll",
+            "United States",
+            "71",
+            "–1"
+          ],
+          [
+            "T6",
+            "Sam Snead",
+            "United States",
+            "71",
+            "–1"
+          ],
+          [
+            "T10",
+            "Skip Alexander",
+            "United States",
+            "72",
+            "E"
+          ],
+          [
+            "T10",
+            "Dick Chapman",
+            "United States",
+            "72",
+            "E"
+          ],
+          [
+            "T10",
+            "Frank Stranahan (a)",
+            "United States",
+            "72",
+            "E"
+          ]
+        ],
+        "caption": "First round",
+        "headers": [
+          "Place",
+          "Player",
+          "Country",
+          "Score",
+          "To par"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-13073611-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "69",
+              "value": "69",
+              "start": 39,
+              "end": 41
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e17d0591f90c6fba796848c5bc6afdf41c62bf5c1a3b478f3175c5341208c153",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4852,
+              "completion_tokens": 17,
+              "total_tokens": 4869,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "69",
+              "value": "69",
+              "start": 39,
+              "end": 41,
+              "clause": "WHich Places have a score smaller than 69?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "69",
+              "value": "69",
+              "start": 39,
+              "end": 41,
+              "clause": "WHich Places have a score smaller than 69?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "69",
+              "value": "69",
+              "start": 39,
+              "end": 41,
+              "clause": "WHich Places have a score smaller than 69?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says 'score smaller than 69', matching the Score header at index 3; its numeric cells include 69."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "77b4707a3e38a52373a60d432a88ea86f83d64784a6f48221903fece23bd905d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4884,
+              "completion_tokens": 48,
+              "total_tokens": 4932,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "69",
+              "value": "69",
+              "start": 39,
+              "end": 41,
+              "clause": "WHich Places have a score smaller than 69?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says 'score smaller than 69', matching the Score header at index 3; its numeric cells include 69.",
+              "operator": "<"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "05f8104d8f1b8b0f9ea33f36a34457ae7783d9dc72cd4dfdef4faa9f086ca71e",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4956,
+              "completion_tokens": 10,
+              "total_tokens": 4966,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "69",
+              "value": 69,
+              "start": 39,
+              "end": 41,
+              "clause": "WHich Places have a score smaller than 69?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says 'score smaller than 69', matching the Score header at index 3; its numeric cells include 69.",
+              "operator": "<"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "541ca9247588e5f14a3f70255f2b5f132d6d0a46747a275bec08d524d63a93ca",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4907,
+              "completion_tokens": 9,
+              "total_tokens": 4916,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "69",
+              "value": "69",
+              "start": 39,
+              "end": 41,
+              "clause": "WHich Places have a score smaller than 69?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says 'score smaller than 69', matching the Score header at index 3; its numeric cells include 69.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "69",
+              "value": 69,
+              "start": 39,
+              "end": 41,
+              "clause": "WHich Places have a score smaller than 69?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says 'score smaller than 69', matching the Score header at index 3; its numeric cells include 69.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "69",
+              "value": 69,
+              "start": 39,
+              "end": 41,
+              "clause": "WHich Places have a score smaller than 69?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says 'score smaller than 69', matching the Score header at index 3; its numeric cells include 69.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              2,
+              69
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "69",
+          "value": "69",
+          "start": 39,
+          "end": 41
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "69",
+          "value": 69,
+          "start": 39,
+          "end": 41,
+          "clause": "WHich Places have a score smaller than 69?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The question explicitly says 'score smaller than 69', matching the Score header at index 3; its numeric cells include 69.",
+          "operator": "<",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          3,
+          2,
+          69
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9687
+}

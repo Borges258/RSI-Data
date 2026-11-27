@@ -1,0 +1,661 @@
+{
+  "arm": "E2",
+  "position": 96,
+  "example_id": "test:6101:2-1355180-1",
+  "original_index": 6101,
+  "table_id": "2-1355180-1",
+  "question": "How many people attended the 3rd round Emperor's cup with a TMS larger than 12?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        5,
+        0,
+        "3rd round"
+      ],
+      [
+        2,
+        1,
+        12
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      5,
+      0,
+      "3rd Round"
+    ],
+    [
+      2,
+      1,
+      12
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        5,
+        0,
+        "3rd Round"
+      ],
+      [
+        2,
+        1,
+        12
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "3rd round",
+        "value": "3rd Round",
+        "start": 29,
+        "end": 38,
+        "clause": "How many people attended the 3rd round Emperor's cup with a TMS larger than 12?",
+        "columnIndex": 5,
+        "columnCandidates": [
+          5
+        ],
+        "columnMatchReason": "'3rd round' describes the tournament stage in the 'Emperor's Cup' field.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "larger than 12",
+        "value": 12,
+        "start": 64,
+        "end": 78,
+        "clause": "How many people attended the 3rd round Emperor's cup with a TMS larger than 12?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "'larger than 12' explicitly modifies TMS, matching the 'Tms.' field.",
+        "operator": ">",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "3rd round",
+        "value": "3rd Round",
+        "start": 29,
+        "end": 38
+      },
+      {
+        "surface": "larger than 12",
+        "value": "12",
+        "start": 64,
+        "end": 78
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "How many people attended the 3rd round Emperor's cup with a TMS larger than 12?",
+      "table": {
+        "header": [
+          "Season",
+          "Div.",
+          "Tms.",
+          "Pos.",
+          "Attendance/G",
+          "Emperor's Cup"
+        ],
+        "page_title": "Sagan Tosu",
+        "types": [
+          "real",
+          "text",
+          "real",
+          "real",
+          "real",
+          "text"
+        ],
+        "page_id": 1355180,
+        "id": "2-1355180-1",
+        "section_title": "Record as J. League member",
+        "rows": [
+          [
+            "1999",
+            "J2",
+            "10",
+            "8",
+            "3,385",
+            "3rd Round"
+          ],
+          [
+            "2000",
+            "J2",
+            "11",
+            "6",
+            "3,714",
+            "3rd Round"
+          ],
+          [
+            "2001",
+            "J2",
+            "12",
+            "10",
+            "3,479",
+            "4th Round"
+          ],
+          [
+            "2002",
+            "J2",
+            "12",
+            "9",
+            "3,890",
+            "3rd Round"
+          ],
+          [
+            "2003",
+            "J2",
+            "12",
+            "12",
+            "3,172",
+            "1st Round"
+          ],
+          [
+            "2004",
+            "J2",
+            "12",
+            "11",
+            "3,610",
+            "4th Round"
+          ],
+          [
+            "2005",
+            "J2",
+            "12",
+            "8",
+            "7,855",
+            "4th Round"
+          ],
+          [
+            "2006",
+            "J2",
+            "13",
+            "4",
+            "7,465",
+            "4th Round"
+          ],
+          [
+            "2007",
+            "J2",
+            "13",
+            "8",
+            "6,114",
+            "5th Round"
+          ],
+          [
+            "2008",
+            "J2",
+            "15",
+            "6",
+            "7,261",
+            "Quarter-final"
+          ],
+          [
+            "2009",
+            "J2",
+            "18",
+            "5",
+            "5,939",
+            "4th Round"
+          ],
+          [
+            "2010",
+            "J2",
+            "19",
+            "9",
+            "6,633",
+            "3rd Round"
+          ],
+          [
+            "2011",
+            "J2",
+            "20",
+            "2",
+            "7,731",
+            "2nd Round"
+          ],
+          [
+            "2012",
+            "J1",
+            "18",
+            "5",
+            "11,991",
+            "2nd Round"
+          ]
+        ],
+        "caption": "Record as J. League member",
+        "headers": [
+          "Season",
+          "Div.",
+          "Tms.",
+          "Pos.",
+          "Attendance/G",
+          "Emperor's Cup"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-1355180-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "3rd round",
+              "value": "3rd Round",
+              "start": 29,
+              "end": 38
+            },
+            {
+              "surface": "larger than 12",
+              "value": "12",
+              "start": 64,
+              "end": 78
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "060540ba1c6898586b02f3894588cdd58b21860bf06ab566c97190d0e223aa97",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4959,
+              "completion_tokens": 33,
+              "total_tokens": 4992,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "3rd round",
+              "value": "3rd Round",
+              "start": 29,
+              "end": 38,
+              "clause": "How many people attended the 3rd round Emperor's cup with a TMS larger than 12?"
+            },
+            {
+              "surface": "larger than 12",
+              "value": "12",
+              "start": 64,
+              "end": 78,
+              "clause": "How many people attended the 3rd round Emperor's cup with a TMS larger than 12?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "3rd round",
+              "value": "3rd Round",
+              "start": 29,
+              "end": 38,
+              "clause": "How many people attended the 3rd round Emperor's cup with a TMS larger than 12?"
+            },
+            {
+              "surface": "larger than 12",
+              "value": "12",
+              "start": 64,
+              "end": 78,
+              "clause": "How many people attended the 3rd round Emperor's cup with a TMS larger than 12?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "3rd round",
+              "value": "3rd Round",
+              "start": 29,
+              "end": 38,
+              "clause": "How many people attended the 3rd round Emperor's cup with a TMS larger than 12?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "'3rd round' describes the tournament stage in the 'Emperor's Cup' field."
+            },
+            {
+              "surface": "larger than 12",
+              "value": "12",
+              "start": 64,
+              "end": 78,
+              "clause": "How many people attended the 3rd round Emperor's cup with a TMS larger than 12?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'larger than 12' explicitly modifies TMS, matching the 'Tms.' field."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d16423b4ad154a885436d994df197d806f3f0a4b2a2e50de69b9c1bfdc215940",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5050,
+              "completion_tokens": 64,
+              "total_tokens": 5114,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "3rd round",
+              "value": "3rd Round",
+              "start": 29,
+              "end": 38,
+              "clause": "How many people attended the 3rd round Emperor's cup with a TMS larger than 12?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "'3rd round' describes the tournament stage in the 'Emperor's Cup' field.",
+              "operator": "="
+            },
+            {
+              "surface": "larger than 12",
+              "value": "12",
+              "start": 64,
+              "end": 78,
+              "clause": "How many people attended the 3rd round Emperor's cup with a TMS larger than 12?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'larger than 12' explicitly modifies TMS, matching the 'Tms.' field.",
+              "operator": ">"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d527489020c80947f22b0799bbe56417b4fd47e0e184bb97db83927fff91e8c3",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5147,
+              "completion_tokens": 11,
+              "total_tokens": 5158,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "3rd round",
+              "value": "3rd Round",
+              "start": 29,
+              "end": 38,
+              "clause": "How many people attended the 3rd round Emperor's cup with a TMS larger than 12?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "'3rd round' describes the tournament stage in the 'Emperor's Cup' field.",
+              "operator": "="
+            },
+            {
+              "surface": "larger than 12",
+              "value": 12,
+              "start": 64,
+              "end": 78,
+              "clause": "How many people attended the 3rd round Emperor's cup with a TMS larger than 12?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'larger than 12' explicitly modifies TMS, matching the 'Tms.' field.",
+              "operator": ">"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "901b712af2e1fa2fb63dafb6cee43d86afe9c09b8f14359a97efc35a6e0b11a6",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5101,
+              "completion_tokens": 13,
+              "total_tokens": 5114,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "3rd round",
+              "value": "3rd Round",
+              "start": 29,
+              "end": 38,
+              "clause": "How many people attended the 3rd round Emperor's cup with a TMS larger than 12?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "'3rd round' describes the tournament stage in the 'Emperor's Cup' field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "larger than 12",
+              "value": "12",
+              "start": 64,
+              "end": 78,
+              "clause": "How many people attended the 3rd round Emperor's cup with a TMS larger than 12?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'larger than 12' explicitly modifies TMS, matching the 'Tms.' field.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "3rd round",
+              "value": "3rd Round",
+              "start": 29,
+              "end": 38,
+              "clause": "How many people attended the 3rd round Emperor's cup with a TMS larger than 12?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "'3rd round' describes the tournament stage in the 'Emperor's Cup' field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "larger than 12",
+              "value": 12,
+              "start": 64,
+              "end": 78,
+              "clause": "How many people attended the 3rd round Emperor's cup with a TMS larger than 12?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'larger than 12' explicitly modifies TMS, matching the 'Tms.' field.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "3rd round",
+              "value": "3rd Round",
+              "start": 29,
+              "end": 38,
+              "clause": "How many people attended the 3rd round Emperor's cup with a TMS larger than 12?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "'3rd round' describes the tournament stage in the 'Emperor's Cup' field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "larger than 12",
+              "value": 12,
+              "start": 64,
+              "end": 78,
+              "clause": "How many people attended the 3rd round Emperor's cup with a TMS larger than 12?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'larger than 12' explicitly modifies TMS, matching the 'Tms.' field.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              5,
+              0,
+              "3rd Round"
+            ],
+            [
+              2,
+              1,
+              12
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "3rd round",
+          "value": "3rd Round",
+          "start": 29,
+          "end": 38
+        },
+        {
+          "surface": "larger than 12",
+          "value": "12",
+          "start": 64,
+          "end": 78
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "3rd round",
+          "value": "3rd Round",
+          "start": 29,
+          "end": 38,
+          "clause": "How many people attended the 3rd round Emperor's cup with a TMS larger than 12?",
+          "columnIndex": 5,
+          "columnCandidates": [
+            5
+          ],
+          "columnMatchReason": "'3rd round' describes the tournament stage in the 'Emperor's Cup' field.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "larger than 12",
+          "value": 12,
+          "start": 64,
+          "end": 78,
+          "clause": "How many people attended the 3rd round Emperor's cup with a TMS larger than 12?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "'larger than 12' explicitly modifies TMS, matching the 'Tms.' field.",
+          "operator": ">",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          5,
+          0,
+          "3rd Round"
+        ],
+        [
+          2,
+          1,
+          12
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9719
+}

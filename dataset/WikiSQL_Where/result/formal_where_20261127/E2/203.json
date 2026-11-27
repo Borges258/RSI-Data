@@ -1,0 +1,478 @@
+{
+  "arm": "E2",
+  "position": 203,
+  "example_id": "test:3913:1-27790959-1",
+  "original_index": 3913,
+  "table_id": "1-27790959-1",
+  "question": "What number in the season was \"Burning Down the House\"?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        2,
+        0,
+        "\"Burning Down the House\""
+      ]
+    ],
+    "agg": 1
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "\"Burning Down the House\""
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "\"Burning Down the House\""
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Burning Down the House",
+        "value": "\"Burning Down the House\"",
+        "start": 31,
+        "end": 53,
+        "clause": "What number in the season was \"Burning Down the House\"?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The quoted phrase names an episode, matching the Title field; the row contains \"Burning Down the House\" under Title.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "NORMALIZED_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Burning Down the House",
+        "value": "Burning Down the House",
+        "start": 31,
+        "end": 53
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What number in the season was \"Burning Down the House\"?",
+      "table": {
+        "id": "1-27790959-1",
+        "header": [
+          "No. in series",
+          "No. in season",
+          "Title",
+          "Directed by",
+          "Written by",
+          "Original air date",
+          "U.S. viewers (million)"
+        ],
+        "types": [
+          "real",
+          "real",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "rows": [
+          [
+            37,
+            1,
+            "\"She's Not There\"",
+            "Michael Lehmann",
+            "Alexander Woo",
+            "June26,2011",
+            "5.42"
+          ],
+          [
+            38,
+            2,
+            "\"You Smell Like Dinner\"",
+            "Scott Winant",
+            "Brian Buckner",
+            "July3,2011",
+            "2.90"
+          ],
+          [
+            39,
+            3,
+            "\"If You Love Me, Why Am I Dyin'?\"",
+            "David Petrarca",
+            "Alan Ball",
+            "July10,2011",
+            "5.04"
+          ],
+          [
+            40,
+            4,
+            "\"I'm Alive and On Fire\"",
+            "Michael Lehmann",
+            "Nancy Oliver",
+            "July17,2011",
+            "5.10"
+          ],
+          [
+            41,
+            5,
+            "\"Me and the Devil\"",
+            "Daniel Minahan",
+            "Mark Hudis",
+            "July24,2011",
+            "5.26"
+          ],
+          [
+            42,
+            6,
+            "\"I Wish I Was the Moon\"",
+            "Jeremy Podeswa",
+            "Raelle Tucker",
+            "July31,2011",
+            "5.19"
+          ],
+          [
+            43,
+            7,
+            "\"Cold Grey Light of Dawn\"",
+            "Michael Ruscio",
+            "Alexander Woo",
+            "August7,2011",
+            "5.14"
+          ],
+          [
+            44,
+            8,
+            "\"Spellbound\"",
+            "Daniel Minahan",
+            "Alan Ball",
+            "August14,2011",
+            "5.30"
+          ],
+          [
+            45,
+            9,
+            "\"Let's Get Out of Here\"",
+            "Romeo Tirone",
+            "Brian Buckner",
+            "August21,2011",
+            "5.53"
+          ],
+          [
+            46,
+            10,
+            "\"Burning Down the House\"",
+            "Lesli Linka Glatter",
+            "Nancy Oliver",
+            "August28,2011",
+            "5.31"
+          ],
+          [
+            47,
+            11,
+            "\"Soul of Fire\"",
+            "Michael Lehmann",
+            "Mark Hudis",
+            "September4,2011",
+            "4.39"
+          ]
+        ],
+        "name": "table_27790959_1",
+        "headers": [
+          "No. in series",
+          "No. in season",
+          "Title",
+          "Directed by",
+          "Written by",
+          "Original air date",
+          "U.S. viewers (million)"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-27790959-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Burning Down the House",
+              "value": "Burning Down the House",
+              "start": 31,
+              "end": 53
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "08dd45a21d6b7ceb94353f48f7b3b4433de2f3044d63cda2801f206eb4e532be",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5030,
+              "completion_tokens": 25,
+              "total_tokens": 5055,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Burning Down the House",
+              "value": "Burning Down the House",
+              "start": 31,
+              "end": 53,
+              "clause": "What number in the season was \"Burning Down the House\"?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Burning Down the House",
+              "value": "Burning Down the House",
+              "start": 31,
+              "end": 53,
+              "clause": "What number in the season was \"Burning Down the House\"?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Burning Down the House",
+              "value": "Burning Down the House",
+              "start": 31,
+              "end": 53,
+              "clause": "What number in the season was \"Burning Down the House\"?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The quoted phrase names an episode, matching the Title field; the row contains \"Burning Down the House\" under Title."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "91321dec742acccba510b89df15b5ffb37367f9a73f26a5d4d16a9b2f40a8760",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5073,
+              "completion_tokens": 46,
+              "total_tokens": 5119,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Burning Down the House",
+              "value": "Burning Down the House",
+              "start": 31,
+              "end": 53,
+              "clause": "What number in the season was \"Burning Down the House\"?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The quoted phrase names an episode, matching the Title field; the row contains \"Burning Down the House\" under Title.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "8a5f8d738fd0fb8c8bbd982e0462032ecd896d965403d4e358744dbe8d53f1d7",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5143,
+              "completion_tokens": 9,
+              "total_tokens": 5152,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Burning Down the House",
+              "value": "Burning Down the House",
+              "start": 31,
+              "end": 53,
+              "clause": "What number in the season was \"Burning Down the House\"?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The quoted phrase names an episode, matching the Title field; the row contains \"Burning Down the House\" under Title.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "92282c0aaf1404a8461554d919a848341b1964a27b0b9f36bb037f6066babc70",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5094,
+              "completion_tokens": 14,
+              "total_tokens": 5108,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Burning Down the House",
+              "value": "\"Burning Down the House\"",
+              "start": 31,
+              "end": 53,
+              "clause": "What number in the season was \"Burning Down the House\"?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The quoted phrase names an episode, matching the Title field; the row contains \"Burning Down the House\" under Title.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "NORMALIZED_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Burning Down the House",
+              "value": "\"Burning Down the House\"",
+              "start": 31,
+              "end": 53,
+              "clause": "What number in the season was \"Burning Down the House\"?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The quoted phrase names an episode, matching the Title field; the row contains \"Burning Down the House\" under Title.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "NORMALIZED_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Burning Down the House",
+              "value": "\"Burning Down the House\"",
+              "start": 31,
+              "end": 53,
+              "clause": "What number in the season was \"Burning Down the House\"?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The quoted phrase names an episode, matching the Title field; the row contains \"Burning Down the House\" under Title.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "NORMALIZED_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "\"Burning Down the House\""
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Burning Down the House",
+          "value": "Burning Down the House",
+          "start": 31,
+          "end": 53
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Burning Down the House",
+          "value": "\"Burning Down the House\"",
+          "start": 31,
+          "end": 53,
+          "clause": "What number in the season was \"Burning Down the House\"?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The quoted phrase names an episode, matching the Title field; the row contains \"Burning Down the House\" under Title.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "NORMALIZED_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          2,
+          0,
+          "\"Burning Down the House\""
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9234
+}

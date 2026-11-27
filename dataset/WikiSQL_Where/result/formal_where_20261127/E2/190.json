@@ -1,0 +1,581 @@
+{
+  "arm": "E2",
+  "position": 190,
+  "example_id": "test:15244:2-1234983-2",
+  "original_index": 15244,
+  "table_id": "2-1234983-2",
+  "question": "How many points did Corbari Italia earn in 1985?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        1,
+        0,
+        "corbari italia"
+      ],
+      [
+        0,
+        0,
+        1985
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "Corbari Italia"
+    ],
+    [
+      0,
+      0,
+      1985
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "Corbari Italia"
+      ],
+      [
+        0,
+        0,
+        1985
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Corbari Italia",
+        "value": "Corbari Italia",
+        "start": 20,
+        "end": 34,
+        "clause": "How many points did Corbari Italia earn in 1985?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "Corbari Italia is the entrant named as earning points and matches the Entrant column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "1985",
+        "value": 1985,
+        "start": 43,
+        "end": 47,
+        "clause": "How many points did Corbari Italia earn in 1985?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "1985 denotes the year and matches the Year column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Corbari Italia",
+        "value": "Corbari Italia",
+        "start": 20,
+        "end": 34
+      },
+      {
+        "surface": "1985",
+        "value": "1985",
+        "start": 43,
+        "end": 47
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "How many points did Corbari Italia earn in 1985?",
+      "table": {
+        "header": [
+          "Year",
+          "Entrant",
+          "Chassis",
+          "Engine",
+          "Points"
+        ],
+        "page_title": "Lamberto Leoni",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "real"
+        ],
+        "page_id": 1234983,
+        "id": "2-1234983-2",
+        "section_title": "Complete International Formula 3000 results",
+        "rows": [
+          [
+            "1985",
+            "PMC Motorsport",
+            "Williams FW08",
+            "Cosworth",
+            "8"
+          ],
+          [
+            "1985",
+            "Corbari Italia",
+            "March 85B",
+            "Cosworth",
+            "8"
+          ],
+          [
+            "1986",
+            "Corbari Italia",
+            "March 86B",
+            "Cosworth",
+            "0"
+          ],
+          [
+            "1987",
+            "First Racing",
+            "March 87B",
+            "Cosworth",
+            "12"
+          ],
+          [
+            "1987",
+            "First Racing",
+            "March 87B",
+            "Judd",
+            "12"
+          ]
+        ],
+        "caption": "Complete International Formula 3000 results",
+        "headers": [
+          "Year",
+          "Entrant",
+          "Chassis",
+          "Engine",
+          "Points"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-1234983-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "Corbari Italia",
+              "value": "Corbari Italia",
+              "start": 20,
+              "end": 34
+            },
+            {
+              "surface": "1985",
+              "value": "1985",
+              "start": 43,
+              "end": 47
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d31a8a9effd773a312b026494e39c6c16dffac4568a60a6ea506ae53067f3997",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4766,
+              "completion_tokens": 33,
+              "total_tokens": 4799,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Corbari Italia",
+              "value": "Corbari Italia",
+              "start": 20,
+              "end": 34,
+              "clause": "How many points did Corbari Italia earn in 1985?"
+            },
+            {
+              "surface": "1985",
+              "value": "1985",
+              "start": 43,
+              "end": 47,
+              "clause": "How many points did Corbari Italia earn in 1985?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Corbari Italia",
+              "value": "Corbari Italia",
+              "start": 20,
+              "end": 34,
+              "clause": "How many points did Corbari Italia earn in 1985?"
+            },
+            {
+              "surface": "1985",
+              "value": "1985",
+              "start": 43,
+              "end": 47,
+              "clause": "How many points did Corbari Italia earn in 1985?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Corbari Italia",
+              "value": "Corbari Italia",
+              "start": 20,
+              "end": 34,
+              "clause": "How many points did Corbari Italia earn in 1985?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Corbari Italia is the entrant named as earning points and matches the Entrant column."
+            },
+            {
+              "surface": "1985",
+              "value": "1985",
+              "start": 43,
+              "end": 47,
+              "clause": "How many points did Corbari Italia earn in 1985?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "1985 denotes the year and matches the Year column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "9fed745c022d2df26287f367bc786a3e5eb0496e6d5f9f1ea71bebb393ea9258",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4843,
+              "completion_tokens": 54,
+              "total_tokens": 4897,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Corbari Italia",
+              "value": "Corbari Italia",
+              "start": 20,
+              "end": 34,
+              "clause": "How many points did Corbari Italia earn in 1985?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Corbari Italia is the entrant named as earning points and matches the Entrant column.",
+              "operator": "="
+            },
+            {
+              "surface": "1985",
+              "value": "1985",
+              "start": 43,
+              "end": 47,
+              "clause": "How many points did Corbari Italia earn in 1985?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "1985 denotes the year and matches the Year column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "9b5f11091eedc4ca5a06b58a4c94de6c19eebffb1e432f45cb223b54be86cfa9",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4932,
+              "completion_tokens": 11,
+              "total_tokens": 4943,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Corbari Italia",
+              "value": "Corbari Italia",
+              "start": 20,
+              "end": 34,
+              "clause": "How many points did Corbari Italia earn in 1985?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Corbari Italia is the entrant named as earning points and matches the Entrant column.",
+              "operator": "="
+            },
+            {
+              "surface": "1985",
+              "value": 1985,
+              "start": 43,
+              "end": 47,
+              "clause": "How many points did Corbari Italia earn in 1985?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "1985 denotes the year and matches the Year column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "580a56f360d2b0fe121da3e3e409b6539fb36a4f32000f82e0cc36a1abebf984",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4886,
+              "completion_tokens": 15,
+              "total_tokens": 4901,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Corbari Italia",
+              "value": "Corbari Italia",
+              "start": 20,
+              "end": 34,
+              "clause": "How many points did Corbari Italia earn in 1985?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Corbari Italia is the entrant named as earning points and matches the Entrant column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "1985",
+              "value": "1985",
+              "start": 43,
+              "end": 47,
+              "clause": "How many points did Corbari Italia earn in 1985?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "1985 denotes the year and matches the Year column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Corbari Italia",
+              "value": "Corbari Italia",
+              "start": 20,
+              "end": 34,
+              "clause": "How many points did Corbari Italia earn in 1985?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Corbari Italia is the entrant named as earning points and matches the Entrant column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "1985",
+              "value": 1985,
+              "start": 43,
+              "end": 47,
+              "clause": "How many points did Corbari Italia earn in 1985?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "1985 denotes the year and matches the Year column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Corbari Italia",
+              "value": "Corbari Italia",
+              "start": 20,
+              "end": 34,
+              "clause": "How many points did Corbari Italia earn in 1985?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Corbari Italia is the entrant named as earning points and matches the Entrant column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "1985",
+              "value": 1985,
+              "start": 43,
+              "end": 47,
+              "clause": "How many points did Corbari Italia earn in 1985?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "1985 denotes the year and matches the Year column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              "Corbari Italia"
+            ],
+            [
+              0,
+              0,
+              1985
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Corbari Italia",
+          "value": "Corbari Italia",
+          "start": 20,
+          "end": 34
+        },
+        {
+          "surface": "1985",
+          "value": "1985",
+          "start": 43,
+          "end": 47
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Corbari Italia",
+          "value": "Corbari Italia",
+          "start": 20,
+          "end": 34,
+          "clause": "How many points did Corbari Italia earn in 1985?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "Corbari Italia is the entrant named as earning points and matches the Entrant column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "1985",
+          "value": 1985,
+          "start": 43,
+          "end": 47,
+          "clause": "How many points did Corbari Italia earn in 1985?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "1985 denotes the year and matches the Year column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          1,
+          0,
+          "Corbari Italia"
+        ],
+        [
+          0,
+          0,
+          1985
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7500
+}

@@ -1,0 +1,425 @@
+{
+  "arm": "E2",
+  "position": 577,
+  "example_id": "test:12639:2-17906488-1",
+  "original_index": 12639,
+  "table_id": "2-17906488-1",
+  "question": "What is the number of electorates (2009) for Hingna?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        1,
+        0,
+        "hingna"
+      ]
+    ],
+    "agg": 5
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "Hingna"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "Hingna"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Hingna",
+        "value": "Hingna",
+        "start": 45,
+        "end": 51,
+        "clause": "What is the number of electorates (2009) for Hingna?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "'Hingna' identifies the constituency by the Name field, and the matching row contains it in column 1.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Hingna",
+        "value": "Hingna",
+        "start": 45,
+        "end": 51
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the number of electorates (2009) for Hingna?",
+      "table": {
+        "header": [
+          "Constituency number",
+          "Name",
+          "Reserved for ( SC / ST /None)",
+          "District",
+          "Number of electorates (2009)"
+        ],
+        "page_title": "Ramtek Lok Sabha constituency",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "real"
+        ],
+        "page_id": 17906488,
+        "id": "2-17906488-1",
+        "section_title": "Assembly segments",
+        "rows": [
+          [
+            "48",
+            "Katol",
+            "None",
+            "Nagpur",
+            "245,811"
+          ],
+          [
+            "49",
+            "Savner",
+            "None",
+            "Nagpur",
+            "248,489"
+          ],
+          [
+            "50",
+            "Hingna",
+            "None",
+            "Nagpur",
+            "275,584"
+          ],
+          [
+            "51",
+            "Umred",
+            "SC",
+            "Nagpur",
+            "277,378"
+          ],
+          [
+            "58",
+            "Kamthi",
+            "None",
+            "Nagpur",
+            "327,629"
+          ],
+          [
+            "59",
+            "Ramtek",
+            "None",
+            "Nagpur",
+            "237,560"
+          ],
+          [
+            "Total:",
+            "Total:",
+            "Total:",
+            "Total:",
+            "1,612,451"
+          ]
+        ],
+        "caption": "Assembly segments",
+        "headers": [
+          "Constituency number",
+          "Name",
+          "Reserved for ( SC / ST /None)",
+          "District",
+          "Number of electorates (2009)"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-17906488-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Hingna",
+              "value": "Hingna",
+              "start": 45,
+              "end": 51
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "778cb5b30fee3d397fe9230085d8c7b1cdfebf9d3de98e03fb0122e67f03ba61",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4813,
+              "completion_tokens": 21,
+              "total_tokens": 4834,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Hingna",
+              "value": "Hingna",
+              "start": 45,
+              "end": 51,
+              "clause": "What is the number of electorates (2009) for Hingna?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Hingna",
+              "value": "Hingna",
+              "start": 45,
+              "end": 51,
+              "clause": "What is the number of electorates (2009) for Hingna?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Hingna",
+              "value": "Hingna",
+              "start": 45,
+              "end": 51,
+              "clause": "What is the number of electorates (2009) for Hingna?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'Hingna' identifies the constituency by the Name field, and the matching row contains it in column 1."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "6161359d8f544122ff3be53f4d15954dd8396ef1a0e5eaf2360ffc54d170898b",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4853,
+              "completion_tokens": 45,
+              "total_tokens": 4898,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Hingna",
+              "value": "Hingna",
+              "start": 45,
+              "end": 51,
+              "clause": "What is the number of electorates (2009) for Hingna?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'Hingna' identifies the constituency by the Name field, and the matching row contains it in column 1.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "82ba7283d4cae2363011961982889c6c00e734d5d50e4fabd4d324942cf9c75b",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4921,
+              "completion_tokens": 9,
+              "total_tokens": 4930,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Hingna",
+              "value": "Hingna",
+              "start": 45,
+              "end": 51,
+              "clause": "What is the number of electorates (2009) for Hingna?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'Hingna' identifies the constituency by the Name field, and the matching row contains it in column 1.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0941765813944bc1a673688e74ae86ebbdcb19878063680ebaf8beca23d8dbe0",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4872,
+              "completion_tokens": 12,
+              "total_tokens": 4884,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Hingna",
+              "value": "Hingna",
+              "start": 45,
+              "end": 51,
+              "clause": "What is the number of electorates (2009) for Hingna?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'Hingna' identifies the constituency by the Name field, and the matching row contains it in column 1.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Hingna",
+              "value": "Hingna",
+              "start": 45,
+              "end": 51,
+              "clause": "What is the number of electorates (2009) for Hingna?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'Hingna' identifies the constituency by the Name field, and the matching row contains it in column 1.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Hingna",
+              "value": "Hingna",
+              "start": 45,
+              "end": 51,
+              "clause": "What is the number of electorates (2009) for Hingna?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'Hingna' identifies the constituency by the Name field, and the matching row contains it in column 1.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              "Hingna"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Hingna",
+          "value": "Hingna",
+          "start": 45,
+          "end": 51
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Hingna",
+          "value": "Hingna",
+          "start": 45,
+          "end": 51,
+          "clause": "What is the number of electorates (2009) for Hingna?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "'Hingna' identifies the constituency by the Name field, and the matching row contains it in column 1.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          1,
+          0,
+          "Hingna"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8531
+}

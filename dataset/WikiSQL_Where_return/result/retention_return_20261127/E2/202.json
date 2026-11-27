@@ -1,0 +1,607 @@
+{
+  "arm": "E2",
+  "position": 202,
+  "example_id": "test:7536:2-15708593-9",
+  "original_index": 7536,
+  "table_id": "2-15708593-9",
+  "question": "What is airing at 8:00 on the channel that airs Castle at 10:00?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        4,
+        0,
+        "castle"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [],
+  "status": "GROUNDING_FAILED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "GROUNDING_FAILED",
+    "valid": false,
+    "errors": [
+      "condition 1: grounding NO_MATCH"
+    ],
+    "conditions": [
+      {
+        "surface": "Castle",
+        "value": "Castle",
+        "start": 48,
+        "end": 54,
+        "clause": "What is airing at 8:00 on the channel that airs Castle at 10:00?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "Castle appears in the 10:00 column, matching the phrase 'airs Castle at 10:00'.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "10:00",
+        "value": "10:00",
+        "start": 58,
+        "end": 63,
+        "clause": "What is airing at 8:00 on the channel that airs Castle at 10:00?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The phrase 'at 10:00' explicitly names the 10:00 schema field.",
+        "operator": "=",
+        "grounded": false,
+        "groundingStatus": "NO_MATCH",
+        "groundingReview": {
+          "column": null,
+          "reason": "The literal \"10:00\" names the time column rather than a cell value; the row-filter value should be \"Castle\" in column 4, so this supplied condition conflicts with the cells."
+        }
+      }
+    ],
+    "stage": "WHERE_CONDITION_VALIDATE",
+    "originalConditions": [
+      {
+        "surface": "Castle",
+        "value": "Castle",
+        "start": 48,
+        "end": 54
+      },
+      {
+        "surface": "10:00",
+        "value": "10:00",
+        "start": 58,
+        "end": 63
+      }
+    ],
+    "halt": true,
+    "completed": false,
+    "conds": [],
+    "warnings": [],
+    "request": {
+      "question": "What is airing at 8:00 on the channel that airs Castle at 10:00?",
+      "table": {
+        "header": [
+          "8:00",
+          "8:30",
+          "9:00",
+          "9:30",
+          "10:00"
+        ],
+        "page_title": "2008–09 United States network television schedule",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 15708593,
+        "id": "2-15708593-9",
+        "section_title": "Monday",
+        "rows": [
+          [
+            "Dancing with the Stars",
+            "Dancing with the Stars",
+            "Dancing with the Stars",
+            "Surviving Suburbia",
+            "Castle"
+          ],
+          [
+            "The Big Bang Theory",
+            "How I Met Your Mother",
+            "Two and a Half Men",
+            "Rules of Engagement",
+            "CSI: Miami"
+          ],
+          [
+            "Gossip Girl",
+            "Gossip Girl",
+            "One Tree Hill",
+            "One Tree Hill",
+            "Local Programming"
+          ],
+          [
+            "House",
+            "House",
+            "24",
+            "24",
+            "Local Programming"
+          ],
+          [
+            "The Twilight Zone",
+            "The Twilight Zone",
+            "Magic's Biggest Secrets Revealed",
+            "Magic's Biggest Secrets Revealed",
+            "Local Programming"
+          ],
+          [
+            "Chuck",
+            "Chuck",
+            "Heroes",
+            "Heroes",
+            "Medium"
+          ],
+          [
+            "Deal or No Deal",
+            "Deal or No Deal",
+            "Medium",
+            "Medium",
+            "Medium"
+          ]
+        ],
+        "caption": "Monday",
+        "headers": [
+          "8:00",
+          "8:30",
+          "9:00",
+          "9:30",
+          "10:00"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-15708593-9",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 9,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "Castle",
+              "value": "Castle",
+              "start": 48,
+              "end": 54
+            },
+            {
+              "surface": "10:00",
+              "value": "10:00",
+              "start": 58,
+              "end": 63
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0689a313f4a84894fa52a85526e7de08a3fc7b09496e47fc337f641a60e150b6",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4832,
+              "completion_tokens": 29,
+              "total_tokens": 4861,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Castle",
+              "value": "Castle",
+              "start": 48,
+              "end": 54,
+              "clause": "What is airing at 8:00 on the channel that airs Castle at 10:00?"
+            },
+            {
+              "surface": "10:00",
+              "value": "10:00",
+              "start": 58,
+              "end": 63,
+              "clause": "What is airing at 8:00 on the channel that airs Castle at 10:00?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Castle",
+              "value": "Castle",
+              "start": 48,
+              "end": 54,
+              "clause": "What is airing at 8:00 on the channel that airs Castle at 10:00?"
+            },
+            {
+              "surface": "10:00",
+              "value": "10:00",
+              "start": 58,
+              "end": 63,
+              "clause": "What is airing at 8:00 on the channel that airs Castle at 10:00?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Castle",
+              "value": "Castle",
+              "start": 48,
+              "end": 54,
+              "clause": "What is airing at 8:00 on the channel that airs Castle at 10:00?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Castle appears in the 10:00 column, matching the phrase 'airs Castle at 10:00'."
+            },
+            {
+              "surface": "10:00",
+              "value": "10:00",
+              "start": 58,
+              "end": 63,
+              "clause": "What is airing at 8:00 on the channel that airs Castle at 10:00?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'at 10:00' explicitly names the 10:00 schema field."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "925acebb732968a0953ced3589c104882203b02c870938e1ee7145a1eae4fb57",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4917,
+              "completion_tokens": 263,
+              "total_tokens": 5180,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 194
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Castle",
+              "value": "Castle",
+              "start": 48,
+              "end": 54,
+              "clause": "What is airing at 8:00 on the channel that airs Castle at 10:00?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Castle appears in the 10:00 column, matching the phrase 'airs Castle at 10:00'.",
+              "operator": "="
+            },
+            {
+              "surface": "10:00",
+              "value": "10:00",
+              "start": 58,
+              "end": 63,
+              "clause": "What is airing at 8:00 on the channel that airs Castle at 10:00?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'at 10:00' explicitly names the 10:00 schema field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "25a6539323a4e619936195a346d91c2b97b286b5410098a573c856262cde9537",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5019,
+              "completion_tokens": 11,
+              "total_tokens": 5030,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Castle",
+              "value": "Castle",
+              "start": 48,
+              "end": 54,
+              "clause": "What is airing at 8:00 on the channel that airs Castle at 10:00?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Castle appears in the 10:00 column, matching the phrase 'airs Castle at 10:00'.",
+              "operator": "="
+            },
+            {
+              "surface": "10:00",
+              "value": "10:00",
+              "start": 58,
+              "end": 63,
+              "clause": "What is airing at 8:00 on the channel that airs Castle at 10:00?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'at 10:00' explicitly names the 10:00 schema field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0baf4eef18975f3d07a6f2ca80a22a165a4cfe40f30d795a84a4558878b546cb",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4973,
+              "completion_tokens": 14,
+              "total_tokens": 4987,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Castle",
+              "value": "Castle",
+              "start": 48,
+              "end": 54,
+              "clause": "What is airing at 8:00 on the channel that airs Castle at 10:00?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Castle appears in the 10:00 column, matching the phrase 'airs Castle at 10:00'.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "10:00",
+              "value": "10:00",
+              "start": 58,
+              "end": 63,
+              "clause": "What is airing at 8:00 on the channel that airs Castle at 10:00?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'at 10:00' explicitly names the 10:00 schema field.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": null,
+                "reason": "The literal \"10:00\" names the time column rather than a cell value; the row-filter value should be \"Castle\" in column 4, so this supplied condition conflicts with the cells."
+              }
+            }
+          ],
+          "reviewModelCalls": [
+            {
+              "model": "gpt-5.6-sol",
+              "promptSha256": "6392b8d07eb032ae90e0ee73e558f747eb2d615e2e9471ac72ec408981118073",
+              "knowledgeIds": [],
+              "usage": {
+                "prompt_tokens": 4933,
+                "completion_tokens": 132,
+                "total_tokens": 5065,
+                "prompt_tokens_details": {
+                  "cached_tokens": 4608
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 78
+                }
+              }
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "6392b8d07eb032ae90e0ee73e558f747eb2d615e2e9471ac72ec408981118073",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4933,
+              "completion_tokens": 132,
+              "total_tokens": 5065,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 78
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Castle",
+              "value": "Castle",
+              "start": 48,
+              "end": 54,
+              "clause": "What is airing at 8:00 on the channel that airs Castle at 10:00?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Castle appears in the 10:00 column, matching the phrase 'airs Castle at 10:00'.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "10:00",
+              "value": "10:00",
+              "start": 58,
+              "end": 63,
+              "clause": "What is airing at 8:00 on the channel that airs Castle at 10:00?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'at 10:00' explicitly names the 10:00 schema field.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": null,
+                "reason": "The literal \"10:00\" names the time column rather than a cell value; the row-filter value should be \"Castle\" in column 4, so this supplied condition conflicts with the cells."
+              }
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "GROUNDING_FAILED",
+          "valid": false,
+          "errors": [
+            "condition 1: grounding NO_MATCH"
+          ],
+          "conditions": [
+            {
+              "surface": "Castle",
+              "value": "Castle",
+              "start": 48,
+              "end": 54,
+              "clause": "What is airing at 8:00 on the channel that airs Castle at 10:00?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Castle appears in the 10:00 column, matching the phrase 'airs Castle at 10:00'.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "10:00",
+              "value": "10:00",
+              "start": 58,
+              "end": 63,
+              "clause": "What is airing at 8:00 on the channel that airs Castle at 10:00?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'at 10:00' explicitly names the 10:00 schema field.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": null,
+                "reason": "The literal \"10:00\" names the time column rather than a cell value; the row-filter value should be \"Castle\" in column 4, so this supplied condition conflicts with the cells."
+              }
+            }
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "GROUNDING_FAILED",
+        "stage": "WHERE_CONDITION_VALIDATE",
+        "halt": true,
+        "completed": false,
+        "errors": [
+          "condition 1: grounding NO_MATCH"
+        ],
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Castle",
+          "value": "Castle",
+          "start": 48,
+          "end": 54
+        },
+        {
+          "surface": "10:00",
+          "value": "10:00",
+          "start": 58,
+          "end": 63
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Castle",
+          "value": "Castle",
+          "start": 48,
+          "end": 54,
+          "clause": "What is airing at 8:00 on the channel that airs Castle at 10:00?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "Castle appears in the 10:00 column, matching the phrase 'airs Castle at 10:00'.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "10:00",
+          "value": "10:00",
+          "start": 58,
+          "end": 63,
+          "clause": "What is airing at 8:00 on the channel that airs Castle at 10:00?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The phrase 'at 10:00' explicitly names the 10:00 schema field.",
+          "operator": "=",
+          "grounded": false,
+          "groundingStatus": "NO_MATCH",
+          "groundingReview": {
+            "column": null,
+            "reason": "The literal \"10:00\" names the time column rather than a cell value; the row-filter value should be \"Castle\" in column 4, so this supplied condition conflicts with the cells."
+          }
+        }
+      ],
+      "count": 2
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": false,
+  "elapsed_ms": 13438
+}

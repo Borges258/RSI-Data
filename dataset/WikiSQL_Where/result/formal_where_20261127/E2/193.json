@@ -1,0 +1,612 @@
+{
+  "arm": "E2",
+  "position": 193,
+  "example_id": "test:15718:2-1226507-1",
+  "original_index": 15718,
+  "table_id": "2-1226507-1",
+  "question": "What chassis did team lotus use after 1964?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        1,
+        0,
+        "team lotus"
+      ],
+      [
+        0,
+        1,
+        1964
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "Team Lotus"
+    ],
+    [
+      0,
+      1,
+      1964
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "Team Lotus"
+      ],
+      [
+        0,
+        1,
+        1964
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "team lotus",
+        "value": "Team Lotus",
+        "start": 17,
+        "end": 27,
+        "clause": "What chassis did team lotus use after 1964?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "'team lotus' names the entrant/team, matching Entrant values.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "1964",
+        "value": 1964,
+        "start": 38,
+        "end": 42,
+        "clause": "What chassis did team lotus use after 1964?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "'after 1964' is a year constraint, matching the Year field.",
+        "operator": ">",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "team lotus",
+        "value": "Team Lotus",
+        "start": 17,
+        "end": 27
+      },
+      {
+        "surface": "1964",
+        "value": "1964",
+        "start": 38,
+        "end": 42
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What chassis did team lotus use after 1964?",
+      "table": {
+        "header": [
+          "Year",
+          "Entrant",
+          "Chassis",
+          "Engine",
+          "Points"
+        ],
+        "page_title": "Mike Spence",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "real"
+        ],
+        "page_id": 1226507,
+        "id": "2-1226507-1",
+        "section_title": "Complete World Championship Formula One results",
+        "rows": [
+          [
+            "1963",
+            "Team Lotus",
+            "Lotus 25",
+            "Climax V8",
+            "0"
+          ],
+          [
+            "1964",
+            "Team Lotus",
+            "Lotus 25",
+            "Climax V8",
+            "4"
+          ],
+          [
+            "1964",
+            "Team Lotus",
+            "Lotus 33",
+            "Climax V8",
+            "4"
+          ],
+          [
+            "1965",
+            "Team Lotus",
+            "Lotus 33",
+            "Climax V8",
+            "10"
+          ],
+          [
+            "1965",
+            "Team Lotus",
+            "Lotus 25",
+            "Climax V8",
+            "10"
+          ],
+          [
+            "1966",
+            "Reg Parnell Racing Ltd",
+            "Lotus 25",
+            "BRM V8",
+            "4"
+          ],
+          [
+            "1966",
+            "Reg Parnell Racing Ltd",
+            "Lotus 33",
+            "BRM V8",
+            "4"
+          ],
+          [
+            "1967",
+            "Owen Racing Organisation",
+            "BRM P83",
+            "BRM H16",
+            "9"
+          ],
+          [
+            "1968",
+            "Owen Racing Organisation",
+            "BRM P115",
+            "BRM H16",
+            "0"
+          ]
+        ],
+        "caption": "Complete World Championship Formula One results",
+        "headers": [
+          "Year",
+          "Entrant",
+          "Chassis",
+          "Engine",
+          "Points"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-1226507-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "team lotus",
+              "value": "Team Lotus",
+              "start": 17,
+              "end": 27
+            },
+            {
+              "surface": "1964",
+              "value": "1964",
+              "start": 38,
+              "end": 42
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "9ade78e29e7e24c7cc40f38c10a2f0f41c3ac53a3fcc523d1173b8beff77baa3",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4854,
+              "completion_tokens": 89,
+              "total_tokens": 4943,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 58
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "team lotus",
+              "value": "Team Lotus",
+              "start": 17,
+              "end": 27,
+              "clause": "What chassis did team lotus use after 1964?"
+            },
+            {
+              "surface": "1964",
+              "value": "1964",
+              "start": 38,
+              "end": 42,
+              "clause": "What chassis did team lotus use after 1964?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "team lotus",
+              "value": "Team Lotus",
+              "start": 17,
+              "end": 27,
+              "clause": "What chassis did team lotus use after 1964?"
+            },
+            {
+              "surface": "1964",
+              "value": "1964",
+              "start": 38,
+              "end": 42,
+              "clause": "What chassis did team lotus use after 1964?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "team lotus",
+              "value": "Team Lotus",
+              "start": 17,
+              "end": 27,
+              "clause": "What chassis did team lotus use after 1964?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'team lotus' names the entrant/team, matching Entrant values."
+            },
+            {
+              "surface": "1964",
+              "value": "1964",
+              "start": 38,
+              "end": 42,
+              "clause": "What chassis did team lotus use after 1964?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'after 1964' is a year constraint, matching the Year field."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ee25b8356963c5799512a3d71314f02aa223cf9d443fa3a468975c747e119f13",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4921,
+              "completion_tokens": 55,
+              "total_tokens": 4976,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "team lotus",
+              "value": "Team Lotus",
+              "start": 17,
+              "end": 27,
+              "clause": "What chassis did team lotus use after 1964?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'team lotus' names the entrant/team, matching Entrant values.",
+              "operator": "="
+            },
+            {
+              "surface": "1964",
+              "value": "1964",
+              "start": 38,
+              "end": 42,
+              "clause": "What chassis did team lotus use after 1964?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'after 1964' is a year constraint, matching the Year field.",
+              "operator": ">"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b285324946f5a5b2ef17136cb80e8e0cbee0940409377fde1eb5291a9d843c58",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5009,
+              "completion_tokens": 11,
+              "total_tokens": 5020,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "team lotus",
+              "value": "Team Lotus",
+              "start": 17,
+              "end": 27,
+              "clause": "What chassis did team lotus use after 1964?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'team lotus' names the entrant/team, matching Entrant values.",
+              "operator": "="
+            },
+            {
+              "surface": "1964",
+              "value": "1964",
+              "start": 38,
+              "end": 42,
+              "clause": "What chassis did team lotus use after 1964?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'after 1964' is a year constraint, matching the Year field.",
+              "operator": ">"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b7ef86ee6830d349f96a765647a2804c123c68751fdd5908860105e34c4b84ca",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4963,
+              "completion_tokens": 14,
+              "total_tokens": 4977,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "team lotus",
+              "value": "Team Lotus",
+              "start": 17,
+              "end": 27,
+              "clause": "What chassis did team lotus use after 1964?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'team lotus' names the entrant/team, matching Entrant values.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "1964",
+              "value": "1964",
+              "start": 38,
+              "end": 42,
+              "clause": "What chassis did team lotus use after 1964?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'after 1964' is a year constraint, matching the Year field.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "team lotus",
+              "value": "Team Lotus",
+              "start": 17,
+              "end": 27,
+              "clause": "What chassis did team lotus use after 1964?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'team lotus' names the entrant/team, matching Entrant values.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "1964",
+              "value": 1964,
+              "start": 38,
+              "end": 42,
+              "clause": "What chassis did team lotus use after 1964?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'after 1964' is a year constraint, matching the Year field.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "team lotus",
+              "value": "Team Lotus",
+              "start": 17,
+              "end": 27,
+              "clause": "What chassis did team lotus use after 1964?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'team lotus' names the entrant/team, matching Entrant values.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "1964",
+              "value": 1964,
+              "start": 38,
+              "end": 42,
+              "clause": "What chassis did team lotus use after 1964?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'after 1964' is a year constraint, matching the Year field.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              "Team Lotus"
+            ],
+            [
+              0,
+              1,
+              1964
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "team lotus",
+          "value": "Team Lotus",
+          "start": 17,
+          "end": 27
+        },
+        {
+          "surface": "1964",
+          "value": "1964",
+          "start": 38,
+          "end": 42
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "team lotus",
+          "value": "Team Lotus",
+          "start": 17,
+          "end": 27,
+          "clause": "What chassis did team lotus use after 1964?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "'team lotus' names the entrant/team, matching Entrant values.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "1964",
+          "value": 1964,
+          "start": 38,
+          "end": 42,
+          "clause": "What chassis did team lotus use after 1964?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "'after 1964' is a year constraint, matching the Year field.",
+          "operator": ">",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          1,
+          0,
+          "Team Lotus"
+        ],
+        [
+          0,
+          1,
+          1964
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8796
+}

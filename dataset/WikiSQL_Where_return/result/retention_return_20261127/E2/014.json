@@ -1,0 +1,509 @@
+{
+  "arm": "E2",
+  "position": 14,
+  "example_id": "test:620:1-1305623-12",
+  "original_index": 620,
+  "table_id": "1-1305623-12",
+  "question": "How many gold medals does each school who has a total of 1 medal have?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        4,
+        0,
+        1
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      4,
+      0,
+      1
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        0,
+        1
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "1",
+        "value": 1,
+        "start": 57,
+        "end": 58,
+        "clause": "How many gold medals does each school who has a total of 1 medal have?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The phrase 'a total of 1 medal' explicitly refers to the 'Total Medals' field.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "1",
+        "value": "1",
+        "start": 57,
+        "end": 58
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "How many gold medals does each school who has a total of 1 medal have?",
+      "table": {
+        "header": [
+          "Ensemble",
+          "Gold Medals",
+          "Silver Medals",
+          "Bronze Medals",
+          "Total Medals"
+        ],
+        "page_title": "Winter Guard International",
+        "types": [
+          "text",
+          "real",
+          "real",
+          "real",
+          "real"
+        ],
+        "id": "1-1305623-12",
+        "section_title": "Percussion Scholastic World Class",
+        "caption": "Percussion Scholastic World Class",
+        "rows": [
+          [
+            "Arcadia High School",
+            1,
+            0,
+            0,
+            1
+          ],
+          [
+            "Avon High School",
+            1,
+            1,
+            1,
+            3
+          ],
+          [
+            "Ayala High School",
+            1,
+            1,
+            1,
+            3
+          ],
+          [
+            "Center Grove High School",
+            2,
+            1,
+            1,
+            4
+          ],
+          [
+            "Centerville High School",
+            1,
+            1,
+            0,
+            2
+          ],
+          [
+            "Choctawhatchee High School",
+            0,
+            0,
+            1,
+            1
+          ],
+          [
+            "Chino Hills High School",
+            2,
+            1,
+            1,
+            4
+          ],
+          [
+            "Claremont High School",
+            0,
+            0,
+            1,
+            1
+          ],
+          [
+            "Clovis West High School",
+            1,
+            0,
+            0,
+            1
+          ],
+          [
+            "Dartmouth High School",
+            4,
+            5,
+            5,
+            14
+          ],
+          [
+            "Father Ryan High School",
+            0,
+            0,
+            2,
+            2
+          ],
+          [
+            "Hatboro Horsham High School",
+            1,
+            0,
+            0,
+            1
+          ],
+          [
+            "John Overton High School",
+            1,
+            1,
+            1,
+            3
+          ],
+          [
+            "King Philip High School",
+            1,
+            3,
+            0,
+            4
+          ],
+          [
+            "Lincoln Way High School",
+            1,
+            2,
+            0,
+            3
+          ],
+          [
+            "Maumee High School",
+            0,
+            0,
+            3,
+            3
+          ],
+          [
+            "Mission Viejo High School",
+            2,
+            2,
+            2,
+            6
+          ],
+          [
+            "Northglenn High School",
+            1,
+            1,
+            1,
+            3
+          ],
+          [
+            "Ponderosa High School",
+            0,
+            2,
+            1,
+            3
+          ]
+        ],
+        "name": "table_1305623_12",
+        "headers": [
+          "Ensemble",
+          "Gold Medals",
+          "Silver Medals",
+          "Bronze Medals",
+          "Total Medals"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-1305623-12",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 57,
+              "end": 58
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b0f8248fe9169f29a53a1591fd9053445f031fb43bb067f3b5cced3a01e40e31",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4976,
+              "completion_tokens": 17,
+              "total_tokens": 4993,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 57,
+              "end": 58,
+              "clause": "How many gold medals does each school who has a total of 1 medal have?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 57,
+              "end": 58,
+              "clause": "How many gold medals does each school who has a total of 1 medal have?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 57,
+              "end": 58,
+              "clause": "How many gold medals does each school who has a total of 1 medal have?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'a total of 1 medal' explicitly refers to the 'Total Medals' field."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ad277ebc9ee379fe2c53dda3fd6dee8b6f3c4a06fc79b1664a420b251cef7a01",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5014,
+              "completion_tokens": 42,
+              "total_tokens": 5056,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 57,
+              "end": 58,
+              "clause": "How many gold medals does each school who has a total of 1 medal have?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'a total of 1 medal' explicitly refers to the 'Total Medals' field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "7e10ba1ee9a15776c115d59604692a61581bcce399cd44a8eb1df7d3faa68a21",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5080,
+              "completion_tokens": 9,
+              "total_tokens": 5089,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1",
+              "value": 1,
+              "start": 57,
+              "end": 58,
+              "clause": "How many gold medals does each school who has a total of 1 medal have?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'a total of 1 medal' explicitly refers to the 'Total Medals' field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "7c89e6430a676366a7caf6aebae1cf37dd0d75e7a2b02a5a64f95ff3014b2258",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5031,
+              "completion_tokens": 9,
+              "total_tokens": 5040,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 57,
+              "end": 58,
+              "clause": "How many gold medals does each school who has a total of 1 medal have?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'a total of 1 medal' explicitly refers to the 'Total Medals' field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1",
+              "value": 1,
+              "start": 57,
+              "end": 58,
+              "clause": "How many gold medals does each school who has a total of 1 medal have?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'a total of 1 medal' explicitly refers to the 'Total Medals' field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "1",
+              "value": 1,
+              "start": 57,
+              "end": 58,
+              "clause": "How many gold medals does each school who has a total of 1 medal have?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'a total of 1 medal' explicitly refers to the 'Total Medals' field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              0,
+              1
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "1",
+          "value": "1",
+          "start": 57,
+          "end": 58
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "1",
+          "value": 1,
+          "start": 57,
+          "end": 58,
+          "clause": "How many gold medals does each school who has a total of 1 medal have?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The phrase 'a total of 1 medal' explicitly refers to the 'Total Medals' field.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          4,
+          0,
+          1
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8766
+}

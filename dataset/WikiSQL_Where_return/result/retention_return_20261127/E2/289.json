@@ -1,0 +1,431 @@
+{
+  "arm": "E2",
+  "position": 289,
+  "example_id": "test:11587:2-11916083-22",
+  "original_index": 11587,
+  "table_id": "2-11916083-22",
+  "question": "How many cowboy coins were minted?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        1,
+        0,
+        "cowboy"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "Cowboy"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "Cowboy"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "cowboy",
+        "value": "Cowboy",
+        "start": 9,
+        "end": 15,
+        "clause": "How many cowboy coins were minted?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "'Cowboy' matches the Theme column and the row value 'Cowboy'; Mintage is the quantity being asked for, not the filter field.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "cowboy",
+        "value": "Cowboy",
+        "start": 9,
+        "end": 15
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "How many cowboy coins were minted?",
+      "table": {
+        "header": [
+          "Year",
+          "Theme",
+          "Mintage",
+          "Issue Price",
+          "Finish"
+        ],
+        "page_title": "Royal Canadian Mint numismatic coins (2000s)",
+        "types": [
+          "real",
+          "text",
+          "real",
+          "text",
+          "text"
+        ],
+        "page_id": 11916083,
+        "id": "2-11916083-22",
+        "section_title": "1/25 Ounce Gold",
+        "rows": [
+          [
+            "2004",
+            "Moose",
+            "25,000",
+            "$69.95",
+            "Proof"
+          ],
+          [
+            "2005",
+            "Voyageur",
+            "25,000",
+            "$69.95",
+            "Proof"
+          ],
+          [
+            "2006",
+            "Cowboy",
+            "25,000",
+            "$69.95",
+            "Proof"
+          ],
+          [
+            "2007",
+            "The Wolf",
+            "20,000",
+            "$74.95",
+            "Proof"
+          ],
+          [
+            "2008",
+            "DeHavilland Beaver",
+            "20,000",
+            "$85.95",
+            "Proof"
+          ],
+          [
+            "2009",
+            "Red Maple",
+            "15,000",
+            "$99.95",
+            "Proof"
+          ],
+          [
+            "2010",
+            "RCMP",
+            "14,000",
+            "$109.95",
+            "Proof"
+          ]
+        ],
+        "caption": "1/25 Ounce Gold",
+        "headers": [
+          "Year",
+          "Theme",
+          "Mintage",
+          "Issue Price",
+          "Finish"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-11916083-22",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "cowboy",
+              "value": "Cowboy",
+              "start": 9,
+              "end": 15
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "8df51572ad73dee34bd1b7324709c6dffa28bf63ede5fc2b6439ac3d4a83ebad",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4806,
+              "completion_tokens": 107,
+              "total_tokens": 4913,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 86
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "cowboy",
+              "value": "Cowboy",
+              "start": 9,
+              "end": 15,
+              "clause": "How many cowboy coins were minted?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "cowboy",
+              "value": "Cowboy",
+              "start": 9,
+              "end": 15,
+              "clause": "How many cowboy coins were minted?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "cowboy",
+              "value": "Cowboy",
+              "start": 9,
+              "end": 15,
+              "clause": "How many cowboy coins were minted?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'Cowboy' matches the Theme column and the row value 'Cowboy'; Mintage is the quantity being asked for, not the filter field."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d3d768cbff98c2077f5ec9c3978f50202557d59dcada520a89a21cbe1ea6bc83",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4836,
+              "completion_tokens": 98,
+              "total_tokens": 4934,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 45
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "cowboy",
+              "value": "Cowboy",
+              "start": 9,
+              "end": 15,
+              "clause": "How many cowboy coins were minted?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'Cowboy' matches the Theme column and the row value 'Cowboy'; Mintage is the quantity being asked for, not the filter field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "4da337d96a1d704e39a2b1df5cf76dbc4bf3b1fc61414791907141e3a87cbb6d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4910,
+              "completion_tokens": 9,
+              "total_tokens": 4919,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "cowboy",
+              "value": "Cowboy",
+              "start": 9,
+              "end": 15,
+              "clause": "How many cowboy coins were minted?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'Cowboy' matches the Theme column and the row value 'Cowboy'; Mintage is the quantity being asked for, not the filter field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "1db9197e94aea66a58e3698772b5b6d5b13cdbf04a608ff9681c7c9dc86ad988",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4861,
+              "completion_tokens": 11,
+              "total_tokens": 4872,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "cowboy",
+              "value": "Cowboy",
+              "start": 9,
+              "end": 15,
+              "clause": "How many cowboy coins were minted?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'Cowboy' matches the Theme column and the row value 'Cowboy'; Mintage is the quantity being asked for, not the filter field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "cowboy",
+              "value": "Cowboy",
+              "start": 9,
+              "end": 15,
+              "clause": "How many cowboy coins were minted?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'Cowboy' matches the Theme column and the row value 'Cowboy'; Mintage is the quantity being asked for, not the filter field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "cowboy",
+              "value": "Cowboy",
+              "start": 9,
+              "end": 15,
+              "clause": "How many cowboy coins were minted?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'Cowboy' matches the Theme column and the row value 'Cowboy'; Mintage is the quantity being asked for, not the filter field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              "Cowboy"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "cowboy",
+          "value": "Cowboy",
+          "start": 9,
+          "end": 15
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "cowboy",
+          "value": "Cowboy",
+          "start": 9,
+          "end": 15,
+          "clause": "How many cowboy coins were minted?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "'Cowboy' matches the Theme column and the row value 'Cowboy'; Mintage is the quantity being asked for, not the filter field.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          1,
+          0,
+          "Cowboy"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 103750
+}

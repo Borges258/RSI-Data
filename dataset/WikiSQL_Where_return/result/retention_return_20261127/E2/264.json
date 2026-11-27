@@ -1,0 +1,674 @@
+{
+  "arm": "E2",
+  "position": 264,
+  "example_id": "test:10571:2-11415745-1",
+  "original_index": 10571,
+  "table_id": "2-11415745-1",
+  "question": "How many draws for avia band with over 22 points?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        3,
+        1,
+        22
+      ],
+      [
+        1,
+        0,
+        "avia band"
+      ]
+    ],
+    "agg": 3
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "Avia Band"
+    ],
+    [
+      3,
+      1,
+      22
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "Avia Band"
+      ],
+      [
+        3,
+        1,
+        22
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "avia band",
+        "value": "Avia Band",
+        "start": 19,
+        "end": 28,
+        "clause": "How many draws for avia band with over 22 points?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "Avia Band is the artist.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "22",
+        "value": 22,
+        "start": 39,
+        "end": 41,
+        "clause": "How many draws for avia band with over 22 points?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "Over 22 refers to points.",
+        "operator": ">",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "avia band",
+        "value": "Avia Band",
+        "start": 19,
+        "end": 28
+      },
+      {
+        "surface": "22",
+        "value": "22",
+        "start": 39,
+        "end": 41
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "How many draws for avia band with over 22 points?",
+      "table": {
+        "header": [
+          "Draw",
+          "Artist",
+          "Song",
+          "Points",
+          "Place"
+        ],
+        "page_title": "Slovenia in the Eurovision Song Contest 1999",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "real",
+          "real"
+        ],
+        "page_id": 11415745,
+        "id": "2-11415745-1",
+        "section_title": "EMA 1999",
+        "rows": [
+          [
+            "1",
+            "Mitja",
+            "\"Cas je da najdem te\"",
+            "22",
+            "5"
+          ],
+          [
+            "2",
+            "Tatjana Mihelj",
+            "\"Dlan okrog srca\"",
+            "1",
+            "17"
+          ],
+          [
+            "3",
+            "Monika Tratnik",
+            "\"Sanje\"",
+            "3",
+            "16"
+          ],
+          [
+            "4",
+            "Matjaz Zupan & Californija",
+            "\"Tisoc kilometrov\"",
+            "6",
+            "15"
+          ],
+          [
+            "5",
+            "Kantor",
+            "\"Drugacen dan\"",
+            "7",
+            "13"
+          ],
+          [
+            "6",
+            "Victory",
+            "\"Le povejte ji\"",
+            "18",
+            "9"
+          ],
+          [
+            "7",
+            "Irena, Damjana & Sanja",
+            "\"Igra je koncana\"",
+            "22",
+            "5"
+          ],
+          [
+            "8",
+            "Lara Baruca",
+            "\"Ti si se bal\"",
+            "22",
+            "5"
+          ],
+          [
+            "9",
+            "Sound Attack",
+            "\"Kje si zdaj\"",
+            "10",
+            "11"
+          ],
+          [
+            "10",
+            "Darja Švajger",
+            "\"Se tisoc let\"",
+            "64",
+            "1"
+          ],
+          [
+            "11",
+            "Avia Band",
+            "\"Ne izdajte me\"",
+            "24",
+            "4"
+          ],
+          [
+            "12",
+            "Nuša Derenda",
+            "\"Nekaj lepega je v meni\"",
+            "10",
+            "11"
+          ],
+          [
+            "13",
+            "Nude",
+            "\"Ši'z d bes\"",
+            "7",
+            "13"
+          ],
+          [
+            "14",
+            "Babilon",
+            "\"Kot ocean\"",
+            "11",
+            "10"
+          ],
+          [
+            "15",
+            "Tinkara Kovac",
+            "\"Zakaj\"",
+            "62",
+            "2"
+          ],
+          [
+            "16",
+            "Gianni Rijavec & Vladimir Cadez",
+            "\"Ljubezen je le ena\"",
+            "21",
+            "8"
+          ],
+          [
+            "17",
+            "Jan Plestenjak",
+            "\"Moja dezela\"",
+            "38",
+            "3"
+          ]
+        ],
+        "caption": "EMA 1999 - 26 February 1999",
+        "headers": [
+          "Draw",
+          "Artist",
+          "Song",
+          "Points",
+          "Place"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-11415745-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "avia band",
+              "value": "Avia Band",
+              "start": 19,
+              "end": 28
+            },
+            {
+              "surface": "22",
+              "value": "22",
+              "start": 39,
+              "end": 41
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "39f1eb2ded35ecdb391d637c71f3021e8ab52e091500a458739632b178d8ed52",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 7592,
+              "completion_tokens": 98,
+              "total_tokens": 7690,
+              "completion_tokens_details": {
+                "reasoning_tokens": 74
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "avia band",
+              "value": "Avia Band",
+              "start": 19,
+              "end": 28,
+              "clause": "How many draws for avia band with over 22 points?"
+            },
+            {
+              "surface": "22",
+              "value": "22",
+              "start": 39,
+              "end": 41,
+              "clause": "How many draws for avia band with over 22 points?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "avia band",
+              "value": "Avia Band",
+              "start": 19,
+              "end": 28,
+              "clause": "How many draws for avia band with over 22 points?"
+            },
+            {
+              "surface": "22",
+              "value": "22",
+              "start": 39,
+              "end": 41,
+              "clause": "How many draws for avia band with over 22 points?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "avia band",
+              "value": "Avia Band",
+              "start": 19,
+              "end": 28,
+              "clause": "How many draws for avia band with over 22 points?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Avia Band is the artist."
+            },
+            {
+              "surface": "22",
+              "value": "22",
+              "start": 39,
+              "end": 41,
+              "clause": "How many draws for avia band with over 22 points?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Over 22 refers to points."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f55d26e0c3d9c2cc38c32c00c7a8daadf390784f44ba65fd4f3fc581be3afbff",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 7662,
+              "completion_tokens": 66,
+              "total_tokens": 7728,
+              "prompt_tokens_details": {
+                "cached_tokens": 6400
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 31
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "avia band",
+              "value": "Avia Band",
+              "start": 19,
+              "end": 28,
+              "clause": "How many draws for avia band with over 22 points?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Avia Band is the artist.",
+              "operator": "="
+            },
+            {
+              "surface": "22",
+              "value": "22",
+              "start": 39,
+              "end": 41,
+              "clause": "How many draws for avia band with over 22 points?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Over 22 refers to points.",
+              "operator": ">"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e82d0044cca0bd5ca4d4d0cfad3f246129a60d8e9f17319fc4a6ab3e62b49516",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 7734,
+              "completion_tokens": 43,
+              "total_tokens": 7777,
+              "prompt_tokens_details": {
+                "cached_tokens": 6272
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 36
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "avia band",
+              "value": "Avia Band",
+              "start": 19,
+              "end": 28,
+              "clause": "How many draws for avia band with over 22 points?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Avia Band is the artist.",
+              "operator": "="
+            },
+            {
+              "surface": "22",
+              "value": 22,
+              "start": 39,
+              "end": 41,
+              "clause": "How many draws for avia band with over 22 points?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Over 22 refers to points.",
+              "operator": ">"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ff53cfa15f01450cf1134208a5b9ec5eef8a83554121fbd3634bb0ce6a4d422c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 7683,
+              "completion_tokens": 87,
+              "total_tokens": 7770,
+              "prompt_tokens_details": {
+                "cached_tokens": 6272
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 78
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "avia band",
+              "value": "Avia Band",
+              "start": 19,
+              "end": 28,
+              "clause": "How many draws for avia band with over 22 points?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Avia Band is the artist.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "22",
+              "value": "22",
+              "start": 39,
+              "end": 41,
+              "clause": "How many draws for avia band with over 22 points?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Over 22 refers to points.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "avia band",
+              "value": "Avia Band",
+              "start": 19,
+              "end": 28,
+              "clause": "How many draws for avia band with over 22 points?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Avia Band is the artist.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "22",
+              "value": 22,
+              "start": 39,
+              "end": 41,
+              "clause": "How many draws for avia band with over 22 points?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Over 22 refers to points.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "avia band",
+              "value": "Avia Band",
+              "start": 19,
+              "end": 28,
+              "clause": "How many draws for avia band with over 22 points?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Avia Band is the artist.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "22",
+              "value": 22,
+              "start": 39,
+              "end": 41,
+              "clause": "How many draws for avia band with over 22 points?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Over 22 refers to points.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              "Avia Band"
+            ],
+            [
+              3,
+              1,
+              22
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "avia band",
+          "value": "Avia Band",
+          "start": 19,
+          "end": 28
+        },
+        {
+          "surface": "22",
+          "value": "22",
+          "start": 39,
+          "end": 41
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "avia band",
+          "value": "Avia Band",
+          "start": 19,
+          "end": 28,
+          "clause": "How many draws for avia band with over 22 points?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "Avia Band is the artist.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "22",
+          "value": 22,
+          "start": 39,
+          "end": 41,
+          "clause": "How many draws for avia band with over 22 points?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "Over 22 refers to points.",
+          "operator": ">",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          1,
+          0,
+          "Avia Band"
+        ],
+        [
+          3,
+          1,
+          22
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 12734
+}

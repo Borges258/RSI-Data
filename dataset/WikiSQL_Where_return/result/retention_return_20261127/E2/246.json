@@ -1,0 +1,445 @@
+{
+  "arm": "E2",
+  "position": 246,
+  "example_id": "test:9735:2-16653153-27",
+  "original_index": 9735,
+  "table_id": "2-16653153-27",
+  "question": "Who was the away team for the game with a score of 139-119?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        2,
+        0,
+        "139-119"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "139-119"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "139-119"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "139-119",
+        "value": "139-119",
+        "start": 51,
+        "end": 58,
+        "clause": "Who was the away team for the game with a score of 139-119?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The question explicitly identifies 139-119 as a score, matching the Score header and row value.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "139-119",
+        "value": "139-119",
+        "start": 51,
+        "end": 58
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Who was the away team for the game with a score of 139-119?",
+      "table": {
+        "header": [
+          "Date",
+          "Home team",
+          "Score",
+          "Away team",
+          "Venue",
+          "Box Score",
+          "Report"
+        ],
+        "page_title": "2008–09 NBL season",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 16653153,
+        "id": "2-16653153-27",
+        "section_title": "Round 20",
+        "rows": [
+          [
+            "26 January",
+            "Melbourne Tigers",
+            "92-86",
+            "South Dragons",
+            "State Netball and Hockey Centre",
+            "box score",
+            "report"
+          ],
+          [
+            "28 January",
+            "Sydney Spirit",
+            "78-88",
+            "Perth Wildcats",
+            "State Sports Centre",
+            "box score",
+            "report"
+          ],
+          [
+            "29 January",
+            "New Zealand Breakers",
+            "94-101",
+            "South Dragons",
+            "North Shore Events Centre",
+            "box score",
+            "report"
+          ],
+          [
+            "30 January",
+            "Wollongong Hawks",
+            "104-113",
+            "Melbourne Tigers",
+            "WIN Entertainment Centre",
+            "box score",
+            "report"
+          ],
+          [
+            "31 January",
+            "Adelaide 36ers",
+            "107-92",
+            "Perth Wildcats",
+            "Distinctive Homes Dome",
+            "box score",
+            "report"
+          ],
+          [
+            "31 January",
+            "Gold Coast Blaze",
+            "139-119",
+            "Sydney Spirit",
+            "Gold Coast Convention Centre",
+            "box score",
+            "report"
+          ],
+          [
+            "31 January",
+            "Townsville Crocodiles",
+            "123-92",
+            "Cairns Taipans",
+            "Townsville Entertainment Centre",
+            "box score",
+            "report"
+          ]
+        ],
+        "caption": "Round 20",
+        "headers": [
+          "Date",
+          "Home team",
+          "Score",
+          "Away team",
+          "Venue",
+          "Box Score",
+          "Report"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-16653153-27",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "139-119",
+              "value": "139-119",
+              "start": 51,
+              "end": 58
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "6e826b6d5e56b708b113012eac7f825a730038265ed48dbf1b6e99139a90dd49",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4877,
+              "completion_tokens": 21,
+              "total_tokens": 4898,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "139-119",
+              "value": "139-119",
+              "start": 51,
+              "end": 58,
+              "clause": "Who was the away team for the game with a score of 139-119?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "139-119",
+              "value": "139-119",
+              "start": 51,
+              "end": 58,
+              "clause": "Who was the away team for the game with a score of 139-119?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "139-119",
+              "value": "139-119",
+              "start": 51,
+              "end": 58,
+              "clause": "Who was the away team for the game with a score of 139-119?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies 139-119 as a score, matching the Score header and row value."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b5e284822813a4040b74b8afa66dfa7b30100c52e196249aa253703917147547",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4919,
+              "completion_tokens": 41,
+              "total_tokens": 4960,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "139-119",
+              "value": "139-119",
+              "start": 51,
+              "end": 58,
+              "clause": "Who was the away team for the game with a score of 139-119?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies 139-119 as a score, matching the Score header and row value.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "1ce8ff9db7ff71319deb5d094a3179b577f4ccdd3b843073841698a795e2c655",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4984,
+              "completion_tokens": 9,
+              "total_tokens": 4993,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "139-119",
+              "value": "139-119",
+              "start": 51,
+              "end": 58,
+              "clause": "Who was the away team for the game with a score of 139-119?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies 139-119 as a score, matching the Score header and row value.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "53ee63b6d47539d736448c14733e0a21e044c27b47cc0a5ce9f8d7904db9b1f9",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4935,
+              "completion_tokens": 12,
+              "total_tokens": 4947,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "139-119",
+              "value": "139-119",
+              "start": 51,
+              "end": 58,
+              "clause": "Who was the away team for the game with a score of 139-119?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies 139-119 as a score, matching the Score header and row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "139-119",
+              "value": "139-119",
+              "start": 51,
+              "end": 58,
+              "clause": "Who was the away team for the game with a score of 139-119?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies 139-119 as a score, matching the Score header and row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "139-119",
+              "value": "139-119",
+              "start": 51,
+              "end": 58,
+              "clause": "Who was the away team for the game with a score of 139-119?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies 139-119 as a score, matching the Score header and row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "139-119"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "139-119",
+          "value": "139-119",
+          "start": 51,
+          "end": 58
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "139-119",
+          "value": "139-119",
+          "start": 51,
+          "end": 58,
+          "clause": "Who was the away team for the game with a score of 139-119?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The question explicitly identifies 139-119 as a score, matching the Score header and row value.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          2,
+          0,
+          "139-119"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7750
+}

@@ -1,0 +1,436 @@
+{
+  "arm": "E2",
+  "position": 135,
+  "example_id": "test:4828:2-10775890-4",
+  "original_index": 4828,
+  "table_id": "2-10775890-4",
+  "question": "What was Melbourne's score as the away team?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        2,
+        0,
+        "melbourne"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "Melbourne"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "Melbourne"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Melbourne",
+        "value": "Melbourne",
+        "start": 9,
+        "end": 18,
+        "clause": "What was Melbourne's score as the away team?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The question explicitly identifies Melbourne as the away team, matching the 'Away team' field; row evidence places Melbourne in column 2.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Melbourne",
+        "value": "Melbourne",
+        "start": 9,
+        "end": 18
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What was Melbourne's score as the away team?",
+      "table": {
+        "header": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ],
+        "page_title": "1960 VFL season",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 10775890,
+        "id": "2-10775890-4",
+        "section_title": "Round 4",
+        "rows": [
+          [
+            "Geelong",
+            "4.14 (38)",
+            "St Kilda",
+            "9.5 (59)",
+            "Kardinia Park",
+            "12,795",
+            "14 May 1960"
+          ],
+          [
+            "Collingwood",
+            "7.13 (55)",
+            "Melbourne",
+            "2.7 (19)",
+            "Victoria Park",
+            "28,263",
+            "14 May 1960"
+          ],
+          [
+            "Carlton",
+            "5.18 (48)",
+            "Hawthorn",
+            "5.7 (37)",
+            "Princes Park",
+            "11,066",
+            "14 May 1960"
+          ],
+          [
+            "South Melbourne",
+            "11.12 (78)",
+            "North Melbourne",
+            "5.8 (38)",
+            "Lake Oval",
+            "7,000",
+            "14 May 1960"
+          ],
+          [
+            "Richmond",
+            "5.6 (36)",
+            "Fitzroy",
+            "6.11 (47)",
+            "Punt Road Oval",
+            "7,500",
+            "14 May 1960"
+          ],
+          [
+            "Footscray",
+            "4.2 (26)",
+            "Essendon",
+            "4.11 (35)",
+            "Western Oval",
+            "24,302",
+            "14 May 1960"
+          ]
+        ],
+        "caption": "Round 4",
+        "headers": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-10775890-4",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Melbourne",
+              "value": "Melbourne",
+              "start": 9,
+              "end": 18
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "2f566dce404ec7bd0369dee5402eba0d60709285ff7f2383bd49d0f5db0b1eab",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4902,
+              "completion_tokens": 19,
+              "total_tokens": 4921,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Melbourne",
+              "value": "Melbourne",
+              "start": 9,
+              "end": 18,
+              "clause": "What was Melbourne's score as the away team?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Melbourne",
+              "value": "Melbourne",
+              "start": 9,
+              "end": 18,
+              "clause": "What was Melbourne's score as the away team?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Melbourne",
+              "value": "Melbourne",
+              "start": 9,
+              "end": 18,
+              "clause": "What was Melbourne's score as the away team?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies Melbourne as the away team, matching the 'Away team' field; row evidence places Melbourne in column 2."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "00b6a5fce9bf5d839a597d348e6af2d6d73ad345ec149b27158230f60007b8e6",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4935,
+              "completion_tokens": 48,
+              "total_tokens": 4983,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Melbourne",
+              "value": "Melbourne",
+              "start": 9,
+              "end": 18,
+              "clause": "What was Melbourne's score as the away team?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies Melbourne as the away team, matching the 'Away team' field; row evidence places Melbourne in column 2.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f1515c58e94a5dd2ac8785c9d590d86b9d4d886d83f9503ae5853f189a1e3ce6",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5007,
+              "completion_tokens": 9,
+              "total_tokens": 5016,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Melbourne",
+              "value": "Melbourne",
+              "start": 9,
+              "end": 18,
+              "clause": "What was Melbourne's score as the away team?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies Melbourne as the away team, matching the 'Away team' field; row evidence places Melbourne in column 2.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b1b8089cc112ca984914659829c4f9829365b398de8bebd888dc24c3ea7c9243",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4958,
+              "completion_tokens": 11,
+              "total_tokens": 4969,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Melbourne",
+              "value": "Melbourne",
+              "start": 9,
+              "end": 18,
+              "clause": "What was Melbourne's score as the away team?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies Melbourne as the away team, matching the 'Away team' field; row evidence places Melbourne in column 2.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Melbourne",
+              "value": "Melbourne",
+              "start": 9,
+              "end": 18,
+              "clause": "What was Melbourne's score as the away team?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies Melbourne as the away team, matching the 'Away team' field; row evidence places Melbourne in column 2.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Melbourne",
+              "value": "Melbourne",
+              "start": 9,
+              "end": 18,
+              "clause": "What was Melbourne's score as the away team?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies Melbourne as the away team, matching the 'Away team' field; row evidence places Melbourne in column 2.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "Melbourne"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Melbourne",
+          "value": "Melbourne",
+          "start": 9,
+          "end": 18
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Melbourne",
+          "value": "Melbourne",
+          "start": 9,
+          "end": 18,
+          "clause": "What was Melbourne's score as the away team?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The question explicitly identifies Melbourne as the away team, matching the 'Away team' field; row evidence places Melbourne in column 2.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          2,
+          0,
+          "Melbourne"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8359
+}

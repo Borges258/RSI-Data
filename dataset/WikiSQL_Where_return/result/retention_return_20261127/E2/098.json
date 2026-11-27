@@ -1,0 +1,475 @@
+{
+  "arm": "E2",
+  "position": 98,
+  "example_id": "test:3321:1-25594271-2",
+  "original_index": 3321,
+  "table_id": "1-25594271-2",
+  "question": "What yacht had LOA Metres of 13.34?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        5,
+        0,
+        "13.34"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      5,
+      0,
+      "13.34"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        5,
+        0,
+        "13.34"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "13.34",
+        "value": "13.34",
+        "start": 29,
+        "end": 34,
+        "clause": "What yacht had LOA Metres of 13.34?",
+        "columnIndex": 5,
+        "columnCandidates": [
+          5
+        ],
+        "columnMatchReason": "The question explicitly identifies the field as LOA Metres, matching the 'LOA (Metres)' header; 13.34 appears in that column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "13.34",
+        "value": "13.34",
+        "start": 29,
+        "end": 34
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What yacht had LOA Metres of 13.34?",
+      "table": {
+        "header": [
+          "Position",
+          "Sail number",
+          "Yacht",
+          "State/country",
+          "Yacht type",
+          "LOA (Metres)",
+          "Skipper",
+          "Corrected time d:hh:mm:ss"
+        ],
+        "page_title": "2006 Sydney to Hobart Yacht Race",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "id": "1-25594271-2",
+        "section_title": "Handicap Results (top 10)",
+        "caption": "Handicap Results (top 10)",
+        "rows": [
+          [
+            1,
+            "294",
+            "Love & War",
+            "NSW",
+            "S&S 47",
+            "14.21",
+            "Lindsay May",
+            "3:22:02:37"
+          ],
+          [
+            2,
+            "SM377",
+            "Bacardi",
+            "VIC",
+            "Peterson 44",
+            "13.34",
+            "John Williams",
+            "3:23:00:35"
+          ],
+          [
+            3,
+            "SM2",
+            "Challenge",
+            "VIC",
+            "Sydney 38",
+            "11.78",
+            "Lou Abrahams",
+            "4:00:05:35"
+          ],
+          [
+            4,
+            "AUS 03",
+            "Ichi Ban",
+            "NSW",
+            "Jones 70",
+            "21.50",
+            "Matt Allen",
+            "4:00:35:02"
+          ],
+          [
+            5,
+            "MH106",
+            "Impeccable",
+            "NSW",
+            "Peterson 3/4 Tonner IOR",
+            "10.20",
+            "John Walker",
+            "4:00:35:02"
+          ],
+          [
+            6,
+            "1836",
+            "Yendys",
+            "NSW",
+            "Reichel Pugh 55",
+            "16.80",
+            "Geoff Ross",
+            "4:03:05:48"
+          ],
+          [
+            7,
+            "ITA2945",
+            "DSK Comifin",
+            "ITA",
+            "Swan 45",
+            "13.80",
+            "Danilo Salsi",
+            "4:03:13:38"
+          ],
+          [
+            8,
+            "A19",
+            "Maluka",
+            "NSW",
+            "Ranger 9m",
+            "9.01",
+            "Sean Langman",
+            "4:03:42:21"
+          ],
+          [
+            9,
+            "A5",
+            "BSG 'On Tap'",
+            "QLD",
+            "Duncanson 34",
+            "10.26",
+            "Marc Stuart",
+            "4:04:00:12"
+          ]
+        ],
+        "name": "table_25594271_2",
+        "headers": [
+          "Position",
+          "Sail number",
+          "Yacht",
+          "State/country",
+          "Yacht type",
+          "LOA (Metres)",
+          "Skipper",
+          "Corrected time d:hh:mm:ss"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-25594271-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "13.34",
+              "value": "13.34",
+              "start": 29,
+              "end": 34
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "9da4996ead1ea67426e4612aa7de0dea9026f2f12bab53bfa1d053128a83536c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5056,
+              "completion_tokens": 21,
+              "total_tokens": 5077,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "13.34",
+              "value": "13.34",
+              "start": 29,
+              "end": 34,
+              "clause": "What yacht had LOA Metres of 13.34?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "13.34",
+              "value": "13.34",
+              "start": 29,
+              "end": 34,
+              "clause": "What yacht had LOA Metres of 13.34?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "13.34",
+              "value": "13.34",
+              "start": 29,
+              "end": 34,
+              "clause": "What yacht had LOA Metres of 13.34?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly identifies the field as LOA Metres, matching the 'LOA (Metres)' header; 13.34 appears in that column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "67f5247d64ec02172b1b943514f7d5d81176f06283c1c3b773cf1cfe9f2b8a1d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5094,
+              "completion_tokens": 53,
+              "total_tokens": 5147,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "13.34",
+              "value": "13.34",
+              "start": 29,
+              "end": 34,
+              "clause": "What yacht had LOA Metres of 13.34?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly identifies the field as LOA Metres, matching the 'LOA (Metres)' header; 13.34 appears in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "202fe0749af2949354d7a9a007f658183c5ef9971012affb6592419a9a5c839c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5171,
+              "completion_tokens": 9,
+              "total_tokens": 5180,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "13.34",
+              "value": "13.34",
+              "start": 29,
+              "end": 34,
+              "clause": "What yacht had LOA Metres of 13.34?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly identifies the field as LOA Metres, matching the 'LOA (Metres)' header; 13.34 appears in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "94353e65b3b09ac5675ae8a072a17becff7e675e8365c4e1edbd178e454821c1",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5122,
+              "completion_tokens": 12,
+              "total_tokens": 5134,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "13.34",
+              "value": "13.34",
+              "start": 29,
+              "end": 34,
+              "clause": "What yacht had LOA Metres of 13.34?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly identifies the field as LOA Metres, matching the 'LOA (Metres)' header; 13.34 appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "13.34",
+              "value": "13.34",
+              "start": 29,
+              "end": 34,
+              "clause": "What yacht had LOA Metres of 13.34?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly identifies the field as LOA Metres, matching the 'LOA (Metres)' header; 13.34 appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "13.34",
+              "value": "13.34",
+              "start": 29,
+              "end": 34,
+              "clause": "What yacht had LOA Metres of 13.34?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly identifies the field as LOA Metres, matching the 'LOA (Metres)' header; 13.34 appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              5,
+              0,
+              "13.34"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "13.34",
+          "value": "13.34",
+          "start": 29,
+          "end": 34
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "13.34",
+          "value": "13.34",
+          "start": 29,
+          "end": 34,
+          "clause": "What yacht had LOA Metres of 13.34?",
+          "columnIndex": 5,
+          "columnCandidates": [
+            5
+          ],
+          "columnMatchReason": "The question explicitly identifies the field as LOA Metres, matching the 'LOA (Metres)' header; 13.34 appears in that column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          5,
+          0,
+          "13.34"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9797
+}

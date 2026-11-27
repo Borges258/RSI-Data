@@ -1,0 +1,481 @@
+{
+  "arm": "E2",
+  "position": 161,
+  "example_id": "test:5851:2-13625596-1",
+  "original_index": 5851,
+  "table_id": "2-13625596-1",
+  "question": "Which circuit is on July 24?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        4,
+        0,
+        "july 24"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      4,
+      0,
+      "July 24"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        0,
+        "July 24"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "July 24",
+        "value": "July 24",
+        "start": 20,
+        "end": 27,
+        "clause": "Which circuit is on July 24?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The date phrase \"on July 24\" targets the Date field, and matching rows contain \"July 24\" in column 4.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "July 24",
+        "value": "July 24",
+        "start": 20,
+        "end": 27
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Which circuit is on July 24?",
+      "table": {
+        "header": [
+          "Race",
+          "Length",
+          "Class",
+          "Circuit",
+          "Date"
+        ],
+        "page_title": "1994 IMSA GT Championship season",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 13625596,
+        "id": "2-13625596-1",
+        "section_title": "Schedule",
+        "rows": [
+          [
+            "Rolex 24 at Daytona",
+            "24 Hours",
+            "All",
+            "Daytona International Speedway",
+            "February 5 February 6"
+          ],
+          [
+            "Contac 12 Hours of Sebring",
+            "12 Hours",
+            "All",
+            "Sebring International Raceway",
+            "March 19"
+          ],
+          [
+            "Grand Prix of Atlanta",
+            "1 Hour",
+            "GT",
+            "Road Atlanta",
+            "April 17"
+          ],
+          [
+            "Grand Prix of Atlanta",
+            "2 Hours",
+            "WSC",
+            "Road Atlanta",
+            "April 17"
+          ],
+          [
+            "The New England Dodge Dealers Grand Prix",
+            "1 Hour",
+            "GT",
+            "Lime Rock Park",
+            "May 30"
+          ],
+          [
+            "The New England Dodge Dealers Grand Prix",
+            "2 Hours",
+            "WSC",
+            "Lime Rock Park",
+            "May 30"
+          ],
+          [
+            "The Glen Continental",
+            "3 Hours",
+            "All",
+            "Watkins Glen International",
+            "June 26"
+          ],
+          [
+            "Indy Grand Prix",
+            "1 Hour",
+            "GT",
+            "Indianapolis Raceway Park",
+            "July 10"
+          ],
+          [
+            "Indy Grand Prix",
+            "2 Hours",
+            "WSC",
+            "Indianapolis Raceway Park",
+            "July 10"
+          ],
+          [
+            "Monterey Sports Car Grand Prix",
+            "1 Hour",
+            "GT",
+            "Laguna Seca Raceway",
+            "July 24"
+          ],
+          [
+            "Monterey Sports Car Grand Prix",
+            "2 Hours",
+            "WSC",
+            "Laguna Seca Raceway",
+            "July 24"
+          ],
+          [
+            "Grand Prix of Portland",
+            "1 Hour",
+            "GT",
+            "Portland International Raceway",
+            "August 7"
+          ],
+          [
+            "Grand Prix of Portland",
+            "2 Hours",
+            "WSC",
+            "Portland International Raceway",
+            "August 7"
+          ],
+          [
+            "Exxon World Sports Car Championships",
+            "1 Hour",
+            "GT",
+            "Phoenix International Raceway",
+            "October 1"
+          ],
+          [
+            "Exxon World Sports Car Championships",
+            "2 Hours",
+            "WSC",
+            "Phoenix International Raceway",
+            "October 1"
+          ]
+        ],
+        "caption": "Schedule",
+        "headers": [
+          "Race",
+          "Length",
+          "Class",
+          "Circuit",
+          "Date"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-13625596-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "July 24",
+              "value": "July 24",
+              "start": 20,
+              "end": 27
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "29341752e0bffd036bf20adab4d54560e538f1d97183c368ce3278ffe657935b",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4984,
+              "completion_tokens": 21,
+              "total_tokens": 5005,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "July 24",
+              "value": "July 24",
+              "start": 20,
+              "end": 27,
+              "clause": "Which circuit is on July 24?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "July 24",
+              "value": "July 24",
+              "start": 20,
+              "end": 27,
+              "clause": "Which circuit is on July 24?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "July 24",
+              "value": "July 24",
+              "start": 20,
+              "end": 27,
+              "clause": "Which circuit is on July 24?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The date phrase \"on July 24\" targets the Date field, and matching rows contain \"July 24\" in column 4."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b9a9c785c94b353fdf6f5bb180259397dc0134d75f7abbd220f2aa862b2a7b7a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5017,
+              "completion_tokens": 49,
+              "total_tokens": 5066,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "July 24",
+              "value": "July 24",
+              "start": 20,
+              "end": 27,
+              "clause": "Which circuit is on July 24?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The date phrase \"on July 24\" targets the Date field, and matching rows contain \"July 24\" in column 4.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "75f84deebf3688c65fd0efd5bea4e6a533a076b0daf41e8c09e038d28d52cebc",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5090,
+              "completion_tokens": 9,
+              "total_tokens": 5099,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "July 24",
+              "value": "July 24",
+              "start": 20,
+              "end": 27,
+              "clause": "Which circuit is on July 24?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The date phrase \"on July 24\" targets the Date field, and matching rows contain \"July 24\" in column 4.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "043b4fde3a919f84b2ff3a3cca298ea5b847a9249502488c91006ae47779e57a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5041,
+              "completion_tokens": 12,
+              "total_tokens": 5053,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "July 24",
+              "value": "July 24",
+              "start": 20,
+              "end": 27,
+              "clause": "Which circuit is on July 24?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The date phrase \"on July 24\" targets the Date field, and matching rows contain \"July 24\" in column 4.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "July 24",
+              "value": "July 24",
+              "start": 20,
+              "end": 27,
+              "clause": "Which circuit is on July 24?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The date phrase \"on July 24\" targets the Date field, and matching rows contain \"July 24\" in column 4.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "July 24",
+              "value": "July 24",
+              "start": 20,
+              "end": 27,
+              "clause": "Which circuit is on July 24?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The date phrase \"on July 24\" targets the Date field, and matching rows contain \"July 24\" in column 4.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              0,
+              "July 24"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "July 24",
+          "value": "July 24",
+          "start": 20,
+          "end": 27
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "July 24",
+          "value": "July 24",
+          "start": 20,
+          "end": 27,
+          "clause": "Which circuit is on July 24?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The date phrase \"on July 24\" targets the Date field, and matching rows contain \"July 24\" in column 4.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          4,
+          0,
+          "July 24"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9265
+}

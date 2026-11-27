@@ -1,0 +1,705 @@
+{
+  "arm": "E2",
+  "position": 258,
+  "example_id": "test:1707:1-17481974-1",
+  "original_index": 1707,
+  "table_id": "1-17481974-1",
+  "question": "Which is the number of the episode \"rook gave\" \"rūku dīo\" (デ デ ィ オ ー ル) which aired on July 14, 2003",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        4,
+        0,
+        "July 14, 2003"
+      ]
+    ],
+    "agg": 2
+  },
+  "prediction_conds": [],
+  "status": "GROUNDING_FAILED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "GROUNDING_FAILED",
+    "valid": false,
+    "errors": [
+      "condition 0: grounding NO_MATCH"
+    ],
+    "conditions": [
+      {
+        "surface": "\"rook gave\" \"rūku dīo\" (デ デ ィ オ ー ル)",
+        "value": "\"rook gave\" \"rūku dīo\" (デ デ ィ オ ー ル)",
+        "start": 35,
+        "end": 71,
+        "clause": "Which is the number of the episode \"rook gave\" \"rūku dīo\" (デ デ ィ オ ー ル) which aired on July 14",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "Quoted episode name denotes the Title field; the table contains the closely matching title \"Rook Dio\" despite transcription errors.",
+        "operator": "=",
+        "grounded": false,
+        "groundingStatus": "NO_MATCH",
+        "groundingReview": {
+          "column": 1,
+          "reason": "The quoted episode name denotes the Title field, and the Title column contains the closely matching \"Rook Dio\" / \"Rūku Dīo\" despite transcription errors."
+        }
+      },
+      {
+        "surface": "July 14, 2003",
+        "value": "July 14, 2003",
+        "start": 87,
+        "end": 100,
+        "clause": "Which is the number of the episode \"rook gave\" \"rūku dīo\" (デ デ ィ オ ー ル) which aired on July 14, 2003",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "\"aired on\" with a 2003 date denotes Original airdate; English airdate values are from 2004.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "stage": "WHERE_CONDITION_VALIDATE",
+    "originalConditions": [
+      {
+        "surface": "\"rook gave\" \"rūku dīo\" (デ デ ィ オ ー ル)",
+        "value": "\"rook gave\" \"rūku dīo\" (デ デ ィ オ ー ル)",
+        "start": 35,
+        "end": 71
+      },
+      {
+        "surface": "July 14, 2003",
+        "value": "July 14, 2003",
+        "start": 87,
+        "end": 100
+      }
+    ],
+    "halt": true,
+    "completed": false,
+    "conds": [],
+    "warnings": [],
+    "request": {
+      "question": "Which is the number of the episode \"rook gave\" \"rūku dīo\" (デ デ ィ オ ー ル) which aired on July 14, 2003",
+      "table": {
+        "id": "1-17481974-1",
+        "header": [
+          "Episode #",
+          "Title",
+          "Director",
+          "Screenwriter",
+          "Original airdate",
+          "English airdate"
+        ],
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "rows": [
+          [
+            1,
+            "\"First move\" \"Fāsuto mūvu\" (ファースト·ムーヴ)",
+            "Daisuke Chiba",
+            "Koichi Chigira",
+            "April 7, 2003",
+            "March 8, 2004"
+          ],
+          [
+            2,
+            "\"Luft Vanship\" \"Rufuto Vanshippu\" (ルフト·ヴァンシップ)",
+            "Asumi Matsumura",
+            "Koichi Chigira",
+            "April 14, 2003",
+            "March 8, 2004"
+          ],
+          [
+            3,
+            "\"Transpose\" \"Toransupōzu\" (トランスポーズ)",
+            "Hiroyuki Tsuchiya",
+            "Shūichi Kamiyama",
+            "April 21, 2003",
+            "March 9, 2004"
+          ],
+          [
+            4,
+            "\"Zugzwang\" \"Tsūku tsuwangu\" (ツーク·ツワング)",
+            "Daisuke Chiba",
+            "Tomohiro Yamashita",
+            "April 28, 2003",
+            "March 9, 2004"
+          ],
+          [
+            5,
+            "\"Positional play\" \"Pojishonaru purei\" (ポジショナル·プレイ)",
+            "Tōru Yoshida",
+            "Atsuhiro Tomioka",
+            "May 5, 2003",
+            "March 10, 2004"
+          ],
+          [
+            6,
+            "\"Arbiter attack\" \"Ābitā atakku\" (アービター·アタック)",
+            "Hirotaka Endō",
+            "Atsuhiro Tomioka",
+            "May 12, 2003",
+            "March 10, 2004"
+          ],
+          [
+            8,
+            "\"Takeback\" \"Tēkubakku\" (テークバック)",
+            "Sumio Watanabe",
+            "Tomohiro Yamashita",
+            "May 26, 2003",
+            "March 11, 2004"
+          ],
+          [
+            10,
+            "\"Swindle\" \"Suindoru\" (スウィンドル)",
+            "Shinichirō Aoki",
+            "Atsuhiro Tomioka",
+            "June 9, 2003",
+            "March 12, 2004"
+          ],
+          [
+            11,
+            "\"Develop\" \"Diberoppu\" (ディベロップ)",
+            "Katsuhito Akiyama",
+            "Shūichi Kamiyama",
+            "June 16, 2003",
+            "March 13, 2004"
+          ],
+          [
+            13,
+            "\"Isolated pawn\" \"Aisoreiteddo pōn\" (アイソレイテッド·ポーン)",
+            "Hirotaka Endō",
+            "Koichi Chigira",
+            "June 30, 2003",
+            "March 14, 2004"
+          ],
+          [
+            14,
+            "\"Étude Lavie\" \"Eteyūdo Ravi\" (エテュード·ラヴィ)",
+            "Makoto Sokuza",
+            "Tomohiro Yamashita",
+            "July 7, 2003",
+            "December 6, 2004"
+          ],
+          [
+            15,
+            "\"Fairy chess\" \"Fearī chesu\" (フェアリー·チェス)",
+            "Asumi Matsumura",
+            "Atsuhiro Tomioka",
+            "July 14, 2003",
+            "December 7, 2004"
+          ],
+          [
+            16,
+            "\"Breakthrough\" \"Burēku surū\" (ブレーク·スルー)",
+            "Hiroyuki Ochi",
+            "Shūichi Kamiyama",
+            "July 21, 2003",
+            "December 8, 2004"
+          ],
+          [
+            20,
+            "\"Grand Stream\" \"Gurandosutorīmu\" (グランドストリーム)",
+            "Yasunori Urata",
+            "Koichi Chigira",
+            "August 18, 2003",
+            "December 14, 2004"
+          ],
+          [
+            21,
+            "\"Rook Dio\" \"Rūku Dīo\" (ルーク·ディーオ)",
+            "Yasunori Urata Tōru Yoshida",
+            "Koichi Chigira",
+            "August 25, 2003",
+            "December 15, 2004"
+          ],
+          [
+            22,
+            "\"Queen Delphine\" \"Kuīn Derufīne\" (クイーン·デルフィーネ)",
+            "Katsuhito Akiyama Yoshihiko Iwata",
+            "Atsuhiro Tomioka",
+            "September 1, 2003",
+            "December 16, 2004"
+          ],
+          [
+            24,
+            "\"Sealed move\" \"Shīrudo mūbu\" (シールド·ムーブ)",
+            "Shin Matsuo",
+            "Koichi Chigira",
+            "September 15, 2003",
+            "December 20, 2004"
+          ],
+          [
+            25,
+            "\"Quiet move\" \"Kuwaietto mūbu\" (クワイエット·ムーブ)",
+            "Ei Aoki",
+            "Atsuhiro Tomioka",
+            "September 22, 2003",
+            "December 21, 2004"
+          ]
+        ],
+        "name": "table_17481974_1",
+        "headers": [
+          "Episode #",
+          "Title",
+          "Director",
+          "Screenwriter",
+          "Original airdate",
+          "English airdate"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-17481974-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 9,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "\"rook gave\" \"rūku dīo\" (デ デ ィ オ ー ル)",
+              "value": "\"rook gave\" \"rūku dīo\" (デ デ ィ オ ー ル)",
+              "start": 35,
+              "end": 71
+            },
+            {
+              "surface": "July 14, 2003",
+              "value": "July 14, 2003",
+              "start": 87,
+              "end": 100
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "1867a13778827b6b9d8ccbec6d5b03d0a90cedbbc23c4bb5dc3c8e68b42a9c01",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5675,
+              "completion_tokens": 212,
+              "total_tokens": 5887,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 129
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "\"rook gave\" \"rūku dīo\" (デ デ ィ オ ー ル)",
+              "value": "\"rook gave\" \"rūku dīo\" (デ デ ィ オ ー ル)",
+              "start": 35,
+              "end": 71,
+              "clause": "Which is the number of the episode \"rook gave\" \"rūku dīo\" (デ デ ィ オ ー ル) which aired on July 14"
+            },
+            {
+              "surface": "July 14, 2003",
+              "value": "July 14, 2003",
+              "start": 87,
+              "end": 100,
+              "clause": "Which is the number of the episode \"rook gave\" \"rūku dīo\" (デ デ ィ オ ー ル) which aired on July 14, 2003"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "\"rook gave\" \"rūku dīo\" (デ デ ィ オ ー ル)",
+              "value": "\"rook gave\" \"rūku dīo\" (デ デ ィ オ ー ル)",
+              "start": 35,
+              "end": 71,
+              "clause": "Which is the number of the episode \"rook gave\" \"rūku dīo\" (デ デ ィ オ ー ル) which aired on July 14"
+            },
+            {
+              "surface": "July 14, 2003",
+              "value": "July 14, 2003",
+              "start": 87,
+              "end": 100,
+              "clause": "Which is the number of the episode \"rook gave\" \"rūku dīo\" (デ デ ィ オ ー ル) which aired on July 14, 2003"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "\"rook gave\" \"rūku dīo\" (デ デ ィ オ ー ル)",
+              "value": "\"rook gave\" \"rūku dīo\" (デ デ ィ オ ー ル)",
+              "start": 35,
+              "end": 71,
+              "clause": "Which is the number of the episode \"rook gave\" \"rūku dīo\" (デ デ ィ オ ー ル) which aired on July 14",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Quoted episode name denotes the Title field; the table contains the closely matching title \"Rook Dio\" despite transcription errors."
+            },
+            {
+              "surface": "July 14, 2003",
+              "value": "July 14, 2003",
+              "start": 87,
+              "end": 100,
+              "clause": "Which is the number of the episode \"rook gave\" \"rūku dīo\" (デ デ ィ オ ー ル) which aired on July 14, 2003",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "\"aired on\" with a 2003 date denotes Original airdate; English airdate values are from 2004."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c02825e829d88f52f16c9c09a085e854572e033245c0bce0cd1a785739ebff94",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5848,
+              "completion_tokens": 186,
+              "total_tokens": 6034,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 110
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "\"rook gave\" \"rūku dīo\" (デ デ ィ オ ー ル)",
+              "value": "\"rook gave\" \"rūku dīo\" (デ デ ィ オ ー ル)",
+              "start": 35,
+              "end": 71,
+              "clause": "Which is the number of the episode \"rook gave\" \"rūku dīo\" (デ デ ィ オ ー ル) which aired on July 14",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Quoted episode name denotes the Title field; the table contains the closely matching title \"Rook Dio\" despite transcription errors.",
+              "operator": "="
+            },
+            {
+              "surface": "July 14, 2003",
+              "value": "July 14, 2003",
+              "start": 87,
+              "end": 100,
+              "clause": "Which is the number of the episode \"rook gave\" \"rūku dīo\" (デ デ ィ オ ー ル) which aired on July 14, 2003",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "\"aired on\" with a 2003 date denotes Original airdate; English airdate values are from 2004.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "40ffff83d03c64c23b72feeaee8db3bcdcad1de1d29138700b7f5d03680e2142",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5957,
+              "completion_tokens": 11,
+              "total_tokens": 5968,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "\"rook gave\" \"rūku dīo\" (デ デ ィ オ ー ル)",
+              "value": "\"rook gave\" \"rūku dīo\" (デ デ ィ オ ー ル)",
+              "start": 35,
+              "end": 71,
+              "clause": "Which is the number of the episode \"rook gave\" \"rūku dīo\" (デ デ ィ オ ー ル) which aired on July 14",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Quoted episode name denotes the Title field; the table contains the closely matching title \"Rook Dio\" despite transcription errors.",
+              "operator": "="
+            },
+            {
+              "surface": "July 14, 2003",
+              "value": "July 14, 2003",
+              "start": 87,
+              "end": 100,
+              "clause": "Which is the number of the episode \"rook gave\" \"rūku dīo\" (デ デ ィ オ ー ル) which aired on July 14, 2003",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "\"aired on\" with a 2003 date denotes Original airdate; English airdate values are from 2004.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "3d14aef16f6aae9c015989b8c3e5bef9a082f3c2554d49891906e97d65483e7c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5911,
+              "completion_tokens": 40,
+              "total_tokens": 5951,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "\"rook gave\" \"rūku dīo\" (デ デ ィ オ ー ル)",
+              "value": "\"rook gave\" \"rūku dīo\" (デ デ ィ オ ー ル)",
+              "start": 35,
+              "end": 71,
+              "clause": "Which is the number of the episode \"rook gave\" \"rūku dīo\" (デ デ ィ オ ー ル) which aired on July 14",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Quoted episode name denotes the Title field; the table contains the closely matching title \"Rook Dio\" despite transcription errors.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 1,
+                "reason": "The quoted episode name denotes the Title field, and the Title column contains the closely matching \"Rook Dio\" / \"Rūku Dīo\" despite transcription errors."
+              }
+            },
+            {
+              "surface": "July 14, 2003",
+              "value": "July 14, 2003",
+              "start": 87,
+              "end": 100,
+              "clause": "Which is the number of the episode \"rook gave\" \"rūku dīo\" (デ デ ィ オ ー ル) which aired on July 14, 2003",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "\"aired on\" with a 2003 date denotes Original airdate; English airdate values are from 2004.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ],
+          "reviewModelCalls": [
+            {
+              "model": "gpt-5.6-sol",
+              "promptSha256": "e31def3101d33c6f04280e186c7ced0cd1675bc6ae8bf7caeb7140f42146db39",
+              "knowledgeIds": [],
+              "usage": {
+                "prompt_tokens": 5837,
+                "completion_tokens": 184,
+                "total_tokens": 6021,
+                "prompt_tokens_details": {
+                  "cached_tokens": 4224
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 135
+                }
+              }
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e31def3101d33c6f04280e186c7ced0cd1675bc6ae8bf7caeb7140f42146db39",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5837,
+              "completion_tokens": 184,
+              "total_tokens": 6021,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 135
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "\"rook gave\" \"rūku dīo\" (デ デ ィ オ ー ル)",
+              "value": "\"rook gave\" \"rūku dīo\" (デ デ ィ オ ー ル)",
+              "start": 35,
+              "end": 71,
+              "clause": "Which is the number of the episode \"rook gave\" \"rūku dīo\" (デ デ ィ オ ー ル) which aired on July 14",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Quoted episode name denotes the Title field; the table contains the closely matching title \"Rook Dio\" despite transcription errors.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 1,
+                "reason": "The quoted episode name denotes the Title field, and the Title column contains the closely matching \"Rook Dio\" / \"Rūku Dīo\" despite transcription errors."
+              }
+            },
+            {
+              "surface": "July 14, 2003",
+              "value": "July 14, 2003",
+              "start": 87,
+              "end": 100,
+              "clause": "Which is the number of the episode \"rook gave\" \"rūku dīo\" (デ デ ィ オ ー ル) which aired on July 14, 2003",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "\"aired on\" with a 2003 date denotes Original airdate; English airdate values are from 2004.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "GROUNDING_FAILED",
+          "valid": false,
+          "errors": [
+            "condition 0: grounding NO_MATCH"
+          ],
+          "conditions": [
+            {
+              "surface": "\"rook gave\" \"rūku dīo\" (デ デ ィ オ ー ル)",
+              "value": "\"rook gave\" \"rūku dīo\" (デ デ ィ オ ー ル)",
+              "start": 35,
+              "end": 71,
+              "clause": "Which is the number of the episode \"rook gave\" \"rūku dīo\" (デ デ ィ オ ー ル) which aired on July 14",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Quoted episode name denotes the Title field; the table contains the closely matching title \"Rook Dio\" despite transcription errors.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 1,
+                "reason": "The quoted episode name denotes the Title field, and the Title column contains the closely matching \"Rook Dio\" / \"Rūku Dīo\" despite transcription errors."
+              }
+            },
+            {
+              "surface": "July 14, 2003",
+              "value": "July 14, 2003",
+              "start": 87,
+              "end": 100,
+              "clause": "Which is the number of the episode \"rook gave\" \"rūku dīo\" (デ デ ィ オ ー ル) which aired on July 14, 2003",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "\"aired on\" with a 2003 date denotes Original airdate; English airdate values are from 2004.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "GROUNDING_FAILED",
+        "stage": "WHERE_CONDITION_VALIDATE",
+        "halt": true,
+        "completed": false,
+        "errors": [
+          "condition 0: grounding NO_MATCH"
+        ],
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "\"rook gave\" \"rūku dīo\" (デ デ ィ オ ー ル)",
+          "value": "\"rook gave\" \"rūku dīo\" (デ デ ィ オ ー ル)",
+          "start": 35,
+          "end": 71
+        },
+        {
+          "surface": "July 14, 2003",
+          "value": "July 14, 2003",
+          "start": 87,
+          "end": 100
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "\"rook gave\" \"rūku dīo\" (デ デ ィ オ ー ル)",
+          "value": "\"rook gave\" \"rūku dīo\" (デ デ ィ オ ー ル)",
+          "start": 35,
+          "end": 71,
+          "clause": "Which is the number of the episode \"rook gave\" \"rūku dīo\" (デ デ ィ オ ー ル) which aired on July 14",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "Quoted episode name denotes the Title field; the table contains the closely matching title \"Rook Dio\" despite transcription errors.",
+          "operator": "=",
+          "grounded": false,
+          "groundingStatus": "NO_MATCH",
+          "groundingReview": {
+            "column": 1,
+            "reason": "The quoted episode name denotes the Title field, and the Title column contains the closely matching \"Rook Dio\" / \"Rūku Dīo\" despite transcription errors."
+          }
+        },
+        {
+          "surface": "July 14, 2003",
+          "value": "July 14, 2003",
+          "start": 87,
+          "end": 100,
+          "clause": "Which is the number of the episode \"rook gave\" \"rūku dīo\" (デ デ ィ オ ー ル) which aired on July 14, 2003",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "\"aired on\" with a 2003 date denotes Original airdate; English airdate values are from 2004.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": false,
+  "elapsed_ms": 15140
+}

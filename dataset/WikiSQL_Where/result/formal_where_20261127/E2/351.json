@@ -1,0 +1,799 @@
+{
+  "arm": "E2",
+  "position": 351,
+  "example_id": "test:5736:2-14106667-6",
+  "original_index": 5736,
+  "table_id": "2-14106667-6",
+  "question": "How many points did the Flyers have against the New York Islanders with a February bigger than 12, and a game smaller than 60?",
+  "gold_sql": {
+    "sel": 5,
+    "conds": [
+      [
+        1,
+        1,
+        12
+      ],
+      [
+        0,
+        2,
+        60
+      ],
+      [
+        2,
+        0,
+        "new york islanders"
+      ]
+    ],
+    "agg": 3
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "New York Islanders"
+    ],
+    [
+      1,
+      1,
+      12
+    ],
+    [
+      0,
+      2,
+      60
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "New York Islanders"
+      ],
+      [
+        1,
+        1,
+        12
+      ],
+      [
+        0,
+        2,
+        60
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "New York Islanders",
+        "value": "New York Islanders",
+        "start": 48,
+        "end": 66,
+        "clause": "How many points did the Flyers have against the New York Islanders with a February bigger than 12,",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "'against' identifies the Opponent field, which contains New York Islanders.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "12",
+        "value": 12,
+        "start": 95,
+        "end": 97,
+        "clause": "How many points did the Flyers have against the New York Islanders with a February bigger than 12,",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "'February bigger than 12' explicitly names the February field.",
+        "operator": ">",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "60",
+        "value": 60,
+        "start": 123,
+        "end": 125,
+        "clause": "and a game smaller than 60?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "'game smaller than 60' explicitly names the Game field.",
+        "operator": "<",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "New York Islanders",
+        "value": "New York Islanders",
+        "start": 48,
+        "end": 66
+      },
+      {
+        "surface": "12",
+        "value": "12",
+        "start": 95,
+        "end": 97
+      },
+      {
+        "surface": "60",
+        "value": "60",
+        "start": 123,
+        "end": 125
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "How many points did the Flyers have against the New York Islanders with a February bigger than 12, and a game smaller than 60?",
+      "table": {
+        "header": [
+          "Game",
+          "February",
+          "Opponent",
+          "Score",
+          "Record",
+          "Points"
+        ],
+        "page_title": "1987–88 Philadelphia Flyers season",
+        "types": [
+          "real",
+          "real",
+          "text",
+          "text",
+          "text",
+          "real"
+        ],
+        "page_id": 14106667,
+        "id": "2-14106667-6",
+        "section_title": "Regular season",
+        "rows": [
+          [
+            "53",
+            "4",
+            "Toronto Maple Leafs",
+            "6–1",
+            "27–20–6",
+            "60"
+          ],
+          [
+            "54",
+            "6",
+            "@ St. Louis Blues",
+            "4–2",
+            "28–20–6",
+            "62"
+          ],
+          [
+            "55",
+            "12",
+            "Calgary Flames",
+            "2–3",
+            "28–21–6",
+            "62"
+          ],
+          [
+            "56",
+            "13",
+            "@ Toronto Maple Leafs",
+            "4–7",
+            "28–22–6",
+            "62"
+          ],
+          [
+            "57",
+            "15",
+            "Hartford Whalers",
+            "5–4 OT",
+            "29–22–6",
+            "64"
+          ],
+          [
+            "58",
+            "18",
+            "New York Islanders",
+            "3–3 OT",
+            "29–22–7",
+            "65"
+          ],
+          [
+            "59",
+            "19",
+            "@ Buffalo Sabres",
+            "5–4",
+            "30–22–7",
+            "67"
+          ],
+          [
+            "60",
+            "21",
+            "Detroit Red Wings",
+            "5–3",
+            "31–22–7",
+            "69"
+          ],
+          [
+            "61",
+            "23",
+            "@ Detroit Red Wings",
+            "11–6",
+            "32–22–7",
+            "71"
+          ],
+          [
+            "62",
+            "27",
+            "@ Los Angeles Kings",
+            "8–6",
+            "33–22–7",
+            "73"
+          ]
+        ],
+        "caption": "Regular season",
+        "headers": [
+          "Game",
+          "February",
+          "Opponent",
+          "Score",
+          "Record",
+          "Points"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-14106667-6",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 3,
+          "conditions": [
+            {
+              "surface": "New York Islanders",
+              "value": "New York Islanders",
+              "start": 48,
+              "end": 66
+            },
+            {
+              "surface": "12",
+              "value": "12",
+              "start": 95,
+              "end": 97
+            },
+            {
+              "surface": "60",
+              "value": "60",
+              "start": 123,
+              "end": 125
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "8898aa3a10cca0bbdc996d191b6a17d617bf112c5d4ba85758de4053402b10a9",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4905,
+              "completion_tokens": 37,
+              "total_tokens": 4942,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "New York Islanders",
+              "value": "New York Islanders",
+              "start": 48,
+              "end": 66,
+              "clause": "How many points did the Flyers have against the New York Islanders with a February bigger than 12,"
+            },
+            {
+              "surface": "12",
+              "value": "12",
+              "start": 95,
+              "end": 97,
+              "clause": "How many points did the Flyers have against the New York Islanders with a February bigger than 12,"
+            },
+            {
+              "surface": "60",
+              "value": "60",
+              "start": 123,
+              "end": 125,
+              "clause": "and a game smaller than 60?"
+            }
+          ],
+          "count": 3
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "New York Islanders",
+              "value": "New York Islanders",
+              "start": 48,
+              "end": 66,
+              "clause": "How many points did the Flyers have against the New York Islanders with a February bigger than 12,"
+            },
+            {
+              "surface": "12",
+              "value": "12",
+              "start": 95,
+              "end": 97,
+              "clause": "How many points did the Flyers have against the New York Islanders with a February bigger than 12,"
+            },
+            {
+              "surface": "60",
+              "value": "60",
+              "start": 123,
+              "end": 125,
+              "clause": "and a game smaller than 60?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "New York Islanders",
+              "value": "New York Islanders",
+              "start": 48,
+              "end": 66,
+              "clause": "How many points did the Flyers have against the New York Islanders with a February bigger than 12,",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'against' identifies the Opponent field, which contains New York Islanders."
+            },
+            {
+              "surface": "12",
+              "value": "12",
+              "start": 95,
+              "end": 97,
+              "clause": "How many points did the Flyers have against the New York Islanders with a February bigger than 12,",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'February bigger than 12' explicitly names the February field."
+            },
+            {
+              "surface": "60",
+              "value": "60",
+              "start": 123,
+              "end": 125,
+              "clause": "and a game smaller than 60?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'game smaller than 60' explicitly names the Game field."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "6da1216bd064372f19a94440efee4aa1c4e715f0f1e26bb8b0e67d6e6ce51173",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5018,
+              "completion_tokens": 70,
+              "total_tokens": 5088,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "New York Islanders",
+              "value": "New York Islanders",
+              "start": 48,
+              "end": 66,
+              "clause": "How many points did the Flyers have against the New York Islanders with a February bigger than 12,",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'against' identifies the Opponent field, which contains New York Islanders.",
+              "operator": "="
+            },
+            {
+              "surface": "12",
+              "value": "12",
+              "start": 95,
+              "end": 97,
+              "clause": "How many points did the Flyers have against the New York Islanders with a February bigger than 12,",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'February bigger than 12' explicitly names the February field.",
+              "operator": ">"
+            },
+            {
+              "surface": "60",
+              "value": "60",
+              "start": 123,
+              "end": 125,
+              "clause": "and a game smaller than 60?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'game smaller than 60' explicitly names the Game field.",
+              "operator": "<"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "33717efdb83cfdfb189550c2a3fd25ef1b959be1201ed21bf82bcbbab1b0f738",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5131,
+              "completion_tokens": 13,
+              "total_tokens": 5144,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "New York Islanders",
+              "value": "New York Islanders",
+              "start": 48,
+              "end": 66,
+              "clause": "How many points did the Flyers have against the New York Islanders with a February bigger than 12,",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'against' identifies the Opponent field, which contains New York Islanders.",
+              "operator": "="
+            },
+            {
+              "surface": "12",
+              "value": "12",
+              "start": 95,
+              "end": 97,
+              "clause": "How many points did the Flyers have against the New York Islanders with a February bigger than 12,",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'February bigger than 12' explicitly names the February field.",
+              "operator": ">"
+            },
+            {
+              "surface": "60",
+              "value": "60",
+              "start": 123,
+              "end": 125,
+              "clause": "and a game smaller than 60?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'game smaller than 60' explicitly names the Game field.",
+              "operator": "<"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "daf0b796080cd4ac8f0dbad6d3efff3d5a551a65c3e4225ba2b2efb1debe8396",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5088,
+              "completion_tokens": 16,
+              "total_tokens": 5104,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "New York Islanders",
+              "value": "New York Islanders",
+              "start": 48,
+              "end": 66,
+              "clause": "How many points did the Flyers have against the New York Islanders with a February bigger than 12,",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'against' identifies the Opponent field, which contains New York Islanders.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "12",
+              "value": "12",
+              "start": 95,
+              "end": 97,
+              "clause": "How many points did the Flyers have against the New York Islanders with a February bigger than 12,",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'February bigger than 12' explicitly names the February field.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "60",
+              "value": "60",
+              "start": 123,
+              "end": 125,
+              "clause": "and a game smaller than 60?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'game smaller than 60' explicitly names the Game field.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "New York Islanders",
+              "value": "New York Islanders",
+              "start": 48,
+              "end": 66,
+              "clause": "How many points did the Flyers have against the New York Islanders with a February bigger than 12,",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'against' identifies the Opponent field, which contains New York Islanders.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "12",
+              "value": 12,
+              "start": 95,
+              "end": 97,
+              "clause": "How many points did the Flyers have against the New York Islanders with a February bigger than 12,",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'February bigger than 12' explicitly names the February field.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "60",
+              "value": 60,
+              "start": 123,
+              "end": 125,
+              "clause": "and a game smaller than 60?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'game smaller than 60' explicitly names the Game field.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "New York Islanders",
+              "value": "New York Islanders",
+              "start": 48,
+              "end": 66,
+              "clause": "How many points did the Flyers have against the New York Islanders with a February bigger than 12,",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'against' identifies the Opponent field, which contains New York Islanders.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "12",
+              "value": 12,
+              "start": 95,
+              "end": 97,
+              "clause": "How many points did the Flyers have against the New York Islanders with a February bigger than 12,",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'February bigger than 12' explicitly names the February field.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "60",
+              "value": 60,
+              "start": 123,
+              "end": 125,
+              "clause": "and a game smaller than 60?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'game smaller than 60' explicitly names the Game field.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "New York Islanders"
+            ],
+            [
+              1,
+              1,
+              12
+            ],
+            [
+              0,
+              2,
+              60
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "New York Islanders",
+          "value": "New York Islanders",
+          "start": 48,
+          "end": 66
+        },
+        {
+          "surface": "12",
+          "value": "12",
+          "start": 95,
+          "end": 97
+        },
+        {
+          "surface": "60",
+          "value": "60",
+          "start": 123,
+          "end": 125
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "New York Islanders",
+          "value": "New York Islanders",
+          "start": 48,
+          "end": 66,
+          "clause": "How many points did the Flyers have against the New York Islanders with a February bigger than 12,",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "'against' identifies the Opponent field, which contains New York Islanders.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "12",
+          "value": 12,
+          "start": 95,
+          "end": 97,
+          "clause": "How many points did the Flyers have against the New York Islanders with a February bigger than 12,",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "'February bigger than 12' explicitly names the February field.",
+          "operator": ">",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "60",
+          "value": 60,
+          "start": 123,
+          "end": 125,
+          "clause": "and a game smaller than 60?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "'game smaller than 60' explicitly names the Game field.",
+          "operator": "<",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 3,
+      "conds": [
+        [
+          2,
+          0,
+          "New York Islanders"
+        ],
+        [
+          1,
+          1,
+          12
+        ],
+        [
+          0,
+          2,
+          60
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8875
+}

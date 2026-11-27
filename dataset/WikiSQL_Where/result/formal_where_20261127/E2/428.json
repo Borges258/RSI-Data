@@ -1,0 +1,411 @@
+{
+  "arm": "E2",
+  "position": 428,
+  "example_id": "test:11759:2-11827596-1",
+  "original_index": 11759,
+  "table_id": "2-11827596-1",
+  "question": "Which year was the film Rang Barse introduced?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        1,
+        0,
+        "rang barse"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "Rang Barse"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "Rang Barse"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Rang Barse",
+        "value": "Rang Barse",
+        "start": 24,
+        "end": 34,
+        "clause": "Which year was the film Rang Barse introduced?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The question identifies Rang Barse as a film, matching the Film name header and row value.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Rang Barse",
+        "value": "Rang Barse",
+        "start": 24,
+        "end": 34
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Which year was the film Rang Barse introduced?",
+      "table": {
+        "header": [
+          "Year",
+          "Film name",
+          "Co-singer",
+          "Music director",
+          "Lyricist"
+        ],
+        "page_title": "Hemlata",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 11827596,
+        "id": "2-11827596-1",
+        "section_title": "2010s",
+        "rows": [
+          [
+            "2008",
+            "Gaon Ki Ganga",
+            "Solo",
+            "C. L. John",
+            "Ajeet Yadav"
+          ],
+          [
+            "2003",
+            "Sukha Dukha",
+            "Solo",
+            "Shambhujit Baskota",
+            "Dinesh Adhikari"
+          ],
+          [
+            "2003",
+            "Rang Barse",
+            "Shabbir Kumar",
+            "Bhushan Dua",
+            "Traditional"
+          ],
+          [
+            "2002",
+            "Sarhadein (Album)",
+            "Attaullah Khan Essa Khailwi",
+            "Attaullah Khan – Afzal Ajiz – Sabbir Ali",
+            "–"
+          ],
+          [
+            "2002",
+            "Sarhadein (Album)",
+            "Solo",
+            "Attaullah Khan – Afzal Ajiz – Sabbir Ali",
+            "–"
+          ]
+        ],
+        "caption": "2010s",
+        "headers": [
+          "Year",
+          "Film name",
+          "Co-singer",
+          "Music director",
+          "Lyricist"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-11827596-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Rang Barse",
+              "value": "Rang Barse",
+              "start": 24,
+              "end": 34
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "6e253bf1b42db059a596630ab1b6d666b329096429715f5a396e1f2a4db9d0ad",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4810,
+              "completion_tokens": 23,
+              "total_tokens": 4833,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Rang Barse",
+              "value": "Rang Barse",
+              "start": 24,
+              "end": 34,
+              "clause": "Which year was the film Rang Barse introduced?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Rang Barse",
+              "value": "Rang Barse",
+              "start": 24,
+              "end": 34,
+              "clause": "Which year was the film Rang Barse introduced?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Rang Barse",
+              "value": "Rang Barse",
+              "start": 24,
+              "end": 34,
+              "clause": "Which year was the film Rang Barse introduced?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question identifies Rang Barse as a film, matching the Film name header and row value."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c3de6ac3442ccb0042fbb5c8069417d42566193e7552b8db7914ce604fe5c2d8",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4847,
+              "completion_tokens": 40,
+              "total_tokens": 4887,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Rang Barse",
+              "value": "Rang Barse",
+              "start": 24,
+              "end": 34,
+              "clause": "Which year was the film Rang Barse introduced?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question identifies Rang Barse as a film, matching the Film name header and row value.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "5b94e24a216eb84f6b685b3cc55f8c2d517e8ab0c1b35b29fdf7b010cfb5f9d4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4911,
+              "completion_tokens": 9,
+              "total_tokens": 4920,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Rang Barse",
+              "value": "Rang Barse",
+              "start": 24,
+              "end": 34,
+              "clause": "Which year was the film Rang Barse introduced?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question identifies Rang Barse as a film, matching the Film name header and row value.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f1b9b776a46b88014f3d0091bd8ea781e9f0bd8546b0ffc5bd4d96ae7f65b5d4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4862,
+              "completion_tokens": 13,
+              "total_tokens": 4875,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Rang Barse",
+              "value": "Rang Barse",
+              "start": 24,
+              "end": 34,
+              "clause": "Which year was the film Rang Barse introduced?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question identifies Rang Barse as a film, matching the Film name header and row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Rang Barse",
+              "value": "Rang Barse",
+              "start": 24,
+              "end": 34,
+              "clause": "Which year was the film Rang Barse introduced?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question identifies Rang Barse as a film, matching the Film name header and row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Rang Barse",
+              "value": "Rang Barse",
+              "start": 24,
+              "end": 34,
+              "clause": "Which year was the film Rang Barse introduced?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question identifies Rang Barse as a film, matching the Film name header and row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              "Rang Barse"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Rang Barse",
+          "value": "Rang Barse",
+          "start": 24,
+          "end": 34
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Rang Barse",
+          "value": "Rang Barse",
+          "start": 24,
+          "end": 34,
+          "clause": "Which year was the film Rang Barse introduced?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The question identifies Rang Barse as a film, matching the Film name header and row value.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          1,
+          0,
+          "Rang Barse"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8891
+}

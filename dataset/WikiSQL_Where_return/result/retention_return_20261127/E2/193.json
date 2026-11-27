@@ -1,0 +1,540 @@
+{
+  "arm": "E2",
+  "position": 193,
+  "example_id": "test:7041:2-15313481-14",
+  "original_index": 7041,
+  "table_id": "2-15313481-14",
+  "question": "What is the name of the non-mammal who has tatarinov as the author?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        2,
+        0,
+        "tatarinov"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [],
+  "status": "GROUNDING_FAILED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "GROUNDING_FAILED",
+    "valid": false,
+    "errors": [
+      "condition 0: invalid column",
+      "condition 0: grounding NO_MATCH"
+    ],
+    "conditions": [
+      {
+        "surface": "non-mammal",
+        "value": "non-mammal",
+        "start": 24,
+        "end": 34,
+        "clause": "What is the name of the non-mammal who has tatarinov as the author?",
+        "columnMatchStatus": "UNRESOLVED",
+        "columnCandidates": [],
+        "columnMatchReason": "Refers to the Non-mammalian table section, not a schema field.",
+        "operator": "=",
+        "grounded": false,
+        "groundingStatus": "NO_MATCH"
+      },
+      {
+        "surface": "tatarinov",
+        "value": "Tatarinov",
+        "start": 43,
+        "end": 52,
+        "clause": "What is the name of the non-mammal who has tatarinov as the author?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The phrase 'as the author' directly identifies the Authors field.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "stage": "WHERE_CONDITION_VALIDATE",
+    "originalConditions": [
+      {
+        "surface": "non-mammal",
+        "value": "non-mammal",
+        "start": 24,
+        "end": 34
+      },
+      {
+        "surface": "tatarinov",
+        "value": "Tatarinov",
+        "start": 43,
+        "end": 52
+      }
+    ],
+    "halt": true,
+    "completed": false,
+    "conds": [],
+    "warnings": [],
+    "request": {
+      "question": "What is the name of the non-mammal who has tatarinov as the author?",
+      "table": {
+        "header": [
+          "Name",
+          "Status",
+          "Authors",
+          "Unit",
+          "Location"
+        ],
+        "page_title": "2001 in paleontology",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 15313481,
+        "id": "2-15313481-14",
+        "section_title": "Non-mammalian",
+        "rows": [
+          [
+            "Delectosaurus",
+            "Valid",
+            "Kurkin",
+            "Vyazniki Assemblage",
+            "Russia"
+          ],
+          [
+            "Interpresosaurus",
+            "Valid",
+            "Kurkin",
+            "Vyazniki Assemblage",
+            "Russia"
+          ],
+          [
+            "Lumkuia",
+            "Valid",
+            "Hopson Kitching",
+            "Burgersdorp Formation",
+            "South Africa"
+          ],
+          [
+            "Malasaurus",
+            "Valid",
+            "Tatarinov",
+            "Vyazniki Assemblage",
+            "Russia"
+          ],
+          [
+            "Mitredon",
+            "Valid",
+            "Shapiro Jenkins",
+            "Fleming Fjord Formation",
+            "Greenland"
+          ],
+          [
+            "Prozostrodon",
+            "Valid",
+            "Bonaparte Barberena",
+            "Santa Maria Formation",
+            "Brazil"
+          ],
+          [
+            "Riograndia",
+            "Valid",
+            "Bonaparte Ferigolo Ribeiro",
+            "Caturrita Formation",
+            "Brazil"
+          ]
+        ],
+        "caption": "Non-mammalian",
+        "headers": [
+          "Name",
+          "Status",
+          "Authors",
+          "Unit",
+          "Location"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-15313481-14",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 9,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "non-mammal",
+              "value": "non-mammal",
+              "start": 24,
+              "end": 34
+            },
+            {
+              "surface": "tatarinov",
+              "value": "Tatarinov",
+              "start": 43,
+              "end": 52
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "fa82d6aec919d5ed801c42af49b76e5f2d5c0958127ead6f83c8f82f819fe619",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4820,
+              "completion_tokens": 37,
+              "total_tokens": 4857,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "non-mammal",
+              "value": "non-mammal",
+              "start": 24,
+              "end": 34,
+              "clause": "What is the name of the non-mammal who has tatarinov as the author?"
+            },
+            {
+              "surface": "tatarinov",
+              "value": "Tatarinov",
+              "start": 43,
+              "end": 52,
+              "clause": "What is the name of the non-mammal who has tatarinov as the author?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "non-mammal",
+              "value": "non-mammal",
+              "start": 24,
+              "end": 34,
+              "clause": "What is the name of the non-mammal who has tatarinov as the author?"
+            },
+            {
+              "surface": "tatarinov",
+              "value": "Tatarinov",
+              "start": 43,
+              "end": 52,
+              "clause": "What is the name of the non-mammal who has tatarinov as the author?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "non-mammal",
+              "value": "non-mammal",
+              "start": 24,
+              "end": 34,
+              "clause": "What is the name of the non-mammal who has tatarinov as the author?",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [],
+              "columnMatchReason": "Refers to the Non-mammalian table section, not a schema field."
+            },
+            {
+              "surface": "tatarinov",
+              "value": "Tatarinov",
+              "start": 43,
+              "end": 52,
+              "clause": "What is the name of the non-mammal who has tatarinov as the author?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase 'as the author' directly identifies the Authors field."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ad0a21236d0691844a7995fe6f3542786876995eebcd5aea0301d0bc679353dc",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4913,
+              "completion_tokens": 98,
+              "total_tokens": 5011,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 43
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "non-mammal",
+              "value": "non-mammal",
+              "start": 24,
+              "end": 34,
+              "clause": "What is the name of the non-mammal who has tatarinov as the author?",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [],
+              "columnMatchReason": "Refers to the Non-mammalian table section, not a schema field.",
+              "operator": "="
+            },
+            {
+              "surface": "tatarinov",
+              "value": "Tatarinov",
+              "start": 43,
+              "end": 52,
+              "clause": "What is the name of the non-mammal who has tatarinov as the author?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase 'as the author' directly identifies the Authors field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "cd6c9287a594c20600b64e089548aa0f78e82bff9a724b698ec26b3751cccde9",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5005,
+              "completion_tokens": 11,
+              "total_tokens": 5016,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "non-mammal",
+              "value": "non-mammal",
+              "start": 24,
+              "end": 34,
+              "clause": "What is the name of the non-mammal who has tatarinov as the author?",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [],
+              "columnMatchReason": "Refers to the Non-mammalian table section, not a schema field.",
+              "operator": "="
+            },
+            {
+              "surface": "tatarinov",
+              "value": "Tatarinov",
+              "start": 43,
+              "end": 52,
+              "clause": "What is the name of the non-mammal who has tatarinov as the author?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase 'as the author' directly identifies the Authors field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "bdc3ff76c94fe89721cd3c1746846706cec3b223456750f9e19b4a04f7d2dce0",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4959,
+              "completion_tokens": 18,
+              "total_tokens": 4977,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "non-mammal",
+              "value": "non-mammal",
+              "start": 24,
+              "end": 34,
+              "clause": "What is the name of the non-mammal who has tatarinov as the author?",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [],
+              "columnMatchReason": "Refers to the Non-mammalian table section, not a schema field.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH"
+            },
+            {
+              "surface": "tatarinov",
+              "value": "Tatarinov",
+              "start": 43,
+              "end": 52,
+              "clause": "What is the name of the non-mammal who has tatarinov as the author?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase 'as the author' directly identifies the Authors field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "non-mammal",
+              "value": "non-mammal",
+              "start": 24,
+              "end": 34,
+              "clause": "What is the name of the non-mammal who has tatarinov as the author?",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [],
+              "columnMatchReason": "Refers to the Non-mammalian table section, not a schema field.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH"
+            },
+            {
+              "surface": "tatarinov",
+              "value": "Tatarinov",
+              "start": 43,
+              "end": 52,
+              "clause": "What is the name of the non-mammal who has tatarinov as the author?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase 'as the author' directly identifies the Authors field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "GROUNDING_FAILED",
+          "valid": false,
+          "errors": [
+            "condition 0: invalid column",
+            "condition 0: grounding NO_MATCH"
+          ],
+          "conditions": [
+            {
+              "surface": "non-mammal",
+              "value": "non-mammal",
+              "start": 24,
+              "end": 34,
+              "clause": "What is the name of the non-mammal who has tatarinov as the author?",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [],
+              "columnMatchReason": "Refers to the Non-mammalian table section, not a schema field.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH"
+            },
+            {
+              "surface": "tatarinov",
+              "value": "Tatarinov",
+              "start": 43,
+              "end": 52,
+              "clause": "What is the name of the non-mammal who has tatarinov as the author?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase 'as the author' directly identifies the Authors field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "GROUNDING_FAILED",
+        "stage": "WHERE_CONDITION_VALIDATE",
+        "halt": true,
+        "completed": false,
+        "errors": [
+          "condition 0: invalid column",
+          "condition 0: grounding NO_MATCH"
+        ],
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "non-mammal",
+          "value": "non-mammal",
+          "start": 24,
+          "end": 34
+        },
+        {
+          "surface": "tatarinov",
+          "value": "Tatarinov",
+          "start": 43,
+          "end": 52
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "non-mammal",
+          "value": "non-mammal",
+          "start": 24,
+          "end": 34,
+          "clause": "What is the name of the non-mammal who has tatarinov as the author?",
+          "columnMatchStatus": "UNRESOLVED",
+          "columnCandidates": [],
+          "columnMatchReason": "Refers to the Non-mammalian table section, not a schema field.",
+          "operator": "=",
+          "grounded": false,
+          "groundingStatus": "NO_MATCH"
+        },
+        {
+          "surface": "tatarinov",
+          "value": "Tatarinov",
+          "start": 43,
+          "end": 52,
+          "clause": "What is the name of the non-mammal who has tatarinov as the author?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The phrase 'as the author' directly identifies the Authors field.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": false,
+  "elapsed_ms": 8375
+}

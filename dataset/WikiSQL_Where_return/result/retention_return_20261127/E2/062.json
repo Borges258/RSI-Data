@@ -1,0 +1,460 @@
+{
+  "arm": "E2",
+  "position": 62,
+  "example_id": "test:2200:1-19930660-3",
+  "original_index": 2200,
+  "table_id": "1-19930660-3",
+  "question": "Which episodes have Chris Addison as Rufus's guest?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        2,
+        0,
+        "Chris Addison"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "Chris Addison"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "Chris Addison"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Chris Addison",
+        "value": "Chris Addison",
+        "start": 20,
+        "end": 33,
+        "clause": "Which episodes have Chris Addison as Rufus's guest?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The phrase \"as Rufus's guest\" directly matches the \"Rufus guest\" header; Chris Addison appears in that column for episode 3x08.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Chris Addison",
+        "value": "Chris Addison",
+        "start": 20,
+        "end": 33
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Which episodes have Chris Addison as Rufus's guest?",
+      "table": {
+        "header": [
+          "Episode",
+          "First broadcast",
+          "Rufus guest",
+          "Marcus guest",
+          "Winner"
+        ],
+        "page_title": "List of Argumental episodes",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "id": "1-19930660-3",
+        "section_title": "Series 3",
+        "caption": "Series 3",
+        "rows": [
+          [
+            "3x01",
+            "2 February 2010",
+            "Johnny Vegas",
+            "Chris Addison",
+            "Blue (4–0)"
+          ],
+          [
+            "3x02",
+            "9 February 2010",
+            "Sarah Millican",
+            "Jimmy Carr",
+            "Red (3–1)"
+          ],
+          [
+            "3x03",
+            "16 February 2010",
+            "Jack Whitehall",
+            "Mark Watson",
+            "Blue (3–2)"
+          ],
+          [
+            "3x04",
+            "23 February 2010",
+            "Stephen K. Amos",
+            "Sean Lock",
+            "Blue (3–2)"
+          ],
+          [
+            "3x05",
+            "2 March 2010",
+            "Mark Watson",
+            "Katy Brand",
+            "Red (3–2)"
+          ],
+          [
+            "3x06",
+            "9 March 2010",
+            "Sean Lock",
+            "Dom Joly",
+            "Blue (4–1)"
+          ],
+          [
+            "3x07",
+            "28 September 2010",
+            "Jimmy Carr",
+            "Will Smith",
+            "Red (3–2)"
+          ],
+          [
+            "3x08",
+            "5 October 2010",
+            "Chris Addison",
+            "Katy Brand",
+            "Red (3–2)"
+          ],
+          [
+            "3x09",
+            "12 October 2010",
+            "Stephen K. Amos",
+            "Jack Whitehall",
+            "Red (3–2)"
+          ],
+          [
+            "3x10",
+            "19 October 2010",
+            "Ben Miller",
+            "Sean Lock",
+            "Red (3–2)"
+          ],
+          [
+            "3x11",
+            "26 October 2010",
+            "Richard Herring",
+            "Stephen Mangan",
+            "Red (3–2)"
+          ],
+          [
+            "3x12",
+            "2 November 2010",
+            "Sarah Millican",
+            "Sean Lock",
+            "Red (4–1)"
+          ]
+        ],
+        "name": "table_19930660_3",
+        "headers": [
+          "Episode",
+          "First broadcast",
+          "Rufus guest",
+          "Marcus guest",
+          "Winner"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-19930660-3",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Chris Addison",
+              "value": "Chris Addison",
+              "start": 20,
+              "end": 33
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "53b074b0ee468cf2ad6d3ef6535cd8d5336dd5276ecdb991acbd94f2a375c306",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4979,
+              "completion_tokens": 19,
+              "total_tokens": 4998,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Chris Addison",
+              "value": "Chris Addison",
+              "start": 20,
+              "end": 33,
+              "clause": "Which episodes have Chris Addison as Rufus's guest?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Chris Addison",
+              "value": "Chris Addison",
+              "start": 20,
+              "end": 33,
+              "clause": "Which episodes have Chris Addison as Rufus's guest?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Chris Addison",
+              "value": "Chris Addison",
+              "start": 20,
+              "end": 33,
+              "clause": "Which episodes have Chris Addison as Rufus's guest?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase \"as Rufus's guest\" directly matches the \"Rufus guest\" header; Chris Addison appears in that column for episode 3x08."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a8589ca3cf89328a4d590433429f1e2f19dc8275a53c01b5fe4016794b0da26b",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5013,
+              "completion_tokens": 54,
+              "total_tokens": 5067,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Chris Addison",
+              "value": "Chris Addison",
+              "start": 20,
+              "end": 33,
+              "clause": "Which episodes have Chris Addison as Rufus's guest?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase \"as Rufus's guest\" directly matches the \"Rufus guest\" header; Chris Addison appears in that column for episode 3x08.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b6dd5a39d20ec0aaa265450f6cd6edf20294b61684ec10804e2a6f2461e44c2a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5091,
+              "completion_tokens": 9,
+              "total_tokens": 5100,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Chris Addison",
+              "value": "Chris Addison",
+              "start": 20,
+              "end": 33,
+              "clause": "Which episodes have Chris Addison as Rufus's guest?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase \"as Rufus's guest\" directly matches the \"Rufus guest\" header; Chris Addison appears in that column for episode 3x08.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "46d803758b18b57819e59c856ad5b39e33eaf95325f16f5819e9333d5d0f4ab4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5042,
+              "completion_tokens": 11,
+              "total_tokens": 5053,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Chris Addison",
+              "value": "Chris Addison",
+              "start": 20,
+              "end": 33,
+              "clause": "Which episodes have Chris Addison as Rufus's guest?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase \"as Rufus's guest\" directly matches the \"Rufus guest\" header; Chris Addison appears in that column for episode 3x08.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Chris Addison",
+              "value": "Chris Addison",
+              "start": 20,
+              "end": 33,
+              "clause": "Which episodes have Chris Addison as Rufus's guest?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase \"as Rufus's guest\" directly matches the \"Rufus guest\" header; Chris Addison appears in that column for episode 3x08.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Chris Addison",
+              "value": "Chris Addison",
+              "start": 20,
+              "end": 33,
+              "clause": "Which episodes have Chris Addison as Rufus's guest?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase \"as Rufus's guest\" directly matches the \"Rufus guest\" header; Chris Addison appears in that column for episode 3x08.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "Chris Addison"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Chris Addison",
+          "value": "Chris Addison",
+          "start": 20,
+          "end": 33
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Chris Addison",
+          "value": "Chris Addison",
+          "start": 20,
+          "end": 33,
+          "clause": "Which episodes have Chris Addison as Rufus's guest?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The phrase \"as Rufus's guest\" directly matches the \"Rufus guest\" header; Chris Addison appears in that column for episode 3x08.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          2,
+          0,
+          "Chris Addison"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7829
+}

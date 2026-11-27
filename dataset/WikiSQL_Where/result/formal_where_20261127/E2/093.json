@@ -1,0 +1,584 @@
+{
+  "arm": "E2",
+  "position": 93,
+  "example_id": "test:5981:2-1508381-1",
+  "original_index": 5981,
+  "table_id": "2-1508381-1",
+  "question": "What is NK Rijeka's away score in Round 2?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        0,
+        2,
+        2
+      ],
+      [
+        1,
+        0,
+        "nk rijeka"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "NK Rijeka"
+    ],
+    [
+      0,
+      0,
+      2
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "NK Rijeka"
+      ],
+      [
+        0,
+        0,
+        2
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "NK Rijeka",
+        "value": "NK Rijeka",
+        "start": 8,
+        "end": 17,
+        "clause": "What is NK Rijeka's away score in Round 2?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "NK Rijeka is the club named in the question and appears under Club.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "2",
+        "value": 2,
+        "start": 40,
+        "end": 41,
+        "clause": "What is NK Rijeka's away score in Round 2?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "Round 2 explicitly refers to the Round field, despite NK Rijeka's row showing Round 1.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "NK Rijeka",
+        "value": "NK Rijeka",
+        "start": 8,
+        "end": 17
+      },
+      {
+        "surface": "2",
+        "value": "2",
+        "start": 40,
+        "end": 41
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is NK Rijeka's away score in Round 2?",
+      "table": {
+        "header": [
+          "Round",
+          "Club",
+          "Home",
+          "Away",
+          "Aggregate"
+        ],
+        "page_title": "K. Beerschot V.A.C.",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 1508381,
+        "id": "2-1508381-1",
+        "section_title": "European cup history",
+        "rows": [
+          [
+            "1",
+            "DWS Amsterdam",
+            "1-1",
+            "2-1",
+            "2-3"
+          ],
+          [
+            "1",
+            "Anorthosis Famagusta",
+            "7-0",
+            "0-1",
+            "8-0"
+          ],
+          [
+            "2",
+            "Dinamo Berlin",
+            "1-3",
+            "3-1",
+            "2-6"
+          ],
+          [
+            "1",
+            "Vitoria Setubal",
+            "0-2",
+            "2-0",
+            "0-4"
+          ],
+          [
+            "1",
+            "NK Rijeka",
+            "0-0",
+            "2-1",
+            "1-2"
+          ]
+        ],
+        "caption": "European cup history",
+        "headers": [
+          "Round",
+          "Club",
+          "Home",
+          "Away",
+          "Aggregate"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-1508381-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "NK Rijeka",
+              "value": "NK Rijeka",
+              "start": 8,
+              "end": 17
+            },
+            {
+              "surface": "2",
+              "value": "2",
+              "start": 40,
+              "end": 41
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "2c0a8cda23ee4ed7c2ce8921a7243e78bef2f552dbc1cc4ca598834410793068",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4767,
+              "completion_tokens": 115,
+              "total_tokens": 4882,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 84
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "NK Rijeka",
+              "value": "NK Rijeka",
+              "start": 8,
+              "end": 17,
+              "clause": "What is NK Rijeka's away score in Round 2?"
+            },
+            {
+              "surface": "2",
+              "value": "2",
+              "start": 40,
+              "end": 41,
+              "clause": "What is NK Rijeka's away score in Round 2?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "NK Rijeka",
+              "value": "NK Rijeka",
+              "start": 8,
+              "end": 17,
+              "clause": "What is NK Rijeka's away score in Round 2?"
+            },
+            {
+              "surface": "2",
+              "value": "2",
+              "start": 40,
+              "end": 41,
+              "clause": "What is NK Rijeka's away score in Round 2?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "NK Rijeka",
+              "value": "NK Rijeka",
+              "start": 8,
+              "end": 17,
+              "clause": "What is NK Rijeka's away score in Round 2?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "NK Rijeka is the club named in the question and appears under Club."
+            },
+            {
+              "surface": "2",
+              "value": "2",
+              "start": 40,
+              "end": 41,
+              "clause": "What is NK Rijeka's away score in Round 2?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Round 2 explicitly refers to the Round field, despite NK Rijeka's row showing Round 1."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "448b09598a6a58c3aef237bd3f849ae59ce35db171ca9a795eaafed5b40f45ed",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4838,
+              "completion_tokens": 61,
+              "total_tokens": 4899,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "NK Rijeka",
+              "value": "NK Rijeka",
+              "start": 8,
+              "end": 17,
+              "clause": "What is NK Rijeka's away score in Round 2?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "NK Rijeka is the club named in the question and appears under Club.",
+              "operator": "="
+            },
+            {
+              "surface": "2",
+              "value": "2",
+              "start": 40,
+              "end": 41,
+              "clause": "What is NK Rijeka's away score in Round 2?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Round 2 explicitly refers to the Round field, despite NK Rijeka's row showing Round 1.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "02e28083aea9e35b5210c671d45dd163285c3041ef7d09ce72512623ca7faf60",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4934,
+              "completion_tokens": 11,
+              "total_tokens": 4945,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "NK Rijeka",
+              "value": "NK Rijeka",
+              "start": 8,
+              "end": 17,
+              "clause": "What is NK Rijeka's away score in Round 2?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "NK Rijeka is the club named in the question and appears under Club.",
+              "operator": "="
+            },
+            {
+              "surface": "2",
+              "value": "2",
+              "start": 40,
+              "end": 41,
+              "clause": "What is NK Rijeka's away score in Round 2?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Round 2 explicitly refers to the Round field, despite NK Rijeka's row showing Round 1.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "7c29a9cc0c701faaac834dbb4819d131896f9dc14772f9f9a1eeb19b19afda71",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4888,
+              "completion_tokens": 14,
+              "total_tokens": 4902,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "NK Rijeka",
+              "value": "NK Rijeka",
+              "start": 8,
+              "end": 17,
+              "clause": "What is NK Rijeka's away score in Round 2?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "NK Rijeka is the club named in the question and appears under Club.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2",
+              "value": "2",
+              "start": 40,
+              "end": 41,
+              "clause": "What is NK Rijeka's away score in Round 2?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Round 2 explicitly refers to the Round field, despite NK Rijeka's row showing Round 1.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "NK Rijeka",
+              "value": "NK Rijeka",
+              "start": 8,
+              "end": 17,
+              "clause": "What is NK Rijeka's away score in Round 2?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "NK Rijeka is the club named in the question and appears under Club.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2",
+              "value": 2,
+              "start": 40,
+              "end": 41,
+              "clause": "What is NK Rijeka's away score in Round 2?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Round 2 explicitly refers to the Round field, despite NK Rijeka's row showing Round 1.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "NK Rijeka",
+              "value": "NK Rijeka",
+              "start": 8,
+              "end": 17,
+              "clause": "What is NK Rijeka's away score in Round 2?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "NK Rijeka is the club named in the question and appears under Club.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2",
+              "value": 2,
+              "start": 40,
+              "end": 41,
+              "clause": "What is NK Rijeka's away score in Round 2?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Round 2 explicitly refers to the Round field, despite NK Rijeka's row showing Round 1.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              "NK Rijeka"
+            ],
+            [
+              0,
+              0,
+              2
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "NK Rijeka",
+          "value": "NK Rijeka",
+          "start": 8,
+          "end": 17
+        },
+        {
+          "surface": "2",
+          "value": "2",
+          "start": 40,
+          "end": 41
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "NK Rijeka",
+          "value": "NK Rijeka",
+          "start": 8,
+          "end": 17,
+          "clause": "What is NK Rijeka's away score in Round 2?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "NK Rijeka is the club named in the question and appears under Club.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "2",
+          "value": 2,
+          "start": 40,
+          "end": 41,
+          "clause": "What is NK Rijeka's away score in Round 2?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "Round 2 explicitly refers to the Round field, despite NK Rijeka's row showing Round 1.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          1,
+          0,
+          "NK Rijeka"
+        ],
+        [
+          0,
+          0,
+          2
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8937
+}

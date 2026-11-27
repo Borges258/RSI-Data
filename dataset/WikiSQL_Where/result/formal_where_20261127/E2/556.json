@@ -1,0 +1,651 @@
+{
+  "arm": "E2",
+  "position": 556,
+  "example_id": "test:6299:2-13744010-2",
+  "original_index": 6299,
+  "table_id": "2-13744010-2",
+  "question": "What is the average number of silvers for teams ranked 5 with 0 bronze?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        0,
+        0,
+        "5"
+      ],
+      [
+        4,
+        0,
+        0
+      ]
+    ],
+    "agg": 5
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "5"
+    ],
+    [
+      4,
+      0,
+      0
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "5"
+      ],
+      [
+        4,
+        0,
+        0
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "5",
+        "value": "5",
+        "start": 55,
+        "end": 56,
+        "clause": "What is the average number of silvers for teams ranked 5 with 0 bronze?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "'ranked 5' explicitly refers to the Rank field",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "0",
+        "value": 0,
+        "start": 62,
+        "end": 63,
+        "clause": "What is the average number of silvers for teams ranked 5 with 0 bronze?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "'0 bronze' explicitly refers to the Bronze field",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "5",
+        "value": "5",
+        "start": 55,
+        "end": 56
+      },
+      {
+        "surface": "0",
+        "value": "0",
+        "start": 62,
+        "end": 63
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the average number of silvers for teams ranked 5 with 0 bronze?",
+      "table": {
+        "header": [
+          "Rank",
+          "Institution",
+          "Gold",
+          "Silver",
+          "Bronze"
+        ],
+        "page_title": "2004 NCAA Division I Men's Swimming and Diving Championships",
+        "types": [
+          "text",
+          "text",
+          "real",
+          "real",
+          "real"
+        ],
+        "page_id": 13744010,
+        "id": "2-13744010-2",
+        "section_title": "Medal table",
+        "rows": [
+          [
+            "1",
+            "University of Texas at Austin",
+            "7",
+            "2",
+            "1"
+          ],
+          [
+            "2",
+            "Auburn University",
+            "5",
+            "3",
+            "4"
+          ],
+          [
+            "3",
+            "University of Michigan",
+            "3",
+            "2",
+            "0"
+          ],
+          [
+            "4",
+            "Stanford University",
+            "2",
+            "5",
+            "3"
+          ],
+          [
+            "5",
+            "University of Southern California",
+            "1",
+            "2",
+            "0"
+          ],
+          [
+            "6",
+            "University of Florida",
+            "1",
+            "0",
+            "2"
+          ],
+          [
+            "7",
+            "University of Tennessee",
+            "1",
+            "1",
+            "0"
+          ],
+          [
+            "8",
+            "Arizona State University",
+            "1",
+            "0",
+            "1"
+          ],
+          [
+            "9",
+            "University of California, Berkeley",
+            "0",
+            "3",
+            "2"
+          ],
+          [
+            "10",
+            "University of Arizona",
+            "0",
+            "1",
+            "3"
+          ],
+          [
+            "11",
+            "University of South Carolina",
+            "0",
+            "1",
+            "1"
+          ],
+          [
+            "11",
+            "University of Wyoming",
+            "0",
+            "1",
+            "1"
+          ],
+          [
+            "13",
+            "University of Georgia",
+            "0",
+            "0",
+            "2"
+          ],
+          [
+            "14",
+            "University of Kentucky",
+            "0",
+            "0",
+            "1"
+          ],
+          [
+            "Total",
+            "Total",
+            "21",
+            "21",
+            "21"
+          ]
+        ],
+        "caption": "Medal table",
+        "headers": [
+          "Rank",
+          "Institution",
+          "Gold",
+          "Silver",
+          "Bronze"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-13744010-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "5",
+              "value": "5",
+              "start": 55,
+              "end": 56
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 62,
+              "end": 63
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b95287bbb7aaa70dffb2dc7d61e45dfa9f863ebf30fbe914c98ea2177de39356",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4877,
+              "completion_tokens": 25,
+              "total_tokens": 4902,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "5",
+              "value": "5",
+              "start": 55,
+              "end": 56,
+              "clause": "What is the average number of silvers for teams ranked 5 with 0 bronze?"
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 62,
+              "end": 63,
+              "clause": "What is the average number of silvers for teams ranked 5 with 0 bronze?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "5",
+              "value": "5",
+              "start": 55,
+              "end": 56,
+              "clause": "What is the average number of silvers for teams ranked 5 with 0 bronze?"
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 62,
+              "end": 63,
+              "clause": "What is the average number of silvers for teams ranked 5 with 0 bronze?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "5",
+              "value": "5",
+              "start": 55,
+              "end": 56,
+              "clause": "What is the average number of silvers for teams ranked 5 with 0 bronze?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'ranked 5' explicitly refers to the Rank field"
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 62,
+              "end": 63,
+              "clause": "What is the average number of silvers for teams ranked 5 with 0 bronze?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'0 bronze' explicitly refers to the Bronze field"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "5b3b878f9f920a0c72ec07513168502b25620f1d7a98ac2711944e0f714ace8d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4954,
+              "completion_tokens": 48,
+              "total_tokens": 5002,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "5",
+              "value": "5",
+              "start": 55,
+              "end": 56,
+              "clause": "What is the average number of silvers for teams ranked 5 with 0 bronze?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'ranked 5' explicitly refers to the Rank field",
+              "operator": "="
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 62,
+              "end": 63,
+              "clause": "What is the average number of silvers for teams ranked 5 with 0 bronze?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'0 bronze' explicitly refers to the Bronze field",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e2bda3b505ca52c95bf3db101552daaf0708d2d71e6f9d0ae391c0b7f95265cd",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5034,
+              "completion_tokens": 11,
+              "total_tokens": 5045,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "5",
+              "value": "5",
+              "start": 55,
+              "end": 56,
+              "clause": "What is the average number of silvers for teams ranked 5 with 0 bronze?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'ranked 5' explicitly refers to the Rank field",
+              "operator": "="
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 62,
+              "end": 63,
+              "clause": "What is the average number of silvers for teams ranked 5 with 0 bronze?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'0 bronze' explicitly refers to the Bronze field",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f985e820dd83682c6b079a96bdeaa0fc29ddbfa0a79ed285cd0f4e2129897727",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4990,
+              "completion_tokens": 12,
+              "total_tokens": 5002,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "5",
+              "value": "5",
+              "start": 55,
+              "end": 56,
+              "clause": "What is the average number of silvers for teams ranked 5 with 0 bronze?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'ranked 5' explicitly refers to the Rank field",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 62,
+              "end": 63,
+              "clause": "What is the average number of silvers for teams ranked 5 with 0 bronze?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'0 bronze' explicitly refers to the Bronze field",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "5",
+              "value": "5",
+              "start": 55,
+              "end": 56,
+              "clause": "What is the average number of silvers for teams ranked 5 with 0 bronze?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'ranked 5' explicitly refers to the Rank field",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "0",
+              "value": 0,
+              "start": 62,
+              "end": 63,
+              "clause": "What is the average number of silvers for teams ranked 5 with 0 bronze?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'0 bronze' explicitly refers to the Bronze field",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "5",
+              "value": "5",
+              "start": 55,
+              "end": 56,
+              "clause": "What is the average number of silvers for teams ranked 5 with 0 bronze?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'ranked 5' explicitly refers to the Rank field",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "0",
+              "value": 0,
+              "start": 62,
+              "end": 63,
+              "clause": "What is the average number of silvers for teams ranked 5 with 0 bronze?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'0 bronze' explicitly refers to the Bronze field",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              "5"
+            ],
+            [
+              4,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "5",
+          "value": "5",
+          "start": 55,
+          "end": 56
+        },
+        {
+          "surface": "0",
+          "value": "0",
+          "start": 62,
+          "end": 63
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "5",
+          "value": "5",
+          "start": 55,
+          "end": 56,
+          "clause": "What is the average number of silvers for teams ranked 5 with 0 bronze?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "'ranked 5' explicitly refers to the Rank field",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "0",
+          "value": 0,
+          "start": 62,
+          "end": 63,
+          "clause": "What is the average number of silvers for teams ranked 5 with 0 bronze?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "'0 bronze' explicitly refers to the Bronze field",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          0,
+          0,
+          "5"
+        ],
+        [
+          4,
+          0,
+          0
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7860
+}

@@ -1,0 +1,588 @@
+{
+  "arm": "E2",
+  "position": 183,
+  "example_id": "test:6569:2-14828485-4",
+  "original_index": 6569,
+  "table_id": "2-14828485-4",
+  "question": "What is the road team of the game with Philadelphia as the home team with a result of 105-102?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        2,
+        0,
+        "philadelphia"
+      ],
+      [
+        3,
+        0,
+        "105-102"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "Philadelphia"
+    ],
+    [
+      3,
+      0,
+      "105-102"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "Philadelphia"
+      ],
+      [
+        3,
+        0,
+        "105-102"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Philadelphia",
+        "value": "Philadelphia",
+        "start": 39,
+        "end": 51,
+        "clause": "What is the road team of the game with Philadelphia as the home team with a result of 105-102?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The question explicitly identifies Philadelphia as the home team, matching Home Team.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "105-102",
+        "value": "105-102",
+        "start": 86,
+        "end": 93,
+        "clause": "What is the road team of the game with Philadelphia as the home team with a result of 105-102?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The question explicitly describes 105-102 as the result, matching Result.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Philadelphia",
+        "value": "Philadelphia",
+        "start": 39,
+        "end": 51
+      },
+      {
+        "surface": "105-102",
+        "value": "105-102",
+        "start": 86,
+        "end": 93
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the road team of the game with Philadelphia as the home team with a result of 105-102?",
+      "table": {
+        "header": [
+          "Game",
+          "Date",
+          "Home Team",
+          "Result",
+          "Road Team"
+        ],
+        "page_title": "1979–80 Philadelphia 76ers season",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 14828485,
+        "id": "2-14828485-4",
+        "section_title": "NBA finals",
+        "rows": [
+          [
+            "Game 1",
+            "May 4",
+            "Los Angeles",
+            "109-102",
+            "Philadelphia"
+          ],
+          [
+            "Game 2",
+            "May 7",
+            "Los Angeles",
+            "104-107",
+            "Philadelphia"
+          ],
+          [
+            "Game 3",
+            "May 10",
+            "Philadelphia",
+            "101-111",
+            "Los Angeles"
+          ],
+          [
+            "Game 4",
+            "May 11",
+            "Philadelphia",
+            "105-102",
+            "Los Angeles'"
+          ],
+          [
+            "Game 5",
+            "May 14",
+            "Los Angeles",
+            "108-103",
+            "Philadelphia"
+          ],
+          [
+            "Game 6",
+            "May 16",
+            "Philadelphia",
+            "107-123",
+            "Los Angeles"
+          ]
+        ],
+        "caption": "NBA finals",
+        "headers": [
+          "Game",
+          "Date",
+          "Home Team",
+          "Result",
+          "Road Team"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-14828485-4",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "Philadelphia",
+              "value": "Philadelphia",
+              "start": 39,
+              "end": 51
+            },
+            {
+              "surface": "105-102",
+              "value": "105-102",
+              "start": 86,
+              "end": 93
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b59a2a79e43e4d223b581099c45b0a58329ac83f3f23f0586f58734fe98abde1",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4790,
+              "completion_tokens": 29,
+              "total_tokens": 4819,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Philadelphia",
+              "value": "Philadelphia",
+              "start": 39,
+              "end": 51,
+              "clause": "What is the road team of the game with Philadelphia as the home team with a result of 105-102?"
+            },
+            {
+              "surface": "105-102",
+              "value": "105-102",
+              "start": 86,
+              "end": 93,
+              "clause": "What is the road team of the game with Philadelphia as the home team with a result of 105-102?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Philadelphia",
+              "value": "Philadelphia",
+              "start": 39,
+              "end": 51,
+              "clause": "What is the road team of the game with Philadelphia as the home team with a result of 105-102?"
+            },
+            {
+              "surface": "105-102",
+              "value": "105-102",
+              "start": 86,
+              "end": 93,
+              "clause": "What is the road team of the game with Philadelphia as the home team with a result of 105-102?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Philadelphia",
+              "value": "Philadelphia",
+              "start": 39,
+              "end": 51,
+              "clause": "What is the road team of the game with Philadelphia as the home team with a result of 105-102?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies Philadelphia as the home team, matching Home Team."
+            },
+            {
+              "surface": "105-102",
+              "value": "105-102",
+              "start": 86,
+              "end": 93,
+              "clause": "What is the road team of the game with Philadelphia as the home team with a result of 105-102?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly describes 105-102 as the result, matching Result."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "10d89ee9fc4f19946d2acd69f53f343ce9e9688153e3a3832f0b1074c32213f8",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4881,
+              "completion_tokens": 54,
+              "total_tokens": 4935,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Philadelphia",
+              "value": "Philadelphia",
+              "start": 39,
+              "end": 51,
+              "clause": "What is the road team of the game with Philadelphia as the home team with a result of 105-102?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies Philadelphia as the home team, matching Home Team.",
+              "operator": "="
+            },
+            {
+              "surface": "105-102",
+              "value": "105-102",
+              "start": 86,
+              "end": 93,
+              "clause": "What is the road team of the game with Philadelphia as the home team with a result of 105-102?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly describes 105-102 as the result, matching Result.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "842b437daef3f624f8479c93c2545f15694214187ffe3478e7ebc1b4b385a875",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4970,
+              "completion_tokens": 11,
+              "total_tokens": 4981,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Philadelphia",
+              "value": "Philadelphia",
+              "start": 39,
+              "end": 51,
+              "clause": "What is the road team of the game with Philadelphia as the home team with a result of 105-102?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies Philadelphia as the home team, matching Home Team.",
+              "operator": "="
+            },
+            {
+              "surface": "105-102",
+              "value": "105-102",
+              "start": 86,
+              "end": 93,
+              "clause": "What is the road team of the game with Philadelphia as the home team with a result of 105-102?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly describes 105-102 as the result, matching Result.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "2810654059fcef10116ae4ceb3008130d1e0082f5a7d4864c5cf51462bd9b3b3",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4924,
+              "completion_tokens": 14,
+              "total_tokens": 4938,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Philadelphia",
+              "value": "Philadelphia",
+              "start": 39,
+              "end": 51,
+              "clause": "What is the road team of the game with Philadelphia as the home team with a result of 105-102?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies Philadelphia as the home team, matching Home Team.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "105-102",
+              "value": "105-102",
+              "start": 86,
+              "end": 93,
+              "clause": "What is the road team of the game with Philadelphia as the home team with a result of 105-102?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly describes 105-102 as the result, matching Result.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Philadelphia",
+              "value": "Philadelphia",
+              "start": 39,
+              "end": 51,
+              "clause": "What is the road team of the game with Philadelphia as the home team with a result of 105-102?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies Philadelphia as the home team, matching Home Team.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "105-102",
+              "value": "105-102",
+              "start": 86,
+              "end": 93,
+              "clause": "What is the road team of the game with Philadelphia as the home team with a result of 105-102?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly describes 105-102 as the result, matching Result.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Philadelphia",
+              "value": "Philadelphia",
+              "start": 39,
+              "end": 51,
+              "clause": "What is the road team of the game with Philadelphia as the home team with a result of 105-102?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies Philadelphia as the home team, matching Home Team.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "105-102",
+              "value": "105-102",
+              "start": 86,
+              "end": 93,
+              "clause": "What is the road team of the game with Philadelphia as the home team with a result of 105-102?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly describes 105-102 as the result, matching Result.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "Philadelphia"
+            ],
+            [
+              3,
+              0,
+              "105-102"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Philadelphia",
+          "value": "Philadelphia",
+          "start": 39,
+          "end": 51
+        },
+        {
+          "surface": "105-102",
+          "value": "105-102",
+          "start": 86,
+          "end": 93
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Philadelphia",
+          "value": "Philadelphia",
+          "start": 39,
+          "end": 51,
+          "clause": "What is the road team of the game with Philadelphia as the home team with a result of 105-102?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The question explicitly identifies Philadelphia as the home team, matching Home Team.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "105-102",
+          "value": "105-102",
+          "start": 86,
+          "end": 93,
+          "clause": "What is the road team of the game with Philadelphia as the home team with a result of 105-102?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The question explicitly describes 105-102 as the result, matching Result.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          2,
+          0,
+          "Philadelphia"
+        ],
+        [
+          3,
+          0,
+          "105-102"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8953
+}

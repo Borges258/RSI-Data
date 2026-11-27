@@ -1,0 +1,109 @@
+{
+  "arm": "E1",
+  "position": 467,
+  "example_id": "test:5689:2-1419115-1",
+  "original_index": 5689,
+  "table_id": "2-1419115-1",
+  "question": "When the population is greater than 146,445 in the county of Carroll, what is the number of households?",
+  "gold_sql": {
+    "sel": 5,
+    "conds": [
+      [
+        4,
+        1,
+        "146,445"
+      ],
+      [
+        0,
+        0,
+        "carroll"
+      ]
+    ],
+    "agg": 4
+  },
+  "prediction_conds": [
+    [
+      4,
+      1,
+      146445
+    ],
+    [
+      0,
+      0,
+      "Carroll"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": "gpt-5.6-sol",
+  "usage": {
+    "prompt_tokens": 10219,
+    "completion_tokens": 49,
+    "total_tokens": 10268,
+    "prompt_tokens_details": {
+      "cached_tokens": 4224
+    }
+  },
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        1,
+        146445
+      ],
+      [
+        0,
+        0,
+        "Carroll"
+      ]
+    ],
+    "explanation": "Population is strictly greater than 146,445 and County equals the table value Carroll.",
+    "version": "wikisql-where-prior-v1",
+    "tableId": "2-1419115-1",
+    "knowledgeIds": [
+      "g-eq",
+      "g-gt",
+      "g-lt",
+      "g-inclusive",
+      "g-literal",
+      "g-threshold",
+      "g-and",
+      "g-or",
+      "g-column",
+      "g-count",
+      "g-ambiguous",
+      "t-2-1419115-1-field-0",
+      "t-2-1419115-1-field-1",
+      "t-2-1419115-1-field-2",
+      "t-2-1419115-1-field-3",
+      "t-2-1419115-1-field-4",
+      "t-2-1419115-1-field-5",
+      "d-implicit-eq",
+      "d-explicit-eq",
+      "d-gt",
+      "d-lt-and-gt",
+      "d-with-two",
+      "d-literal-form",
+      "p-text",
+      "p-number",
+      "p-multi",
+      "p-unsupported"
+    ],
+    "promptSha256": "6a3293c058752c2996e641693d04c431576eec931db7c00bbd8f1ccbb7c505e3",
+    "model": "gpt-5.6-sol",
+    "usage": {
+      "prompt_tokens": 10219,
+      "completion_tokens": 49,
+      "total_tokens": 10268,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      }
+    },
+    "latencyMs": 2399
+  },
+  "source": "where_prior_parse",
+  "safe_completed": true,
+  "elapsed_ms": 2422
+}

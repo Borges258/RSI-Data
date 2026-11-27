@@ -1,0 +1,651 @@
+{
+  "arm": "E2",
+  "position": 334,
+  "example_id": "test:13121:2-17857470-4",
+  "original_index": 13121,
+  "table_id": "2-17857470-4",
+  "question": "Which inhabitants have 2009 as the election, with cremona as the municipality?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        4,
+        0,
+        2009
+      ],
+      [
+        0,
+        0,
+        "cremona"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      4,
+      0,
+      2009
+    ],
+    [
+      0,
+      0,
+      "Cremona"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        0,
+        2009
+      ],
+      [
+        0,
+        0,
+        "Cremona"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "2009",
+        "value": 2009,
+        "start": 23,
+        "end": 27,
+        "clause": "Which inhabitants have 2009 as the election",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The question explicitly identifies 2009 as the election, matching the Election header and row values.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "cremona",
+        "value": "Cremona",
+        "start": 50,
+        "end": 57,
+        "clause": "with cremona as the municipality?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "The question explicitly identifies Cremona as the municipality, matching the Municipality header and row value.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "2009",
+        "value": "2009",
+        "start": 23,
+        "end": 27
+      },
+      {
+        "surface": "cremona",
+        "value": "Cremona",
+        "start": 50,
+        "end": 57
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Which inhabitants have 2009 as the election, with cremona as the municipality?",
+      "table": {
+        "header": [
+          "Municipality",
+          "Inhabitants",
+          "Mayor",
+          "Party",
+          "Election"
+        ],
+        "page_title": "Politics of Lombardy",
+        "types": [
+          "text",
+          "real",
+          "text",
+          "text",
+          "real"
+        ],
+        "page_id": 17857470,
+        "id": "2-17857470-4",
+        "section_title": "Municipalities",
+        "rows": [
+          [
+            "Milan",
+            "1,324,110",
+            "Giuliano Pisapia",
+            "Left Ecology Freedom",
+            "2011"
+          ],
+          [
+            "Brescia",
+            "193,879",
+            "Emilio Del Bono",
+            "Democratic Party",
+            "2013"
+          ],
+          [
+            "Monza",
+            "122,712",
+            "Roberto Scanagatti",
+            "Democratic Party",
+            "2012"
+          ],
+          [
+            "Bergamo",
+            "119,551",
+            "Franco Tentorio",
+            "The People of Freedom",
+            "2009"
+          ],
+          [
+            "Como",
+            "85,263",
+            "Mario Lucini",
+            "Democratic Party",
+            "2012"
+          ],
+          [
+            "Busto Arsizio",
+            "81,760",
+            "Gianluigi Farioli",
+            "The People of Freedom",
+            "2011"
+          ],
+          [
+            "Varese",
+            "81,579",
+            "Attilio Fontana",
+            "Lega Lombarda",
+            "2011"
+          ],
+          [
+            "Sesto San Giovanni",
+            "81,130",
+            "Monica Chittò",
+            "Democratic Party",
+            "2012"
+          ],
+          [
+            "Cinisello Balsamo",
+            "74,150",
+            "Daniela Gasparini",
+            "Democratic Party",
+            "2009"
+          ],
+          [
+            "Cremona",
+            "72,147",
+            "Oreste Perri",
+            "The People of Freedom",
+            "2009"
+          ],
+          [
+            "Pavia",
+            "71,142",
+            "Alessandro Cattaneo",
+            "The People of Freedom",
+            "2009"
+          ],
+          [
+            "Vigevano",
+            "63,700",
+            "Andrea Sala",
+            "Lega Lombarda",
+            "2010"
+          ],
+          [
+            "Legnano",
+            "59,147",
+            "Alberto Centinaio",
+            "Democratic Party",
+            "2012"
+          ],
+          [
+            "Gallarate",
+            "51,751",
+            "Edoardo Guenzani",
+            "Democratic Party",
+            "2011"
+          ],
+          [
+            "Rho",
+            "50,686",
+            "Pietro Romano",
+            "Democratic Party",
+            "2011"
+          ]
+        ],
+        "caption": "Municipalities",
+        "headers": [
+          "Municipality",
+          "Inhabitants",
+          "Mayor",
+          "Party",
+          "Election"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-17857470-4",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "2009",
+              "value": "2009",
+              "start": 23,
+              "end": 27
+            },
+            {
+              "surface": "cremona",
+              "value": "Cremona",
+              "start": 50,
+              "end": 57
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "acc8483c967fdc2c19fcd82cb1a24e2d394188a805b0cba265baee6b9914c024",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5004,
+              "completion_tokens": 31,
+              "total_tokens": 5035,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2009",
+              "value": "2009",
+              "start": 23,
+              "end": 27,
+              "clause": "Which inhabitants have 2009 as the election"
+            },
+            {
+              "surface": "cremona",
+              "value": "Cremona",
+              "start": 50,
+              "end": 57,
+              "clause": "with cremona as the municipality?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "2009",
+              "value": "2009",
+              "start": 23,
+              "end": 27,
+              "clause": "Which inhabitants have 2009 as the election"
+            },
+            {
+              "surface": "cremona",
+              "value": "Cremona",
+              "start": 50,
+              "end": 57,
+              "clause": "with cremona as the municipality?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2009",
+              "value": "2009",
+              "start": 23,
+              "end": 27,
+              "clause": "Which inhabitants have 2009 as the election",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly identifies 2009 as the election, matching the Election header and row values."
+            },
+            {
+              "surface": "cremona",
+              "value": "Cremona",
+              "start": 50,
+              "end": 57,
+              "clause": "with cremona as the municipality?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly identifies Cremona as the municipality, matching the Municipality header and row value."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "dd5fa22ebc3558d75614896b9f903b028d86f25758575bea236c83246c63e8c6",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5067,
+              "completion_tokens": 62,
+              "total_tokens": 5129,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2009",
+              "value": "2009",
+              "start": 23,
+              "end": 27,
+              "clause": "Which inhabitants have 2009 as the election",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly identifies 2009 as the election, matching the Election header and row values.",
+              "operator": "="
+            },
+            {
+              "surface": "cremona",
+              "value": "Cremona",
+              "start": 50,
+              "end": 57,
+              "clause": "with cremona as the municipality?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly identifies Cremona as the municipality, matching the Municipality header and row value.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ac5921f17ccf90d562b88d117445055494ac97ea1ae7f11b79e3a84a28c2eb71",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5164,
+              "completion_tokens": 11,
+              "total_tokens": 5175,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2009",
+              "value": "2009",
+              "start": 23,
+              "end": 27,
+              "clause": "Which inhabitants have 2009 as the election",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly identifies 2009 as the election, matching the Election header and row values.",
+              "operator": "="
+            },
+            {
+              "surface": "cremona",
+              "value": "Cremona",
+              "start": 50,
+              "end": 57,
+              "clause": "with cremona as the municipality?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly identifies Cremona as the municipality, matching the Municipality header and row value.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "32d83e9aab58ed25d1a2e4014587edcf37cd21f4ab587e002485d450d9514fae",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5118,
+              "completion_tokens": 15,
+              "total_tokens": 5133,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2009",
+              "value": "2009",
+              "start": 23,
+              "end": 27,
+              "clause": "Which inhabitants have 2009 as the election",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly identifies 2009 as the election, matching the Election header and row values.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "cremona",
+              "value": "Cremona",
+              "start": 50,
+              "end": 57,
+              "clause": "with cremona as the municipality?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly identifies Cremona as the municipality, matching the Municipality header and row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2009",
+              "value": 2009,
+              "start": 23,
+              "end": 27,
+              "clause": "Which inhabitants have 2009 as the election",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly identifies 2009 as the election, matching the Election header and row values.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "cremona",
+              "value": "Cremona",
+              "start": 50,
+              "end": 57,
+              "clause": "with cremona as the municipality?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly identifies Cremona as the municipality, matching the Municipality header and row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "2009",
+              "value": 2009,
+              "start": 23,
+              "end": 27,
+              "clause": "Which inhabitants have 2009 as the election",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly identifies 2009 as the election, matching the Election header and row values.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "cremona",
+              "value": "Cremona",
+              "start": 50,
+              "end": 57,
+              "clause": "with cremona as the municipality?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly identifies Cremona as the municipality, matching the Municipality header and row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              0,
+              2009
+            ],
+            [
+              0,
+              0,
+              "Cremona"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "2009",
+          "value": "2009",
+          "start": 23,
+          "end": 27
+        },
+        {
+          "surface": "cremona",
+          "value": "Cremona",
+          "start": 50,
+          "end": 57
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "2009",
+          "value": 2009,
+          "start": 23,
+          "end": 27,
+          "clause": "Which inhabitants have 2009 as the election",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The question explicitly identifies 2009 as the election, matching the Election header and row values.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "cremona",
+          "value": "Cremona",
+          "start": 50,
+          "end": 57,
+          "clause": "with cremona as the municipality?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "The question explicitly identifies Cremona as the municipality, matching the Municipality header and row value.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          4,
+          0,
+          2009
+        ],
+        [
+          0,
+          0,
+          "Cremona"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9796
+}

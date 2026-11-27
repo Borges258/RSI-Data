@@ -1,0 +1,588 @@
+{
+  "arm": "E2",
+  "position": 452,
+  "example_id": "test:14019:2-18662643-17",
+  "original_index": 14019,
+  "table_id": "2-18662643-17",
+  "question": "What is the Rank of the Player with a Time of 7:20.32 and Notes of FB?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        4,
+        0,
+        "fb"
+      ],
+      [
+        3,
+        0,
+        "7:20.32"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      3,
+      0,
+      "7:20.32"
+    ],
+    [
+      4,
+      0,
+      "FB"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        0,
+        "7:20.32"
+      ],
+      [
+        4,
+        0,
+        "FB"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "7:20.32",
+        "value": "7:20.32",
+        "start": 46,
+        "end": 53,
+        "clause": "What is the Rank of the Player with a Time of 7:20.32",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "Explicitly described as Time; header Time contains 7:20.32.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "FB",
+        "value": "FB",
+        "start": 67,
+        "end": 69,
+        "clause": "and Notes of FB?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "Explicitly described as Notes; header Notes contains FB.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "7:20.32",
+        "value": "7:20.32",
+        "start": 46,
+        "end": 53
+      },
+      {
+        "surface": "FB",
+        "value": "FB",
+        "start": 67,
+        "end": 69
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the Rank of the Player with a Time of 7:20.32 and Notes of FB?",
+      "table": {
+        "header": [
+          "Rank",
+          "Athlete",
+          "Country",
+          "Time",
+          "Notes"
+        ],
+        "page_title": "Rowing at the 2008 Summer Olympics – Men's single sculls",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 18662643,
+        "id": "2-18662643-17",
+        "section_title": "Semifinal A/B 2",
+        "rows": [
+          [
+            "1",
+            "Ondřej Synek",
+            "Czech Republic",
+            "7:03.57",
+            "FA"
+          ],
+          [
+            "2",
+            "Alan Campbell",
+            "Great Britain",
+            "7:05.24",
+            "FA"
+          ],
+          [
+            "3",
+            "Mahé Drysdale",
+            "New Zealand",
+            "7:05.57",
+            "FA"
+          ],
+          [
+            "4",
+            "Ioannis Christou",
+            "Greece",
+            "7:06.02",
+            "FB"
+          ],
+          [
+            "5",
+            "Ken Jurkowski",
+            "United States",
+            "7:11.52",
+            "FB"
+          ],
+          [
+            "6",
+            "Mindaugas Griskonis",
+            "Lithuania",
+            "7:20.32",
+            "FB"
+          ]
+        ],
+        "caption": "Semifinal A/B 2",
+        "headers": [
+          "Rank",
+          "Athlete",
+          "Country",
+          "Time",
+          "Notes"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-18662643-17",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "7:20.32",
+              "value": "7:20.32",
+              "start": 46,
+              "end": 53
+            },
+            {
+              "surface": "FB",
+              "value": "FB",
+              "start": 67,
+              "end": 69
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "be4c251804ec3ef4aa24be1e94637e97603b14abb238ee2d59449d68d08e3495",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4810,
+              "completion_tokens": 33,
+              "total_tokens": 4843,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "7:20.32",
+              "value": "7:20.32",
+              "start": 46,
+              "end": 53,
+              "clause": "What is the Rank of the Player with a Time of 7:20.32"
+            },
+            {
+              "surface": "FB",
+              "value": "FB",
+              "start": 67,
+              "end": 69,
+              "clause": "and Notes of FB?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "7:20.32",
+              "value": "7:20.32",
+              "start": 46,
+              "end": 53,
+              "clause": "What is the Rank of the Player with a Time of 7:20.32"
+            },
+            {
+              "surface": "FB",
+              "value": "FB",
+              "start": 67,
+              "end": 69,
+              "clause": "and Notes of FB?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "7:20.32",
+              "value": "7:20.32",
+              "start": 46,
+              "end": 53,
+              "clause": "What is the Rank of the Player with a Time of 7:20.32",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicitly described as Time; header Time contains 7:20.32."
+            },
+            {
+              "surface": "FB",
+              "value": "FB",
+              "start": 67,
+              "end": 69,
+              "clause": "and Notes of FB?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Explicitly described as Notes; header Notes contains FB."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c274d22848591790a46b4efd342f5f568d4cb45dc3b9e710b6542f0feee42099",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4881,
+              "completion_tokens": 52,
+              "total_tokens": 4933,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "7:20.32",
+              "value": "7:20.32",
+              "start": 46,
+              "end": 53,
+              "clause": "What is the Rank of the Player with a Time of 7:20.32",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicitly described as Time; header Time contains 7:20.32.",
+              "operator": "="
+            },
+            {
+              "surface": "FB",
+              "value": "FB",
+              "start": 67,
+              "end": 69,
+              "clause": "and Notes of FB?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Explicitly described as Notes; header Notes contains FB.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b0e6daea4e8a0f77aea679f05dbd8b36417264b3308b8b89ad0acab8de58ccca",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4968,
+              "completion_tokens": 11,
+              "total_tokens": 4979,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "7:20.32",
+              "value": "7:20.32",
+              "start": 46,
+              "end": 53,
+              "clause": "What is the Rank of the Player with a Time of 7:20.32",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicitly described as Time; header Time contains 7:20.32.",
+              "operator": "="
+            },
+            {
+              "surface": "FB",
+              "value": "FB",
+              "start": 67,
+              "end": 69,
+              "clause": "and Notes of FB?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Explicitly described as Notes; header Notes contains FB.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "25c9ad343faefe1225059d29992f5b0c2adaab9ce8dbb51cb27a611d69fe4472",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4922,
+              "completion_tokens": 16,
+              "total_tokens": 4938,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "7:20.32",
+              "value": "7:20.32",
+              "start": 46,
+              "end": 53,
+              "clause": "What is the Rank of the Player with a Time of 7:20.32",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicitly described as Time; header Time contains 7:20.32.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "FB",
+              "value": "FB",
+              "start": 67,
+              "end": 69,
+              "clause": "and Notes of FB?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Explicitly described as Notes; header Notes contains FB.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "7:20.32",
+              "value": "7:20.32",
+              "start": 46,
+              "end": 53,
+              "clause": "What is the Rank of the Player with a Time of 7:20.32",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicitly described as Time; header Time contains 7:20.32.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "FB",
+              "value": "FB",
+              "start": 67,
+              "end": 69,
+              "clause": "and Notes of FB?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Explicitly described as Notes; header Notes contains FB.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "7:20.32",
+              "value": "7:20.32",
+              "start": 46,
+              "end": 53,
+              "clause": "What is the Rank of the Player with a Time of 7:20.32",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicitly described as Time; header Time contains 7:20.32.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "FB",
+              "value": "FB",
+              "start": 67,
+              "end": 69,
+              "clause": "and Notes of FB?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Explicitly described as Notes; header Notes contains FB.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              0,
+              "7:20.32"
+            ],
+            [
+              4,
+              0,
+              "FB"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "7:20.32",
+          "value": "7:20.32",
+          "start": 46,
+          "end": 53
+        },
+        {
+          "surface": "FB",
+          "value": "FB",
+          "start": 67,
+          "end": 69
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "7:20.32",
+          "value": "7:20.32",
+          "start": 46,
+          "end": 53,
+          "clause": "What is the Rank of the Player with a Time of 7:20.32",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "Explicitly described as Time; header Time contains 7:20.32.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "FB",
+          "value": "FB",
+          "start": 67,
+          "end": 69,
+          "clause": "and Notes of FB?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "Explicitly described as Notes; header Notes contains FB.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          3,
+          0,
+          "7:20.32"
+        ],
+        [
+          4,
+          0,
+          "FB"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8609
+}

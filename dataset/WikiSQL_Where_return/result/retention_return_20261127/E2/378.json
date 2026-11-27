@@ -1,0 +1,432 @@
+{
+  "arm": "E2",
+  "position": 378,
+  "example_id": "test:14913:2-12935070-1",
+  "original_index": 14913,
+  "table_id": "2-12935070-1",
+  "question": "Where was September 5?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        0,
+        0,
+        "september 5"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "September 5"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "September 5"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "September 5",
+        "value": "September 5",
+        "start": 10,
+        "end": 21,
+        "clause": "Where was September 5?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "The condition is a calendar date, matching the Date header and the September 5 cell in that column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "September 5",
+        "value": "September 5",
+        "start": 10,
+        "end": 21
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Where was September 5?",
+      "table": {
+        "header": [
+          "Date",
+          "Local Time",
+          "Location",
+          "Score",
+          "Winner"
+        ],
+        "page_title": "2007 Super Series",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 12935070,
+        "id": "2-12935070-1",
+        "section_title": "Schedule",
+        "rows": [
+          [
+            "August 27",
+            "19:00",
+            "Ufa Arena , Ufa",
+            "4 - 2",
+            "Canada"
+          ],
+          [
+            "August 29",
+            "19:00",
+            "Ufa Arena , Ufa",
+            "3 - 0",
+            "Canada"
+          ],
+          [
+            "August 31",
+            "19:00",
+            "Omsk Arena , Omsk",
+            "6 - 2",
+            "Canada"
+          ],
+          [
+            "September 1",
+            "17:00",
+            "Omsk Arena , Omsk",
+            "4 - 2",
+            "Canada"
+          ],
+          [
+            "September 4",
+            "19:00",
+            "MTS Centre , Winnipeg",
+            "1 - 8",
+            "Canada"
+          ],
+          [
+            "September 5",
+            "19:00",
+            "Credit Union Centre , Saskatoon",
+            "1 - 4",
+            "Canada"
+          ],
+          [
+            "September 7",
+            "20:00",
+            "Enmax Centrium , Red Deer",
+            "4 - 4",
+            "Draw"
+          ],
+          [
+            "September 9",
+            "17:00",
+            "General Motors Place , Vancouver",
+            "1 - 6",
+            "Canada"
+          ]
+        ],
+        "caption": "Schedule",
+        "headers": [
+          "Date",
+          "Local Time",
+          "Location",
+          "Score",
+          "Winner"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-12935070-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "September 5",
+              "value": "September 5",
+              "start": 10,
+              "end": 21
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b7b34cc53d1026c744cb979c945c8405d3c71a569517bf9a0c7c58d2400fe090",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4840,
+              "completion_tokens": 21,
+              "total_tokens": 4861,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "September 5",
+              "value": "September 5",
+              "start": 10,
+              "end": 21,
+              "clause": "Where was September 5?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "September 5",
+              "value": "September 5",
+              "start": 10,
+              "end": 21,
+              "clause": "Where was September 5?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "September 5",
+              "value": "September 5",
+              "start": 10,
+              "end": 21,
+              "clause": "Where was September 5?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The condition is a calendar date, matching the Date header and the September 5 cell in that column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "248c2abcc555d2022e0e95ec0c5e20b5090a61237c9b1e51f292b7e1858b0d86",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4871,
+              "completion_tokens": 42,
+              "total_tokens": 4913,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "September 5",
+              "value": "September 5",
+              "start": 10,
+              "end": 21,
+              "clause": "Where was September 5?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The condition is a calendar date, matching the Date header and the September 5 cell in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "217c850c97f51aa64ade4cbe043d1785c205d37b2ea98e8c1df88dda90e5f519",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4937,
+              "completion_tokens": 9,
+              "total_tokens": 4946,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "September 5",
+              "value": "September 5",
+              "start": 10,
+              "end": 21,
+              "clause": "Where was September 5?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The condition is a calendar date, matching the Date header and the September 5 cell in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "628919cfd23fb8cb6b7052f8395834cc8e6f783e7a94fa93a2e02957ee216ba2",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4888,
+              "completion_tokens": 12,
+              "total_tokens": 4900,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "September 5",
+              "value": "September 5",
+              "start": 10,
+              "end": 21,
+              "clause": "Where was September 5?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The condition is a calendar date, matching the Date header and the September 5 cell in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "September 5",
+              "value": "September 5",
+              "start": 10,
+              "end": 21,
+              "clause": "Where was September 5?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The condition is a calendar date, matching the Date header and the September 5 cell in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "September 5",
+              "value": "September 5",
+              "start": 10,
+              "end": 21,
+              "clause": "Where was September 5?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The condition is a calendar date, matching the Date header and the September 5 cell in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              "September 5"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "September 5",
+          "value": "September 5",
+          "start": 10,
+          "end": 21
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "September 5",
+          "value": "September 5",
+          "start": 10,
+          "end": 21,
+          "clause": "Where was September 5?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "The condition is a calendar date, matching the Date header and the September 5 cell in that column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          0,
+          0,
+          "September 5"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 10859
+}

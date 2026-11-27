@@ -1,0 +1,418 @@
+{
+  "arm": "E2",
+  "position": 392,
+  "example_id": "test:15534:2-12583908-1",
+  "original_index": 15534,
+  "table_id": "2-12583908-1",
+  "question": "What notes have the 8th position?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        3,
+        0,
+        "8th"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      3,
+      0,
+      "8th"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        0,
+        "8th"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "8th",
+        "value": "8th",
+        "start": 20,
+        "end": 23,
+        "clause": "What notes have the 8th position?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The question explicitly describes \"8th\" as a position, matching the Position header and row evidence.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "8th",
+        "value": "8th",
+        "start": 20,
+        "end": 23
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What notes have the 8th position?",
+      "table": {
+        "header": [
+          "Year",
+          "Competition",
+          "Venue",
+          "Position",
+          "Notes"
+        ],
+        "page_title": "Julianna Tudja",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 12583908,
+        "id": "2-12583908-1",
+        "section_title": "Achievements",
+        "rows": [
+          [
+            "1998",
+            "World Junior Championships",
+            "Annecy , France",
+            "6th",
+            "57.73 m"
+          ],
+          [
+            "1998",
+            "European Championships",
+            "Budapest, Hungary",
+            "20th (q)",
+            "55.90 m"
+          ],
+          [
+            "2001",
+            "European U23 Championships",
+            "Amsterdam, Netherlands",
+            "8th",
+            "60.52 m"
+          ],
+          [
+            "2002",
+            "European Championships",
+            "Munich, Germany",
+            "21st (q)",
+            "61.46 m"
+          ],
+          [
+            "2003",
+            "Universiade",
+            "Daegu , South Korea",
+            "9th",
+            "57.55 m"
+          ],
+          [
+            "2004",
+            "Olympic Games",
+            "Athens, Greece",
+            "18th (q)",
+            "66.85 m"
+          ]
+        ],
+        "caption": "Achievements",
+        "headers": [
+          "Year",
+          "Competition",
+          "Venue",
+          "Position",
+          "Notes"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-12583908-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "8th",
+              "value": "8th",
+              "start": 20,
+              "end": 23
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "9c6b425a4352b372999c433a88b174ec4fd65a3e374c835f8574b648604de494",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4791,
+              "completion_tokens": 19,
+              "total_tokens": 4810,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "8th",
+              "value": "8th",
+              "start": 20,
+              "end": 23,
+              "clause": "What notes have the 8th position?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "8th",
+              "value": "8th",
+              "start": 20,
+              "end": 23,
+              "clause": "What notes have the 8th position?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "8th",
+              "value": "8th",
+              "start": 20,
+              "end": 23,
+              "clause": "What notes have the 8th position?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly describes \"8th\" as a position, matching the Position header and row evidence."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "792f77e912ee9aff1f73eca5717a777d942be4e3e981072422102a360fb447a9",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4823,
+              "completion_tokens": 41,
+              "total_tokens": 4864,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "8th",
+              "value": "8th",
+              "start": 20,
+              "end": 23,
+              "clause": "What notes have the 8th position?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly describes \"8th\" as a position, matching the Position header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "915de1e6404e6fcd826475f06ab637d3fab382f62bef5ca511342c46f8e782ea",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4888,
+              "completion_tokens": 9,
+              "total_tokens": 4897,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "8th",
+              "value": "8th",
+              "start": 20,
+              "end": 23,
+              "clause": "What notes have the 8th position?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly describes \"8th\" as a position, matching the Position header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c7d850f684f362e98f36cbebfa7f70547503eb4a4bf70efa0979c94416f01181",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4839,
+              "completion_tokens": 11,
+              "total_tokens": 4850,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "8th",
+              "value": "8th",
+              "start": 20,
+              "end": 23,
+              "clause": "What notes have the 8th position?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly describes \"8th\" as a position, matching the Position header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "8th",
+              "value": "8th",
+              "start": 20,
+              "end": 23,
+              "clause": "What notes have the 8th position?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly describes \"8th\" as a position, matching the Position header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "8th",
+              "value": "8th",
+              "start": 20,
+              "end": 23,
+              "clause": "What notes have the 8th position?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly describes \"8th\" as a position, matching the Position header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              0,
+              "8th"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "8th",
+          "value": "8th",
+          "start": 20,
+          "end": 23
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "8th",
+          "value": "8th",
+          "start": 20,
+          "end": 23,
+          "clause": "What notes have the 8th position?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The question explicitly describes \"8th\" as a position, matching the Position header and row evidence.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          3,
+          0,
+          "8th"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7266
+}

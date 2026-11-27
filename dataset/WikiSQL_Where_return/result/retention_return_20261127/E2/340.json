@@ -1,0 +1,923 @@
+{
+  "arm": "E2",
+  "position": 340,
+  "example_id": "test:13309:2-18737756-2",
+  "original_index": 13309,
+  "table_id": "2-18737756-2",
+  "question": "Which school joined in 1971 and left in 1975?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        5,
+        0,
+        "1971"
+      ],
+      [
+        6,
+        0,
+        "1975"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      5,
+      0,
+      "1971"
+    ],
+    [
+      6,
+      0,
+      "1975"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        5,
+        0,
+        "1971"
+      ],
+      [
+        6,
+        0,
+        "1975"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "1971",
+        "value": "1971",
+        "start": 23,
+        "end": 27,
+        "clause": "Which school joined in 1971",
+        "columnIndex": 5,
+        "columnCandidates": [
+          5
+        ],
+        "columnMatchReason": "'Joined in 1971' refers to Year Joined; Wawassee Prep has 1971 in that column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "1975",
+        "value": "1975",
+        "start": 40,
+        "end": 44,
+        "clause": "and left in 1975?",
+        "columnIndex": 6,
+        "columnCandidates": [
+          6
+        ],
+        "columnMatchReason": "'Left in 1975' refers to Year Left; Wawassee Prep has 1975 in that column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "1971",
+        "value": "1971",
+        "start": 23,
+        "end": 27
+      },
+      {
+        "surface": "1975",
+        "value": "1975",
+        "start": 40,
+        "end": 44
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Which school joined in 1971 and left in 1975?",
+      "table": {
+        "header": [
+          "School",
+          "Location",
+          "Mascot",
+          "IHSAA Class",
+          "County",
+          "Year Joined",
+          "Year Left",
+          "Conference Joined"
+        ],
+        "page_title": "Midland Conference (IHSAA)",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 18737756,
+        "id": "2-18737756-2",
+        "section_title": "Former Members",
+        "rows": [
+          [
+            "Bethany Christian",
+            "Goshen",
+            "Bruins",
+            "N/A",
+            "20 Elkhart",
+            "1971 1987",
+            "1981 1988",
+            "independent"
+          ],
+          [
+            "Divine Heart",
+            "Donaldson",
+            "Chargers",
+            "N/A",
+            "50 Marshall",
+            "1971",
+            "1972",
+            "independent (closed 1979)"
+          ],
+          [
+            "Fort Wayne Canterbury",
+            "Fort Wayne",
+            "Cavaliers",
+            "A",
+            "2 Allen",
+            "1985",
+            "2002",
+            "independent"
+          ],
+          [
+            "Huntington Catholic",
+            "Huntington",
+            "Ramblers",
+            "N/A",
+            "35 Huntington",
+            "1971 1984",
+            "1981 1985",
+            "independent closed 1985"
+          ],
+          [
+            "Kewanna",
+            "Kewanna",
+            "Indians",
+            "N/A",
+            "25 Fulton",
+            "1971",
+            "1981",
+            "merged into Caston"
+          ],
+          [
+            "Lakewood Park Christian",
+            "Auburn",
+            "Panthers",
+            "A",
+            "17 Dekalb",
+            "2000",
+            "2009",
+            "independent"
+          ],
+          [
+            "Marion Bennett",
+            "Marion",
+            "Trojans",
+            "N/A",
+            "27 Grant",
+            "1973 1984",
+            "1981 1993",
+            "independent closed 1993"
+          ],
+          [
+            "Wawassee Prep",
+            "Syracuse",
+            "Lakers",
+            "N/A",
+            "50 Marshall",
+            "1971",
+            "1975",
+            "closed 1975"
+          ]
+        ],
+        "caption": "Former Members",
+        "headers": [
+          "School",
+          "Location",
+          "Mascot",
+          "IHSAA Class",
+          "County",
+          "Year Joined",
+          "Year Left",
+          "Conference Joined"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-18737756-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "1971",
+              "value": "1971",
+              "start": 23,
+              "end": 27
+            },
+            {
+              "surface": "1975",
+              "value": "1975",
+              "start": 40,
+              "end": 44
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "884b671add9b6a9cb69e4d110de79a3d1ef63eefbd39ab8391b5e48bfa11b1b5",
+            "knowledgeIds": [],
+            "usage": {
+              "attribution": {
+                "items": {
+                  "msg_0f51c491ecf84be6016b09052cbd0487d080a237a38db6d0e1": {
+                    "input_tokens": 64,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 64,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0f51c491ecf84be6016b09052cbd0487d092ed543005560776": {
+                    "input_tokens": 422,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 422,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0f51c491ecf84be6016b09052cbd0487d0a081a2c41bf0ed41": {
+                    "input_tokens": 86,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 86,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0f51c491ecf84be6016b09052d883887d0801762e5de628243": {
+                    "input_tokens": 2,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 29,
+                    "content": [
+                      {
+                        "input_tokens": 2,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 29
+                      }
+                    ]
+                  }
+                },
+                "request_fields": {
+                  "instructions": {
+                    "input_tokens": 4380,
+                    "cached_tokens": 3968,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0
+                  }
+                }
+              },
+              "prompt_tokens": 4954,
+              "completion_tokens": 29,
+              "total_tokens": 4983,
+              "prompt_tokens_details": {
+                "cache_write_tokens_details": {
+                  "ttl_30m_tokens": 0,
+                  "ttl_12h_tokens": 0
+                },
+                "cached_tokens": 3968
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1971",
+              "value": "1971",
+              "start": 23,
+              "end": 27,
+              "clause": "Which school joined in 1971"
+            },
+            {
+              "surface": "1975",
+              "value": "1975",
+              "start": 40,
+              "end": 44,
+              "clause": "and left in 1975?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "1971",
+              "value": "1971",
+              "start": 23,
+              "end": 27,
+              "clause": "Which school joined in 1971"
+            },
+            {
+              "surface": "1975",
+              "value": "1975",
+              "start": 40,
+              "end": 44,
+              "clause": "and left in 1975?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1971",
+              "value": "1971",
+              "start": 23,
+              "end": 27,
+              "clause": "Which school joined in 1971",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "'Joined in 1971' refers to Year Joined; Wawassee Prep has 1971 in that column."
+            },
+            {
+              "surface": "1975",
+              "value": "1975",
+              "start": 40,
+              "end": 44,
+              "clause": "and left in 1975?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "'Left in 1975' refers to Year Left; Wawassee Prep has 1975 in that column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "8115405dd9ba44a117b2a2715e994d42a022221c81441f7c75eb69183ee8851e",
+            "knowledgeIds": [],
+            "usage": {
+              "attribution": {
+                "items": {
+                  "msg_01e395ab4125fbf3016b09052f171087d083b2fbb133307398": {
+                    "input_tokens": 64,
+                    "cached_tokens": 61,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 64,
+                        "cached_tokens": 61,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_01e395ab4125fbf3016b09052f171087d0b1742b8406a8d3de": {
+                    "input_tokens": 422,
+                    "cached_tokens": 276,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 422,
+                        "cached_tokens": 276,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_01e395ab4125fbf3016b09052f171087d0b8efcefb3e60e8fc": {
+                    "input_tokens": 145,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 145,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_01e395ab4125fbf3016b09053020b487d0b76831496914acf8": {
+                    "input_tokens": 2,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 73,
+                    "content": [
+                      {
+                        "input_tokens": 2,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 73
+                      }
+                    ]
+                  }
+                },
+                "request_fields": {
+                  "instructions": {
+                    "input_tokens": 4380,
+                    "cached_tokens": 4143,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0
+                  }
+                }
+              },
+              "prompt_tokens": 5013,
+              "completion_tokens": 73,
+              "total_tokens": 5086,
+              "prompt_tokens_details": {
+                "cache_write_tokens_details": {
+                  "ttl_30m_tokens": 0,
+                  "ttl_12h_tokens": 0
+                },
+                "cached_tokens": 4480
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1971",
+              "value": "1971",
+              "start": 23,
+              "end": 27,
+              "clause": "Which school joined in 1971",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "'Joined in 1971' refers to Year Joined; Wawassee Prep has 1971 in that column.",
+              "operator": "="
+            },
+            {
+              "surface": "1975",
+              "value": "1975",
+              "start": 40,
+              "end": 44,
+              "clause": "and left in 1975?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "'Left in 1975' refers to Year Left; Wawassee Prep has 1975 in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "44997164ede8173c3fb3682920f079ef1e399969fe1afa260cb681458e2a061c",
+            "knowledgeIds": [],
+            "usage": {
+              "attribution": {
+                "items": {
+                  "msg_075857288c435c44016b0905327ed487d08a44d5f1a18a57d1": {
+                    "input_tokens": 422,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 422,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_075857288c435c44016b0905327ed487d0954321c91b48ee12": {
+                    "input_tokens": 251,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 251,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_075857288c435c44016b0905327ed487d0be8f8cb8faf0eeb5": {
+                    "input_tokens": 64,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 64,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_075857288c435c44016b090533638487d08dbb7023c5a158f7": {
+                    "input_tokens": 2,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 11,
+                    "content": [
+                      {
+                        "input_tokens": 2,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 11
+                      }
+                    ]
+                  }
+                },
+                "request_fields": {
+                  "instructions": {
+                    "input_tokens": 4380,
+                    "cached_tokens": 3968,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0
+                  }
+                }
+              },
+              "prompt_tokens": 5119,
+              "completion_tokens": 11,
+              "total_tokens": 5130,
+              "prompt_tokens_details": {
+                "cache_write_tokens_details": {
+                  "ttl_30m_tokens": 0,
+                  "ttl_12h_tokens": 0
+                },
+                "cached_tokens": 3968
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1971",
+              "value": "1971",
+              "start": 23,
+              "end": 27,
+              "clause": "Which school joined in 1971",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "'Joined in 1971' refers to Year Joined; Wawassee Prep has 1971 in that column.",
+              "operator": "="
+            },
+            {
+              "surface": "1975",
+              "value": "1975",
+              "start": 40,
+              "end": 44,
+              "clause": "and left in 1975?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "'Left in 1975' refers to Year Left; Wawassee Prep has 1975 in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "789bc273f09c59e08cb980841882cf9df9720e4115ec1106c6e2f8c3583e41c7",
+            "knowledgeIds": [],
+            "usage": {
+              "attribution": {
+                "items": {
+                  "msg_082f32c4bdee7801016b09053542cc87d096ee4d33347e03c6": {
+                    "input_tokens": 205,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 205,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_082f32c4bdee7801016b09053542cc87d0a0d6a7fe67ea802d": {
+                    "input_tokens": 422,
+                    "cached_tokens": 276,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 422,
+                        "cached_tokens": 276,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_082f32c4bdee7801016b09053542cc87d0a89a9cb6b5cd2e83": {
+                    "input_tokens": 64,
+                    "cached_tokens": 61,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 64,
+                        "cached_tokens": 61,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_082f32c4bdee7801016b090536485087d09d50d8180210e065": {
+                    "input_tokens": 2,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 14,
+                    "content": [
+                      {
+                        "input_tokens": 2,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 14
+                      }
+                    ]
+                  }
+                },
+                "request_fields": {
+                  "instructions": {
+                    "input_tokens": 4380,
+                    "cached_tokens": 4143,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0
+                  }
+                }
+              },
+              "prompt_tokens": 5073,
+              "completion_tokens": 14,
+              "total_tokens": 5087,
+              "prompt_tokens_details": {
+                "cache_write_tokens_details": {
+                  "ttl_30m_tokens": 0,
+                  "ttl_12h_tokens": 0
+                },
+                "cached_tokens": 4480
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1971",
+              "value": "1971",
+              "start": 23,
+              "end": 27,
+              "clause": "Which school joined in 1971",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "'Joined in 1971' refers to Year Joined; Wawassee Prep has 1971 in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "1975",
+              "value": "1975",
+              "start": 40,
+              "end": 44,
+              "clause": "and left in 1975?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "'Left in 1975' refers to Year Left; Wawassee Prep has 1975 in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1971",
+              "value": "1971",
+              "start": 23,
+              "end": 27,
+              "clause": "Which school joined in 1971",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "'Joined in 1971' refers to Year Joined; Wawassee Prep has 1971 in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "1975",
+              "value": "1975",
+              "start": 40,
+              "end": 44,
+              "clause": "and left in 1975?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "'Left in 1975' refers to Year Left; Wawassee Prep has 1975 in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "1971",
+              "value": "1971",
+              "start": 23,
+              "end": 27,
+              "clause": "Which school joined in 1971",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "'Joined in 1971' refers to Year Joined; Wawassee Prep has 1971 in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "1975",
+              "value": "1975",
+              "start": 40,
+              "end": 44,
+              "clause": "and left in 1975?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "'Left in 1975' refers to Year Left; Wawassee Prep has 1975 in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              5,
+              0,
+              "1971"
+            ],
+            [
+              6,
+              0,
+              "1975"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "1971",
+          "value": "1971",
+          "start": 23,
+          "end": 27
+        },
+        {
+          "surface": "1975",
+          "value": "1975",
+          "start": 40,
+          "end": 44
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "1971",
+          "value": "1971",
+          "start": 23,
+          "end": 27,
+          "clause": "Which school joined in 1971",
+          "columnIndex": 5,
+          "columnCandidates": [
+            5
+          ],
+          "columnMatchReason": "'Joined in 1971' refers to Year Joined; Wawassee Prep has 1971 in that column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "1975",
+          "value": "1975",
+          "start": 40,
+          "end": 44,
+          "clause": "and left in 1975?",
+          "columnIndex": 6,
+          "columnCandidates": [
+            6
+          ],
+          "columnMatchReason": "'Left in 1975' refers to Year Left; Wawassee Prep has 1975 in that column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          5,
+          0,
+          "1971"
+        ],
+        [
+          6,
+          0,
+          "1975"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 11500
+}

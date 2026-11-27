@@ -1,0 +1,467 @@
+{
+  "arm": "E2",
+  "position": 12,
+  "example_id": "test:581:1-12962773-10",
+  "original_index": 581,
+  "table_id": "1-12962773-10",
+  "question": "How tall was Player #10?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        0,
+        0,
+        10
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      10
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        10
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "#10",
+        "value": 10,
+        "start": 20,
+        "end": 23,
+        "clause": "How tall was Player #10?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "“Player #10” uses a jersey/player number; value 10 appears in the No field, while Player contains names.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "#10",
+        "value": "10",
+        "start": 20,
+        "end": 23
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "How tall was Player #10?",
+      "table": {
+        "header": [
+          "No",
+          "Player",
+          "Height",
+          "Position",
+          "Year born",
+          "Current Club"
+        ],
+        "page_title": "FIBA EuroBasket 2007 squads",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "id": "1-12962773-10",
+        "section_title": "[[ | ]]",
+        "caption": "[[ | ]]",
+        "rows": [
+          [
+            4,
+            "Rimantas Kaukėnas",
+            "1.92",
+            "Guard",
+            1977,
+            "Montepaschi Siena"
+          ],
+          [
+            5,
+            "Giedrius Gustas",
+            "1.90",
+            "Guard",
+            1980,
+            "Barons Riga"
+          ],
+          [
+            6,
+            "Jonas Mačiulis",
+            "2.00",
+            "Forward",
+            1985,
+            "Žalgiris Kaunas"
+          ],
+          [
+            7,
+            "Darjuš Lavrinovič",
+            "2.12",
+            "Center",
+            1979,
+            "UNICS Kazan"
+          ],
+          [
+            8,
+            "Ramūnas Šiškauskas",
+            "1.98",
+            "Guard",
+            1978,
+            "CSKA Moscow"
+          ],
+          [
+            9,
+            "Darius Songaila",
+            "2.04",
+            "Forward",
+            1978,
+            "Washington Wizards"
+          ],
+          [
+            10,
+            "Simas Jasaitis",
+            "2.00",
+            "Forward",
+            1982,
+            "TAU Cerámica"
+          ],
+          [
+            11,
+            "Linas Kleiza",
+            "2.03",
+            "Forward",
+            1985,
+            "Denver Nuggets"
+          ],
+          [
+            12,
+            "Kšyštof Lavrinovič",
+            "2.10",
+            "Center",
+            1979,
+            "Montepaschi Siena"
+          ],
+          [
+            13,
+            "Šarūnas Jasikevičius",
+            "1.92",
+            "Guard",
+            1976,
+            "Golden State Warriors"
+          ],
+          [
+            14,
+            "Paulius Jankūnas",
+            "2.05",
+            "Forward",
+            1984,
+            "Žalgiris Kaunas"
+          ]
+        ],
+        "name": "table_12962773_10",
+        "headers": [
+          "No",
+          "Player",
+          "Height",
+          "Position",
+          "Year born",
+          "Current Club"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-12962773-10",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "#10",
+              "value": "10",
+              "start": 20,
+              "end": 23
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0561ecf403ae44aea1e5f801788db7d2e037ddfe3a226e26a282ce14d191ae16",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4938,
+              "completion_tokens": 18,
+              "total_tokens": 4956,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "#10",
+              "value": "10",
+              "start": 20,
+              "end": 23,
+              "clause": "How tall was Player #10?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "#10",
+              "value": "10",
+              "start": 20,
+              "end": 23,
+              "clause": "How tall was Player #10?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "#10",
+              "value": "10",
+              "start": 20,
+              "end": 23,
+              "clause": "How tall was Player #10?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "“Player #10” uses a jersey/player number; value 10 appears in the No field, while Player contains names."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "5f1c98ea3904c1737823425e991b6e294564283647a284d6d18654a13d62e10c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4967,
+              "completion_tokens": 46,
+              "total_tokens": 5013,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "#10",
+              "value": "10",
+              "start": 20,
+              "end": 23,
+              "clause": "How tall was Player #10?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "“Player #10” uses a jersey/player number; value 10 appears in the No field, while Player contains names.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "8af86009dec3ad231d2f35f2b1ce6d66b283117084509096595418b7d5e8043f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5037,
+              "completion_tokens": 9,
+              "total_tokens": 5046,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "#10",
+              "value": 10,
+              "start": 20,
+              "end": 23,
+              "clause": "How tall was Player #10?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "“Player #10” uses a jersey/player number; value 10 appears in the No field, while Player contains names.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "df0c7e76dbede0b1c0982eb9b943532a79d1cb913abe06312a3e7d9bec59505f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4988,
+              "completion_tokens": 9,
+              "total_tokens": 4997,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "#10",
+              "value": "10",
+              "start": 20,
+              "end": 23,
+              "clause": "How tall was Player #10?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "“Player #10” uses a jersey/player number; value 10 appears in the No field, while Player contains names.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "#10",
+              "value": 10,
+              "start": 20,
+              "end": 23,
+              "clause": "How tall was Player #10?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "“Player #10” uses a jersey/player number; value 10 appears in the No field, while Player contains names.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "#10",
+              "value": 10,
+              "start": 20,
+              "end": 23,
+              "clause": "How tall was Player #10?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "“Player #10” uses a jersey/player number; value 10 appears in the No field, while Player contains names.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              10
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "#10",
+          "value": "10",
+          "start": 20,
+          "end": 23
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "#10",
+          "value": 10,
+          "start": 20,
+          "end": 23,
+          "clause": "How tall was Player #10?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "“Player #10” uses a jersey/player number; value 10 appears in the No field, while Player contains names.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          0,
+          0,
+          10
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8125
+}

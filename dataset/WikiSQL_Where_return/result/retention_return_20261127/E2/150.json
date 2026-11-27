@@ -1,0 +1,588 @@
+{
+  "arm": "E2",
+  "position": 150,
+  "example_id": "test:5346:2-13555999-1",
+  "original_index": 5346,
+  "table_id": "2-13555999-1",
+  "question": "What value for university students and adult goes with male gender for minimum weight?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        1,
+        0,
+        "male"
+      ],
+      [
+        0,
+        0,
+        "minimum weight"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "Male"
+    ],
+    [
+      0,
+      0,
+      "Minimum weight"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "Male"
+      ],
+      [
+        0,
+        0,
+        "Minimum weight"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "male",
+        "value": "Male",
+        "start": 55,
+        "end": 59,
+        "clause": "and adult goes with male gender for minimum weight?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The question explicitly identifies male as the gender, matching the Gender header and Male cells.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "minimum weight",
+        "value": "Minimum weight",
+        "start": 71,
+        "end": 85,
+        "clause": "and adult goes with male gender for minimum weight?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "Minimum weight is a specification type, matching the Specification header and corresponding row labels.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "male",
+        "value": "Male",
+        "start": 55,
+        "end": 59
+      },
+      {
+        "surface": "minimum weight",
+        "value": "Minimum weight",
+        "start": 71,
+        "end": 85
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What value for university students and adult goes with male gender for minimum weight?",
+      "table": {
+        "header": [
+          "Specification",
+          "Gender",
+          "Junior High School (12–15 yrs)",
+          "Senior High School (15–18 yrs)",
+          "University students and Adults (18yrs+)"
+        ],
+        "page_title": "Shinai",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 13555999,
+        "id": "2-13555999-1",
+        "section_title": "Regulations",
+        "rows": [
+          [
+            "Maximum length",
+            "Male & female",
+            "114cm",
+            "117cm",
+            "120cm"
+          ],
+          [
+            "Minimum weight",
+            "Male",
+            "440g",
+            "480g",
+            "510g"
+          ],
+          [
+            "Minimum weight",
+            "Female",
+            "400g",
+            "420g",
+            "440g"
+          ],
+          [
+            "Minimum diameter of sakigawa",
+            "Male",
+            "25mm",
+            "26mm",
+            "26mm"
+          ],
+          [
+            "Minimum diameter of sakigawa",
+            "Female",
+            "24mm",
+            "25mm",
+            "25mm"
+          ],
+          [
+            "Minimum length of sakigawa",
+            "Male and Female",
+            "50mm",
+            "50mm",
+            "50mm"
+          ]
+        ],
+        "caption": "Table A. FIK Specifications for competition use of one Shinai (Itto).",
+        "headers": [
+          "Specification",
+          "Gender",
+          "Junior High School (12–15 yrs)",
+          "Senior High School (15–18 yrs)",
+          "University students and Adults (18yrs+)"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-13555999-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "male",
+              "value": "Male",
+              "start": 55,
+              "end": 59
+            },
+            {
+              "surface": "minimum weight",
+              "value": "Minimum weight",
+              "start": 71,
+              "end": 85
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "5ae0a6d9b4eed140984bebd3579bd1a59b660f489c42a50fceb8a35c9e075996",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4830,
+              "completion_tokens": 27,
+              "total_tokens": 4857,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "male",
+              "value": "Male",
+              "start": 55,
+              "end": 59,
+              "clause": "and adult goes with male gender for minimum weight?"
+            },
+            {
+              "surface": "minimum weight",
+              "value": "Minimum weight",
+              "start": 71,
+              "end": 85,
+              "clause": "and adult goes with male gender for minimum weight?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "male",
+              "value": "Male",
+              "start": 55,
+              "end": 59,
+              "clause": "and adult goes with male gender for minimum weight?"
+            },
+            {
+              "surface": "minimum weight",
+              "value": "Minimum weight",
+              "start": 71,
+              "end": 85,
+              "clause": "and adult goes with male gender for minimum weight?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "male",
+              "value": "Male",
+              "start": 55,
+              "end": 59,
+              "clause": "and adult goes with male gender for minimum weight?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly identifies male as the gender, matching the Gender header and Male cells."
+            },
+            {
+              "surface": "minimum weight",
+              "value": "Minimum weight",
+              "start": 71,
+              "end": 85,
+              "clause": "and adult goes with male gender for minimum weight?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Minimum weight is a specification type, matching the Specification header and corresponding row labels."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b1e713752439928f9d1c85951e3d20a1a49f2b3289414c22e7fc632a68363211",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4893,
+              "completion_tokens": 58,
+              "total_tokens": 4951,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "male",
+              "value": "Male",
+              "start": 55,
+              "end": 59,
+              "clause": "and adult goes with male gender for minimum weight?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly identifies male as the gender, matching the Gender header and Male cells.",
+              "operator": "="
+            },
+            {
+              "surface": "minimum weight",
+              "value": "Minimum weight",
+              "start": 71,
+              "end": 85,
+              "clause": "and adult goes with male gender for minimum weight?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Minimum weight is a specification type, matching the Specification header and corresponding row labels.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "303c81d6710ca531498e9498d3ac3ef3c2c01ddb84904f2b0f603e915e666359",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4986,
+              "completion_tokens": 11,
+              "total_tokens": 4997,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "male",
+              "value": "Male",
+              "start": 55,
+              "end": 59,
+              "clause": "and adult goes with male gender for minimum weight?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly identifies male as the gender, matching the Gender header and Male cells.",
+              "operator": "="
+            },
+            {
+              "surface": "minimum weight",
+              "value": "Minimum weight",
+              "start": 71,
+              "end": 85,
+              "clause": "and adult goes with male gender for minimum weight?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Minimum weight is a specification type, matching the Specification header and corresponding row labels.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "889cd00512d43034cc4e119b10a4a9e139d8127a0654aae3ea972a594eac610e",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4940,
+              "completion_tokens": 13,
+              "total_tokens": 4953,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "male",
+              "value": "Male",
+              "start": 55,
+              "end": 59,
+              "clause": "and adult goes with male gender for minimum weight?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly identifies male as the gender, matching the Gender header and Male cells.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "minimum weight",
+              "value": "Minimum weight",
+              "start": 71,
+              "end": 85,
+              "clause": "and adult goes with male gender for minimum weight?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Minimum weight is a specification type, matching the Specification header and corresponding row labels.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "male",
+              "value": "Male",
+              "start": 55,
+              "end": 59,
+              "clause": "and adult goes with male gender for minimum weight?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly identifies male as the gender, matching the Gender header and Male cells.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "minimum weight",
+              "value": "Minimum weight",
+              "start": 71,
+              "end": 85,
+              "clause": "and adult goes with male gender for minimum weight?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Minimum weight is a specification type, matching the Specification header and corresponding row labels.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "male",
+              "value": "Male",
+              "start": 55,
+              "end": 59,
+              "clause": "and adult goes with male gender for minimum weight?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly identifies male as the gender, matching the Gender header and Male cells.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "minimum weight",
+              "value": "Minimum weight",
+              "start": 71,
+              "end": 85,
+              "clause": "and adult goes with male gender for minimum weight?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Minimum weight is a specification type, matching the Specification header and corresponding row labels.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              "Male"
+            ],
+            [
+              0,
+              0,
+              "Minimum weight"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "male",
+          "value": "Male",
+          "start": 55,
+          "end": 59
+        },
+        {
+          "surface": "minimum weight",
+          "value": "Minimum weight",
+          "start": 71,
+          "end": 85
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "male",
+          "value": "Male",
+          "start": 55,
+          "end": 59,
+          "clause": "and adult goes with male gender for minimum weight?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The question explicitly identifies male as the gender, matching the Gender header and Male cells.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "minimum weight",
+          "value": "Minimum weight",
+          "start": 71,
+          "end": 85,
+          "clause": "and adult goes with male gender for minimum weight?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "Minimum weight is a specification type, matching the Specification header and corresponding row labels.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          1,
+          0,
+          "Male"
+        ],
+        [
+          0,
+          0,
+          "Minimum weight"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8828
+}

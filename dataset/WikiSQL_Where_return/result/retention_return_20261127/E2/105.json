@@ -1,0 +1,472 @@
+{
+  "arm": "E2",
+  "position": 105,
+  "example_id": "test:3634:1-2668393-18",
+  "original_index": 3634,
+  "table_id": "1-2668393-18",
+  "question": "What is the district with the candidates edwin gray (dr)?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        5,
+        0,
+        "Edwin Gray (DR)"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      5,
+      0,
+      "Edwin Gray (DR)"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        5,
+        0,
+        "Edwin Gray (DR)"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "edwin gray (dr)",
+        "value": "Edwin Gray (DR)",
+        "start": 41,
+        "end": 56,
+        "clause": "What is the district with the candidates edwin gray (dr)?",
+        "columnIndex": 5,
+        "columnCandidates": [
+          5
+        ],
+        "columnMatchReason": "The question explicitly says \"candidates Edwin Gray (DR)\", matching the Candidates field.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "edwin gray (dr)",
+        "value": "Edwin Gray (DR)",
+        "start": 41,
+        "end": 56
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the district with the candidates edwin gray (dr)?",
+      "table": {
+        "id": "1-2668393-18",
+        "header": [
+          "District",
+          "Incumbent",
+          "Party",
+          "First elected",
+          "Result",
+          "Candidates"
+        ],
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "rows": [
+          [
+            "Virginia 1",
+            "None (District created)",
+            "None (District created)",
+            "None (District created)",
+            "New seat Democratic-Republican gain",
+            "John G. Jackson (DR) Thomas Wilson (F)"
+          ],
+          [
+            "Virginia 3",
+            "John Smith Redistricted from the 1st district",
+            "Democratic-Republican",
+            "1801",
+            "Re-elected",
+            "John Smith (DR) 89.9% Joseph Sexton (DR) 10.1%"
+          ],
+          [
+            "Virginia 4",
+            "David Holmes Redistricted from the 2nd district",
+            "Democratic-Republican",
+            "1797",
+            "Re-elected",
+            "David Holmes (DR) Isaac Van Meter (F)"
+          ],
+          [
+            "Virginia 6",
+            "Abram Trigg Redistricted from the 4th district",
+            "Democratic-Republican",
+            "1797",
+            "Re-elected",
+            "Abram Trigg (DR)"
+          ],
+          [
+            "Virginia 8",
+            "None (District created)",
+            "None (District created)",
+            "None (District created)",
+            "Democratic-Republican gain",
+            "Walter Jones (DR) James Ball (F)"
+          ],
+          [
+            "Virginia 10",
+            "John Dawson Redistricted from the 15th district",
+            "Democratic-Republican",
+            "1797",
+            "Re-elected",
+            "John Dawson (DR) William I. Callis (F)"
+          ],
+          [
+            "Virginia 11",
+            "Anthony New Redistricted from the 16th district",
+            "Democratic-Republican",
+            "1793",
+            "Re-elected",
+            "Anthony New (DR) 71.4% John Taylor (F) 28.6%"
+          ],
+          [
+            "Virginia 13",
+            "John J. Trigg Redistricted from the 5th district",
+            "Democratic-Republican",
+            "1797",
+            "Re-elected",
+            "John J. Trigg (DR)"
+          ],
+          [
+            "Virginia 14",
+            "Matthew Clay Redistricted from the 6th district",
+            "Democratic-Republican",
+            "1797",
+            "Re-elected",
+            "Matthew Clay (DR) 88.9% James Hurt (F) 11.1%"
+          ],
+          [
+            "Virginia 16",
+            "None (District created)",
+            "None (District created)",
+            "None (District created)",
+            "New seat Democratic-Republican gain",
+            "John W. Eppes (DR)"
+          ],
+          [
+            "Virginia 18",
+            "None (District created)",
+            "None (District created)",
+            "None (District created)",
+            "New seat Democratic-Republican gain",
+            "Peterson Goodwyn (DR) 66.9% James Jones (F) 33.1%"
+          ],
+          [
+            "Virginia 19",
+            "Edwin Gray Redistricted from the 10th district",
+            "Democratic-Republican",
+            "1799",
+            "Re-elected",
+            "Edwin Gray (DR)"
+          ]
+        ],
+        "name": "table_2668393_18",
+        "headers": [
+          "District",
+          "Incumbent",
+          "Party",
+          "First elected",
+          "Result",
+          "Candidates"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-2668393-18",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "edwin gray (dr)",
+              "value": "Edwin Gray (DR)",
+              "start": 41,
+              "end": 56
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "55758066d48d0c95aa672e83472eafb51fbf7db2213e8a7dfd047265d2eeb90b",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5197,
+              "completion_tokens": 27,
+              "total_tokens": 5224,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "edwin gray (dr)",
+              "value": "Edwin Gray (DR)",
+              "start": 41,
+              "end": 56,
+              "clause": "What is the district with the candidates edwin gray (dr)?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "edwin gray (dr)",
+              "value": "Edwin Gray (DR)",
+              "start": 41,
+              "end": 56,
+              "clause": "What is the district with the candidates edwin gray (dr)?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "edwin gray (dr)",
+              "value": "Edwin Gray (DR)",
+              "start": 41,
+              "end": 56,
+              "clause": "What is the district with the candidates edwin gray (dr)?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly says \"candidates Edwin Gray (DR)\", matching the Candidates field."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "5796906f303353eb7a7a0e50956e309a67d3801a71af642047f3719e567bfe80",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5242,
+              "completion_tokens": 39,
+              "total_tokens": 5281,
+              "prompt_tokens_details": {
+                "cached_tokens": 4992
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "edwin gray (dr)",
+              "value": "Edwin Gray (DR)",
+              "start": 41,
+              "end": 56,
+              "clause": "What is the district with the candidates edwin gray (dr)?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly says \"candidates Edwin Gray (DR)\", matching the Candidates field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "3663393f188f31cc590d09a57181bf4b8021f6c3435a85c106bdfbfe4d51f465",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5304,
+              "completion_tokens": 9,
+              "total_tokens": 5313,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "edwin gray (dr)",
+              "value": "Edwin Gray (DR)",
+              "start": 41,
+              "end": 56,
+              "clause": "What is the district with the candidates edwin gray (dr)?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly says \"candidates Edwin Gray (DR)\", matching the Candidates field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f9445772c20ad10bd5db35db9144f64a7e631464dc4bb2e4024586db4a8723cf",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5255,
+              "completion_tokens": 15,
+              "total_tokens": 5270,
+              "prompt_tokens_details": {
+                "cached_tokens": 4992
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "edwin gray (dr)",
+              "value": "Edwin Gray (DR)",
+              "start": 41,
+              "end": 56,
+              "clause": "What is the district with the candidates edwin gray (dr)?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly says \"candidates Edwin Gray (DR)\", matching the Candidates field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "edwin gray (dr)",
+              "value": "Edwin Gray (DR)",
+              "start": 41,
+              "end": 56,
+              "clause": "What is the district with the candidates edwin gray (dr)?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly says \"candidates Edwin Gray (DR)\", matching the Candidates field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "edwin gray (dr)",
+              "value": "Edwin Gray (DR)",
+              "start": 41,
+              "end": 56,
+              "clause": "What is the district with the candidates edwin gray (dr)?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly says \"candidates Edwin Gray (DR)\", matching the Candidates field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              5,
+              0,
+              "Edwin Gray (DR)"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "edwin gray (dr)",
+          "value": "Edwin Gray (DR)",
+          "start": 41,
+          "end": 56
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "edwin gray (dr)",
+          "value": "Edwin Gray (DR)",
+          "start": 41,
+          "end": 56,
+          "clause": "What is the district with the candidates edwin gray (dr)?",
+          "columnIndex": 5,
+          "columnCandidates": [
+            5
+          ],
+          "columnMatchReason": "The question explicitly says \"candidates Edwin Gray (DR)\", matching the Candidates field.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          5,
+          0,
+          "Edwin Gray (DR)"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9234
+}

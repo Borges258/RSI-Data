@@ -1,0 +1,664 @@
+{
+  "arm": "E2",
+  "position": 307,
+  "example_id": "test:11992:2-1122040-3",
+  "original_index": 11992,
+  "table_id": "2-1122040-3",
+  "question": "What is the high grid total for maserati with under 35 laps?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        2,
+        2,
+        35
+      ],
+      [
+        1,
+        0,
+        "maserati"
+      ]
+    ],
+    "agg": 1
+  },
+  "prediction_conds": [],
+  "status": "GROUNDING_FAILED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "GROUNDING_FAILED",
+    "valid": false,
+    "errors": [
+      "condition 1: grounding NO_MATCH",
+      "condition 1: nonnumeric value for real column"
+    ],
+    "conditions": [
+      {
+        "surface": "maserati",
+        "value": "Maserati",
+        "start": 32,
+        "end": 40,
+        "clause": "What is the high grid total for maserati with under 35 laps?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "Maserati is a constructor value in the Constructor column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "under 35",
+        "value": "< 35",
+        "start": 46,
+        "end": 54,
+        "clause": "What is the high grid total for maserati with under 35 laps?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "Under 35 modifies the numeric lap count in the Laps column.",
+        "operator": "<",
+        "grounded": false,
+        "groundingStatus": "NO_MATCH",
+        "groundingReview": {
+          "column": 2,
+          "reason": "“under 35 laps” explicitly modifies the numeric Laps field; Maserati has 29 laps, which satisfies < 35."
+        }
+      }
+    ],
+    "stage": "WHERE_CONDITION_VALIDATE",
+    "originalConditions": [
+      {
+        "surface": "maserati",
+        "value": "Maserati",
+        "start": 32,
+        "end": 40
+      },
+      {
+        "surface": "under 35",
+        "value": "< 35",
+        "start": 46,
+        "end": 54
+      }
+    ],
+    "halt": true,
+    "completed": false,
+    "conds": [],
+    "warnings": [
+      "value model disagreed with extracted question span; original retained"
+    ],
+    "request": {
+      "question": "What is the high grid total for maserati with under 35 laps?",
+      "table": {
+        "header": [
+          "Driver",
+          "Constructor",
+          "Laps",
+          "Time/Retired",
+          "Grid"
+        ],
+        "page_title": "1950 Belgian Grand Prix",
+        "types": [
+          "text",
+          "text",
+          "real",
+          "text",
+          "real"
+        ],
+        "page_id": 1122040,
+        "id": "2-1122040-3",
+        "section_title": "Race",
+        "rows": [
+          [
+            "Juan Manuel Fangio",
+            "Alfa Romeo",
+            "35",
+            "2:47:26",
+            "2"
+          ],
+          [
+            "Luigi Fagioli",
+            "Alfa Romeo",
+            "35",
+            "+ 14",
+            "3"
+          ],
+          [
+            "Louis Rosier",
+            "Talbot-Lago - Talbot",
+            "35",
+            "+ 2:19",
+            "8"
+          ],
+          [
+            "Nino Farina",
+            "Alfa Romeo",
+            "35",
+            "+ 4:05",
+            "1"
+          ],
+          [
+            "Alberto Ascari",
+            "Ferrari",
+            "34",
+            "+ 1 Lap",
+            "7"
+          ],
+          [
+            "Luigi Villoresi",
+            "Ferrari",
+            "33",
+            "+ 2 Laps",
+            "4"
+          ],
+          [
+            "Pierre Levegh",
+            "Talbot-Lago - Talbot",
+            "33",
+            "+ 2 Laps",
+            "10"
+          ],
+          [
+            "Johnny Claes",
+            "Talbot-Lago - Talbot",
+            "32",
+            "+ 3 Laps",
+            "14"
+          ],
+          [
+            "Geoffrey Crossley",
+            "Alta",
+            "30",
+            "+ 5 Laps",
+            "12"
+          ],
+          [
+            "Toni Branca",
+            "Maserati",
+            "29",
+            "+ 6 Laps",
+            "11"
+          ],
+          [
+            "Eugène Chaboud",
+            "Talbot-Lago - Talbot",
+            "22",
+            "Oil Pipe",
+            "13"
+          ],
+          [
+            "Raymond Sommer",
+            "Talbot-Lago - Talbot",
+            "20",
+            "Oil Pressure",
+            "5"
+          ],
+          [
+            "Philippe Étancelin",
+            "Talbot-Lago - Talbot",
+            "15",
+            "Overheating",
+            "6"
+          ],
+          [
+            "Yves Giraud-Cabantous",
+            "Talbot-Lago - Talbot",
+            "2",
+            "Oil Pipe",
+            "9"
+          ]
+        ],
+        "caption": "Race",
+        "headers": [
+          "Driver",
+          "Constructor",
+          "Laps",
+          "Time/Retired",
+          "Grid"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-1122040-3",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 9,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "maserati",
+              "value": "Maserati",
+              "start": 32,
+              "end": 40
+            },
+            {
+              "surface": "under 35",
+              "value": "< 35",
+              "start": 46,
+              "end": 54
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "1f1f3bd5f6a3329eb77b6efc985cb02d40236d29de512357d611568180d1ebf9",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4960,
+              "completion_tokens": 33,
+              "total_tokens": 4993,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "maserati",
+              "value": "Maserati",
+              "start": 32,
+              "end": 40,
+              "clause": "What is the high grid total for maserati with under 35 laps?"
+            },
+            {
+              "surface": "under 35",
+              "value": "< 35",
+              "start": 46,
+              "end": 54,
+              "clause": "What is the high grid total for maserati with under 35 laps?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "maserati",
+              "value": "Maserati",
+              "start": 32,
+              "end": 40,
+              "clause": "What is the high grid total for maserati with under 35 laps?"
+            },
+            {
+              "surface": "under 35",
+              "value": "< 35",
+              "start": 46,
+              "end": 54,
+              "clause": "What is the high grid total for maserati with under 35 laps?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "maserati",
+              "value": "Maserati",
+              "start": 32,
+              "end": 40,
+              "clause": "What is the high grid total for maserati with under 35 laps?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Maserati is a constructor value in the Constructor column."
+            },
+            {
+              "surface": "under 35",
+              "value": "< 35",
+              "start": 46,
+              "end": 54,
+              "clause": "What is the high grid total for maserati with under 35 laps?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Under 35 modifies the numeric lap count in the Laps column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "db4a593cced75c7cae0ac96ad8b35f7f8ff6b2516f5f2db8c4e715c0a9984848",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5041,
+              "completion_tokens": 51,
+              "total_tokens": 5092,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "maserati",
+              "value": "Maserati",
+              "start": 32,
+              "end": 40,
+              "clause": "What is the high grid total for maserati with under 35 laps?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Maserati is a constructor value in the Constructor column.",
+              "operator": "="
+            },
+            {
+              "surface": "under 35",
+              "value": "< 35",
+              "start": 46,
+              "end": 54,
+              "clause": "What is the high grid total for maserati with under 35 laps?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Under 35 modifies the numeric lap count in the Laps column.",
+              "operator": "<"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "76a5f14307590d30d01bbefc24497bee7f7acb7a449b558a7be336b1c1716448",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5127,
+              "completion_tokens": 12,
+              "total_tokens": 5139,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "warnings": [
+            "value model disagreed with extracted question span; original retained"
+          ],
+          "conditions": [
+            {
+              "surface": "maserati",
+              "value": "Maserati",
+              "start": 32,
+              "end": 40,
+              "clause": "What is the high grid total for maserati with under 35 laps?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Maserati is a constructor value in the Constructor column.",
+              "operator": "="
+            },
+            {
+              "surface": "under 35",
+              "value": "< 35",
+              "start": 46,
+              "end": 54,
+              "clause": "What is the high grid total for maserati with under 35 laps?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Under 35 modifies the numeric lap count in the Laps column.",
+              "operator": "<"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f1dde524d1d8e412b3799c502acfc835af75ec67b65a7906c00ec48d4131a5af",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5081,
+              "completion_tokens": 13,
+              "total_tokens": 5094,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "maserati",
+              "value": "Maserati",
+              "start": 32,
+              "end": 40,
+              "clause": "What is the high grid total for maserati with under 35 laps?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Maserati is a constructor value in the Constructor column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "under 35",
+              "value": "< 35",
+              "start": 46,
+              "end": 54,
+              "clause": "What is the high grid total for maserati with under 35 laps?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Under 35 modifies the numeric lap count in the Laps column.",
+              "operator": "<",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 2,
+                "reason": "“under 35 laps” explicitly modifies the numeric Laps field; Maserati has 29 laps, which satisfies < 35."
+              }
+            }
+          ],
+          "reviewModelCalls": [
+            {
+              "model": "gpt-5.6-sol",
+              "promptSha256": "7317b60fb61421dd084bee6a61994e0ac1a58d2d164e1dc5a43bdd1ee73f1842",
+              "knowledgeIds": [],
+              "usage": {
+                "prompt_tokens": 5052,
+                "completion_tokens": 39,
+                "total_tokens": 5091,
+                "prompt_tokens_details": {
+                  "cached_tokens": 4736
+                }
+              }
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "7317b60fb61421dd084bee6a61994e0ac1a58d2d164e1dc5a43bdd1ee73f1842",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5052,
+              "completion_tokens": 39,
+              "total_tokens": 5091,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "maserati",
+              "value": "Maserati",
+              "start": 32,
+              "end": 40,
+              "clause": "What is the high grid total for maserati with under 35 laps?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Maserati is a constructor value in the Constructor column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "under 35",
+              "value": "< 35",
+              "start": 46,
+              "end": 54,
+              "clause": "What is the high grid total for maserati with under 35 laps?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Under 35 modifies the numeric lap count in the Laps column.",
+              "operator": "<",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 2,
+                "reason": "“under 35 laps” explicitly modifies the numeric Laps field; Maserati has 29 laps, which satisfies < 35."
+              }
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "GROUNDING_FAILED",
+          "valid": false,
+          "errors": [
+            "condition 1: grounding NO_MATCH",
+            "condition 1: nonnumeric value for real column"
+          ],
+          "conditions": [
+            {
+              "surface": "maserati",
+              "value": "Maserati",
+              "start": 32,
+              "end": 40,
+              "clause": "What is the high grid total for maserati with under 35 laps?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Maserati is a constructor value in the Constructor column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "under 35",
+              "value": "< 35",
+              "start": 46,
+              "end": 54,
+              "clause": "What is the high grid total for maserati with under 35 laps?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Under 35 modifies the numeric lap count in the Laps column.",
+              "operator": "<",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 2,
+                "reason": "“under 35 laps” explicitly modifies the numeric Laps field; Maserati has 29 laps, which satisfies < 35."
+              }
+            }
+          ]
+        }
+      },
+      "warnings": [
+        "value model disagreed with extracted question span; original retained"
+      ],
+      "execution": {
+        "status": "GROUNDING_FAILED",
+        "stage": "WHERE_CONDITION_VALIDATE",
+        "halt": true,
+        "completed": false,
+        "errors": [
+          "condition 1: grounding NO_MATCH",
+          "condition 1: nonnumeric value for real column"
+        ],
+        "warnings": [
+          "value model disagreed with extracted question span; original retained"
+        ]
+      },
+      "originalConditions": [
+        {
+          "surface": "maserati",
+          "value": "Maserati",
+          "start": 32,
+          "end": 40
+        },
+        {
+          "surface": "under 35",
+          "value": "< 35",
+          "start": 46,
+          "end": 54
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "maserati",
+          "value": "Maserati",
+          "start": 32,
+          "end": 40,
+          "clause": "What is the high grid total for maserati with under 35 laps?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "Maserati is a constructor value in the Constructor column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "under 35",
+          "value": "< 35",
+          "start": 46,
+          "end": 54,
+          "clause": "What is the high grid total for maserati with under 35 laps?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "Under 35 modifies the numeric lap count in the Laps column.",
+          "operator": "<",
+          "grounded": false,
+          "groundingStatus": "NO_MATCH",
+          "groundingReview": {
+            "column": 2,
+            "reason": "“under 35 laps” explicitly modifies the numeric Laps field; Maserati has 29 laps, which satisfies < 35."
+          }
+        }
+      ],
+      "count": 2
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": false,
+  "elapsed_ms": 11922
+}

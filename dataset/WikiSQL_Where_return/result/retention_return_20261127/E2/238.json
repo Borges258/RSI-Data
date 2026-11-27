@@ -1,0 +1,467 @@
+{
+  "arm": "E2",
+  "position": 238,
+  "example_id": "test:9414:2-17323267-5",
+  "original_index": 9414,
+  "table_id": "2-17323267-5",
+  "question": "What is the total number of Game, when Record is \"11-17-7\"?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        4,
+        0,
+        "11-17-7"
+      ]
+    ],
+    "agg": 3
+  },
+  "prediction_conds": [
+    [
+      4,
+      0,
+      "11-17-7"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        0,
+        "11-17-7"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "11-17-7",
+        "value": "11-17-7",
+        "start": 50,
+        "end": 57,
+        "clause": "when Record is \"11-17-7\"?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The condition explicitly names the Record field, and the value \"11-17-7\" appears in the Record column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "11-17-7",
+        "value": "11-17-7",
+        "start": 50,
+        "end": 57
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the total number of Game, when Record is \"11-17-7\"?",
+      "table": {
+        "header": [
+          "Game",
+          "January",
+          "Opponent",
+          "Score",
+          "Record"
+        ],
+        "page_title": "1956–57 New York Rangers season",
+        "types": [
+          "real",
+          "real",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 17323267,
+        "id": "2-17323267-5",
+        "section_title": "Schedule and Results",
+        "rows": [
+          [
+            "35",
+            "1",
+            "@ Boston Bruins",
+            "5 - 3",
+            "11-17-7"
+          ],
+          [
+            "36",
+            "5",
+            "Chicago Black Hawks",
+            "4 - 1",
+            "12-17-7"
+          ],
+          [
+            "37",
+            "6",
+            "Montreal Canadiens",
+            "3 - 2",
+            "12-18-7"
+          ],
+          [
+            "38",
+            "9",
+            "Toronto Maple Leafs",
+            "4 - 3",
+            "12-19-7"
+          ],
+          [
+            "39",
+            "11",
+            "@ Chicago Black Hawks",
+            "7 - 4",
+            "13-19-7"
+          ],
+          [
+            "40",
+            "12",
+            "@ Detroit Red Wings",
+            "5 - 4",
+            "14-19-7"
+          ],
+          [
+            "41",
+            "13",
+            "Detroit Red Wings",
+            "3 - 2",
+            "14-20-7"
+          ],
+          [
+            "42",
+            "19",
+            "@ Montreal Canadiens",
+            "5 - 0",
+            "14-21-7"
+          ],
+          [
+            "43",
+            "20",
+            "@ Detroit Red Wings",
+            "5 - 2",
+            "14-22-7"
+          ],
+          [
+            "44",
+            "23",
+            "@ Toronto Maple Leafs",
+            "4 - 4",
+            "14-22-8"
+          ],
+          [
+            "45",
+            "26",
+            "@ Boston Bruins",
+            "5 - 3",
+            "15-22-8"
+          ],
+          [
+            "46",
+            "27",
+            "@ Chicago Black Hawks",
+            "3 - 2",
+            "16-22-8"
+          ],
+          [
+            "47",
+            "30",
+            "Chicago Black Hawks",
+            "7 - 2",
+            "16-23-8"
+          ]
+        ],
+        "caption": "Schedule and Results",
+        "headers": [
+          "Game",
+          "January",
+          "Opponent",
+          "Score",
+          "Record"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-17323267-5",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "11-17-7",
+              "value": "11-17-7",
+              "start": 50,
+              "end": 57
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "619b518b35e59cf61fea05b34bbc54d046fdf251252c66aab62be31393baf00b",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4939,
+              "completion_tokens": 25,
+              "total_tokens": 4964,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "11-17-7",
+              "value": "11-17-7",
+              "start": 50,
+              "end": 57,
+              "clause": "when Record is \"11-17-7\"?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "11-17-7",
+              "value": "11-17-7",
+              "start": 50,
+              "end": 57,
+              "clause": "when Record is \"11-17-7\"?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "11-17-7",
+              "value": "11-17-7",
+              "start": 50,
+              "end": 57,
+              "clause": "when Record is \"11-17-7\"?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The condition explicitly names the Record field, and the value \"11-17-7\" appears in the Record column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "2373a68935dc31c6e7050bf4b36f615ffcafc554e57b39442639a626dadf60b2",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4979,
+              "completion_tokens": 45,
+              "total_tokens": 5024,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "11-17-7",
+              "value": "11-17-7",
+              "start": 50,
+              "end": 57,
+              "clause": "when Record is \"11-17-7\"?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The condition explicitly names the Record field, and the value \"11-17-7\" appears in the Record column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0f41db3136fa1a50f60a40ea371565207c0d5fc3bdcc72830954c3c7e75d1a83",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5048,
+              "completion_tokens": 9,
+              "total_tokens": 5057,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "11-17-7",
+              "value": "11-17-7",
+              "start": 50,
+              "end": 57,
+              "clause": "when Record is \"11-17-7\"?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The condition explicitly names the Record field, and the value \"11-17-7\" appears in the Record column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "80ee97ef3be088379c64ba343fd53f3dea21462c6fe56e8a4c9932a2816079f1",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4999,
+              "completion_tokens": 14,
+              "total_tokens": 5013,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "11-17-7",
+              "value": "11-17-7",
+              "start": 50,
+              "end": 57,
+              "clause": "when Record is \"11-17-7\"?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The condition explicitly names the Record field, and the value \"11-17-7\" appears in the Record column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "11-17-7",
+              "value": "11-17-7",
+              "start": 50,
+              "end": 57,
+              "clause": "when Record is \"11-17-7\"?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The condition explicitly names the Record field, and the value \"11-17-7\" appears in the Record column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "11-17-7",
+              "value": "11-17-7",
+              "start": 50,
+              "end": 57,
+              "clause": "when Record is \"11-17-7\"?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The condition explicitly names the Record field, and the value \"11-17-7\" appears in the Record column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              0,
+              "11-17-7"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "11-17-7",
+          "value": "11-17-7",
+          "start": 50,
+          "end": 57
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "11-17-7",
+          "value": "11-17-7",
+          "start": 50,
+          "end": 57,
+          "clause": "when Record is \"11-17-7\"?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The condition explicitly names the Record field, and the value \"11-17-7\" appears in the Record column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          4,
+          0,
+          "11-17-7"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8172
+}

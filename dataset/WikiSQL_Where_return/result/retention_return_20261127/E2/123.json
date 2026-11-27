@@ -1,0 +1,630 @@
+{
+  "arm": "E2",
+  "position": 123,
+  "example_id": "test:4512:2-10776330-11",
+  "original_index": 4512,
+  "table_id": "2-10776330-11",
+  "question": "What was the largest crowd at a game where Collingwood was the away team?",
+  "gold_sql": {
+    "sel": 5,
+    "conds": [
+      [
+        2,
+        0,
+        "collingwood"
+      ]
+    ],
+    "agg": 1
+  },
+  "prediction_conds": [],
+  "status": "GROUNDING_FAILED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "GROUNDING_FAILED",
+    "valid": false,
+    "errors": [
+      "condition 1: grounding NO_MATCH"
+    ],
+    "conditions": [
+      {
+        "surface": "Collingwood",
+        "value": "Collingwood",
+        "start": 43,
+        "end": 54,
+        "clause": "What was the largest crowd at a game where Collingwood was the away team?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The question specifies Collingwood as the away team, matching the Away team field; row evidence contains Collingwood there.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "away",
+        "value": "Away team",
+        "start": 63,
+        "end": 67,
+        "clause": "What was the largest crowd at a game where Collingwood was the away team?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "Away explicitly refers to the Away team field.",
+        "operator": "=",
+        "grounded": false,
+        "groundingStatus": "NO_MATCH",
+        "groundingReview": {
+          "column": null,
+          "reason": "Column 2 is the intended away-team field, but the literal \"Away team\" is a header and matches no cell; the row value required by the question is \"Collingwood\"."
+        }
+      }
+    ],
+    "stage": "WHERE_CONDITION_VALIDATE",
+    "originalConditions": [
+      {
+        "surface": "Collingwood",
+        "value": "Collingwood",
+        "start": 43,
+        "end": 54
+      },
+      {
+        "surface": "away",
+        "value": "Away team",
+        "start": 63,
+        "end": 67
+      }
+    ],
+    "halt": true,
+    "completed": false,
+    "conds": [],
+    "warnings": [
+      "value model disagreed with extracted question span; original retained"
+    ],
+    "request": {
+      "question": "What was the largest crowd at a game where Collingwood was the away team?",
+      "table": {
+        "header": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ],
+        "page_title": "1961 VFL season",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 10776330,
+        "id": "2-10776330-11",
+        "section_title": "Round 11",
+        "rows": [
+          [
+            "Melbourne",
+            "17.18 (120)",
+            "Richmond",
+            "7.12 (54)",
+            "MCG",
+            "38,000",
+            "1 July 1961"
+          ],
+          [
+            "Fitzroy",
+            "9.9 (63)",
+            "St Kilda",
+            "9.8 (62)",
+            "Brunswick Street Oval",
+            "19,291",
+            "1 July 1961"
+          ],
+          [
+            "Essendon",
+            "12.11 (83)",
+            "Footscray",
+            "13.14 (92)",
+            "Windy Hill",
+            "22,440",
+            "1 July 1961"
+          ],
+          [
+            "Carlton",
+            "10.18 (78)",
+            "Geelong",
+            "17.16 (118)",
+            "Princes Park",
+            "17,936",
+            "1 July 1961"
+          ],
+          [
+            "South Melbourne",
+            "9.14 (68)",
+            "North Melbourne",
+            "7.8 (50)",
+            "Lake Oval",
+            "8,750",
+            "1 July 1961"
+          ],
+          [
+            "Hawthorn",
+            "13.12 (90)",
+            "Collingwood",
+            "4.12 (36)",
+            "Glenferrie Oval",
+            "31,500",
+            "1 July 1961"
+          ]
+        ],
+        "caption": "Round 11",
+        "headers": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-10776330-11",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 9,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "Collingwood",
+              "value": "Collingwood",
+              "start": 43,
+              "end": 54
+            },
+            {
+              "surface": "away",
+              "value": "Away team",
+              "start": 63,
+              "end": 67
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c5b0568cdff79406525c3f9cf63029350cc89a730946ebaec5e251ff6afd90e8",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4912,
+              "completion_tokens": 30,
+              "total_tokens": 4942,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Collingwood",
+              "value": "Collingwood",
+              "start": 43,
+              "end": 54,
+              "clause": "What was the largest crowd at a game where Collingwood was the away team?"
+            },
+            {
+              "surface": "away",
+              "value": "Away team",
+              "start": 63,
+              "end": 67,
+              "clause": "What was the largest crowd at a game where Collingwood was the away team?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Collingwood",
+              "value": "Collingwood",
+              "start": 43,
+              "end": 54,
+              "clause": "What was the largest crowd at a game where Collingwood was the away team?"
+            },
+            {
+              "surface": "away",
+              "value": "Away team",
+              "start": 63,
+              "end": 67,
+              "clause": "What was the largest crowd at a game where Collingwood was the away team?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Collingwood",
+              "value": "Collingwood",
+              "start": 43,
+              "end": 54,
+              "clause": "What was the largest crowd at a game where Collingwood was the away team?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question specifies Collingwood as the away team, matching the Away team field; row evidence contains Collingwood there."
+            },
+            {
+              "surface": "away",
+              "value": "Away team",
+              "start": 63,
+              "end": 67,
+              "clause": "What was the largest crowd at a game where Collingwood was the away team?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Away explicitly refers to the Away team field."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e337899c6fe01a64afa3e6b5cada711ffe6680275cbbadfd5eba2669936bcd53",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4992,
+              "completion_tokens": 59,
+              "total_tokens": 5051,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Collingwood",
+              "value": "Collingwood",
+              "start": 43,
+              "end": 54,
+              "clause": "What was the largest crowd at a game where Collingwood was the away team?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question specifies Collingwood as the away team, matching the Away team field; row evidence contains Collingwood there.",
+              "operator": "="
+            },
+            {
+              "surface": "away",
+              "value": "Away team",
+              "start": 63,
+              "end": 67,
+              "clause": "What was the largest crowd at a game where Collingwood was the away team?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Away explicitly refers to the Away team field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ac62f1bd00488d186177238737f38462d1d90529bb64d99ebc88026f209e6f10",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5086,
+              "completion_tokens": 30,
+              "total_tokens": 5116,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 17
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "warnings": [
+            "value model disagreed with extracted question span; original retained"
+          ],
+          "conditions": [
+            {
+              "surface": "Collingwood",
+              "value": "Collingwood",
+              "start": 43,
+              "end": 54,
+              "clause": "What was the largest crowd at a game where Collingwood was the away team?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question specifies Collingwood as the away team, matching the Away team field; row evidence contains Collingwood there.",
+              "operator": "="
+            },
+            {
+              "surface": "away",
+              "value": "Away team",
+              "start": 63,
+              "end": 67,
+              "clause": "What was the largest crowd at a game where Collingwood was the away team?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Away explicitly refers to the Away team field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "421d7e48efa2a6173620c828dd87d8ddba4ae64f365f3a1d03748cba09cf2ef6",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5040,
+              "completion_tokens": 117,
+              "total_tokens": 5157,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 101
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Collingwood",
+              "value": "Collingwood",
+              "start": 43,
+              "end": 54,
+              "clause": "What was the largest crowd at a game where Collingwood was the away team?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question specifies Collingwood as the away team, matching the Away team field; row evidence contains Collingwood there.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "away",
+              "value": "Away team",
+              "start": 63,
+              "end": 67,
+              "clause": "What was the largest crowd at a game where Collingwood was the away team?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Away explicitly refers to the Away team field.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": null,
+                "reason": "Column 2 is the intended away-team field, but the literal \"Away team\" is a header and matches no cell; the row value required by the question is \"Collingwood\"."
+              }
+            }
+          ],
+          "reviewModelCalls": [
+            {
+              "model": "gpt-5.6-sol",
+              "promptSha256": "e251a4f18397ccf64a99455f60b7e27c4194eefd9ad046e8458955f4a536db4d",
+              "knowledgeIds": [],
+              "usage": {
+                "prompt_tokens": 4997,
+                "completion_tokens": 140,
+                "total_tokens": 5137,
+                "prompt_tokens_details": {
+                  "cached_tokens": 4224
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 87
+                }
+              }
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e251a4f18397ccf64a99455f60b7e27c4194eefd9ad046e8458955f4a536db4d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4997,
+              "completion_tokens": 140,
+              "total_tokens": 5137,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 87
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Collingwood",
+              "value": "Collingwood",
+              "start": 43,
+              "end": 54,
+              "clause": "What was the largest crowd at a game where Collingwood was the away team?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question specifies Collingwood as the away team, matching the Away team field; row evidence contains Collingwood there.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "away",
+              "value": "Away team",
+              "start": 63,
+              "end": 67,
+              "clause": "What was the largest crowd at a game where Collingwood was the away team?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Away explicitly refers to the Away team field.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": null,
+                "reason": "Column 2 is the intended away-team field, but the literal \"Away team\" is a header and matches no cell; the row value required by the question is \"Collingwood\"."
+              }
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "GROUNDING_FAILED",
+          "valid": false,
+          "errors": [
+            "condition 1: grounding NO_MATCH"
+          ],
+          "conditions": [
+            {
+              "surface": "Collingwood",
+              "value": "Collingwood",
+              "start": 43,
+              "end": 54,
+              "clause": "What was the largest crowd at a game where Collingwood was the away team?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question specifies Collingwood as the away team, matching the Away team field; row evidence contains Collingwood there.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "away",
+              "value": "Away team",
+              "start": 63,
+              "end": 67,
+              "clause": "What was the largest crowd at a game where Collingwood was the away team?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Away explicitly refers to the Away team field.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": null,
+                "reason": "Column 2 is the intended away-team field, but the literal \"Away team\" is a header and matches no cell; the row value required by the question is \"Collingwood\"."
+              }
+            }
+          ]
+        }
+      },
+      "warnings": [
+        "value model disagreed with extracted question span; original retained"
+      ],
+      "execution": {
+        "status": "GROUNDING_FAILED",
+        "stage": "WHERE_CONDITION_VALIDATE",
+        "halt": true,
+        "completed": false,
+        "errors": [
+          "condition 1: grounding NO_MATCH"
+        ],
+        "warnings": [
+          "value model disagreed with extracted question span; original retained"
+        ]
+      },
+      "originalConditions": [
+        {
+          "surface": "Collingwood",
+          "value": "Collingwood",
+          "start": 43,
+          "end": 54
+        },
+        {
+          "surface": "away",
+          "value": "Away team",
+          "start": 63,
+          "end": 67
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Collingwood",
+          "value": "Collingwood",
+          "start": 43,
+          "end": 54,
+          "clause": "What was the largest crowd at a game where Collingwood was the away team?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The question specifies Collingwood as the away team, matching the Away team field; row evidence contains Collingwood there.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "away",
+          "value": "Away team",
+          "start": 63,
+          "end": 67,
+          "clause": "What was the largest crowd at a game where Collingwood was the away team?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "Away explicitly refers to the Away team field.",
+          "operator": "=",
+          "grounded": false,
+          "groundingStatus": "NO_MATCH",
+          "groundingReview": {
+            "column": null,
+            "reason": "Column 2 is the intended away-team field, but the literal \"Away team\" is a header and matches no cell; the row value required by the question is \"Collingwood\"."
+          }
+        }
+      ],
+      "count": 2
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": false,
+  "elapsed_ms": 13625
+}

@@ -1,0 +1,453 @@
+{
+  "arm": "E2",
+  "position": 566,
+  "example_id": "test:9130:2-16823208-3",
+  "original_index": 9130,
+  "table_id": "2-16823208-3",
+  "question": "Which Votes has a Governorate of hewler?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        3,
+        0,
+        "hewler"
+      ]
+    ],
+    "agg": 5
+  },
+  "prediction_conds": [
+    [
+      3,
+      0,
+      "Hewler"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        0,
+        "Hewler"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "hewler",
+        "value": "Hewler",
+        "start": 33,
+        "end": 39,
+        "clause": "Which Votes has a Governorate of hewler?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The question explicitly says \"Governorate of hewler,\" and Hewler appears in the Governorate column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "hewler",
+        "value": "Hewler",
+        "start": 33,
+        "end": 39
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Which Votes has a Governorate of hewler?",
+      "table": {
+        "header": [
+          "Candidate",
+          "Party",
+          "Election List",
+          "Governorate",
+          "Votes"
+        ],
+        "page_title": "Iraqi parliamentary election, 2010",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "real"
+        ],
+        "page_id": 16823208,
+        "id": "2-16823208-3",
+        "section_title": "Candidate Votes",
+        "rows": [
+          [
+            "Nouri al-Maliki",
+            "Islamic Da'awa Party",
+            "State of Law Coalition",
+            "Baghdad",
+            "622,961"
+          ],
+          [
+            "Ayad Allawi",
+            "Iraqi National Accord",
+            "al-Iraqiyya",
+            "Baghdad",
+            "407,537"
+          ],
+          [
+            "Usama al-Nujayfi",
+            "al-Hadba",
+            "al-Iraqiyya",
+            "Ninawa",
+            "274,741"
+          ],
+          [
+            "Tariq al-Hashemi",
+            "Renewal List",
+            "al-Iraqiyya",
+            "Baghdad",
+            "200,963"
+          ],
+          [
+            "Ibrahim al-Jaafari",
+            "National Reform Trend",
+            "National Iraqi Alliance",
+            "Baghdad",
+            "101,053"
+          ],
+          [
+            "Nawshirwan Mustafa",
+            "Gorran Movement",
+            "Gorran List",
+            "Silemani",
+            "93,196"
+          ],
+          [
+            "Rafi al-Issawi",
+            "National Future Gathering",
+            "al-Iraqiyya",
+            "al-Anbar",
+            "83,145"
+          ],
+          [
+            "Baqir Jabr al-Zubeidi",
+            "Islamic Supreme Council of Iraq",
+            "National Iraqi Alliance",
+            "Baghdad",
+            "68,822"
+          ],
+          [
+            "Khalid Shwani",
+            "Patriotic Union of Kurdistan",
+            "Kurdistani List",
+            "Kerkuk",
+            "68,522"
+          ],
+          [
+            "Arshad al-Salihi",
+            "Iraqi Turkmen Front",
+            "al-Iraqiyya",
+            "Kerkuk",
+            "59,732"
+          ],
+          [
+            "Ali Bapir",
+            "Islamic Group of Kurdistan",
+            "IGK List",
+            "Hewler",
+            "50,116"
+          ]
+        ],
+        "caption": "Candidate Votes",
+        "headers": [
+          "Candidate",
+          "Party",
+          "Election List",
+          "Governorate",
+          "Votes"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-16823208-3",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "hewler",
+              "value": "Hewler",
+              "start": 33,
+              "end": 39
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a8c3fb8eb5bf04f680d2ce8771939093f8aa651099308e297f7e06d974a8dcef",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4957,
+              "completion_tokens": 20,
+              "total_tokens": 4977,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "hewler",
+              "value": "Hewler",
+              "start": 33,
+              "end": 39,
+              "clause": "Which Votes has a Governorate of hewler?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "hewler",
+              "value": "Hewler",
+              "start": 33,
+              "end": 39,
+              "clause": "Which Votes has a Governorate of hewler?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "hewler",
+              "value": "Hewler",
+              "start": 33,
+              "end": 39,
+              "clause": "Which Votes has a Governorate of hewler?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says \"Governorate of hewler,\" and Hewler appears in the Governorate column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "3faa8d1be4bbbe3d5d858eba0842b0c20cccc9d40019090554724a3efc97a2dd",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4992,
+              "completion_tokens": 43,
+              "total_tokens": 5035,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "hewler",
+              "value": "Hewler",
+              "start": 33,
+              "end": 39,
+              "clause": "Which Votes has a Governorate of hewler?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says \"Governorate of hewler,\" and Hewler appears in the Governorate column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "9cb88cbccff679df07a2fda355b0ecdb6ae77c4198d0ebe88a8dbb42f482393b",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5059,
+              "completion_tokens": 9,
+              "total_tokens": 5068,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "hewler",
+              "value": "Hewler",
+              "start": 33,
+              "end": 39,
+              "clause": "Which Votes has a Governorate of hewler?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says \"Governorate of hewler,\" and Hewler appears in the Governorate column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "273d76d1e68e0ae2ca6819740a1c343787c81f65c454261176b6ae5cabd492f7",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5010,
+              "completion_tokens": 12,
+              "total_tokens": 5022,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "hewler",
+              "value": "Hewler",
+              "start": 33,
+              "end": 39,
+              "clause": "Which Votes has a Governorate of hewler?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says \"Governorate of hewler,\" and Hewler appears in the Governorate column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "hewler",
+              "value": "Hewler",
+              "start": 33,
+              "end": 39,
+              "clause": "Which Votes has a Governorate of hewler?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says \"Governorate of hewler,\" and Hewler appears in the Governorate column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "hewler",
+              "value": "Hewler",
+              "start": 33,
+              "end": 39,
+              "clause": "Which Votes has a Governorate of hewler?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says \"Governorate of hewler,\" and Hewler appears in the Governorate column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              0,
+              "Hewler"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "hewler",
+          "value": "Hewler",
+          "start": 33,
+          "end": 39
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "hewler",
+          "value": "Hewler",
+          "start": 33,
+          "end": 39,
+          "clause": "Which Votes has a Governorate of hewler?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The question explicitly says \"Governorate of hewler,\" and Hewler appears in the Governorate column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          3,
+          0,
+          "Hewler"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 11672
+}

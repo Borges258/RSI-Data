@@ -1,0 +1,658 @@
+{
+  "arm": "E2",
+  "position": 235,
+  "example_id": "test:9334:2-16677972-2",
+  "original_index": 9334,
+  "table_id": "2-16677972-2",
+  "question": "What's the date of the week 12 game whose attendance was larger than 64,721?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        4,
+        1,
+        "64,721"
+      ],
+      [
+        0,
+        0,
+        12
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      12
+    ],
+    [
+      4,
+      1,
+      "64,721"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        12
+      ],
+      [
+        4,
+        1,
+        "64,721"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "week 12",
+        "value": 12,
+        "start": 23,
+        "end": 30,
+        "clause": "What's the date of the week 12 game whose attendance was larger than 64",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "'week 12' explicitly refers to the Week field, whose row values include 12.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "larger than 64,721",
+        "value": "64,721",
+        "start": 57,
+        "end": 75,
+        "clause": "What's the date of the week 12 game whose attendance was larger than 64,721?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "'attendance was larger than 64,721' explicitly names Attendance and uses its numeric values.",
+        "operator": ">",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "week 12",
+        "value": "12",
+        "start": 23,
+        "end": 30
+      },
+      {
+        "surface": "larger than 64,721",
+        "value": "64,721",
+        "start": 57,
+        "end": 75
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What's the date of the week 12 game whose attendance was larger than 64,721?",
+      "table": {
+        "header": [
+          "Week",
+          "Date",
+          "Opponent",
+          "Result",
+          "Attendance"
+        ],
+        "page_title": "1978 Philadelphia Eagles season",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "real"
+        ],
+        "page_id": 16677972,
+        "id": "2-16677972-2",
+        "section_title": "Schedule",
+        "rows": [
+          [
+            "1",
+            "September 3, 1978",
+            "Los Angeles Rams",
+            "L 16–14",
+            "64,721"
+          ],
+          [
+            "2",
+            "September 10, 1978",
+            "at Washington Redskins",
+            "L 35–30",
+            "54,380"
+          ],
+          [
+            "3",
+            "September 17, 1978",
+            "at New Orleans Saints",
+            "W 24–17",
+            "49,242"
+          ],
+          [
+            "4",
+            "September 24, 1978",
+            "Miami Dolphins",
+            "W 17–3",
+            "62,998"
+          ],
+          [
+            "5",
+            "October 1, 1978",
+            "at Baltimore Colts",
+            "W 17–14",
+            "50,314"
+          ],
+          [
+            "6",
+            "October 8, 1978",
+            "at New England Patriots",
+            "L 24–14",
+            "61,016"
+          ],
+          [
+            "7",
+            "October 15, 1978",
+            "Washington Redskins",
+            "W 17–10",
+            "65,722"
+          ],
+          [
+            "8",
+            "October 22, 1978",
+            "at Dallas Cowboys",
+            "L 14–7",
+            "60,525"
+          ],
+          [
+            "9",
+            "October 29, 1978",
+            "St. Louis Cardinals",
+            "L 16–10",
+            "62,989"
+          ],
+          [
+            "10",
+            "November 5, 1978",
+            "Green Bay Packers",
+            "W 10–3",
+            "64,214"
+          ],
+          [
+            "11",
+            "November 12, 1978",
+            "New York Jets",
+            "W 17–9",
+            "60,249"
+          ],
+          [
+            "12",
+            "November 19, 1978",
+            "at New York Giants",
+            "W 19–17",
+            "70,318"
+          ],
+          [
+            "13",
+            "November 26, 1978",
+            "at St. Louis Cardinals",
+            "W 14–10",
+            "39,693"
+          ],
+          [
+            "14",
+            "December 3, 1978",
+            "at Minnesota Vikings",
+            "L 28–27",
+            "38,722"
+          ],
+          [
+            "15",
+            "December 10, 1978",
+            "Dallas Cowboys",
+            "L 31–13",
+            "64,667"
+          ],
+          [
+            "16",
+            "December 17, 1978",
+            "New York Giants",
+            "W 20–3",
+            "56,396"
+          ]
+        ],
+        "caption": "Schedule",
+        "headers": [
+          "Week",
+          "Date",
+          "Opponent",
+          "Result",
+          "Attendance"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-16677972-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "week 12",
+              "value": "12",
+              "start": 23,
+              "end": 30
+            },
+            {
+              "surface": "larger than 64,721",
+              "value": "64,721",
+              "start": 57,
+              "end": 75
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e00d426c87c4afeccebe8b8bafe105aaec69295b02200b003c766835d47b2997",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5070,
+              "completion_tokens": 35,
+              "total_tokens": 5105,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "week 12",
+              "value": "12",
+              "start": 23,
+              "end": 30,
+              "clause": "What's the date of the week 12 game whose attendance was larger than 64"
+            },
+            {
+              "surface": "larger than 64,721",
+              "value": "64,721",
+              "start": 57,
+              "end": 75,
+              "clause": "What's the date of the week 12 game whose attendance was larger than 64,721?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "week 12",
+              "value": "12",
+              "start": 23,
+              "end": 30,
+              "clause": "What's the date of the week 12 game whose attendance was larger than 64"
+            },
+            {
+              "surface": "larger than 64,721",
+              "value": "64,721",
+              "start": 57,
+              "end": 75,
+              "clause": "What's the date of the week 12 game whose attendance was larger than 64,721?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "week 12",
+              "value": "12",
+              "start": 23,
+              "end": 30,
+              "clause": "What's the date of the week 12 game whose attendance was larger than 64",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'week 12' explicitly refers to the Week field, whose row values include 12."
+            },
+            {
+              "surface": "larger than 64,721",
+              "value": "64,721",
+              "start": 57,
+              "end": 75,
+              "clause": "What's the date of the week 12 game whose attendance was larger than 64,721?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'attendance was larger than 64,721' explicitly names Attendance and uses its numeric values."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "8bf3d79ee65dad021e5d9a2c90e3ca18d592d5cb928328abfbc5d65c73b47498",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5156,
+              "completion_tokens": 63,
+              "total_tokens": 5219,
+              "prompt_tokens_details": {
+                "cached_tokens": 4864
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "week 12",
+              "value": "12",
+              "start": 23,
+              "end": 30,
+              "clause": "What's the date of the week 12 game whose attendance was larger than 64",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'week 12' explicitly refers to the Week field, whose row values include 12.",
+              "operator": "="
+            },
+            {
+              "surface": "larger than 64,721",
+              "value": "64,721",
+              "start": 57,
+              "end": 75,
+              "clause": "What's the date of the week 12 game whose attendance was larger than 64,721?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'attendance was larger than 64,721' explicitly names Attendance and uses its numeric values.",
+              "operator": ">"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "06ab52e7b4e396e2a8b72a31226e2f136ea2816a16b649792b80f42cd5442c68",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5252,
+              "completion_tokens": 11,
+              "total_tokens": 5263,
+              "prompt_tokens_details": {
+                "cached_tokens": 4864
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "week 12",
+              "value": "12",
+              "start": 23,
+              "end": 30,
+              "clause": "What's the date of the week 12 game whose attendance was larger than 64",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'week 12' explicitly refers to the Week field, whose row values include 12.",
+              "operator": "="
+            },
+            {
+              "surface": "larger than 64,721",
+              "value": "64,721",
+              "start": 57,
+              "end": 75,
+              "clause": "What's the date of the week 12 game whose attendance was larger than 64,721?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'attendance was larger than 64,721' explicitly names Attendance and uses its numeric values.",
+              "operator": ">"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "118b1f7d8da4f007abfdca4945c91729de82fc05b0383576932968f08e542b7b",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5206,
+              "completion_tokens": 14,
+              "total_tokens": 5220,
+              "prompt_tokens_details": {
+                "cached_tokens": 4864
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "week 12",
+              "value": "12",
+              "start": 23,
+              "end": 30,
+              "clause": "What's the date of the week 12 game whose attendance was larger than 64",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'week 12' explicitly refers to the Week field, whose row values include 12.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "larger than 64,721",
+              "value": "64,721",
+              "start": 57,
+              "end": 75,
+              "clause": "What's the date of the week 12 game whose attendance was larger than 64,721?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'attendance was larger than 64,721' explicitly names Attendance and uses its numeric values.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "week 12",
+              "value": 12,
+              "start": 23,
+              "end": 30,
+              "clause": "What's the date of the week 12 game whose attendance was larger than 64",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'week 12' explicitly refers to the Week field, whose row values include 12.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "larger than 64,721",
+              "value": "64,721",
+              "start": 57,
+              "end": 75,
+              "clause": "What's the date of the week 12 game whose attendance was larger than 64,721?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'attendance was larger than 64,721' explicitly names Attendance and uses its numeric values.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "week 12",
+              "value": 12,
+              "start": 23,
+              "end": 30,
+              "clause": "What's the date of the week 12 game whose attendance was larger than 64",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'week 12' explicitly refers to the Week field, whose row values include 12.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "larger than 64,721",
+              "value": "64,721",
+              "start": 57,
+              "end": 75,
+              "clause": "What's the date of the week 12 game whose attendance was larger than 64,721?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'attendance was larger than 64,721' explicitly names Attendance and uses its numeric values.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              12
+            ],
+            [
+              4,
+              1,
+              "64,721"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "week 12",
+          "value": "12",
+          "start": 23,
+          "end": 30
+        },
+        {
+          "surface": "larger than 64,721",
+          "value": "64,721",
+          "start": 57,
+          "end": 75
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "week 12",
+          "value": 12,
+          "start": 23,
+          "end": 30,
+          "clause": "What's the date of the week 12 game whose attendance was larger than 64",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "'week 12' explicitly refers to the Week field, whose row values include 12.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "larger than 64,721",
+          "value": "64,721",
+          "start": 57,
+          "end": 75,
+          "clause": "What's the date of the week 12 game whose attendance was larger than 64,721?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "'attendance was larger than 64,721' explicitly names Attendance and uses its numeric values.",
+          "operator": ">",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          0,
+          0,
+          12
+        ],
+        [
+          4,
+          1,
+          "64,721"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7438
+}

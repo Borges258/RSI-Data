@@ -1,0 +1,108 @@
+{
+  "arm": "E1",
+  "position": 369,
+  "example_id": "test:14425:2-12382876-5",
+  "original_index": 14425,
+  "table_id": "2-12382876-5",
+  "question": "When is the lane less than 5 and is named ágnes kovács?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        1,
+        2,
+        5
+      ],
+      [
+        2,
+        0,
+        "ágnes kovács"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      1,
+      2,
+      5
+    ],
+    [
+      2,
+      0,
+      "Ágnes Kovács"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": "gpt-5.6-sol",
+  "usage": {
+    "prompt_tokens": 9542,
+    "completion_tokens": 58,
+    "total_tokens": 9600,
+    "prompt_tokens_details": {
+      "cached_tokens": 4224
+    }
+  },
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        2,
+        5
+      ],
+      [
+        2,
+        0,
+        "Ágnes Kovács"
+      ]
+    ],
+    "explanation": "Lane is strictly less than 5, and Name exactly matches the current table value Ágnes Kovács.",
+    "version": "wikisql-where-prior-v1",
+    "tableId": "2-12382876-5",
+    "knowledgeIds": [
+      "g-eq",
+      "g-gt",
+      "g-lt",
+      "g-inclusive",
+      "g-literal",
+      "g-threshold",
+      "g-and",
+      "g-or",
+      "g-column",
+      "g-count",
+      "g-ambiguous",
+      "t-2-12382876-5-field-0",
+      "t-2-12382876-5-field-1",
+      "t-2-12382876-5-field-2",
+      "t-2-12382876-5-field-3",
+      "t-2-12382876-5-field-4",
+      "d-implicit-eq",
+      "d-explicit-eq",
+      "d-gt",
+      "d-lt-and-gt",
+      "d-with-two",
+      "d-literal-form",
+      "p-text",
+      "p-number",
+      "p-multi",
+      "p-unsupported"
+    ],
+    "promptSha256": "d4e872b60d22beba41621b768080fb526ca98655516cc2826ddd66d1fab977f4",
+    "model": "gpt-5.6-sol",
+    "usage": {
+      "prompt_tokens": 9542,
+      "completion_tokens": 58,
+      "total_tokens": 9600,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      }
+    },
+    "latencyMs": 2526
+  },
+  "source": "where_prior_parse",
+  "safe_completed": true,
+  "elapsed_ms": 2547
+}

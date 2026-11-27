@@ -1,0 +1,765 @@
+{
+  "arm": "E2",
+  "position": 150,
+  "example_id": "test:11605:2-11513685-5",
+  "original_index": 11605,
+  "table_id": "2-11513685-5",
+  "question": "Who lost on July 20 with 42,607 attending?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        4,
+        1,
+        "42,607"
+      ],
+      [
+        0,
+        0,
+        "july 20"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "July 20"
+    ],
+    [
+      4,
+      0,
+      "42,607"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "July 20"
+      ],
+      [
+        4,
+        0,
+        "42,607"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "July 20",
+        "value": "July 20",
+        "start": 12,
+        "end": 19,
+        "clause": "Who lost on July 20 with 42",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "The date wording \"on July 20\" maps to the Date field.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "42,607",
+        "value": "42,607",
+        "start": 25,
+        "end": 31,
+        "clause": "Who lost on July 20 with 42,607 attending?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The wording \"42,607 attending\" maps to the Attendance field, despite that value appearing on the July 19 row.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "NORMALIZED_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "July 20",
+        "value": "July 20",
+        "start": 12,
+        "end": 19
+      },
+      {
+        "surface": "42,607",
+        "value": 42607,
+        "start": 25,
+        "end": 31
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Who lost on July 20 with 42,607 attending?",
+      "table": {
+        "header": [
+          "Date",
+          "Opponent",
+          "Score",
+          "Loss",
+          "Attendance",
+          "Record"
+        ],
+        "page_title": "2003 Colorado Rockies season",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 11513685,
+        "id": "2-11513685-5",
+        "section_title": "Game log",
+        "rows": [
+          [
+            "July 1",
+            "Diamondbacks",
+            "7–4",
+            "Good (3–2)",
+            "25,209",
+            "43–42"
+          ],
+          [
+            "July 2",
+            "Diamondbacks",
+            "6–2",
+            "Patterson (1–4)",
+            "47,032",
+            "44–42"
+          ],
+          [
+            "July 3",
+            "Diamondbacks",
+            "8–4",
+            "Neagle (2–2)",
+            "48,560",
+            "44–43"
+          ],
+          [
+            "July 4",
+            "@ Brewers",
+            "8–6",
+            "Estrella (2–1)",
+            "21,144",
+            "45–43"
+          ],
+          [
+            "July 5",
+            "@ Brewers",
+            "9–8",
+            "Ford (0–1)",
+            "30,731",
+            "46–43"
+          ],
+          [
+            "July 6",
+            "@ Brewers",
+            "3–1",
+            "Jiménez (0–5)",
+            "21,623",
+            "46–44"
+          ],
+          [
+            "July 7",
+            "@ Diamondbacks",
+            "14–6",
+            "Cruz (3–5)",
+            "32,019",
+            "46–45"
+          ],
+          [
+            "July 8",
+            "@ Diamondbacks",
+            "9–3",
+            "Reed (5–2)",
+            "36,436",
+            "46–46"
+          ],
+          [
+            "July 9",
+            "Giants",
+            "11–7",
+            "Foppert (5–8)",
+            "31,139",
+            "47–46"
+          ],
+          [
+            "July 10",
+            "Giants",
+            "11–3",
+            "Powell (0–1)",
+            "30,954",
+            "48–46"
+          ],
+          [
+            "July 11",
+            "Dodgers",
+            "7–6",
+            "Shuey (3–2)",
+            "34,150",
+            "49–46"
+          ],
+          [
+            "July 12",
+            "Dodgers",
+            "5–3",
+            "Ashby (2–6)",
+            "41,696",
+            "50–46"
+          ],
+          [
+            "July 13",
+            "Dodgers",
+            "9–3",
+            "Neagle (2–3)",
+            "32,483",
+            "50–47"
+          ],
+          [
+            "July 17",
+            "@ Giants",
+            "8–4",
+            "Jennings (9–7)",
+            "41,052",
+            "50–48"
+          ],
+          [
+            "July 18",
+            "@ Giants",
+            "7–0",
+            "Oliver (7–6)",
+            "41,690",
+            "50–49"
+          ],
+          [
+            "July 19",
+            "@ Giants",
+            "5–3",
+            "Chacón (11–5)",
+            "42,607",
+            "50–50"
+          ],
+          [
+            "July 20",
+            "@ Giants",
+            "8–4",
+            "Neagle (2–4)",
+            "42,620",
+            "50–51"
+          ],
+          [
+            "July 21",
+            "@ Dodgers",
+            "4–1",
+            "Ashby (2–7)",
+            "27,243",
+            "51–51"
+          ],
+          [
+            "July 22",
+            "@ Dodgers",
+            "5–2",
+            "Jennings (9–8)",
+            "30,416",
+            "51–52"
+          ],
+          [
+            "July 23",
+            "@ Dodgers",
+            "8–3",
+            "Ishii (9–4)",
+            "33,589",
+            "52–52"
+          ],
+          [
+            "July 24",
+            "@ Dodgers",
+            "1–0 (11)",
+            "López (2–1)",
+            "33,144",
+            "52–53"
+          ],
+          [
+            "July 25",
+            "Brewers",
+            "7–3",
+            "Obermueller (0–1)",
+            "39,013",
+            "53–53"
+          ],
+          [
+            "July 26",
+            "Brewers",
+            "13–8",
+            "De Los Santos (1–3)",
+            "40,675",
+            "54–53"
+          ],
+          [
+            "July 27",
+            "Brewers",
+            "6–1",
+            "Franklin (7–7)",
+            "30,108",
+            "55–53"
+          ],
+          [
+            "July 29",
+            "@ Reds",
+            "5–3",
+            "Haynes (2–11)",
+            "25,663",
+            "56–53"
+          ],
+          [
+            "July 30",
+            "@ Reds",
+            "3–2 (10)",
+            "Jiménez (0–6)",
+            "23,962",
+            "56–54"
+          ],
+          [
+            "July 31",
+            "@ Reds",
+            "5–4 (10)",
+            "Fuentes (2–1)",
+            "24,861",
+            "56–55"
+          ]
+        ],
+        "caption": "Game log",
+        "headers": [
+          "Date",
+          "Opponent",
+          "Score",
+          "Loss",
+          "Attendance",
+          "Record"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-11513685-5",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "July 20",
+              "value": "July 20",
+              "start": 12,
+              "end": 19
+            },
+            {
+              "surface": "42,607",
+              "value": 42607,
+              "start": 25,
+              "end": 31
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "33e4bd0ae6bb746467df61c025341435d819e82af4cf4929d386d1024484c137",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5440,
+              "completion_tokens": 32,
+              "total_tokens": 5472,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "July 20",
+              "value": "July 20",
+              "start": 12,
+              "end": 19,
+              "clause": "Who lost on July 20 with 42"
+            },
+            {
+              "surface": "42,607",
+              "value": 42607,
+              "start": 25,
+              "end": 31,
+              "clause": "Who lost on July 20 with 42,607 attending?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "July 20",
+              "value": "July 20",
+              "start": 12,
+              "end": 19,
+              "clause": "Who lost on July 20 with 42"
+            },
+            {
+              "surface": "42,607",
+              "value": 42607,
+              "start": 25,
+              "end": 31,
+              "clause": "Who lost on July 20 with 42,607 attending?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "July 20",
+              "value": "July 20",
+              "start": 12,
+              "end": 19,
+              "clause": "Who lost on July 20 with 42",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The date wording \"on July 20\" maps to the Date field."
+            },
+            {
+              "surface": "42,607",
+              "value": 42607,
+              "start": 25,
+              "end": 31,
+              "clause": "Who lost on July 20 with 42,607 attending?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The wording \"42,607 attending\" maps to the Attendance field, despite that value appearing on the July 19 row."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "eeba3e70d85f4601a0baca4fe8de77a9aa33f4edf2c1c7bbaa9a54fb6a76be54",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5510,
+              "completion_tokens": 65,
+              "total_tokens": 5575,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "July 20",
+              "value": "July 20",
+              "start": 12,
+              "end": 19,
+              "clause": "Who lost on July 20 with 42",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The date wording \"on July 20\" maps to the Date field.",
+              "operator": "="
+            },
+            {
+              "surface": "42,607",
+              "value": 42607,
+              "start": 25,
+              "end": 31,
+              "clause": "Who lost on July 20 with 42,607 attending?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The wording \"42,607 attending\" maps to the Attendance field, despite that value appearing on the July 19 row.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0f25f70d65fa6325c92453f2cfdb2e8285255dfb3dac6f5003b0ac4a47856105",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5610,
+              "completion_tokens": 11,
+              "total_tokens": 5621,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "July 20",
+              "value": "July 20",
+              "start": 12,
+              "end": 19,
+              "clause": "Who lost on July 20 with 42",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The date wording \"on July 20\" maps to the Date field.",
+              "operator": "="
+            },
+            {
+              "surface": "42,607",
+              "value": 42607,
+              "start": 25,
+              "end": 31,
+              "clause": "Who lost on July 20 with 42,607 attending?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The wording \"42,607 attending\" maps to the Attendance field, despite that value appearing on the July 19 row.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "3897d6049dc0e1c7d380c0c78c9b64c7d332e5706451934e40fb927a12fb24ac",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5564,
+              "completion_tokens": 14,
+              "total_tokens": 5578,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "July 20",
+              "value": "July 20",
+              "start": 12,
+              "end": 19,
+              "clause": "Who lost on July 20 with 42",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The date wording \"on July 20\" maps to the Date field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "42,607",
+              "value": "42,607",
+              "start": 25,
+              "end": 31,
+              "clause": "Who lost on July 20 with 42,607 attending?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The wording \"42,607 attending\" maps to the Attendance field, despite that value appearing on the July 19 row.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "NORMALIZED_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "July 20",
+              "value": "July 20",
+              "start": 12,
+              "end": 19,
+              "clause": "Who lost on July 20 with 42",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The date wording \"on July 20\" maps to the Date field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "42,607",
+              "value": "42,607",
+              "start": 25,
+              "end": 31,
+              "clause": "Who lost on July 20 with 42,607 attending?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The wording \"42,607 attending\" maps to the Attendance field, despite that value appearing on the July 19 row.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "NORMALIZED_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "July 20",
+              "value": "July 20",
+              "start": 12,
+              "end": 19,
+              "clause": "Who lost on July 20 with 42",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The date wording \"on July 20\" maps to the Date field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "42,607",
+              "value": "42,607",
+              "start": 25,
+              "end": 31,
+              "clause": "Who lost on July 20 with 42,607 attending?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The wording \"42,607 attending\" maps to the Attendance field, despite that value appearing on the July 19 row.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "NORMALIZED_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              "July 20"
+            ],
+            [
+              4,
+              0,
+              "42,607"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "July 20",
+          "value": "July 20",
+          "start": 12,
+          "end": 19
+        },
+        {
+          "surface": "42,607",
+          "value": 42607,
+          "start": 25,
+          "end": 31
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "July 20",
+          "value": "July 20",
+          "start": 12,
+          "end": 19,
+          "clause": "Who lost on July 20 with 42",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "The date wording \"on July 20\" maps to the Date field.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "42,607",
+          "value": "42,607",
+          "start": 25,
+          "end": 31,
+          "clause": "Who lost on July 20 with 42,607 attending?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The wording \"42,607 attending\" maps to the Attendance field, despite that value appearing on the July 19 row.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "NORMALIZED_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          0,
+          0,
+          "July 20"
+        ],
+        [
+          4,
+          0,
+          "42,607"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8875
+}

@@ -1,0 +1,815 @@
+{
+  "arm": "E2",
+  "position": 369,
+  "example_id": "test:7092:2-15611271-20",
+  "original_index": 7092,
+  "table_id": "2-15611271-20",
+  "question": "What is the total number of avg/g with a long of 50, a gp-gs of 3-0, and 926 yards?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        3,
+        0,
+        50
+      ],
+      [
+        1,
+        0,
+        "3-0"
+      ],
+      [
+        2,
+        0,
+        926
+      ]
+    ],
+    "agg": 3
+  },
+  "prediction_conds": [
+    [
+      3,
+      0,
+      50
+    ],
+    [
+      1,
+      0,
+      "3-0"
+    ],
+    [
+      2,
+      0,
+      926
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        0,
+        50
+      ],
+      [
+        1,
+        0,
+        "3-0"
+      ],
+      [
+        2,
+        0,
+        926
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "50",
+        "value": 50,
+        "start": 49,
+        "end": 51,
+        "clause": "What is the total number of avg/g with a long of 50, a gp-gs of 3-0,",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "Explicitly qualified by 'a long of 50'; Long is header index 3.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "3-0",
+        "value": "3-0",
+        "start": 64,
+        "end": 67,
+        "clause": "a gp-gs of 3-0,",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "Explicitly qualified by 'a gp-gs of 3-0'; GP-GS is header index 1.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "926",
+        "value": 926,
+        "start": 73,
+        "end": 76,
+        "clause": "and 926 yards?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "Explicitly qualified by '926 yards'; Yards is header index 2.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "50",
+        "value": "50",
+        "start": 49,
+        "end": 51
+      },
+      {
+        "surface": "3-0",
+        "value": "3-0",
+        "start": 64,
+        "end": 67
+      },
+      {
+        "surface": "926",
+        "value": "926",
+        "start": 73,
+        "end": 76
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the total number of avg/g with a long of 50, a gp-gs of 3-0, and 926 yards?",
+      "table": {
+        "header": [
+          "Name",
+          "GP-GS",
+          "Yards",
+          "Long",
+          "Avg/G"
+        ],
+        "page_title": "2008 Virginia Tech Hokies football team",
+        "types": [
+          "text",
+          "text",
+          "real",
+          "real",
+          "real"
+        ],
+        "page_id": 15611271,
+        "id": "2-15611271-20",
+        "section_title": "Rushing",
+        "rows": [
+          [
+            "Darren Evans",
+            "3-0",
+            "926",
+            "50",
+            "84.2"
+          ],
+          [
+            "Tyrod Taylor",
+            "7-4",
+            "524",
+            "50",
+            "61.6"
+          ],
+          [
+            "Kenny Lewis",
+            "3-3",
+            "199",
+            "24",
+            "39.8"
+          ],
+          [
+            "Jahre Cheeseman",
+            "2-0",
+            "21",
+            "12",
+            "10.5"
+          ],
+          [
+            "Dustin Pickle",
+            "3-0",
+            "18",
+            "8",
+            "6.0"
+          ],
+          [
+            "Josh Oglesby",
+            "2-0",
+            "7",
+            "5",
+            "3.5"
+          ],
+          [
+            "Greg Boone",
+            "3-3",
+            "4",
+            "3",
+            "1.3"
+          ],
+          [
+            "Sean Glennon",
+            "2-2",
+            "2",
+            "8",
+            "1.0"
+          ],
+          [
+            "Kenny Jefferson",
+            "3-0",
+            "2",
+            "2",
+            "0.7"
+          ],
+          [
+            "Total",
+            "3",
+            "564",
+            "50",
+            "188.0"
+          ],
+          [
+            "Opponents",
+            "3",
+            "470",
+            "36",
+            "156.7"
+          ]
+        ],
+        "caption": "Rushing",
+        "headers": [
+          "Name",
+          "GP-GS",
+          "Yards",
+          "Long",
+          "Avg/G"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-15611271-20",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 3,
+          "conditions": [
+            {
+              "surface": "50",
+              "value": "50",
+              "start": 49,
+              "end": 51
+            },
+            {
+              "surface": "3-0",
+              "value": "3-0",
+              "start": 64,
+              "end": 67
+            },
+            {
+              "surface": "926",
+              "value": "926",
+              "start": 73,
+              "end": 76
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f6c05b5e5b2ee847a0205b1d91847e6f6c839ac3d0fa7d575cea2058c97c363a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4874,
+              "completion_tokens": 37,
+              "total_tokens": 4911,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "50",
+              "value": "50",
+              "start": 49,
+              "end": 51,
+              "clause": "What is the total number of avg/g with a long of 50, a gp-gs of 3-0,"
+            },
+            {
+              "surface": "3-0",
+              "value": "3-0",
+              "start": 64,
+              "end": 67,
+              "clause": "a gp-gs of 3-0,"
+            },
+            {
+              "surface": "926",
+              "value": "926",
+              "start": 73,
+              "end": 76,
+              "clause": "and 926 yards?"
+            }
+          ],
+          "count": 3
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "50",
+              "value": "50",
+              "start": 49,
+              "end": 51,
+              "clause": "What is the total number of avg/g with a long of 50, a gp-gs of 3-0,"
+            },
+            {
+              "surface": "3-0",
+              "value": "3-0",
+              "start": 64,
+              "end": 67,
+              "clause": "a gp-gs of 3-0,"
+            },
+            {
+              "surface": "926",
+              "value": "926",
+              "start": 73,
+              "end": 76,
+              "clause": "and 926 yards?"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "68b338ff4d8a59ffa23c90b246a1bd238e68a43bcc36be9488b6eb22c9b240ac",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4998,
+              "completion_tokens": 8,
+              "total_tokens": 5006,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          },
+          "count": 3,
+          "recovered": [],
+          "reviewedUncertain": [
+            {
+              "surface": "total",
+              "start": 12,
+              "end": 17
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "50",
+              "value": "50",
+              "start": 49,
+              "end": 51,
+              "clause": "What is the total number of avg/g with a long of 50, a gp-gs of 3-0,",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicitly qualified by 'a long of 50'; Long is header index 3."
+            },
+            {
+              "surface": "3-0",
+              "value": "3-0",
+              "start": 64,
+              "end": 67,
+              "clause": "a gp-gs of 3-0,",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Explicitly qualified by 'a gp-gs of 3-0'; GP-GS is header index 1."
+            },
+            {
+              "surface": "926",
+              "value": "926",
+              "start": 73,
+              "end": 76,
+              "clause": "and 926 yards?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Explicitly qualified by '926 yards'; Yards is header index 2."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "568dbe92094b6d34b61f2ce05e16631c0affe58fbf1c57cc8c5974a4b19aa1d2",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4979,
+              "completion_tokens": 87,
+              "total_tokens": 5066,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "50",
+              "value": "50",
+              "start": 49,
+              "end": 51,
+              "clause": "What is the total number of avg/g with a long of 50, a gp-gs of 3-0,",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicitly qualified by 'a long of 50'; Long is header index 3.",
+              "operator": "="
+            },
+            {
+              "surface": "3-0",
+              "value": "3-0",
+              "start": 64,
+              "end": 67,
+              "clause": "a gp-gs of 3-0,",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Explicitly qualified by 'a gp-gs of 3-0'; GP-GS is header index 1.",
+              "operator": "="
+            },
+            {
+              "surface": "926",
+              "value": "926",
+              "start": 73,
+              "end": 76,
+              "clause": "and 926 yards?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Explicitly qualified by '926 yards'; Yards is header index 2.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b4654efd833f7db0e82151cdc802d75e3a36f118d3c4389563c9049b5186c380",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5112,
+              "completion_tokens": 13,
+              "total_tokens": 5125,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "50",
+              "value": 50,
+              "start": 49,
+              "end": 51,
+              "clause": "What is the total number of avg/g with a long of 50, a gp-gs of 3-0,",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicitly qualified by 'a long of 50'; Long is header index 3.",
+              "operator": "="
+            },
+            {
+              "surface": "3-0",
+              "value": "3-0",
+              "start": 64,
+              "end": 67,
+              "clause": "a gp-gs of 3-0,",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Explicitly qualified by 'a gp-gs of 3-0'; GP-GS is header index 1.",
+              "operator": "="
+            },
+            {
+              "surface": "926",
+              "value": 926,
+              "start": 73,
+              "end": 76,
+              "clause": "and 926 yards?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Explicitly qualified by '926 yards'; Yards is header index 2.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "77d08f8ab0bedf400990be770517e9e3825a1794e0a81f71f59007bb4326e0d8",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5069,
+              "completion_tokens": 15,
+              "total_tokens": 5084,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "50",
+              "value": "50",
+              "start": 49,
+              "end": 51,
+              "clause": "What is the total number of avg/g with a long of 50, a gp-gs of 3-0,",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicitly qualified by 'a long of 50'; Long is header index 3.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "3-0",
+              "value": "3-0",
+              "start": 64,
+              "end": 67,
+              "clause": "a gp-gs of 3-0,",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Explicitly qualified by 'a gp-gs of 3-0'; GP-GS is header index 1.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "926",
+              "value": "926",
+              "start": 73,
+              "end": 76,
+              "clause": "and 926 yards?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Explicitly qualified by '926 yards'; Yards is header index 2.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "50",
+              "value": 50,
+              "start": 49,
+              "end": 51,
+              "clause": "What is the total number of avg/g with a long of 50, a gp-gs of 3-0,",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicitly qualified by 'a long of 50'; Long is header index 3.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "3-0",
+              "value": "3-0",
+              "start": 64,
+              "end": 67,
+              "clause": "a gp-gs of 3-0,",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Explicitly qualified by 'a gp-gs of 3-0'; GP-GS is header index 1.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "926",
+              "value": 926,
+              "start": 73,
+              "end": 76,
+              "clause": "and 926 yards?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Explicitly qualified by '926 yards'; Yards is header index 2.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "50",
+              "value": 50,
+              "start": 49,
+              "end": 51,
+              "clause": "What is the total number of avg/g with a long of 50, a gp-gs of 3-0,",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicitly qualified by 'a long of 50'; Long is header index 3.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "3-0",
+              "value": "3-0",
+              "start": 64,
+              "end": 67,
+              "clause": "a gp-gs of 3-0,",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Explicitly qualified by 'a gp-gs of 3-0'; GP-GS is header index 1.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "926",
+              "value": 926,
+              "start": 73,
+              "end": 76,
+              "clause": "and 926 yards?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Explicitly qualified by '926 yards'; Yards is header index 2.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              0,
+              50
+            ],
+            [
+              1,
+              0,
+              "3-0"
+            ],
+            [
+              2,
+              0,
+              926
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "50",
+          "value": "50",
+          "start": 49,
+          "end": 51
+        },
+        {
+          "surface": "3-0",
+          "value": "3-0",
+          "start": 64,
+          "end": 67
+        },
+        {
+          "surface": "926",
+          "value": "926",
+          "start": 73,
+          "end": 76
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "50",
+          "value": 50,
+          "start": 49,
+          "end": 51,
+          "clause": "What is the total number of avg/g with a long of 50, a gp-gs of 3-0,",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "Explicitly qualified by 'a long of 50'; Long is header index 3.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "3-0",
+          "value": "3-0",
+          "start": 64,
+          "end": 67,
+          "clause": "a gp-gs of 3-0,",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "Explicitly qualified by 'a gp-gs of 3-0'; GP-GS is header index 1.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "926",
+          "value": 926,
+          "start": 73,
+          "end": 76,
+          "clause": "and 926 yards?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "Explicitly qualified by '926 yards'; Yards is header index 2.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 3,
+      "conds": [
+        [
+          3,
+          0,
+          50
+        ],
+        [
+          1,
+          0,
+          "3-0"
+        ],
+        [
+          2,
+          0,
+          926
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 10656
+}

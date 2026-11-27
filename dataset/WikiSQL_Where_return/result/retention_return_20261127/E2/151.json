@@ -1,0 +1,411 @@
+{
+  "arm": "E2",
+  "position": 151,
+  "example_id": "test:5362:2-15295737-108",
+  "original_index": 5362,
+  "table_id": "2-15295737-108",
+  "question": "Which Third has a Nation of hungary?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        0,
+        0,
+        "hungary"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "Hungary"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "Hungary"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "hungary",
+        "value": "Hungary",
+        "start": 28,
+        "end": 35,
+        "clause": "Which Third has a Nation of hungary?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "The question explicitly says 'a Nation of hungary,' and Hungary appears in the Nation column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "hungary",
+        "value": "Hungary",
+        "start": 28,
+        "end": 35
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Which Third has a Nation of hungary?",
+      "table": {
+        "header": [
+          "Nation",
+          "Skip",
+          "Third",
+          "Second",
+          "Lead"
+        ],
+        "page_title": "2008 European Curling Championships",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 15295737,
+        "id": "2-15295737-108",
+        "section_title": "Group B1",
+        "rows": [
+          [
+            "Austria",
+            "Karina Toth",
+            "Constanze Hummelt",
+            "Jasmin Seidl",
+            "Alexandra Bruckmiller"
+          ],
+          [
+            "Croatia",
+            "Katarina Radonic",
+            "Nikolina Petric",
+            "Marta Muzdalo",
+            "Zrinka Muhek"
+          ],
+          [
+            "Hungary",
+            "Ildiko Szekeres",
+            "Alexandra Beres",
+            "Gyöngyi Nagy",
+            "Gyöngyi Nagy"
+          ],
+          [
+            "Latvia",
+            "Iveta Staša-Šaršūne",
+            "Ieva Krusta",
+            "Una Grava-Germane",
+            "Zanda Bikše"
+          ],
+          [
+            "Norway",
+            "Marianne Rorvik",
+            "Henriette Løvar",
+            "Ingrid Stensrud",
+            "Kristin Skaslien"
+          ]
+        ],
+        "caption": "Group B1",
+        "headers": [
+          "Nation",
+          "Skip",
+          "Third",
+          "Second",
+          "Lead"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-15295737-108",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "hungary",
+              "value": "Hungary",
+              "start": 28,
+              "end": 35
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0090b2334f245b38a2ab5decf632fd4c84862db085e5e75dd751dc7be927cd95",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4808,
+              "completion_tokens": 19,
+              "total_tokens": 4827,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "hungary",
+              "value": "Hungary",
+              "start": 28,
+              "end": 35,
+              "clause": "Which Third has a Nation of hungary?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "hungary",
+              "value": "Hungary",
+              "start": 28,
+              "end": 35,
+              "clause": "Which Third has a Nation of hungary?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "hungary",
+              "value": "Hungary",
+              "start": 28,
+              "end": 35,
+              "clause": "Which Third has a Nation of hungary?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly says 'a Nation of hungary,' and Hungary appears in the Nation column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "45dd6616c109db220d92a06b4fa8e6371125d533cf47bbe318d9999d21807b99",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4840,
+              "completion_tokens": 40,
+              "total_tokens": 4880,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "hungary",
+              "value": "Hungary",
+              "start": 28,
+              "end": 35,
+              "clause": "Which Third has a Nation of hungary?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly says 'a Nation of hungary,' and Hungary appears in the Nation column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "6798fec07e01ee17f4bc9e466cee4025804a5dc07632b7667d5f41c0a11e7952",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4904,
+              "completion_tokens": 9,
+              "total_tokens": 4913,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "hungary",
+              "value": "Hungary",
+              "start": 28,
+              "end": 35,
+              "clause": "Which Third has a Nation of hungary?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly says 'a Nation of hungary,' and Hungary appears in the Nation column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "7327cf22cd49436483f972eb5391a93e7a723572cad13a531c4d08c12912d01e",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4855,
+              "completion_tokens": 11,
+              "total_tokens": 4866,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "hungary",
+              "value": "Hungary",
+              "start": 28,
+              "end": 35,
+              "clause": "Which Third has a Nation of hungary?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly says 'a Nation of hungary,' and Hungary appears in the Nation column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "hungary",
+              "value": "Hungary",
+              "start": 28,
+              "end": 35,
+              "clause": "Which Third has a Nation of hungary?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly says 'a Nation of hungary,' and Hungary appears in the Nation column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "hungary",
+              "value": "Hungary",
+              "start": 28,
+              "end": 35,
+              "clause": "Which Third has a Nation of hungary?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly says 'a Nation of hungary,' and Hungary appears in the Nation column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              "Hungary"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "hungary",
+          "value": "Hungary",
+          "start": 28,
+          "end": 35
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "hungary",
+          "value": "Hungary",
+          "start": 28,
+          "end": 35,
+          "clause": "Which Third has a Nation of hungary?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "The question explicitly says 'a Nation of hungary,' and Hungary appears in the Nation column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          0,
+          0,
+          "Hungary"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 11000
+}

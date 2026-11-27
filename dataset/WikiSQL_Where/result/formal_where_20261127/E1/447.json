@@ -1,0 +1,109 @@
+{
+  "arm": "E1",
+  "position": 447,
+  "example_id": "test:13666:2-18974130-3",
+  "original_index": 13666,
+  "table_id": "2-18974130-3",
+  "question": "How many draws occured with a record of 10 losses, and 6 wins?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        3,
+        0,
+        10
+      ],
+      [
+        1,
+        0,
+        6
+      ]
+    ],
+    "agg": 3
+  },
+  "prediction_conds": [
+    [
+      3,
+      0,
+      10
+    ],
+    [
+      1,
+      0,
+      6
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": "gpt-5.6-sol",
+  "usage": {
+    "prompt_tokens": 9695,
+    "completion_tokens": 51,
+    "total_tokens": 9746,
+    "prompt_tokens_details": {
+      "cached_tokens": 4224
+    }
+  },
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        0,
+        10
+      ],
+      [
+        1,
+        0,
+        6
+      ]
+    ],
+    "explanation": "Filters rows where Losses equals 10 and Wins equals 6; Draws is the requested output.",
+    "version": "wikisql-where-prior-v1",
+    "tableId": "2-18974130-3",
+    "knowledgeIds": [
+      "g-eq",
+      "g-gt",
+      "g-lt",
+      "g-inclusive",
+      "g-literal",
+      "g-threshold",
+      "g-and",
+      "g-or",
+      "g-column",
+      "g-count",
+      "g-ambiguous",
+      "t-2-18974130-3-field-0",
+      "t-2-18974130-3-field-1",
+      "t-2-18974130-3-field-2",
+      "t-2-18974130-3-field-3",
+      "t-2-18974130-3-field-4",
+      "t-2-18974130-3-field-5",
+      "d-implicit-eq",
+      "d-explicit-eq",
+      "d-gt",
+      "d-lt-and-gt",
+      "d-with-two",
+      "d-literal-form",
+      "p-text",
+      "p-number",
+      "p-multi",
+      "p-unsupported"
+    ],
+    "promptSha256": "8937b6340410422c6a2838c4a4dd31ae70bf8ca116ce5754cc76f515b2e0e579",
+    "model": "gpt-5.6-sol",
+    "usage": {
+      "prompt_tokens": 9695,
+      "completion_tokens": 51,
+      "total_tokens": 9746,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      }
+    },
+    "latencyMs": 2095
+  },
+  "source": "where_prior_parse",
+  "safe_completed": true,
+  "elapsed_ms": 2125
+}

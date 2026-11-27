@@ -1,0 +1,529 @@
+{
+  "arm": "E2",
+  "position": 82,
+  "example_id": "test:5214:2-14083524-2",
+  "original_index": 5214,
+  "table_id": "2-14083524-2",
+  "question": "what team visited chicago",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        1,
+        0,
+        "chicago"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [],
+  "status": "GROUNDING_FAILED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "GROUNDING_FAILED",
+    "valid": false,
+    "errors": [
+      "condition 0: grounding NO_MATCH"
+    ],
+    "conditions": [
+      {
+        "surface": "chicago",
+        "value": "Chicago",
+        "start": 18,
+        "end": 25,
+        "clause": "what team visited chicago",
+        "columnIndex": 3,
+        "columnCandidates": [
+          {
+            "columnIndex": 1,
+            "header": "Visitor",
+            "evidence": "EXACT_VALUE_MATCH"
+          }
+        ],
+        "columnMatchReason": "In the question, Chicago is the place/team being visited, which corresponds to the Home field; row evidence shows Chicago only under Visitor, but value presence alone does not override the question meaning.",
+        "operator": "=",
+        "groundingReason": "FIELD_VALUE_CONFLICT",
+        "grounded": false,
+        "groundingStatus": "NO_MATCH",
+        "groundingReview": {
+          "column": null,
+          "reason": "The question treats Chicago as the visited location, implying Home; the only candidate is Visitor, where Chicago appears as the visiting team, so it conflicts with the question meaning."
+        }
+      }
+    ],
+    "stage": "WHERE_CONDITION_VALIDATE",
+    "originalConditions": [
+      {
+        "surface": "chicago",
+        "value": "Chicago",
+        "start": 18,
+        "end": 25
+      }
+    ],
+    "halt": true,
+    "completed": false,
+    "conds": [],
+    "warnings": [],
+    "request": {
+      "question": "what team visited chicago",
+      "table": {
+        "header": [
+          "Date",
+          "Visitor",
+          "Score",
+          "Home",
+          "Record"
+        ],
+        "page_title": "1971–72 Vancouver Canucks season",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 14083524,
+        "id": "2-14083524-2",
+        "section_title": "Game log",
+        "rows": [
+          [
+            "October 8",
+            "Toronto",
+            "3–2",
+            "Vancouver",
+            "0–1–0"
+          ],
+          [
+            "October 10",
+            "Los Angeles",
+            "4–2",
+            "Vancouver",
+            "0–2–0"
+          ],
+          [
+            "October 12",
+            "Philadelphia",
+            "2–3",
+            "Vancouver",
+            "1–2–0"
+          ],
+          [
+            "October 15",
+            "Vancouver",
+            "9–6",
+            "California",
+            "2–2–0"
+          ],
+          [
+            "October 16",
+            "Pittsburgh",
+            "2–1",
+            "Vancouver",
+            "2–3–0"
+          ],
+          [
+            "October 19",
+            "Vancouver",
+            "3–1",
+            "St. Louis",
+            "3–3–0"
+          ],
+          [
+            "October 20",
+            "Vancouver",
+            "0–7",
+            "Minnesota",
+            "3–4–0"
+          ],
+          [
+            "October 22",
+            "Montreal",
+            "6–0",
+            "Vancouver",
+            "3–5–0"
+          ],
+          [
+            "October 24",
+            "Boston",
+            "4–3",
+            "Vancouver",
+            "3–6–0"
+          ],
+          [
+            "October 27",
+            "Vancouver",
+            "0–0",
+            "Toronto",
+            "3–6–1"
+          ],
+          [
+            "October 28",
+            "Vancouver",
+            "2–3",
+            "Philadelphia",
+            "3–7–1"
+          ],
+          [
+            "October 30",
+            "Buffalo",
+            "4–4",
+            "Vancouver",
+            "3–7–2"
+          ],
+          [
+            "October 31",
+            "Chicago",
+            "2–6",
+            "Vancouver",
+            "4–7–2"
+          ]
+        ],
+        "caption": "Game log",
+        "headers": [
+          "Date",
+          "Visitor",
+          "Score",
+          "Home",
+          "Record"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-14083524-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 9,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "chicago",
+              "value": "Chicago",
+              "start": 18,
+              "end": 25
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "bf0108d68b6b506fc27926c6a881e937bd6693a362776fee4eed9c574d030965",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4925,
+              "completion_tokens": 55,
+              "total_tokens": 4980,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 35
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "chicago",
+              "value": "Chicago",
+              "start": 18,
+              "end": 25,
+              "clause": "what team visited chicago"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "chicago",
+              "value": "Chicago",
+              "start": 18,
+              "end": 25,
+              "clause": "what team visited chicago"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "chicago",
+              "value": "Chicago",
+              "start": 18,
+              "end": 25,
+              "clause": "what team visited chicago",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "In the question, Chicago is the place/team being visited, which corresponds to the Home field; row evidence shows Chicago only under Visitor, but value presence alone does not override the question meaning."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "8d52ef28a9e112c92740891b8650392394535c1f50b304f4884c5aabed4d6d3b",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4951,
+              "completion_tokens": 59,
+              "total_tokens": 5010,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "chicago",
+              "value": "Chicago",
+              "start": 18,
+              "end": 25,
+              "clause": "what team visited chicago",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "In the question, Chicago is the place/team being visited, which corresponds to the Home field; row evidence shows Chicago only under Visitor, but value presence alone does not override the question meaning.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "7a9f830c0244bdccc61a71b4689cc4a861fbba57b00b5560c26ce0deda3dfaa6",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5034,
+              "completion_tokens": 9,
+              "total_tokens": 5043,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "chicago",
+              "value": "Chicago",
+              "start": 18,
+              "end": 25,
+              "clause": "what team visited chicago",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "In the question, Chicago is the place/team being visited, which corresponds to the Home field; row evidence shows Chicago only under Visitor, but value presence alone does not override the question meaning.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "5677d38f3c41617e4cb083c2d66d4793e57277f692b4374ef5c9b8f45c6bbf38",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4985,
+              "completion_tokens": 10,
+              "total_tokens": 4995,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "chicago",
+              "value": "Chicago",
+              "start": 18,
+              "end": 25,
+              "clause": "what team visited chicago",
+              "columnIndex": 3,
+              "columnCandidates": [
+                {
+                  "columnIndex": 1,
+                  "header": "Visitor",
+                  "evidence": "EXACT_VALUE_MATCH"
+                }
+              ],
+              "columnMatchReason": "In the question, Chicago is the place/team being visited, which corresponds to the Home field; row evidence shows Chicago only under Visitor, but value presence alone does not override the question meaning.",
+              "operator": "=",
+              "groundingReason": "FIELD_VALUE_CONFLICT",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": null,
+                "reason": "The question treats Chicago as the visited location, implying Home; the only candidate is Visitor, where Chicago appears as the visiting team, so it conflicts with the question meaning."
+              }
+            }
+          ],
+          "reviewModelCalls": [
+            {
+              "model": "gpt-5.6-sol",
+              "promptSha256": "2bc95127c4861a79dffdda24272f90630a3fb1cebc2463652230ab7868eb5805",
+              "knowledgeIds": [],
+              "usage": {
+                "prompt_tokens": 5069,
+                "completion_tokens": 89,
+                "total_tokens": 5158,
+                "prompt_tokens_details": {
+                  "cached_tokens": 4224
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 41
+                }
+              }
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "2bc95127c4861a79dffdda24272f90630a3fb1cebc2463652230ab7868eb5805",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5069,
+              "completion_tokens": 89,
+              "total_tokens": 5158,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 41
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "chicago",
+              "value": "Chicago",
+              "start": 18,
+              "end": 25,
+              "clause": "what team visited chicago",
+              "columnIndex": 3,
+              "columnCandidates": [
+                {
+                  "columnIndex": 1,
+                  "header": "Visitor",
+                  "evidence": "EXACT_VALUE_MATCH"
+                }
+              ],
+              "columnMatchReason": "In the question, Chicago is the place/team being visited, which corresponds to the Home field; row evidence shows Chicago only under Visitor, but value presence alone does not override the question meaning.",
+              "operator": "=",
+              "groundingReason": "FIELD_VALUE_CONFLICT",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": null,
+                "reason": "The question treats Chicago as the visited location, implying Home; the only candidate is Visitor, where Chicago appears as the visiting team, so it conflicts with the question meaning."
+              }
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "GROUNDING_FAILED",
+          "valid": false,
+          "errors": [
+            "condition 0: grounding NO_MATCH"
+          ],
+          "conditions": [
+            {
+              "surface": "chicago",
+              "value": "Chicago",
+              "start": 18,
+              "end": 25,
+              "clause": "what team visited chicago",
+              "columnIndex": 3,
+              "columnCandidates": [
+                {
+                  "columnIndex": 1,
+                  "header": "Visitor",
+                  "evidence": "EXACT_VALUE_MATCH"
+                }
+              ],
+              "columnMatchReason": "In the question, Chicago is the place/team being visited, which corresponds to the Home field; row evidence shows Chicago only under Visitor, but value presence alone does not override the question meaning.",
+              "operator": "=",
+              "groundingReason": "FIELD_VALUE_CONFLICT",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": null,
+                "reason": "The question treats Chicago as the visited location, implying Home; the only candidate is Visitor, where Chicago appears as the visiting team, so it conflicts with the question meaning."
+              }
+            }
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "GROUNDING_FAILED",
+        "stage": "WHERE_CONDITION_VALIDATE",
+        "halt": true,
+        "completed": false,
+        "errors": [
+          "condition 0: grounding NO_MATCH"
+        ],
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "chicago",
+          "value": "Chicago",
+          "start": 18,
+          "end": 25
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "chicago",
+          "value": "Chicago",
+          "start": 18,
+          "end": 25,
+          "clause": "what team visited chicago",
+          "columnIndex": 3,
+          "columnCandidates": [
+            {
+              "columnIndex": 1,
+              "header": "Visitor",
+              "evidence": "EXACT_VALUE_MATCH"
+            }
+          ],
+          "columnMatchReason": "In the question, Chicago is the place/team being visited, which corresponds to the Home field; row evidence shows Chicago only under Visitor, but value presence alone does not override the question meaning.",
+          "operator": "=",
+          "groundingReason": "FIELD_VALUE_CONFLICT",
+          "grounded": false,
+          "groundingStatus": "NO_MATCH",
+          "groundingReview": {
+            "column": null,
+            "reason": "The question treats Chicago as the visited location, implying Home; the only candidate is Visitor, where Chicago appears as the visiting team, so it conflicts with the question meaning."
+          }
+        }
+      ],
+      "count": 1
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": false,
+  "elapsed_ms": 10515
+}

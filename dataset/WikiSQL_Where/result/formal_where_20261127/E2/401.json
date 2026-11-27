@@ -1,0 +1,658 @@
+{
+  "arm": "E2",
+  "position": 401,
+  "example_id": "test:9333:2-16677972-2",
+  "original_index": 9333,
+  "table_id": "2-16677972-2",
+  "question": "What's the total attendance of games against the New York Giants after week 13?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        0,
+        1,
+        13
+      ],
+      [
+        2,
+        0,
+        "new york giants"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "New York Giants"
+    ],
+    [
+      0,
+      1,
+      13
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "New York Giants"
+      ],
+      [
+        0,
+        1,
+        13
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "New York Giants",
+        "value": "New York Giants",
+        "start": 49,
+        "end": 64,
+        "clause": "What's the total attendance of games against the New York Giants after week 13?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "'against' identifies the opposing team, matching Opponent cells including New York Giants.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "13",
+        "value": 13,
+        "start": 76,
+        "end": 78,
+        "clause": "What's the total attendance of games against the New York Giants after week 13?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "'after week 13' refers to the Week field, whose numeric values order the games.",
+        "operator": ">",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "New York Giants",
+        "value": "New York Giants",
+        "start": 49,
+        "end": 64
+      },
+      {
+        "surface": "13",
+        "value": "13",
+        "start": 76,
+        "end": 78
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What's the total attendance of games against the New York Giants after week 13?",
+      "table": {
+        "header": [
+          "Week",
+          "Date",
+          "Opponent",
+          "Result",
+          "Attendance"
+        ],
+        "page_title": "1978 Philadelphia Eagles season",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "real"
+        ],
+        "page_id": 16677972,
+        "id": "2-16677972-2",
+        "section_title": "Schedule",
+        "rows": [
+          [
+            "1",
+            "September 3, 1978",
+            "Los Angeles Rams",
+            "L 16–14",
+            "64,721"
+          ],
+          [
+            "2",
+            "September 10, 1978",
+            "at Washington Redskins",
+            "L 35–30",
+            "54,380"
+          ],
+          [
+            "3",
+            "September 17, 1978",
+            "at New Orleans Saints",
+            "W 24–17",
+            "49,242"
+          ],
+          [
+            "4",
+            "September 24, 1978",
+            "Miami Dolphins",
+            "W 17–3",
+            "62,998"
+          ],
+          [
+            "5",
+            "October 1, 1978",
+            "at Baltimore Colts",
+            "W 17–14",
+            "50,314"
+          ],
+          [
+            "6",
+            "October 8, 1978",
+            "at New England Patriots",
+            "L 24–14",
+            "61,016"
+          ],
+          [
+            "7",
+            "October 15, 1978",
+            "Washington Redskins",
+            "W 17–10",
+            "65,722"
+          ],
+          [
+            "8",
+            "October 22, 1978",
+            "at Dallas Cowboys",
+            "L 14–7",
+            "60,525"
+          ],
+          [
+            "9",
+            "October 29, 1978",
+            "St. Louis Cardinals",
+            "L 16–10",
+            "62,989"
+          ],
+          [
+            "10",
+            "November 5, 1978",
+            "Green Bay Packers",
+            "W 10–3",
+            "64,214"
+          ],
+          [
+            "11",
+            "November 12, 1978",
+            "New York Jets",
+            "W 17–9",
+            "60,249"
+          ],
+          [
+            "12",
+            "November 19, 1978",
+            "at New York Giants",
+            "W 19–17",
+            "70,318"
+          ],
+          [
+            "13",
+            "November 26, 1978",
+            "at St. Louis Cardinals",
+            "W 14–10",
+            "39,693"
+          ],
+          [
+            "14",
+            "December 3, 1978",
+            "at Minnesota Vikings",
+            "L 28–27",
+            "38,722"
+          ],
+          [
+            "15",
+            "December 10, 1978",
+            "Dallas Cowboys",
+            "L 31–13",
+            "64,667"
+          ],
+          [
+            "16",
+            "December 17, 1978",
+            "New York Giants",
+            "W 20–3",
+            "56,396"
+          ]
+        ],
+        "caption": "Schedule",
+        "headers": [
+          "Week",
+          "Date",
+          "Opponent",
+          "Result",
+          "Attendance"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-16677972-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "New York Giants",
+              "value": "New York Giants",
+              "start": 49,
+              "end": 64
+            },
+            {
+              "surface": "13",
+              "value": "13",
+              "start": 76,
+              "end": 78
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c5a014cd8d11eeb41ed03aaf0d972fabd431b6ea2db2811b86f83ef83d8e2c93",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5067,
+              "completion_tokens": 29,
+              "total_tokens": 5096,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "New York Giants",
+              "value": "New York Giants",
+              "start": 49,
+              "end": 64,
+              "clause": "What's the total attendance of games against the New York Giants after week 13?"
+            },
+            {
+              "surface": "13",
+              "value": "13",
+              "start": 76,
+              "end": 78,
+              "clause": "What's the total attendance of games against the New York Giants after week 13?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "New York Giants",
+              "value": "New York Giants",
+              "start": 49,
+              "end": 64,
+              "clause": "What's the total attendance of games against the New York Giants after week 13?"
+            },
+            {
+              "surface": "13",
+              "value": "13",
+              "start": 76,
+              "end": 78,
+              "clause": "What's the total attendance of games against the New York Giants after week 13?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "New York Giants",
+              "value": "New York Giants",
+              "start": 49,
+              "end": 64,
+              "clause": "What's the total attendance of games against the New York Giants after week 13?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'against' identifies the opposing team, matching Opponent cells including New York Giants."
+            },
+            {
+              "surface": "13",
+              "value": "13",
+              "start": 76,
+              "end": 78,
+              "clause": "What's the total attendance of games against the New York Giants after week 13?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'after week 13' refers to the Week field, whose numeric values order the games."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c9f45b8d7338cac7f9da8a1a8ff2e69d5d361a4b338fa24cc187fcdcdf483578",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5144,
+              "completion_tokens": 61,
+              "total_tokens": 5205,
+              "prompt_tokens_details": {
+                "cached_tokens": 4864
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "New York Giants",
+              "value": "New York Giants",
+              "start": 49,
+              "end": 64,
+              "clause": "What's the total attendance of games against the New York Giants after week 13?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'against' identifies the opposing team, matching Opponent cells including New York Giants.",
+              "operator": "="
+            },
+            {
+              "surface": "13",
+              "value": "13",
+              "start": 76,
+              "end": 78,
+              "clause": "What's the total attendance of games against the New York Giants after week 13?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'after week 13' refers to the Week field, whose numeric values order the games.",
+              "operator": ">"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "1c3c32d7cd6c30bf86e5474f38c2483c4b31de65b4a5dba7783f3f66e445ef0e",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5238,
+              "completion_tokens": 11,
+              "total_tokens": 5249,
+              "prompt_tokens_details": {
+                "cached_tokens": 4864
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "New York Giants",
+              "value": "New York Giants",
+              "start": 49,
+              "end": 64,
+              "clause": "What's the total attendance of games against the New York Giants after week 13?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'against' identifies the opposing team, matching Opponent cells including New York Giants.",
+              "operator": "="
+            },
+            {
+              "surface": "13",
+              "value": "13",
+              "start": 76,
+              "end": 78,
+              "clause": "What's the total attendance of games against the New York Giants after week 13?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'after week 13' refers to the Week field, whose numeric values order the games.",
+              "operator": ">"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "67ff676efd9e2c963bfb03dcd92022eab75769c8b2faedce62eea7fc9620d288",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5192,
+              "completion_tokens": 14,
+              "total_tokens": 5206,
+              "prompt_tokens_details": {
+                "cached_tokens": 4864
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "New York Giants",
+              "value": "New York Giants",
+              "start": 49,
+              "end": 64,
+              "clause": "What's the total attendance of games against the New York Giants after week 13?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'against' identifies the opposing team, matching Opponent cells including New York Giants.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "13",
+              "value": "13",
+              "start": 76,
+              "end": 78,
+              "clause": "What's the total attendance of games against the New York Giants after week 13?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'after week 13' refers to the Week field, whose numeric values order the games.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "New York Giants",
+              "value": "New York Giants",
+              "start": 49,
+              "end": 64,
+              "clause": "What's the total attendance of games against the New York Giants after week 13?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'against' identifies the opposing team, matching Opponent cells including New York Giants.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "13",
+              "value": 13,
+              "start": 76,
+              "end": 78,
+              "clause": "What's the total attendance of games against the New York Giants after week 13?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'after week 13' refers to the Week field, whose numeric values order the games.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "New York Giants",
+              "value": "New York Giants",
+              "start": 49,
+              "end": 64,
+              "clause": "What's the total attendance of games against the New York Giants after week 13?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'against' identifies the opposing team, matching Opponent cells including New York Giants.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "13",
+              "value": 13,
+              "start": 76,
+              "end": 78,
+              "clause": "What's the total attendance of games against the New York Giants after week 13?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'after week 13' refers to the Week field, whose numeric values order the games.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "New York Giants"
+            ],
+            [
+              0,
+              1,
+              13
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "New York Giants",
+          "value": "New York Giants",
+          "start": 49,
+          "end": 64
+        },
+        {
+          "surface": "13",
+          "value": "13",
+          "start": 76,
+          "end": 78
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "New York Giants",
+          "value": "New York Giants",
+          "start": 49,
+          "end": 64,
+          "clause": "What's the total attendance of games against the New York Giants after week 13?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "'against' identifies the opposing team, matching Opponent cells including New York Giants.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "13",
+          "value": 13,
+          "start": 76,
+          "end": 78,
+          "clause": "What's the total attendance of games against the New York Giants after week 13?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "'after week 13' refers to the Week field, whose numeric values order the games.",
+          "operator": ">",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          2,
+          0,
+          "New York Giants"
+        ],
+        [
+          0,
+          1,
+          13
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8954
+}

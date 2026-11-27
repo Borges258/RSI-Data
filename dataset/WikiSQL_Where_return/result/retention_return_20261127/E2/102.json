@@ -1,0 +1,429 @@
+{
+  "arm": "E2",
+  "position": 102,
+  "example_id": "test:3561:1-26397277-3",
+  "original_index": 3561,
+  "table_id": "1-26397277-3",
+  "question": "Name the role for pick number 17",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        0,
+        0,
+        17
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      17
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        17
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "17",
+        "value": 17,
+        "start": 30,
+        "end": 32,
+        "clause": "Name the role for pick number 17",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "The phrase \"pick number\" directly matches the \"Pick #\" header, whose row evidence includes 17.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "17",
+        "value": "17",
+        "start": 30,
+        "end": 32
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Name the role for pick number 17",
+      "table": {
+        "id": "1-26397277-3",
+        "header": [
+          "Pick #",
+          "Brand (to)",
+          "Employee (Real name)",
+          "Role(s)",
+          "Brand (from)"
+        ],
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "rows": [
+          [
+            10,
+            "SmackDown",
+            "Chavo Guerrero (Salvador Guerrero IV)",
+            "Superstar",
+            "Raw"
+          ],
+          [
+            11,
+            "SmackDown",
+            "Cody Rhodes (Cody Runnels)",
+            "Superstar",
+            "Raw"
+          ],
+          [
+            12,
+            "Raw",
+            "Natalya (Natalie Neidhart)",
+            "Diva",
+            "SmackDown"
+          ],
+          [
+            13,
+            "SmackDown",
+            "Chris Masters (Christopher Mordetzky)",
+            "Superstar",
+            "Raw"
+          ],
+          [
+            14,
+            "Raw",
+            "Ezekiel Jackson (Rycklon Stephens)",
+            "Superstar",
+            "SmackDown"
+          ],
+          [
+            15,
+            "Raw",
+            "Goldust (Dustin Runnels)",
+            "Superstar",
+            "SmackDown"
+          ],
+          [
+            16,
+            "SmackDown",
+            "Hornswoggle (Dylan Postl)",
+            "Superstar",
+            "Raw"
+          ],
+          [
+            17,
+            "SmackDown",
+            "Rosa Mendes (Milena Roucka)",
+            "Diva",
+            "Raw"
+          ]
+        ],
+        "name": "table_26397277_3",
+        "headers": [
+          "Pick #",
+          "Brand (to)",
+          "Employee (Real name)",
+          "Role(s)",
+          "Brand (from)"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-26397277-3",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "17",
+              "value": "17",
+              "start": 30,
+              "end": 32
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "95937ddae1bee1e7bee4e9e813847b89b0ff256e95f1ce61d77f782605cc4fcd",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4843,
+              "completion_tokens": 17,
+              "total_tokens": 4860,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "17",
+              "value": "17",
+              "start": 30,
+              "end": 32,
+              "clause": "Name the role for pick number 17"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "17",
+              "value": "17",
+              "start": 30,
+              "end": 32,
+              "clause": "Name the role for pick number 17"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "17",
+              "value": "17",
+              "start": 30,
+              "end": 32,
+              "clause": "Name the role for pick number 17",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The phrase \"pick number\" directly matches the \"Pick #\" header, whose row evidence includes 17."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "2adad5d7e41b8ee4a19ee4889ad583fbbd796319857eaccd81c4d829ae495aa8",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4872,
+              "completion_tokens": 43,
+              "total_tokens": 4915,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "17",
+              "value": "17",
+              "start": 30,
+              "end": 32,
+              "clause": "Name the role for pick number 17",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The phrase \"pick number\" directly matches the \"Pick #\" header, whose row evidence includes 17.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "96d88a4e54de87266128e500794d283ecec9287caf2cd6fdb5862c02abd553da",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4939,
+              "completion_tokens": 9,
+              "total_tokens": 4948,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "17",
+              "value": 17,
+              "start": 30,
+              "end": 32,
+              "clause": "Name the role for pick number 17",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The phrase \"pick number\" directly matches the \"Pick #\" header, whose row evidence includes 17.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c08be6831f4dd1af85e2f62744df9f86d4a3a1f913e4cb04f5786b6bed4305ab",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4890,
+              "completion_tokens": 9,
+              "total_tokens": 4899,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "17",
+              "value": "17",
+              "start": 30,
+              "end": 32,
+              "clause": "Name the role for pick number 17",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The phrase \"pick number\" directly matches the \"Pick #\" header, whose row evidence includes 17.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "17",
+              "value": 17,
+              "start": 30,
+              "end": 32,
+              "clause": "Name the role for pick number 17",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The phrase \"pick number\" directly matches the \"Pick #\" header, whose row evidence includes 17.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "17",
+              "value": 17,
+              "start": 30,
+              "end": 32,
+              "clause": "Name the role for pick number 17",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The phrase \"pick number\" directly matches the \"Pick #\" header, whose row evidence includes 17.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              17
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "17",
+          "value": "17",
+          "start": 30,
+          "end": 32
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "17",
+          "value": 17,
+          "start": 30,
+          "end": 32,
+          "clause": "Name the role for pick number 17",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "The phrase \"pick number\" directly matches the \"Pick #\" header, whose row evidence includes 17.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          0,
+          0,
+          17
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8172
+}

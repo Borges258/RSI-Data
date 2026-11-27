@@ -1,0 +1,763 @@
+{
+  "arm": "E2",
+  "position": 95,
+  "example_id": "test:6047:2-14888584-4",
+  "original_index": 6047,
+  "table_id": "2-14888584-4",
+  "question": "Which group nominated Kim in years before 2010 for Thirst?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        0,
+        2,
+        2010
+      ],
+      [
+        3,
+        0,
+        "thirst"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      4,
+      0,
+      "Nominated"
+    ],
+    [
+      0,
+      2,
+      2010
+    ],
+    [
+      3,
+      0,
+      "Thirst"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        0,
+        "Nominated"
+      ],
+      [
+        0,
+        2,
+        2010
+      ],
+      [
+        3,
+        0,
+        "Thirst"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "nominated",
+        "value": "Nominated",
+        "start": 12,
+        "end": 21,
+        "clause": "Which group nominated Kim in years before 2010 for Thirst?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "'nominated' describes the Result status, matching Result cells with value 'Nominated'.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "2010",
+        "value": 2010,
+        "start": 42,
+        "end": 46,
+        "clause": "Which group nominated Kim in years before 2010 for Thirst?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "'years before 2010' constrains the Year field.",
+        "operator": "<",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "Thirst",
+        "value": "Thirst",
+        "start": 51,
+        "end": 57,
+        "clause": "Which group nominated Kim in years before 2010 for Thirst?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "'for Thirst' identifies the Film/Series field.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "nominated",
+        "value": "Nominated",
+        "start": 12,
+        "end": 21
+      },
+      {
+        "surface": "2010",
+        "value": "2010",
+        "start": 42,
+        "end": 46
+      },
+      {
+        "surface": "Thirst",
+        "value": "Thirst",
+        "start": 51,
+        "end": 57
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Which group nominated Kim in years before 2010 for Thirst?",
+      "table": {
+        "header": [
+          "Year",
+          "Group",
+          "Award",
+          "Film/Series",
+          "Result"
+        ],
+        "page_title": "Kim Ok-bin",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 14888584,
+        "id": "2-14888584-4",
+        "section_title": "Awards and nominations",
+        "rows": [
+          [
+            "2005",
+            "Blue Dragon Film Awards",
+            "Best New Actress",
+            "Voice",
+            "Nominated"
+          ],
+          [
+            "2006",
+            "Baeksang Arts Awards",
+            "Best New Actress",
+            "Voice",
+            "Nominated"
+          ],
+          [
+            "2006",
+            "MBC Drama Awards",
+            "PD Award",
+            "Over the Rainbow",
+            "Won"
+          ],
+          [
+            "2009",
+            "Sitges Film Festival",
+            "Best Actress",
+            "Thirst",
+            "Won"
+          ],
+          [
+            "2009",
+            "Blue Dragon Film Awards",
+            "Best Actress",
+            "Thirst",
+            "Nominated"
+          ],
+          [
+            "2010",
+            "Green Globe Film Awards",
+            "Best International Actress",
+            "Thirst",
+            "Nominated"
+          ],
+          [
+            "2010",
+            "Baeksang Arts Awards",
+            "Best Actress",
+            "Thirst",
+            "Nominated"
+          ]
+        ],
+        "caption": "Awards and nominations",
+        "headers": [
+          "Year",
+          "Group",
+          "Award",
+          "Film/Series",
+          "Result"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-14888584-4",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 3,
+          "conditions": [
+            {
+              "surface": "nominated",
+              "value": "Nominated",
+              "start": 12,
+              "end": 21
+            },
+            {
+              "surface": "2010",
+              "value": "2010",
+              "start": 42,
+              "end": 46
+            },
+            {
+              "surface": "Thirst",
+              "value": "Thirst",
+              "start": 51,
+              "end": 57
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "2ad3a98da1cfd775f3464488d0103598677bdc823d969ef18bfd3c8c283bc53e",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4796,
+              "completion_tokens": 212,
+              "total_tokens": 5008,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 171
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "nominated",
+              "value": "Nominated",
+              "start": 12,
+              "end": 21,
+              "clause": "Which group nominated Kim in years before 2010 for Thirst?"
+            },
+            {
+              "surface": "2010",
+              "value": "2010",
+              "start": 42,
+              "end": 46,
+              "clause": "Which group nominated Kim in years before 2010 for Thirst?"
+            },
+            {
+              "surface": "Thirst",
+              "value": "Thirst",
+              "start": 51,
+              "end": 57,
+              "clause": "Which group nominated Kim in years before 2010 for Thirst?"
+            }
+          ],
+          "count": 3
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "nominated",
+              "value": "Nominated",
+              "start": 12,
+              "end": 21,
+              "clause": "Which group nominated Kim in years before 2010 for Thirst?"
+            },
+            {
+              "surface": "2010",
+              "value": "2010",
+              "start": 42,
+              "end": 46,
+              "clause": "Which group nominated Kim in years before 2010 for Thirst?"
+            },
+            {
+              "surface": "Thirst",
+              "value": "Thirst",
+              "start": 51,
+              "end": 57,
+              "clause": "Which group nominated Kim in years before 2010 for Thirst?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "nominated",
+              "value": "Nominated",
+              "start": 12,
+              "end": 21,
+              "clause": "Which group nominated Kim in years before 2010 for Thirst?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'nominated' describes the Result status, matching Result cells with value 'Nominated'."
+            },
+            {
+              "surface": "2010",
+              "value": "2010",
+              "start": 42,
+              "end": 46,
+              "clause": "Which group nominated Kim in years before 2010 for Thirst?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'years before 2010' constrains the Year field."
+            },
+            {
+              "surface": "Thirst",
+              "value": "Thirst",
+              "start": 51,
+              "end": 57,
+              "clause": "Which group nominated Kim in years before 2010 for Thirst?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'for Thirst' identifies the Film/Series field."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "6a1db0796d369539a2b051fe6eff6833831d48b7b4f548b396734625e6723f86",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4905,
+              "completion_tokens": 73,
+              "total_tokens": 4978,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "nominated",
+              "value": "Nominated",
+              "start": 12,
+              "end": 21,
+              "clause": "Which group nominated Kim in years before 2010 for Thirst?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'nominated' describes the Result status, matching Result cells with value 'Nominated'.",
+              "operator": "="
+            },
+            {
+              "surface": "2010",
+              "value": "2010",
+              "start": 42,
+              "end": 46,
+              "clause": "Which group nominated Kim in years before 2010 for Thirst?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'years before 2010' constrains the Year field.",
+              "operator": "<"
+            },
+            {
+              "surface": "Thirst",
+              "value": "Thirst",
+              "start": 51,
+              "end": 57,
+              "clause": "Which group nominated Kim in years before 2010 for Thirst?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'for Thirst' identifies the Film/Series field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "5124b73013c583bfaa2124f43d44241993a7248bdd07b3ff80373bbb173cceaf",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5021,
+              "completion_tokens": 13,
+              "total_tokens": 5034,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "nominated",
+              "value": "Nominated",
+              "start": 12,
+              "end": 21,
+              "clause": "Which group nominated Kim in years before 2010 for Thirst?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'nominated' describes the Result status, matching Result cells with value 'Nominated'.",
+              "operator": "="
+            },
+            {
+              "surface": "2010",
+              "value": 2010,
+              "start": 42,
+              "end": 46,
+              "clause": "Which group nominated Kim in years before 2010 for Thirst?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'years before 2010' constrains the Year field.",
+              "operator": "<"
+            },
+            {
+              "surface": "Thirst",
+              "value": "Thirst",
+              "start": 51,
+              "end": 57,
+              "clause": "Which group nominated Kim in years before 2010 for Thirst?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'for Thirst' identifies the Film/Series field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d6fc981a1096f97b9904872d264d74409ede32b54ca59e1361b4e8cd2ce30f84",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4978,
+              "completion_tokens": 17,
+              "total_tokens": 4995,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "nominated",
+              "value": "Nominated",
+              "start": 12,
+              "end": 21,
+              "clause": "Which group nominated Kim in years before 2010 for Thirst?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'nominated' describes the Result status, matching Result cells with value 'Nominated'.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2010",
+              "value": "2010",
+              "start": 42,
+              "end": 46,
+              "clause": "Which group nominated Kim in years before 2010 for Thirst?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'years before 2010' constrains the Year field.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Thirst",
+              "value": "Thirst",
+              "start": 51,
+              "end": 57,
+              "clause": "Which group nominated Kim in years before 2010 for Thirst?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'for Thirst' identifies the Film/Series field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "nominated",
+              "value": "Nominated",
+              "start": 12,
+              "end": 21,
+              "clause": "Which group nominated Kim in years before 2010 for Thirst?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'nominated' describes the Result status, matching Result cells with value 'Nominated'.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2010",
+              "value": 2010,
+              "start": 42,
+              "end": 46,
+              "clause": "Which group nominated Kim in years before 2010 for Thirst?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'years before 2010' constrains the Year field.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Thirst",
+              "value": "Thirst",
+              "start": 51,
+              "end": 57,
+              "clause": "Which group nominated Kim in years before 2010 for Thirst?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'for Thirst' identifies the Film/Series field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "nominated",
+              "value": "Nominated",
+              "start": 12,
+              "end": 21,
+              "clause": "Which group nominated Kim in years before 2010 for Thirst?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'nominated' describes the Result status, matching Result cells with value 'Nominated'.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2010",
+              "value": 2010,
+              "start": 42,
+              "end": 46,
+              "clause": "Which group nominated Kim in years before 2010 for Thirst?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'years before 2010' constrains the Year field.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Thirst",
+              "value": "Thirst",
+              "start": 51,
+              "end": 57,
+              "clause": "Which group nominated Kim in years before 2010 for Thirst?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'for Thirst' identifies the Film/Series field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              0,
+              "Nominated"
+            ],
+            [
+              0,
+              2,
+              2010
+            ],
+            [
+              3,
+              0,
+              "Thirst"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "nominated",
+          "value": "Nominated",
+          "start": 12,
+          "end": 21
+        },
+        {
+          "surface": "2010",
+          "value": "2010",
+          "start": 42,
+          "end": 46
+        },
+        {
+          "surface": "Thirst",
+          "value": "Thirst",
+          "start": 51,
+          "end": 57
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "nominated",
+          "value": "Nominated",
+          "start": 12,
+          "end": 21,
+          "clause": "Which group nominated Kim in years before 2010 for Thirst?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "'nominated' describes the Result status, matching Result cells with value 'Nominated'.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "2010",
+          "value": 2010,
+          "start": 42,
+          "end": 46,
+          "clause": "Which group nominated Kim in years before 2010 for Thirst?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "'years before 2010' constrains the Year field.",
+          "operator": "<",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "Thirst",
+          "value": "Thirst",
+          "start": 51,
+          "end": 57,
+          "clause": "Which group nominated Kim in years before 2010 for Thirst?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "'for Thirst' identifies the Film/Series field.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 3,
+      "conds": [
+        [
+          4,
+          0,
+          "Nominated"
+        ],
+        [
+          0,
+          2,
+          2010
+        ],
+        [
+          3,
+          0,
+          "Thirst"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 10531
+}

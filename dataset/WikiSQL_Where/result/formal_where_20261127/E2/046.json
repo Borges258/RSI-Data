@@ -1,0 +1,424 @@
+{
+  "arm": "E2",
+  "position": 46,
+  "example_id": "test:3489:1-26139378-1",
+  "original_index": 3489,
+  "table_id": "1-26139378-1",
+  "question": "What number in the series episode was titled \"Puppy Love\"?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        2,
+        0,
+        "\"Puppy Love\""
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "\"Puppy Love\""
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "\"Puppy Love\""
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Puppy Love",
+        "value": "\"Puppy Love\"",
+        "start": 46,
+        "end": 56,
+        "clause": "What number in the series episode was titled \"Puppy Love\"?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The wording 'was titled' identifies the Title field, and the row evidence contains \"Puppy Love\" in that column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Puppy Love",
+        "value": "Puppy Love",
+        "start": 46,
+        "end": 56
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What number in the series episode was titled \"Puppy Love\"?",
+      "table": {
+        "id": "1-26139378-1",
+        "header": [
+          "Episode #",
+          "Series #",
+          "Title",
+          "Director",
+          "Writer",
+          "Original airdate",
+          "Viewers (in millions)"
+        ],
+        "types": [
+          "real",
+          "real",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "rows": [
+          [
+            11,
+            2,
+            "\"Puppy Love\"",
+            "Michael Owen Morris Category:Articles with hCards",
+            "Len Collin Category:Articles with hCards",
+            "2 Cannot handle non-empty timestamp argument! 1999",
+            "8.23"
+          ],
+          [
+            12,
+            3,
+            "\"Destination Unknown\"",
+            "Jim Goddard Category:Articles with hCards",
+            "Steve Bennett Category:Articles with hCards",
+            "9 Cannot handle non-empty timestamp argument! 1999",
+            "8.13"
+          ],
+          [
+            16,
+            7,
+            "\"Chasing the Dragon\"",
+            "Julie Edwards Category:Articles with hCards",
+            "Sam Wheats Category:Articles with hCards",
+            "7 Cannot handle non-empty timestamp argument! 2000",
+            "8.63"
+          ],
+          [
+            20,
+            11,
+            "\"Trust\"",
+            "Jim Goddard Category:Articles with hCards",
+            "Niall Leonard Category:Articles with hCards",
+            "3 Cannot handle non-empty timestamp argument! 2000",
+            "9.67"
+          ],
+          [
+            24,
+            15,
+            "\"Taking It on the Chin\"",
+            "Michael Owen Morris Category:Articles with hCards",
+            "Jeff Povey Category:Articles with hCards",
+            "2 Cannot handle non-empty timestamp argument! 2000",
+            "9.25"
+          ]
+        ],
+        "name": "table_26139378_1",
+        "headers": [
+          "Episode #",
+          "Series #",
+          "Title",
+          "Director",
+          "Writer",
+          "Original airdate",
+          "Viewers (in millions)"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-26139378-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Puppy Love",
+              "value": "Puppy Love",
+              "start": 46,
+              "end": 56
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "2ceacae972c03a6b1d70f2cfd36b9238bf6a1a9e779a71feca3a62d12c41311a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4914,
+              "completion_tokens": 23,
+              "total_tokens": 4937,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Puppy Love",
+              "value": "Puppy Love",
+              "start": 46,
+              "end": 56,
+              "clause": "What number in the series episode was titled \"Puppy Love\"?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Puppy Love",
+              "value": "Puppy Love",
+              "start": 46,
+              "end": 56,
+              "clause": "What number in the series episode was titled \"Puppy Love\"?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Puppy Love",
+              "value": "Puppy Love",
+              "start": 46,
+              "end": 56,
+              "clause": "What number in the series episode was titled \"Puppy Love\"?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The wording 'was titled' identifies the Title field, and the row evidence contains \"Puppy Love\" in that column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "3cca42ca821c24e01514828710f1e359c72988d660492f9cd140722df17152b3",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4956,
+              "completion_tokens": 47,
+              "total_tokens": 5003,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Puppy Love",
+              "value": "Puppy Love",
+              "start": 46,
+              "end": 56,
+              "clause": "What number in the series episode was titled \"Puppy Love\"?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The wording 'was titled' identifies the Title field, and the row evidence contains \"Puppy Love\" in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "2fe2625a4a3998fd938fc8897e8bf1d993239d9d0a469bdae69c6966e546d4b1",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5027,
+              "completion_tokens": 9,
+              "total_tokens": 5036,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Puppy Love",
+              "value": "\"Puppy Love\"",
+              "start": 46,
+              "end": 56,
+              "clause": "What number in the series episode was titled \"Puppy Love\"?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The wording 'was titled' identifies the Title field, and the row evidence contains \"Puppy Love\" in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "27c1bbbf621196ec22989fb07cff54c22dd1cfeeccb31010daf33273d57b1fab",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4978,
+              "completion_tokens": 15,
+              "total_tokens": 4993,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Puppy Love",
+              "value": "\"Puppy Love\"",
+              "start": 46,
+              "end": 56,
+              "clause": "What number in the series episode was titled \"Puppy Love\"?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The wording 'was titled' identifies the Title field, and the row evidence contains \"Puppy Love\" in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Puppy Love",
+              "value": "\"Puppy Love\"",
+              "start": 46,
+              "end": 56,
+              "clause": "What number in the series episode was titled \"Puppy Love\"?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The wording 'was titled' identifies the Title field, and the row evidence contains \"Puppy Love\" in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Puppy Love",
+              "value": "\"Puppy Love\"",
+              "start": 46,
+              "end": 56,
+              "clause": "What number in the series episode was titled \"Puppy Love\"?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The wording 'was titled' identifies the Title field, and the row evidence contains \"Puppy Love\" in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "\"Puppy Love\""
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Puppy Love",
+          "value": "Puppy Love",
+          "start": 46,
+          "end": 56
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Puppy Love",
+          "value": "\"Puppy Love\"",
+          "start": 46,
+          "end": 56,
+          "clause": "What number in the series episode was titled \"Puppy Love\"?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The wording 'was titled' identifies the Title field, and the row evidence contains \"Puppy Love\" in that column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          2,
+          0,
+          "\"Puppy Love\""
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7469
+}

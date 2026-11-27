@@ -1,0 +1,621 @@
+{
+  "arm": "E2",
+  "position": 90,
+  "example_id": "test:3174:1-2493389-1",
+  "original_index": 3174,
+  "table_id": "1-2493389-1",
+  "question": "Name the fat for protein being 4 and calories 80",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        2,
+        0,
+        "4"
+      ],
+      [
+        1,
+        0,
+        80
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "4"
+    ],
+    [
+      1,
+      0,
+      80
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "4"
+      ],
+      [
+        1,
+        0,
+        80
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "4",
+        "value": "4",
+        "start": 31,
+        "end": 32,
+        "clause": "Name the fat for protein being 4",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The question explicitly specifies protein being 4; Protein (g) contains 4.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "80",
+        "value": 80,
+        "start": 46,
+        "end": 48,
+        "clause": "and calories 80",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The question explicitly specifies calories 80; Calories (1 tbsp .) contains 80.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "4",
+        "value": "4",
+        "start": 31,
+        "end": 32
+      },
+      {
+        "surface": "80",
+        "value": "80",
+        "start": 46,
+        "end": 48
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Name the fat for protein being 4 and calories 80",
+      "table": {
+        "header": [
+          "Butter",
+          "Calories (1 tbsp .)",
+          "Protein (g)",
+          "Fat (g)",
+          "Calcium (mg)",
+          "Zinc (mg)"
+        ],
+        "page_title": "Nut butter",
+        "types": [
+          "text",
+          "real",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "id": "1-2493389-1",
+        "section_title": "",
+        "caption": "See also",
+        "rows": [
+          [
+            "Almond butter",
+            101,
+            "2.4",
+            "9.5",
+            "43",
+            "0.5"
+          ],
+          [
+            "Cashew butter",
+            93,
+            "2.8",
+            "8",
+            "7",
+            "0.8"
+          ],
+          [
+            "Hazelnut butter",
+            94,
+            "2",
+            "9.5",
+            "N/A",
+            "N/A"
+          ],
+          [
+            "Peanut butter - natural",
+            94,
+            "3.8",
+            "8",
+            "7",
+            "0.4"
+          ],
+          [
+            "Peanut butter - reduced fat",
+            95,
+            "4",
+            "6",
+            "N/A",
+            "0.4"
+          ],
+          [
+            "Sunflower butter",
+            80,
+            "3",
+            "7",
+            "N/A",
+            "N/A"
+          ],
+          [
+            "Soy butter (sweetened)",
+            85,
+            "4",
+            "5.5",
+            "50",
+            "N/A"
+          ],
+          [
+            "Soy butter (unsweetened)",
+            80,
+            "4",
+            "6.5",
+            "30",
+            "N/A"
+          ],
+          [
+            "Soy-peanut butter (added sweetener)",
+            50,
+            "2",
+            "1.2",
+            "40",
+            "N/A"
+          ]
+        ],
+        "name": "table_2493389_1",
+        "headers": [
+          "Butter",
+          "Calories (1 tbsp .)",
+          "Protein (g)",
+          "Fat (g)",
+          "Calcium (mg)",
+          "Zinc (mg)"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-2493389-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "4",
+              "value": "4",
+              "start": 31,
+              "end": 32
+            },
+            {
+              "surface": "80",
+              "value": "80",
+              "start": 46,
+              "end": 48
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "597e7113bd42a445937eea1c1461b4506ee29470e1ee20a952adbfc6e1f2900e",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4886,
+              "completion_tokens": 25,
+              "total_tokens": 4911,
+              "prompt_tokens_details": {
+                "cached_tokens": 3200
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "4",
+              "value": "4",
+              "start": 31,
+              "end": 32,
+              "clause": "Name the fat for protein being 4"
+            },
+            {
+              "surface": "80",
+              "value": "80",
+              "start": 46,
+              "end": 48,
+              "clause": "and calories 80"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "4",
+              "value": "4",
+              "start": 31,
+              "end": 32,
+              "clause": "Name the fat for protein being 4"
+            },
+            {
+              "surface": "80",
+              "value": "80",
+              "start": 46,
+              "end": 48,
+              "clause": "and calories 80"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "4",
+              "value": "4",
+              "start": 31,
+              "end": 32,
+              "clause": "Name the fat for protein being 4",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly specifies protein being 4; Protein (g) contains 4."
+            },
+            {
+              "surface": "80",
+              "value": "80",
+              "start": 46,
+              "end": 48,
+              "clause": "and calories 80",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly specifies calories 80; Calories (1 tbsp .) contains 80."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "6e4b2d0e09bdcb2efcc6b3e27587e739396c93cafc6c79ebd43f8baba18bd974",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4939,
+              "completion_tokens": 60,
+              "total_tokens": 4999,
+              "prompt_tokens_details": {
+                "cached_tokens": 3200
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "4",
+              "value": "4",
+              "start": 31,
+              "end": 32,
+              "clause": "Name the fat for protein being 4",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly specifies protein being 4; Protein (g) contains 4.",
+              "operator": "="
+            },
+            {
+              "surface": "80",
+              "value": "80",
+              "start": 46,
+              "end": 48,
+              "clause": "and calories 80",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly specifies calories 80; Calories (1 tbsp .) contains 80.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a66994d101683d3a0f7825d90596ee6b364d0bf31bbca1fe3524f9a0da7a2e56",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5034,
+              "completion_tokens": 11,
+              "total_tokens": 5045,
+              "prompt_tokens_details": {
+                "cached_tokens": 3200
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "4",
+              "value": "4",
+              "start": 31,
+              "end": 32,
+              "clause": "Name the fat for protein being 4",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly specifies protein being 4; Protein (g) contains 4.",
+              "operator": "="
+            },
+            {
+              "surface": "80",
+              "value": 80,
+              "start": 46,
+              "end": 48,
+              "clause": "and calories 80",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly specifies calories 80; Calories (1 tbsp .) contains 80.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c49e966aad6c18f7138c73100de5afc6ba70578b7901f55ab8dc0c36e6d7e0da",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4988,
+              "completion_tokens": 11,
+              "total_tokens": 4999,
+              "prompt_tokens_details": {
+                "cached_tokens": 3200
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "4",
+              "value": "4",
+              "start": 31,
+              "end": 32,
+              "clause": "Name the fat for protein being 4",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly specifies protein being 4; Protein (g) contains 4.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "80",
+              "value": "80",
+              "start": 46,
+              "end": 48,
+              "clause": "and calories 80",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly specifies calories 80; Calories (1 tbsp .) contains 80.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "4",
+              "value": "4",
+              "start": 31,
+              "end": 32,
+              "clause": "Name the fat for protein being 4",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly specifies protein being 4; Protein (g) contains 4.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "80",
+              "value": 80,
+              "start": 46,
+              "end": 48,
+              "clause": "and calories 80",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly specifies calories 80; Calories (1 tbsp .) contains 80.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "4",
+              "value": "4",
+              "start": 31,
+              "end": 32,
+              "clause": "Name the fat for protein being 4",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly specifies protein being 4; Protein (g) contains 4.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "80",
+              "value": 80,
+              "start": 46,
+              "end": 48,
+              "clause": "and calories 80",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly specifies calories 80; Calories (1 tbsp .) contains 80.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "4"
+            ],
+            [
+              1,
+              0,
+              80
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "4",
+          "value": "4",
+          "start": 31,
+          "end": 32
+        },
+        {
+          "surface": "80",
+          "value": "80",
+          "start": 46,
+          "end": 48
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "4",
+          "value": "4",
+          "start": 31,
+          "end": 32,
+          "clause": "Name the fat for protein being 4",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The question explicitly specifies protein being 4; Protein (g) contains 4.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "80",
+          "value": 80,
+          "start": 46,
+          "end": 48,
+          "clause": "and calories 80",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The question explicitly specifies calories 80; Calories (1 tbsp .) contains 80.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          2,
+          0,
+          "4"
+        ],
+        [
+          1,
+          0,
+          80
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 49641
+}

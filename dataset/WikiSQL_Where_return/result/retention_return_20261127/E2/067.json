@@ -1,0 +1,561 @@
+{
+  "arm": "E2",
+  "position": 67,
+  "example_id": "test:2338:1-2076490-1",
+  "original_index": 2338,
+  "table_id": "1-2076490-1",
+  "question": "What year is the founding year, for the school that had an enrollment in 2005 of 963?",
+  "gold_sql": {
+    "sel": 5,
+    "conds": [
+      [
+        4,
+        0,
+        "963"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      4,
+      0,
+      "963"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        0,
+        "963"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "963",
+        "value": "963",
+        "start": 81,
+        "end": 84,
+        "clause": "for the school that had an enrollment in 2005 of 963?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The clause explicitly identifies 963 as an enrollment in 2005, matching the 'Enrollment (2005)' header and row evidence.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "963",
+        "value": "963",
+        "start": 81,
+        "end": 84
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What year is the founding year, for the school that had an enrollment in 2005 of 963?",
+      "table": {
+        "header": [
+          "School",
+          "Location(s)",
+          "Control",
+          "Type",
+          "Enrollment (2005)",
+          "Founded"
+        ],
+        "page_title": "List of colleges and universities in New Hampshire",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "real"
+        ],
+        "id": "1-2076490-1",
+        "section_title": "Active institutions",
+        "caption": "Active institutions",
+        "rows": [
+          [
+            "Antioch University New England",
+            "Keene",
+            "Private",
+            "Doctoral/research university",
+            "898",
+            1964
+          ],
+          [
+            "Colby-Sawyer College",
+            "New London",
+            "Private",
+            "Baccalaureate college",
+            "971",
+            1837
+          ],
+          [
+            "The College of Saint Mary Magdalen",
+            "Warner",
+            "Private ( Catholic )",
+            "Baccalaureate college",
+            "69",
+            1974
+          ],
+          [
+            "Community College System of New Hampshire",
+            "Seven locations",
+            "Public",
+            "Associates colleges",
+            "24,000+",
+            1965
+          ],
+          [
+            "Daniel Webster College",
+            "Nashua",
+            "Private ( for-profit )",
+            "Baccalaureate college",
+            "963",
+            1965
+          ],
+          [
+            "Dartmouth College",
+            "Hanover",
+            "Private",
+            "Research university",
+            "5,780",
+            1769
+          ],
+          [
+            "Franklin Pierce University",
+            "Rindge",
+            "Private",
+            "Baccalaureate college",
+            "2,642",
+            1962
+          ],
+          [
+            "Granite State College",
+            "Concord",
+            "Public",
+            "Baccalaureate college",
+            "1,540",
+            1972
+          ],
+          [
+            "Hesser College",
+            "Five locations",
+            "Private ( for-profit )",
+            "Baccalaureate college",
+            "3,440",
+            1900
+          ],
+          [
+            "Keene State College",
+            "Keene",
+            "Public",
+            "Master's university",
+            "4,846",
+            1909
+          ],
+          [
+            "Lebanon College",
+            "Lebanon",
+            "Private",
+            "Associates college",
+            "322",
+            1956
+          ],
+          [
+            "New England College",
+            "Henniker and Online",
+            "Private",
+            "Baccalaureate college",
+            "1,367",
+            1946
+          ],
+          [
+            "New Hampshire Institute of Art",
+            "Manchester",
+            "Private",
+            "Special-focus institution",
+            "220",
+            1898
+          ],
+          [
+            "Plymouth State University",
+            "Plymouth",
+            "Public",
+            "Master's university",
+            "5,264",
+            1871
+          ],
+          [
+            "Rivier University",
+            "Nashua",
+            "Private ( Catholic )",
+            "Master's university",
+            "2,216",
+            1933
+          ],
+          [
+            "Saint Anselm College",
+            "Goffstown",
+            "Private ( Catholic )",
+            "Baccalaureate college",
+            "1,986",
+            1889
+          ],
+          [
+            "Southern New Hampshire University",
+            "Manchester",
+            "Private",
+            "Master's university",
+            "6,186",
+            1932
+          ],
+          [
+            "Thomas More College of Liberal Arts",
+            "Merrimack",
+            "Private ( Catholic )",
+            "Baccalaureate college",
+            "84",
+            1978
+          ],
+          [
+            "University of New Hampshire",
+            "Durham",
+            "Public",
+            "Research university",
+            "14,511",
+            1866
+          ],
+          [
+            "University of New Hampshire at Manchester",
+            "Manchester",
+            "Public",
+            "Baccalaureate college",
+            "1,096",
+            1985
+          ]
+        ],
+        "name": "table_2076490_1",
+        "headers": [
+          "School",
+          "Location(s)",
+          "Control",
+          "Type",
+          "Enrollment (2005)",
+          "Founded"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-2076490-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "963",
+              "value": "963",
+              "start": 81,
+              "end": 84
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ea803f526633e3a522c357498395ebc8d398fe46761766dc1c43d360b89b99cb",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5183,
+              "completion_tokens": 17,
+              "total_tokens": 5200,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "963",
+              "value": "963",
+              "start": 81,
+              "end": 84,
+              "clause": "for the school that had an enrollment in 2005 of 963?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "963",
+              "value": "963",
+              "start": 81,
+              "end": 84,
+              "clause": "for the school that had an enrollment in 2005 of 963?"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f0451257914729255a3844a28faaf4216fc2171c3165f658b24d66f1ba957b42",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5237,
+              "completion_tokens": 8,
+              "total_tokens": 5245,
+              "prompt_tokens_details": {
+                "cached_tokens": 3200
+              }
+            }
+          },
+          "count": 1,
+          "recovered": [],
+          "reviewedUncertain": [
+            {
+              "surface": "2005",
+              "start": 73,
+              "end": 77
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "963",
+              "value": "963",
+              "start": 81,
+              "end": 84,
+              "clause": "for the school that had an enrollment in 2005 of 963?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly identifies 963 as an enrollment in 2005, matching the 'Enrollment (2005)' header and row evidence."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "3aeb7860871a9efffcfa9c49fd9abd61251283fc5e5d346ece81d6b5768e7855",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5219,
+              "completion_tokens": 48,
+              "total_tokens": 5267,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "963",
+              "value": "963",
+              "start": 81,
+              "end": 84,
+              "clause": "for the school that had an enrollment in 2005 of 963?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly identifies 963 as an enrollment in 2005, matching the 'Enrollment (2005)' header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "3fea12f39f96c868da446c95858bf2e58d3b3cf542da727db891d23004898ebe",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5289,
+              "completion_tokens": 9,
+              "total_tokens": 5298,
+              "prompt_tokens_details": {
+                "cached_tokens": 3200
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "963",
+              "value": "963",
+              "start": 81,
+              "end": 84,
+              "clause": "for the school that had an enrollment in 2005 of 963?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly identifies 963 as an enrollment in 2005, matching the 'Enrollment (2005)' header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a84fbb1929731208439bf1623868bf426b9f82ae7cc8be7f2f177151e33e850d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5242,
+              "completion_tokens": 10,
+              "total_tokens": 5252,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "963",
+              "value": "963",
+              "start": 81,
+              "end": 84,
+              "clause": "for the school that had an enrollment in 2005 of 963?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly identifies 963 as an enrollment in 2005, matching the 'Enrollment (2005)' header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "963",
+              "value": "963",
+              "start": 81,
+              "end": 84,
+              "clause": "for the school that had an enrollment in 2005 of 963?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly identifies 963 as an enrollment in 2005, matching the 'Enrollment (2005)' header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "963",
+              "value": "963",
+              "start": 81,
+              "end": 84,
+              "clause": "for the school that had an enrollment in 2005 of 963?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly identifies 963 as an enrollment in 2005, matching the 'Enrollment (2005)' header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              0,
+              "963"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "963",
+          "value": "963",
+          "start": 81,
+          "end": 84
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "963",
+          "value": "963",
+          "start": 81,
+          "end": 84,
+          "clause": "for the school that had an enrollment in 2005 of 963?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The clause explicitly identifies 963 as an enrollment in 2005, matching the 'Enrollment (2005)' header and row evidence.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          4,
+          0,
+          "963"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 110781
+}

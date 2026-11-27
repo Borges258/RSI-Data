@@ -1,0 +1,491 @@
+{
+  "arm": "E2",
+  "position": 270,
+  "example_id": "test:6291:2-14202514-2",
+  "original_index": 6291,
+  "table_id": "2-14202514-2",
+  "question": "When was the earliest that New England Patriots played?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        2,
+        0,
+        "new england patriots"
+      ]
+    ],
+    "agg": 2
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "New England Patriots"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "New England Patriots"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "New England Patriots",
+        "value": "New England Patriots",
+        "start": 27,
+        "end": 47,
+        "clause": "When was the earliest that New England Patriots played?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The team named as who was played is represented in the Opponent field, with matching home and away entries.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "New England Patriots",
+        "value": "New England Patriots",
+        "start": 27,
+        "end": 47
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "When was the earliest that New England Patriots played?",
+      "table": {
+        "header": [
+          "Week",
+          "Date",
+          "Opponent",
+          "Result",
+          "Record",
+          "Attendance"
+        ],
+        "page_title": "1972 Miami Dolphins season",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text",
+          "real"
+        ],
+        "page_id": 14202514,
+        "id": "2-14202514-2",
+        "section_title": "Schedule",
+        "rows": [
+          [
+            "1",
+            "September 17, 1972",
+            "at Kansas City Chiefs",
+            "W 20–10",
+            "1–0",
+            "79,829"
+          ],
+          [
+            "2",
+            "September 24, 1972",
+            "Houston Oilers",
+            "W 34–13",
+            "2–0",
+            "77,821"
+          ],
+          [
+            "3",
+            "October 1, 1972",
+            "at Minnesota Vikings",
+            "W 16–14",
+            "3–0",
+            "47,900"
+          ],
+          [
+            "4",
+            "October 8, 1972",
+            "at New York Jets",
+            "W 27–17",
+            "4–0",
+            "63,841"
+          ],
+          [
+            "5",
+            "October 15, 1972",
+            "San Diego Chargers",
+            "W 24–10",
+            "5–0",
+            "80,010"
+          ],
+          [
+            "6",
+            "October 22, 1972",
+            "Buffalo Bills",
+            "W 24–23",
+            "6–0",
+            "80,010"
+          ],
+          [
+            "7",
+            "October 29, 1972",
+            "at Baltimore Colts",
+            "W 23–0",
+            "7–0",
+            "60,000"
+          ],
+          [
+            "8",
+            "November 5, 1972",
+            "at Buffalo Bills",
+            "W 30–16",
+            "8–0",
+            "46,206"
+          ],
+          [
+            "9",
+            "November 12, 1972",
+            "New England Patriots",
+            "W 52–0",
+            "9–0",
+            "80,010"
+          ],
+          [
+            "10",
+            "November 19, 1972",
+            "New York Jets",
+            "W 28–24",
+            "10–0",
+            "80,010"
+          ],
+          [
+            "11",
+            "November 27, 1972",
+            "St. Louis Cardinals",
+            "W 31–10",
+            "11–0",
+            "80,010"
+          ],
+          [
+            "12",
+            "December 3, 1972",
+            "at New England Patriots",
+            "W 37–21",
+            "12–0",
+            "60,999"
+          ],
+          [
+            "13",
+            "December 10, 1972",
+            "at New York Giants",
+            "W 23–13",
+            "13–0",
+            "62,728"
+          ],
+          [
+            "14",
+            "December 16, 1972",
+            "Baltimore Colts",
+            "W 16–0",
+            "14–0",
+            "80,010"
+          ]
+        ],
+        "caption": "Schedule",
+        "headers": [
+          "Week",
+          "Date",
+          "Opponent",
+          "Result",
+          "Record",
+          "Attendance"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-14202514-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "New England Patriots",
+              "value": "New England Patriots",
+              "start": 27,
+              "end": 47
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "591f40aa1be972e7e9bc68bccb11b1b2eae94d2992c338d257d0343ae0438197",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5075,
+              "completion_tokens": 21,
+              "total_tokens": 5096,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "New England Patriots",
+              "value": "New England Patriots",
+              "start": 27,
+              "end": 47,
+              "clause": "When was the earliest that New England Patriots played?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "New England Patriots",
+              "value": "New England Patriots",
+              "start": 27,
+              "end": 47,
+              "clause": "When was the earliest that New England Patriots played?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "New England Patriots",
+              "value": "New England Patriots",
+              "start": 27,
+              "end": 47,
+              "clause": "When was the earliest that New England Patriots played?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The team named as who was played is represented in the Opponent field, with matching home and away entries."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "24682c12c1b43827c40ba7cb197c77e59b9b71872fc0bfe937e1c699695b64e1",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5110,
+              "completion_tokens": 43,
+              "total_tokens": 5153,
+              "prompt_tokens_details": {
+                "cached_tokens": 4864
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "New England Patriots",
+              "value": "New England Patriots",
+              "start": 27,
+              "end": 47,
+              "clause": "When was the earliest that New England Patriots played?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The team named as who was played is represented in the Opponent field, with matching home and away entries.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "7acd93f585eb45553bcb78fc9a2b128dba124b492d63507dcb5a227a98dbac28",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5177,
+              "completion_tokens": 9,
+              "total_tokens": 5186,
+              "prompt_tokens_details": {
+                "cached_tokens": 4864
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "New England Patriots",
+              "value": "New England Patriots",
+              "start": 27,
+              "end": 47,
+              "clause": "When was the earliest that New England Patriots played?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The team named as who was played is represented in the Opponent field, with matching home and away entries.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "bff80de4d3b8344a8d067918af309eccf946f64070f49f55c841beed975abe9d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5128,
+              "completion_tokens": 12,
+              "total_tokens": 5140,
+              "prompt_tokens_details": {
+                "cached_tokens": 4864
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "New England Patriots",
+              "value": "New England Patriots",
+              "start": 27,
+              "end": 47,
+              "clause": "When was the earliest that New England Patriots played?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The team named as who was played is represented in the Opponent field, with matching home and away entries.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "New England Patriots",
+              "value": "New England Patriots",
+              "start": 27,
+              "end": 47,
+              "clause": "When was the earliest that New England Patriots played?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The team named as who was played is represented in the Opponent field, with matching home and away entries.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "New England Patriots",
+              "value": "New England Patriots",
+              "start": 27,
+              "end": 47,
+              "clause": "When was the earliest that New England Patriots played?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The team named as who was played is represented in the Opponent field, with matching home and away entries.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "New England Patriots"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "New England Patriots",
+          "value": "New England Patriots",
+          "start": 27,
+          "end": 47
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "New England Patriots",
+          "value": "New England Patriots",
+          "start": 27,
+          "end": 47,
+          "clause": "When was the earliest that New England Patriots played?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The team named as who was played is represented in the Opponent field, with matching home and away entries.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          2,
+          0,
+          "New England Patriots"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8078
+}

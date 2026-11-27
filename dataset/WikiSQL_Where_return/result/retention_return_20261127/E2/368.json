@@ -1,0 +1,637 @@
+{
+  "arm": "E2",
+  "position": 368,
+  "example_id": "test:14420:2-1213933-1",
+  "original_index": 14420,
+  "table_id": "2-1213933-1",
+  "question": "What year had a 1st round playoff in the NASL indoor league?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        4,
+        0,
+        "1st round"
+      ],
+      [
+        2,
+        0,
+        "nasl indoor"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      4,
+      0,
+      "1st Round"
+    ],
+    [
+      2,
+      0,
+      "NASL Indoor"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        0,
+        "1st Round"
+      ],
+      [
+        2,
+        0,
+        "NASL Indoor"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "1st round",
+        "value": "1st Round",
+        "start": 16,
+        "end": 25,
+        "clause": "What year had a 1st round playoff in the NASL indoor league?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "'1st round playoff' refers to the Playoffs field, with matching row evidence.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "NASL indoor",
+        "value": "NASL Indoor",
+        "start": 41,
+        "end": 52,
+        "clause": "What year had a 1st round playoff in the NASL indoor league?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "'NASL indoor league' refers to the League field, with matching row evidence.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "1st round",
+        "value": "1st Round",
+        "start": 16,
+        "end": 25
+      },
+      {
+        "surface": "NASL indoor",
+        "value": "NASL Indoor",
+        "start": 41,
+        "end": 52
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What year had a 1st round playoff in the NASL indoor league?",
+      "table": {
+        "header": [
+          "Year",
+          "Division",
+          "League",
+          "Reg. Season",
+          "Playoffs",
+          "Open Cup"
+        ],
+        "page_title": "Los Angeles Aztecs",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 1213933,
+        "id": "2-1213933-1",
+        "section_title": "Year-by-year",
+        "rows": [
+          [
+            "1974",
+            "1",
+            "NASL",
+            "1st, Western",
+            "Champions",
+            "Did not enter"
+          ],
+          [
+            "1975",
+            "N/A",
+            "NASL Indoor",
+            "3rd, Region 4",
+            "Did not qualify",
+            "N/A"
+          ],
+          [
+            "1975",
+            "1",
+            "NASL",
+            "3rd, Western",
+            "Quarterfinals",
+            "Did not enter"
+          ],
+          [
+            "1976",
+            "1",
+            "NASL",
+            "3rd, Pacific Southern",
+            "1st Round",
+            "Did not enter"
+          ],
+          [
+            "1977",
+            "1",
+            "NASL",
+            "3rd, Pacific Southern",
+            "Semifinals",
+            "Did not enter"
+          ],
+          [
+            "1978",
+            "1",
+            "NASL",
+            "4th, National Western",
+            "Did not qulaify",
+            "Did not enter"
+          ],
+          [
+            "1979",
+            "1",
+            "NASL",
+            "2nd, National Western",
+            "Conference Semifinals",
+            "Did not enter"
+          ],
+          [
+            "1979–80",
+            "N/A",
+            "NASL Indoor",
+            "5th, Western",
+            "Did not qualify",
+            "N/A"
+          ],
+          [
+            "1980",
+            "1",
+            "NASL",
+            "2nd, National Western",
+            "Conference Championships",
+            "Did not enter"
+          ],
+          [
+            "1980–81",
+            "N/A",
+            "NASL Indoor",
+            "1st, Western",
+            "1st Round",
+            "N/A"
+          ],
+          [
+            "1981",
+            "1",
+            "NASL",
+            "2nd, Western",
+            "1st Round",
+            "Did not enter"
+          ]
+        ],
+        "caption": "Year-by-year",
+        "headers": [
+          "Year",
+          "Division",
+          "League",
+          "Reg. Season",
+          "Playoffs",
+          "Open Cup"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-1213933-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "1st round",
+              "value": "1st Round",
+              "start": 16,
+              "end": 25
+            },
+            {
+              "surface": "NASL indoor",
+              "value": "NASL Indoor",
+              "start": 41,
+              "end": 52
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0ad82d356238808895d557f0c4e04e60c4e60021fa2f8f5c63f6504945f3e6f8",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4939,
+              "completion_tokens": 33,
+              "total_tokens": 4972,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1st round",
+              "value": "1st Round",
+              "start": 16,
+              "end": 25,
+              "clause": "What year had a 1st round playoff in the NASL indoor league?"
+            },
+            {
+              "surface": "NASL indoor",
+              "value": "NASL Indoor",
+              "start": 41,
+              "end": 52,
+              "clause": "What year had a 1st round playoff in the NASL indoor league?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "1st round",
+              "value": "1st Round",
+              "start": 16,
+              "end": 25,
+              "clause": "What year had a 1st round playoff in the NASL indoor league?"
+            },
+            {
+              "surface": "NASL indoor",
+              "value": "NASL Indoor",
+              "start": 41,
+              "end": 52,
+              "clause": "What year had a 1st round playoff in the NASL indoor league?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1st round",
+              "value": "1st Round",
+              "start": 16,
+              "end": 25,
+              "clause": "What year had a 1st round playoff in the NASL indoor league?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'1st round playoff' refers to the Playoffs field, with matching row evidence."
+            },
+            {
+              "surface": "NASL indoor",
+              "value": "NASL Indoor",
+              "start": 41,
+              "end": 52,
+              "clause": "What year had a 1st round playoff in the NASL indoor league?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'NASL indoor league' refers to the League field, with matching row evidence."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "609a32188303029081b4ef4a64967c165d988c3fac6d02ee7d875481c7eeea0f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5020,
+              "completion_tokens": 60,
+              "total_tokens": 5080,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1st round",
+              "value": "1st Round",
+              "start": 16,
+              "end": 25,
+              "clause": "What year had a 1st round playoff in the NASL indoor league?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'1st round playoff' refers to the Playoffs field, with matching row evidence.",
+              "operator": "="
+            },
+            {
+              "surface": "NASL indoor",
+              "value": "NASL Indoor",
+              "start": 41,
+              "end": 52,
+              "clause": "What year had a 1st round playoff in the NASL indoor league?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'NASL indoor league' refers to the League field, with matching row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b71c2e473510e625e8eb7b59cfbde6ca6f9ac6e9e60b6a7acefcd98f952c4d4a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5113,
+              "completion_tokens": 11,
+              "total_tokens": 5124,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1st round",
+              "value": "1st Round",
+              "start": 16,
+              "end": 25,
+              "clause": "What year had a 1st round playoff in the NASL indoor league?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'1st round playoff' refers to the Playoffs field, with matching row evidence.",
+              "operator": "="
+            },
+            {
+              "surface": "NASL indoor",
+              "value": "NASL Indoor",
+              "start": 41,
+              "end": 52,
+              "clause": "What year had a 1st round playoff in the NASL indoor league?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'NASL indoor league' refers to the League field, with matching row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "46d3610531eed71ee0031fd6987300c6689dbb1637f8c96f618fc35713c27174",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5067,
+              "completion_tokens": 16,
+              "total_tokens": 5083,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1st round",
+              "value": "1st Round",
+              "start": 16,
+              "end": 25,
+              "clause": "What year had a 1st round playoff in the NASL indoor league?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'1st round playoff' refers to the Playoffs field, with matching row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "NASL indoor",
+              "value": "NASL Indoor",
+              "start": 41,
+              "end": 52,
+              "clause": "What year had a 1st round playoff in the NASL indoor league?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'NASL indoor league' refers to the League field, with matching row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1st round",
+              "value": "1st Round",
+              "start": 16,
+              "end": 25,
+              "clause": "What year had a 1st round playoff in the NASL indoor league?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'1st round playoff' refers to the Playoffs field, with matching row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "NASL indoor",
+              "value": "NASL Indoor",
+              "start": 41,
+              "end": 52,
+              "clause": "What year had a 1st round playoff in the NASL indoor league?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'NASL indoor league' refers to the League field, with matching row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "1st round",
+              "value": "1st Round",
+              "start": 16,
+              "end": 25,
+              "clause": "What year had a 1st round playoff in the NASL indoor league?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'1st round playoff' refers to the Playoffs field, with matching row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "NASL indoor",
+              "value": "NASL Indoor",
+              "start": 41,
+              "end": 52,
+              "clause": "What year had a 1st round playoff in the NASL indoor league?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'NASL indoor league' refers to the League field, with matching row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              0,
+              "1st Round"
+            ],
+            [
+              2,
+              0,
+              "NASL Indoor"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "1st round",
+          "value": "1st Round",
+          "start": 16,
+          "end": 25
+        },
+        {
+          "surface": "NASL indoor",
+          "value": "NASL Indoor",
+          "start": 41,
+          "end": 52
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "1st round",
+          "value": "1st Round",
+          "start": 16,
+          "end": 25,
+          "clause": "What year had a 1st round playoff in the NASL indoor league?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "'1st round playoff' refers to the Playoffs field, with matching row evidence.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "NASL indoor",
+          "value": "NASL Indoor",
+          "start": 41,
+          "end": 52,
+          "clause": "What year had a 1st round playoff in the NASL indoor league?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "'NASL indoor league' refers to the League field, with matching row evidence.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          4,
+          0,
+          "1st Round"
+        ],
+        [
+          2,
+          0,
+          "NASL Indoor"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8938
+}

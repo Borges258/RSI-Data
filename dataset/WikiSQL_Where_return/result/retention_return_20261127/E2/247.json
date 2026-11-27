@@ -1,0 +1,607 @@
+{
+  "arm": "E2",
+  "position": 247,
+  "example_id": "test:9753:2-17070080-1",
+  "original_index": 9753,
+  "table_id": "2-17070080-1",
+  "question": "who is the 4th runner-up when the 2nd runner-up is osmariel villalobos?",
+  "gold_sql": {
+    "sel": 5,
+    "conds": [
+      [
+        3,
+        0,
+        "osmariel villalobos"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [],
+  "status": "GROUNDING_FAILED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "GROUNDING_FAILED",
+    "valid": false,
+    "errors": [
+      "condition 0: grounding NO_MATCH"
+    ],
+    "conditions": [
+      {
+        "surface": "2nd runner-up",
+        "value": "2nd Runner Up",
+        "start": 34,
+        "end": 47,
+        "clause": "who is the 4th runner-up when the 2nd runner-up is osmariel villalobos?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The condition explicitly names the '2nd Runner Up' header.",
+        "operator": "=",
+        "grounded": false,
+        "groundingStatus": "NO_MATCH",
+        "groundingReview": {
+          "column": 3,
+          "reason": "The question explicitly identifies the condition field as '2nd runner-up,' matching column 3; Osmariel Villalobos also appears in that column."
+        }
+      },
+      {
+        "surface": "osmariel villalobos",
+        "value": "Osmariel Villalobos",
+        "start": 51,
+        "end": 70,
+        "clause": "who is the 4th runner-up when the 2nd runner-up is osmariel villalobos?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "Osmariel Villalobos appears in the '2nd Runner Up' cell for 2008, consistent with the named field.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "stage": "WHERE_CONDITION_VALIDATE",
+    "originalConditions": [
+      {
+        "surface": "2nd runner-up",
+        "value": "2nd Runner Up",
+        "start": 34,
+        "end": 47
+      },
+      {
+        "surface": "osmariel villalobos",
+        "value": "Osmariel Villalobos",
+        "start": 51,
+        "end": 70
+      }
+    ],
+    "halt": true,
+    "completed": false,
+    "conds": [],
+    "warnings": [
+      "operator model output count mismatch; used local clause cues"
+    ],
+    "request": {
+      "question": "who is the 4th runner-up when the 2nd runner-up is osmariel villalobos?",
+      "table": {
+        "header": [
+          "Year",
+          "Miss Earth Venezuela",
+          "1st Runner Up",
+          "2nd Runner Up",
+          "3rd Runner Up",
+          "4th Runner Up"
+        ],
+        "page_title": "Miss Earth Venezuela",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 17070080,
+        "id": "2-17070080-1",
+        "section_title": "Winners",
+        "rows": [
+          [
+            "2005",
+            "Alexandra Braun",
+            "Shannon de Lima",
+            "María Escalante",
+            "Myriam Abreu",
+            "Susana Girardi"
+          ],
+          [
+            "2006",
+            "Marianne Puglia",
+            "Xenia Prieto",
+            "Dayana Colmenares",
+            "Mariannys Caraballo",
+            "María Eugenia Romero"
+          ],
+          [
+            "2007",
+            "Silvana Santaella",
+            "Francis Lugo",
+            "Andreína Vilachá",
+            "Anabel Montiel",
+            "Karina Mendoza"
+          ],
+          [
+            "2008",
+            "María Daniela Torrealba",
+            "Andrea Matthies",
+            "Osmariel Villalobos",
+            "María Laura Verde",
+            "Rosa Elena Zambrano"
+          ],
+          [
+            "2009",
+            "Jessica Barboza",
+            "Andreína Gomes",
+            "Nathaly Navas",
+            "Yuliana Leal",
+            "Sara Angelini"
+          ]
+        ],
+        "caption": "Winners",
+        "headers": [
+          "Year",
+          "Miss Earth Venezuela",
+          "1st Runner Up",
+          "2nd Runner Up",
+          "3rd Runner Up",
+          "4th Runner Up"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-17070080-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 9,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "2nd runner-up",
+              "value": "2nd Runner Up",
+              "start": 34,
+              "end": 47
+            },
+            {
+              "surface": "osmariel villalobos",
+              "value": "Osmariel Villalobos",
+              "start": 51,
+              "end": 70
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f60464165a7581ad5f6168ec6ba7f96f10ca77abe5904565b194eb08020dd163",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4860,
+              "completion_tokens": 42,
+              "total_tokens": 4902,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2nd runner-up",
+              "value": "2nd Runner Up",
+              "start": 34,
+              "end": 47,
+              "clause": "who is the 4th runner-up when the 2nd runner-up is osmariel villalobos?"
+            },
+            {
+              "surface": "osmariel villalobos",
+              "value": "Osmariel Villalobos",
+              "start": 51,
+              "end": 70,
+              "clause": "who is the 4th runner-up when the 2nd runner-up is osmariel villalobos?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "2nd runner-up",
+              "value": "2nd Runner Up",
+              "start": 34,
+              "end": 47,
+              "clause": "who is the 4th runner-up when the 2nd runner-up is osmariel villalobos?"
+            },
+            {
+              "surface": "osmariel villalobos",
+              "value": "Osmariel Villalobos",
+              "start": 51,
+              "end": 70,
+              "clause": "who is the 4th runner-up when the 2nd runner-up is osmariel villalobos?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2nd runner-up",
+              "value": "2nd Runner Up",
+              "start": 34,
+              "end": 47,
+              "clause": "who is the 4th runner-up when the 2nd runner-up is osmariel villalobos?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The condition explicitly names the '2nd Runner Up' header."
+            },
+            {
+              "surface": "osmariel villalobos",
+              "value": "Osmariel Villalobos",
+              "start": 51,
+              "end": 70,
+              "clause": "who is the 4th runner-up when the 2nd runner-up is osmariel villalobos?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Osmariel Villalobos appears in the '2nd Runner Up' cell for 2008, consistent with the named field."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "dc666786a14a30c3d5e76bd781761483b7244177cc852f610046ba0bd8ecbfd1",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4964,
+              "completion_tokens": 66,
+              "total_tokens": 5030,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "warnings": [
+            "operator model output count mismatch; used local clause cues"
+          ],
+          "conditions": [
+            {
+              "surface": "2nd runner-up",
+              "value": "2nd Runner Up",
+              "start": 34,
+              "end": 47,
+              "clause": "who is the 4th runner-up when the 2nd runner-up is osmariel villalobos?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The condition explicitly names the '2nd Runner Up' header.",
+              "operator": "="
+            },
+            {
+              "surface": "osmariel villalobos",
+              "value": "Osmariel Villalobos",
+              "start": 51,
+              "end": 70,
+              "clause": "who is the 4th runner-up when the 2nd runner-up is osmariel villalobos?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Osmariel Villalobos appears in the '2nd Runner Up' cell for 2008, consistent with the named field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "42a2e9a4cf560fdf9369c29ac91492350355d74413878e705b4f689611e29a17",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5065,
+              "completion_tokens": 9,
+              "total_tokens": 5074,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2nd runner-up",
+              "value": "2nd Runner Up",
+              "start": 34,
+              "end": 47,
+              "clause": "who is the 4th runner-up when the 2nd runner-up is osmariel villalobos?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The condition explicitly names the '2nd Runner Up' header.",
+              "operator": "="
+            },
+            {
+              "surface": "osmariel villalobos",
+              "value": "Osmariel Villalobos",
+              "start": 51,
+              "end": 70,
+              "clause": "who is the 4th runner-up when the 2nd runner-up is osmariel villalobos?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Osmariel Villalobos appears in the '2nd Runner Up' cell for 2008, consistent with the named field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "3a63d57bffaf91539e407604544baf7aaed0869db0d19b416c986c90d56b7f2a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5019,
+              "completion_tokens": 21,
+              "total_tokens": 5040,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2nd runner-up",
+              "value": "2nd Runner Up",
+              "start": 34,
+              "end": 47,
+              "clause": "who is the 4th runner-up when the 2nd runner-up is osmariel villalobos?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The condition explicitly names the '2nd Runner Up' header.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 3,
+                "reason": "The question explicitly identifies the condition field as '2nd runner-up,' matching column 3; Osmariel Villalobos also appears in that column."
+              }
+            },
+            {
+              "surface": "osmariel villalobos",
+              "value": "Osmariel Villalobos",
+              "start": 51,
+              "end": 70,
+              "clause": "who is the 4th runner-up when the 2nd runner-up is osmariel villalobos?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Osmariel Villalobos appears in the '2nd Runner Up' cell for 2008, consistent with the named field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ],
+          "reviewModelCalls": [
+            {
+              "model": "gpt-5.6-sol",
+              "promptSha256": "b2f01cf59470123dcb47bfac288739e498cd70c86629c3b2cd4ffdf0963a146e",
+              "knowledgeIds": [],
+              "usage": {
+                "prompt_tokens": 4960,
+                "completion_tokens": 122,
+                "total_tokens": 5082,
+                "prompt_tokens_details": {
+                  "cached_tokens": 4224
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 77
+                }
+              }
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b2f01cf59470123dcb47bfac288739e498cd70c86629c3b2cd4ffdf0963a146e",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4960,
+              "completion_tokens": 122,
+              "total_tokens": 5082,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 77
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2nd runner-up",
+              "value": "2nd Runner Up",
+              "start": 34,
+              "end": 47,
+              "clause": "who is the 4th runner-up when the 2nd runner-up is osmariel villalobos?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The condition explicitly names the '2nd Runner Up' header.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 3,
+                "reason": "The question explicitly identifies the condition field as '2nd runner-up,' matching column 3; Osmariel Villalobos also appears in that column."
+              }
+            },
+            {
+              "surface": "osmariel villalobos",
+              "value": "Osmariel Villalobos",
+              "start": 51,
+              "end": 70,
+              "clause": "who is the 4th runner-up when the 2nd runner-up is osmariel villalobos?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Osmariel Villalobos appears in the '2nd Runner Up' cell for 2008, consistent with the named field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "GROUNDING_FAILED",
+          "valid": false,
+          "errors": [
+            "condition 0: grounding NO_MATCH"
+          ],
+          "conditions": [
+            {
+              "surface": "2nd runner-up",
+              "value": "2nd Runner Up",
+              "start": 34,
+              "end": 47,
+              "clause": "who is the 4th runner-up when the 2nd runner-up is osmariel villalobos?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The condition explicitly names the '2nd Runner Up' header.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 3,
+                "reason": "The question explicitly identifies the condition field as '2nd runner-up,' matching column 3; Osmariel Villalobos also appears in that column."
+              }
+            },
+            {
+              "surface": "osmariel villalobos",
+              "value": "Osmariel Villalobos",
+              "start": 51,
+              "end": 70,
+              "clause": "who is the 4th runner-up when the 2nd runner-up is osmariel villalobos?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Osmariel Villalobos appears in the '2nd Runner Up' cell for 2008, consistent with the named field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        }
+      },
+      "warnings": [
+        "operator model output count mismatch; used local clause cues"
+      ],
+      "execution": {
+        "status": "GROUNDING_FAILED",
+        "stage": "WHERE_CONDITION_VALIDATE",
+        "halt": true,
+        "completed": false,
+        "errors": [
+          "condition 0: grounding NO_MATCH"
+        ],
+        "warnings": [
+          "operator model output count mismatch; used local clause cues"
+        ]
+      },
+      "originalConditions": [
+        {
+          "surface": "2nd runner-up",
+          "value": "2nd Runner Up",
+          "start": 34,
+          "end": 47
+        },
+        {
+          "surface": "osmariel villalobos",
+          "value": "Osmariel Villalobos",
+          "start": 51,
+          "end": 70
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "2nd runner-up",
+          "value": "2nd Runner Up",
+          "start": 34,
+          "end": 47,
+          "clause": "who is the 4th runner-up when the 2nd runner-up is osmariel villalobos?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The condition explicitly names the '2nd Runner Up' header.",
+          "operator": "=",
+          "grounded": false,
+          "groundingStatus": "NO_MATCH",
+          "groundingReview": {
+            "column": 3,
+            "reason": "The question explicitly identifies the condition field as '2nd runner-up,' matching column 3; Osmariel Villalobos also appears in that column."
+          }
+        },
+        {
+          "surface": "osmariel villalobos",
+          "value": "Osmariel Villalobos",
+          "start": 51,
+          "end": 70,
+          "clause": "who is the 4th runner-up when the 2nd runner-up is osmariel villalobos?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "Osmariel Villalobos appears in the '2nd Runner Up' cell for 2008, consistent with the named field.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": false,
+  "elapsed_ms": 13546
+}

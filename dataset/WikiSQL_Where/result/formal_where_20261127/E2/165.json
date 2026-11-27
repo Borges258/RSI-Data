@@ -1,0 +1,645 @@
+{
+  "arm": "E2",
+  "position": 165,
+  "example_id": "test:13031:2-17857470-3",
+  "original_index": 13031,
+  "table_id": "2-17857470-3",
+  "question": "What party established in 1797 won an election in 2007?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        2,
+        1,
+        1797
+      ],
+      [
+        5,
+        0,
+        2007
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      1797
+    ],
+    [
+      5,
+      0,
+      2007
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        1797
+      ],
+      [
+        5,
+        0,
+        2007
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "1797",
+        "value": 1797,
+        "start": 26,
+        "end": 30,
+        "clause": "What party established in 1797 won an election in 2007?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "'established in 1797' directly matches the established header and rows.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "2007",
+        "value": 2007,
+        "start": 50,
+        "end": 54,
+        "clause": "What party established in 1797 won an election in 2007?",
+        "columnIndex": 5,
+        "columnCandidates": [
+          5
+        ],
+        "columnMatchReason": "'election in 2007' directly matches the Election header and rows.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "1797",
+        "value": "1797",
+        "start": 26,
+        "end": 30
+      },
+      {
+        "surface": "2007",
+        "value": "2007",
+        "start": 50,
+        "end": 54
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What party established in 1797 won an election in 2007?",
+      "table": {
+        "header": [
+          "Province",
+          "Inhabitants",
+          "established",
+          "President",
+          "Party",
+          "Election"
+        ],
+        "page_title": "Politics of Lombardy",
+        "types": [
+          "text",
+          "real",
+          "real",
+          "text",
+          "text",
+          "real"
+        ],
+        "page_id": 17857470,
+        "id": "2-17857470-3",
+        "section_title": "Provinces",
+        "rows": [
+          [
+            "Milan",
+            "3,156,694",
+            "1754",
+            "Guido Podestà",
+            "The People of Freedom",
+            "2009"
+          ],
+          [
+            "Brescia",
+            "1,256,025",
+            "1797",
+            "Daniele Molgora",
+            "Lega Lombarda",
+            "2009"
+          ],
+          [
+            "Bergamo",
+            "1,098,740",
+            "1797",
+            "Ettore Pirovano",
+            "Lega Lombarda",
+            "2009"
+          ],
+          [
+            "Varese",
+            "883,285",
+            "1927",
+            "Dario Galli , commissioner",
+            "Lega Lombarda",
+            "2007"
+          ],
+          [
+            "Monza and Brianza",
+            "849,636",
+            "2009",
+            "Dario Allevi",
+            "The People of Freedom",
+            "2009"
+          ],
+          [
+            "Como",
+            "598,988",
+            "1786",
+            "Leonardo Carioni , commissioner",
+            "Lega Lombarda",
+            "2007"
+          ],
+          [
+            "Pavia",
+            "548,307",
+            "1786",
+            "Daniele Bosone",
+            "Democratic Party",
+            "2011"
+          ],
+          [
+            "Mantua",
+            "415,442",
+            "1797",
+            "Alessandro Pastacci",
+            "Democratic Party",
+            "2011"
+          ],
+          [
+            "Cremona",
+            "363,606",
+            "1786",
+            "Massimiliano Salini",
+            "The People of Freedom",
+            "2009"
+          ],
+          [
+            "Lecco",
+            "340,167",
+            "1995",
+            "Daniele Nava",
+            "The People of Freedom",
+            "2009"
+          ],
+          [
+            "Lodi",
+            "227,665",
+            "1995",
+            "Pietro Foroni",
+            "Lega Lombarda",
+            "2009"
+          ],
+          [
+            "Sondrio",
+            "183,169",
+            "1797",
+            "Massimo Sertori",
+            "Lega Lombarda",
+            "2009"
+          ]
+        ],
+        "caption": "Provinces",
+        "headers": [
+          "Province",
+          "Inhabitants",
+          "established",
+          "President",
+          "Party",
+          "Election"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-17857470-3",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "1797",
+              "value": "1797",
+              "start": 26,
+              "end": 30
+            },
+            {
+              "surface": "2007",
+              "value": "2007",
+              "start": 50,
+              "end": 54
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c466eac6bacab209366967661b871e2a93bf93eadb08d36925fe14931d902339",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4988,
+              "completion_tokens": 29,
+              "total_tokens": 5017,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1797",
+              "value": "1797",
+              "start": 26,
+              "end": 30,
+              "clause": "What party established in 1797 won an election in 2007?"
+            },
+            {
+              "surface": "2007",
+              "value": "2007",
+              "start": 50,
+              "end": 54,
+              "clause": "What party established in 1797 won an election in 2007?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "1797",
+              "value": "1797",
+              "start": 26,
+              "end": 30,
+              "clause": "What party established in 1797 won an election in 2007?"
+            },
+            {
+              "surface": "2007",
+              "value": "2007",
+              "start": 50,
+              "end": 54,
+              "clause": "What party established in 1797 won an election in 2007?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1797",
+              "value": "1797",
+              "start": 26,
+              "end": 30,
+              "clause": "What party established in 1797 won an election in 2007?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'established in 1797' directly matches the established header and rows."
+            },
+            {
+              "surface": "2007",
+              "value": "2007",
+              "start": 50,
+              "end": 54,
+              "clause": "What party established in 1797 won an election in 2007?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "'election in 2007' directly matches the Election header and rows."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "3b0f1b9bd8f97b12f2366dc5acc8fa9cb19764b14658fa52b70ebfc80c0fab93",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5063,
+              "completion_tokens": 57,
+              "total_tokens": 5120,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1797",
+              "value": "1797",
+              "start": 26,
+              "end": 30,
+              "clause": "What party established in 1797 won an election in 2007?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'established in 1797' directly matches the established header and rows.",
+              "operator": "="
+            },
+            {
+              "surface": "2007",
+              "value": "2007",
+              "start": 50,
+              "end": 54,
+              "clause": "What party established in 1797 won an election in 2007?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "'election in 2007' directly matches the Election header and rows.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "7027050c7bfaf3ad3452ec237792915b8ad5318e0af1b3e9672c988a7f08666b",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5153,
+              "completion_tokens": 11,
+              "total_tokens": 5164,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1797",
+              "value": 1797,
+              "start": 26,
+              "end": 30,
+              "clause": "What party established in 1797 won an election in 2007?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'established in 1797' directly matches the established header and rows.",
+              "operator": "="
+            },
+            {
+              "surface": "2007",
+              "value": 2007,
+              "start": 50,
+              "end": 54,
+              "clause": "What party established in 1797 won an election in 2007?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "'election in 2007' directly matches the Election header and rows.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a5586fc0c485f8865ead7b80fd62569614ee2d5184756cecad1c02b8f85bfc38",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5107,
+              "completion_tokens": 13,
+              "total_tokens": 5120,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1797",
+              "value": "1797",
+              "start": 26,
+              "end": 30,
+              "clause": "What party established in 1797 won an election in 2007?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'established in 1797' directly matches the established header and rows.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2007",
+              "value": "2007",
+              "start": 50,
+              "end": 54,
+              "clause": "What party established in 1797 won an election in 2007?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "'election in 2007' directly matches the Election header and rows.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1797",
+              "value": 1797,
+              "start": 26,
+              "end": 30,
+              "clause": "What party established in 1797 won an election in 2007?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'established in 1797' directly matches the established header and rows.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2007",
+              "value": 2007,
+              "start": 50,
+              "end": 54,
+              "clause": "What party established in 1797 won an election in 2007?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "'election in 2007' directly matches the Election header and rows.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "1797",
+              "value": 1797,
+              "start": 26,
+              "end": 30,
+              "clause": "What party established in 1797 won an election in 2007?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'established in 1797' directly matches the established header and rows.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2007",
+              "value": 2007,
+              "start": 50,
+              "end": 54,
+              "clause": "What party established in 1797 won an election in 2007?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "'election in 2007' directly matches the Election header and rows.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              1797
+            ],
+            [
+              5,
+              0,
+              2007
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "1797",
+          "value": "1797",
+          "start": 26,
+          "end": 30
+        },
+        {
+          "surface": "2007",
+          "value": "2007",
+          "start": 50,
+          "end": 54
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "1797",
+          "value": 1797,
+          "start": 26,
+          "end": 30,
+          "clause": "What party established in 1797 won an election in 2007?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "'established in 1797' directly matches the established header and rows.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "2007",
+          "value": 2007,
+          "start": 50,
+          "end": 54,
+          "clause": "What party established in 1797 won an election in 2007?",
+          "columnIndex": 5,
+          "columnCandidates": [
+            5
+          ],
+          "columnMatchReason": "'election in 2007' directly matches the Election header and rows.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          2,
+          0,
+          1797
+        ],
+        [
+          5,
+          0,
+          2007
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7641
+}

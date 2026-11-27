@@ -1,0 +1,435 @@
+{
+  "arm": "E2",
+  "position": 285,
+  "example_id": "test:11482:2-11568882-2",
+  "original_index": 11482,
+  "table_id": "2-11568882-2",
+  "question": "What's in third place that's going 1-0?",
+  "gold_sql": {
+    "sel": 5,
+    "conds": [
+      [
+        2,
+        0,
+        "1-0"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "1-0"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "1-0"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "1-0",
+        "value": "1-0",
+        "start": 35,
+        "end": 38,
+        "clause": "What's in third place that's going 1-0?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The score wording \"going 1-0\" maps to the Score field, and the table contains a 1-0 score.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "1-0",
+        "value": "1-0",
+        "start": 35,
+        "end": 38
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What's in third place that's going 1-0?",
+      "table": {
+        "header": [
+          "Year",
+          "Winners",
+          "Score",
+          "Runners Up",
+          "Venue",
+          "3rd Place"
+        ],
+        "page_title": "Vodacom Challenge",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 11568882,
+        "id": "2-11568882-2",
+        "section_title": "Vodacom Challenge Results with European Teams",
+        "rows": [
+          [
+            "2006 Details",
+            "Kaizer Chiefs",
+            "0-0 4-3 on Pens",
+            "Manchester United",
+            "Loftus Versfeld , Pretoria",
+            "Orlando Pirates"
+          ],
+          [
+            "2007 Details",
+            "Tottenham Hotspur",
+            "3-0",
+            "Orlando Pirates",
+            "Loftus Versfeld , Pretoria",
+            "Kaizer Chiefs"
+          ],
+          [
+            "2008 Details",
+            "Manchester United",
+            "4-0",
+            "Kaizer Chiefs",
+            "Loftus Versfeld , Pretoria",
+            "Orlando Pirates"
+          ],
+          [
+            "2009 Details",
+            "Kaizer Chiefs",
+            "1-0",
+            "Manchester City",
+            "Loftus Versfeld , Pretoria",
+            "Orlando Pirates"
+          ],
+          [
+            "2010",
+            "Cancelled due to 2010 FIFA World Cup",
+            "Cancelled due to 2010 FIFA World Cup",
+            "Cancelled due to 2010 FIFA World Cup",
+            "Cancelled due to 2010 FIFA World Cup",
+            "Cancelled due to 2010 FIFA World Cup"
+          ],
+          [
+            "2011 Details",
+            "Tottenham Hotspur",
+            "3-0",
+            "Orlando Pirates",
+            "Ellis Park , Johannesburg",
+            "Kaizer Chiefs"
+          ],
+          [
+            "2012",
+            "Cancelled due to \"time constraints\".",
+            "Cancelled due to \"time constraints\".",
+            "Cancelled due to \"time constraints\".",
+            "Cancelled due to \"time constraints\".",
+            "Cancelled due to \"time constraints\"."
+          ]
+        ],
+        "caption": "Vodacom Challenge Results with European Teams",
+        "headers": [
+          "Year",
+          "Winners",
+          "Score",
+          "Runners Up",
+          "Venue",
+          "3rd Place"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-11568882-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "1-0",
+              "value": "1-0",
+              "start": 35,
+              "end": 38
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ca6523f769bf056622b9501896b5425056174de327715816db6f7736ad890e5c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4932,
+              "completion_tokens": 21,
+              "total_tokens": 4953,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1-0",
+              "value": "1-0",
+              "start": 35,
+              "end": 38,
+              "clause": "What's in third place that's going 1-0?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "1-0",
+              "value": "1-0",
+              "start": 35,
+              "end": 38,
+              "clause": "What's in third place that's going 1-0?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1-0",
+              "value": "1-0",
+              "start": 35,
+              "end": 38,
+              "clause": "What's in third place that's going 1-0?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The score wording \"going 1-0\" maps to the Score field, and the table contains a 1-0 score."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "7a4d6399c3ba6366bcd4cda9590f24f92d1c1dcb6ca685ae0f0d1ef2c1b600f9",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4968,
+              "completion_tokens": 48,
+              "total_tokens": 5016,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1-0",
+              "value": "1-0",
+              "start": 35,
+              "end": 38,
+              "clause": "What's in third place that's going 1-0?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The score wording \"going 1-0\" maps to the Score field, and the table contains a 1-0 score.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c2d4e7bb19678270abf3876bae5b0f8401f7e3f14e7911f3497860dc7a368849",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5040,
+              "completion_tokens": 9,
+              "total_tokens": 5049,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1-0",
+              "value": "1-0",
+              "start": 35,
+              "end": 38,
+              "clause": "What's in third place that's going 1-0?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The score wording \"going 1-0\" maps to the Score field, and the table contains a 1-0 score.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0bfda9d7ab16a6a0e469414f46b667d2e3a27ec7b9e777a6e4ddd50800d29feb",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4991,
+              "completion_tokens": 12,
+              "total_tokens": 5003,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1-0",
+              "value": "1-0",
+              "start": 35,
+              "end": 38,
+              "clause": "What's in third place that's going 1-0?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The score wording \"going 1-0\" maps to the Score field, and the table contains a 1-0 score.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1-0",
+              "value": "1-0",
+              "start": 35,
+              "end": 38,
+              "clause": "What's in third place that's going 1-0?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The score wording \"going 1-0\" maps to the Score field, and the table contains a 1-0 score.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "1-0",
+              "value": "1-0",
+              "start": 35,
+              "end": 38,
+              "clause": "What's in third place that's going 1-0?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The score wording \"going 1-0\" maps to the Score field, and the table contains a 1-0 score.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "1-0"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "1-0",
+          "value": "1-0",
+          "start": 35,
+          "end": 38
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "1-0",
+          "value": "1-0",
+          "start": 35,
+          "end": 38,
+          "clause": "What's in third place that's going 1-0?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The score wording \"going 1-0\" maps to the Score field, and the table contains a 1-0 score.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          2,
+          0,
+          "1-0"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7687
+}

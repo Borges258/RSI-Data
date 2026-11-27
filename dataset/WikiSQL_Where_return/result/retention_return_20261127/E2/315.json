@@ -1,0 +1,425 @@
+{
+  "arm": "E2",
+  "position": 315,
+  "example_id": "test:12286:2-18233834-8",
+  "original_index": 12286,
+  "table_id": "2-18233834-8",
+  "question": "What is the average year of the montreal expos?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        2,
+        0,
+        "montreal expos"
+      ]
+    ],
+    "agg": 5
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "Montreal Expos"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "Montreal Expos"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "montreal expos",
+        "value": "Montreal Expos",
+        "start": 32,
+        "end": 46,
+        "clause": "What is the average year of the montreal expos?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "'Montreal Expos' is a team name, matching the Team header and row evidence.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "montreal expos",
+        "value": "Montreal Expos",
+        "start": 32,
+        "end": 46
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the average year of the montreal expos?",
+      "table": {
+        "header": [
+          "Pick",
+          "Player",
+          "Team",
+          "Position",
+          "Year"
+        ],
+        "page_title": "Michigan Wolverines baseball",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "real"
+        ],
+        "page_id": 18233834,
+        "id": "2-18233834-8",
+        "section_title": "First-Round MLB Draft Picks",
+        "rows": [
+          [
+            "13",
+            "Rick Leach",
+            "Detroit Tigers",
+            "OF",
+            "1979"
+          ],
+          [
+            "16",
+            "Steve Howe",
+            "Los Angeles Dodgers",
+            "LHP",
+            "1979"
+          ],
+          [
+            "25",
+            "Steve Perry",
+            "Los Angeles Dodgers",
+            "RHP",
+            "1979"
+          ],
+          [
+            "14",
+            "Rich Stoll",
+            "Montreal Expos",
+            "RHP",
+            "1983"
+          ],
+          [
+            "4",
+            "Barry Larkin",
+            "Cincinnati Reds",
+            "SS",
+            "1985"
+          ],
+          [
+            "8",
+            "Jim Abbott",
+            "California Angels",
+            "LHP",
+            "1988"
+          ],
+          [
+            "28",
+            "David Parrish",
+            "New York Yankees",
+            "C",
+            "2000"
+          ]
+        ],
+        "caption": "First-Round MLB Draft Picks",
+        "headers": [
+          "Pick",
+          "Player",
+          "Team",
+          "Position",
+          "Year"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-18233834-8",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "montreal expos",
+              "value": "Montreal Expos",
+              "start": 32,
+              "end": 46
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c5b0082192ba0b7eaad55a34fa1f572fa181e33ccfd0173fe30b39ed6337f7bd",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4780,
+              "completion_tokens": 22,
+              "total_tokens": 4802,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "montreal expos",
+              "value": "Montreal Expos",
+              "start": 32,
+              "end": 46,
+              "clause": "What is the average year of the montreal expos?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "montreal expos",
+              "value": "Montreal Expos",
+              "start": 32,
+              "end": 46,
+              "clause": "What is the average year of the montreal expos?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "montreal expos",
+              "value": "Montreal Expos",
+              "start": 32,
+              "end": 46,
+              "clause": "What is the average year of the montreal expos?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'Montreal Expos' is a team name, matching the Team header and row evidence."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "8886b2039ec0f5d45277d0fb90c974f0ce3886a2d249c7773eaaf721b77ab2d7",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4817,
+              "completion_tokens": 40,
+              "total_tokens": 4857,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "montreal expos",
+              "value": "Montreal Expos",
+              "start": 32,
+              "end": 46,
+              "clause": "What is the average year of the montreal expos?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'Montreal Expos' is a team name, matching the Team header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "115c8c61d39750d71b1b1c22ea58ccd800c4a7c660876db420b62670de0dc885",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4880,
+              "completion_tokens": 9,
+              "total_tokens": 4889,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "montreal expos",
+              "value": "Montreal Expos",
+              "start": 32,
+              "end": 46,
+              "clause": "What is the average year of the montreal expos?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'Montreal Expos' is a team name, matching the Team header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "9a8600837e99a9847acf33fb3a4d5bca82235eb0e00fa305b2b19e686b422ffd",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4831,
+              "completion_tokens": 13,
+              "total_tokens": 4844,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "montreal expos",
+              "value": "Montreal Expos",
+              "start": 32,
+              "end": 46,
+              "clause": "What is the average year of the montreal expos?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'Montreal Expos' is a team name, matching the Team header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "montreal expos",
+              "value": "Montreal Expos",
+              "start": 32,
+              "end": 46,
+              "clause": "What is the average year of the montreal expos?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'Montreal Expos' is a team name, matching the Team header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "montreal expos",
+              "value": "Montreal Expos",
+              "start": 32,
+              "end": 46,
+              "clause": "What is the average year of the montreal expos?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'Montreal Expos' is a team name, matching the Team header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "Montreal Expos"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "montreal expos",
+          "value": "Montreal Expos",
+          "start": 32,
+          "end": 46
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "montreal expos",
+          "value": "Montreal Expos",
+          "start": 32,
+          "end": 46,
+          "clause": "What is the average year of the montreal expos?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "'Montreal Expos' is a team name, matching the Team header and row evidence.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          2,
+          0,
+          "Montreal Expos"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8344
+}

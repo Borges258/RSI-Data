@@ -1,0 +1,432 @@
+{
+  "arm": "E2",
+  "position": 114,
+  "example_id": "test:8006:2-16410647-3",
+  "original_index": 8006,
+  "table_id": "2-16410647-3",
+  "question": "Which frequency belongs to the beat branding?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        2,
+        0,
+        "the beat"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "The Beat"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "The Beat"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "beat",
+        "value": "The Beat",
+        "start": 31,
+        "end": 35,
+        "clause": "Which frequency belongs to the beat branding?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The question explicitly identifies \"beat\" as branding, and \"The Beat\" appears in the Branding column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "beat",
+        "value": "The Beat",
+        "start": 31,
+        "end": 35
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Which frequency belongs to the beat branding?",
+      "table": {
+        "header": [
+          "Frequency",
+          "Call sign",
+          "Branding",
+          "Format",
+          "Owner"
+        ],
+        "page_title": "Media in London, Ontario",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 16410647,
+        "id": "2-16410647-3",
+        "section_title": "Radio",
+        "rows": [
+          [
+            "FM 91.5",
+            "CKBT-FM",
+            "The Beat",
+            "top 40",
+            "Corus Entertainment"
+          ],
+          [
+            "FM 94.1",
+            "CKZM-FM",
+            "MyFM",
+            "adult contemporary",
+            "My Broadcasting Corporation"
+          ],
+          [
+            "FM 96.7",
+            "CHYM-FM",
+            "CHYM FM",
+            "adult contemporary",
+            "Rogers Radio"
+          ],
+          [
+            "FM 101.3",
+            "CKOT-FM",
+            "Easy 101",
+            "soft adult contemporary",
+            "Tillsonburg Broadcasting"
+          ],
+          [
+            "FM 103.1",
+            "CFHK-FM",
+            "Fresh FM",
+            "hot adult contemporary",
+            "Corus Entertainment"
+          ],
+          [
+            "FM 103.9",
+            "CKDK-FM",
+            "More 103.9 FM",
+            "adult hits",
+            "Corus Entertainment"
+          ],
+          [
+            "FM 104.7",
+            "CIHR-FM",
+            "Heart FM",
+            "adult contemporary",
+            "Byrnes Communications"
+          ],
+          [
+            "FM 105.3",
+            "CFCA-FM",
+            "KOOL-FM",
+            "adult hits",
+            "Bell Media"
+          ]
+        ],
+        "caption": "Radio",
+        "headers": [
+          "Frequency",
+          "Call sign",
+          "Branding",
+          "Format",
+          "Owner"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-16410647-3",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "beat",
+              "value": "The Beat",
+              "start": 31,
+              "end": 35
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "4e63e8e498388fa20a160f98788cd2205c9c766df0d7ee45760a193fd302d0d2",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4849,
+              "completion_tokens": 18,
+              "total_tokens": 4867,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "beat",
+              "value": "The Beat",
+              "start": 31,
+              "end": 35,
+              "clause": "Which frequency belongs to the beat branding?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "beat",
+              "value": "The Beat",
+              "start": 31,
+              "end": 35,
+              "clause": "Which frequency belongs to the beat branding?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "beat",
+              "value": "The Beat",
+              "start": 31,
+              "end": 35,
+              "clause": "Which frequency belongs to the beat branding?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies \"beat\" as branding, and \"The Beat\" appears in the Branding column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "1a097fd582d3f9cb8b96c9260b6f402bebb6c0aa737923efe5e3d1980e068a02",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4879,
+              "completion_tokens": 42,
+              "total_tokens": 4921,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "beat",
+              "value": "The Beat",
+              "start": 31,
+              "end": 35,
+              "clause": "Which frequency belongs to the beat branding?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies \"beat\" as branding, and \"The Beat\" appears in the Branding column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "6feea3e4ef08b17f59ab59fc61a2137cf1ae53c078fa69a390d95acab18fc78f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4945,
+              "completion_tokens": 9,
+              "total_tokens": 4954,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "beat",
+              "value": "The Beat",
+              "start": 31,
+              "end": 35,
+              "clause": "Which frequency belongs to the beat branding?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies \"beat\" as branding, and \"The Beat\" appears in the Branding column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "994fc625af5dfc2c8e8c030007eb368346bcffda109d9b091358759160395678",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4896,
+              "completion_tokens": 11,
+              "total_tokens": 4907,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "beat",
+              "value": "The Beat",
+              "start": 31,
+              "end": 35,
+              "clause": "Which frequency belongs to the beat branding?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies \"beat\" as branding, and \"The Beat\" appears in the Branding column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "beat",
+              "value": "The Beat",
+              "start": 31,
+              "end": 35,
+              "clause": "Which frequency belongs to the beat branding?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies \"beat\" as branding, and \"The Beat\" appears in the Branding column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "beat",
+              "value": "The Beat",
+              "start": 31,
+              "end": 35,
+              "clause": "Which frequency belongs to the beat branding?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies \"beat\" as branding, and \"The Beat\" appears in the Branding column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "The Beat"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "beat",
+          "value": "The Beat",
+          "start": 31,
+          "end": 35
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "beat",
+          "value": "The Beat",
+          "start": 31,
+          "end": 35,
+          "clause": "Which frequency belongs to the beat branding?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The question explicitly identifies \"beat\" as branding, and \"The Beat\" appears in the Branding column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          2,
+          0,
+          "The Beat"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8078
+}

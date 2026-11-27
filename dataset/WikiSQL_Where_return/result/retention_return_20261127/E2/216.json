@@ -1,0 +1,581 @@
+{
+  "arm": "E2",
+  "position": 216,
+  "example_id": "test:8220:2-17026847-16",
+  "original_index": 8220,
+  "table_id": "2-17026847-16",
+  "question": "Who was the home team in the game with more than 1675, and Olimpia was the away side?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        4,
+        1,
+        1675
+      ],
+      [
+        3,
+        0,
+        "olimpia"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      4,
+      1,
+      1675
+    ],
+    [
+      3,
+      0,
+      "Olimpia"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        1,
+        1675
+      ],
+      [
+        3,
+        0,
+        "Olimpia"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "more than 1675",
+        "value": 1675,
+        "start": 39,
+        "end": 53,
+        "clause": "Who was the home team in the game with more than 1675,",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The numeric threshold refers to game attendance, and Attendance contains values comparable to 1675.",
+        "operator": ">",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "Olimpia",
+        "value": "Olimpia",
+        "start": 59,
+        "end": 66,
+        "clause": "and Olimpia was the away side?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The question explicitly identifies Olimpia as the away side, matching the Away column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "more than 1675",
+        "value": "1675",
+        "start": 39,
+        "end": 53
+      },
+      {
+        "surface": "Olimpia",
+        "value": "Olimpia",
+        "start": 59,
+        "end": 66
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Who was the home team in the game with more than 1675, and Olimpia was the away side?",
+      "table": {
+        "header": [
+          "Date",
+          "Home",
+          "Score",
+          "Away",
+          "Attendance"
+        ],
+        "page_title": "2008–09 Apertura Honduran Liga Nacional",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "real"
+        ],
+        "page_id": 17026847,
+        "id": "2-17026847-16",
+        "section_title": "Round 14",
+        "rows": [
+          [
+            "18 October 2008",
+            "Marathon",
+            "1:0",
+            "Olimpia",
+            "6650"
+          ],
+          [
+            "18 October 2008",
+            "Victoria",
+            "1:0",
+            "Real Juventud",
+            "369"
+          ],
+          [
+            "19 October 2008",
+            "Motagua",
+            "1:0",
+            "Vida",
+            "1675"
+          ],
+          [
+            "19 October 2008",
+            "Platense",
+            "0:1",
+            "Real Espana",
+            "2356"
+          ],
+          [
+            "19 October 2008",
+            "Hispano",
+            "2:1",
+            "Deportes Savio",
+            "225"
+          ]
+        ],
+        "caption": "Round 14",
+        "headers": [
+          "Date",
+          "Home",
+          "Score",
+          "Away",
+          "Attendance"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-17026847-16",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "more than 1675",
+              "value": "1675",
+              "start": 39,
+              "end": 53
+            },
+            {
+              "surface": "Olimpia",
+              "value": "Olimpia",
+              "start": 59,
+              "end": 66
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f92cf33b8fa709855c40f7dbae7fe89910a74dc42fc8a0066e8c2f8f72eade52",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4782,
+              "completion_tokens": 34,
+              "total_tokens": 4816,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "more than 1675",
+              "value": "1675",
+              "start": 39,
+              "end": 53,
+              "clause": "Who was the home team in the game with more than 1675,"
+            },
+            {
+              "surface": "Olimpia",
+              "value": "Olimpia",
+              "start": 59,
+              "end": 66,
+              "clause": "and Olimpia was the away side?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "more than 1675",
+              "value": "1675",
+              "start": 39,
+              "end": 53,
+              "clause": "Who was the home team in the game with more than 1675,"
+            },
+            {
+              "surface": "Olimpia",
+              "value": "Olimpia",
+              "start": 59,
+              "end": 66,
+              "clause": "and Olimpia was the away side?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "more than 1675",
+              "value": "1675",
+              "start": 39,
+              "end": 53,
+              "clause": "Who was the home team in the game with more than 1675,",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The numeric threshold refers to game attendance, and Attendance contains values comparable to 1675."
+            },
+            {
+              "surface": "Olimpia",
+              "value": "Olimpia",
+              "start": 59,
+              "end": 66,
+              "clause": "and Olimpia was the away side?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies Olimpia as the away side, matching the Away column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "6c9f2de7db8b86ed65ee5f01c55a2ca518b9664cf9dfef917cc6f4dabaddaad9",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4855,
+              "completion_tokens": 59,
+              "total_tokens": 4914,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "more than 1675",
+              "value": "1675",
+              "start": 39,
+              "end": 53,
+              "clause": "Who was the home team in the game with more than 1675,",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The numeric threshold refers to game attendance, and Attendance contains values comparable to 1675.",
+              "operator": ">"
+            },
+            {
+              "surface": "Olimpia",
+              "value": "Olimpia",
+              "start": 59,
+              "end": 66,
+              "clause": "and Olimpia was the away side?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies Olimpia as the away side, matching the Away column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "50369d50fad6a7e286d3751edd4e4eefef49152e39309f37ce96797041adf6d0",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4949,
+              "completion_tokens": 11,
+              "total_tokens": 4960,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "more than 1675",
+              "value": 1675,
+              "start": 39,
+              "end": 53,
+              "clause": "Who was the home team in the game with more than 1675,",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The numeric threshold refers to game attendance, and Attendance contains values comparable to 1675.",
+              "operator": ">"
+            },
+            {
+              "surface": "Olimpia",
+              "value": "Olimpia",
+              "start": 59,
+              "end": 66,
+              "clause": "and Olimpia was the away side?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies Olimpia as the away side, matching the Away column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b19ebc287d436ab9ca94b6f2863a8cb00beab38870d325a49d35189fd8c7a051",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4903,
+              "completion_tokens": 15,
+              "total_tokens": 4918,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "more than 1675",
+              "value": "1675",
+              "start": 39,
+              "end": 53,
+              "clause": "Who was the home team in the game with more than 1675,",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The numeric threshold refers to game attendance, and Attendance contains values comparable to 1675.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Olimpia",
+              "value": "Olimpia",
+              "start": 59,
+              "end": 66,
+              "clause": "and Olimpia was the away side?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies Olimpia as the away side, matching the Away column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "more than 1675",
+              "value": 1675,
+              "start": 39,
+              "end": 53,
+              "clause": "Who was the home team in the game with more than 1675,",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The numeric threshold refers to game attendance, and Attendance contains values comparable to 1675.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Olimpia",
+              "value": "Olimpia",
+              "start": 59,
+              "end": 66,
+              "clause": "and Olimpia was the away side?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies Olimpia as the away side, matching the Away column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "more than 1675",
+              "value": 1675,
+              "start": 39,
+              "end": 53,
+              "clause": "Who was the home team in the game with more than 1675,",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The numeric threshold refers to game attendance, and Attendance contains values comparable to 1675.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Olimpia",
+              "value": "Olimpia",
+              "start": 59,
+              "end": 66,
+              "clause": "and Olimpia was the away side?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies Olimpia as the away side, matching the Away column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              1,
+              1675
+            ],
+            [
+              3,
+              0,
+              "Olimpia"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "more than 1675",
+          "value": "1675",
+          "start": 39,
+          "end": 53
+        },
+        {
+          "surface": "Olimpia",
+          "value": "Olimpia",
+          "start": 59,
+          "end": 66
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "more than 1675",
+          "value": 1675,
+          "start": 39,
+          "end": 53,
+          "clause": "Who was the home team in the game with more than 1675,",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The numeric threshold refers to game attendance, and Attendance contains values comparable to 1675.",
+          "operator": ">",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "Olimpia",
+          "value": "Olimpia",
+          "start": 59,
+          "end": 66,
+          "clause": "and Olimpia was the away side?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The question explicitly identifies Olimpia as the away side, matching the Away column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          4,
+          1,
+          1675
+        ],
+        [
+          3,
+          0,
+          "Olimpia"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7985
+}

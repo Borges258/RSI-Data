@@ -1,0 +1,483 @@
+{
+  "arm": "E2",
+  "position": 363,
+  "example_id": "test:14271:2-18594233-7",
+  "original_index": 14271,
+  "table_id": "2-18594233-7",
+  "question": "Which player has a score of 71-69-71-67=278?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        3,
+        0,
+        "71-69-71-67=278"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      3,
+      0,
+      "71-69-71-67=278"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        0,
+        "71-69-71-67=278"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "71-69-71-67=278",
+        "value": "71-69-71-67=278",
+        "start": 28,
+        "end": 43,
+        "clause": "Which player has a score of 71-69-71-67=278?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The question explicitly says \"score,\" matching the Score header, and the exact value appears in that column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "71-69-71-67=278",
+        "value": "71-69-71-67=278",
+        "start": 28,
+        "end": 43
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Which player has a score of 71-69-71-67=278?",
+      "table": {
+        "header": [
+          "Place",
+          "Player",
+          "Country",
+          "Score",
+          "To par",
+          "Money (US$)"
+        ],
+        "page_title": "2008 Women's British Open",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "real"
+        ],
+        "page_id": 18594233,
+        "id": "2-18594233-7",
+        "section_title": "Final round",
+        "rows": [
+          [
+            "1",
+            "Jiyai Shin",
+            "South Korea",
+            "66-68-70-66=270",
+            "−18",
+            "314,464"
+          ],
+          [
+            "2",
+            "Yani Tseng",
+            "Taiwan",
+            "70-69-68-66=273",
+            "−15",
+            "196,540"
+          ],
+          [
+            "T3",
+            "Yuri Fudoh",
+            "Japan",
+            "66-68-69-71=274",
+            "−14",
+            "122,838"
+          ],
+          [
+            "T3",
+            "Eun-Hee Ji",
+            "South Korea",
+            "68-70-69-67=274",
+            "−14",
+            "122,838"
+          ],
+          [
+            "5",
+            "Ai Miyazato",
+            "Japan",
+            "68-69-68-70=275",
+            "−13",
+            "88,443"
+          ],
+          [
+            "6",
+            "Cristie Kerr",
+            "United States",
+            "71-65-70-70=276",
+            "−12",
+            "76,651"
+          ],
+          [
+            "T7",
+            "Lorena Ochoa",
+            "Mexico",
+            "69-68-71-69=277",
+            "−11",
+            "65,841"
+          ],
+          [
+            "T7",
+            "Momoko Ueda",
+            "Japan",
+            "66-72-70-69=277",
+            "−11",
+            "65,841"
+          ],
+          [
+            "T9",
+            "Paula Creamer",
+            "United States",
+            "72-69-70-67=278",
+            "−10",
+            "47,563"
+          ],
+          [
+            "T9",
+            "Natalie Gulbis",
+            "United States",
+            "69-68-70-71=278",
+            "−10",
+            "47,563"
+          ],
+          [
+            "T9",
+            "Hee-Won Han",
+            "South Korea",
+            "71-69-71-67=278",
+            "−10",
+            "47,563"
+          ],
+          [
+            "T9",
+            "In-Kyung Kim",
+            "South Korea",
+            "71-68-72-67=278",
+            "−10",
+            "47,563"
+          ],
+          [
+            "T9",
+            "Karrie Webb",
+            "Australia",
+            "72-69-69-68=278",
+            "−10",
+            "47,563"
+          ]
+        ],
+        "caption": "Final round",
+        "headers": [
+          "Place",
+          "Player",
+          "Country",
+          "Score",
+          "To par",
+          "Money (US$)"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-18594233-7",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "71-69-71-67=278",
+              "value": "71-69-71-67=278",
+              "start": 28,
+              "end": 43
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "17dd4814bb6dc06770c04a7f26d8d2aae7c5eac6db9663c1dd8ef1bdb8b20803",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5055,
+              "completion_tokens": 33,
+              "total_tokens": 5088,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "71-69-71-67=278",
+              "value": "71-69-71-67=278",
+              "start": 28,
+              "end": 43,
+              "clause": "Which player has a score of 71-69-71-67=278?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "71-69-71-67=278",
+              "value": "71-69-71-67=278",
+              "start": 28,
+              "end": 43,
+              "clause": "Which player has a score of 71-69-71-67=278?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "71-69-71-67=278",
+              "value": "71-69-71-67=278",
+              "start": 28,
+              "end": 43,
+              "clause": "Which player has a score of 71-69-71-67=278?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says \"score,\" matching the Score header, and the exact value appears in that column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "aeb5d2594588e3d794ba52a8439b3c852c25f0f171d8b036083f4bc59f591861",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5109,
+              "completion_tokens": 42,
+              "total_tokens": 5151,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "71-69-71-67=278",
+              "value": "71-69-71-67=278",
+              "start": 28,
+              "end": 43,
+              "clause": "Which player has a score of 71-69-71-67=278?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says \"score,\" matching the Score header, and the exact value appears in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "bcef6f5c568325e219b0a1477604d2983c95088e6c12f325cd2ee0f5a282d044",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5175,
+              "completion_tokens": 9,
+              "total_tokens": 5184,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "71-69-71-67=278",
+              "value": "71-69-71-67=278",
+              "start": 28,
+              "end": 43,
+              "clause": "Which player has a score of 71-69-71-67=278?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says \"score,\" matching the Score header, and the exact value appears in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "5a9fcf32462dc3964849ce6f4a814c7d8db17c0dff51713d56ed830c3a0fd7f5",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5126,
+              "completion_tokens": 18,
+              "total_tokens": 5144,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "71-69-71-67=278",
+              "value": "71-69-71-67=278",
+              "start": 28,
+              "end": 43,
+              "clause": "Which player has a score of 71-69-71-67=278?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says \"score,\" matching the Score header, and the exact value appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "71-69-71-67=278",
+              "value": "71-69-71-67=278",
+              "start": 28,
+              "end": 43,
+              "clause": "Which player has a score of 71-69-71-67=278?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says \"score,\" matching the Score header, and the exact value appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "71-69-71-67=278",
+              "value": "71-69-71-67=278",
+              "start": 28,
+              "end": 43,
+              "clause": "Which player has a score of 71-69-71-67=278?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says \"score,\" matching the Score header, and the exact value appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              0,
+              "71-69-71-67=278"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "71-69-71-67=278",
+          "value": "71-69-71-67=278",
+          "start": 28,
+          "end": 43
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "71-69-71-67=278",
+          "value": "71-69-71-67=278",
+          "start": 28,
+          "end": 43,
+          "clause": "Which player has a score of 71-69-71-67=278?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The question explicitly says \"score,\" matching the Score header, and the exact value appears in that column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          3,
+          0,
+          "71-69-71-67=278"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8188
+}

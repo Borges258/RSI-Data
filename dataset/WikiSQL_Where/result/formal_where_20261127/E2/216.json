@@ -1,0 +1,688 @@
+{
+  "arm": "E2",
+  "position": 216,
+  "example_id": "test:6048:2-14888584-4",
+  "original_index": 6048,
+  "table_id": "2-14888584-4",
+  "question": "What is the highest year that Kim was nominated for Over the Rainbow?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        3,
+        0,
+        "over the rainbow"
+      ]
+    ],
+    "agg": 1
+  },
+  "prediction_conds": [],
+  "status": "GROUNDING_FAILED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "GROUNDING_FAILED",
+    "valid": false,
+    "errors": [
+      "condition 0: invalid column",
+      "condition 0: grounding NO_MATCH"
+    ],
+    "conditions": [
+      {
+        "surface": "Kim",
+        "value": "Kim",
+        "start": 30,
+        "end": 33,
+        "clause": "What is the highest year that Kim was nominated for Over the Rainbow?",
+        "columnMatchStatus": "UNRESOLVED",
+        "columnCandidates": [],
+        "columnMatchReason": "Kim identifies the page subject, but no table column contains or represents the person's name.",
+        "operator": "=",
+        "grounded": false,
+        "groundingStatus": "NO_MATCH"
+      },
+      {
+        "surface": "nominated",
+        "value": "Nominated",
+        "start": 38,
+        "end": 47,
+        "clause": "What is the highest year that Kim was nominated for Over the Rainbow?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "Nominated is an award outcome, matching the Result header and cells.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "Over the Rainbow",
+        "value": "Over the Rainbow",
+        "start": 52,
+        "end": 68,
+        "clause": "What is the highest year that Kim was nominated for Over the Rainbow?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "Over the Rainbow is a production title, matching the Film/Series header and row evidence.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "stage": "WHERE_CONDITION_VALIDATE",
+    "originalConditions": [
+      {
+        "surface": "Kim",
+        "value": "Kim",
+        "start": 30,
+        "end": 33
+      },
+      {
+        "surface": "nominated",
+        "value": "Nominated",
+        "start": 38,
+        "end": 47
+      },
+      {
+        "surface": "Over the Rainbow",
+        "value": "Over the Rainbow",
+        "start": 52,
+        "end": 68
+      }
+    ],
+    "halt": true,
+    "completed": false,
+    "conds": [],
+    "warnings": [],
+    "request": {
+      "question": "What is the highest year that Kim was nominated for Over the Rainbow?",
+      "table": {
+        "header": [
+          "Year",
+          "Group",
+          "Award",
+          "Film/Series",
+          "Result"
+        ],
+        "page_title": "Kim Ok-bin",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 14888584,
+        "id": "2-14888584-4",
+        "section_title": "Awards and nominations",
+        "rows": [
+          [
+            "2005",
+            "Blue Dragon Film Awards",
+            "Best New Actress",
+            "Voice",
+            "Nominated"
+          ],
+          [
+            "2006",
+            "Baeksang Arts Awards",
+            "Best New Actress",
+            "Voice",
+            "Nominated"
+          ],
+          [
+            "2006",
+            "MBC Drama Awards",
+            "PD Award",
+            "Over the Rainbow",
+            "Won"
+          ],
+          [
+            "2009",
+            "Sitges Film Festival",
+            "Best Actress",
+            "Thirst",
+            "Won"
+          ],
+          [
+            "2009",
+            "Blue Dragon Film Awards",
+            "Best Actress",
+            "Thirst",
+            "Nominated"
+          ],
+          [
+            "2010",
+            "Green Globe Film Awards",
+            "Best International Actress",
+            "Thirst",
+            "Nominated"
+          ],
+          [
+            "2010",
+            "Baeksang Arts Awards",
+            "Best Actress",
+            "Thirst",
+            "Nominated"
+          ]
+        ],
+        "caption": "Awards and nominations",
+        "headers": [
+          "Year",
+          "Group",
+          "Award",
+          "Film/Series",
+          "Result"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-14888584-4",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 9,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 3,
+          "conditions": [
+            {
+              "surface": "Kim",
+              "value": "Kim",
+              "start": 30,
+              "end": 33
+            },
+            {
+              "surface": "nominated",
+              "value": "Nominated",
+              "start": 38,
+              "end": 47
+            },
+            {
+              "surface": "Over the Rainbow",
+              "value": "Over the Rainbow",
+              "start": 52,
+              "end": 68
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f0216482d4dad289e8b27d62eb3e6ed8a2721264d39343dddc50f3152c088696",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4796,
+              "completion_tokens": 135,
+              "total_tokens": 4931,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 94
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Kim",
+              "value": "Kim",
+              "start": 30,
+              "end": 33,
+              "clause": "What is the highest year that Kim was nominated for Over the Rainbow?"
+            },
+            {
+              "surface": "nominated",
+              "value": "Nominated",
+              "start": 38,
+              "end": 47,
+              "clause": "What is the highest year that Kim was nominated for Over the Rainbow?"
+            },
+            {
+              "surface": "Over the Rainbow",
+              "value": "Over the Rainbow",
+              "start": 52,
+              "end": 68,
+              "clause": "What is the highest year that Kim was nominated for Over the Rainbow?"
+            }
+          ],
+          "count": 3
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Kim",
+              "value": "Kim",
+              "start": 30,
+              "end": 33,
+              "clause": "What is the highest year that Kim was nominated for Over the Rainbow?"
+            },
+            {
+              "surface": "nominated",
+              "value": "Nominated",
+              "start": 38,
+              "end": 47,
+              "clause": "What is the highest year that Kim was nominated for Over the Rainbow?"
+            },
+            {
+              "surface": "Over the Rainbow",
+              "value": "Over the Rainbow",
+              "start": 52,
+              "end": 68,
+              "clause": "What is the highest year that Kim was nominated for Over the Rainbow?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Kim",
+              "value": "Kim",
+              "start": 30,
+              "end": 33,
+              "clause": "What is the highest year that Kim was nominated for Over the Rainbow?",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [],
+              "columnMatchReason": "Kim identifies the page subject, but no table column contains or represents the person's name."
+            },
+            {
+              "surface": "nominated",
+              "value": "Nominated",
+              "start": 38,
+              "end": 47,
+              "clause": "What is the highest year that Kim was nominated for Over the Rainbow?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Nominated is an award outcome, matching the Result header and cells."
+            },
+            {
+              "surface": "Over the Rainbow",
+              "value": "Over the Rainbow",
+              "start": 52,
+              "end": 68,
+              "clause": "What is the highest year that Kim was nominated for Over the Rainbow?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Over the Rainbow is a production title, matching the Film/Series header and row evidence."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "5becff774ca78b5168831927917d74c0966429d6619e90c7f8607b7fac2ab913",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4905,
+              "completion_tokens": 119,
+              "total_tokens": 5024,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 40
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Kim",
+              "value": "Kim",
+              "start": 30,
+              "end": 33,
+              "clause": "What is the highest year that Kim was nominated for Over the Rainbow?",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [],
+              "columnMatchReason": "Kim identifies the page subject, but no table column contains or represents the person's name.",
+              "operator": "="
+            },
+            {
+              "surface": "nominated",
+              "value": "Nominated",
+              "start": 38,
+              "end": 47,
+              "clause": "What is the highest year that Kim was nominated for Over the Rainbow?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Nominated is an award outcome, matching the Result header and cells.",
+              "operator": "="
+            },
+            {
+              "surface": "Over the Rainbow",
+              "value": "Over the Rainbow",
+              "start": 52,
+              "end": 68,
+              "clause": "What is the highest year that Kim was nominated for Over the Rainbow?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Over the Rainbow is a production title, matching the Film/Series header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "7cc6947263df4febc619683fa66afb687ceb5f63aee0add2316815de651a36ca",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5032,
+              "completion_tokens": 13,
+              "total_tokens": 5045,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Kim",
+              "value": "Kim",
+              "start": 30,
+              "end": 33,
+              "clause": "What is the highest year that Kim was nominated for Over the Rainbow?",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [],
+              "columnMatchReason": "Kim identifies the page subject, but no table column contains or represents the person's name.",
+              "operator": "="
+            },
+            {
+              "surface": "nominated",
+              "value": "Nominated",
+              "start": 38,
+              "end": 47,
+              "clause": "What is the highest year that Kim was nominated for Over the Rainbow?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Nominated is an award outcome, matching the Result header and cells.",
+              "operator": "="
+            },
+            {
+              "surface": "Over the Rainbow",
+              "value": "Over the Rainbow",
+              "start": 52,
+              "end": 68,
+              "clause": "What is the highest year that Kim was nominated for Over the Rainbow?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Over the Rainbow is a production title, matching the Film/Series header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ced828e86a37c4df49bee81a4b96da37262499fff7cacacb27d179fdb1459e72",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4989,
+              "completion_tokens": 17,
+              "total_tokens": 5006,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Kim",
+              "value": "Kim",
+              "start": 30,
+              "end": 33,
+              "clause": "What is the highest year that Kim was nominated for Over the Rainbow?",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [],
+              "columnMatchReason": "Kim identifies the page subject, but no table column contains or represents the person's name.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH"
+            },
+            {
+              "surface": "nominated",
+              "value": "Nominated",
+              "start": 38,
+              "end": 47,
+              "clause": "What is the highest year that Kim was nominated for Over the Rainbow?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Nominated is an award outcome, matching the Result header and cells.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Over the Rainbow",
+              "value": "Over the Rainbow",
+              "start": 52,
+              "end": 68,
+              "clause": "What is the highest year that Kim was nominated for Over the Rainbow?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Over the Rainbow is a production title, matching the Film/Series header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Kim",
+              "value": "Kim",
+              "start": 30,
+              "end": 33,
+              "clause": "What is the highest year that Kim was nominated for Over the Rainbow?",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [],
+              "columnMatchReason": "Kim identifies the page subject, but no table column contains or represents the person's name.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH"
+            },
+            {
+              "surface": "nominated",
+              "value": "Nominated",
+              "start": 38,
+              "end": 47,
+              "clause": "What is the highest year that Kim was nominated for Over the Rainbow?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Nominated is an award outcome, matching the Result header and cells.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Over the Rainbow",
+              "value": "Over the Rainbow",
+              "start": 52,
+              "end": 68,
+              "clause": "What is the highest year that Kim was nominated for Over the Rainbow?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Over the Rainbow is a production title, matching the Film/Series header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "GROUNDING_FAILED",
+          "valid": false,
+          "errors": [
+            "condition 0: invalid column",
+            "condition 0: grounding NO_MATCH"
+          ],
+          "conditions": [
+            {
+              "surface": "Kim",
+              "value": "Kim",
+              "start": 30,
+              "end": 33,
+              "clause": "What is the highest year that Kim was nominated for Over the Rainbow?",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [],
+              "columnMatchReason": "Kim identifies the page subject, but no table column contains or represents the person's name.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH"
+            },
+            {
+              "surface": "nominated",
+              "value": "Nominated",
+              "start": 38,
+              "end": 47,
+              "clause": "What is the highest year that Kim was nominated for Over the Rainbow?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Nominated is an award outcome, matching the Result header and cells.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Over the Rainbow",
+              "value": "Over the Rainbow",
+              "start": 52,
+              "end": 68,
+              "clause": "What is the highest year that Kim was nominated for Over the Rainbow?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Over the Rainbow is a production title, matching the Film/Series header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "GROUNDING_FAILED",
+        "stage": "WHERE_CONDITION_VALIDATE",
+        "halt": true,
+        "completed": false,
+        "errors": [
+          "condition 0: invalid column",
+          "condition 0: grounding NO_MATCH"
+        ],
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Kim",
+          "value": "Kim",
+          "start": 30,
+          "end": 33
+        },
+        {
+          "surface": "nominated",
+          "value": "Nominated",
+          "start": 38,
+          "end": 47
+        },
+        {
+          "surface": "Over the Rainbow",
+          "value": "Over the Rainbow",
+          "start": 52,
+          "end": 68
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Kim",
+          "value": "Kim",
+          "start": 30,
+          "end": 33,
+          "clause": "What is the highest year that Kim was nominated for Over the Rainbow?",
+          "columnMatchStatus": "UNRESOLVED",
+          "columnCandidates": [],
+          "columnMatchReason": "Kim identifies the page subject, but no table column contains or represents the person's name.",
+          "operator": "=",
+          "grounded": false,
+          "groundingStatus": "NO_MATCH"
+        },
+        {
+          "surface": "nominated",
+          "value": "Nominated",
+          "start": 38,
+          "end": 47,
+          "clause": "What is the highest year that Kim was nominated for Over the Rainbow?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "Nominated is an award outcome, matching the Result header and cells.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "Over the Rainbow",
+          "value": "Over the Rainbow",
+          "start": 52,
+          "end": 68,
+          "clause": "What is the highest year that Kim was nominated for Over the Rainbow?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "Over the Rainbow is a production title, matching the Film/Series header and row evidence.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 3
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": false,
+  "elapsed_ms": 10500
+}

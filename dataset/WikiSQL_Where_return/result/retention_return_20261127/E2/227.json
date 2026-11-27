@@ -1,0 +1,439 @@
+{
+  "arm": "E2",
+  "position": 227,
+  "example_id": "test:8736:2-17493675-1",
+  "original_index": 8736,
+  "table_id": "2-17493675-1",
+  "question": "Which Release date has a Developer(s) of microsoft research?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        0,
+        0,
+        "microsoft research"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "Microsoft Research"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "Microsoft Research"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "microsoft research",
+        "value": "Microsoft Research",
+        "start": 41,
+        "end": 59,
+        "clause": "Which Release date has a Developer(s) of microsoft research?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "The question explicitly constrains Developer(s), and the value \"Microsoft Research\" appears in that column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "microsoft research",
+        "value": "Microsoft Research",
+        "start": 41,
+        "end": 59
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Which Release date has a Developer(s) of microsoft research?",
+      "table": {
+        "header": [
+          "Developer(s)",
+          "Release date",
+          "Required OS",
+          "Payment",
+          "Type"
+        ],
+        "page_title": "List of free multiplayer online games",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 17493675,
+        "id": "2-17493675-1",
+        "section_title": "Free play",
+        "rows": [
+          [
+            "Microsoft Research",
+            "March 16, 2000",
+            "Windows",
+            "Free to play",
+            "3D"
+          ],
+          [
+            "Zeonix",
+            "January 2003",
+            "Windows",
+            "Free to play",
+            "2D"
+          ],
+          [
+            "Open Source",
+            "January 5, 1996",
+            "Linux",
+            "Free to play",
+            "2D"
+          ],
+          [
+            "Omerta Game Limited",
+            "26 September, 2003",
+            "Browser-based",
+            "Free to Play",
+            "Text"
+          ],
+          [
+            "Open Source",
+            "August 19, 2005",
+            "Windows , OS X , Linux",
+            "Free to Play",
+            "3D"
+          ],
+          [
+            "Virgin Interactive",
+            "November 30, 1997",
+            "Windows",
+            "Free to play",
+            "2D"
+          ],
+          [
+            "Open Source",
+            "August 5, 2000",
+            "Windows , OS X , Linux",
+            "Free to Play",
+            "3D"
+          ],
+          [
+            "Virtonomics Co.",
+            "May 30, 2009",
+            "Windows",
+            "Free to play",
+            "Text"
+          ],
+          [
+            "Open Source",
+            "December 23, 2010",
+            "Windows , OS X , Linux",
+            "Free to Play",
+            "3D"
+          ]
+        ],
+        "caption": "Free play",
+        "headers": [
+          "Developer(s)",
+          "Release date",
+          "Required OS",
+          "Payment",
+          "Type"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-17493675-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "microsoft research",
+              "value": "Microsoft Research",
+              "start": 41,
+              "end": 59
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "780b80128fb249bdd0665aaa4478bd01725c009d8677dabb985c967e0e8cfbf5",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4875,
+              "completion_tokens": 20,
+              "total_tokens": 4895,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "microsoft research",
+              "value": "Microsoft Research",
+              "start": 41,
+              "end": 59,
+              "clause": "Which Release date has a Developer(s) of microsoft research?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "microsoft research",
+              "value": "Microsoft Research",
+              "start": 41,
+              "end": 59,
+              "clause": "Which Release date has a Developer(s) of microsoft research?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "microsoft research",
+              "value": "Microsoft Research",
+              "start": 41,
+              "end": 59,
+              "clause": "Which Release date has a Developer(s) of microsoft research?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly constrains Developer(s), and the value \"Microsoft Research\" appears in that column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d372e24f4f5a23f88dd09fe83d8966b75022fcee3b4cad7a4979c49682d23451",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4911,
+              "completion_tokens": 41,
+              "total_tokens": 4952,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "microsoft research",
+              "value": "Microsoft Research",
+              "start": 41,
+              "end": 59,
+              "clause": "Which Release date has a Developer(s) of microsoft research?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly constrains Developer(s), and the value \"Microsoft Research\" appears in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "5b0960ea04b05a34b0c7e939277bd8bf31d22f23d8b94ec1715656ec3c7bb6c1",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4976,
+              "completion_tokens": 9,
+              "total_tokens": 4985,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "microsoft research",
+              "value": "Microsoft Research",
+              "start": 41,
+              "end": 59,
+              "clause": "Which Release date has a Developer(s) of microsoft research?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly constrains Developer(s), and the value \"Microsoft Research\" appears in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "70cf1665d8269d56826308e7b679811d70bbe003e8b4de35e004faa7ee0702c5",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4927,
+              "completion_tokens": 11,
+              "total_tokens": 4938,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "microsoft research",
+              "value": "Microsoft Research",
+              "start": 41,
+              "end": 59,
+              "clause": "Which Release date has a Developer(s) of microsoft research?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly constrains Developer(s), and the value \"Microsoft Research\" appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "microsoft research",
+              "value": "Microsoft Research",
+              "start": 41,
+              "end": 59,
+              "clause": "Which Release date has a Developer(s) of microsoft research?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly constrains Developer(s), and the value \"Microsoft Research\" appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "microsoft research",
+              "value": "Microsoft Research",
+              "start": 41,
+              "end": 59,
+              "clause": "Which Release date has a Developer(s) of microsoft research?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly constrains Developer(s), and the value \"Microsoft Research\" appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              "Microsoft Research"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "microsoft research",
+          "value": "Microsoft Research",
+          "start": 41,
+          "end": 59
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "microsoft research",
+          "value": "Microsoft Research",
+          "start": 41,
+          "end": 59,
+          "clause": "Which Release date has a Developer(s) of microsoft research?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "The question explicitly constrains Developer(s), and the value \"Microsoft Research\" appears in that column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          0,
+          0,
+          "Microsoft Research"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8625
+}

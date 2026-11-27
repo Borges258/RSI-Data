@@ -1,0 +1,651 @@
+{
+  "arm": "E2",
+  "position": 130,
+  "example_id": "test:4677:2-10560886-7",
+  "original_index": 4677,
+  "table_id": "2-10560886-7",
+  "question": "What guard/forward started in 1957?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        3,
+        0,
+        "1957"
+      ],
+      [
+        2,
+        0,
+        "guard/forward"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "Guard/Forward"
+    ],
+    [
+      3,
+      0,
+      "1957"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "Guard/Forward"
+      ],
+      [
+        3,
+        0,
+        "1957"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "guard/forward",
+        "value": "Guard/Forward",
+        "start": 5,
+        "end": 18,
+        "clause": "What guard/forward started in 1957?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "\"guard/forward\" denotes the player's Position, matching Position cells.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "1957",
+        "value": "1957",
+        "start": 30,
+        "end": 34,
+        "clause": "What guard/forward started in 1957?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "\"started in 1957\" refers to the roster From year, matching the From column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "guard/forward",
+        "value": "Guard/Forward",
+        "start": 5,
+        "end": 18
+      },
+      {
+        "surface": "1957",
+        "value": "1957",
+        "start": 30,
+        "end": 34
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What guard/forward started in 1957?",
+      "table": {
+        "header": [
+          "Player",
+          "Nationality",
+          "Position",
+          "From",
+          "School/Country"
+        ],
+        "page_title": "Los Angeles Lakers all-time roster",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 10560886,
+        "id": "2-10560886-7",
+        "section_title": "F",
+        "rows": [
+          [
+            ", John Fairchild",
+            "United States",
+            "Forward",
+            "1965",
+            "BYU"
+          ],
+          [
+            "Farmar, Jordan Jordan Farmar",
+            "United States",
+            "Guard",
+            "2006",
+            "UCLA"
+          ],
+          [
+            ", Ron Feiereisel",
+            "United States",
+            "Guard",
+            "1955",
+            "DePaul"
+          ],
+          [
+            ", Ray Felix",
+            "United States",
+            "Center",
+            "1959",
+            "Long Island"
+          ],
+          [
+            ", Arnie Ferrin",
+            "United States",
+            "Guard/Forward",
+            "1948",
+            "Utah"
+          ],
+          [
+            ", Hank Finkel",
+            "United States",
+            "Center",
+            "1966",
+            "Dayton"
+          ],
+          [
+            ", Derek Fisher",
+            "United States",
+            "Guard",
+            "1996 2007",
+            "Arkansas-Little Rock"
+          ],
+          [
+            ", Ed Fleming",
+            "United States",
+            "Guard/Forward",
+            "1957",
+            "Niagara"
+          ],
+          [
+            ", Don Ford",
+            "United States",
+            "Forward",
+            "1975",
+            "UCSB"
+          ],
+          [
+            ", Donnie Forman",
+            "United States",
+            "Guard",
+            "1948",
+            "NYU"
+          ],
+          [
+            ", Greg Foster",
+            "United States",
+            "Forward/Center",
+            "2000",
+            "UTEP"
+          ],
+          [
+            ", Larry Foust",
+            "United States",
+            "Forward/Center",
+            "1957",
+            "La Salle"
+          ],
+          [
+            ", Rick Fox",
+            "Canada",
+            "Forward",
+            "1997",
+            "North Carolina"
+          ],
+          [
+            ", Donnie Freeman",
+            "United States",
+            "Guard",
+            "1975",
+            "Illinois"
+          ],
+          [
+            ", Jim Fritsche",
+            "United States",
+            "Forward/Center",
+            "1953",
+            "Hamline"
+          ]
+        ],
+        "caption": "F",
+        "headers": [
+          "Player",
+          "Nationality",
+          "Position",
+          "From",
+          "School/Country"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-10560886-7",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "guard/forward",
+              "value": "Guard/Forward",
+              "start": 5,
+              "end": 18
+            },
+            {
+              "surface": "1957",
+              "value": "1957",
+              "start": 30,
+              "end": 34
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "76c4d99d85d77ae9c1523b5215b791c412eb293d7dad723b027b516ea7ab86d1",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4934,
+              "completion_tokens": 31,
+              "total_tokens": 4965,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "guard/forward",
+              "value": "Guard/Forward",
+              "start": 5,
+              "end": 18,
+              "clause": "What guard/forward started in 1957?"
+            },
+            {
+              "surface": "1957",
+              "value": "1957",
+              "start": 30,
+              "end": 34,
+              "clause": "What guard/forward started in 1957?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "guard/forward",
+              "value": "Guard/Forward",
+              "start": 5,
+              "end": 18,
+              "clause": "What guard/forward started in 1957?"
+            },
+            {
+              "surface": "1957",
+              "value": "1957",
+              "start": 30,
+              "end": 34,
+              "clause": "What guard/forward started in 1957?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "guard/forward",
+              "value": "Guard/Forward",
+              "start": 5,
+              "end": 18,
+              "clause": "What guard/forward started in 1957?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "\"guard/forward\" denotes the player's Position, matching Position cells."
+            },
+            {
+              "surface": "1957",
+              "value": "1957",
+              "start": 30,
+              "end": 34,
+              "clause": "What guard/forward started in 1957?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "\"started in 1957\" refers to the roster From year, matching the From column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b0315b2c43597b2a629a1066e7f2b49d0353a4cc4667cadc42fb8fb4c4a3bf84",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5001,
+              "completion_tokens": 58,
+              "total_tokens": 5059,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "guard/forward",
+              "value": "Guard/Forward",
+              "start": 5,
+              "end": 18,
+              "clause": "What guard/forward started in 1957?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "\"guard/forward\" denotes the player's Position, matching Position cells.",
+              "operator": "="
+            },
+            {
+              "surface": "1957",
+              "value": "1957",
+              "start": 30,
+              "end": 34,
+              "clause": "What guard/forward started in 1957?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "\"started in 1957\" refers to the roster From year, matching the From column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "5c4df8aabfe6669f278174f127692f80776379abb3b2028f4b16a9fb399a78f2",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5094,
+              "completion_tokens": 11,
+              "total_tokens": 5105,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "guard/forward",
+              "value": "Guard/Forward",
+              "start": 5,
+              "end": 18,
+              "clause": "What guard/forward started in 1957?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "\"guard/forward\" denotes the player's Position, matching Position cells.",
+              "operator": "="
+            },
+            {
+              "surface": "1957",
+              "value": "1957",
+              "start": 30,
+              "end": 34,
+              "clause": "What guard/forward started in 1957?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "\"started in 1957\" refers to the roster From year, matching the From column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "4e2d46365668bb7d710c5faeda066ccb0e28dcf0b11223fcfc55b567496452f8",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5048,
+              "completion_tokens": 15,
+              "total_tokens": 5063,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "guard/forward",
+              "value": "Guard/Forward",
+              "start": 5,
+              "end": 18,
+              "clause": "What guard/forward started in 1957?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "\"guard/forward\" denotes the player's Position, matching Position cells.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "1957",
+              "value": "1957",
+              "start": 30,
+              "end": 34,
+              "clause": "What guard/forward started in 1957?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "\"started in 1957\" refers to the roster From year, matching the From column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "guard/forward",
+              "value": "Guard/Forward",
+              "start": 5,
+              "end": 18,
+              "clause": "What guard/forward started in 1957?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "\"guard/forward\" denotes the player's Position, matching Position cells.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "1957",
+              "value": "1957",
+              "start": 30,
+              "end": 34,
+              "clause": "What guard/forward started in 1957?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "\"started in 1957\" refers to the roster From year, matching the From column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "guard/forward",
+              "value": "Guard/Forward",
+              "start": 5,
+              "end": 18,
+              "clause": "What guard/forward started in 1957?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "\"guard/forward\" denotes the player's Position, matching Position cells.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "1957",
+              "value": "1957",
+              "start": 30,
+              "end": 34,
+              "clause": "What guard/forward started in 1957?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "\"started in 1957\" refers to the roster From year, matching the From column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "Guard/Forward"
+            ],
+            [
+              3,
+              0,
+              "1957"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "guard/forward",
+          "value": "Guard/Forward",
+          "start": 5,
+          "end": 18
+        },
+        {
+          "surface": "1957",
+          "value": "1957",
+          "start": 30,
+          "end": 34
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "guard/forward",
+          "value": "Guard/Forward",
+          "start": 5,
+          "end": 18,
+          "clause": "What guard/forward started in 1957?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "\"guard/forward\" denotes the player's Position, matching Position cells.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "1957",
+          "value": "1957",
+          "start": 30,
+          "end": 34,
+          "clause": "What guard/forward started in 1957?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "\"started in 1957\" refers to the roster From year, matching the From column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          2,
+          0,
+          "Guard/Forward"
+        ],
+        [
+          3,
+          0,
+          "1957"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7890
+}

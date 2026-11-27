@@ -1,0 +1,608 @@
+{
+  "arm": "E2",
+  "position": 175,
+  "example_id": "test:14109:2-18941206-1",
+  "original_index": 14109,
+  "table_id": "2-18941206-1",
+  "question": "What is the IHSAA Class for a school in Munster with an enrollment of 1,206?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        3,
+        1,
+        "1,206"
+      ],
+      [
+        1,
+        0,
+        "munster"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "Munster"
+    ],
+    [
+      3,
+      0,
+      "1,206"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "Munster"
+      ],
+      [
+        3,
+        0,
+        "1,206"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Munster",
+        "value": "Munster",
+        "start": 40,
+        "end": 47,
+        "clause": "What is the IHSAA Class for a school in Munster with an enrollment of 1",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The phrase \"in Munster\" denotes the school's Location; Munster appears in that field.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "1,206",
+        "value": "1,206",
+        "start": 70,
+        "end": 75,
+        "clause": "What is the IHSAA Class for a school in Munster with an enrollment of 1,206?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The question explicitly says \"enrollment of 1,206,\" matching the Enrollment field.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Munster",
+        "value": "Munster",
+        "start": 40,
+        "end": 47
+      },
+      {
+        "surface": "1,206",
+        "value": "1,206",
+        "start": 70,
+        "end": 75
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the IHSAA Class for a school in Munster with an enrollment of 1,206?",
+      "table": {
+        "header": [
+          "School",
+          "Location",
+          "Mascot",
+          "Enrollment",
+          "IHSAA Class",
+          "# / County"
+        ],
+        "page_title": "Northwest Crossroads Conference (IHSAA)",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "real",
+          "text",
+          "text"
+        ],
+        "page_id": 18941206,
+        "id": "2-18941206-1",
+        "section_title": "Membership",
+        "rows": [
+          [
+            "Andrean",
+            "Merrillville",
+            "Fighting '59ers",
+            "671",
+            "2A Football, 3A Basketball",
+            "45 Lake"
+          ],
+          [
+            "Griffith",
+            "Griffith",
+            "Panthers",
+            "961",
+            "4A Football, 3A Basketball",
+            "45 Lake"
+          ],
+          [
+            "Highland",
+            "Highland",
+            "Trojans",
+            "1,224",
+            "4A Football, 4A Basketball",
+            "45 Lake"
+          ],
+          [
+            "Hobart",
+            "Hobart",
+            "Brickies",
+            "1,249",
+            "4A Football, 4A Basketball",
+            "45 Lake"
+          ],
+          [
+            "Kankakee Valley",
+            "Wheatfield",
+            "Kougars",
+            "1,185",
+            "4A Football, 3A Basketball",
+            "37 Jasper"
+          ],
+          [
+            "Lowell",
+            "Lowell",
+            "Red Devils",
+            "1,206",
+            "4A Football, 4A Basketball",
+            "45 Lake"
+          ],
+          [
+            "Munster",
+            "Munster",
+            "Mustangs",
+            "1,637",
+            "5A Football, 4A Basketball",
+            "45 Lake"
+          ]
+        ],
+        "caption": "Membership",
+        "headers": [
+          "School",
+          "Location",
+          "Mascot",
+          "Enrollment",
+          "IHSAA Class",
+          "# / County"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-18941206-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "Munster",
+              "value": "Munster",
+              "start": 40,
+              "end": 47
+            },
+            {
+              "surface": "1,206",
+              "value": "1,206",
+              "start": 70,
+              "end": 75
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "acd0ca4380c5e53aabd15bf8dde3871f2da5a1afa3c7dfc726676e2bf2d8f103",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4884,
+              "completion_tokens": 31,
+              "total_tokens": 4915,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Munster",
+              "value": "Munster",
+              "start": 40,
+              "end": 47,
+              "clause": "What is the IHSAA Class for a school in Munster with an enrollment of 1"
+            },
+            {
+              "surface": "1,206",
+              "value": "1,206",
+              "start": 70,
+              "end": 75,
+              "clause": "What is the IHSAA Class for a school in Munster with an enrollment of 1,206?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Munster",
+              "value": "Munster",
+              "start": 40,
+              "end": 47,
+              "clause": "What is the IHSAA Class for a school in Munster with an enrollment of 1"
+            },
+            {
+              "surface": "1,206",
+              "value": "1,206",
+              "start": 70,
+              "end": 75,
+              "clause": "What is the IHSAA Class for a school in Munster with an enrollment of 1,206?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Munster",
+              "value": "Munster",
+              "start": 40,
+              "end": 47,
+              "clause": "What is the IHSAA Class for a school in Munster with an enrollment of 1",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase \"in Munster\" denotes the school's Location; Munster appears in that field."
+            },
+            {
+              "surface": "1,206",
+              "value": "1,206",
+              "start": 70,
+              "end": 75,
+              "clause": "What is the IHSAA Class for a school in Munster with an enrollment of 1,206?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says \"enrollment of 1,206,\" matching the Enrollment field."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "704405e25a33a01a2bc4ac87bc16559d909288dac886a8d4d56b5dab341d5e48",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4972,
+              "completion_tokens": 62,
+              "total_tokens": 5034,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Munster",
+              "value": "Munster",
+              "start": 40,
+              "end": 47,
+              "clause": "What is the IHSAA Class for a school in Munster with an enrollment of 1",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase \"in Munster\" denotes the school's Location; Munster appears in that field.",
+              "operator": "="
+            },
+            {
+              "surface": "1,206",
+              "value": "1,206",
+              "start": 70,
+              "end": 75,
+              "clause": "What is the IHSAA Class for a school in Munster with an enrollment of 1,206?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says \"enrollment of 1,206,\" matching the Enrollment field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c619f6f2b06440b97a5949601f2c974e59803891ccf4ecfe35ba03759147c7c0",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5069,
+              "completion_tokens": 11,
+              "total_tokens": 5080,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Munster",
+              "value": "Munster",
+              "start": 40,
+              "end": 47,
+              "clause": "What is the IHSAA Class for a school in Munster with an enrollment of 1",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase \"in Munster\" denotes the school's Location; Munster appears in that field.",
+              "operator": "="
+            },
+            {
+              "surface": "1,206",
+              "value": "1,206",
+              "start": 70,
+              "end": 75,
+              "clause": "What is the IHSAA Class for a school in Munster with an enrollment of 1,206?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says \"enrollment of 1,206,\" matching the Enrollment field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "13cb72009b8ce816049b43f28ddf74b156e23eb5beb028c9ffa4d1969a20dabf",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5023,
+              "completion_tokens": 52,
+              "total_tokens": 5075,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 35
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Munster",
+              "value": "Munster",
+              "start": 40,
+              "end": 47,
+              "clause": "What is the IHSAA Class for a school in Munster with an enrollment of 1",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase \"in Munster\" denotes the school's Location; Munster appears in that field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "1,206",
+              "value": "1,206",
+              "start": 70,
+              "end": 75,
+              "clause": "What is the IHSAA Class for a school in Munster with an enrollment of 1,206?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says \"enrollment of 1,206,\" matching the Enrollment field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Munster",
+              "value": "Munster",
+              "start": 40,
+              "end": 47,
+              "clause": "What is the IHSAA Class for a school in Munster with an enrollment of 1",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase \"in Munster\" denotes the school's Location; Munster appears in that field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "1,206",
+              "value": "1,206",
+              "start": 70,
+              "end": 75,
+              "clause": "What is the IHSAA Class for a school in Munster with an enrollment of 1,206?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says \"enrollment of 1,206,\" matching the Enrollment field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Munster",
+              "value": "Munster",
+              "start": 40,
+              "end": 47,
+              "clause": "What is the IHSAA Class for a school in Munster with an enrollment of 1",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase \"in Munster\" denotes the school's Location; Munster appears in that field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "1,206",
+              "value": "1,206",
+              "start": 70,
+              "end": 75,
+              "clause": "What is the IHSAA Class for a school in Munster with an enrollment of 1,206?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says \"enrollment of 1,206,\" matching the Enrollment field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              "Munster"
+            ],
+            [
+              3,
+              0,
+              "1,206"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Munster",
+          "value": "Munster",
+          "start": 40,
+          "end": 47
+        },
+        {
+          "surface": "1,206",
+          "value": "1,206",
+          "start": 70,
+          "end": 75
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Munster",
+          "value": "Munster",
+          "start": 40,
+          "end": 47,
+          "clause": "What is the IHSAA Class for a school in Munster with an enrollment of 1",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The phrase \"in Munster\" denotes the school's Location; Munster appears in that field.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "1,206",
+          "value": "1,206",
+          "start": 70,
+          "end": 75,
+          "clause": "What is the IHSAA Class for a school in Munster with an enrollment of 1,206?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The question explicitly says \"enrollment of 1,206,\" matching the Enrollment field.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          1,
+          0,
+          "Munster"
+        ],
+        [
+          3,
+          0,
+          "1,206"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 11328
+}

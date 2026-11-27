@@ -1,0 +1,786 @@
+{
+  "arm": "E2",
+  "position": 358,
+  "example_id": "test:14022:2-1888186-1",
+  "original_index": 14022,
+  "table_id": "2-1888186-1",
+  "question": "What was the result of the 2000-01 season in which the IceGators were part of the Southwest division and were coached by Dave Farrish?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        3,
+        0,
+        "dave farrish"
+      ],
+      [
+        2,
+        0,
+        "southwest"
+      ],
+      [
+        0,
+        0,
+        "2000-01"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "2000-01"
+    ],
+    [
+      2,
+      0,
+      "Southwest"
+    ],
+    [
+      3,
+      0,
+      "Dave Farrish"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "2000-01"
+      ],
+      [
+        2,
+        0,
+        "Southwest"
+      ],
+      [
+        3,
+        0,
+        "Dave Farrish"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "2000-01",
+        "value": "2000-01",
+        "start": 27,
+        "end": 34,
+        "clause": "What was the result of the 2000-01 season in which the IceGators were part of the Southwest division",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "The phrase '2000-01 season' identifies the Season field, and the value appears in that column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "Southwest",
+        "value": "Southwest",
+        "start": 82,
+        "end": 91,
+        "clause": "What was the result of the 2000-01 season in which the IceGators were part of the Southwest division",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The phrase 'Southwest division' explicitly identifies the Division field, and the value appears in that column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "Dave Farrish",
+        "value": "Dave Farrish",
+        "start": 121,
+        "end": 133,
+        "clause": "and were coached by Dave Farrish?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The phrase 'coached by Dave Farrish' explicitly identifies the Coach field, and the value appears in that column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "2000-01",
+        "value": "2000-01",
+        "start": 27,
+        "end": 34
+      },
+      {
+        "surface": "Southwest",
+        "value": "Southwest",
+        "start": 82,
+        "end": 91
+      },
+      {
+        "surface": "Dave Farrish",
+        "value": "Dave Farrish",
+        "start": 121,
+        "end": 133
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What was the result of the 2000-01 season in which the IceGators were part of the Southwest division and were coached by Dave Farrish?",
+      "table": {
+        "header": [
+          "Season",
+          "League",
+          "Division",
+          "Coach",
+          "Result"
+        ],
+        "page_title": "Louisiana IceGators (ECHL)",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 1888186,
+        "id": "2-1888186-1",
+        "section_title": "Seasons",
+        "rows": [
+          [
+            "1995-96",
+            "ECHL",
+            "South",
+            "Doug Shedden",
+            "Lost in Round 1"
+          ],
+          [
+            "1996-97",
+            "ECHL",
+            "South",
+            "Doug Shedden",
+            "Lost in Finals"
+          ],
+          [
+            "1997-98",
+            "ECHL",
+            "Southwest",
+            "Doug Shedden",
+            "Lost in Round 3"
+          ],
+          [
+            "1998-99",
+            "ECHL",
+            "Southwest",
+            "Doug Shedden",
+            "Lost in Round 2"
+          ],
+          [
+            "1999-00",
+            "ECHL",
+            "Southwest",
+            "Don Murdoch",
+            "Lost in Finals"
+          ],
+          [
+            "2000-01",
+            "ECHL",
+            "Southwest",
+            "Dave Farrish",
+            "Lost in Round 4"
+          ],
+          [
+            "2001-02",
+            "ECHL",
+            "Southwest",
+            "Dave Farrish",
+            "Lost in Round 2"
+          ],
+          [
+            "2002-03",
+            "ECHL",
+            "Southwest",
+            "Dave Farrish",
+            "Lost in Round 2"
+          ],
+          [
+            "2003-04",
+            "ECHL",
+            "Central",
+            "Dave Farrish",
+            "Lost in Round 2"
+          ],
+          [
+            "2004-05",
+            "ECHL",
+            "South",
+            "Todd Gordon",
+            "Did Not Qualify"
+          ]
+        ],
+        "caption": "Seasons",
+        "headers": [
+          "Season",
+          "League",
+          "Division",
+          "Coach",
+          "Result"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-1888186-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 3,
+          "conditions": [
+            {
+              "surface": "2000-01",
+              "value": "2000-01",
+              "start": 27,
+              "end": 34
+            },
+            {
+              "surface": "Southwest",
+              "value": "Southwest",
+              "start": 82,
+              "end": 91
+            },
+            {
+              "surface": "Dave Farrish",
+              "value": "Dave Farrish",
+              "start": 121,
+              "end": 133
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "99653b49e8235d080ecac7414ba846cc52c2653d66e91c6c1d56fe60dc220c1b",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4900,
+              "completion_tokens": 45,
+              "total_tokens": 4945,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2000-01",
+              "value": "2000-01",
+              "start": 27,
+              "end": 34,
+              "clause": "What was the result of the 2000-01 season in which the IceGators were part of the Southwest division"
+            },
+            {
+              "surface": "Southwest",
+              "value": "Southwest",
+              "start": 82,
+              "end": 91,
+              "clause": "What was the result of the 2000-01 season in which the IceGators were part of the Southwest division"
+            },
+            {
+              "surface": "Dave Farrish",
+              "value": "Dave Farrish",
+              "start": 121,
+              "end": 133,
+              "clause": "and were coached by Dave Farrish?"
+            }
+          ],
+          "count": 3
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "2000-01",
+              "value": "2000-01",
+              "start": 27,
+              "end": 34,
+              "clause": "What was the result of the 2000-01 season in which the IceGators were part of the Southwest division"
+            },
+            {
+              "surface": "Southwest",
+              "value": "Southwest",
+              "start": 82,
+              "end": 91,
+              "clause": "What was the result of the 2000-01 season in which the IceGators were part of the Southwest division"
+            },
+            {
+              "surface": "Dave Farrish",
+              "value": "Dave Farrish",
+              "start": 121,
+              "end": 133,
+              "clause": "and were coached by Dave Farrish?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2000-01",
+              "value": "2000-01",
+              "start": 27,
+              "end": 34,
+              "clause": "What was the result of the 2000-01 season in which the IceGators were part of the Southwest division",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The phrase '2000-01 season' identifies the Season field, and the value appears in that column."
+            },
+            {
+              "surface": "Southwest",
+              "value": "Southwest",
+              "start": 82,
+              "end": 91,
+              "clause": "What was the result of the 2000-01 season in which the IceGators were part of the Southwest division",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase 'Southwest division' explicitly identifies the Division field, and the value appears in that column."
+            },
+            {
+              "surface": "Dave Farrish",
+              "value": "Dave Farrish",
+              "start": 121,
+              "end": 133,
+              "clause": "and were coached by Dave Farrish?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The phrase 'coached by Dave Farrish' explicitly identifies the Coach field, and the value appears in that column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a120e4160f4fc8a3ab7d5fef00394aee40f4e4c55f5332ea61621783201335db",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5029,
+              "completion_tokens": 96,
+              "total_tokens": 5125,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2000-01",
+              "value": "2000-01",
+              "start": 27,
+              "end": 34,
+              "clause": "What was the result of the 2000-01 season in which the IceGators were part of the Southwest division",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The phrase '2000-01 season' identifies the Season field, and the value appears in that column.",
+              "operator": "="
+            },
+            {
+              "surface": "Southwest",
+              "value": "Southwest",
+              "start": 82,
+              "end": 91,
+              "clause": "What was the result of the 2000-01 season in which the IceGators were part of the Southwest division",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase 'Southwest division' explicitly identifies the Division field, and the value appears in that column.",
+              "operator": "="
+            },
+            {
+              "surface": "Dave Farrish",
+              "value": "Dave Farrish",
+              "start": 121,
+              "end": 133,
+              "clause": "and were coached by Dave Farrish?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The phrase 'coached by Dave Farrish' explicitly identifies the Coach field, and the value appears in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b72962be28556ae8757be1834ac573c2390b607f439ce44aff3a74b05cf47d25",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5171,
+              "completion_tokens": 13,
+              "total_tokens": 5184,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2000-01",
+              "value": "2000-01",
+              "start": 27,
+              "end": 34,
+              "clause": "What was the result of the 2000-01 season in which the IceGators were part of the Southwest division",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The phrase '2000-01 season' identifies the Season field, and the value appears in that column.",
+              "operator": "="
+            },
+            {
+              "surface": "Southwest",
+              "value": "Southwest",
+              "start": 82,
+              "end": 91,
+              "clause": "What was the result of the 2000-01 season in which the IceGators were part of the Southwest division",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase 'Southwest division' explicitly identifies the Division field, and the value appears in that column.",
+              "operator": "="
+            },
+            {
+              "surface": "Dave Farrish",
+              "value": "Dave Farrish",
+              "start": 121,
+              "end": 133,
+              "clause": "and were coached by Dave Farrish?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The phrase 'coached by Dave Farrish' explicitly identifies the Coach field, and the value appears in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "958a832d6678540303678438ef9c7959ea2d6b156a578d04c19da83150e13259",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5128,
+              "completion_tokens": 20,
+              "total_tokens": 5148,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2000-01",
+              "value": "2000-01",
+              "start": 27,
+              "end": 34,
+              "clause": "What was the result of the 2000-01 season in which the IceGators were part of the Southwest division",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The phrase '2000-01 season' identifies the Season field, and the value appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Southwest",
+              "value": "Southwest",
+              "start": 82,
+              "end": 91,
+              "clause": "What was the result of the 2000-01 season in which the IceGators were part of the Southwest division",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase 'Southwest division' explicitly identifies the Division field, and the value appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Dave Farrish",
+              "value": "Dave Farrish",
+              "start": 121,
+              "end": 133,
+              "clause": "and were coached by Dave Farrish?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The phrase 'coached by Dave Farrish' explicitly identifies the Coach field, and the value appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2000-01",
+              "value": "2000-01",
+              "start": 27,
+              "end": 34,
+              "clause": "What was the result of the 2000-01 season in which the IceGators were part of the Southwest division",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The phrase '2000-01 season' identifies the Season field, and the value appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Southwest",
+              "value": "Southwest",
+              "start": 82,
+              "end": 91,
+              "clause": "What was the result of the 2000-01 season in which the IceGators were part of the Southwest division",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase 'Southwest division' explicitly identifies the Division field, and the value appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Dave Farrish",
+              "value": "Dave Farrish",
+              "start": 121,
+              "end": 133,
+              "clause": "and were coached by Dave Farrish?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The phrase 'coached by Dave Farrish' explicitly identifies the Coach field, and the value appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "2000-01",
+              "value": "2000-01",
+              "start": 27,
+              "end": 34,
+              "clause": "What was the result of the 2000-01 season in which the IceGators were part of the Southwest division",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The phrase '2000-01 season' identifies the Season field, and the value appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Southwest",
+              "value": "Southwest",
+              "start": 82,
+              "end": 91,
+              "clause": "What was the result of the 2000-01 season in which the IceGators were part of the Southwest division",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase 'Southwest division' explicitly identifies the Division field, and the value appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Dave Farrish",
+              "value": "Dave Farrish",
+              "start": 121,
+              "end": 133,
+              "clause": "and were coached by Dave Farrish?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The phrase 'coached by Dave Farrish' explicitly identifies the Coach field, and the value appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              "2000-01"
+            ],
+            [
+              2,
+              0,
+              "Southwest"
+            ],
+            [
+              3,
+              0,
+              "Dave Farrish"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "2000-01",
+          "value": "2000-01",
+          "start": 27,
+          "end": 34
+        },
+        {
+          "surface": "Southwest",
+          "value": "Southwest",
+          "start": 82,
+          "end": 91
+        },
+        {
+          "surface": "Dave Farrish",
+          "value": "Dave Farrish",
+          "start": 121,
+          "end": 133
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "2000-01",
+          "value": "2000-01",
+          "start": 27,
+          "end": 34,
+          "clause": "What was the result of the 2000-01 season in which the IceGators were part of the Southwest division",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "The phrase '2000-01 season' identifies the Season field, and the value appears in that column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "Southwest",
+          "value": "Southwest",
+          "start": 82,
+          "end": 91,
+          "clause": "What was the result of the 2000-01 season in which the IceGators were part of the Southwest division",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The phrase 'Southwest division' explicitly identifies the Division field, and the value appears in that column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "Dave Farrish",
+          "value": "Dave Farrish",
+          "start": 121,
+          "end": 133,
+          "clause": "and were coached by Dave Farrish?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The phrase 'coached by Dave Farrish' explicitly identifies the Coach field, and the value appears in that column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 3,
+      "conds": [
+        [
+          0,
+          0,
+          "2000-01"
+        ],
+        [
+          2,
+          0,
+          "Southwest"
+        ],
+        [
+          3,
+          0,
+          "Dave Farrish"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9672
+}

@@ -1,0 +1,411 @@
+{
+  "arm": "E2",
+  "position": 225,
+  "example_id": "test:8870:2-17396-1",
+  "original_index": 8870,
+  "table_id": "2-17396-1",
+  "question": "When did TDB depart?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        2,
+        0,
+        "tdb"
+      ]
+    ],
+    "agg": 1
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "TDB"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "TDB"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "TDB",
+        "value": "TDB",
+        "start": 9,
+        "end": 12,
+        "clause": "When did TDB depart?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "TDB identifies the departure location in 'Departed From'; the question asks about the departure associated with TDB.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "TDB",
+        "value": "TDB",
+        "start": 9,
+        "end": 12
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "When did TDB depart?",
+      "table": {
+        "header": [
+          "Year",
+          "Ship",
+          "Departed From",
+          "Departed On",
+          "Returned On"
+        ],
+        "page_title": "Kid Rock",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 17396,
+        "id": "2-17396-1",
+        "section_title": "Cruises",
+        "rows": [
+          [
+            "2010",
+            "Carnival Inspiration",
+            "Tampa, FL",
+            "April 29, 2010",
+            "May 3, 2010"
+          ],
+          [
+            "2011",
+            "Carnival Triumph",
+            "New Orleans, LA",
+            "April 7, 2011",
+            "April 11, 2011"
+          ],
+          [
+            "2012",
+            "Carnival Destiny",
+            "Miami, FL",
+            "April 26, 2012",
+            "April 30, 2012"
+          ],
+          [
+            "2013",
+            "Norwegian Pearl",
+            "Miami, FL",
+            "March 6, 2013",
+            "March 10, 2013"
+          ],
+          [
+            "2014",
+            "Norwegian Cruise Lines",
+            "TDB",
+            "Unknown",
+            "Unknown"
+          ]
+        ],
+        "caption": "Cruises",
+        "headers": [
+          "Year",
+          "Ship",
+          "Departed From",
+          "Departed On",
+          "Returned On"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-17396-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "TDB",
+              "value": "TDB",
+              "start": 9,
+              "end": 12
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d06ec37458b292f5300c347902408dec74cb953f4f3b2592274675db45700040",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4791,
+              "completion_tokens": 19,
+              "total_tokens": 4810,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "TDB",
+              "value": "TDB",
+              "start": 9,
+              "end": 12,
+              "clause": "When did TDB depart?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "TDB",
+              "value": "TDB",
+              "start": 9,
+              "end": 12,
+              "clause": "When did TDB depart?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "TDB",
+              "value": "TDB",
+              "start": 9,
+              "end": 12,
+              "clause": "When did TDB depart?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "TDB identifies the departure location in 'Departed From'; the question asks about the departure associated with TDB."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "683ad3b3571092fe093cafe6ac2d3dd1743be3ea1e1ce13757e7f30073026764",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4820,
+              "completion_tokens": 44,
+              "total_tokens": 4864,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "TDB",
+              "value": "TDB",
+              "start": 9,
+              "end": 12,
+              "clause": "When did TDB depart?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "TDB identifies the departure location in 'Departed From'; the question asks about the departure associated with TDB.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "1275e953945c7bac46ea309b52582f71af6c17758ca65d267b00bd761a7780ff",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4888,
+              "completion_tokens": 9,
+              "total_tokens": 4897,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "TDB",
+              "value": "TDB",
+              "start": 9,
+              "end": 12,
+              "clause": "When did TDB depart?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "TDB identifies the departure location in 'Departed From'; the question asks about the departure associated with TDB.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "457a33cd681e23b5caa0e6312e08c2818587a75d1a92f83151fee67703c39d9d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4839,
+              "completion_tokens": 11,
+              "total_tokens": 4850,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "TDB",
+              "value": "TDB",
+              "start": 9,
+              "end": 12,
+              "clause": "When did TDB depart?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "TDB identifies the departure location in 'Departed From'; the question asks about the departure associated with TDB.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "TDB",
+              "value": "TDB",
+              "start": 9,
+              "end": 12,
+              "clause": "When did TDB depart?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "TDB identifies the departure location in 'Departed From'; the question asks about the departure associated with TDB.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "TDB",
+              "value": "TDB",
+              "start": 9,
+              "end": 12,
+              "clause": "When did TDB depart?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "TDB identifies the departure location in 'Departed From'; the question asks about the departure associated with TDB.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "TDB"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "TDB",
+          "value": "TDB",
+          "start": 9,
+          "end": 12
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "TDB",
+          "value": "TDB",
+          "start": 9,
+          "end": 12,
+          "clause": "When did TDB depart?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "TDB identifies the departure location in 'Departed From'; the question asks about the departure associated with TDB.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          2,
+          0,
+          "TDB"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7828
+}

@@ -1,0 +1,93 @@
+{
+  "arm": "E1",
+  "position": 240,
+  "example_id": "test:13432:2-1859-1",
+  "original_index": 13432,
+  "table_id": "2-1859-1",
+  "question": "Which 2009 has a 2012 larger than 9,265?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        0,
+        1,
+        "9,265"
+      ]
+    ],
+    "agg": 1
+  },
+  "prediction_conds": [
+    [
+      0,
+      1,
+      9265
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": "gpt-5.6-sol",
+  "usage": {
+    "prompt_tokens": 9416,
+    "completion_tokens": 48,
+    "total_tokens": 9464,
+    "prompt_tokens_details": {
+      "cached_tokens": 4224
+    }
+  },
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        1,
+        9265
+      ]
+    ],
+    "explanation": "The requested output is 2009; the WHERE condition is 2012 strictly larger than 9,265.",
+    "version": "wikisql-where-prior-v1",
+    "tableId": "2-1859-1",
+    "knowledgeIds": [
+      "g-eq",
+      "g-gt",
+      "g-lt",
+      "g-inclusive",
+      "g-literal",
+      "g-threshold",
+      "g-and",
+      "g-or",
+      "g-column",
+      "g-count",
+      "g-ambiguous",
+      "t-2-1859-1-field-0",
+      "t-2-1859-1-field-1",
+      "t-2-1859-1-field-2",
+      "t-2-1859-1-field-3",
+      "t-2-1859-1-field-4",
+      "d-implicit-eq",
+      "d-explicit-eq",
+      "d-gt",
+      "d-lt-and-gt",
+      "d-with-two",
+      "d-literal-form",
+      "p-text",
+      "p-number",
+      "p-multi",
+      "p-unsupported"
+    ],
+    "promptSha256": "81dade92412c10ad8345f36c1f4a2c270bdc0101cf6bbae696cacab6fdac077a",
+    "model": "gpt-5.6-sol",
+    "usage": {
+      "prompt_tokens": 9416,
+      "completion_tokens": 48,
+      "total_tokens": 9464,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      }
+    },
+    "latencyMs": 2340
+  },
+  "source": "where_prior_parse",
+  "safe_completed": true,
+  "elapsed_ms": 2360
+}

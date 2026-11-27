@@ -1,0 +1,600 @@
+{
+  "arm": "E2",
+  "position": 5,
+  "example_id": "test:424:1-12077540-1",
+  "original_index": 424,
+  "table_id": "1-12077540-1",
+  "question": "There are 5 imports of plywood.",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        1,
+        0,
+        "Plywood"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      4,
+      0,
+      "5 (100)"
+    ],
+    [
+      1,
+      0,
+      "Plywood"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        0,
+        "5 (100)"
+      ],
+      [
+        1,
+        0,
+        "Plywood"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "5",
+        "value": "5 (100)",
+        "start": 10,
+        "end": 11,
+        "clause": "There are 5 imports of plywood.",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The noun 'imports' directly matches the Import header, and the Plywood row contains '5 (100)' there.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "plywood",
+        "value": "Plywood",
+        "start": 23,
+        "end": 30,
+        "clause": "There are 5 imports of plywood.",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "'plywood' denotes the product and matches 'Plywood' in the Product column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "5",
+        "value": "5 (100)",
+        "start": 10,
+        "end": 11
+      },
+      {
+        "surface": "plywood",
+        "value": "Plywood",
+        "start": 23,
+        "end": 30
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "There are 5 imports of plywood.",
+      "table": {
+        "header": [
+          "Year",
+          "Product",
+          "Production",
+          "Consumption",
+          "Import",
+          "Export"
+        ],
+        "page_title": "Tropical Africa",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "id": "1-12077540-1",
+        "section_title": "Resources",
+        "caption": "Resources",
+        "rows": [
+          [
+            1996,
+            "Log",
+            "10207 (100)",
+            "6042 (100)",
+            "3 (100)",
+            "4168 (100)"
+          ],
+          [
+            2000,
+            "Log",
+            "12686 (100)",
+            "7957 (100)",
+            "102 (100)",
+            "4381 (100)"
+          ],
+          [
+            1996,
+            "Sawn",
+            "2021 (100)",
+            "6042 (100)",
+            "6 (100)",
+            "1204 (100)"
+          ],
+          [
+            2000,
+            "Sawn",
+            "2174 (100)",
+            "677 (100)",
+            "8 (100)",
+            "1504 (100)"
+          ],
+          [
+            1996,
+            "Veneer",
+            "401 (100)",
+            "142 (100)",
+            "0 (100)",
+            "259 (100)"
+          ],
+          [
+            2000,
+            "Veneer",
+            "796 (100)",
+            "307 (100)",
+            "17 (100)",
+            "506 (100)"
+          ],
+          [
+            1996,
+            "Plywood",
+            "243 (100)",
+            "169 (100)",
+            "5 (100)",
+            "79 (100)"
+          ]
+        ],
+        "name": "table_12077540_1",
+        "headers": [
+          "Year",
+          "Product",
+          "Production",
+          "Consumption",
+          "Import",
+          "Export"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-12077540-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "5",
+              "value": "5 (100)",
+              "start": 10,
+              "end": 11
+            },
+            {
+              "surface": "plywood",
+              "value": "Plywood",
+              "start": 23,
+              "end": 30
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b237af0a155e0f695292293da6ed57ce2996c125d02a6feedfd618b081e470bc",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4862,
+              "completion_tokens": 30,
+              "total_tokens": 4892,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "5",
+              "value": "5 (100)",
+              "start": 10,
+              "end": 11,
+              "clause": "There are 5 imports of plywood."
+            },
+            {
+              "surface": "plywood",
+              "value": "Plywood",
+              "start": 23,
+              "end": 30,
+              "clause": "There are 5 imports of plywood."
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "5",
+              "value": "5 (100)",
+              "start": 10,
+              "end": 11,
+              "clause": "There are 5 imports of plywood."
+            },
+            {
+              "surface": "plywood",
+              "value": "Plywood",
+              "start": 23,
+              "end": 30,
+              "clause": "There are 5 imports of plywood."
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "5",
+              "value": "5 (100)",
+              "start": 10,
+              "end": 11,
+              "clause": "There are 5 imports of plywood.",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The noun 'imports' directly matches the Import header, and the Plywood row contains '5 (100)' there."
+            },
+            {
+              "surface": "plywood",
+              "value": "Plywood",
+              "start": 23,
+              "end": 30,
+              "clause": "There are 5 imports of plywood.",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'plywood' denotes the product and matches 'Plywood' in the Product column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "fedf3222c675c03fc0f507614e2db35a7694ac49b0d01049af5def991a2eedf4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4924,
+              "completion_tokens": 67,
+              "total_tokens": 4991,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "5",
+              "value": "5 (100)",
+              "start": 10,
+              "end": 11,
+              "clause": "There are 5 imports of plywood.",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The noun 'imports' directly matches the Import header, and the Plywood row contains '5 (100)' there.",
+              "operator": "="
+            },
+            {
+              "surface": "plywood",
+              "value": "Plywood",
+              "start": 23,
+              "end": 30,
+              "clause": "There are 5 imports of plywood.",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'plywood' denotes the product and matches 'Plywood' in the Product column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "decfa7ebd20eb44bc895c4dd4bd27367b30145f9baadc7bd25bf0cefb082fe82",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5023,
+              "completion_tokens": 11,
+              "total_tokens": 5034,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "5",
+              "value": "5 (100)",
+              "start": 10,
+              "end": 11,
+              "clause": "There are 5 imports of plywood.",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The noun 'imports' directly matches the Import header, and the Plywood row contains '5 (100)' there.",
+              "operator": "="
+            },
+            {
+              "surface": "plywood",
+              "value": "Plywood",
+              "start": 23,
+              "end": 30,
+              "clause": "There are 5 imports of plywood.",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'plywood' denotes the product and matches 'Plywood' in the Product column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "3de1f989e84b40bfce5a14a8c0336961c5884a29e7dbb5616018f03ca079521b",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4977,
+              "completion_tokens": 16,
+              "total_tokens": 4993,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "5",
+              "value": "5 (100)",
+              "start": 10,
+              "end": 11,
+              "clause": "There are 5 imports of plywood.",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The noun 'imports' directly matches the Import header, and the Plywood row contains '5 (100)' there.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "plywood",
+              "value": "Plywood",
+              "start": 23,
+              "end": 30,
+              "clause": "There are 5 imports of plywood.",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'plywood' denotes the product and matches 'Plywood' in the Product column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "5",
+              "value": "5 (100)",
+              "start": 10,
+              "end": 11,
+              "clause": "There are 5 imports of plywood.",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The noun 'imports' directly matches the Import header, and the Plywood row contains '5 (100)' there.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "plywood",
+              "value": "Plywood",
+              "start": 23,
+              "end": 30,
+              "clause": "There are 5 imports of plywood.",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'plywood' denotes the product and matches 'Plywood' in the Product column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "5",
+              "value": "5 (100)",
+              "start": 10,
+              "end": 11,
+              "clause": "There are 5 imports of plywood.",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The noun 'imports' directly matches the Import header, and the Plywood row contains '5 (100)' there.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "plywood",
+              "value": "Plywood",
+              "start": 23,
+              "end": 30,
+              "clause": "There are 5 imports of plywood.",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'plywood' denotes the product and matches 'Plywood' in the Product column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              0,
+              "5 (100)"
+            ],
+            [
+              1,
+              0,
+              "Plywood"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "5",
+          "value": "5 (100)",
+          "start": 10,
+          "end": 11
+        },
+        {
+          "surface": "plywood",
+          "value": "Plywood",
+          "start": 23,
+          "end": 30
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "5",
+          "value": "5 (100)",
+          "start": 10,
+          "end": 11,
+          "clause": "There are 5 imports of plywood.",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The noun 'imports' directly matches the Import header, and the Plywood row contains '5 (100)' there.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "plywood",
+          "value": "Plywood",
+          "start": 23,
+          "end": 30,
+          "clause": "There are 5 imports of plywood.",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "'plywood' denotes the product and matches 'Plywood' in the Product column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          4,
+          0,
+          "5 (100)"
+        ],
+        [
+          1,
+          0,
+          "Plywood"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8671
+}

@@ -1,0 +1,635 @@
+{
+  "arm": "E2",
+  "position": 390,
+  "example_id": "test:15501:2-1255817-4",
+  "original_index": 15501,
+  "table_id": "2-1255817-4",
+  "question": "Who is the manufacturer of the mini jet red baron ride that opened before 2001?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        2,
+        2,
+        2001
+      ],
+      [
+        1,
+        0,
+        "mini jet red baron"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [],
+  "status": "GROUNDING_FAILED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "GROUNDING_FAILED",
+    "valid": false,
+    "errors": [
+      "condition 1: grounding NO_MATCH",
+      "condition 1: nonnumeric value for real column"
+    ],
+    "conditions": [
+      {
+        "surface": "mini jet red baron",
+        "value": "Mini Jet Red Baron",
+        "start": 31,
+        "end": 49,
+        "clause": "Who is the manufacturer of the mini jet red baron ride that opened before 2001?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The phrase names the ride type, matching the Type header and row evidence.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "before 2001",
+        "value": "< 2001",
+        "start": 67,
+        "end": 78,
+        "clause": "Who is the manufacturer of the mini jet red baron ride that opened before 2001?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The temporal constraint applies to the Opened in year field.",
+        "operator": "<",
+        "grounded": false,
+        "groundingStatus": "NO_MATCH",
+        "groundingReview": {
+          "column": 2,
+          "reason": "“before 2001” constrains the “Opened in” year; the matching Mini Jet Red Baron row has 1987, which is before 2001."
+        }
+      }
+    ],
+    "stage": "WHERE_CONDITION_VALIDATE",
+    "originalConditions": [
+      {
+        "surface": "mini jet red baron",
+        "value": "Mini Jet Red Baron",
+        "start": 31,
+        "end": 49
+      },
+      {
+        "surface": "before 2001",
+        "value": "< 2001",
+        "start": 67,
+        "end": 78
+      }
+    ],
+    "halt": true,
+    "completed": false,
+    "conds": [],
+    "warnings": [
+      "value model disagreed with extracted question span; original retained"
+    ],
+    "request": {
+      "question": "Who is the manufacturer of the mini jet red baron ride that opened before 2001?",
+      "table": {
+        "header": [
+          "Ride Name",
+          "Type",
+          "Opened in",
+          "Themed Land",
+          "Manufacture"
+        ],
+        "page_title": "Chessington World of Adventures",
+        "types": [
+          "text",
+          "text",
+          "real",
+          "text",
+          "text"
+        ],
+        "page_id": 1255817,
+        "id": "2-1255817-4",
+        "section_title": "Childrens Rides",
+        "rows": [
+          [
+            "Flying Jumbos",
+            "Mini Jet Red Baron",
+            "1987",
+            "Zufari",
+            "Zamperla"
+          ],
+          [
+            "Tiny Truckers",
+            "Convoy Ride",
+            "1994",
+            "Market Square",
+            "Zamperla"
+          ],
+          [
+            "Carousel",
+            "Carousel",
+            "1996",
+            "Market Square",
+            "Bertazzon"
+          ],
+          [
+            "Jungle Bouncers",
+            "Mini Drop Tower",
+            "2001",
+            "Africa",
+            "Zamperla"
+          ],
+          [
+            "Toadie's Crazy Cars",
+            "Convoy Ride",
+            "2001",
+            "Africa",
+            "Zamperla"
+          ],
+          [
+            "Canopy Capers",
+            "Tree House Attraction",
+            "2004",
+            "Land of the Dragons",
+            "Tussauds Studios"
+          ],
+          [
+            "Sea Dragons",
+            "Spinning Boat Ride",
+            "2004",
+            "Land of the Dragons",
+            "Mack Rides"
+          ],
+          [
+            "Griffin's Galleon",
+            "Rock n Tug ride",
+            "2004",
+            "Land of the Dragons",
+            "Zierer"
+          ],
+          [
+            "Jungle Bus",
+            "Crazy Bus",
+            "2001",
+            "Wild Asia",
+            "Zamperla"
+          ]
+        ],
+        "caption": "Childrens Rides",
+        "headers": [
+          "Ride Name",
+          "Type",
+          "Opened in",
+          "Themed Land",
+          "Manufacture"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-1255817-4",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 9,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "mini jet red baron",
+              "value": "Mini Jet Red Baron",
+              "start": 31,
+              "end": 49
+            },
+            {
+              "surface": "before 2001",
+              "value": "< 2001",
+              "start": 67,
+              "end": 78
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "08fa08cf6467d47d4cdd2c6ccc7b57efb21410709dcba6f84119ed6346552810",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4873,
+              "completion_tokens": 38,
+              "total_tokens": 4911,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "mini jet red baron",
+              "value": "Mini Jet Red Baron",
+              "start": 31,
+              "end": 49,
+              "clause": "Who is the manufacturer of the mini jet red baron ride that opened before 2001?"
+            },
+            {
+              "surface": "before 2001",
+              "value": "< 2001",
+              "start": 67,
+              "end": 78,
+              "clause": "Who is the manufacturer of the mini jet red baron ride that opened before 2001?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "mini jet red baron",
+              "value": "Mini Jet Red Baron",
+              "start": 31,
+              "end": 49,
+              "clause": "Who is the manufacturer of the mini jet red baron ride that opened before 2001?"
+            },
+            {
+              "surface": "before 2001",
+              "value": "< 2001",
+              "start": 67,
+              "end": 78,
+              "clause": "Who is the manufacturer of the mini jet red baron ride that opened before 2001?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "mini jet red baron",
+              "value": "Mini Jet Red Baron",
+              "start": 31,
+              "end": 49,
+              "clause": "Who is the manufacturer of the mini jet red baron ride that opened before 2001?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase names the ride type, matching the Type header and row evidence."
+            },
+            {
+              "surface": "before 2001",
+              "value": "< 2001",
+              "start": 67,
+              "end": 78,
+              "clause": "Who is the manufacturer of the mini jet red baron ride that opened before 2001?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The temporal constraint applies to the Opened in year field."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "78baa545166f3fcceaf9c18b3fd5007659db0a16020f3e6c869978f66cd10c50",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4965,
+              "completion_tokens": 52,
+              "total_tokens": 5017,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "mini jet red baron",
+              "value": "Mini Jet Red Baron",
+              "start": 31,
+              "end": 49,
+              "clause": "Who is the manufacturer of the mini jet red baron ride that opened before 2001?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase names the ride type, matching the Type header and row evidence.",
+              "operator": "="
+            },
+            {
+              "surface": "before 2001",
+              "value": "< 2001",
+              "start": 67,
+              "end": 78,
+              "clause": "Who is the manufacturer of the mini jet red baron ride that opened before 2001?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The temporal constraint applies to the Opened in year field.",
+              "operator": "<"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "252d26e97aa17d4af94b7ef4dbef0146b4c1e8402f28e83cc7385a42fd788b3c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5052,
+              "completion_tokens": 12,
+              "total_tokens": 5064,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "warnings": [
+            "value model disagreed with extracted question span; original retained"
+          ],
+          "conditions": [
+            {
+              "surface": "mini jet red baron",
+              "value": "Mini Jet Red Baron",
+              "start": 31,
+              "end": 49,
+              "clause": "Who is the manufacturer of the mini jet red baron ride that opened before 2001?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase names the ride type, matching the Type header and row evidence.",
+              "operator": "="
+            },
+            {
+              "surface": "before 2001",
+              "value": "< 2001",
+              "start": 67,
+              "end": 78,
+              "clause": "Who is the manufacturer of the mini jet red baron ride that opened before 2001?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The temporal constraint applies to the Opened in year field.",
+              "operator": "<"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b38765585c8112fbed29aeaeba6a8df83690e1211d73f8e682087912fff721fa",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5006,
+              "completion_tokens": 15,
+              "total_tokens": 5021,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "mini jet red baron",
+              "value": "Mini Jet Red Baron",
+              "start": 31,
+              "end": 49,
+              "clause": "Who is the manufacturer of the mini jet red baron ride that opened before 2001?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase names the ride type, matching the Type header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "before 2001",
+              "value": "< 2001",
+              "start": 67,
+              "end": 78,
+              "clause": "Who is the manufacturer of the mini jet red baron ride that opened before 2001?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The temporal constraint applies to the Opened in year field.",
+              "operator": "<",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 2,
+                "reason": "“before 2001” constrains the “Opened in” year; the matching Mini Jet Red Baron row has 1987, which is before 2001."
+              }
+            }
+          ],
+          "reviewModelCalls": [
+            {
+              "model": "gpt-5.6-sol",
+              "promptSha256": "f2ebbd2533fac8eb28a87f286955a14c1406ceb2c156ad97baf7eceb42770bc8",
+              "knowledgeIds": [],
+              "usage": {
+                "prompt_tokens": 4968,
+                "completion_tokens": 66,
+                "total_tokens": 5034,
+                "prompt_tokens_details": {
+                  "cached_tokens": 4224
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 18
+                }
+              }
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f2ebbd2533fac8eb28a87f286955a14c1406ceb2c156ad97baf7eceb42770bc8",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4968,
+              "completion_tokens": 66,
+              "total_tokens": 5034,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 18
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "mini jet red baron",
+              "value": "Mini Jet Red Baron",
+              "start": 31,
+              "end": 49,
+              "clause": "Who is the manufacturer of the mini jet red baron ride that opened before 2001?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase names the ride type, matching the Type header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "before 2001",
+              "value": "< 2001",
+              "start": 67,
+              "end": 78,
+              "clause": "Who is the manufacturer of the mini jet red baron ride that opened before 2001?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The temporal constraint applies to the Opened in year field.",
+              "operator": "<",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 2,
+                "reason": "“before 2001” constrains the “Opened in” year; the matching Mini Jet Red Baron row has 1987, which is before 2001."
+              }
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "GROUNDING_FAILED",
+          "valid": false,
+          "errors": [
+            "condition 1: grounding NO_MATCH",
+            "condition 1: nonnumeric value for real column"
+          ],
+          "conditions": [
+            {
+              "surface": "mini jet red baron",
+              "value": "Mini Jet Red Baron",
+              "start": 31,
+              "end": 49,
+              "clause": "Who is the manufacturer of the mini jet red baron ride that opened before 2001?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase names the ride type, matching the Type header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "before 2001",
+              "value": "< 2001",
+              "start": 67,
+              "end": 78,
+              "clause": "Who is the manufacturer of the mini jet red baron ride that opened before 2001?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The temporal constraint applies to the Opened in year field.",
+              "operator": "<",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 2,
+                "reason": "“before 2001” constrains the “Opened in” year; the matching Mini Jet Red Baron row has 1987, which is before 2001."
+              }
+            }
+          ]
+        }
+      },
+      "warnings": [
+        "value model disagreed with extracted question span; original retained"
+      ],
+      "execution": {
+        "status": "GROUNDING_FAILED",
+        "stage": "WHERE_CONDITION_VALIDATE",
+        "halt": true,
+        "completed": false,
+        "errors": [
+          "condition 1: grounding NO_MATCH",
+          "condition 1: nonnumeric value for real column"
+        ],
+        "warnings": [
+          "value model disagreed with extracted question span; original retained"
+        ]
+      },
+      "originalConditions": [
+        {
+          "surface": "mini jet red baron",
+          "value": "Mini Jet Red Baron",
+          "start": 31,
+          "end": 49
+        },
+        {
+          "surface": "before 2001",
+          "value": "< 2001",
+          "start": 67,
+          "end": 78
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "mini jet red baron",
+          "value": "Mini Jet Red Baron",
+          "start": 31,
+          "end": 49,
+          "clause": "Who is the manufacturer of the mini jet red baron ride that opened before 2001?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The phrase names the ride type, matching the Type header and row evidence.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "before 2001",
+          "value": "< 2001",
+          "start": 67,
+          "end": 78,
+          "clause": "Who is the manufacturer of the mini jet red baron ride that opened before 2001?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The temporal constraint applies to the Opened in year field.",
+          "operator": "<",
+          "grounded": false,
+          "groundingStatus": "NO_MATCH",
+          "groundingReview": {
+            "column": 2,
+            "reason": "“before 2001” constrains the “Opened in” year; the matching Mini Jet Red Baron row has 1987, which is before 2001."
+          }
+        }
+      ],
+      "count": 2
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": false,
+  "elapsed_ms": 11625
+}

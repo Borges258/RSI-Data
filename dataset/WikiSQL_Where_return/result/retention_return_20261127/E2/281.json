@@ -1,0 +1,633 @@
+{
+  "arm": "E2",
+  "position": 281,
+  "example_id": "test:11327:2-11222744-2",
+  "original_index": 11327,
+  "table_id": "2-11222744-2",
+  "question": "What format is after 1991 and has a Catalog Number of 81868?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        0,
+        1,
+        1991
+      ],
+      [
+        6,
+        0,
+        "81868"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      1,
+      1991
+    ],
+    [
+      6,
+      0,
+      "81868"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        1,
+        1991
+      ],
+      [
+        6,
+        0,
+        "81868"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "after 1991",
+        "value": 1991,
+        "start": 15,
+        "end": 25,
+        "clause": "What format is after 1991",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "'after 1991' is a temporal comparison against the Year field",
+        "operator": ">",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "81868",
+        "value": "81868",
+        "start": 54,
+        "end": 59,
+        "clause": "and has a Catalog Number of 81868?",
+        "columnIndex": 6,
+        "columnCandidates": [
+          6
+        ],
+        "columnMatchReason": "The question explicitly names Catalog Number, and 81868 appears in that column",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "after 1991",
+        "value": "1991",
+        "start": 15,
+        "end": 25
+      },
+      {
+        "surface": "81868",
+        "value": "81868",
+        "start": 54,
+        "end": 59
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What format is after 1991 and has a Catalog Number of 81868?",
+      "table": {
+        "header": [
+          "Year",
+          "Title",
+          "Format",
+          "Studio",
+          "Release Date",
+          "Copyright Information",
+          "Catalog Number"
+        ],
+        "page_title": "Callan Pinckney",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 11222744,
+        "id": "2-11222744-2",
+        "section_title": "Official Callanetics videos",
+        "rows": [
+          [
+            "1986",
+            "Callanetics: 10 Years Younger In 10 Hours",
+            "VHS/Betamax",
+            "MCA",
+            "November 4, 1986",
+            "Callan Productions Corp.",
+            "80429 / BTA80429"
+          ],
+          [
+            "1993",
+            "Callanetics: 10 Years Younger In 10 Hours",
+            "LaserDisc",
+            "MCA Universal",
+            "January 27, 1993",
+            "Callan Productions Corp.",
+            "40429"
+          ],
+          [
+            "1988",
+            "Super Callanetics",
+            "VHS",
+            "MCA Universal",
+            "October 6, 1988",
+            "Callan Productions Corp.",
+            "80809"
+          ],
+          [
+            "1989",
+            "Beginning Callanetics",
+            "VHS",
+            "MCA Universal",
+            "October 5, 1989",
+            "Callan Productions Corp.",
+            "80892"
+          ],
+          [
+            "1991",
+            "Quick Callanetics: Stomach",
+            "VHS",
+            "MCA Universal",
+            "October 3, 1991",
+            "Callan Productions Corp.",
+            "81062"
+          ],
+          [
+            "1991",
+            "Quick Callanetics: Legs",
+            "VHS",
+            "MCA Universal",
+            "October 3, 1991",
+            "Callan Productions Corp.",
+            "81061"
+          ],
+          [
+            "1991",
+            "Quick Callanetics: Hips and Behind",
+            "VHS",
+            "MCA Universal",
+            "October 3, 1991",
+            "Callan Productions Corp.",
+            "81063"
+          ],
+          [
+            "1992",
+            "AM/PM Callanetics",
+            "VHS",
+            "MCA Universal",
+            "October 22, 1992",
+            "Callan Productions Corp.",
+            "81258"
+          ],
+          [
+            "1994",
+            "The Secrets Of Callanetics",
+            "VHS",
+            "MCA Universal",
+            "December, 1994",
+            "Callan Productions Corp.",
+            "81868"
+          ]
+        ],
+        "caption": "Official Callanetics videos",
+        "headers": [
+          "Year",
+          "Title",
+          "Format",
+          "Studio",
+          "Release Date",
+          "Copyright Information",
+          "Catalog Number"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-11222744-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "after 1991",
+              "value": "1991",
+              "start": 15,
+              "end": 25
+            },
+            {
+              "surface": "81868",
+              "value": "81868",
+              "start": 54,
+              "end": 59
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "8b4d0de8c2967c07f6de81c1a0461ef1861f179a7dfb6c59c46daf82daa6ce0b",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5014,
+              "completion_tokens": 31,
+              "total_tokens": 5045,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "after 1991",
+              "value": "1991",
+              "start": 15,
+              "end": 25,
+              "clause": "What format is after 1991"
+            },
+            {
+              "surface": "81868",
+              "value": "81868",
+              "start": 54,
+              "end": 59,
+              "clause": "and has a Catalog Number of 81868?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "after 1991",
+              "value": "1991",
+              "start": 15,
+              "end": 25,
+              "clause": "What format is after 1991"
+            },
+            {
+              "surface": "81868",
+              "value": "81868",
+              "start": 54,
+              "end": 59,
+              "clause": "and has a Catalog Number of 81868?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "after 1991",
+              "value": "1991",
+              "start": 15,
+              "end": 25,
+              "clause": "What format is after 1991",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'after 1991' is a temporal comparison against the Year field"
+            },
+            {
+              "surface": "81868",
+              "value": "81868",
+              "start": 54,
+              "end": 59,
+              "clause": "and has a Catalog Number of 81868?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "The question explicitly names Catalog Number, and 81868 appears in that column"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "6dc45ca68c39bf7e675ffe89530d58266a74907a54e4b6e1a92467859803c5f8",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5078,
+              "completion_tokens": 55,
+              "total_tokens": 5133,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "after 1991",
+              "value": "1991",
+              "start": 15,
+              "end": 25,
+              "clause": "What format is after 1991",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'after 1991' is a temporal comparison against the Year field",
+              "operator": ">"
+            },
+            {
+              "surface": "81868",
+              "value": "81868",
+              "start": 54,
+              "end": 59,
+              "clause": "and has a Catalog Number of 81868?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "The question explicitly names Catalog Number, and 81868 appears in that column",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "8c36615d83445e2a16aa8085878f7e3ba7d055a2895159bcb2cb83c182773e93",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5166,
+              "completion_tokens": 11,
+              "total_tokens": 5177,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "after 1991",
+              "value": "1991",
+              "start": 15,
+              "end": 25,
+              "clause": "What format is after 1991",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'after 1991' is a temporal comparison against the Year field",
+              "operator": ">"
+            },
+            {
+              "surface": "81868",
+              "value": "81868",
+              "start": 54,
+              "end": 59,
+              "clause": "and has a Catalog Number of 81868?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "The question explicitly names Catalog Number, and 81868 appears in that column",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f97704f45bd7df0215b902ba56830cbd8f58d170ee43e8f5ac89a3425c4d4465",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5122,
+              "completion_tokens": 14,
+              "total_tokens": 5136,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "after 1991",
+              "value": "1991",
+              "start": 15,
+              "end": 25,
+              "clause": "What format is after 1991",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'after 1991' is a temporal comparison against the Year field",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "81868",
+              "value": "81868",
+              "start": 54,
+              "end": 59,
+              "clause": "and has a Catalog Number of 81868?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "The question explicitly names Catalog Number, and 81868 appears in that column",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "after 1991",
+              "value": 1991,
+              "start": 15,
+              "end": 25,
+              "clause": "What format is after 1991",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'after 1991' is a temporal comparison against the Year field",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "81868",
+              "value": "81868",
+              "start": 54,
+              "end": 59,
+              "clause": "and has a Catalog Number of 81868?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "The question explicitly names Catalog Number, and 81868 appears in that column",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "after 1991",
+              "value": 1991,
+              "start": 15,
+              "end": 25,
+              "clause": "What format is after 1991",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'after 1991' is a temporal comparison against the Year field",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "81868",
+              "value": "81868",
+              "start": 54,
+              "end": 59,
+              "clause": "and has a Catalog Number of 81868?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "The question explicitly names Catalog Number, and 81868 appears in that column",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              1,
+              1991
+            ],
+            [
+              6,
+              0,
+              "81868"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "after 1991",
+          "value": "1991",
+          "start": 15,
+          "end": 25
+        },
+        {
+          "surface": "81868",
+          "value": "81868",
+          "start": 54,
+          "end": 59
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "after 1991",
+          "value": 1991,
+          "start": 15,
+          "end": 25,
+          "clause": "What format is after 1991",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "'after 1991' is a temporal comparison against the Year field",
+          "operator": ">",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "81868",
+          "value": "81868",
+          "start": 54,
+          "end": 59,
+          "clause": "and has a Catalog Number of 81868?",
+          "columnIndex": 6,
+          "columnCandidates": [
+            6
+          ],
+          "columnMatchReason": "The question explicitly names Catalog Number, and 81868 appears in that column",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          0,
+          1,
+          1991
+        ],
+        [
+          6,
+          0,
+          "81868"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8234
+}

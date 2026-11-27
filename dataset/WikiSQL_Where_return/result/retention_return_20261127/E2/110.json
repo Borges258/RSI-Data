@@ -1,0 +1,523 @@
+{
+  "arm": "E2",
+  "position": 110,
+  "example_id": "test:3950:1-27940569-1",
+  "original_index": 3950,
+  "table_id": "1-27940569-1",
+  "question": "How many points and bonuses did Kurt Busch get?",
+  "gold_sql": {
+    "sel": 6,
+    "conds": [
+      [
+        3,
+        0,
+        "Kurt Busch"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      3,
+      0,
+      "Kurt Busch"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        0,
+        "Kurt Busch"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Kurt Busch",
+        "value": "Kurt Busch",
+        "start": 32,
+        "end": 42,
+        "clause": "and bonuses did Kurt Busch get?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "'Kurt Busch' is the person named in the question, and the Driver column contains that exact driver name.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Kurt Busch",
+        "value": "Kurt Busch",
+        "start": 32,
+        "end": 42
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "How many points and bonuses did Kurt Busch get?",
+      "table": {
+        "header": [
+          "Finish",
+          "Start",
+          "Car",
+          "Driver",
+          "Make",
+          "Sponsor",
+          "Pts/bns",
+          "Laps",
+          "Status",
+          "Winnings"
+        ],
+        "page_title": "2009 Pepsi 500",
+        "types": [
+          "real",
+          "real",
+          "real",
+          "text",
+          "text",
+          "text",
+          "text",
+          "real",
+          "text",
+          "real"
+        ],
+        "id": "1-27940569-1",
+        "section_title": "Results",
+        "caption": "Results",
+        "rows": [
+          [
+            1,
+            3,
+            48,
+            "Jimmie Johnson",
+            "Chevrolet",
+            "Lowe's / Jimmie Johnson Foundation",
+            "195/10",
+            250,
+            "Running",
+            302801
+          ],
+          [
+            2,
+            10,
+            24,
+            "Jeff Gordon",
+            "Chevrolet",
+            "Pepsi / DuPont",
+            "175/5",
+            250,
+            "Running",
+            211426
+          ],
+          [
+            3,
+            4,
+            42,
+            "Juan Montoya",
+            "Chevrolet",
+            "Target",
+            "170/5",
+            250,
+            "Running",
+            195773
+          ],
+          [
+            4,
+            9,
+            5,
+            "Mark Martin",
+            "Chevrolet",
+            "Kellogg's / Carquest",
+            "165/5",
+            250,
+            "Running",
+            136625
+          ],
+          [
+            5,
+            20,
+            14,
+            "Tony Stewart",
+            "Chevrolet",
+            "Office Depot / Old Spice",
+            "160/5",
+            250,
+            "Running",
+            143248
+          ],
+          [
+            6,
+            11,
+            99,
+            "Carl Edwards",
+            "Ford",
+            "Aflac",
+            "150/0",
+            250,
+            "Running",
+            158356
+          ],
+          [
+            7,
+            31,
+            6,
+            "David Ragan",
+            "Ford",
+            "UPS",
+            "146/0",
+            250,
+            "Running",
+            117500
+          ],
+          [
+            8,
+            24,
+            2,
+            "Kurt Busch",
+            "Dodge",
+            "Miller Lite",
+            "147/5",
+            250,
+            "Running",
+            121925
+          ],
+          [
+            9,
+            8,
+            33,
+            "Clint Bowyer",
+            "Chevrolet",
+            "Prilosec OTC / Wal-Mart",
+            "138/0",
+            250,
+            "Running",
+            113950
+          ],
+          [
+            10,
+            7,
+            29,
+            "Kevin Harvick",
+            "Chevrolet",
+            "Shell / Pennzoil",
+            "134/0",
+            250,
+            "Running",
+            142828
+          ],
+          [
+            11,
+            16,
+            7,
+            "Casey Mears",
+            "Chevrolet",
+            "Jack Daniel's",
+            "130/0",
+            250,
+            "Running",
+            121525
+          ]
+        ],
+        "name": "table_27940569_1",
+        "headers": [
+          "Finish",
+          "Start",
+          "Car",
+          "Driver",
+          "Make",
+          "Sponsor",
+          "Pts/bns",
+          "Laps",
+          "Status",
+          "Winnings"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-27940569-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Kurt Busch",
+              "value": "Kurt Busch",
+              "start": 32,
+              "end": 42
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "2774290292d927f69c517b0e3a1382712d9218a6d7018ff164f4fc3ae3195f2d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5023,
+              "completion_tokens": 21,
+              "total_tokens": 5044,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Kurt Busch",
+              "value": "Kurt Busch",
+              "start": 32,
+              "end": 42,
+              "clause": "and bonuses did Kurt Busch get?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Kurt Busch",
+              "value": "Kurt Busch",
+              "start": 32,
+              "end": 42,
+              "clause": "and bonuses did Kurt Busch get?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Kurt Busch",
+              "value": "Kurt Busch",
+              "start": 32,
+              "end": 42,
+              "clause": "and bonuses did Kurt Busch get?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'Kurt Busch' is the person named in the question, and the Driver column contains that exact driver name."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "cc31fb842c24f97ad5bdd58873ef7a9df1fcbf16485dd796b997a4f1bb9c63f5",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5055,
+              "completion_tokens": 44,
+              "total_tokens": 5099,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Kurt Busch",
+              "value": "Kurt Busch",
+              "start": 32,
+              "end": 42,
+              "clause": "and bonuses did Kurt Busch get?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'Kurt Busch' is the person named in the question, and the Driver column contains that exact driver name.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "957636d5d03c54897e81b75f56a73acc1f946f192395acded8448e3331a689a5",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5122,
+              "completion_tokens": 9,
+              "total_tokens": 5131,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Kurt Busch",
+              "value": "Kurt Busch",
+              "start": 32,
+              "end": 42,
+              "clause": "and bonuses did Kurt Busch get?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'Kurt Busch' is the person named in the question, and the Driver column contains that exact driver name.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "5d3aa9904b2f2d5daaf56b9818a3dd715cc7bcf550da29f09b89b09e077ff500",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5073,
+              "completion_tokens": 12,
+              "total_tokens": 5085,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Kurt Busch",
+              "value": "Kurt Busch",
+              "start": 32,
+              "end": 42,
+              "clause": "and bonuses did Kurt Busch get?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'Kurt Busch' is the person named in the question, and the Driver column contains that exact driver name.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Kurt Busch",
+              "value": "Kurt Busch",
+              "start": 32,
+              "end": 42,
+              "clause": "and bonuses did Kurt Busch get?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'Kurt Busch' is the person named in the question, and the Driver column contains that exact driver name.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Kurt Busch",
+              "value": "Kurt Busch",
+              "start": 32,
+              "end": 42,
+              "clause": "and bonuses did Kurt Busch get?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'Kurt Busch' is the person named in the question, and the Driver column contains that exact driver name.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              0,
+              "Kurt Busch"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Kurt Busch",
+          "value": "Kurt Busch",
+          "start": 32,
+          "end": 42
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Kurt Busch",
+          "value": "Kurt Busch",
+          "start": 32,
+          "end": 42,
+          "clause": "and bonuses did Kurt Busch get?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "'Kurt Busch' is the person named in the question, and the Driver column contains that exact driver name.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          3,
+          0,
+          "Kurt Busch"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8062
+}

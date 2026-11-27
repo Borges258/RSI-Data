@@ -1,0 +1,637 @@
+{
+  "arm": "E2",
+  "position": 177,
+  "example_id": "test:14450:2-12587230-1",
+  "original_index": 14450,
+  "table_id": "2-12587230-1",
+  "question": "What was album of the year after 2009?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        0,
+        1,
+        2009
+      ],
+      [
+        2,
+        0,
+        "album of the year"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "Album of the Year"
+    ],
+    [
+      0,
+      1,
+      2009
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "Album of the Year"
+      ],
+      [
+        0,
+        1,
+        2009
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "album of the year",
+        "value": "Album of the Year",
+        "start": 9,
+        "end": 26,
+        "clause": "What was album of the year after 2009?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "Category header contains the exact award category value 'Album of the Year'; Award identifies the awarding organization instead.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "after 2009",
+        "value": 2009,
+        "start": 27,
+        "end": 37,
+        "clause": "What was album of the year after 2009?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "'after 2009' is a temporal comparison supported by the Year column's numeric year values.",
+        "operator": ">",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "album of the year",
+        "value": "Album of the Year",
+        "start": 9,
+        "end": 26
+      },
+      {
+        "surface": "after 2009",
+        "value": "2009",
+        "start": 27,
+        "end": 37
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What was album of the year after 2009?",
+      "table": {
+        "header": [
+          "Year",
+          "Award",
+          "Category",
+          "Nominated Work",
+          "Result"
+        ],
+        "page_title": "The-Dream",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 12587230,
+        "id": "2-12587230-1",
+        "section_title": "Awards and nominations",
+        "rows": [
+          [
+            "2007",
+            "Mobo Awards",
+            "Best Songwriter",
+            "\" Bed \" (songwriter)",
+            "Nominated"
+          ],
+          [
+            "2008",
+            "American Music Awards",
+            "T-Mobile Breakthrough Artist",
+            "The-Dream",
+            "Nominated"
+          ],
+          [
+            "2008",
+            "BET Awards",
+            "Best New Artist",
+            "The-Dream",
+            "Won"
+          ],
+          [
+            "2008",
+            "Grammy Awards",
+            "Song of the Year",
+            "\"Umbrella\" (songwriter)",
+            "Nominated"
+          ],
+          [
+            "2008",
+            "Ozone Awards",
+            "Best R&B Artist",
+            "The-Dream",
+            "Nominated"
+          ],
+          [
+            "2009",
+            "BET Awards",
+            "Best Male R&B Artist",
+            "The-Dream",
+            "Nominated"
+          ],
+          [
+            "2009",
+            "BET Hip-Hop Awards",
+            "Viewer's Choice",
+            "\" Throw It in the Bag \" with Fabolous",
+            "Won"
+          ],
+          [
+            "2010",
+            "Grammy Awards",
+            "Song of the Year",
+            "\" Single Ladies (Put a Ring on It) \" (songwriter)",
+            "Won"
+          ],
+          [
+            "2010",
+            "Grammy Awards",
+            "Album of the Year",
+            "I Am... Sasha Fierce (songwriter)",
+            "Nominated"
+          ],
+          [
+            "2010",
+            "Grammy Awards",
+            "Best R&B Song",
+            "\" Single Ladies (Put a Ring on It) \" (songwriter)",
+            "Won"
+          ],
+          [
+            "2011",
+            "Grammy Awards",
+            "Song of the Year",
+            "\" All of the Lights \" (songwriter)",
+            "Nominated"
+          ],
+          [
+            "2011",
+            "Grammy Awards",
+            "Best Rap Song",
+            "\" All of the Lights \" (songwriter)",
+            "Won"
+          ],
+          [
+            "2012",
+            "Grammy Awards",
+            "Best Rap/Sung Collaboration",
+            "\" No Church in the Wild \"",
+            "Won"
+          ]
+        ],
+        "caption": "Awards and nominations",
+        "headers": [
+          "Year",
+          "Award",
+          "Category",
+          "Nominated Work",
+          "Result"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-12587230-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "album of the year",
+              "value": "Album of the Year",
+              "start": 9,
+              "end": 26
+            },
+            {
+              "surface": "after 2009",
+              "value": "2009",
+              "start": 27,
+              "end": 37
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "37ce8aa186625db99e38ecbeef90c810ee414d1b8fec48dadab5f0c1df99701c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4983,
+              "completion_tokens": 35,
+              "total_tokens": 5018,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "album of the year",
+              "value": "Album of the Year",
+              "start": 9,
+              "end": 26,
+              "clause": "What was album of the year after 2009?"
+            },
+            {
+              "surface": "after 2009",
+              "value": "2009",
+              "start": 27,
+              "end": 37,
+              "clause": "What was album of the year after 2009?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "album of the year",
+              "value": "Album of the Year",
+              "start": 9,
+              "end": 26,
+              "clause": "What was album of the year after 2009?"
+            },
+            {
+              "surface": "after 2009",
+              "value": "2009",
+              "start": 27,
+              "end": 37,
+              "clause": "What was album of the year after 2009?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "album of the year",
+              "value": "Album of the Year",
+              "start": 9,
+              "end": 26,
+              "clause": "What was album of the year after 2009?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Category header contains the exact award category value 'Album of the Year'; Award identifies the awarding organization instead."
+            },
+            {
+              "surface": "after 2009",
+              "value": "2009",
+              "start": 27,
+              "end": 37,
+              "clause": "What was album of the year after 2009?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'after 2009' is a temporal comparison supported by the Year column's numeric year values."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "59dc87a12edac0600936f9eef9b0e47f7ab4e1f89389b48066b9ab8cc375d41a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5056,
+              "completion_tokens": 66,
+              "total_tokens": 5122,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "album of the year",
+              "value": "Album of the Year",
+              "start": 9,
+              "end": 26,
+              "clause": "What was album of the year after 2009?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Category header contains the exact award category value 'Album of the Year'; Award identifies the awarding organization instead.",
+              "operator": "="
+            },
+            {
+              "surface": "after 2009",
+              "value": "2009",
+              "start": 27,
+              "end": 37,
+              "clause": "What was album of the year after 2009?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'after 2009' is a temporal comparison supported by the Year column's numeric year values.",
+              "operator": ">"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a4e74e1835c8ebe5bd2690ac51307fe4bdf49d8f58d3ea5f5a4fbc9fd2c57bb9",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5156,
+              "completion_tokens": 11,
+              "total_tokens": 5167,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "album of the year",
+              "value": "Album of the Year",
+              "start": 9,
+              "end": 26,
+              "clause": "What was album of the year after 2009?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Category header contains the exact award category value 'Album of the Year'; Award identifies the awarding organization instead.",
+              "operator": "="
+            },
+            {
+              "surface": "after 2009",
+              "value": "2009",
+              "start": 27,
+              "end": 37,
+              "clause": "What was album of the year after 2009?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'after 2009' is a temporal comparison supported by the Year column's numeric year values.",
+              "operator": ">"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "81b2b5351ffb295a41b9632ac1ee3c750514f77e625313c0611b8bb6f916cec6",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5110,
+              "completion_tokens": 16,
+              "total_tokens": 5126,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "album of the year",
+              "value": "Album of the Year",
+              "start": 9,
+              "end": 26,
+              "clause": "What was album of the year after 2009?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Category header contains the exact award category value 'Album of the Year'; Award identifies the awarding organization instead.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "after 2009",
+              "value": "2009",
+              "start": 27,
+              "end": 37,
+              "clause": "What was album of the year after 2009?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'after 2009' is a temporal comparison supported by the Year column's numeric year values.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "album of the year",
+              "value": "Album of the Year",
+              "start": 9,
+              "end": 26,
+              "clause": "What was album of the year after 2009?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Category header contains the exact award category value 'Album of the Year'; Award identifies the awarding organization instead.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "after 2009",
+              "value": 2009,
+              "start": 27,
+              "end": 37,
+              "clause": "What was album of the year after 2009?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'after 2009' is a temporal comparison supported by the Year column's numeric year values.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "album of the year",
+              "value": "Album of the Year",
+              "start": 9,
+              "end": 26,
+              "clause": "What was album of the year after 2009?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Category header contains the exact award category value 'Album of the Year'; Award identifies the awarding organization instead.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "after 2009",
+              "value": 2009,
+              "start": 27,
+              "end": 37,
+              "clause": "What was album of the year after 2009?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'after 2009' is a temporal comparison supported by the Year column's numeric year values.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "Album of the Year"
+            ],
+            [
+              0,
+              1,
+              2009
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "album of the year",
+          "value": "Album of the Year",
+          "start": 9,
+          "end": 26
+        },
+        {
+          "surface": "after 2009",
+          "value": "2009",
+          "start": 27,
+          "end": 37
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "album of the year",
+          "value": "Album of the Year",
+          "start": 9,
+          "end": 26,
+          "clause": "What was album of the year after 2009?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "Category header contains the exact award category value 'Album of the Year'; Award identifies the awarding organization instead.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "after 2009",
+          "value": 2009,
+          "start": 27,
+          "end": 37,
+          "clause": "What was album of the year after 2009?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "'after 2009' is a temporal comparison supported by the Year column's numeric year values.",
+          "operator": ">",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          2,
+          0,
+          "Album of the Year"
+        ],
+        [
+          0,
+          1,
+          2009
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8015
+}

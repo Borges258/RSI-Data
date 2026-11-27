@@ -1,0 +1,613 @@
+{
+  "arm": "E2",
+  "position": 544,
+  "example_id": "test:4437:2-10122032-1",
+  "original_index": 4437,
+  "table_id": "2-10122032-1",
+  "question": "How many gold medals on average were earned by Italy when they held the rank of 4?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        1,
+        0,
+        "italy"
+      ],
+      [
+        0,
+        0,
+        4
+      ]
+    ],
+    "agg": 5
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "Italy"
+    ],
+    [
+      0,
+      0,
+      4
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "Italy"
+      ],
+      [
+        0,
+        0,
+        4
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Italy",
+        "value": "Italy",
+        "start": 47,
+        "end": 52,
+        "clause": "How many gold medals on average were earned by Italy when they held the rank of 4?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "Italy is the nation named in the question and appears under Nation.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "4",
+        "value": 4,
+        "start": 80,
+        "end": 81,
+        "clause": "How many gold medals on average were earned by Italy when they held the rank of 4?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "The question explicitly says rank of 4, matching the Rank field.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Italy",
+        "value": "Italy",
+        "start": 47,
+        "end": 52
+      },
+      {
+        "surface": "4",
+        "value": "4",
+        "start": 80,
+        "end": 81
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "How many gold medals on average were earned by Italy when they held the rank of 4?",
+      "table": {
+        "header": [
+          "Rank",
+          "Nation",
+          "Gold",
+          "Silver",
+          "Bronze",
+          "Total"
+        ],
+        "page_title": "Open water swimming at the 2007 World Aquatics Championships",
+        "types": [
+          "real",
+          "text",
+          "real",
+          "real",
+          "real",
+          "real"
+        ],
+        "page_id": 10122032,
+        "id": "2-10122032-1",
+        "section_title": "Medal table",
+        "rows": [
+          [
+            "1",
+            "Russia",
+            "4",
+            "2",
+            "2",
+            "8"
+          ],
+          [
+            "2",
+            "Germany",
+            "2",
+            "1",
+            "0",
+            "3"
+          ],
+          [
+            "3",
+            "Australia",
+            "0",
+            "0",
+            "2",
+            "2"
+          ],
+          [
+            "4",
+            "Great Britain",
+            "0",
+            "1",
+            "0",
+            "1"
+          ],
+          [
+            "4",
+            "USA",
+            "0",
+            "1",
+            "0",
+            "1"
+          ],
+          [
+            "4",
+            "Italy",
+            "0",
+            "1",
+            "0",
+            "1"
+          ],
+          [
+            "7",
+            "Greece",
+            "0",
+            "0",
+            "1",
+            "1"
+          ],
+          [
+            "7",
+            "Egypt",
+            "0",
+            "0",
+            "1",
+            "1"
+          ]
+        ],
+        "caption": "Medal table",
+        "headers": [
+          "Rank",
+          "Nation",
+          "Gold",
+          "Silver",
+          "Bronze",
+          "Total"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-10122032-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "Italy",
+              "value": "Italy",
+              "start": 47,
+              "end": 52
+            },
+            {
+              "surface": "4",
+              "value": "4",
+              "start": 80,
+              "end": 81
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "823501bb207d87788b196878ffb7f7be4877bff50204c2bcf68de9ee00c2eab1",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4792,
+              "completion_tokens": 25,
+              "total_tokens": 4817,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Italy",
+              "value": "Italy",
+              "start": 47,
+              "end": 52,
+              "clause": "How many gold medals on average were earned by Italy when they held the rank of 4?"
+            },
+            {
+              "surface": "4",
+              "value": "4",
+              "start": 80,
+              "end": 81,
+              "clause": "How many gold medals on average were earned by Italy when they held the rank of 4?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Italy",
+              "value": "Italy",
+              "start": 47,
+              "end": 52,
+              "clause": "How many gold medals on average were earned by Italy when they held the rank of 4?"
+            },
+            {
+              "surface": "4",
+              "value": "4",
+              "start": 80,
+              "end": 81,
+              "clause": "How many gold medals on average were earned by Italy when they held the rank of 4?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Italy",
+              "value": "Italy",
+              "start": 47,
+              "end": 52,
+              "clause": "How many gold medals on average were earned by Italy when they held the rank of 4?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Italy is the nation named in the question and appears under Nation."
+            },
+            {
+              "surface": "4",
+              "value": "4",
+              "start": 80,
+              "end": 81,
+              "clause": "How many gold medals on average were earned by Italy when they held the rank of 4?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly says rank of 4, matching the Rank field."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "8371a1bff9a1db8556d84df777fcedec248a632c459742922430f26abc7d0bac",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4871,
+              "completion_tokens": 52,
+              "total_tokens": 4923,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Italy",
+              "value": "Italy",
+              "start": 47,
+              "end": 52,
+              "clause": "How many gold medals on average were earned by Italy when they held the rank of 4?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Italy is the nation named in the question and appears under Nation.",
+              "operator": "="
+            },
+            {
+              "surface": "4",
+              "value": "4",
+              "start": 80,
+              "end": 81,
+              "clause": "How many gold medals on average were earned by Italy when they held the rank of 4?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly says rank of 4, matching the Rank field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "767be720cc5bb3860cfbb75e7592a43248a3dae439e57252b20ffb6aef2f7129",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4958,
+              "completion_tokens": 11,
+              "total_tokens": 4969,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Italy",
+              "value": "Italy",
+              "start": 47,
+              "end": 52,
+              "clause": "How many gold medals on average were earned by Italy when they held the rank of 4?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Italy is the nation named in the question and appears under Nation.",
+              "operator": "="
+            },
+            {
+              "surface": "4",
+              "value": "4",
+              "start": 80,
+              "end": 81,
+              "clause": "How many gold medals on average were earned by Italy when they held the rank of 4?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly says rank of 4, matching the Rank field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "5ac7cc888db2ee166b48fc73df6bbc96157fa11321b0980da78310f348d5c3b4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4912,
+              "completion_tokens": 12,
+              "total_tokens": 4924,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Italy",
+              "value": "Italy",
+              "start": 47,
+              "end": 52,
+              "clause": "How many gold medals on average were earned by Italy when they held the rank of 4?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Italy is the nation named in the question and appears under Nation.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "4",
+              "value": "4",
+              "start": 80,
+              "end": 81,
+              "clause": "How many gold medals on average were earned by Italy when they held the rank of 4?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly says rank of 4, matching the Rank field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Italy",
+              "value": "Italy",
+              "start": 47,
+              "end": 52,
+              "clause": "How many gold medals on average were earned by Italy when they held the rank of 4?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Italy is the nation named in the question and appears under Nation.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "4",
+              "value": 4,
+              "start": 80,
+              "end": 81,
+              "clause": "How many gold medals on average were earned by Italy when they held the rank of 4?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly says rank of 4, matching the Rank field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Italy",
+              "value": "Italy",
+              "start": 47,
+              "end": 52,
+              "clause": "How many gold medals on average were earned by Italy when they held the rank of 4?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Italy is the nation named in the question and appears under Nation.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "4",
+              "value": 4,
+              "start": 80,
+              "end": 81,
+              "clause": "How many gold medals on average were earned by Italy when they held the rank of 4?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly says rank of 4, matching the Rank field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              "Italy"
+            ],
+            [
+              0,
+              0,
+              4
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Italy",
+          "value": "Italy",
+          "start": 47,
+          "end": 52
+        },
+        {
+          "surface": "4",
+          "value": "4",
+          "start": 80,
+          "end": 81
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Italy",
+          "value": "Italy",
+          "start": 47,
+          "end": 52,
+          "clause": "How many gold medals on average were earned by Italy when they held the rank of 4?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "Italy is the nation named in the question and appears under Nation.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "4",
+          "value": 4,
+          "start": 80,
+          "end": 81,
+          "clause": "How many gold medals on average were earned by Italy when they held the rank of 4?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "The question explicitly says rank of 4, matching the Rank field.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          1,
+          0,
+          "Italy"
+        ],
+        [
+          0,
+          0,
+          4
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7563
+}

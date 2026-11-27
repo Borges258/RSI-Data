@@ -1,0 +1,530 @@
+{
+  "arm": "E2",
+  "position": 115,
+  "example_id": "test:8353:2-17001488-3",
+  "original_index": 8353,
+  "table_id": "2-17001488-3",
+  "question": "What is Driver, when Race 2 is \"10\"?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        4,
+        0,
+        "10"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      3,
+      0,
+      "10"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        0,
+        "10"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "10",
+        "value": "10",
+        "start": 32,
+        "end": 34,
+        "clause": "when Race 2 is \"10\"?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The condition explicitly names the 'Race 2' field, which is schema column index 3; its rows include the value '10'.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "10",
+        "value": "10",
+        "start": 32,
+        "end": 34
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is Driver, when Race 2 is \"10\"?",
+      "table": {
+        "header": [
+          "Driver",
+          "Team",
+          "Race 1",
+          "Race 2",
+          "Race 3"
+        ],
+        "page_title": "1999 Australian Touring Car season",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 17001488,
+        "id": "2-17001488-3",
+        "section_title": "V8 Supercar Challenge",
+        "rows": [
+          [
+            "Paul Radisich",
+            "Dick Johnson Racing",
+            "1",
+            "1",
+            "1"
+          ],
+          [
+            "Russell Ingall",
+            "Castrol Perkins Racing",
+            "4",
+            "5",
+            "2"
+          ],
+          [
+            "John Faulkner",
+            "John Faulkner Racing",
+            "6",
+            "6",
+            "3"
+          ],
+          [
+            "Wayne Gardner",
+            "Perkins Engineering",
+            "7",
+            "7",
+            "4"
+          ],
+          [
+            "Mark Larkham",
+            "Larkham Motor Sport",
+            "8",
+            "8",
+            "5"
+          ],
+          [
+            "Jason Bright",
+            "Stone Brothers Racing",
+            "15",
+            "12",
+            "6"
+          ],
+          [
+            "Larry Perkins",
+            "Castrol Perkins Racing",
+            "11",
+            "11",
+            "7"
+          ],
+          [
+            "Jason Bargwanna",
+            "Garry Rogers Motorsport",
+            "13",
+            "13",
+            "8"
+          ],
+          [
+            "Glenn Seton",
+            "Glenn Seton Racing",
+            "14",
+            "16",
+            "9"
+          ],
+          [
+            "Steven Richards",
+            "John Faulkner Racing",
+            "20",
+            "17",
+            "10"
+          ],
+          [
+            "Steve Reed",
+            "Lansvale Racing Team",
+            "12",
+            "15",
+            "11"
+          ],
+          [
+            "Mark Skaife",
+            "Holden Racing Team",
+            "DNF",
+            "10",
+            "12"
+          ],
+          [
+            "Tony Longhurst",
+            "Tony Longhurst Racing",
+            "10",
+            "9",
+            "13"
+          ],
+          [
+            "Paul Romano",
+            "Romano Racing",
+            "DNF",
+            "DNF",
+            "14"
+          ],
+          [
+            "David Parsons",
+            "Challenge Recruitment",
+            "17",
+            "19",
+            "15"
+          ],
+          [
+            "Rodney Forbes",
+            "Rodney Forbes Racing",
+            "18",
+            "DNF",
+            "16"
+          ],
+          [
+            "Neil Crompton",
+            "Glenn Seton Racing",
+            "9",
+            "14",
+            "17"
+          ],
+          [
+            "Dick Johnson",
+            "Dick Johnson Racing",
+            "16",
+            "18",
+            "DNF"
+          ],
+          [
+            "Garth Tander",
+            "Garry Rogers Motorsport",
+            "3",
+            "3",
+            "DNF"
+          ],
+          [
+            "Steve Ellery",
+            "Supercheap Auto Racing",
+            "2",
+            "2",
+            "DNS"
+          ],
+          [
+            "Craig Lowndes",
+            "Holden Racing Team",
+            "5",
+            "4",
+            "DNS"
+          ],
+          [
+            "Brett Peters",
+            "Colourscan Motorsport",
+            "19",
+            "20",
+            "DNS"
+          ]
+        ],
+        "caption": "V8 Supercar Challenge",
+        "headers": [
+          "Driver",
+          "Team",
+          "Race 1",
+          "Race 2",
+          "Race 3"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-17001488-3",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "10",
+              "value": "10",
+              "start": 32,
+              "end": 34
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ad852baf8c7aa4074a09568b3192f9f794e2c0eedde37f4a5f56f35462f49840",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5039,
+              "completion_tokens": 17,
+              "total_tokens": 5056,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "10",
+              "value": "10",
+              "start": 32,
+              "end": 34,
+              "clause": "when Race 2 is \"10\"?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "10",
+              "value": "10",
+              "start": 32,
+              "end": 34,
+              "clause": "when Race 2 is \"10\"?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "10",
+              "value": "10",
+              "start": 32,
+              "end": 34,
+              "clause": "when Race 2 is \"10\"?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The condition explicitly names the 'Race 2' field, which is schema column index 3; its rows include the value '10'."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "5b6982980a93f4b327cada61935548ec022e2553490222f9345029ab6bcc8470",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5069,
+              "completion_tokens": 49,
+              "total_tokens": 5118,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "10",
+              "value": "10",
+              "start": 32,
+              "end": 34,
+              "clause": "when Race 2 is \"10\"?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The condition explicitly names the 'Race 2' field, which is schema column index 3; its rows include the value '10'.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d7f8676f82401c3d30bca442d884251e55d1a0fe219eaff201b9e118cd501de5",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5143,
+              "completion_tokens": 9,
+              "total_tokens": 5152,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "10",
+              "value": "10",
+              "start": 32,
+              "end": 34,
+              "clause": "when Race 2 is \"10\"?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The condition explicitly names the 'Race 2' field, which is schema column index 3; its rows include the value '10'.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "8a2add5e90214edbf8d1d4c69b76c2ff16b7584bb0cdbba409ac1cf7d6eb730d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5094,
+              "completion_tokens": 10,
+              "total_tokens": 5104,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "10",
+              "value": "10",
+              "start": 32,
+              "end": 34,
+              "clause": "when Race 2 is \"10\"?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The condition explicitly names the 'Race 2' field, which is schema column index 3; its rows include the value '10'.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "10",
+              "value": "10",
+              "start": 32,
+              "end": 34,
+              "clause": "when Race 2 is \"10\"?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The condition explicitly names the 'Race 2' field, which is schema column index 3; its rows include the value '10'.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "10",
+              "value": "10",
+              "start": 32,
+              "end": 34,
+              "clause": "when Race 2 is \"10\"?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The condition explicitly names the 'Race 2' field, which is schema column index 3; its rows include the value '10'.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              0,
+              "10"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "10",
+          "value": "10",
+          "start": 32,
+          "end": 34
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "10",
+          "value": "10",
+          "start": 32,
+          "end": 34,
+          "clause": "when Race 2 is \"10\"?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The condition explicitly names the 'Race 2' field, which is schema column index 3; its rows include the value '10'.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          3,
+          0,
+          "10"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7640
+}

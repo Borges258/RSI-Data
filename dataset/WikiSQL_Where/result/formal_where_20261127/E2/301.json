@@ -1,0 +1,558 @@
+{
+  "arm": "E2",
+  "position": 301,
+  "example_id": "test:5:1-10083598-1",
+  "original_index": 5,
+  "table_id": "1-10083598-1",
+  "question": "What was the number of race that Kevin Curtain won?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        4,
+        0,
+        "Kevin Curtain"
+      ]
+    ],
+    "agg": 3
+  },
+  "prediction_conds": [],
+  "status": "GROUNDING_FAILED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "GROUNDING_FAILED",
+    "valid": false,
+    "errors": [
+      "condition 0: grounding NO_MATCH"
+    ],
+    "conditions": [
+      {
+        "surface": "Kevin Curtain",
+        "value": "Kevin Curtain",
+        "start": 33,
+        "end": 46,
+        "clause": "What was the number of race that Kevin Curtain won?",
+        "columnIndex": 6,
+        "columnCandidates": [
+          {
+            "columnIndex": 4,
+            "header": "Pole Position",
+            "evidence": "EXACT_VALUE_MATCH"
+          }
+        ],
+        "columnMatchReason": "The clause says Kevin Curtain 'won,' which refers to the 'Race winner' field, despite his name appearing only under 'Pole Position' in the current rows.",
+        "operator": "=",
+        "groundingReason": "FIELD_VALUE_CONFLICT",
+        "grounded": false,
+        "groundingStatus": "NO_MATCH",
+        "groundingReview": {
+          "column": null,
+          "reason": "The question asks where Kevin Curtain won, which requires the Race winner column, but no row lists him there; the only candidate is Pole Position and conflicts with the requested field."
+        }
+      }
+    ],
+    "stage": "WHERE_CONDITION_VALIDATE",
+    "originalConditions": [
+      {
+        "surface": "Kevin Curtain",
+        "value": "Kevin Curtain",
+        "start": 33,
+        "end": 46
+      }
+    ],
+    "halt": true,
+    "completed": false,
+    "conds": [],
+    "warnings": [],
+    "request": {
+      "question": "What was the number of race that Kevin Curtain won?",
+      "table": {
+        "header": [
+          "No",
+          "Date",
+          "Round",
+          "Circuit",
+          "Pole Position",
+          "Fastest Lap",
+          "Race winner",
+          "Report"
+        ],
+        "page_title": "2007 Supersport World Championship season",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "id": "1-10083598-1",
+        "section_title": "Season calendar",
+        "caption": "Season calendar",
+        "rows": [
+          [
+            1,
+            "24 February",
+            "Qatar",
+            "Losail",
+            "Kevin Curtain",
+            "Sébastien Charpentier",
+            "Kenan Sofuoğlu",
+            "Report"
+          ],
+          [
+            2,
+            "4 March",
+            "Australia",
+            "Phillip Island",
+            "Fabien Foret",
+            "Sébastien Charpentier",
+            "Fabien Foret",
+            "Report"
+          ],
+          [
+            3,
+            "1 April",
+            "Europe",
+            "Donington Park",
+            "Pere Riba",
+            "Katsuaki Fujiwara",
+            "Kenan Sofuoğlu",
+            "Report"
+          ],
+          [
+            4,
+            "15 April",
+            "Spain",
+            "Valencia",
+            "Kenan Sofuoğlu",
+            "Katsuaki Fujiwara",
+            "Kenan Sofuoğlu",
+            "Report"
+          ],
+          [
+            5,
+            "29 April",
+            "Netherlands",
+            "Assen",
+            "Kenan Sofuoğlu",
+            "Kenan Sofuoğlu",
+            "Kenan Sofuoğlu",
+            "Report"
+          ],
+          [
+            6,
+            "13 May",
+            "Italy",
+            "Monza",
+            "Kenan Sofuoğlu",
+            "Kenan Sofuoğlu",
+            "Kenan Sofuoğlu",
+            "Report"
+          ],
+          [
+            7,
+            "27 May",
+            "Great Britain",
+            "Silverstone",
+            "Sébastien Charpentier",
+            "Anthony West",
+            "Anthony West",
+            "Report"
+          ],
+          [
+            8,
+            "17 June",
+            "San Marino",
+            "Misano",
+            "Broc Parkes",
+            "Anthony West",
+            "Anthony West",
+            "Report"
+          ],
+          [
+            9,
+            "22 July",
+            "Czech Republic",
+            "Brno",
+            "Kenan Sofuoğlu",
+            "Kenan Sofuoğlu",
+            "Kenan Sofuoğlu",
+            "Report"
+          ],
+          [
+            10,
+            "5 August",
+            "Great Britain",
+            "Brands Hatch",
+            "Sébastien Charpentier",
+            "Broc Parkes",
+            "Broc Parkes",
+            "Report"
+          ],
+          [
+            11,
+            "9 September",
+            "Germany",
+            "EuroSpeedway Lausitz",
+            "Sébastien Charpentier",
+            "Kenan Sofuoğlu",
+            "Broc Parkes",
+            "Report"
+          ],
+          [
+            12,
+            "30 September",
+            "Italy",
+            "Vallelunga",
+            "Craig Jones",
+            "Kenan Sofuoğlu",
+            "Kenan Sofuoğlu",
+            "Report"
+          ]
+        ],
+        "name": "table_10083598_1",
+        "headers": [
+          "No",
+          "Date",
+          "Round",
+          "Circuit",
+          "Pole Position",
+          "Fastest Lap",
+          "Race winner",
+          "Report"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-10083598-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 9,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Kevin Curtain",
+              "value": "Kevin Curtain",
+              "start": 33,
+              "end": 46
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "21a1bf574d6c83aca0ec115bee80ab7cf1c34d545f5cf9c929ad25e5c28154c0",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5058,
+              "completion_tokens": 19,
+              "total_tokens": 5077,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Kevin Curtain",
+              "value": "Kevin Curtain",
+              "start": 33,
+              "end": 46,
+              "clause": "What was the number of race that Kevin Curtain won?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Kevin Curtain",
+              "value": "Kevin Curtain",
+              "start": 33,
+              "end": 46,
+              "clause": "What was the number of race that Kevin Curtain won?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Kevin Curtain",
+              "value": "Kevin Curtain",
+              "start": 33,
+              "end": 46,
+              "clause": "What was the number of race that Kevin Curtain won?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "The clause says Kevin Curtain 'won,' which refers to the 'Race winner' field, despite his name appearing only under 'Pole Position' in the current rows."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "4d47ab75578e16112df1e15459402ef27799eb5d59d47cce3d4a19fa35e636f3",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5092,
+              "completion_tokens": 54,
+              "total_tokens": 5146,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Kevin Curtain",
+              "value": "Kevin Curtain",
+              "start": 33,
+              "end": 46,
+              "clause": "What was the number of race that Kevin Curtain won?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "The clause says Kevin Curtain 'won,' which refers to the 'Race winner' field, despite his name appearing only under 'Pole Position' in the current rows.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "65bf5cfb4152aeb57e24614e955f085a3a50dc789c34bad35e9fe77346b6defa",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5170,
+              "completion_tokens": 9,
+              "total_tokens": 5179,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Kevin Curtain",
+              "value": "Kevin Curtain",
+              "start": 33,
+              "end": 46,
+              "clause": "What was the number of race that Kevin Curtain won?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "The clause says Kevin Curtain 'won,' which refers to the 'Race winner' field, despite his name appearing only under 'Pole Position' in the current rows.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "51399170922e8e0b4f9b0de531f9f72b978659831e9da532f01876c149975353",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5121,
+              "completion_tokens": 11,
+              "total_tokens": 5132,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Kevin Curtain",
+              "value": "Kevin Curtain",
+              "start": 33,
+              "end": 46,
+              "clause": "What was the number of race that Kevin Curtain won?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                {
+                  "columnIndex": 4,
+                  "header": "Pole Position",
+                  "evidence": "EXACT_VALUE_MATCH"
+                }
+              ],
+              "columnMatchReason": "The clause says Kevin Curtain 'won,' which refers to the 'Race winner' field, despite his name appearing only under 'Pole Position' in the current rows.",
+              "operator": "=",
+              "groundingReason": "FIELD_VALUE_CONFLICT",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": null,
+                "reason": "The question asks where Kevin Curtain won, which requires the Race winner column, but no row lists him there; the only candidate is Pole Position and conflicts with the requested field."
+              }
+            }
+          ],
+          "reviewModelCalls": [
+            {
+              "model": "gpt-5.6-sol",
+              "promptSha256": "6b36a82bca82b6c61231684d8654af42dcb2197bc80c3032d4a0f14463075210",
+              "knowledgeIds": [],
+              "usage": {
+                "prompt_tokens": 5207,
+                "completion_tokens": 47,
+                "total_tokens": 5254,
+                "prompt_tokens_details": {
+                  "cached_tokens": 4224
+                }
+              }
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "6b36a82bca82b6c61231684d8654af42dcb2197bc80c3032d4a0f14463075210",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5207,
+              "completion_tokens": 47,
+              "total_tokens": 5254,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Kevin Curtain",
+              "value": "Kevin Curtain",
+              "start": 33,
+              "end": 46,
+              "clause": "What was the number of race that Kevin Curtain won?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                {
+                  "columnIndex": 4,
+                  "header": "Pole Position",
+                  "evidence": "EXACT_VALUE_MATCH"
+                }
+              ],
+              "columnMatchReason": "The clause says Kevin Curtain 'won,' which refers to the 'Race winner' field, despite his name appearing only under 'Pole Position' in the current rows.",
+              "operator": "=",
+              "groundingReason": "FIELD_VALUE_CONFLICT",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": null,
+                "reason": "The question asks where Kevin Curtain won, which requires the Race winner column, but no row lists him there; the only candidate is Pole Position and conflicts with the requested field."
+              }
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "GROUNDING_FAILED",
+          "valid": false,
+          "errors": [
+            "condition 0: grounding NO_MATCH"
+          ],
+          "conditions": [
+            {
+              "surface": "Kevin Curtain",
+              "value": "Kevin Curtain",
+              "start": 33,
+              "end": 46,
+              "clause": "What was the number of race that Kevin Curtain won?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                {
+                  "columnIndex": 4,
+                  "header": "Pole Position",
+                  "evidence": "EXACT_VALUE_MATCH"
+                }
+              ],
+              "columnMatchReason": "The clause says Kevin Curtain 'won,' which refers to the 'Race winner' field, despite his name appearing only under 'Pole Position' in the current rows.",
+              "operator": "=",
+              "groundingReason": "FIELD_VALUE_CONFLICT",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": null,
+                "reason": "The question asks where Kevin Curtain won, which requires the Race winner column, but no row lists him there; the only candidate is Pole Position and conflicts with the requested field."
+              }
+            }
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "GROUNDING_FAILED",
+        "stage": "WHERE_CONDITION_VALIDATE",
+        "halt": true,
+        "completed": false,
+        "errors": [
+          "condition 0: grounding NO_MATCH"
+        ],
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Kevin Curtain",
+          "value": "Kevin Curtain",
+          "start": 33,
+          "end": 46
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Kevin Curtain",
+          "value": "Kevin Curtain",
+          "start": 33,
+          "end": 46,
+          "clause": "What was the number of race that Kevin Curtain won?",
+          "columnIndex": 6,
+          "columnCandidates": [
+            {
+              "columnIndex": 4,
+              "header": "Pole Position",
+              "evidence": "EXACT_VALUE_MATCH"
+            }
+          ],
+          "columnMatchReason": "The clause says Kevin Curtain 'won,' which refers to the 'Race winner' field, despite his name appearing only under 'Pole Position' in the current rows.",
+          "operator": "=",
+          "groundingReason": "FIELD_VALUE_CONFLICT",
+          "grounded": false,
+          "groundingStatus": "NO_MATCH",
+          "groundingReview": {
+            "column": null,
+            "reason": "The question asks where Kevin Curtain won, which requires the Race winner column, but no row lists him there; the only candidate is Pole Position and conflicts with the requested field."
+          }
+        }
+      ],
+      "count": 1
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": false,
+  "elapsed_ms": 10281
+}

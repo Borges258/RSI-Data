@@ -1,0 +1,445 @@
+{
+  "arm": "E2",
+  "position": 310,
+  "example_id": "test:12052:2-10809271-11",
+  "original_index": 12052,
+  "table_id": "2-10809271-11",
+  "question": "What is the home team score when the home team is Collingwood?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        0,
+        0,
+        "collingwood"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "Collingwood"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "Collingwood"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Collingwood",
+        "value": "Collingwood",
+        "start": 50,
+        "end": 61,
+        "clause": "What is the home team score when the home team is Collingwood?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "The condition explicitly identifies Collingwood as the home team, matching the Home team column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Collingwood",
+        "value": "Collingwood",
+        "start": 50,
+        "end": 61
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the home team score when the home team is Collingwood?",
+      "table": {
+        "header": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ],
+        "page_title": "1945 VFL season",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 10809271,
+        "id": "2-10809271-11",
+        "section_title": "Round 11",
+        "rows": [
+          [
+            "Essendon",
+            "7.12 (54)",
+            "Melbourne",
+            "9.14 (68)",
+            "Windy Hill",
+            "8,000",
+            "30 June 1945"
+          ],
+          [
+            "Collingwood",
+            "9.10 (64)",
+            "Footscray",
+            "10.9 (69)",
+            "Victoria Park",
+            "19,000",
+            "30 June 1945"
+          ],
+          [
+            "Carlton",
+            "8.8 (56)",
+            "South Melbourne",
+            "7.8 (50)",
+            "Princes Park",
+            "25,500",
+            "30 June 1945"
+          ],
+          [
+            "St Kilda",
+            "6.15 (51)",
+            "North Melbourne",
+            "6.21 (57)",
+            "Junction Oval",
+            "7,500",
+            "30 June 1945"
+          ],
+          [
+            "Richmond",
+            "14.28 (112)",
+            "Geelong",
+            "8.8 (56)",
+            "Punt Road Oval",
+            "11,000",
+            "30 June 1945"
+          ],
+          [
+            "Hawthorn",
+            "7.8 (50)",
+            "Fitzroy",
+            "10.15 (75)",
+            "Glenferrie Oval",
+            "7,500",
+            "30 June 1945"
+          ]
+        ],
+        "caption": "Round 11",
+        "headers": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-10809271-11",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Collingwood",
+              "value": "Collingwood",
+              "start": 50,
+              "end": 61
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "1ec87875c5d121371c1df9260084d87d40a01815d32e0558301c17dfeed2692d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 7508,
+              "completion_tokens": 67,
+              "total_tokens": 7575,
+              "completion_tokens_details": {
+                "reasoning_tokens": 50
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Collingwood",
+              "value": "Collingwood",
+              "start": 50,
+              "end": 61,
+              "clause": "What is the home team score when the home team is Collingwood?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Collingwood",
+              "value": "Collingwood",
+              "start": 50,
+              "end": 61,
+              "clause": "What is the home team score when the home team is Collingwood?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Collingwood",
+              "value": "Collingwood",
+              "start": 50,
+              "end": 61,
+              "clause": "What is the home team score when the home team is Collingwood?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The condition explicitly identifies Collingwood as the home team, matching the Home team column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "694ff57b8c0f8345ca9f3ff3b305033edea756014f1e06e3af74c0014c58d645",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 7549,
+              "completion_tokens": 48,
+              "total_tokens": 7597,
+              "prompt_tokens_details": {
+                "cached_tokens": 6400
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 13
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Collingwood",
+              "value": "Collingwood",
+              "start": 50,
+              "end": 61,
+              "clause": "What is the home team score when the home team is Collingwood?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The condition explicitly identifies Collingwood as the home team, matching the Home team column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "1b715cf4ec720f126b6a2e17bfbe8d3a1b7cfdaf2aa7db4821fab96770dc8a72",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 7618,
+              "completion_tokens": 52,
+              "total_tokens": 7670,
+              "prompt_tokens_details": {
+                "cached_tokens": 6528
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 47
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Collingwood",
+              "value": "Collingwood",
+              "start": 50,
+              "end": 61,
+              "clause": "What is the home team score when the home team is Collingwood?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The condition explicitly identifies Collingwood as the home team, matching the Home team column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "5931a735525d1fa8d10af5bda3adb06821b4f909e3954195aff7a96730ffbf5f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 7563,
+              "completion_tokens": 50,
+              "total_tokens": 7613,
+              "prompt_tokens_details": {
+                "cached_tokens": 6144
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 42
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Collingwood",
+              "value": "Collingwood",
+              "start": 50,
+              "end": 61,
+              "clause": "What is the home team score when the home team is Collingwood?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The condition explicitly identifies Collingwood as the home team, matching the Home team column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Collingwood",
+              "value": "Collingwood",
+              "start": 50,
+              "end": 61,
+              "clause": "What is the home team score when the home team is Collingwood?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The condition explicitly identifies Collingwood as the home team, matching the Home team column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Collingwood",
+              "value": "Collingwood",
+              "start": 50,
+              "end": 61,
+              "clause": "What is the home team score when the home team is Collingwood?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The condition explicitly identifies Collingwood as the home team, matching the Home team column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              "Collingwood"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Collingwood",
+          "value": "Collingwood",
+          "start": 50,
+          "end": 61
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Collingwood",
+          "value": "Collingwood",
+          "start": 50,
+          "end": 61,
+          "clause": "What is the home team score when the home team is Collingwood?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "The condition explicitly identifies Collingwood as the home team, matching the Home team column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          0,
+          0,
+          "Collingwood"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9797
+}

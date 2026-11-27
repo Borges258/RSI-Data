@@ -1,0 +1,425 @@
+{
+  "arm": "E2",
+  "position": 385,
+  "example_id": "test:15238:2-1228242-1",
+  "original_index": 15238,
+  "table_id": "2-1228242-1",
+  "question": "What is the earliest year that has a Bristol engine?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        3,
+        0,
+        "bristol"
+      ]
+    ],
+    "agg": 2
+  },
+  "prediction_conds": [
+    [
+      3,
+      0,
+      "Bristol"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        0,
+        "Bristol"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Bristol",
+        "value": "Bristol",
+        "start": 37,
+        "end": 44,
+        "clause": "What is the earliest year that has a Bristol engine?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The question explicitly identifies Bristol as an engine, matching the Engine header and its row values.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Bristol",
+        "value": "Bristol",
+        "start": 37,
+        "end": 44
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the earliest year that has a Bristol engine?",
+      "table": {
+        "header": [
+          "Year",
+          "Entrant",
+          "Chassis",
+          "Engine",
+          "Points"
+        ],
+        "page_title": "Bob Gerard",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "real"
+        ],
+        "page_id": 1228242,
+        "id": "2-1228242-1",
+        "section_title": "Complete Formula One World Championship results",
+        "rows": [
+          [
+            "1950",
+            "Bob Gerard",
+            "ERA B-type",
+            "ERA",
+            "0"
+          ],
+          [
+            "1950",
+            "Bob Gerard",
+            "ERA A-type",
+            "ERA",
+            "0"
+          ],
+          [
+            "1951",
+            "Bob Gerard",
+            "ERA B-type",
+            "ERA",
+            "0"
+          ],
+          [
+            "1953",
+            "Bob Gerard",
+            "Cooper T23",
+            "Bristol",
+            "0"
+          ],
+          [
+            "1954",
+            "Bob Gerard",
+            "Cooper T23",
+            "Bristol",
+            "0"
+          ],
+          [
+            "1956",
+            "Bob Gerard",
+            "Cooper T23",
+            "Bristol",
+            "0"
+          ],
+          [
+            "1957",
+            "Bob Gerard",
+            "Cooper T43",
+            "Bristol",
+            "0"
+          ]
+        ],
+        "caption": "Complete Formula One World Championship results",
+        "headers": [
+          "Year",
+          "Entrant",
+          "Chassis",
+          "Engine",
+          "Points"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-1228242-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Bristol",
+              "value": "Bristol",
+              "start": 37,
+              "end": 44
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f14043303a679ada770bbacbc288c6dae74fdd43f8d402d9300074e0b2d31e88",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4787,
+              "completion_tokens": 21,
+              "total_tokens": 4808,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Bristol",
+              "value": "Bristol",
+              "start": 37,
+              "end": 44,
+              "clause": "What is the earliest year that has a Bristol engine?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Bristol",
+              "value": "Bristol",
+              "start": 37,
+              "end": 44,
+              "clause": "What is the earliest year that has a Bristol engine?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Bristol",
+              "value": "Bristol",
+              "start": 37,
+              "end": 44,
+              "clause": "What is the earliest year that has a Bristol engine?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies Bristol as an engine, matching the Engine header and its row values."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "1874e5df7089fdfa740ffb62ddefc65710f03a502febc7c3b6162b6e49fa675a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4823,
+              "completion_tokens": 39,
+              "total_tokens": 4862,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Bristol",
+              "value": "Bristol",
+              "start": 37,
+              "end": 44,
+              "clause": "What is the earliest year that has a Bristol engine?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies Bristol as an engine, matching the Engine header and its row values.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "3af3b54f5af429a2e5f8dfb6008dac891b8ea7753afbbd624d495ec40d1b5eac",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4886,
+              "completion_tokens": 9,
+              "total_tokens": 4895,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Bristol",
+              "value": "Bristol",
+              "start": 37,
+              "end": 44,
+              "clause": "What is the earliest year that has a Bristol engine?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies Bristol as an engine, matching the Engine header and its row values.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "4979b2d867e19780e64bd565e5dd36c5aec1ae31567a0e9d93021563af96ad79",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4837,
+              "completion_tokens": 12,
+              "total_tokens": 4849,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Bristol",
+              "value": "Bristol",
+              "start": 37,
+              "end": 44,
+              "clause": "What is the earliest year that has a Bristol engine?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies Bristol as an engine, matching the Engine header and its row values.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Bristol",
+              "value": "Bristol",
+              "start": 37,
+              "end": 44,
+              "clause": "What is the earliest year that has a Bristol engine?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies Bristol as an engine, matching the Engine header and its row values.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Bristol",
+              "value": "Bristol",
+              "start": 37,
+              "end": 44,
+              "clause": "What is the earliest year that has a Bristol engine?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies Bristol as an engine, matching the Engine header and its row values.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              0,
+              "Bristol"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Bristol",
+          "value": "Bristol",
+          "start": 37,
+          "end": 44
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Bristol",
+          "value": "Bristol",
+          "start": 37,
+          "end": 44,
+          "clause": "What is the earliest year that has a Bristol engine?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The question explicitly identifies Bristol as an engine, matching the Engine header and its row values.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          3,
+          0,
+          "Bristol"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8875
+}

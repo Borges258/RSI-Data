@@ -1,0 +1,416 @@
+{
+  "arm": "E2",
+  "position": 99,
+  "example_id": "test:3335:1-2562572-20",
+  "original_index": 3335,
+  "table_id": "1-2562572-20",
+  "question": "Name the largest ethnic group for 24112",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        3,
+        0,
+        24112
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      3,
+      0,
+      24112
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        0,
+        24112
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "24112",
+        "value": 24112,
+        "start": 34,
+        "end": 39,
+        "clause": "Name the largest ethnic group for 24112",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The numeric condition identifies the settlement by its Population (2011) value; 24112 appears in that field for Vrbas.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "24112",
+        "value": 24112,
+        "start": 34,
+        "end": 39
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Name the largest ethnic group for 24112",
+      "table": {
+        "id": "1-2562572-20",
+        "header": [
+          "Settlement",
+          "Cyrillic Name Other Names",
+          "Type",
+          "Population (2011)",
+          "Largest ethnic group (2002)",
+          "Dominant religion (2002)"
+        ],
+        "types": [
+          "text",
+          "text",
+          "text",
+          "real",
+          "text",
+          "text"
+        ],
+        "rows": [
+          [
+            "Vrbas",
+            "Врбас",
+            "town",
+            24112,
+            "Serbs",
+            "Orthodox Christianity"
+          ],
+          [
+            "Bačko Dobro Polje",
+            "Бачко Добро Поље",
+            "village",
+            3541,
+            "Serbs",
+            "Orthodox Christianity"
+          ],
+          [
+            "Kosančić",
+            "Косанчић",
+            "village",
+            101,
+            "Serbs",
+            "Orthodox Christianity"
+          ],
+          [
+            "Kucura",
+            "Куцура (Rusyn: Коцур)",
+            "village",
+            4348,
+            "Rusyns",
+            "Greek Catholic Christianity"
+          ],
+          [
+            "Ravno Selo",
+            "Равно Село",
+            "village",
+            3107,
+            "Serbs",
+            "Orthodox Christianity"
+          ]
+        ],
+        "name": "table_2562572_20",
+        "headers": [
+          "Settlement",
+          "Cyrillic Name Other Names",
+          "Type",
+          "Population (2011)",
+          "Largest ethnic group (2002)",
+          "Dominant religion (2002)"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-2562572-20",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "24112",
+              "value": 24112,
+              "start": 34,
+              "end": 39
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e2633ba250dea8d51a9966112283e4101220022abddc8ff3e19e874db192720f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4820,
+              "completion_tokens": 19,
+              "total_tokens": 4839,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "24112",
+              "value": 24112,
+              "start": 34,
+              "end": 39,
+              "clause": "Name the largest ethnic group for 24112"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "24112",
+              "value": 24112,
+              "start": 34,
+              "end": 39,
+              "clause": "Name the largest ethnic group for 24112"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "24112",
+              "value": 24112,
+              "start": 34,
+              "end": 39,
+              "clause": "Name the largest ethnic group for 24112",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The numeric condition identifies the settlement by its Population (2011) value; 24112 appears in that field for Vrbas."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "99a870c28ce8958ea8d477734d77cef383d1fc0af587ac5dde143bf0fb51f0f5",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4852,
+              "completion_tokens": 47,
+              "total_tokens": 4899,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "24112",
+              "value": 24112,
+              "start": 34,
+              "end": 39,
+              "clause": "Name the largest ethnic group for 24112",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The numeric condition identifies the settlement by its Population (2011) value; 24112 appears in that field for Vrbas.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "8198307624cdb4d7acb1839f9dc4fbcfce79e67aa25bba607383fb01427cc800",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4923,
+              "completion_tokens": 9,
+              "total_tokens": 4932,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "24112",
+              "value": 24112,
+              "start": 34,
+              "end": 39,
+              "clause": "Name the largest ethnic group for 24112",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The numeric condition identifies the settlement by its Population (2011) value; 24112 appears in that field for Vrbas.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e285cb181d76e23fa8e152c9c2a5a001c4fdc4f9e275218cc7f8c518e618aedb",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4874,
+              "completion_tokens": 10,
+              "total_tokens": 4884,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "24112",
+              "value": "24112",
+              "start": 34,
+              "end": 39,
+              "clause": "Name the largest ethnic group for 24112",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The numeric condition identifies the settlement by its Population (2011) value; 24112 appears in that field for Vrbas.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "24112",
+              "value": 24112,
+              "start": 34,
+              "end": 39,
+              "clause": "Name the largest ethnic group for 24112",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The numeric condition identifies the settlement by its Population (2011) value; 24112 appears in that field for Vrbas.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "24112",
+              "value": 24112,
+              "start": 34,
+              "end": 39,
+              "clause": "Name the largest ethnic group for 24112",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The numeric condition identifies the settlement by its Population (2011) value; 24112 appears in that field for Vrbas.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              0,
+              24112
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "24112",
+          "value": 24112,
+          "start": 34,
+          "end": 39
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "24112",
+          "value": 24112,
+          "start": 34,
+          "end": 39,
+          "clause": "Name the largest ethnic group for 24112",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The numeric condition identifies the settlement by its Population (2011) value; 24112 appears in that field for Vrbas.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          3,
+          0,
+          24112
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8125
+}

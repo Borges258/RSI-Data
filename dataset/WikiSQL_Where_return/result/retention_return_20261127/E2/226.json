@@ -1,0 +1,581 @@
+{
+  "arm": "E2",
+  "position": 226,
+  "example_id": "test:8698:2-17026847-20",
+  "original_index": 8698,
+  "table_id": "2-17026847-20",
+  "question": "Who was the home team for the game with Platense as the away team and attendance under 529?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        4,
+        2,
+        529
+      ],
+      [
+        3,
+        0,
+        "platense"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      3,
+      0,
+      "Platense"
+    ],
+    [
+      4,
+      2,
+      529
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        0,
+        "Platense"
+      ],
+      [
+        4,
+        2,
+        529
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Platense",
+        "value": "Platense",
+        "start": 40,
+        "end": 48,
+        "clause": "Who was the home team for the game with Platense as the away team",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The question explicitly identifies Platense as the away team, matching the Away column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "under 529",
+        "value": 529,
+        "start": 81,
+        "end": 90,
+        "clause": "and attendance under 529?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The question explicitly applies 'under 529' to attendance, matching the numeric Attendance column.",
+        "operator": "<",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Platense",
+        "value": "Platense",
+        "start": 40,
+        "end": 48
+      },
+      {
+        "surface": "under 529",
+        "value": "529",
+        "start": 81,
+        "end": 90
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Who was the home team for the game with Platense as the away team and attendance under 529?",
+      "table": {
+        "header": [
+          "Date",
+          "Home",
+          "Score",
+          "Away",
+          "Attendance"
+        ],
+        "page_title": "2008–09 Apertura Honduran Liga Nacional",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "real"
+        ],
+        "page_id": 17026847,
+        "id": "2-17026847-20",
+        "section_title": "Round 18",
+        "rows": [
+          [
+            "23 November 2008",
+            "Victoria",
+            "1:0",
+            "Real España",
+            "317"
+          ],
+          [
+            "23 November 2008",
+            "Marathon",
+            "0:2",
+            "Hispano",
+            "529"
+          ],
+          [
+            "23 November 2008",
+            "Real Juventud",
+            "1:1",
+            "Platense",
+            "275"
+          ],
+          [
+            "23 November 2008",
+            "Olimpia",
+            "2:0",
+            "Vida",
+            "2614"
+          ],
+          [
+            "23 November 2008",
+            "Deportes Savio",
+            "2:1",
+            "Motagua",
+            "1920"
+          ]
+        ],
+        "caption": "Round 18",
+        "headers": [
+          "Date",
+          "Home",
+          "Score",
+          "Away",
+          "Attendance"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-17026847-20",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "Platense",
+              "value": "Platense",
+              "start": 40,
+              "end": 48
+            },
+            {
+              "surface": "under 529",
+              "value": "529",
+              "start": 81,
+              "end": 90
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "324bb2310d4970055775c0d2077d8d8c022215d80c95e8c1c5adf7a49dea697e",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4778,
+              "completion_tokens": 29,
+              "total_tokens": 4807,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Platense",
+              "value": "Platense",
+              "start": 40,
+              "end": 48,
+              "clause": "Who was the home team for the game with Platense as the away team"
+            },
+            {
+              "surface": "under 529",
+              "value": "529",
+              "start": 81,
+              "end": 90,
+              "clause": "and attendance under 529?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Platense",
+              "value": "Platense",
+              "start": 40,
+              "end": 48,
+              "clause": "Who was the home team for the game with Platense as the away team"
+            },
+            {
+              "surface": "under 529",
+              "value": "529",
+              "start": 81,
+              "end": 90,
+              "clause": "and attendance under 529?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Platense",
+              "value": "Platense",
+              "start": 40,
+              "end": 48,
+              "clause": "Who was the home team for the game with Platense as the away team",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies Platense as the away team, matching the Away column."
+            },
+            {
+              "surface": "under 529",
+              "value": "529",
+              "start": 81,
+              "end": 90,
+              "clause": "and attendance under 529?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly applies 'under 529' to attendance, matching the numeric Attendance column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "05074460e59e9cadca2a5cbd0b6cb4319765c4e90bf820c4f642e64b651d76c5",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4844,
+              "completion_tokens": 59,
+              "total_tokens": 4903,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Platense",
+              "value": "Platense",
+              "start": 40,
+              "end": 48,
+              "clause": "Who was the home team for the game with Platense as the away team",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies Platense as the away team, matching the Away column.",
+              "operator": "="
+            },
+            {
+              "surface": "under 529",
+              "value": "529",
+              "start": 81,
+              "end": 90,
+              "clause": "and attendance under 529?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly applies 'under 529' to attendance, matching the numeric Attendance column.",
+              "operator": "<"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "fb3f46c61addff0e030b0062d43bfdfe71dd8682fefa6f92097274751b62c948",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4938,
+              "completion_tokens": 12,
+              "total_tokens": 4950,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Platense",
+              "value": "Platense",
+              "start": 40,
+              "end": 48,
+              "clause": "Who was the home team for the game with Platense as the away team",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies Platense as the away team, matching the Away column.",
+              "operator": "="
+            },
+            {
+              "surface": "under 529",
+              "value": 529,
+              "start": 81,
+              "end": 90,
+              "clause": "and attendance under 529?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly applies 'under 529' to attendance, matching the numeric Attendance column.",
+              "operator": "<"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "13868542e2f1e964495203feafb63c8ea665b1de8b4857968dd1d37c7765a76e",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4892,
+              "completion_tokens": 12,
+              "total_tokens": 4904,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Platense",
+              "value": "Platense",
+              "start": 40,
+              "end": 48,
+              "clause": "Who was the home team for the game with Platense as the away team",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies Platense as the away team, matching the Away column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "under 529",
+              "value": "529",
+              "start": 81,
+              "end": 90,
+              "clause": "and attendance under 529?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly applies 'under 529' to attendance, matching the numeric Attendance column.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Platense",
+              "value": "Platense",
+              "start": 40,
+              "end": 48,
+              "clause": "Who was the home team for the game with Platense as the away team",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies Platense as the away team, matching the Away column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "under 529",
+              "value": 529,
+              "start": 81,
+              "end": 90,
+              "clause": "and attendance under 529?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly applies 'under 529' to attendance, matching the numeric Attendance column.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Platense",
+              "value": "Platense",
+              "start": 40,
+              "end": 48,
+              "clause": "Who was the home team for the game with Platense as the away team",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies Platense as the away team, matching the Away column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "under 529",
+              "value": 529,
+              "start": 81,
+              "end": 90,
+              "clause": "and attendance under 529?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly applies 'under 529' to attendance, matching the numeric Attendance column.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              0,
+              "Platense"
+            ],
+            [
+              4,
+              2,
+              529
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Platense",
+          "value": "Platense",
+          "start": 40,
+          "end": 48
+        },
+        {
+          "surface": "under 529",
+          "value": "529",
+          "start": 81,
+          "end": 90
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Platense",
+          "value": "Platense",
+          "start": 40,
+          "end": 48,
+          "clause": "Who was the home team for the game with Platense as the away team",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The question explicitly identifies Platense as the away team, matching the Away column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "under 529",
+          "value": 529,
+          "start": 81,
+          "end": 90,
+          "clause": "and attendance under 529?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The question explicitly applies 'under 529' to attendance, matching the numeric Attendance column.",
+          "operator": "<",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          3,
+          0,
+          "Platense"
+        ],
+        [
+          4,
+          2,
+          529
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9500
+}

@@ -1,0 +1,645 @@
+{
+  "arm": "E2",
+  "position": 563,
+  "example_id": "test:8893:2-17231302-7",
+  "original_index": 8893,
+  "table_id": "2-17231302-7",
+  "question": "How much was paid to Andy North when he placed t10?",
+  "gold_sql": {
+    "sel": 5,
+    "conds": [
+      [
+        0,
+        0,
+        "t10"
+      ],
+      [
+        1,
+        0,
+        "andy north"
+      ]
+    ],
+    "agg": 5
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "Andy North"
+    ],
+    [
+      0,
+      0,
+      "T10"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "Andy North"
+      ],
+      [
+        0,
+        0,
+        "T10"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Andy North",
+        "value": "Andy North",
+        "start": 21,
+        "end": 31,
+        "clause": "How much was paid to Andy North when he placed t10?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The question names Andy North as the player, matching the Player field.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "t10",
+        "value": "T10",
+        "start": 47,
+        "end": 50,
+        "clause": "How much was paid to Andy North when he placed t10?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "The phrase 'placed t10' explicitly refers to the Place field, where Andy North has T10.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Andy North",
+        "value": "Andy North",
+        "start": 21,
+        "end": 31
+      },
+      {
+        "surface": "t10",
+        "value": "T10",
+        "start": 47,
+        "end": 50
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "How much was paid to Andy North when he placed t10?",
+      "table": {
+        "header": [
+          "Place",
+          "Player",
+          "Country",
+          "Score",
+          "To par",
+          "Money ( $ )"
+        ],
+        "page_title": "1983 U.S. Open (golf)",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "real"
+        ],
+        "page_id": 17231302,
+        "id": "2-17231302-7",
+        "section_title": "Final round",
+        "rows": [
+          [
+            "1",
+            "Larry Nelson",
+            "United States",
+            "75-73-65-67=280",
+            "–4",
+            "72,000"
+          ],
+          [
+            "2",
+            "Tom Watson",
+            "United States",
+            "72-70-70-69=281",
+            "–3",
+            "44,000"
+          ],
+          [
+            "3",
+            "Gil Morgan",
+            "United States",
+            "73-72-70-68=283",
+            "–1",
+            "29,000"
+          ],
+          [
+            "T4",
+            "Seve Ballesteros",
+            "Spain",
+            "69-74-69-74=286",
+            "+2",
+            "17,968"
+          ],
+          [
+            "T4",
+            "Calvin Peete",
+            "United States",
+            "75-68-70-73=286",
+            "+2",
+            "17,968"
+          ],
+          [
+            "6",
+            "Hal Sutton",
+            "United States",
+            "73-70-73-71=287",
+            "+3",
+            "13,254"
+          ],
+          [
+            "7",
+            "Lanny Wadkins",
+            "United States",
+            "72-73-74-69=288",
+            "+4",
+            "12,088"
+          ],
+          [
+            "T8",
+            "David Graham",
+            "Australia",
+            "74-75-73-69=291",
+            "+7",
+            "10,711"
+          ],
+          [
+            "T8",
+            "Ralph Landrum",
+            "United States",
+            "75-73-69-74=291",
+            "+7",
+            "10,711"
+          ],
+          [
+            "T10",
+            "Chip Beck",
+            "United States",
+            "73-74-74-71=292",
+            "+8",
+            "8,976"
+          ],
+          [
+            "T10",
+            "Andy North",
+            "United States",
+            "73-71-72-76=292",
+            "+8",
+            "8,976"
+          ],
+          [
+            "T10",
+            "Craig Stadler",
+            "United States",
+            "76-74-73-69=292",
+            "+8",
+            "8,976"
+          ]
+        ],
+        "caption": "Final round",
+        "headers": [
+          "Place",
+          "Player",
+          "Country",
+          "Score",
+          "To par",
+          "Money ( $ )"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-17231302-7",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "Andy North",
+              "value": "Andy North",
+              "start": 21,
+              "end": 31
+            },
+            {
+              "surface": "t10",
+              "value": "T10",
+              "start": 47,
+              "end": 50
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0ff980d0e43747ff50577cd32ae329390251f6feedc78af774fae24546ba6ba7",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5000,
+              "completion_tokens": 29,
+              "total_tokens": 5029,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Andy North",
+              "value": "Andy North",
+              "start": 21,
+              "end": 31,
+              "clause": "How much was paid to Andy North when he placed t10?"
+            },
+            {
+              "surface": "t10",
+              "value": "T10",
+              "start": 47,
+              "end": 50,
+              "clause": "How much was paid to Andy North when he placed t10?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Andy North",
+              "value": "Andy North",
+              "start": 21,
+              "end": 31,
+              "clause": "How much was paid to Andy North when he placed t10?"
+            },
+            {
+              "surface": "t10",
+              "value": "T10",
+              "start": 47,
+              "end": 50,
+              "clause": "How much was paid to Andy North when he placed t10?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Andy North",
+              "value": "Andy North",
+              "start": 21,
+              "end": 31,
+              "clause": "How much was paid to Andy North when he placed t10?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question names Andy North as the player, matching the Player field."
+            },
+            {
+              "surface": "t10",
+              "value": "T10",
+              "start": 47,
+              "end": 50,
+              "clause": "How much was paid to Andy North when he placed t10?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The phrase 'placed t10' explicitly refers to the Place field, where Andy North has T10."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "7212088abcbe856c95012c0cdaad2fbb33fd7d39fe8696c86f8e1b564a94a120",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5071,
+              "completion_tokens": 60,
+              "total_tokens": 5131,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Andy North",
+              "value": "Andy North",
+              "start": 21,
+              "end": 31,
+              "clause": "How much was paid to Andy North when he placed t10?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question names Andy North as the player, matching the Player field.",
+              "operator": "="
+            },
+            {
+              "surface": "t10",
+              "value": "T10",
+              "start": 47,
+              "end": 50,
+              "clause": "How much was paid to Andy North when he placed t10?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The phrase 'placed t10' explicitly refers to the Place field, where Andy North has T10.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "fd44c4ef826b97707a276991cb50ce85496fcfedd400a0f96f482a20d34f99b5",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5166,
+              "completion_tokens": 11,
+              "total_tokens": 5177,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Andy North",
+              "value": "Andy North",
+              "start": 21,
+              "end": 31,
+              "clause": "How much was paid to Andy North when he placed t10?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question names Andy North as the player, matching the Player field.",
+              "operator": "="
+            },
+            {
+              "surface": "t10",
+              "value": "T10",
+              "start": 47,
+              "end": 50,
+              "clause": "How much was paid to Andy North when he placed t10?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The phrase 'placed t10' explicitly refers to the Place field, where Andy North has T10.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "fedcdf68b66de773d8ce8eb6f04497f8cfee70a9eb107173b9b9e0f81d9e57a0",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5120,
+              "completion_tokens": 14,
+              "total_tokens": 5134,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Andy North",
+              "value": "Andy North",
+              "start": 21,
+              "end": 31,
+              "clause": "How much was paid to Andy North when he placed t10?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question names Andy North as the player, matching the Player field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "t10",
+              "value": "T10",
+              "start": 47,
+              "end": 50,
+              "clause": "How much was paid to Andy North when he placed t10?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The phrase 'placed t10' explicitly refers to the Place field, where Andy North has T10.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Andy North",
+              "value": "Andy North",
+              "start": 21,
+              "end": 31,
+              "clause": "How much was paid to Andy North when he placed t10?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question names Andy North as the player, matching the Player field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "t10",
+              "value": "T10",
+              "start": 47,
+              "end": 50,
+              "clause": "How much was paid to Andy North when he placed t10?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The phrase 'placed t10' explicitly refers to the Place field, where Andy North has T10.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Andy North",
+              "value": "Andy North",
+              "start": 21,
+              "end": 31,
+              "clause": "How much was paid to Andy North when he placed t10?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question names Andy North as the player, matching the Player field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "t10",
+              "value": "T10",
+              "start": 47,
+              "end": 50,
+              "clause": "How much was paid to Andy North when he placed t10?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The phrase 'placed t10' explicitly refers to the Place field, where Andy North has T10.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              "Andy North"
+            ],
+            [
+              0,
+              0,
+              "T10"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Andy North",
+          "value": "Andy North",
+          "start": 21,
+          "end": 31
+        },
+        {
+          "surface": "t10",
+          "value": "T10",
+          "start": 47,
+          "end": 50
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Andy North",
+          "value": "Andy North",
+          "start": 21,
+          "end": 31,
+          "clause": "How much was paid to Andy North when he placed t10?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The question names Andy North as the player, matching the Player field.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "t10",
+          "value": "T10",
+          "start": 47,
+          "end": 50,
+          "clause": "How much was paid to Andy North when he placed t10?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "The phrase 'placed t10' explicitly refers to the Place field, where Andy North has T10.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          1,
+          0,
+          "Andy North"
+        ],
+        [
+          0,
+          0,
+          "T10"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7782
+}

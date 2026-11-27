@@ -1,0 +1,414 @@
+{
+  "arm": "E2",
+  "position": 391,
+  "example_id": "test:15516:2-12410929-75",
+  "original_index": 15516,
+  "table_id": "2-12410929-75",
+  "question": "When did the draw happen?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        4,
+        0,
+        "draw"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      4,
+      0,
+      "DRAW"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        0,
+        "DRAW"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "draw",
+        "value": "DRAW",
+        "start": 13,
+        "end": 17,
+        "clause": "When did the draw happen?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "“draw” describes the match Result, and the Result column contains DRAW.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "draw",
+        "value": "DRAW",
+        "start": 13,
+        "end": 17
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "When did the draw happen?",
+      "table": {
+        "header": [
+          "Date",
+          "Home captain",
+          "Away captain",
+          "Venue",
+          "Result"
+        ],
+        "page_title": "Test matches (1991–2000)",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 12410929,
+        "id": "2-12410929-75",
+        "section_title": "India in West Indies",
+        "rows": [
+          [
+            "6,7,8,9,10 March 1997",
+            "Courtney Walsh",
+            "Sachin Tendulkar",
+            "Sabina Park",
+            "DRAW"
+          ],
+          [
+            "14,15,16,17,18 March 1997",
+            "Courtney Walsh",
+            "Sachin Tendulkar",
+            "Queen's Park Oval",
+            "DRAW"
+          ],
+          [
+            "27,29,30,31 March 1997",
+            "Brian Lara",
+            "Sachin Tendulkar",
+            "Kensington Oval",
+            "WI by 38 runs"
+          ],
+          [
+            "4,5,6,7,8 April 1997",
+            "Courtney Walsh",
+            "Sachin Tendulkar",
+            "Antigua Recreation Ground",
+            "DRAW"
+          ],
+          [
+            "17,18,19,20,21 April 1997",
+            "Courtney Walsh",
+            "Sachin Tendulkar",
+            "Bourda",
+            "DRAW"
+          ]
+        ],
+        "caption": "India in West Indies",
+        "headers": [
+          "Date",
+          "Home captain",
+          "Away captain",
+          "Venue",
+          "Result"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-12410929-75",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "draw",
+              "value": "DRAW",
+              "start": 13,
+              "end": 17
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "52839f4c99327027715e7e5b9bc7be60bb2a2235048ad185a3a1f2b1cde537a2",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4827,
+              "completion_tokens": 60,
+              "total_tokens": 4887,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 41
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "draw",
+              "value": "DRAW",
+              "start": 13,
+              "end": 17,
+              "clause": "When did the draw happen?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "draw",
+              "value": "DRAW",
+              "start": 13,
+              "end": 17,
+              "clause": "When did the draw happen?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "draw",
+              "value": "DRAW",
+              "start": 13,
+              "end": 17,
+              "clause": "When did the draw happen?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "“draw” describes the match Result, and the Result column contains DRAW."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "5cfbd3db9127e99b6e23fb0439fa8683d02a31d7c54f00ad1d1ece5f5f6f6dc0",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4854,
+              "completion_tokens": 36,
+              "total_tokens": 4890,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "draw",
+              "value": "DRAW",
+              "start": 13,
+              "end": 17,
+              "clause": "When did the draw happen?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "“draw” describes the match Result, and the Result column contains DRAW.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c429b9dd2058b8512d42d7a3714f7c0d29275a725d607dc241ce313e67ef1a79",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4914,
+              "completion_tokens": 9,
+              "total_tokens": 4923,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "draw",
+              "value": "DRAW",
+              "start": 13,
+              "end": 17,
+              "clause": "When did the draw happen?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "“draw” describes the match Result, and the Result column contains DRAW.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "4666896da6b4be0c69d9ca2242e757e95c4ab33d1e297cbe9cbe8da522aa8e5c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4865,
+              "completion_tokens": 10,
+              "total_tokens": 4875,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "draw",
+              "value": "DRAW",
+              "start": 13,
+              "end": 17,
+              "clause": "When did the draw happen?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "“draw” describes the match Result, and the Result column contains DRAW.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "draw",
+              "value": "DRAW",
+              "start": 13,
+              "end": 17,
+              "clause": "When did the draw happen?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "“draw” describes the match Result, and the Result column contains DRAW.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "draw",
+              "value": "DRAW",
+              "start": 13,
+              "end": 17,
+              "clause": "When did the draw happen?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "“draw” describes the match Result, and the Result column contains DRAW.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              0,
+              "DRAW"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "draw",
+          "value": "DRAW",
+          "start": 13,
+          "end": 17
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "draw",
+          "value": "DRAW",
+          "start": 13,
+          "end": 17,
+          "clause": "When did the draw happen?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "“draw” describes the match Result, and the Result column contains DRAW.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          4,
+          0,
+          "DRAW"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 10219
+}

@@ -1,0 +1,483 @@
+{
+  "arm": "E2",
+  "position": 365,
+  "example_id": "test:14308:2-18949197-5",
+  "original_index": 14308,
+  "table_id": "2-18949197-5",
+  "question": "Who was the opponent on June 3?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        1,
+        0,
+        "june 3"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "June 3"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "June 3"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "June 3",
+        "value": "June 3",
+        "start": 24,
+        "end": 30,
+        "clause": "Who was the opponent on June 3?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The question uses June 3 as a date ('on June 3'), matching the Date header and row evidence.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "June 3",
+        "value": "June 3",
+        "start": 24,
+        "end": 30
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Who was the opponent on June 3?",
+      "table": {
+        "header": [
+          "Game",
+          "Date",
+          "Opponent",
+          "Score",
+          "Location",
+          "Record"
+        ],
+        "page_title": "2004 Connecticut Sun season",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 18949197,
+        "id": "2-18949197-5",
+        "section_title": "Regular season",
+        "rows": [
+          [
+            "4",
+            "June 3",
+            "Charlotte",
+            "W 71-62",
+            "Mohegan Sun Arena",
+            "2-2"
+          ],
+          [
+            "5",
+            "June 4",
+            "@ Washington",
+            "W 72-63",
+            "MCI Center",
+            "3-2"
+          ],
+          [
+            "6",
+            "June 6",
+            "Detroit",
+            "L 73-74",
+            "Mohegan Sun Arena",
+            "3-3"
+          ],
+          [
+            "7",
+            "June 9",
+            "@ Phoenix",
+            "L 59-75",
+            "America West Arena",
+            "3-4"
+          ],
+          [
+            "8",
+            "June 11",
+            "@ Seattle",
+            "L 63-68",
+            "KeyArena",
+            "3-5"
+          ],
+          [
+            "9",
+            "June 12",
+            "@ Sacramento",
+            "W 83-76",
+            "ARCO Arena",
+            "4-5"
+          ],
+          [
+            "10",
+            "June 14",
+            "@ Los Angeles",
+            "L 74-76 (OT)",
+            "Staples Center",
+            "4-6"
+          ],
+          [
+            "11",
+            "June 18",
+            "Charlotte",
+            "L 58-63 (OT)",
+            "Mohegan Sun Arena",
+            "4-7"
+          ],
+          [
+            "12",
+            "June 20",
+            "Washington",
+            "W 75-65",
+            "Mohegan Sun Arena",
+            "5-7"
+          ],
+          [
+            "13",
+            "June 22",
+            "@ Indiana",
+            "W 63-58",
+            "Conseco Fieldhouse",
+            "6-7"
+          ],
+          [
+            "14",
+            "June 25",
+            "Detroit",
+            "W 71-67 (OT)",
+            "Mohegan Sun Arena",
+            "7-7"
+          ],
+          [
+            "15",
+            "June 27",
+            "@ Detroit",
+            "W 74-72",
+            "Palace of Auburn Hills",
+            "8-7"
+          ],
+          [
+            "16",
+            "June 30",
+            "Washington",
+            "W 78-69",
+            "Mohegan Sun Arena",
+            "9-7"
+          ]
+        ],
+        "caption": "Regular season",
+        "headers": [
+          "Game",
+          "Date",
+          "Opponent",
+          "Score",
+          "Location",
+          "Record"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-18949197-5",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "June 3",
+              "value": "June 3",
+              "start": 24,
+              "end": 30
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0cdfc76ed3c3d83c722a7e845d8cef91d433aee9f2e7da58e6380455739e36ad",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4995,
+              "completion_tokens": 21,
+              "total_tokens": 5016,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "June 3",
+              "value": "June 3",
+              "start": 24,
+              "end": 30,
+              "clause": "Who was the opponent on June 3?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "June 3",
+              "value": "June 3",
+              "start": 24,
+              "end": 30,
+              "clause": "Who was the opponent on June 3?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "June 3",
+              "value": "June 3",
+              "start": 24,
+              "end": 30,
+              "clause": "Who was the opponent on June 3?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question uses June 3 as a date ('on June 3'), matching the Date header and row evidence."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d0ec720c715ffd1fece38edc0bdfc390f2e4028d07a39808103225e0f1962c20",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5029,
+              "completion_tokens": 44,
+              "total_tokens": 5073,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "June 3",
+              "value": "June 3",
+              "start": 24,
+              "end": 30,
+              "clause": "Who was the opponent on June 3?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question uses June 3 as a date ('on June 3'), matching the Date header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ccd8e44f4d94dec781d4582a932aed44ac567324be4d6958a945f54a56d31a7c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5097,
+              "completion_tokens": 9,
+              "total_tokens": 5106,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "June 3",
+              "value": "June 3",
+              "start": 24,
+              "end": 30,
+              "clause": "Who was the opponent on June 3?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question uses June 3 as a date ('on June 3'), matching the Date header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ea8e46eba0894e0a7c63eebdee29828bdc4e1ebecb625df9c442e188cdb67afd",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5048,
+              "completion_tokens": 12,
+              "total_tokens": 5060,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "June 3",
+              "value": "June 3",
+              "start": 24,
+              "end": 30,
+              "clause": "Who was the opponent on June 3?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question uses June 3 as a date ('on June 3'), matching the Date header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "June 3",
+              "value": "June 3",
+              "start": 24,
+              "end": 30,
+              "clause": "Who was the opponent on June 3?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question uses June 3 as a date ('on June 3'), matching the Date header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "June 3",
+              "value": "June 3",
+              "start": 24,
+              "end": 30,
+              "clause": "Who was the opponent on June 3?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question uses June 3 as a date ('on June 3'), matching the Date header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              "June 3"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "June 3",
+          "value": "June 3",
+          "start": 24,
+          "end": 30
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "June 3",
+          "value": "June 3",
+          "start": 24,
+          "end": 30,
+          "clause": "Who was the opponent on June 3?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The question uses June 3 as a date ('on June 3'), matching the Date header and row evidence.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          1,
+          0,
+          "June 3"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8281
+}

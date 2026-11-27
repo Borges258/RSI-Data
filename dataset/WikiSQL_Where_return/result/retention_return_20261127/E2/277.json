@@ -1,0 +1,710 @@
+{
+  "arm": "E2",
+  "position": 277,
+  "example_id": "test:11219:2-1123462-2",
+  "original_index": 11219,
+  "table_id": "2-1123462-2",
+  "question": "Which driver retired from a collision after 41 laps?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        3,
+        0,
+        "collision"
+      ],
+      [
+        2,
+        0,
+        "41"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      3,
+      0,
+      "Collision"
+    ],
+    [
+      2,
+      1,
+      "41"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        0,
+        "Collision"
+      ],
+      [
+        2,
+        1,
+        "41"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "collision",
+        "value": "Collision",
+        "start": 28,
+        "end": 37,
+        "clause": "Which driver retired from a collision after 41 laps?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "'retired from a collision' refers to the Time/Retired field, whose cells include Collision",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "41",
+        "value": "41",
+        "start": 44,
+        "end": 46,
+        "clause": "Which driver retired from a collision after 41 laps?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "'after 41 laps' refers to the Laps field, whose cells include 41",
+        "operator": ">",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "collision",
+        "value": "Collision",
+        "start": 28,
+        "end": 37
+      },
+      {
+        "surface": "41",
+        "value": "41",
+        "start": 44,
+        "end": 46
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Which driver retired from a collision after 41 laps?",
+      "table": {
+        "header": [
+          "Driver",
+          "Constructor",
+          "Laps",
+          "Time/Retired",
+          "Grid"
+        ],
+        "page_title": "2002 Monaco Grand Prix",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 1123462,
+        "id": "2-1123462-2",
+        "section_title": "Race",
+        "rows": [
+          [
+            "David Coulthard",
+            "McLaren - Mercedes",
+            "78",
+            "1:45:39.055",
+            "2"
+          ],
+          [
+            "Michael Schumacher",
+            "Ferrari",
+            "78",
+            "+1.050",
+            "3"
+          ],
+          [
+            "Ralf Schumacher",
+            "Williams - BMW",
+            "78",
+            "+1:07.450",
+            "4"
+          ],
+          [
+            "Jarno Trulli",
+            "Renault",
+            "77",
+            "+1 Lap",
+            "7"
+          ],
+          [
+            "Giancarlo Fisichella",
+            "Jordan - Honda",
+            "77",
+            "+1 Lap",
+            "11"
+          ],
+          [
+            "Heinz-Harald Frentzen",
+            "Arrows - Cosworth",
+            "77",
+            "+1 Lap",
+            "12"
+          ],
+          [
+            "Rubens Barrichello",
+            "Ferrari",
+            "77",
+            "+1 Lap",
+            "5"
+          ],
+          [
+            "Nick Heidfeld",
+            "Sauber - Petronas",
+            "76",
+            "+2 Laps",
+            "15"
+          ],
+          [
+            "Eddie Irvine",
+            "Jaguar - Cosworth",
+            "76",
+            "+2 Laps",
+            "19"
+          ],
+          [
+            "Pedro de la Rosa",
+            "Jaguar - Cosworth",
+            "76",
+            "+2 Laps",
+            "17"
+          ],
+          [
+            "Mark Webber",
+            "Minardi - Asiatech",
+            "76",
+            "+2 Laps",
+            "20"
+          ],
+          [
+            "Enrique Bernoldi",
+            "Arrows - Cosworth",
+            "76",
+            "+2 Laps",
+            "21"
+          ],
+          [
+            "Mika Salo",
+            "Toyota",
+            "69",
+            "Brakes",
+            "9"
+          ],
+          [
+            "Felipe Massa",
+            "Sauber - Petronas",
+            "63",
+            "Accident",
+            "13"
+          ],
+          [
+            "Olivier Panis",
+            "BAR - Honda",
+            "51",
+            "Collision",
+            "18"
+          ],
+          [
+            "Jenson Button",
+            "Renault",
+            "51",
+            "Collision",
+            "8"
+          ],
+          [
+            "Juan Pablo Montoya",
+            "Williams - BMW",
+            "46",
+            "Engine",
+            "1"
+          ],
+          [
+            "Jacques Villeneuve",
+            "BAR - Honda",
+            "44",
+            "Engine",
+            "14"
+          ],
+          [
+            "Kimi Räikkönen",
+            "McLaren - Mercedes",
+            "41",
+            "Collision",
+            "6"
+          ],
+          [
+            "Alex Yoong",
+            "Minardi - Asiatech",
+            "29",
+            "Accident",
+            "22"
+          ],
+          [
+            "Takuma Sato",
+            "Jordan - Honda",
+            "22",
+            "Accident",
+            "16"
+          ],
+          [
+            "Allan McNish",
+            "Toyota",
+            "15",
+            "Accident",
+            "10"
+          ],
+          [
+            "Source:",
+            "Source:",
+            "Source:",
+            "Source:",
+            "Source:"
+          ]
+        ],
+        "caption": "Race",
+        "headers": [
+          "Driver",
+          "Constructor",
+          "Laps",
+          "Time/Retired",
+          "Grid"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-1123462-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "collision",
+              "value": "Collision",
+              "start": 28,
+              "end": 37
+            },
+            {
+              "surface": "41",
+              "value": "41",
+              "start": 44,
+              "end": 46
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c687f9e5cb9dd58095a4025abbe9c740cb314391520532e2e5bf335a4f915292",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5084,
+              "completion_tokens": 25,
+              "total_tokens": 5109,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "collision",
+              "value": "Collision",
+              "start": 28,
+              "end": 37,
+              "clause": "Which driver retired from a collision after 41 laps?"
+            },
+            {
+              "surface": "41",
+              "value": "41",
+              "start": 44,
+              "end": 46,
+              "clause": "Which driver retired from a collision after 41 laps?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "collision",
+              "value": "Collision",
+              "start": 28,
+              "end": 37,
+              "clause": "Which driver retired from a collision after 41 laps?"
+            },
+            {
+              "surface": "41",
+              "value": "41",
+              "start": 44,
+              "end": 46,
+              "clause": "Which driver retired from a collision after 41 laps?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "collision",
+              "value": "Collision",
+              "start": 28,
+              "end": 37,
+              "clause": "Which driver retired from a collision after 41 laps?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'retired from a collision' refers to the Time/Retired field, whose cells include Collision"
+            },
+            {
+              "surface": "41",
+              "value": "41",
+              "start": 44,
+              "end": 46,
+              "clause": "Which driver retired from a collision after 41 laps?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'after 41 laps' refers to the Laps field, whose cells include 41"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "21ba01b743fabf43a1742ef3e6c2900e90a7ba8c23c8c1c29ea4f8cd406a4ddc",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5147,
+              "completion_tokens": 64,
+              "total_tokens": 5211,
+              "prompt_tokens_details": {
+                "cached_tokens": 4864
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "collision",
+              "value": "Collision",
+              "start": 28,
+              "end": 37,
+              "clause": "Which driver retired from a collision after 41 laps?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'retired from a collision' refers to the Time/Retired field, whose cells include Collision",
+              "operator": "="
+            },
+            {
+              "surface": "41",
+              "value": "41",
+              "start": 44,
+              "end": 46,
+              "clause": "Which driver retired from a collision after 41 laps?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'after 41 laps' refers to the Laps field, whose cells include 41",
+              "operator": ">"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "68c7cb7558719d7456b48fb7e6bb0291f645670c15445acb5436e9d60dc81110",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5243,
+              "completion_tokens": 11,
+              "total_tokens": 5254,
+              "prompt_tokens_details": {
+                "cached_tokens": 4864
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "collision",
+              "value": "Collision",
+              "start": 28,
+              "end": 37,
+              "clause": "Which driver retired from a collision after 41 laps?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'retired from a collision' refers to the Time/Retired field, whose cells include Collision",
+              "operator": "="
+            },
+            {
+              "surface": "41",
+              "value": "41",
+              "start": 44,
+              "end": 46,
+              "clause": "Which driver retired from a collision after 41 laps?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'after 41 laps' refers to the Laps field, whose cells include 41",
+              "operator": ">"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "6385a8de299a24249399b4f7f6bb25ee9885c4e7d878efadf37df60be2808a59",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5199,
+              "completion_tokens": 59,
+              "total_tokens": 5258,
+              "prompt_tokens_details": {
+                "cached_tokens": 4864
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 45
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "collision",
+              "value": "Collision",
+              "start": 28,
+              "end": 37,
+              "clause": "Which driver retired from a collision after 41 laps?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'retired from a collision' refers to the Time/Retired field, whose cells include Collision",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "41",
+              "value": "41",
+              "start": 44,
+              "end": 46,
+              "clause": "Which driver retired from a collision after 41 laps?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'after 41 laps' refers to the Laps field, whose cells include 41",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "collision",
+              "value": "Collision",
+              "start": 28,
+              "end": 37,
+              "clause": "Which driver retired from a collision after 41 laps?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'retired from a collision' refers to the Time/Retired field, whose cells include Collision",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "41",
+              "value": "41",
+              "start": 44,
+              "end": 46,
+              "clause": "Which driver retired from a collision after 41 laps?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'after 41 laps' refers to the Laps field, whose cells include 41",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "collision",
+              "value": "Collision",
+              "start": 28,
+              "end": 37,
+              "clause": "Which driver retired from a collision after 41 laps?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'retired from a collision' refers to the Time/Retired field, whose cells include Collision",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "41",
+              "value": "41",
+              "start": 44,
+              "end": 46,
+              "clause": "Which driver retired from a collision after 41 laps?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'after 41 laps' refers to the Laps field, whose cells include 41",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              0,
+              "Collision"
+            ],
+            [
+              2,
+              1,
+              "41"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "collision",
+          "value": "Collision",
+          "start": 28,
+          "end": 37
+        },
+        {
+          "surface": "41",
+          "value": "41",
+          "start": 44,
+          "end": 46
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "collision",
+          "value": "Collision",
+          "start": 28,
+          "end": 37,
+          "clause": "Which driver retired from a collision after 41 laps?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "'retired from a collision' refers to the Time/Retired field, whose cells include Collision",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "41",
+          "value": "41",
+          "start": 44,
+          "end": 46,
+          "clause": "Which driver retired from a collision after 41 laps?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "'after 41 laps' refers to the Laps field, whose cells include 41",
+          "operator": ">",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          3,
+          0,
+          "Collision"
+        ],
+        [
+          2,
+          1,
+          "41"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9719
+}

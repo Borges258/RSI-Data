@@ -1,0 +1,465 @@
+{
+  "arm": "E2",
+  "position": 123,
+  "example_id": "test:8911:2-16225725-4",
+  "original_index": 8911,
+  "table_id": "2-16225725-4",
+  "question": "What is Viewers, when Episode is \"A Family Affair\"?",
+  "gold_sql": {
+    "sel": 6,
+    "conds": [
+      [
+        0,
+        0,
+        "\"a family affair\""
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "\"A Family Affair\""
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "\"A Family Affair\""
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "A Family Affair",
+        "value": "\"A Family Affair\"",
+        "start": 34,
+        "end": 49,
+        "clause": "when Episode is \"A Family Affair\"?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "The condition explicitly names Episode, which matches header index 0; the corresponding row contains \"A Family Affair\" in that column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "A Family Affair",
+        "value": "A Family Affair",
+        "start": 34,
+        "end": 49
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is Viewers, when Episode is \"A Family Affair\"?",
+      "table": {
+        "header": [
+          "Episode",
+          "Air Date",
+          "Timeslot",
+          "Rating",
+          "Share",
+          "18-49",
+          "Viewers",
+          "Weekly Rank"
+        ],
+        "page_title": "Farmer Wants a Wife (U.S. TV series)",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "real",
+          "real",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 16225725,
+        "id": "2-16225725-4",
+        "section_title": "U.S. Nielsen Ratings",
+        "rows": [
+          [
+            "\"Goodbye City...Hello Country\"",
+            "April 30, 2008",
+            "9:00 P.M.",
+            "1.7",
+            "3",
+            "1.0/3 (#5)",
+            "2.37 (#5)",
+            "89/96"
+          ],
+          [
+            "\"Pigs & Cows & Sheeps...Oh My\"",
+            "May 7, 2008",
+            "9:00 P.M.",
+            "1.5",
+            "2",
+            "1.0/3 (#5)",
+            "2.11 (#5)",
+            "90/97"
+          ],
+          [
+            "\"Wet 'n Wild\"",
+            "May 14, 2008",
+            "9:00 P.M.",
+            "1.3",
+            "2",
+            "0.9/2 (#5)",
+            "1.96 (#5)",
+            "90/96"
+          ],
+          [
+            "\"Do-Si-Do\"",
+            "May 28, 2008",
+            "9:00 P.M.",
+            "1.8",
+            "3",
+            "0.9/2 (#5)",
+            "2.44 (#5)",
+            "75/87"
+          ],
+          [
+            "\"As Country as Apple Pie\"",
+            "June 4, 2008",
+            "9:00 P.M.",
+            "1.3",
+            "2",
+            "0.8/2 (#5)",
+            "2.01 (#5)",
+            "79/91"
+          ],
+          [
+            "\"It's Show Time\"",
+            "June 11, 2008",
+            "9:00 P.M.",
+            "1.3",
+            "2",
+            "0.8/2 (#5)",
+            "2.04 (#5)",
+            "76/88"
+          ],
+          [
+            "\"A Family Affair\"",
+            "June 18, 2008",
+            "9:00 P.M.",
+            "1.5",
+            "3",
+            "0.8/2 (#5)",
+            "2.00 (#5)",
+            "TBA"
+          ],
+          [
+            "\"Farmer Picks a Wife\"",
+            "June 25, 2008",
+            "9:00 P.M.",
+            "1.6",
+            "3",
+            "1.0/3 (#5)",
+            "2.45 (#5)",
+            "TBA"
+          ]
+        ],
+        "caption": "U.S. Nielsen Ratings",
+        "headers": [
+          "Episode",
+          "Air Date",
+          "Timeslot",
+          "Rating",
+          "Share",
+          "18-49",
+          "Viewers",
+          "Weekly Rank"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-16225725-4",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "A Family Affair",
+              "value": "A Family Affair",
+              "start": 34,
+              "end": 49
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "7c811b714663f00e2451951bfd209fd45609763c8f3a7a5f8170f4095acbb053",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5099,
+              "completion_tokens": 21,
+              "total_tokens": 5120,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "A Family Affair",
+              "value": "A Family Affair",
+              "start": 34,
+              "end": 49,
+              "clause": "when Episode is \"A Family Affair\"?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "A Family Affair",
+              "value": "A Family Affair",
+              "start": 34,
+              "end": 49,
+              "clause": "when Episode is \"A Family Affair\"?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "A Family Affair",
+              "value": "A Family Affair",
+              "start": 34,
+              "end": 49,
+              "clause": "when Episode is \"A Family Affair\"?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The condition explicitly names Episode, which matches header index 0; the corresponding row contains \"A Family Affair\" in that column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "1d18db57bae541bb99773ea54cf30cc392d1033d197b542725fbd9c7640d0dda",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5133,
+              "completion_tokens": 47,
+              "total_tokens": 5180,
+              "prompt_tokens_details": {
+                "cached_tokens": 4864
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "A Family Affair",
+              "value": "A Family Affair",
+              "start": 34,
+              "end": 49,
+              "clause": "when Episode is \"A Family Affair\"?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The condition explicitly names Episode, which matches header index 0; the corresponding row contains \"A Family Affair\" in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "06112de19d6a15ca1af16c5d902a95c45d5a66a3d064e3b45dc96e7d940ce687",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5204,
+              "completion_tokens": 9,
+              "total_tokens": 5213,
+              "prompt_tokens_details": {
+                "cached_tokens": 4864
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "A Family Affair",
+              "value": "\"A Family Affair\"",
+              "start": 34,
+              "end": 49,
+              "clause": "when Episode is \"A Family Affair\"?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The condition explicitly names Episode, which matches header index 0; the corresponding row contains \"A Family Affair\" in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0824e77f847e8923eeec20028b2a075430110e32a0061e700925356538e6acc0",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5155,
+              "completion_tokens": 14,
+              "total_tokens": 5169,
+              "prompt_tokens_details": {
+                "cached_tokens": 4864
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "A Family Affair",
+              "value": "\"A Family Affair\"",
+              "start": 34,
+              "end": 49,
+              "clause": "when Episode is \"A Family Affair\"?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The condition explicitly names Episode, which matches header index 0; the corresponding row contains \"A Family Affair\" in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "A Family Affair",
+              "value": "\"A Family Affair\"",
+              "start": 34,
+              "end": 49,
+              "clause": "when Episode is \"A Family Affair\"?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The condition explicitly names Episode, which matches header index 0; the corresponding row contains \"A Family Affair\" in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "A Family Affair",
+              "value": "\"A Family Affair\"",
+              "start": 34,
+              "end": 49,
+              "clause": "when Episode is \"A Family Affair\"?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The condition explicitly names Episode, which matches header index 0; the corresponding row contains \"A Family Affair\" in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              "\"A Family Affair\""
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "A Family Affair",
+          "value": "A Family Affair",
+          "start": 34,
+          "end": 49
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "A Family Affair",
+          "value": "\"A Family Affair\"",
+          "start": 34,
+          "end": 49,
+          "clause": "when Episode is \"A Family Affair\"?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "The condition explicitly names Episode, which matches header index 0; the corresponding row contains \"A Family Affair\" in that column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          0,
+          0,
+          "\"A Family Affair\""
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8093
+}

@@ -1,0 +1,615 @@
+{
+  "arm": "E2",
+  "position": 132,
+  "example_id": "test:4749:2-10640687-3",
+  "original_index": 4749,
+  "table_id": "2-10640687-3",
+  "question": "What was the North Melbourne's score when they played as the home team?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        0,
+        0,
+        "north melbourne"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [],
+  "status": "GROUNDING_FAILED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "GROUNDING_FAILED",
+    "valid": false,
+    "errors": [
+      "condition 1: grounding NO_MATCH"
+    ],
+    "conditions": [
+      {
+        "surface": "North Melbourne",
+        "value": "North Melbourne",
+        "start": 13,
+        "end": 28,
+        "clause": "What was the North Melbourne's score when they played as the home team?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "North Melbourne appears in the Home team field, and the question asks about its score when playing at home.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "home team",
+        "value": "home team",
+        "start": 61,
+        "end": 70,
+        "clause": "What was the North Melbourne's score when they played as the home team?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "The phrase home team directly matches the Home team header and identifies the team-role field.",
+        "operator": "=",
+        "grounded": false,
+        "groundingStatus": "NO_MATCH",
+        "groundingReview": {
+          "column": null,
+          "reason": "“home team” names the role/header, not a cell value; column 0 contains team names such as “North Melbourne,” so the literal “home team” does not match the row evidence."
+        }
+      }
+    ],
+    "stage": "WHERE_CONDITION_VALIDATE",
+    "originalConditions": [
+      {
+        "surface": "North Melbourne",
+        "value": "North Melbourne",
+        "start": 13,
+        "end": 28
+      },
+      {
+        "surface": "home team",
+        "value": "Home team",
+        "start": 61,
+        "end": 70
+      }
+    ],
+    "halt": true,
+    "completed": false,
+    "conds": [],
+    "warnings": [],
+    "request": {
+      "question": "What was the North Melbourne's score when they played as the home team?",
+      "table": {
+        "header": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ],
+        "page_title": "1956 VFL season",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 10640687,
+        "id": "2-10640687-3",
+        "section_title": "Round 3",
+        "rows": [
+          [
+            "Footscray",
+            "5.11 (41)",
+            "Melbourne",
+            "9.13 (67)",
+            "Western Oval",
+            "33,265",
+            "28 April 1956"
+          ],
+          [
+            "Fitzroy",
+            "13.16 (94)",
+            "South Melbourne",
+            "10.13 (73)",
+            "Brunswick Street Oval",
+            "18,000",
+            "28 April 1956"
+          ],
+          [
+            "Hawthorn",
+            "15.10 (100)",
+            "Geelong",
+            "16.16 (112)",
+            "Glenferrie Oval",
+            "20,000",
+            "28 April 1956"
+          ],
+          [
+            "North Melbourne",
+            "9.11 (65)",
+            "Essendon",
+            "15.17 (107)",
+            "Arden Street Oval",
+            "15,000",
+            "28 April 1956"
+          ],
+          [
+            "Richmond",
+            "17.12 (114)",
+            "Collingwood",
+            "11.12 (78)",
+            "Punt Road Oval",
+            "30,000",
+            "28 April 1956"
+          ],
+          [
+            "St Kilda",
+            "9.11 (65)",
+            "Carlton",
+            "13.9 (87)",
+            "Junction Oval",
+            "26,400",
+            "28 April 1956"
+          ]
+        ],
+        "caption": "Round 3",
+        "headers": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-10640687-3",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 9,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "North Melbourne",
+              "value": "North Melbourne",
+              "start": 13,
+              "end": 28
+            },
+            {
+              "surface": "home team",
+              "value": "Home team",
+              "start": 61,
+              "end": 70
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "788d7b4d07905daea2f33dc84cc0269838d3bd799c31df81d1c638d363d826c5",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4913,
+              "completion_tokens": 29,
+              "total_tokens": 4942,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "North Melbourne",
+              "value": "North Melbourne",
+              "start": 13,
+              "end": 28,
+              "clause": "What was the North Melbourne's score when they played as the home team?"
+            },
+            {
+              "surface": "home team",
+              "value": "Home team",
+              "start": 61,
+              "end": 70,
+              "clause": "What was the North Melbourne's score when they played as the home team?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "North Melbourne",
+              "value": "North Melbourne",
+              "start": 13,
+              "end": 28,
+              "clause": "What was the North Melbourne's score when they played as the home team?"
+            },
+            {
+              "surface": "home team",
+              "value": "Home team",
+              "start": 61,
+              "end": 70,
+              "clause": "What was the North Melbourne's score when they played as the home team?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "North Melbourne",
+              "value": "North Melbourne",
+              "start": 13,
+              "end": 28,
+              "clause": "What was the North Melbourne's score when they played as the home team?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "North Melbourne appears in the Home team field, and the question asks about its score when playing at home."
+            },
+            {
+              "surface": "home team",
+              "value": "Home team",
+              "start": 61,
+              "end": 70,
+              "clause": "What was the North Melbourne's score when they played as the home team?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The phrase home team directly matches the Home team header and identifies the team-role field."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e3e3163fd1389d3590ce5d60f0e153165020e8ea2a45ac3ac4d1e06f65249c09",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4988,
+              "completion_tokens": 63,
+              "total_tokens": 5051,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "North Melbourne",
+              "value": "North Melbourne",
+              "start": 13,
+              "end": 28,
+              "clause": "What was the North Melbourne's score when they played as the home team?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "North Melbourne appears in the Home team field, and the question asks about its score when playing at home.",
+              "operator": "="
+            },
+            {
+              "surface": "home team",
+              "value": "Home team",
+              "start": 61,
+              "end": 70,
+              "clause": "What was the North Melbourne's score when they played as the home team?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The phrase home team directly matches the Home team header and identifies the team-role field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ffcb04fde60bd3fd0cecc45a262f570222655f6b3e862e1031827b2bdd7e82d3",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5086,
+              "completion_tokens": 11,
+              "total_tokens": 5097,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "North Melbourne",
+              "value": "North Melbourne",
+              "start": 13,
+              "end": 28,
+              "clause": "What was the North Melbourne's score when they played as the home team?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "North Melbourne appears in the Home team field, and the question asks about its score when playing at home.",
+              "operator": "="
+            },
+            {
+              "surface": "home team",
+              "value": "home team",
+              "start": 61,
+              "end": 70,
+              "clause": "What was the North Melbourne's score when they played as the home team?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The phrase home team directly matches the Home team header and identifies the team-role field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "bf94ddd2d4b1757337bb7a702d589156e4a8d611f52b8a42df2315fa9471a015",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5040,
+              "completion_tokens": 14,
+              "total_tokens": 5054,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "North Melbourne",
+              "value": "North Melbourne",
+              "start": 13,
+              "end": 28,
+              "clause": "What was the North Melbourne's score when they played as the home team?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "North Melbourne appears in the Home team field, and the question asks about its score when playing at home.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "home team",
+              "value": "home team",
+              "start": 61,
+              "end": 70,
+              "clause": "What was the North Melbourne's score when they played as the home team?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The phrase home team directly matches the Home team header and identifies the team-role field.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": null,
+                "reason": "“home team” names the role/header, not a cell value; column 0 contains team names such as “North Melbourne,” so the literal “home team” does not match the row evidence."
+              }
+            }
+          ],
+          "reviewModelCalls": [
+            {
+              "model": "gpt-5.6-sol",
+              "promptSha256": "fe9ef70435dc6bc1914719e45ef114e996294269aa31c11c701dea5b331b81b3",
+              "knowledgeIds": [],
+              "usage": {
+                "prompt_tokens": 5005,
+                "completion_tokens": 98,
+                "total_tokens": 5103,
+                "prompt_tokens_details": {
+                  "cached_tokens": 4224
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 44
+                }
+              }
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "fe9ef70435dc6bc1914719e45ef114e996294269aa31c11c701dea5b331b81b3",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5005,
+              "completion_tokens": 98,
+              "total_tokens": 5103,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 44
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "North Melbourne",
+              "value": "North Melbourne",
+              "start": 13,
+              "end": 28,
+              "clause": "What was the North Melbourne's score when they played as the home team?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "North Melbourne appears in the Home team field, and the question asks about its score when playing at home.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "home team",
+              "value": "home team",
+              "start": 61,
+              "end": 70,
+              "clause": "What was the North Melbourne's score when they played as the home team?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The phrase home team directly matches the Home team header and identifies the team-role field.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": null,
+                "reason": "“home team” names the role/header, not a cell value; column 0 contains team names such as “North Melbourne,” so the literal “home team” does not match the row evidence."
+              }
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "GROUNDING_FAILED",
+          "valid": false,
+          "errors": [
+            "condition 1: grounding NO_MATCH"
+          ],
+          "conditions": [
+            {
+              "surface": "North Melbourne",
+              "value": "North Melbourne",
+              "start": 13,
+              "end": 28,
+              "clause": "What was the North Melbourne's score when they played as the home team?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "North Melbourne appears in the Home team field, and the question asks about its score when playing at home.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "home team",
+              "value": "home team",
+              "start": 61,
+              "end": 70,
+              "clause": "What was the North Melbourne's score when they played as the home team?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The phrase home team directly matches the Home team header and identifies the team-role field.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": null,
+                "reason": "“home team” names the role/header, not a cell value; column 0 contains team names such as “North Melbourne,” so the literal “home team” does not match the row evidence."
+              }
+            }
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "GROUNDING_FAILED",
+        "stage": "WHERE_CONDITION_VALIDATE",
+        "halt": true,
+        "completed": false,
+        "errors": [
+          "condition 1: grounding NO_MATCH"
+        ],
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "North Melbourne",
+          "value": "North Melbourne",
+          "start": 13,
+          "end": 28
+        },
+        {
+          "surface": "home team",
+          "value": "Home team",
+          "start": 61,
+          "end": 70
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "North Melbourne",
+          "value": "North Melbourne",
+          "start": 13,
+          "end": 28,
+          "clause": "What was the North Melbourne's score when they played as the home team?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "North Melbourne appears in the Home team field, and the question asks about its score when playing at home.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "home team",
+          "value": "home team",
+          "start": 61,
+          "end": 70,
+          "clause": "What was the North Melbourne's score when they played as the home team?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "The phrase home team directly matches the Home team header and identifies the team-role field.",
+          "operator": "=",
+          "grounded": false,
+          "groundingStatus": "NO_MATCH",
+          "groundingReview": {
+            "column": null,
+            "reason": "“home team” names the role/header, not a cell value; column 0 contains team names such as “North Melbourne,” so the literal “home team” does not match the row evidence."
+          }
+        }
+      ],
+      "count": 2
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": false,
+  "elapsed_ms": 10781
+}

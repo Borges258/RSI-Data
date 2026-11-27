@@ -1,0 +1,669 @@
+{
+  "arm": "E2",
+  "position": 69,
+  "example_id": "test:4564:2-10662806-1",
+  "original_index": 4564,
+  "table_id": "2-10662806-1",
+  "question": "Who won Silverstone in a round after 10?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        0,
+        1,
+        10
+      ],
+      [
+        2,
+        0,
+        "silverstone"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "Silverstone"
+    ],
+    [
+      0,
+      1,
+      10
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "Silverstone"
+      ],
+      [
+        0,
+        1,
+        10
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Silverstone",
+        "value": "Silverstone",
+        "start": 8,
+        "end": 19,
+        "clause": "Who won Silverstone in a round after 10?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "Silverstone is the Circuit for the matching race.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "after 10",
+        "value": 10,
+        "start": 31,
+        "end": 39,
+        "clause": "Who won Silverstone in a round after 10?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "After 10 constrains the numeric Round field.",
+        "operator": ">",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Silverstone",
+        "value": "Silverstone",
+        "start": 8,
+        "end": 19
+      },
+      {
+        "surface": "after 10",
+        "value": "10",
+        "start": 31,
+        "end": 39
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Who won Silverstone in a round after 10?",
+      "table": {
+        "header": [
+          "Round",
+          "Name",
+          "Circuit",
+          "Date",
+          "Winning driver",
+          "Winning car"
+        ],
+        "page_title": "1979 British Formula One season",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 10662806,
+        "id": "2-10662806-1",
+        "section_title": "Races",
+        "rows": [
+          [
+            "1",
+            "Belgian Cup",
+            "Zolder",
+            "April 1",
+            "Dave Kennedy",
+            "Wolf WR4"
+          ],
+          [
+            "2",
+            "International Gold Cup",
+            "Oulton Park",
+            "April 13",
+            "Dave Kennedy",
+            "Wolf WR4"
+          ],
+          [
+            "3",
+            "Race of Champions",
+            "Brands Hatch",
+            "April 15",
+            "Guy Edwards",
+            "Fittipaldi F5A"
+          ],
+          [
+            "4",
+            "Sun Trophy",
+            "Mallory Park",
+            "May 7",
+            "Rupert Keegan",
+            "Arrows A1"
+          ],
+          [
+            "5",
+            "Anglia TV Trophy",
+            "Snetterton",
+            "May 20",
+            "Rupert Keegan",
+            "Arrows A1"
+          ],
+          [
+            "6",
+            "Rivet Supply Trophy",
+            "Thruxton",
+            "May 28",
+            "Emilio de Villota",
+            "Lotus 78"
+          ],
+          [
+            "7",
+            "International Whitsuntide Race",
+            "Zandvoort",
+            "June 4",
+            "Emilio de Villota",
+            "Lotus 78"
+          ],
+          [
+            "8",
+            "Donington Formula 1 Trophy",
+            "Donington Park",
+            "June 24",
+            "Rupert Keegan",
+            "Arrows A1"
+          ],
+          [
+            "9",
+            "Daily Express Formula 1 Trophy",
+            "Oulton Park",
+            "June 30",
+            "Emilio de Villota",
+            "Lotus 78"
+          ],
+          [
+            "10",
+            "Nogaro Grand Prix",
+            "Nogaro",
+            "July 8",
+            "Emilio de Villota",
+            "Lotus 78"
+          ],
+          [
+            "11",
+            "ATV Trophy",
+            "Mallory Park",
+            "July 29",
+            "Dave Kennedy",
+            "Wolf WR6"
+          ],
+          [
+            "12",
+            "Fuji Tapes Trophy",
+            "Brands Hatch",
+            "August 27",
+            "Ricardo Zunino",
+            "Arrows A1"
+          ],
+          [
+            "13",
+            "Radio Victory Trophy",
+            "Thruxton",
+            "September 9",
+            "Rupert Keegan",
+            "Arrows A1"
+          ],
+          [
+            "14",
+            "Budweiser Trophy",
+            "Snetterton",
+            "September 23",
+            "Rupert Keegan",
+            "Arrows A1"
+          ],
+          [
+            "15",
+            "Bradford & Bingley Trophy",
+            "Silverstone",
+            "October 7",
+            "Gordon Smiley",
+            "Surtees TS20"
+          ]
+        ],
+        "caption": "Races",
+        "headers": [
+          "Round",
+          "Name",
+          "Circuit",
+          "Date",
+          "Winning driver",
+          "Winning car"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-10662806-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "Silverstone",
+              "value": "Silverstone",
+              "start": 8,
+              "end": 19
+            },
+            {
+              "surface": "after 10",
+              "value": "10",
+              "start": 31,
+              "end": 39
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "948a023590948022d5ad0e6d986dfc5b3dd28f70d7c5f72e724142d23b00f247",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5060,
+              "completion_tokens": 29,
+              "total_tokens": 5089,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Silverstone",
+              "value": "Silverstone",
+              "start": 8,
+              "end": 19,
+              "clause": "Who won Silverstone in a round after 10?"
+            },
+            {
+              "surface": "after 10",
+              "value": "10",
+              "start": 31,
+              "end": 39,
+              "clause": "Who won Silverstone in a round after 10?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Silverstone",
+              "value": "Silverstone",
+              "start": 8,
+              "end": 19,
+              "clause": "Who won Silverstone in a round after 10?"
+            },
+            {
+              "surface": "after 10",
+              "value": "10",
+              "start": 31,
+              "end": 39,
+              "clause": "Who won Silverstone in a round after 10?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Silverstone",
+              "value": "Silverstone",
+              "start": 8,
+              "end": 19,
+              "clause": "Who won Silverstone in a round after 10?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Silverstone is the Circuit for the matching race."
+            },
+            {
+              "surface": "after 10",
+              "value": "10",
+              "start": 31,
+              "end": 39,
+              "clause": "Who won Silverstone in a round after 10?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "After 10 constrains the numeric Round field."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e953ab3915b3ad99e861f1cedf7986491b247126df884c85289823c0c37d6543",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5127,
+              "completion_tokens": 45,
+              "total_tokens": 5172,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Silverstone",
+              "value": "Silverstone",
+              "start": 8,
+              "end": 19,
+              "clause": "Who won Silverstone in a round after 10?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Silverstone is the Circuit for the matching race.",
+              "operator": "="
+            },
+            {
+              "surface": "after 10",
+              "value": "10",
+              "start": 31,
+              "end": 39,
+              "clause": "Who won Silverstone in a round after 10?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "After 10 constrains the numeric Round field.",
+              "operator": ">"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f7f6b9a69f3cfca2c53892530d4e7564455f80277e98dd37e082f53bace831f1",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5207,
+              "completion_tokens": 11,
+              "total_tokens": 5218,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Silverstone",
+              "value": "Silverstone",
+              "start": 8,
+              "end": 19,
+              "clause": "Who won Silverstone in a round after 10?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Silverstone is the Circuit for the matching race.",
+              "operator": "="
+            },
+            {
+              "surface": "after 10",
+              "value": "10",
+              "start": 31,
+              "end": 39,
+              "clause": "Who won Silverstone in a round after 10?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "After 10 constrains the numeric Round field.",
+              "operator": ">"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0358d2d2f925b4627c828b1c90f62b661bd8ba55296e32b2372f661d82698245",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5161,
+              "completion_tokens": 13,
+              "total_tokens": 5174,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Silverstone",
+              "value": "Silverstone",
+              "start": 8,
+              "end": 19,
+              "clause": "Who won Silverstone in a round after 10?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Silverstone is the Circuit for the matching race.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "after 10",
+              "value": "10",
+              "start": 31,
+              "end": 39,
+              "clause": "Who won Silverstone in a round after 10?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "After 10 constrains the numeric Round field.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Silverstone",
+              "value": "Silverstone",
+              "start": 8,
+              "end": 19,
+              "clause": "Who won Silverstone in a round after 10?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Silverstone is the Circuit for the matching race.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "after 10",
+              "value": 10,
+              "start": 31,
+              "end": 39,
+              "clause": "Who won Silverstone in a round after 10?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "After 10 constrains the numeric Round field.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Silverstone",
+              "value": "Silverstone",
+              "start": 8,
+              "end": 19,
+              "clause": "Who won Silverstone in a round after 10?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Silverstone is the Circuit for the matching race.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "after 10",
+              "value": 10,
+              "start": 31,
+              "end": 39,
+              "clause": "Who won Silverstone in a round after 10?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "After 10 constrains the numeric Round field.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "Silverstone"
+            ],
+            [
+              0,
+              1,
+              10
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Silverstone",
+          "value": "Silverstone",
+          "start": 8,
+          "end": 19
+        },
+        {
+          "surface": "after 10",
+          "value": "10",
+          "start": 31,
+          "end": 39
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Silverstone",
+          "value": "Silverstone",
+          "start": 8,
+          "end": 19,
+          "clause": "Who won Silverstone in a round after 10?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "Silverstone is the Circuit for the matching race.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "after 10",
+          "value": 10,
+          "start": 31,
+          "end": 39,
+          "clause": "Who won Silverstone in a round after 10?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "After 10 constrains the numeric Round field.",
+          "operator": ">",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          2,
+          0,
+          "Silverstone"
+        ],
+        [
+          0,
+          1,
+          10
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7937
+}

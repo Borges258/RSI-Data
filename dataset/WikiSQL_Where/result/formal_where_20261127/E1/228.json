@@ -1,0 +1,132 @@
+{
+  "arm": "E1",
+  "position": 228,
+  "example_id": "test:9849:2-17565113-2",
+  "original_index": 9849,
+  "table_id": "2-17565113-2",
+  "question": "What is the maximum 2002 figure when 2008 is 19.5, 2006 is less than 24.5 and 1999 is 18.3?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        10,
+        1,
+        19.5
+      ],
+      [
+        8,
+        2,
+        24.5
+      ],
+      [
+        1,
+        0,
+        18.3
+      ]
+    ],
+    "agg": 1
+  },
+  "prediction_conds": [
+    [
+      10,
+      0,
+      19.5
+    ],
+    [
+      8,
+      2,
+      24.5
+    ],
+    [
+      1,
+      0,
+      18.3
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": "gpt-5.6-sol",
+  "usage": {
+    "prompt_tokens": 17011,
+    "completion_tokens": 85,
+    "total_tokens": 17096,
+    "prompt_tokens_details": {
+      "cached_tokens": 4224
+    }
+  },
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        10,
+        0,
+        19.5
+      ],
+      [
+        8,
+        2,
+        24.5
+      ],
+      [
+        1,
+        0,
+        18.3
+      ]
+    ],
+    "explanation": "2008 equals 19.5, 2006 is strictly less than 24.5, and 1999 equals 18.3; maximum 2002 describes the requested result, not a filter.",
+    "version": "wikisql-where-prior-v1",
+    "tableId": "2-17565113-2",
+    "knowledgeIds": [
+      "g-eq",
+      "g-gt",
+      "g-lt",
+      "g-inclusive",
+      "g-literal",
+      "g-threshold",
+      "g-and",
+      "g-or",
+      "g-column",
+      "g-count",
+      "g-ambiguous",
+      "t-2-17565113-2-field-0",
+      "t-2-17565113-2-field-1",
+      "t-2-17565113-2-field-2",
+      "t-2-17565113-2-field-3",
+      "t-2-17565113-2-field-4",
+      "t-2-17565113-2-field-5",
+      "t-2-17565113-2-field-6",
+      "t-2-17565113-2-field-7",
+      "t-2-17565113-2-field-8",
+      "t-2-17565113-2-field-9",
+      "t-2-17565113-2-field-10",
+      "t-2-17565113-2-field-11",
+      "t-2-17565113-2-field-12",
+      "t-2-17565113-2-field-13",
+      "d-implicit-eq",
+      "d-explicit-eq",
+      "d-gt",
+      "d-lt-and-gt",
+      "d-with-two",
+      "d-literal-form",
+      "p-text",
+      "p-number",
+      "p-multi",
+      "p-unsupported"
+    ],
+    "promptSha256": "fd0bb1d465c38344ea22bf1c8fcf9f49cc34462ea660e6a7da8dd6e15e69f282",
+    "model": "gpt-5.6-sol",
+    "usage": {
+      "prompt_tokens": 17011,
+      "completion_tokens": 85,
+      "total_tokens": 17096,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      }
+    },
+    "latencyMs": 3912
+  },
+  "source": "where_prior_parse",
+  "safe_completed": true,
+  "elapsed_ms": 3907
+}

@@ -1,0 +1,581 @@
+{
+  "arm": "E2",
+  "position": 178,
+  "example_id": "test:6435:2-13771649-13",
+  "original_index": 6435,
+  "table_id": "2-13771649-13",
+  "question": "What is the points difference associated with more than 3 points and more than 0 losses?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        4,
+        1,
+        3
+      ],
+      [
+        2,
+        1,
+        0
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      4,
+      1,
+      3
+    ],
+    [
+      2,
+      1,
+      0
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        1,
+        3
+      ],
+      [
+        2,
+        1,
+        0
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "more than 3",
+        "value": 3,
+        "start": 46,
+        "end": 57,
+        "clause": "What is the points difference associated with more than 3 points",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The clause explicitly says more than 3 points, matching the Points header.",
+        "operator": ">",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "more than 0",
+        "value": 0,
+        "start": 69,
+        "end": 80,
+        "clause": "and more than 0 losses?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The clause explicitly says more than 0 losses, matching the Lost header.",
+        "operator": ">",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "more than 3",
+        "value": "3",
+        "start": 46,
+        "end": 57
+      },
+      {
+        "surface": "more than 0",
+        "value": "0",
+        "start": 69,
+        "end": 80
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the points difference associated with more than 3 points and more than 0 losses?",
+      "table": {
+        "header": [
+          "Games",
+          "Drawn",
+          "Lost",
+          "Points difference",
+          "Points"
+        ],
+        "page_title": "1995 Men's World Ice Hockey Championships",
+        "types": [
+          "real",
+          "real",
+          "real",
+          "text",
+          "real"
+        ],
+        "page_id": 13771649,
+        "id": "2-13771649-13",
+        "section_title": "Group 1",
+        "rows": [
+          [
+            "4",
+            "0",
+            "0",
+            "40 - 08",
+            "8"
+          ],
+          [
+            "4",
+            "0",
+            "1",
+            "32 - 08",
+            "6"
+          ],
+          [
+            "4",
+            "1",
+            "2",
+            "18 - 19",
+            "3"
+          ],
+          [
+            "4",
+            "0",
+            "3",
+            "16 - 24",
+            "2"
+          ],
+          [
+            "4",
+            "1",
+            "3",
+            "09 - 56",
+            "1"
+          ]
+        ],
+        "caption": "Group 1",
+        "headers": [
+          "Games",
+          "Drawn",
+          "Lost",
+          "Points difference",
+          "Points"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-13771649-13",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "more than 3",
+              "value": "3",
+              "start": 46,
+              "end": 57
+            },
+            {
+              "surface": "more than 0",
+              "value": "0",
+              "start": 69,
+              "end": 80
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "815874f290df8c84db2f0d9786b34c709dec5baaaad9f4259a2af651bc99d383",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4747,
+              "completion_tokens": 31,
+              "total_tokens": 4778,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "more than 3",
+              "value": "3",
+              "start": 46,
+              "end": 57,
+              "clause": "What is the points difference associated with more than 3 points"
+            },
+            {
+              "surface": "more than 0",
+              "value": "0",
+              "start": 69,
+              "end": 80,
+              "clause": "and more than 0 losses?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "more than 3",
+              "value": "3",
+              "start": 46,
+              "end": 57,
+              "clause": "What is the points difference associated with more than 3 points"
+            },
+            {
+              "surface": "more than 0",
+              "value": "0",
+              "start": 69,
+              "end": 80,
+              "clause": "and more than 0 losses?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "more than 3",
+              "value": "3",
+              "start": 46,
+              "end": 57,
+              "clause": "What is the points difference associated with more than 3 points",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly says more than 3 points, matching the Points header."
+            },
+            {
+              "surface": "more than 0",
+              "value": "0",
+              "start": 69,
+              "end": 80,
+              "clause": "and more than 0 losses?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The clause explicitly says more than 0 losses, matching the Lost header."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f204c2667caca84f72f9d527c30926a8a5bd320d096a5a9846f8d5cc823650e0",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4813,
+              "completion_tokens": 55,
+              "total_tokens": 4868,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "more than 3",
+              "value": "3",
+              "start": 46,
+              "end": 57,
+              "clause": "What is the points difference associated with more than 3 points",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly says more than 3 points, matching the Points header.",
+              "operator": ">"
+            },
+            {
+              "surface": "more than 0",
+              "value": "0",
+              "start": 69,
+              "end": 80,
+              "clause": "and more than 0 losses?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The clause explicitly says more than 0 losses, matching the Lost header.",
+              "operator": ">"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "40e10fbb0dc1bda3504547e4a0f7998980fcc0815ef08d255bfd57ed6640b758",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4903,
+              "completion_tokens": 12,
+              "total_tokens": 4915,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "more than 3",
+              "value": "3",
+              "start": 46,
+              "end": 57,
+              "clause": "What is the points difference associated with more than 3 points",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly says more than 3 points, matching the Points header.",
+              "operator": ">"
+            },
+            {
+              "surface": "more than 0",
+              "value": "0",
+              "start": 69,
+              "end": 80,
+              "clause": "and more than 0 losses?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The clause explicitly says more than 0 losses, matching the Lost header.",
+              "operator": ">"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "025b66c96564aca2e866cece1d5733fbba957d8197a6fb857bfdfe565929be80",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4857,
+              "completion_tokens": 12,
+              "total_tokens": 4869,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "more than 3",
+              "value": "3",
+              "start": 46,
+              "end": 57,
+              "clause": "What is the points difference associated with more than 3 points",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly says more than 3 points, matching the Points header.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "more than 0",
+              "value": "0",
+              "start": 69,
+              "end": 80,
+              "clause": "and more than 0 losses?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The clause explicitly says more than 0 losses, matching the Lost header.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "more than 3",
+              "value": 3,
+              "start": 46,
+              "end": 57,
+              "clause": "What is the points difference associated with more than 3 points",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly says more than 3 points, matching the Points header.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "more than 0",
+              "value": 0,
+              "start": 69,
+              "end": 80,
+              "clause": "and more than 0 losses?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The clause explicitly says more than 0 losses, matching the Lost header.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "more than 3",
+              "value": 3,
+              "start": 46,
+              "end": 57,
+              "clause": "What is the points difference associated with more than 3 points",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly says more than 3 points, matching the Points header.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "more than 0",
+              "value": 0,
+              "start": 69,
+              "end": 80,
+              "clause": "and more than 0 losses?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The clause explicitly says more than 0 losses, matching the Lost header.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              1,
+              3
+            ],
+            [
+              2,
+              1,
+              0
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "more than 3",
+          "value": "3",
+          "start": 46,
+          "end": 57
+        },
+        {
+          "surface": "more than 0",
+          "value": "0",
+          "start": 69,
+          "end": 80
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "more than 3",
+          "value": 3,
+          "start": 46,
+          "end": 57,
+          "clause": "What is the points difference associated with more than 3 points",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The clause explicitly says more than 3 points, matching the Points header.",
+          "operator": ">",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "more than 0",
+          "value": 0,
+          "start": 69,
+          "end": 80,
+          "clause": "and more than 0 losses?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The clause explicitly says more than 0 losses, matching the Lost header.",
+          "operator": ">",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          4,
+          1,
+          3
+        ],
+        [
+          2,
+          1,
+          0
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8047
+}

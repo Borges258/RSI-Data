@@ -1,0 +1,588 @@
+{
+  "arm": "E2",
+  "position": 116,
+  "example_id": "test:8373:2-1620220-3",
+  "original_index": 8373,
+  "table_id": "2-1620220-3",
+  "question": "What is the label for the CD format in North America?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        4,
+        0,
+        "cd"
+      ],
+      [
+        1,
+        0,
+        "north america"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      4,
+      0,
+      "CD"
+    ],
+    [
+      1,
+      0,
+      "North America"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        0,
+        "CD"
+      ],
+      [
+        1,
+        0,
+        "North America"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "CD",
+        "value": "CD",
+        "start": 26,
+        "end": 28,
+        "clause": "What is the label for the CD format in North America?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The question explicitly identifies CD as the format, matching the Format header and row values.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "North America",
+        "value": "North America",
+        "start": 39,
+        "end": 52,
+        "clause": "What is the label for the CD format in North America?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "North America is specified as the region, matching the Region header and row evidence.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "CD",
+        "value": "CD",
+        "start": 26,
+        "end": 28
+      },
+      {
+        "surface": "North America",
+        "value": "North America",
+        "start": 39,
+        "end": 52
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the label for the CD format in North America?",
+      "table": {
+        "header": [
+          "Date",
+          "Region",
+          "Label",
+          "Catalogue",
+          "Format"
+        ],
+        "page_title": "No Sleep 'til Hammersmith",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 1620220,
+        "id": "2-1620220-3",
+        "section_title": "Release history",
+        "rows": [
+          [
+            "27 June 1981",
+            "UK",
+            "Bronze",
+            "BRON 535",
+            "vinyl"
+          ],
+          [
+            "27 June 1981",
+            "UK",
+            "Bronze",
+            "BRONG 535",
+            "gold vinyl"
+          ],
+          [
+            "1990",
+            "UK",
+            "Castle",
+            "CLACD 179",
+            "CD"
+          ],
+          [
+            "1996",
+            "UK",
+            "Essential",
+            "ESMCD313",
+            "CD"
+          ],
+          [
+            "1996",
+            "North America",
+            "Dojo",
+            "DOJO 3035-2",
+            "CD"
+          ],
+          [
+            "2001",
+            "UK",
+            "Sanctuary",
+            "SMEDD 043",
+            "2CD"
+          ]
+        ],
+        "caption": "Release history",
+        "headers": [
+          "Date",
+          "Region",
+          "Label",
+          "Catalogue",
+          "Format"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-1620220-3",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "CD",
+              "value": "CD",
+              "start": 26,
+              "end": 28
+            },
+            {
+              "surface": "North America",
+              "value": "North America",
+              "start": 39,
+              "end": 52
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c257d13361df9152651eee379a634a3d32b2f6625f931b6d3fb6c0e1752c0a66",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4773,
+              "completion_tokens": 27,
+              "total_tokens": 4800,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "CD",
+              "value": "CD",
+              "start": 26,
+              "end": 28,
+              "clause": "What is the label for the CD format in North America?"
+            },
+            {
+              "surface": "North America",
+              "value": "North America",
+              "start": 39,
+              "end": 52,
+              "clause": "What is the label for the CD format in North America?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "CD",
+              "value": "CD",
+              "start": 26,
+              "end": 28,
+              "clause": "What is the label for the CD format in North America?"
+            },
+            {
+              "surface": "North America",
+              "value": "North America",
+              "start": 39,
+              "end": 52,
+              "clause": "What is the label for the CD format in North America?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "CD",
+              "value": "CD",
+              "start": 26,
+              "end": 28,
+              "clause": "What is the label for the CD format in North America?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly identifies CD as the format, matching the Format header and row values."
+            },
+            {
+              "surface": "North America",
+              "value": "North America",
+              "start": 39,
+              "end": 52,
+              "clause": "What is the label for the CD format in North America?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "North America is specified as the region, matching the Region header and row evidence."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c26764884db6e768e28a863986248e1f88ee7261ee93b05ab25e3c8fe2114951",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4840,
+              "completion_tokens": 58,
+              "total_tokens": 4898,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "CD",
+              "value": "CD",
+              "start": 26,
+              "end": 28,
+              "clause": "What is the label for the CD format in North America?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly identifies CD as the format, matching the Format header and row values.",
+              "operator": "="
+            },
+            {
+              "surface": "North America",
+              "value": "North America",
+              "start": 39,
+              "end": 52,
+              "clause": "What is the label for the CD format in North America?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "North America is specified as the region, matching the Region header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "148748c27a081aacaf8ad6af4260165d5e759a4cd206a730e49cd2e8fc610365",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4933,
+              "completion_tokens": 11,
+              "total_tokens": 4944,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "CD",
+              "value": "CD",
+              "start": 26,
+              "end": 28,
+              "clause": "What is the label for the CD format in North America?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly identifies CD as the format, matching the Format header and row values.",
+              "operator": "="
+            },
+            {
+              "surface": "North America",
+              "value": "North America",
+              "start": 39,
+              "end": 52,
+              "clause": "What is the label for the CD format in North America?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "North America is specified as the region, matching the Region header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b8e6f21d2a0982196fb2970dd604d5588cb9c851850785c2e728a8d87b551237",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4887,
+              "completion_tokens": 13,
+              "total_tokens": 4900,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "CD",
+              "value": "CD",
+              "start": 26,
+              "end": 28,
+              "clause": "What is the label for the CD format in North America?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly identifies CD as the format, matching the Format header and row values.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "North America",
+              "value": "North America",
+              "start": 39,
+              "end": 52,
+              "clause": "What is the label for the CD format in North America?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "North America is specified as the region, matching the Region header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "CD",
+              "value": "CD",
+              "start": 26,
+              "end": 28,
+              "clause": "What is the label for the CD format in North America?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly identifies CD as the format, matching the Format header and row values.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "North America",
+              "value": "North America",
+              "start": 39,
+              "end": 52,
+              "clause": "What is the label for the CD format in North America?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "North America is specified as the region, matching the Region header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "CD",
+              "value": "CD",
+              "start": 26,
+              "end": 28,
+              "clause": "What is the label for the CD format in North America?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly identifies CD as the format, matching the Format header and row values.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "North America",
+              "value": "North America",
+              "start": 39,
+              "end": 52,
+              "clause": "What is the label for the CD format in North America?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "North America is specified as the region, matching the Region header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              0,
+              "CD"
+            ],
+            [
+              1,
+              0,
+              "North America"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "CD",
+          "value": "CD",
+          "start": 26,
+          "end": 28
+        },
+        {
+          "surface": "North America",
+          "value": "North America",
+          "start": 39,
+          "end": 52
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "CD",
+          "value": "CD",
+          "start": 26,
+          "end": 28,
+          "clause": "What is the label for the CD format in North America?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The question explicitly identifies CD as the format, matching the Format header and row values.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "North America",
+          "value": "North America",
+          "start": 39,
+          "end": 52,
+          "clause": "What is the label for the CD format in North America?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "North America is specified as the region, matching the Region header and row evidence.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          4,
+          0,
+          "CD"
+        ],
+        [
+          1,
+          0,
+          "North America"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8656
+}

@@ -1,0 +1,588 @@
+{
+  "arm": "E2",
+  "position": 373,
+  "example_id": "test:7174:2-15753220-15",
+  "original_index": 7174,
+  "table_id": "2-15753220-15",
+  "question": "What is the total weight of players who play the G position for the Los Angeles D-Fenders?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        0,
+        0,
+        "g"
+      ],
+      [
+        2,
+        0,
+        "los angeles d-fenders"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "G"
+    ],
+    [
+      2,
+      0,
+      "Los Angeles D-Fenders"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "G"
+      ],
+      [
+        2,
+        0,
+        "Los Angeles D-Fenders"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "G",
+        "value": "G",
+        "start": 49,
+        "end": 50,
+        "clause": "What is the total weight of players who play the G position for the Los Angeles D-Fenders?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "Question says players who play the G position; 'Pos.' contains G.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "Los Angeles D-Fenders",
+        "value": "Los Angeles D-Fenders",
+        "start": 68,
+        "end": 89,
+        "clause": "What is the total weight of players who play the G position for the Los Angeles D-Fenders?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "Question says for the Los Angeles D-Fenders; 'Team' contains that team name.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "G",
+        "value": "G",
+        "start": 49,
+        "end": 50
+      },
+      {
+        "surface": "Los Angeles D-Fenders",
+        "value": "Los Angeles D-Fenders",
+        "start": 68,
+        "end": 89
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the total weight of players who play the G position for the Los Angeles D-Fenders?",
+      "table": {
+        "header": [
+          "Pos.",
+          "Player",
+          "Team",
+          "Height",
+          "Weight"
+        ],
+        "page_title": "2010 NBA All-Star Game",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "real"
+        ],
+        "page_id": 15753220,
+        "id": "2-15753220-15",
+        "section_title": "Slam Dunk Contest",
+        "rows": [
+          [
+            "G",
+            "Dar Tucker",
+            "Los Angeles D-Fenders",
+            "6–4",
+            "205"
+          ],
+          [
+            "G/F",
+            "Anthony Danridge",
+            "Albuquerque Thunderbirds",
+            "6–5",
+            "215"
+          ],
+          [
+            "G",
+            "Alonzo Gee",
+            "Austin Toros",
+            "6–6",
+            "220"
+          ],
+          [
+            "F",
+            "Trey Gilder",
+            "Maine Red Claws",
+            "6–9",
+            "185"
+          ],
+          [
+            "F",
+            "Bill Walker",
+            "Maine Red Claws",
+            "6–5",
+            "220"
+          ],
+          [
+            "F",
+            "Deron Washington",
+            "Tulsa 66ers",
+            "6–8",
+            "215"
+          ]
+        ],
+        "caption": "Contestants",
+        "headers": [
+          "Pos.",
+          "Player",
+          "Team",
+          "Height",
+          "Weight"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-15753220-15",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "G",
+              "value": "G",
+              "start": 49,
+              "end": 50
+            },
+            {
+              "surface": "Los Angeles D-Fenders",
+              "value": "Los Angeles D-Fenders",
+              "start": 68,
+              "end": 89
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "445c584f79226caf071720033e34f2ce4b9dfe4901b4cf12bd3ff0c0e12b171c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4784,
+              "completion_tokens": 33,
+              "total_tokens": 4817,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "G",
+              "value": "G",
+              "start": 49,
+              "end": 50,
+              "clause": "What is the total weight of players who play the G position for the Los Angeles D-Fenders?"
+            },
+            {
+              "surface": "Los Angeles D-Fenders",
+              "value": "Los Angeles D-Fenders",
+              "start": 68,
+              "end": 89,
+              "clause": "What is the total weight of players who play the G position for the Los Angeles D-Fenders?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "G",
+              "value": "G",
+              "start": 49,
+              "end": 50,
+              "clause": "What is the total weight of players who play the G position for the Los Angeles D-Fenders?"
+            },
+            {
+              "surface": "Los Angeles D-Fenders",
+              "value": "Los Angeles D-Fenders",
+              "start": 68,
+              "end": 89,
+              "clause": "What is the total weight of players who play the G position for the Los Angeles D-Fenders?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "G",
+              "value": "G",
+              "start": 49,
+              "end": 50,
+              "clause": "What is the total weight of players who play the G position for the Los Angeles D-Fenders?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Question says players who play the G position; 'Pos.' contains G."
+            },
+            {
+              "surface": "Los Angeles D-Fenders",
+              "value": "Los Angeles D-Fenders",
+              "start": 68,
+              "end": 89,
+              "clause": "What is the total weight of players who play the G position for the Los Angeles D-Fenders?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Question says for the Los Angeles D-Fenders; 'Team' contains that team name."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c85e335791e28efe316fc713ab69e151455911cb920263ceb1ba2c90047cf46f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4873,
+              "completion_tokens": 58,
+              "total_tokens": 4931,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "G",
+              "value": "G",
+              "start": 49,
+              "end": 50,
+              "clause": "What is the total weight of players who play the G position for the Los Angeles D-Fenders?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Question says players who play the G position; 'Pos.' contains G.",
+              "operator": "="
+            },
+            {
+              "surface": "Los Angeles D-Fenders",
+              "value": "Los Angeles D-Fenders",
+              "start": 68,
+              "end": 89,
+              "clause": "What is the total weight of players who play the G position for the Los Angeles D-Fenders?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Question says for the Los Angeles D-Fenders; 'Team' contains that team name.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "04d077857eaecefe42d4f2c6ff44684b88b57f86b5f292dd2d469a3a5b46b840",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4966,
+              "completion_tokens": 11,
+              "total_tokens": 4977,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "G",
+              "value": "G",
+              "start": 49,
+              "end": 50,
+              "clause": "What is the total weight of players who play the G position for the Los Angeles D-Fenders?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Question says players who play the G position; 'Pos.' contains G.",
+              "operator": "="
+            },
+            {
+              "surface": "Los Angeles D-Fenders",
+              "value": "Los Angeles D-Fenders",
+              "start": 68,
+              "end": 89,
+              "clause": "What is the total weight of players who play the G position for the Los Angeles D-Fenders?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Question says for the Los Angeles D-Fenders; 'Team' contains that team name.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "5bb4e31c514564e10daa30471e21e50b8077243e45ac4bd7dbb68ec48210dea7",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4920,
+              "completion_tokens": 16,
+              "total_tokens": 4936,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "G",
+              "value": "G",
+              "start": 49,
+              "end": 50,
+              "clause": "What is the total weight of players who play the G position for the Los Angeles D-Fenders?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Question says players who play the G position; 'Pos.' contains G.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Los Angeles D-Fenders",
+              "value": "Los Angeles D-Fenders",
+              "start": 68,
+              "end": 89,
+              "clause": "What is the total weight of players who play the G position for the Los Angeles D-Fenders?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Question says for the Los Angeles D-Fenders; 'Team' contains that team name.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "G",
+              "value": "G",
+              "start": 49,
+              "end": 50,
+              "clause": "What is the total weight of players who play the G position for the Los Angeles D-Fenders?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Question says players who play the G position; 'Pos.' contains G.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Los Angeles D-Fenders",
+              "value": "Los Angeles D-Fenders",
+              "start": 68,
+              "end": 89,
+              "clause": "What is the total weight of players who play the G position for the Los Angeles D-Fenders?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Question says for the Los Angeles D-Fenders; 'Team' contains that team name.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "G",
+              "value": "G",
+              "start": 49,
+              "end": 50,
+              "clause": "What is the total weight of players who play the G position for the Los Angeles D-Fenders?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Question says players who play the G position; 'Pos.' contains G.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Los Angeles D-Fenders",
+              "value": "Los Angeles D-Fenders",
+              "start": 68,
+              "end": 89,
+              "clause": "What is the total weight of players who play the G position for the Los Angeles D-Fenders?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Question says for the Los Angeles D-Fenders; 'Team' contains that team name.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              "G"
+            ],
+            [
+              2,
+              0,
+              "Los Angeles D-Fenders"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "G",
+          "value": "G",
+          "start": 49,
+          "end": 50
+        },
+        {
+          "surface": "Los Angeles D-Fenders",
+          "value": "Los Angeles D-Fenders",
+          "start": 68,
+          "end": 89
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "G",
+          "value": "G",
+          "start": 49,
+          "end": 50,
+          "clause": "What is the total weight of players who play the G position for the Los Angeles D-Fenders?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "Question says players who play the G position; 'Pos.' contains G.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "Los Angeles D-Fenders",
+          "value": "Los Angeles D-Fenders",
+          "start": 68,
+          "end": 89,
+          "clause": "What is the total weight of players who play the G position for the Los Angeles D-Fenders?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "Question says for the Los Angeles D-Fenders; 'Team' contains that team name.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          0,
+          0,
+          "G"
+        ],
+        [
+          2,
+          0,
+          "Los Angeles D-Fenders"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7922
+}

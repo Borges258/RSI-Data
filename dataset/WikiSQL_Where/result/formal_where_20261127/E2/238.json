@@ -1,0 +1,588 @@
+{
+  "arm": "E2",
+  "position": 238,
+  "example_id": "test:12587:2-18354377-1",
+  "original_index": 12587,
+  "table_id": "2-18354377-1",
+  "question": "What was the latest year with a position of 1st at Maputo, Mozambique?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        3,
+        0,
+        "1st"
+      ],
+      [
+        2,
+        0,
+        "Maputo , Mozambique"
+      ]
+    ],
+    "agg": 1
+  },
+  "prediction_conds": [
+    [
+      3,
+      0,
+      "1st"
+    ],
+    [
+      2,
+      0,
+      "Maputo , Mozambique"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        0,
+        "1st"
+      ],
+      [
+        2,
+        0,
+        "Maputo , Mozambique"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "1st",
+        "value": "1st",
+        "start": 44,
+        "end": 47,
+        "clause": "What was the latest year with a position of 1st at Maputo",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "Explicit wording 'position of 1st' matches the Position header and rows.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "Maputo, Mozambique",
+        "value": "Maputo , Mozambique",
+        "start": 51,
+        "end": 69,
+        "clause": "What was the latest year with a position of 1st at Maputo, Mozambique?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "Maputo, Mozambique is a location matching the Venue header and rows.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "1st",
+        "value": "1st",
+        "start": 44,
+        "end": 47
+      },
+      {
+        "surface": "Maputo, Mozambique",
+        "value": "Maputo , Mozambique",
+        "start": 51,
+        "end": 69
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What was the latest year with a position of 1st at Maputo, Mozambique?",
+      "table": {
+        "header": [
+          "Year",
+          "Competition",
+          "Venue",
+          "Position",
+          "Notes"
+        ],
+        "page_title": "Sule Utura",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 18354377,
+        "id": "2-18354377-1",
+        "section_title": "Achievements",
+        "rows": [
+          [
+            "2007",
+            "World Cross Country Championships",
+            "Mombasa , Kenya",
+            "4th",
+            "Junior race"
+          ],
+          [
+            "2007",
+            "World Youth Championships in Athletics",
+            "Ostrava , Czech Republic",
+            "3rd",
+            "3000 m"
+          ],
+          [
+            "2008",
+            "World Junior Championships in Athletics",
+            "Bydgoszcz , Poland",
+            "1st",
+            "5000 m"
+          ],
+          [
+            "2009",
+            "World Cross Country Championships",
+            "Amman , Jordan",
+            "6th",
+            "Junior race"
+          ],
+          [
+            "2011",
+            "All-Africa Games",
+            "Maputo , Mozambique",
+            "1st",
+            "5000 m"
+          ],
+          [
+            "2011",
+            "All-Africa Games",
+            "Maputo , Mozambique",
+            "1st",
+            "10,000 m"
+          ]
+        ],
+        "caption": "Achievements",
+        "headers": [
+          "Year",
+          "Competition",
+          "Venue",
+          "Position",
+          "Notes"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-18354377-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "1st",
+              "value": "1st",
+              "start": 44,
+              "end": 47
+            },
+            {
+              "surface": "Maputo, Mozambique",
+              "value": "Maputo , Mozambique",
+              "start": 51,
+              "end": 69
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ebf32e81e6cc4be4dac33c46009da656fab3c3ebcb5f9ec23fc8de37ed253152",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4797,
+              "completion_tokens": 33,
+              "total_tokens": 4830,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1st",
+              "value": "1st",
+              "start": 44,
+              "end": 47,
+              "clause": "What was the latest year with a position of 1st at Maputo"
+            },
+            {
+              "surface": "Maputo, Mozambique",
+              "value": "Maputo , Mozambique",
+              "start": 51,
+              "end": 69,
+              "clause": "What was the latest year with a position of 1st at Maputo, Mozambique?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "1st",
+              "value": "1st",
+              "start": 44,
+              "end": 47,
+              "clause": "What was the latest year with a position of 1st at Maputo"
+            },
+            {
+              "surface": "Maputo, Mozambique",
+              "value": "Maputo , Mozambique",
+              "start": 51,
+              "end": 69,
+              "clause": "What was the latest year with a position of 1st at Maputo, Mozambique?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1st",
+              "value": "1st",
+              "start": 44,
+              "end": 47,
+              "clause": "What was the latest year with a position of 1st at Maputo",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicit wording 'position of 1st' matches the Position header and rows."
+            },
+            {
+              "surface": "Maputo, Mozambique",
+              "value": "Maputo , Mozambique",
+              "start": 51,
+              "end": 69,
+              "clause": "What was the latest year with a position of 1st at Maputo, Mozambique?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Maputo, Mozambique is a location matching the Venue header and rows."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "42d1c9d10a16fa0f73d6c8645d4093bbfaf62c1f6fad71e9ea9ce4bdb8ff0ff5",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4879,
+              "completion_tokens": 55,
+              "total_tokens": 4934,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1st",
+              "value": "1st",
+              "start": 44,
+              "end": 47,
+              "clause": "What was the latest year with a position of 1st at Maputo",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicit wording 'position of 1st' matches the Position header and rows.",
+              "operator": "="
+            },
+            {
+              "surface": "Maputo, Mozambique",
+              "value": "Maputo , Mozambique",
+              "start": 51,
+              "end": 69,
+              "clause": "What was the latest year with a position of 1st at Maputo, Mozambique?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Maputo, Mozambique is a location matching the Venue header and rows.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ec14fbd4895d538e5b4c5b5d8de16411e22a277ea681233ae6813db13eff5079",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4969,
+              "completion_tokens": 11,
+              "total_tokens": 4980,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1st",
+              "value": "1st",
+              "start": 44,
+              "end": 47,
+              "clause": "What was the latest year with a position of 1st at Maputo",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicit wording 'position of 1st' matches the Position header and rows.",
+              "operator": "="
+            },
+            {
+              "surface": "Maputo, Mozambique",
+              "value": "Maputo , Mozambique",
+              "start": 51,
+              "end": 69,
+              "clause": "What was the latest year with a position of 1st at Maputo, Mozambique?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Maputo, Mozambique is a location matching the Venue header and rows.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "289c82a348cc9ebc94076dd7c3ad4e070ac97b8ee896ca78ed64285ef737584f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4923,
+              "completion_tokens": 16,
+              "total_tokens": 4939,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1st",
+              "value": "1st",
+              "start": 44,
+              "end": 47,
+              "clause": "What was the latest year with a position of 1st at Maputo",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicit wording 'position of 1st' matches the Position header and rows.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Maputo, Mozambique",
+              "value": "Maputo , Mozambique",
+              "start": 51,
+              "end": 69,
+              "clause": "What was the latest year with a position of 1st at Maputo, Mozambique?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Maputo, Mozambique is a location matching the Venue header and rows.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1st",
+              "value": "1st",
+              "start": 44,
+              "end": 47,
+              "clause": "What was the latest year with a position of 1st at Maputo",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicit wording 'position of 1st' matches the Position header and rows.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Maputo, Mozambique",
+              "value": "Maputo , Mozambique",
+              "start": 51,
+              "end": 69,
+              "clause": "What was the latest year with a position of 1st at Maputo, Mozambique?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Maputo, Mozambique is a location matching the Venue header and rows.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "1st",
+              "value": "1st",
+              "start": 44,
+              "end": 47,
+              "clause": "What was the latest year with a position of 1st at Maputo",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicit wording 'position of 1st' matches the Position header and rows.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Maputo, Mozambique",
+              "value": "Maputo , Mozambique",
+              "start": 51,
+              "end": 69,
+              "clause": "What was the latest year with a position of 1st at Maputo, Mozambique?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Maputo, Mozambique is a location matching the Venue header and rows.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              0,
+              "1st"
+            ],
+            [
+              2,
+              0,
+              "Maputo , Mozambique"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "1st",
+          "value": "1st",
+          "start": 44,
+          "end": 47
+        },
+        {
+          "surface": "Maputo, Mozambique",
+          "value": "Maputo , Mozambique",
+          "start": 51,
+          "end": 69
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "1st",
+          "value": "1st",
+          "start": 44,
+          "end": 47,
+          "clause": "What was the latest year with a position of 1st at Maputo",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "Explicit wording 'position of 1st' matches the Position header and rows.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "Maputo, Mozambique",
+          "value": "Maputo , Mozambique",
+          "start": 51,
+          "end": 69,
+          "clause": "What was the latest year with a position of 1st at Maputo, Mozambique?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "Maputo, Mozambique is a location matching the Venue header and rows.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          3,
+          0,
+          "1st"
+        ],
+        [
+          2,
+          0,
+          "Maputo , Mozambique"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7922
+}

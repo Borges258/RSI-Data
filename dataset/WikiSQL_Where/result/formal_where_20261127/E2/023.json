@@ -1,0 +1,471 @@
+{
+  "arm": "E2",
+  "position": 23,
+  "example_id": "test:1638:1-171748-3",
+  "original_index": 1638,
+  "table_id": "1-171748-3",
+  "question": "When was the percentage of trains arriving within 5 minutes of scheduled time 89.6%?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        3,
+        0,
+        "89.6%"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "89.6%"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "89.6%"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "89.6%",
+        "value": "89.6%",
+        "start": 78,
+        "end": 83,
+        "clause": "When was the percentage of trains arriving within 5 minutes of scheduled time 89.6%?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The question asks for the percentage over the stated period, matching the direct '% trains arriving within 5 mins of scheduled time (over three months)' field; 89.6% appears there for Jan - Mar 2009, while the MAA field is a distinct annual-average measure.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "89.6%",
+        "value": "89.6%",
+        "start": 78,
+        "end": 83
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "When was the percentage of trains arriving within 5 minutes of scheduled time 89.6%?",
+      "table": {
+        "id": "1-171748-3",
+        "header": [
+          "Period",
+          "% trains arriving within 5 mins of scheduled time (over three months)",
+          "Change over same quarter the previous year",
+          "% trains arriving within 5 mins of scheduled time Moving Annual Average (MAA)",
+          "Change over previous year as a whole"
+        ],
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "rows": [
+          [
+            "Apr - Jun 2007",
+            "91.4%",
+            "Up 0.8%",
+            "89.0%",
+            "Up 0.2%"
+          ],
+          [
+            "Jul - Sep 2007",
+            "93.0%",
+            "Up 2.2%",
+            "89.6%",
+            "Up 0.7%"
+          ],
+          [
+            "Oct - Dec 2007",
+            "87.3%",
+            "Up 2.8%",
+            "90.1%",
+            "Up 0.6%"
+          ],
+          [
+            "Jan - Mar 2008",
+            "90.5%",
+            "Up 2.0%",
+            "90.6%",
+            "Up 0.6%"
+          ],
+          [
+            "Apr - Jun 2008",
+            "93.6%",
+            "Up 2.4%",
+            "91.1%",
+            "Up 0.6%"
+          ],
+          [
+            "Jul - Sep 2008",
+            "92.8%",
+            "Down 0.2%",
+            "91.0%",
+            "Up 0.4%"
+          ],
+          [
+            "Oct - Dec 2008",
+            "86.5%",
+            "Down 0.9%",
+            "90.9%",
+            "Up 0.3%"
+          ],
+          [
+            "Jan - Mar 2009",
+            "89.6%",
+            "Down 1.0% >",
+            "90.6%",
+            "Down 0.3%"
+          ],
+          [
+            "Apr - Jun 2009",
+            "93.0%",
+            "Down 0.6%",
+            "90.5%",
+            "Down 0.1%"
+          ],
+          [
+            "Jul - Sep 2009",
+            "93.5%",
+            "Up 0.9%",
+            "90.7%",
+            "Up 0.2%"
+          ],
+          [
+            "Oct - Dec 2009",
+            "86.7%",
+            "Up 0.2%",
+            "90.7%",
+            "Unchanged"
+          ],
+          [
+            "Jan - Mar 2010",
+            "89.5%",
+            "Down 0.1%",
+            "90.7%",
+            "Unchanged"
+          ],
+          [
+            "Jul - Sep 2010",
+            "94.5%",
+            "Up 1.1%",
+            "91.4%",
+            "Up 0.8%"
+          ],
+          [
+            "Oct - Dec 2010",
+            "78.4%",
+            "Down 9.6%",
+            "92.9%",
+            "Up 2.4%"
+          ]
+        ],
+        "name": "table_171748_3",
+        "headers": [
+          "Period",
+          "% trains arriving within 5 mins of scheduled time (over three months)",
+          "Change over same quarter the previous year",
+          "% trains arriving within 5 mins of scheduled time Moving Annual Average (MAA)",
+          "Change over previous year as a whole"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-171748-3",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "89.6%",
+              "value": "89.6%",
+              "start": 78,
+              "end": 83
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "72853d857184c4390af3d6a66d929f1b4ae3fdf803a95402b6ab8fb8e4883f15",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5176,
+              "completion_tokens": 23,
+              "total_tokens": 5199,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "89.6%",
+              "value": "89.6%",
+              "start": 78,
+              "end": 83,
+              "clause": "When was the percentage of trains arriving within 5 minutes of scheduled time 89.6%?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "89.6%",
+              "value": "89.6%",
+              "start": 78,
+              "end": 83,
+              "clause": "When was the percentage of trains arriving within 5 minutes of scheduled time 89.6%?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "89.6%",
+              "value": "89.6%",
+              "start": 78,
+              "end": 83,
+              "clause": "When was the percentage of trains arriving within 5 minutes of scheduled time 89.6%?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question asks for the percentage over the stated period, matching the direct '% trains arriving within 5 mins of scheduled time (over three months)' field; 89.6% appears there for Jan - Mar 2009, while the MAA field is a distinct annual-average measure."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "46419224a77a8f5a524d131d6cd33bb6ade14be0253eed2df102cc6c0b4c6989",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5223,
+              "completion_tokens": 79,
+              "total_tokens": 5302,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "89.6%",
+              "value": "89.6%",
+              "start": 78,
+              "end": 83,
+              "clause": "When was the percentage of trains arriving within 5 minutes of scheduled time 89.6%?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question asks for the percentage over the stated period, matching the direct '% trains arriving within 5 mins of scheduled time (over three months)' field; 89.6% appears there for Jan - Mar 2009, while the MAA field is a distinct annual-average measure.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "8ec803068393ac347515d31dc8bf3322934f5628ab8c036661528bdf595959c3",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5326,
+              "completion_tokens": 9,
+              "total_tokens": 5335,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "89.6%",
+              "value": "89.6%",
+              "start": 78,
+              "end": 83,
+              "clause": "When was the percentage of trains arriving within 5 minutes of scheduled time 89.6%?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question asks for the percentage over the stated period, matching the direct '% trains arriving within 5 mins of scheduled time (over three months)' field; 89.6% appears there for Jan - Mar 2009, while the MAA field is a distinct annual-average measure.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "3f5b2fecd233209cc1d64fc4137b47cc76ffe9a1b2606f1f4cd2e9071b9600ae",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5277,
+              "completion_tokens": 13,
+              "total_tokens": 5290,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "89.6%",
+              "value": "89.6%",
+              "start": 78,
+              "end": 83,
+              "clause": "When was the percentage of trains arriving within 5 minutes of scheduled time 89.6%?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question asks for the percentage over the stated period, matching the direct '% trains arriving within 5 mins of scheduled time (over three months)' field; 89.6% appears there for Jan - Mar 2009, while the MAA field is a distinct annual-average measure.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "89.6%",
+              "value": "89.6%",
+              "start": 78,
+              "end": 83,
+              "clause": "When was the percentage of trains arriving within 5 minutes of scheduled time 89.6%?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question asks for the percentage over the stated period, matching the direct '% trains arriving within 5 mins of scheduled time (over three months)' field; 89.6% appears there for Jan - Mar 2009, while the MAA field is a distinct annual-average measure.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "89.6%",
+              "value": "89.6%",
+              "start": 78,
+              "end": 83,
+              "clause": "When was the percentage of trains arriving within 5 minutes of scheduled time 89.6%?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question asks for the percentage over the stated period, matching the direct '% trains arriving within 5 mins of scheduled time (over three months)' field; 89.6% appears there for Jan - Mar 2009, while the MAA field is a distinct annual-average measure.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              "89.6%"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "89.6%",
+          "value": "89.6%",
+          "start": 78,
+          "end": 83
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "89.6%",
+          "value": "89.6%",
+          "start": 78,
+          "end": 83,
+          "clause": "When was the percentage of trains arriving within 5 minutes of scheduled time 89.6%?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The question asks for the percentage over the stated period, matching the direct '% trains arriving within 5 mins of scheduled time (over three months)' field; 89.6% appears there for Jan - Mar 2009, while the MAA field is a distinct annual-average measure.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          1,
+          0,
+          "89.6%"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 10344
+}

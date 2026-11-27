@@ -1,0 +1,606 @@
+{
+  "arm": "E2",
+  "position": 433,
+  "example_id": "test:12332:2-1794747-6",
+  "original_index": 12332,
+  "table_id": "2-1794747-6",
+  "question": "What are the years that had someone nominated for best supporting actress?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        4,
+        0,
+        "nominated"
+      ],
+      [
+        2,
+        0,
+        "best supporting actress"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      4,
+      0,
+      "Nominated"
+    ],
+    [
+      2,
+      0,
+      "Best Supporting Actress"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        0,
+        "Nominated"
+      ],
+      [
+        2,
+        0,
+        "Best Supporting Actress"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "nominated",
+        "value": "Nominated",
+        "start": 36,
+        "end": 45,
+        "clause": "What are the years that had someone nominated for best supporting actress?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "“nominated” describes the nomination outcome, matching Result; rows contain Result = “Nominated”.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "best supporting actress",
+        "value": "Best Supporting Actress",
+        "start": 50,
+        "end": 73,
+        "clause": "What are the years that had someone nominated for best supporting actress?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "“best supporting actress” names an award category, matching Category; the row contains Category = “Best Supporting Actress”.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "best supporting actress",
+        "value": "Best Supporting Actress",
+        "start": 50,
+        "end": 73
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What are the years that had someone nominated for best supporting actress?",
+      "table": {
+        "header": [
+          "Year",
+          "Award Ceremony",
+          "Category",
+          "Nominee",
+          "Result"
+        ],
+        "page_title": "Sweeney Todd: The Demon Barber of Fleet Street",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 1794747,
+        "id": "2-1794747-6",
+        "section_title": "2003 Ireland production (Amateur)",
+        "rows": [
+          [
+            "2003",
+            "AIMS Award",
+            "Best Overall Show",
+            "Best Overall Show",
+            "Won"
+          ],
+          [
+            "2003",
+            "AIMS Award",
+            "Best Actor",
+            "Todd Brothers",
+            "Won"
+          ],
+          [
+            "2003",
+            "AIMS Award",
+            "Best Actress",
+            "Marie Kelly",
+            "Won"
+          ],
+          [
+            "2003",
+            "AIMS Award",
+            "Best Supporting Actor",
+            "Chris Ramsey",
+            "Won"
+          ],
+          [
+            "2003",
+            "AIMS Award",
+            "Best Supporting Actress",
+            "Yvonne Ramsey",
+            "Nominated"
+          ],
+          [
+            "2003",
+            "AIMS Award",
+            "Best Director",
+            "Pat Dwyer",
+            "Won"
+          ],
+          [
+            "2003",
+            "AIMS Award",
+            "Best Music Director",
+            "Graham Walsh",
+            "Nominated"
+          ],
+          [
+            "2003",
+            "AIMS Award",
+            "Best Chorus",
+            "Best Chorus",
+            "Won"
+          ]
+        ],
+        "caption": "2003 Ireland production (Amateur)",
+        "headers": [
+          "Year",
+          "Award Ceremony",
+          "Category",
+          "Nominee",
+          "Result"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-1794747-6",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "best supporting actress",
+              "value": "Best Supporting Actress",
+              "start": 50,
+              "end": 73
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "bc0a0be24f383ee40ad464fc50166839a4a30693ad7eabb5c427906cf22a1378",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4823,
+              "completion_tokens": 21,
+              "total_tokens": 4844,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "best supporting actress",
+              "value": "Best Supporting Actress",
+              "start": 50,
+              "end": 73,
+              "clause": "What are the years that had someone nominated for best supporting actress?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "nominated",
+              "value": "Nominated",
+              "start": 36,
+              "end": 45,
+              "clause": "What are the years that had someone nominated for best supporting actress?"
+            },
+            {
+              "surface": "best supporting actress",
+              "value": "Best Supporting Actress",
+              "start": 50,
+              "end": 73,
+              "clause": "What are the years that had someone nominated for best supporting actress?"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f06b640ba08c3920e8c06ed088d9025d1fdf95bc72cb1804716df4606b1baca4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4881,
+              "completion_tokens": 19,
+              "total_tokens": 4900,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          },
+          "count": 2,
+          "recovered": [
+            {
+              "surface": "nominated",
+              "value": "Nominated",
+              "start": 36,
+              "end": 45
+            }
+          ],
+          "reviewedUncertain": [
+            {
+              "surface": "nominated",
+              "start": 36,
+              "end": 45
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "nominated",
+              "value": "Nominated",
+              "start": 36,
+              "end": 45,
+              "clause": "What are the years that had someone nominated for best supporting actress?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "“nominated” describes the nomination outcome, matching Result; rows contain Result = “Nominated”."
+            },
+            {
+              "surface": "best supporting actress",
+              "value": "Best Supporting Actress",
+              "start": 50,
+              "end": 73,
+              "clause": "What are the years that had someone nominated for best supporting actress?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "“best supporting actress” names an award category, matching Category; the row contains Category = “Best Supporting Actress”."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "8392c98cff0978736a2e880562cd3255a7310bc092104d08c22af6b924f92900",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4896,
+              "completion_tokens": 69,
+              "total_tokens": 4965,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "nominated",
+              "value": "Nominated",
+              "start": 36,
+              "end": 45,
+              "clause": "What are the years that had someone nominated for best supporting actress?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "“nominated” describes the nomination outcome, matching Result; rows contain Result = “Nominated”.",
+              "operator": "="
+            },
+            {
+              "surface": "best supporting actress",
+              "value": "Best Supporting Actress",
+              "start": 50,
+              "end": 73,
+              "clause": "What are the years that had someone nominated for best supporting actress?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "“best supporting actress” names an award category, matching Category; the row contains Category = “Best Supporting Actress”.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "9bb4fffd586fb6dab68cc67db3ada4b35fefa5fe1e6b82c03214ec29b6d8479b",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5001,
+              "completion_tokens": 11,
+              "total_tokens": 5012,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "nominated",
+              "value": "Nominated",
+              "start": 36,
+              "end": 45,
+              "clause": "What are the years that had someone nominated for best supporting actress?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "“nominated” describes the nomination outcome, matching Result; rows contain Result = “Nominated”.",
+              "operator": "="
+            },
+            {
+              "surface": "best supporting actress",
+              "value": "Best Supporting Actress",
+              "start": 50,
+              "end": 73,
+              "clause": "What are the years that had someone nominated for best supporting actress?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "“best supporting actress” names an award category, matching Category; the row contains Category = “Best Supporting Actress”.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "7de2b3ce1da26d9633c16be5d673cbb0c261d603fef626d3066a427714a01f77",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4955,
+              "completion_tokens": 15,
+              "total_tokens": 4970,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "nominated",
+              "value": "Nominated",
+              "start": 36,
+              "end": 45,
+              "clause": "What are the years that had someone nominated for best supporting actress?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "“nominated” describes the nomination outcome, matching Result; rows contain Result = “Nominated”.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "best supporting actress",
+              "value": "Best Supporting Actress",
+              "start": 50,
+              "end": 73,
+              "clause": "What are the years that had someone nominated for best supporting actress?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "“best supporting actress” names an award category, matching Category; the row contains Category = “Best Supporting Actress”.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "nominated",
+              "value": "Nominated",
+              "start": 36,
+              "end": 45,
+              "clause": "What are the years that had someone nominated for best supporting actress?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "“nominated” describes the nomination outcome, matching Result; rows contain Result = “Nominated”.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "best supporting actress",
+              "value": "Best Supporting Actress",
+              "start": 50,
+              "end": 73,
+              "clause": "What are the years that had someone nominated for best supporting actress?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "“best supporting actress” names an award category, matching Category; the row contains Category = “Best Supporting Actress”.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "nominated",
+              "value": "Nominated",
+              "start": 36,
+              "end": 45,
+              "clause": "What are the years that had someone nominated for best supporting actress?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "“nominated” describes the nomination outcome, matching Result; rows contain Result = “Nominated”.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "best supporting actress",
+              "value": "Best Supporting Actress",
+              "start": 50,
+              "end": 73,
+              "clause": "What are the years that had someone nominated for best supporting actress?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "“best supporting actress” names an award category, matching Category; the row contains Category = “Best Supporting Actress”.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              0,
+              "Nominated"
+            ],
+            [
+              2,
+              0,
+              "Best Supporting Actress"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "best supporting actress",
+          "value": "Best Supporting Actress",
+          "start": 50,
+          "end": 73
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "nominated",
+          "value": "Nominated",
+          "start": 36,
+          "end": 45,
+          "clause": "What are the years that had someone nominated for best supporting actress?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "“nominated” describes the nomination outcome, matching Result; rows contain Result = “Nominated”.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "best supporting actress",
+          "value": "Best Supporting Actress",
+          "start": 50,
+          "end": 73,
+          "clause": "What are the years that had someone nominated for best supporting actress?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "“best supporting actress” names an award category, matching Category; the row contains Category = “Best Supporting Actress”.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          4,
+          0,
+          "Nominated"
+        ],
+        [
+          2,
+          0,
+          "Best Supporting Actress"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 12188
+}

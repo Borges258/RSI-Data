@@ -1,0 +1,605 @@
+{
+  "arm": "E2",
+  "position": 447,
+  "example_id": "test:13666:2-18974130-3",
+  "original_index": 13666,
+  "table_id": "2-18974130-3",
+  "question": "How many draws occured with a record of 10 losses, and 6 wins?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        3,
+        0,
+        10
+      ],
+      [
+        1,
+        0,
+        6
+      ]
+    ],
+    "agg": 3
+  },
+  "prediction_conds": [
+    [
+      3,
+      0,
+      10
+    ],
+    [
+      1,
+      0,
+      6
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        0,
+        10
+      ],
+      [
+        1,
+        0,
+        6
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "10",
+        "value": 10,
+        "start": 40,
+        "end": 42,
+        "clause": "How many draws occured with a record of 10 losses,",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The question explicitly describes 10 as losses, matching the Losses header.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "6",
+        "value": 6,
+        "start": 55,
+        "end": 56,
+        "clause": "and 6 wins?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The question explicitly describes 6 as wins, matching the Wins header.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "10",
+        "value": "10",
+        "start": 40,
+        "end": 42
+      },
+      {
+        "surface": "6",
+        "value": "6",
+        "start": 55,
+        "end": 56
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "How many draws occured with a record of 10 losses, and 6 wins?",
+      "table": {
+        "header": [
+          "Millewa",
+          "Wins",
+          "Byes",
+          "Losses",
+          "Draws",
+          "Against"
+        ],
+        "page_title": "Millewa Football League",
+        "types": [
+          "text",
+          "real",
+          "real",
+          "real",
+          "real",
+          "real"
+        ],
+        "page_id": 18974130,
+        "id": "2-18974130-3",
+        "section_title": "2011 Ladder",
+        "rows": [
+          [
+            "Bambill",
+            "15",
+            "3",
+            "1",
+            "0",
+            "1116"
+          ],
+          [
+            "Werrimull",
+            "10",
+            "3",
+            "6",
+            "0",
+            "1655"
+          ],
+          [
+            "Euston",
+            "9",
+            "3",
+            "7",
+            "0",
+            "1458"
+          ],
+          [
+            "Gol Gol",
+            "7",
+            "3",
+            "9",
+            "0",
+            "1671"
+          ],
+          [
+            "Nangiloc",
+            "7",
+            "3",
+            "9",
+            "0",
+            "1687"
+          ],
+          [
+            "Cardross",
+            "6",
+            "3",
+            "10",
+            "0",
+            "1739"
+          ],
+          [
+            "Meringur",
+            "2",
+            "3",
+            "14",
+            "0",
+            "2172"
+          ]
+        ],
+        "caption": "2011 Ladder",
+        "headers": [
+          "Millewa",
+          "Wins",
+          "Byes",
+          "Losses",
+          "Draws",
+          "Against"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-18974130-3",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "10",
+              "value": "10",
+              "start": 40,
+              "end": 42
+            },
+            {
+              "surface": "6",
+              "value": "6",
+              "start": 55,
+              "end": 56
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "bfe0cddc7b739297ef3b2d7292a13d1122cfafe6e6ae900b17aea6501fa80727",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4796,
+              "completion_tokens": 25,
+              "total_tokens": 4821,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "10",
+              "value": "10",
+              "start": 40,
+              "end": 42,
+              "clause": "How many draws occured with a record of 10 losses,"
+            },
+            {
+              "surface": "6",
+              "value": "6",
+              "start": 55,
+              "end": 56,
+              "clause": "and 6 wins?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "10",
+              "value": "10",
+              "start": 40,
+              "end": 42,
+              "clause": "How many draws occured with a record of 10 losses,"
+            },
+            {
+              "surface": "6",
+              "value": "6",
+              "start": 55,
+              "end": 56,
+              "clause": "and 6 wins?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "10",
+              "value": "10",
+              "start": 40,
+              "end": 42,
+              "clause": "How many draws occured with a record of 10 losses,",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly describes 10 as losses, matching the Losses header."
+            },
+            {
+              "surface": "6",
+              "value": "6",
+              "start": 55,
+              "end": 56,
+              "clause": "and 6 wins?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly describes 6 as wins, matching the Wins header."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f93aef0ca6017b21410b7b64930d74cc83c2a7f2d72e468c790846ed9b6fe533",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4854,
+              "completion_tokens": 54,
+              "total_tokens": 4908,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "10",
+              "value": "10",
+              "start": 40,
+              "end": 42,
+              "clause": "How many draws occured with a record of 10 losses,",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly describes 10 as losses, matching the Losses header.",
+              "operator": "="
+            },
+            {
+              "surface": "6",
+              "value": "6",
+              "start": 55,
+              "end": 56,
+              "clause": "and 6 wins?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly describes 6 as wins, matching the Wins header.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f9c922f6f6dbe339945b3e2106a634f3dd62fd67d72c7ad5c5ad7b9f36d1aba3",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4943,
+              "completion_tokens": 11,
+              "total_tokens": 4954,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "10",
+              "value": 10,
+              "start": 40,
+              "end": 42,
+              "clause": "How many draws occured with a record of 10 losses,",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly describes 10 as losses, matching the Losses header.",
+              "operator": "="
+            },
+            {
+              "surface": "6",
+              "value": 6,
+              "start": 55,
+              "end": 56,
+              "clause": "and 6 wins?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly describes 6 as wins, matching the Wins header.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a60984661436eeae52e9bc69cddea3ea51a4fa47ff2a8679f8bd23d1eb565376",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4897,
+              "completion_tokens": 11,
+              "total_tokens": 4908,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "10",
+              "value": "10",
+              "start": 40,
+              "end": 42,
+              "clause": "How many draws occured with a record of 10 losses,",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly describes 10 as losses, matching the Losses header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "6",
+              "value": "6",
+              "start": 55,
+              "end": 56,
+              "clause": "and 6 wins?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly describes 6 as wins, matching the Wins header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "10",
+              "value": 10,
+              "start": 40,
+              "end": 42,
+              "clause": "How many draws occured with a record of 10 losses,",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly describes 10 as losses, matching the Losses header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "6",
+              "value": 6,
+              "start": 55,
+              "end": 56,
+              "clause": "and 6 wins?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly describes 6 as wins, matching the Wins header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "10",
+              "value": 10,
+              "start": 40,
+              "end": 42,
+              "clause": "How many draws occured with a record of 10 losses,",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly describes 10 as losses, matching the Losses header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "6",
+              "value": 6,
+              "start": 55,
+              "end": 56,
+              "clause": "and 6 wins?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly describes 6 as wins, matching the Wins header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              0,
+              10
+            ],
+            [
+              1,
+              0,
+              6
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "10",
+          "value": "10",
+          "start": 40,
+          "end": 42
+        },
+        {
+          "surface": "6",
+          "value": "6",
+          "start": 55,
+          "end": 56
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "10",
+          "value": 10,
+          "start": 40,
+          "end": 42,
+          "clause": "How many draws occured with a record of 10 losses,",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The question explicitly describes 10 as losses, matching the Losses header.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "6",
+          "value": 6,
+          "start": 55,
+          "end": 56,
+          "clause": "and 6 wins?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The question explicitly describes 6 as wins, matching the Wins header.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          3,
+          0,
+          10
+        ],
+        [
+          1,
+          0,
+          6
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 11110
+}

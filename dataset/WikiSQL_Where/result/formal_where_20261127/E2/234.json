@@ -1,0 +1,665 @@
+{
+  "arm": "E2",
+  "position": 234,
+  "example_id": "test:11301:2-11716268-1",
+  "original_index": 11301,
+  "table_id": "2-11716268-1",
+  "question": "What's the highest points for song \"budi tu\" with draw less than 7?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        0,
+        2,
+        7
+      ],
+      [
+        2,
+        0,
+        "\"budi tu\""
+      ]
+    ],
+    "agg": 1
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "\"Budi tu\""
+    ],
+    [
+      0,
+      2,
+      7
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "\"Budi tu\""
+      ],
+      [
+        0,
+        2,
+        7
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "budi tu",
+        "value": "\"Budi tu\"",
+        "start": 36,
+        "end": 43,
+        "clause": "What's the highest points for song \"budi tu\" with draw less than 7?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "Explicitly identified as a song; \"Budi tu\" appears in the Song column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "NORMALIZED_MATCH"
+      },
+      {
+        "surface": "7",
+        "value": 7,
+        "start": 65,
+        "end": 66,
+        "clause": "What's the highest points for song \"budi tu\" with draw less than 7?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "Explicitly identified by \"draw less than 7\"; Draw is the matching numeric field.",
+        "operator": "<",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "budi tu",
+        "value": "budi tu",
+        "start": 36,
+        "end": 43
+      },
+      {
+        "surface": "7",
+        "value": "7",
+        "start": 65,
+        "end": 66
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What's the highest points for song \"budi tu\" with draw less than 7?",
+      "table": {
+        "header": [
+          "Draw",
+          "Artist",
+          "Song",
+          "Points",
+          "Place"
+        ],
+        "page_title": "Bosnia and Herzegovina in the Eurovision Song Contest 1999",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "real",
+          "real"
+        ],
+        "page_id": 11716268,
+        "id": "2-11716268-1",
+        "section_title": "BH Eurosong 1999",
+        "rows": [
+          [
+            "1",
+            "Eldin Huseinbegović",
+            "\"Volio obolio\"",
+            "13",
+            "13"
+          ],
+          [
+            "2",
+            "Beat House",
+            "\"Kunem te ja\"",
+            "39",
+            "6"
+          ],
+          [
+            "3",
+            "Krug",
+            "\"U ritmu novom\"",
+            "33",
+            "8"
+          ],
+          [
+            "4",
+            "Seven Up",
+            "\"Daj spusti se\"",
+            "58",
+            "3"
+          ],
+          [
+            "5",
+            "Dražen Žerić",
+            "\"Proveo bi život ispod mostova\"",
+            "16",
+            "12"
+          ],
+          [
+            "6",
+            "Dunja Galineo & Nurudin Vatrenjak",
+            "\"Budi tu\"",
+            "0",
+            "17"
+          ],
+          [
+            "7",
+            "Sarajevo Old Stars",
+            "\"Šampion\"",
+            "51",
+            "4"
+          ],
+          [
+            "8",
+            "Zejnaida Mesihović",
+            "\"Dala bih ti život\"",
+            "38",
+            "7"
+          ],
+          [
+            "9",
+            "Željka Katavić-Pilj",
+            "\"Bog mi je svjedok\"",
+            "40",
+            "5"
+          ],
+          [
+            "10",
+            "Sanja Volić",
+            "\"Jedini, ljubim te\"",
+            "10",
+            "14"
+          ],
+          [
+            "11",
+            "Seid Memić-Vajta",
+            "\"Stare melodije\"",
+            "19",
+            "11"
+          ],
+          [
+            "12",
+            "Elvana Dučić",
+            "\"Priznat ću ti sve\"",
+            "7",
+            "16"
+          ],
+          [
+            "13",
+            "Hari Mata Hari",
+            "\"Starac i more\"",
+            "70",
+            "1"
+          ],
+          [
+            "14",
+            "Dino & Béatrice",
+            "\"Putnici\"",
+            "65",
+            "2"
+          ],
+          [
+            "15",
+            "Igor",
+            "\"Glumica\"",
+            "28",
+            "9"
+          ],
+          [
+            "16",
+            "Sarajevska Ruža",
+            "\"Želja\"",
+            "10",
+            "14"
+          ],
+          [
+            "17",
+            "Andrej i Romana",
+            "\"Ostavi suze\"",
+            "25",
+            "10"
+          ]
+        ],
+        "caption": "BH Eurosong - 6 March 1999",
+        "headers": [
+          "Draw",
+          "Artist",
+          "Song",
+          "Points",
+          "Place"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-11716268-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "budi tu",
+              "value": "budi tu",
+              "start": 36,
+              "end": 43
+            },
+            {
+              "surface": "7",
+              "value": "7",
+              "start": 65,
+              "end": 66
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "502e3fefa373bd7e02a0399d385b15bbd8339eeab509f535858a55bb30cda62f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5041,
+              "completion_tokens": 29,
+              "total_tokens": 5070,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "budi tu",
+              "value": "budi tu",
+              "start": 36,
+              "end": 43,
+              "clause": "What's the highest points for song \"budi tu\" with draw less than 7?"
+            },
+            {
+              "surface": "7",
+              "value": "7",
+              "start": 65,
+              "end": 66,
+              "clause": "What's the highest points for song \"budi tu\" with draw less than 7?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "budi tu",
+              "value": "budi tu",
+              "start": 36,
+              "end": 43,
+              "clause": "What's the highest points for song \"budi tu\" with draw less than 7?"
+            },
+            {
+              "surface": "7",
+              "value": "7",
+              "start": 65,
+              "end": 66,
+              "clause": "What's the highest points for song \"budi tu\" with draw less than 7?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "budi tu",
+              "value": "budi tu",
+              "start": 36,
+              "end": 43,
+              "clause": "What's the highest points for song \"budi tu\" with draw less than 7?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Explicitly identified as a song; \"Budi tu\" appears in the Song column."
+            },
+            {
+              "surface": "7",
+              "value": "7",
+              "start": 65,
+              "end": 66,
+              "clause": "What's the highest points for song \"budi tu\" with draw less than 7?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Explicitly identified by \"draw less than 7\"; Draw is the matching numeric field."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "7d4bf49c433952ffe7f2188b7ab78ef201d17716c8c88fdc296040239f5951d6",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5122,
+              "completion_tokens": 62,
+              "total_tokens": 5184,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "budi tu",
+              "value": "budi tu",
+              "start": 36,
+              "end": 43,
+              "clause": "What's the highest points for song \"budi tu\" with draw less than 7?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Explicitly identified as a song; \"Budi tu\" appears in the Song column.",
+              "operator": "="
+            },
+            {
+              "surface": "7",
+              "value": "7",
+              "start": 65,
+              "end": 66,
+              "clause": "What's the highest points for song \"budi tu\" with draw less than 7?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Explicitly identified by \"draw less than 7\"; Draw is the matching numeric field.",
+              "operator": "<"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e8b35db26b0ff58fb42e893c266178c1740ed2783fe4dba691059fe60876e4d0",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5219,
+              "completion_tokens": 12,
+              "total_tokens": 5231,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "budi tu",
+              "value": "Budi tu",
+              "start": 36,
+              "end": 43,
+              "clause": "What's the highest points for song \"budi tu\" with draw less than 7?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Explicitly identified as a song; \"Budi tu\" appears in the Song column.",
+              "operator": "="
+            },
+            {
+              "surface": "7",
+              "value": 7,
+              "start": 65,
+              "end": 66,
+              "clause": "What's the highest points for song \"budi tu\" with draw less than 7?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Explicitly identified by \"draw less than 7\"; Draw is the matching numeric field.",
+              "operator": "<"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e2aadc296ed94aeda527a4c981620c024c1c27c89e5be992c6617c8e5d8018ed",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5173,
+              "completion_tokens": 13,
+              "total_tokens": 5186,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "budi tu",
+              "value": "\"Budi tu\"",
+              "start": 36,
+              "end": 43,
+              "clause": "What's the highest points for song \"budi tu\" with draw less than 7?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Explicitly identified as a song; \"Budi tu\" appears in the Song column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "NORMALIZED_MATCH"
+            },
+            {
+              "surface": "7",
+              "value": "7",
+              "start": 65,
+              "end": 66,
+              "clause": "What's the highest points for song \"budi tu\" with draw less than 7?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Explicitly identified by \"draw less than 7\"; Draw is the matching numeric field.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "budi tu",
+              "value": "\"Budi tu\"",
+              "start": 36,
+              "end": 43,
+              "clause": "What's the highest points for song \"budi tu\" with draw less than 7?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Explicitly identified as a song; \"Budi tu\" appears in the Song column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "NORMALIZED_MATCH"
+            },
+            {
+              "surface": "7",
+              "value": 7,
+              "start": 65,
+              "end": 66,
+              "clause": "What's the highest points for song \"budi tu\" with draw less than 7?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Explicitly identified by \"draw less than 7\"; Draw is the matching numeric field.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "budi tu",
+              "value": "\"Budi tu\"",
+              "start": 36,
+              "end": 43,
+              "clause": "What's the highest points for song \"budi tu\" with draw less than 7?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Explicitly identified as a song; \"Budi tu\" appears in the Song column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "NORMALIZED_MATCH"
+            },
+            {
+              "surface": "7",
+              "value": 7,
+              "start": 65,
+              "end": 66,
+              "clause": "What's the highest points for song \"budi tu\" with draw less than 7?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Explicitly identified by \"draw less than 7\"; Draw is the matching numeric field.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "\"Budi tu\""
+            ],
+            [
+              0,
+              2,
+              7
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "budi tu",
+          "value": "budi tu",
+          "start": 36,
+          "end": 43
+        },
+        {
+          "surface": "7",
+          "value": "7",
+          "start": 65,
+          "end": 66
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "budi tu",
+          "value": "\"Budi tu\"",
+          "start": 36,
+          "end": 43,
+          "clause": "What's the highest points for song \"budi tu\" with draw less than 7?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "Explicitly identified as a song; \"Budi tu\" appears in the Song column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "NORMALIZED_MATCH"
+        },
+        {
+          "surface": "7",
+          "value": 7,
+          "start": 65,
+          "end": 66,
+          "clause": "What's the highest points for song \"budi tu\" with draw less than 7?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "Explicitly identified by \"draw less than 7\"; Draw is the matching numeric field.",
+          "operator": "<",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          2,
+          0,
+          "\"Budi tu\""
+        ],
+        [
+          0,
+          2,
+          7
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8250
+}

@@ -1,0 +1,758 @@
+{
+  "arm": "E2",
+  "position": 141,
+  "example_id": "test:10945:2-11516217-44",
+  "original_index": 10945,
+  "table_id": "2-11516217-44",
+  "question": "What is the number of Not Outs when there were more than 327 runs and 24 innings, and an average of 29.54",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        3,
+        1,
+        327
+      ],
+      [
+        1,
+        1,
+        24
+      ],
+      [
+        4,
+        0,
+        29.54
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      3,
+      1,
+      327
+    ],
+    [
+      1,
+      0,
+      24
+    ],
+    [
+      4,
+      0,
+      29.54
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        1,
+        327
+      ],
+      [
+        1,
+        0,
+        24
+      ],
+      [
+        4,
+        0,
+        29.54
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "more than 327",
+        "value": 327,
+        "start": 47,
+        "end": 60,
+        "clause": "What is the number of Not Outs when there were more than 327 runs",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The clause explicitly says more than 327 runs, matching Runs.",
+        "operator": ">",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "24",
+        "value": 24,
+        "start": 70,
+        "end": 72,
+        "clause": "and 24 innings,",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The clause explicitly identifies 24 as innings, matching Innings.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "29.54",
+        "value": 29.54,
+        "start": 100,
+        "end": 105,
+        "clause": "and an average of 29.54",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The clause explicitly says an average of 29.54, matching Average.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "more than 327",
+        "value": "327",
+        "start": 47,
+        "end": 60
+      },
+      {
+        "surface": "24",
+        "value": "24",
+        "start": 70,
+        "end": 72
+      },
+      {
+        "surface": "29.54",
+        "value": "29.54",
+        "start": 100,
+        "end": 105
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the number of Not Outs when there were more than 327 runs and 24 innings, and an average of 29.54",
+      "table": {
+        "header": [
+          "Matches",
+          "Innings",
+          "Not Outs",
+          "Runs",
+          "Average"
+        ],
+        "page_title": "List of New Zealand Test cricket victories",
+        "types": [
+          "real",
+          "real",
+          "real",
+          "real",
+          "real"
+        ],
+        "page_id": 11516217,
+        "id": "2-11516217-44",
+        "section_title": "72 v Sri Lanka at Colombo 2012/13",
+        "rows": [
+          [
+            "13",
+            "24",
+            "3",
+            "1047",
+            "49.85"
+          ],
+          [
+            "13",
+            "25",
+            "1",
+            "709",
+            "29.54"
+          ],
+          [
+            "13",
+            "25",
+            "0",
+            "720",
+            "28.80"
+          ],
+          [
+            "13",
+            "24",
+            "1",
+            "748",
+            "32.52"
+          ],
+          [
+            "7",
+            "13",
+            "1",
+            "375",
+            "31.25"
+          ],
+          [
+            "6",
+            "12",
+            "0",
+            "327",
+            "27.22"
+          ]
+        ],
+        "caption": "72 v Sri Lanka at Colombo 2012/13",
+        "headers": [
+          "Matches",
+          "Innings",
+          "Not Outs",
+          "Runs",
+          "Average"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-11516217-44",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 3,
+          "conditions": [
+            {
+              "surface": "more than 327",
+              "value": "327",
+              "start": 47,
+              "end": 60
+            },
+            {
+              "surface": "24",
+              "value": "24",
+              "start": 70,
+              "end": 72
+            },
+            {
+              "surface": "29.54",
+              "value": "29.54",
+              "start": 100,
+              "end": 105
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "fd0c082b43532b73aa8537657297bdb721ef5256629e25efb9bb5bdb6d12f899",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4781,
+              "completion_tokens": 40,
+              "total_tokens": 4821,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "more than 327",
+              "value": "327",
+              "start": 47,
+              "end": 60,
+              "clause": "What is the number of Not Outs when there were more than 327 runs"
+            },
+            {
+              "surface": "24",
+              "value": "24",
+              "start": 70,
+              "end": 72,
+              "clause": "and 24 innings,"
+            },
+            {
+              "surface": "29.54",
+              "value": "29.54",
+              "start": 100,
+              "end": 105,
+              "clause": "and an average of 29.54"
+            }
+          ],
+          "count": 3
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "more than 327",
+              "value": "327",
+              "start": 47,
+              "end": 60,
+              "clause": "What is the number of Not Outs when there were more than 327 runs"
+            },
+            {
+              "surface": "24",
+              "value": "24",
+              "start": 70,
+              "end": 72,
+              "clause": "and 24 innings,"
+            },
+            {
+              "surface": "29.54",
+              "value": "29.54",
+              "start": 100,
+              "end": 105,
+              "clause": "and an average of 29.54"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "more than 327",
+              "value": "327",
+              "start": 47,
+              "end": 60,
+              "clause": "What is the number of Not Outs when there were more than 327 runs",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly says more than 327 runs, matching Runs."
+            },
+            {
+              "surface": "24",
+              "value": "24",
+              "start": 70,
+              "end": 72,
+              "clause": "and 24 innings,",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly identifies 24 as innings, matching Innings."
+            },
+            {
+              "surface": "29.54",
+              "value": "29.54",
+              "start": 100,
+              "end": 105,
+              "clause": "and an average of 29.54",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly says an average of 29.54, matching Average."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c130f943de162c2b9dde8830a487ddea5b24c2e9dce47d6072aaad2f69bf7744",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4877,
+              "completion_tokens": 70,
+              "total_tokens": 4947,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "more than 327",
+              "value": "327",
+              "start": 47,
+              "end": 60,
+              "clause": "What is the number of Not Outs when there were more than 327 runs",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly says more than 327 runs, matching Runs.",
+              "operator": ">"
+            },
+            {
+              "surface": "24",
+              "value": "24",
+              "start": 70,
+              "end": 72,
+              "clause": "and 24 innings,",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly identifies 24 as innings, matching Innings.",
+              "operator": "="
+            },
+            {
+              "surface": "29.54",
+              "value": "29.54",
+              "start": 100,
+              "end": 105,
+              "clause": "and an average of 29.54",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly says an average of 29.54, matching Average.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "41612531758ef1ec2459f5f2d150d1b41c282dd2f3eb411218d39b56ecc623cd",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4993,
+              "completion_tokens": 13,
+              "total_tokens": 5006,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "more than 327",
+              "value": "327",
+              "start": 47,
+              "end": 60,
+              "clause": "What is the number of Not Outs when there were more than 327 runs",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly says more than 327 runs, matching Runs.",
+              "operator": ">"
+            },
+            {
+              "surface": "24",
+              "value": "24",
+              "start": 70,
+              "end": 72,
+              "clause": "and 24 innings,",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly identifies 24 as innings, matching Innings.",
+              "operator": "="
+            },
+            {
+              "surface": "29.54",
+              "value": "29.54",
+              "start": 100,
+              "end": 105,
+              "clause": "and an average of 29.54",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly says an average of 29.54, matching Average.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "03e87be299acc94722d3111e98d4b07c41013ebb2f702dd31758577564fe3f2a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4950,
+              "completion_tokens": 16,
+              "total_tokens": 4966,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "more than 327",
+              "value": "327",
+              "start": 47,
+              "end": 60,
+              "clause": "What is the number of Not Outs when there were more than 327 runs",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly says more than 327 runs, matching Runs.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "24",
+              "value": "24",
+              "start": 70,
+              "end": 72,
+              "clause": "and 24 innings,",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly identifies 24 as innings, matching Innings.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "29.54",
+              "value": "29.54",
+              "start": 100,
+              "end": 105,
+              "clause": "and an average of 29.54",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly says an average of 29.54, matching Average.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "more than 327",
+              "value": 327,
+              "start": 47,
+              "end": 60,
+              "clause": "What is the number of Not Outs when there were more than 327 runs",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly says more than 327 runs, matching Runs.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "24",
+              "value": 24,
+              "start": 70,
+              "end": 72,
+              "clause": "and 24 innings,",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly identifies 24 as innings, matching Innings.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "29.54",
+              "value": 29.54,
+              "start": 100,
+              "end": 105,
+              "clause": "and an average of 29.54",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly says an average of 29.54, matching Average.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "more than 327",
+              "value": 327,
+              "start": 47,
+              "end": 60,
+              "clause": "What is the number of Not Outs when there were more than 327 runs",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly says more than 327 runs, matching Runs.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "24",
+              "value": 24,
+              "start": 70,
+              "end": 72,
+              "clause": "and 24 innings,",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly identifies 24 as innings, matching Innings.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "29.54",
+              "value": 29.54,
+              "start": 100,
+              "end": 105,
+              "clause": "and an average of 29.54",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly says an average of 29.54, matching Average.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              1,
+              327
+            ],
+            [
+              1,
+              0,
+              24
+            ],
+            [
+              4,
+              0,
+              29.54
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "more than 327",
+          "value": "327",
+          "start": 47,
+          "end": 60
+        },
+        {
+          "surface": "24",
+          "value": "24",
+          "start": 70,
+          "end": 72
+        },
+        {
+          "surface": "29.54",
+          "value": "29.54",
+          "start": 100,
+          "end": 105
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "more than 327",
+          "value": 327,
+          "start": 47,
+          "end": 60,
+          "clause": "What is the number of Not Outs when there were more than 327 runs",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The clause explicitly says more than 327 runs, matching Runs.",
+          "operator": ">",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "24",
+          "value": 24,
+          "start": 70,
+          "end": 72,
+          "clause": "and 24 innings,",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The clause explicitly identifies 24 as innings, matching Innings.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "29.54",
+          "value": 29.54,
+          "start": 100,
+          "end": 105,
+          "clause": "and an average of 29.54",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The clause explicitly says an average of 29.54, matching Average.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 3,
+      "conds": [
+        [
+          3,
+          1,
+          327
+        ],
+        [
+          1,
+          0,
+          24
+        ],
+        [
+          4,
+          0,
+          29.54
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9547
+}

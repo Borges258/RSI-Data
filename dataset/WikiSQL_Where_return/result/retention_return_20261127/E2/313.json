@@ -1,0 +1,589 @@
+{
+  "arm": "E2",
+  "position": 313,
+  "example_id": "test:12159:2-18060797-3",
+  "original_index": 12159,
+  "table_id": "2-18060797-3",
+  "question": "What is the tournament with a clay surface and sofia shapatava as the opponent?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        3,
+        0,
+        "clay"
+      ],
+      [
+        4,
+        0,
+        "sofia shapatava"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      3,
+      0,
+      "Clay"
+    ],
+    [
+      4,
+      0,
+      "Sofia Shapatava"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        0,
+        "Clay"
+      ],
+      [
+        4,
+        0,
+        "Sofia Shapatava"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "clay",
+        "value": "Clay",
+        "start": 30,
+        "end": 34,
+        "clause": "What is the tournament with a clay surface",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The question explicitly describes clay as the surface, matching the Surface header and Clay cells.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "sofia shapatava",
+        "value": "Sofia Shapatava",
+        "start": 47,
+        "end": 62,
+        "clause": "and sofia shapatava as the opponent?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The question explicitly describes Sofia Shapatava as the opponent, matching the Opponent header and row evidence.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "clay",
+        "value": "Clay",
+        "start": 30,
+        "end": 34
+      },
+      {
+        "surface": "sofia shapatava",
+        "value": "Sofia Shapatava",
+        "start": 47,
+        "end": 62
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the tournament with a clay surface and sofia shapatava as the opponent?",
+      "table": {
+        "header": [
+          "Outcome",
+          "Date",
+          "Tournament",
+          "Surface",
+          "Opponent",
+          "Score"
+        ],
+        "page_title": "Lina Stančiūtė",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 18060797,
+        "id": "2-18060797-3",
+        "section_title": "Singles (4–1)",
+        "rows": [
+          [
+            "Winner",
+            "11 August 2003",
+            "Martina Franca , Italy",
+            "Clay",
+            "Darija Jurak",
+            "6–3, 6–1"
+          ],
+          [
+            "Winner",
+            "5 October 2004",
+            "Lafayette , United States",
+            "Clay",
+            "Karolina Kosińska",
+            "3–6, 6–3, 7–5"
+          ],
+          [
+            "Winner",
+            "17 July 2006",
+            "Zwevegem , Belgium",
+            "Clay",
+            "Lenka Wienerová",
+            "6–1, 6–2"
+          ],
+          [
+            "Runner-up",
+            "29 September 2008",
+            "Helsinki , Finland",
+            "Hard (i)",
+            "Margit Rüütel",
+            "4–6, 7–6 (7–4) , 6–7 (7–9)"
+          ],
+          [
+            "Winner",
+            "13 June 2011",
+            "Kharkiv , Ukraine",
+            "Clay",
+            "Sofia Shapatava",
+            "6–2, 6–1"
+          ]
+        ],
+        "caption": "Singles (4–1)",
+        "headers": [
+          "Outcome",
+          "Date",
+          "Tournament",
+          "Surface",
+          "Opponent",
+          "Score"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-18060797-3",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "clay",
+              "value": "Clay",
+              "start": 30,
+              "end": 34
+            },
+            {
+              "surface": "sofia shapatava",
+              "value": "Sofia Shapatava",
+              "start": 47,
+              "end": 62
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "15ea91def6276ac99888060a62c788cfa4364befac5c299a885987dfa3b27944",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4870,
+              "completion_tokens": 34,
+              "total_tokens": 4904,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "clay",
+              "value": "Clay",
+              "start": 30,
+              "end": 34,
+              "clause": "What is the tournament with a clay surface"
+            },
+            {
+              "surface": "sofia shapatava",
+              "value": "Sofia Shapatava",
+              "start": 47,
+              "end": 62,
+              "clause": "and sofia shapatava as the opponent?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "clay",
+              "value": "Clay",
+              "start": 30,
+              "end": 34,
+              "clause": "What is the tournament with a clay surface"
+            },
+            {
+              "surface": "sofia shapatava",
+              "value": "Sofia Shapatava",
+              "start": 47,
+              "end": 62,
+              "clause": "and sofia shapatava as the opponent?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "clay",
+              "value": "Clay",
+              "start": 30,
+              "end": 34,
+              "clause": "What is the tournament with a clay surface",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly describes clay as the surface, matching the Surface header and Clay cells."
+            },
+            {
+              "surface": "sofia shapatava",
+              "value": "Sofia Shapatava",
+              "start": 47,
+              "end": 62,
+              "clause": "and sofia shapatava as the opponent?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly describes Sofia Shapatava as the opponent, matching the Opponent header and row evidence."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "2a5253ccdf34d3bca1b420bf4de9a730e59ae2fd4b420f3d82663e538985111f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4938,
+              "completion_tokens": 63,
+              "total_tokens": 5001,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "clay",
+              "value": "Clay",
+              "start": 30,
+              "end": 34,
+              "clause": "What is the tournament with a clay surface",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly describes clay as the surface, matching the Surface header and Clay cells.",
+              "operator": "="
+            },
+            {
+              "surface": "sofia shapatava",
+              "value": "Sofia Shapatava",
+              "start": 47,
+              "end": 62,
+              "clause": "and sofia shapatava as the opponent?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly describes Sofia Shapatava as the opponent, matching the Opponent header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "28573c9cf7b78503ef9c2ce195b4436231419801a4b900ca7feeb1d2efcd266f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5036,
+              "completion_tokens": 11,
+              "total_tokens": 5047,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "clay",
+              "value": "Clay",
+              "start": 30,
+              "end": 34,
+              "clause": "What is the tournament with a clay surface",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly describes clay as the surface, matching the Surface header and Clay cells.",
+              "operator": "="
+            },
+            {
+              "surface": "sofia shapatava",
+              "value": "Sofia Shapatava",
+              "start": 47,
+              "end": 62,
+              "clause": "and sofia shapatava as the opponent?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly describes Sofia Shapatava as the opponent, matching the Opponent header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "078320adfca0b0e62ffb94f61583c020b69ff86361968bbc86c3ca14faf9aa06",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4990,
+              "completion_tokens": 16,
+              "total_tokens": 5006,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "clay",
+              "value": "Clay",
+              "start": 30,
+              "end": 34,
+              "clause": "What is the tournament with a clay surface",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly describes clay as the surface, matching the Surface header and Clay cells.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "sofia shapatava",
+              "value": "Sofia Shapatava",
+              "start": 47,
+              "end": 62,
+              "clause": "and sofia shapatava as the opponent?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly describes Sofia Shapatava as the opponent, matching the Opponent header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "clay",
+              "value": "Clay",
+              "start": 30,
+              "end": 34,
+              "clause": "What is the tournament with a clay surface",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly describes clay as the surface, matching the Surface header and Clay cells.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "sofia shapatava",
+              "value": "Sofia Shapatava",
+              "start": 47,
+              "end": 62,
+              "clause": "and sofia shapatava as the opponent?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly describes Sofia Shapatava as the opponent, matching the Opponent header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "clay",
+              "value": "Clay",
+              "start": 30,
+              "end": 34,
+              "clause": "What is the tournament with a clay surface",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly describes clay as the surface, matching the Surface header and Clay cells.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "sofia shapatava",
+              "value": "Sofia Shapatava",
+              "start": 47,
+              "end": 62,
+              "clause": "and sofia shapatava as the opponent?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly describes Sofia Shapatava as the opponent, matching the Opponent header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              0,
+              "Clay"
+            ],
+            [
+              4,
+              0,
+              "Sofia Shapatava"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "clay",
+          "value": "Clay",
+          "start": 30,
+          "end": 34
+        },
+        {
+          "surface": "sofia shapatava",
+          "value": "Sofia Shapatava",
+          "start": 47,
+          "end": 62
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "clay",
+          "value": "Clay",
+          "start": 30,
+          "end": 34,
+          "clause": "What is the tournament with a clay surface",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The question explicitly describes clay as the surface, matching the Surface header and Clay cells.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "sofia shapatava",
+          "value": "Sofia Shapatava",
+          "start": 47,
+          "end": 62,
+          "clause": "and sofia shapatava as the opponent?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The question explicitly describes Sofia Shapatava as the opponent, matching the Opponent header and row evidence.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          3,
+          0,
+          "Clay"
+        ],
+        [
+          4,
+          0,
+          "Sofia Shapatava"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9047
+}

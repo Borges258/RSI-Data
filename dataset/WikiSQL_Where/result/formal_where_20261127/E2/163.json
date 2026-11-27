@@ -1,0 +1,746 @@
+{
+  "arm": "E2",
+  "position": 163,
+  "example_id": "test:12823:2-17817954-1",
+  "original_index": 12823,
+  "table_id": "2-17817954-1",
+  "question": "In 1979 when Jimmy Connors was the runner-up what was the score?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        3,
+        0,
+        "jimmy connors"
+      ],
+      [
+        1,
+        0,
+        1979
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [],
+  "status": "GROUNDING_FAILED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "GROUNDING_FAILED",
+    "valid": false,
+    "errors": [
+      "condition 2: grounding NO_MATCH"
+    ],
+    "conditions": [
+      {
+        "surface": "1979",
+        "value": 1979,
+        "start": 3,
+        "end": 7,
+        "clause": "In 1979 when Jimmy Connors was the runner-up what was the score?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "1979 is explicitly the year, matching the Year header and row.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "Jimmy Connors",
+        "value": "Jimmy Connors",
+        "start": 13,
+        "end": 26,
+        "clause": "In 1979 when Jimmy Connors was the runner-up what was the score?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "Jimmy Connors is described as the runner-up and appears in the Runner-up column for 1979.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "runner-up",
+        "value": "runner-up",
+        "start": 35,
+        "end": 44,
+        "clause": "In 1979 when Jimmy Connors was the runner-up what was the score?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "runner-up explicitly names the Runner-up field.",
+        "operator": "=",
+        "grounded": false,
+        "groundingStatus": "NO_MATCH",
+        "groundingReview": {
+          "column": null,
+          "reason": "\"runner-up\" names the Runner-up header but is not a cell value; the relevant row value is \"Jimmy Connors\", so the supplied literal cannot ground a condition."
+        }
+      }
+    ],
+    "stage": "WHERE_CONDITION_VALIDATE",
+    "originalConditions": [
+      {
+        "surface": "1979",
+        "value": "1979",
+        "start": 3,
+        "end": 7
+      },
+      {
+        "surface": "Jimmy Connors",
+        "value": "Jimmy Connors",
+        "start": 13,
+        "end": 26
+      },
+      {
+        "surface": "runner-up",
+        "value": "Runner-up",
+        "start": 35,
+        "end": 44
+      }
+    ],
+    "halt": true,
+    "completed": false,
+    "conds": [],
+    "warnings": [],
+    "request": {
+      "question": "In 1979 when Jimmy Connors was the runner-up what was the score?",
+      "table": {
+        "header": [
+          "Location",
+          "Year",
+          "Champion",
+          "Runner-up",
+          "Score"
+        ],
+        "page_title": "WCT Challenge Cup",
+        "types": [
+          "text",
+          "real",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 17817954,
+        "id": "2-17817954-1",
+        "section_title": "Singles champions",
+        "rows": [
+          [
+            "Honolulu",
+            "1976",
+            "Ilie Năstase",
+            "Arthur Ashe",
+            "6–3, 1–6, 6–7, 6–3, 6–1"
+          ],
+          [
+            "Las Vegas",
+            "1977",
+            "Ilie Nastase",
+            "Jimmy Connors",
+            "3–6, 7–6, 6–4, 7–5"
+          ],
+          [
+            "Montego Bay",
+            "1978",
+            "Ilie Năstase",
+            "Peter Fleming",
+            "2–6, 5–6, 6–2, 6–4, 6–4"
+          ],
+          [
+            "Montreal",
+            "1979",
+            "Björn Borg",
+            "Jimmy Connors",
+            "6–4, 6–2, 2–6, 6–4"
+          ],
+          [
+            "Montreal",
+            "1980",
+            "John McEnroe",
+            "Vijay Amritraj",
+            "6–1, 6–2, 6–1"
+          ]
+        ],
+        "caption": "Singles champions",
+        "headers": [
+          "Location",
+          "Year",
+          "Champion",
+          "Runner-up",
+          "Score"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-17817954-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 9,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 3,
+          "conditions": [
+            {
+              "surface": "1979",
+              "value": "1979",
+              "start": 3,
+              "end": 7
+            },
+            {
+              "surface": "Jimmy Connors",
+              "value": "Jimmy Connors",
+              "start": 13,
+              "end": 26
+            },
+            {
+              "surface": "runner-up",
+              "value": "Runner-up",
+              "start": 35,
+              "end": 44
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ecd70ddace16985558bd6ddee4d565f5d186fda693a9d8cc460a49111f562ae5",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4853,
+              "completion_tokens": 41,
+              "total_tokens": 4894,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1979",
+              "value": "1979",
+              "start": 3,
+              "end": 7,
+              "clause": "In 1979 when Jimmy Connors was the runner-up what was the score?"
+            },
+            {
+              "surface": "Jimmy Connors",
+              "value": "Jimmy Connors",
+              "start": 13,
+              "end": 26,
+              "clause": "In 1979 when Jimmy Connors was the runner-up what was the score?"
+            },
+            {
+              "surface": "runner-up",
+              "value": "Runner-up",
+              "start": 35,
+              "end": 44,
+              "clause": "In 1979 when Jimmy Connors was the runner-up what was the score?"
+            }
+          ],
+          "count": 3
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "1979",
+              "value": "1979",
+              "start": 3,
+              "end": 7,
+              "clause": "In 1979 when Jimmy Connors was the runner-up what was the score?"
+            },
+            {
+              "surface": "Jimmy Connors",
+              "value": "Jimmy Connors",
+              "start": 13,
+              "end": 26,
+              "clause": "In 1979 when Jimmy Connors was the runner-up what was the score?"
+            },
+            {
+              "surface": "runner-up",
+              "value": "Runner-up",
+              "start": 35,
+              "end": 44,
+              "clause": "In 1979 when Jimmy Connors was the runner-up what was the score?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1979",
+              "value": "1979",
+              "start": 3,
+              "end": 7,
+              "clause": "In 1979 when Jimmy Connors was the runner-up what was the score?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "1979 is explicitly the year, matching the Year header and row."
+            },
+            {
+              "surface": "Jimmy Connors",
+              "value": "Jimmy Connors",
+              "start": 13,
+              "end": 26,
+              "clause": "In 1979 when Jimmy Connors was the runner-up what was the score?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Jimmy Connors is described as the runner-up and appears in the Runner-up column for 1979."
+            },
+            {
+              "surface": "runner-up",
+              "value": "Runner-up",
+              "start": 35,
+              "end": 44,
+              "clause": "In 1979 when Jimmy Connors was the runner-up what was the score?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "runner-up explicitly names the Runner-up field."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c9a40a9dcc67106e1be32584f0f0b684dc991267d73b791bb9b5b284de806c32",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4973,
+              "completion_tokens": 215,
+              "total_tokens": 5188,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 140
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1979",
+              "value": "1979",
+              "start": 3,
+              "end": 7,
+              "clause": "In 1979 when Jimmy Connors was the runner-up what was the score?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "1979 is explicitly the year, matching the Year header and row.",
+              "operator": "="
+            },
+            {
+              "surface": "Jimmy Connors",
+              "value": "Jimmy Connors",
+              "start": 13,
+              "end": 26,
+              "clause": "In 1979 when Jimmy Connors was the runner-up what was the score?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Jimmy Connors is described as the runner-up and appears in the Runner-up column for 1979.",
+              "operator": "="
+            },
+            {
+              "surface": "runner-up",
+              "value": "Runner-up",
+              "start": 35,
+              "end": 44,
+              "clause": "In 1979 when Jimmy Connors was the runner-up what was the score?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "runner-up explicitly names the Runner-up field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b537e15ffb44c3abe38d1340ff809abf7f8e418203678e95c99c012cef6186a4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5092,
+              "completion_tokens": 13,
+              "total_tokens": 5105,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1979",
+              "value": "1979",
+              "start": 3,
+              "end": 7,
+              "clause": "In 1979 when Jimmy Connors was the runner-up what was the score?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "1979 is explicitly the year, matching the Year header and row.",
+              "operator": "="
+            },
+            {
+              "surface": "Jimmy Connors",
+              "value": "Jimmy Connors",
+              "start": 13,
+              "end": 26,
+              "clause": "In 1979 when Jimmy Connors was the runner-up what was the score?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Jimmy Connors is described as the runner-up and appears in the Runner-up column for 1979.",
+              "operator": "="
+            },
+            {
+              "surface": "runner-up",
+              "value": "runner-up",
+              "start": 35,
+              "end": 44,
+              "clause": "In 1979 when Jimmy Connors was the runner-up what was the score?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "runner-up explicitly names the Runner-up field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b1a666e6bbce211c8481cd9ba3a71fd1316c6335d85eb28206ed23f279db8019",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5049,
+              "completion_tokens": 87,
+              "total_tokens": 5136,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 67
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1979",
+              "value": "1979",
+              "start": 3,
+              "end": 7,
+              "clause": "In 1979 when Jimmy Connors was the runner-up what was the score?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "1979 is explicitly the year, matching the Year header and row.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Jimmy Connors",
+              "value": "Jimmy Connors",
+              "start": 13,
+              "end": 26,
+              "clause": "In 1979 when Jimmy Connors was the runner-up what was the score?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Jimmy Connors is described as the runner-up and appears in the Runner-up column for 1979.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "runner-up",
+              "value": "runner-up",
+              "start": 35,
+              "end": 44,
+              "clause": "In 1979 when Jimmy Connors was the runner-up what was the score?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "runner-up explicitly names the Runner-up field.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": null,
+                "reason": "\"runner-up\" names the Runner-up header but is not a cell value; the relevant row value is \"Jimmy Connors\", so the supplied literal cannot ground a condition."
+              }
+            }
+          ],
+          "reviewModelCalls": [
+            {
+              "model": "gpt-5.6-sol",
+              "promptSha256": "98cac2f5f8557628798f704f7062fb7962671ba1035954607c9fb7e426149c7d",
+              "knowledgeIds": [],
+              "usage": {
+                "prompt_tokens": 4939,
+                "completion_tokens": 82,
+                "total_tokens": 5021,
+                "prompt_tokens_details": {
+                  "cached_tokens": 4224
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 33
+                }
+              }
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "98cac2f5f8557628798f704f7062fb7962671ba1035954607c9fb7e426149c7d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4939,
+              "completion_tokens": 82,
+              "total_tokens": 5021,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 33
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1979",
+              "value": 1979,
+              "start": 3,
+              "end": 7,
+              "clause": "In 1979 when Jimmy Connors was the runner-up what was the score?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "1979 is explicitly the year, matching the Year header and row.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Jimmy Connors",
+              "value": "Jimmy Connors",
+              "start": 13,
+              "end": 26,
+              "clause": "In 1979 when Jimmy Connors was the runner-up what was the score?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Jimmy Connors is described as the runner-up and appears in the Runner-up column for 1979.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "runner-up",
+              "value": "runner-up",
+              "start": 35,
+              "end": 44,
+              "clause": "In 1979 when Jimmy Connors was the runner-up what was the score?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "runner-up explicitly names the Runner-up field.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": null,
+                "reason": "\"runner-up\" names the Runner-up header but is not a cell value; the relevant row value is \"Jimmy Connors\", so the supplied literal cannot ground a condition."
+              }
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "GROUNDING_FAILED",
+          "valid": false,
+          "errors": [
+            "condition 2: grounding NO_MATCH"
+          ],
+          "conditions": [
+            {
+              "surface": "1979",
+              "value": 1979,
+              "start": 3,
+              "end": 7,
+              "clause": "In 1979 when Jimmy Connors was the runner-up what was the score?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "1979 is explicitly the year, matching the Year header and row.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Jimmy Connors",
+              "value": "Jimmy Connors",
+              "start": 13,
+              "end": 26,
+              "clause": "In 1979 when Jimmy Connors was the runner-up what was the score?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Jimmy Connors is described as the runner-up and appears in the Runner-up column for 1979.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "runner-up",
+              "value": "runner-up",
+              "start": 35,
+              "end": 44,
+              "clause": "In 1979 when Jimmy Connors was the runner-up what was the score?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "runner-up explicitly names the Runner-up field.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": null,
+                "reason": "\"runner-up\" names the Runner-up header but is not a cell value; the relevant row value is \"Jimmy Connors\", so the supplied literal cannot ground a condition."
+              }
+            }
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "GROUNDING_FAILED",
+        "stage": "WHERE_CONDITION_VALIDATE",
+        "halt": true,
+        "completed": false,
+        "errors": [
+          "condition 2: grounding NO_MATCH"
+        ],
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "1979",
+          "value": "1979",
+          "start": 3,
+          "end": 7
+        },
+        {
+          "surface": "Jimmy Connors",
+          "value": "Jimmy Connors",
+          "start": 13,
+          "end": 26
+        },
+        {
+          "surface": "runner-up",
+          "value": "Runner-up",
+          "start": 35,
+          "end": 44
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "1979",
+          "value": 1979,
+          "start": 3,
+          "end": 7,
+          "clause": "In 1979 when Jimmy Connors was the runner-up what was the score?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "1979 is explicitly the year, matching the Year header and row.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "Jimmy Connors",
+          "value": "Jimmy Connors",
+          "start": 13,
+          "end": 26,
+          "clause": "In 1979 when Jimmy Connors was the runner-up what was the score?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "Jimmy Connors is described as the runner-up and appears in the Runner-up column for 1979.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "runner-up",
+          "value": "runner-up",
+          "start": 35,
+          "end": 44,
+          "clause": "In 1979 when Jimmy Connors was the runner-up what was the score?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "runner-up explicitly names the Runner-up field.",
+          "operator": "=",
+          "grounded": false,
+          "groundingStatus": "NO_MATCH",
+          "groundingReview": {
+            "column": null,
+            "reason": "\"runner-up\" names the Runner-up header but is not a cell value; the relevant row value is \"Jimmy Connors\", so the supplied literal cannot ground a condition."
+          }
+        }
+      ],
+      "count": 3
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": false,
+  "elapsed_ms": 14297
+}

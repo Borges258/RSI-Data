@@ -1,0 +1,616 @@
+{
+  "arm": "E2",
+  "position": 317,
+  "example_id": "test:12353:2-18060467-6",
+  "original_index": 12353,
+  "table_id": "2-18060467-6",
+  "question": "What did the United States score in the T5?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        2,
+        0,
+        "united states"
+      ],
+      [
+        0,
+        0,
+        "t5"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "United States"
+    ],
+    [
+      0,
+      0,
+      "T5"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "United States"
+      ],
+      [
+        0,
+        0,
+        "T5"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "United States",
+        "value": "United States",
+        "start": 13,
+        "end": 26,
+        "clause": "What did the United States score in the T5?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "United States is the country being asked about and appears in the Country field.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "T5",
+        "value": "T5",
+        "start": 40,
+        "end": 42,
+        "clause": "What did the United States score in the T5?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "T5 denotes the tied fifth-place value in the Place field.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "United States",
+        "value": "United States",
+        "start": 13,
+        "end": 26
+      },
+      {
+        "surface": "T5",
+        "value": "T5",
+        "start": 40,
+        "end": 42
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What did the United States score in the T5?",
+      "table": {
+        "header": [
+          "Place",
+          "Player",
+          "Country",
+          "Score",
+          "To par"
+        ],
+        "page_title": "1997 Open Championship",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 18060467,
+        "id": "2-18060467-6",
+        "section_title": "Third round",
+        "rows": [
+          [
+            "1",
+            "Jesper Parnevik",
+            "Sweden",
+            "70-66-66=202",
+            "–11"
+          ],
+          [
+            "2",
+            "Darren Clarke",
+            "Northern Ireland",
+            "67-66-71=204",
+            "–9"
+          ],
+          [
+            "T3",
+            "Fred Couples",
+            "United States",
+            "69-68-70=207",
+            "–6"
+          ],
+          [
+            "T3",
+            "Justin Leonard",
+            "United States",
+            "69-66-72=207",
+            "–6"
+          ],
+          [
+            "T5",
+            "Stephen Ames",
+            "Trinidad and Tobago",
+            "74-69-66=209",
+            "–4"
+          ],
+          [
+            "T5",
+            "Jim Furyk",
+            "United States",
+            "67-72-70=209",
+            "–4"
+          ],
+          [
+            "T5",
+            "Eduardo Romero",
+            "Argentina",
+            "74-68-67=209",
+            "–4"
+          ],
+          [
+            "T8",
+            "Robert Allenby",
+            "Australia",
+            "76-68-66=210",
+            "–3"
+          ],
+          [
+            "T8",
+            "Lee Westwood",
+            "England",
+            "73-70-67=210",
+            "–3"
+          ],
+          [
+            "T8",
+            "Tiger Woods",
+            "United States",
+            "72-74-64=210",
+            "–3"
+          ]
+        ],
+        "caption": "Third round",
+        "headers": [
+          "Place",
+          "Player",
+          "Country",
+          "Score",
+          "To par"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-18060467-6",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "United States",
+              "value": "United States",
+              "start": 13,
+              "end": 26
+            },
+            {
+              "surface": "T5",
+              "value": "T5",
+              "start": 40,
+              "end": 42
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "1b9eae210bdf8001d31ee62d2e15be971910a0416afe80652035ae0936b7e17c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4877,
+              "completion_tokens": 29,
+              "total_tokens": 4906,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "United States",
+              "value": "United States",
+              "start": 13,
+              "end": 26,
+              "clause": "What did the United States score in the T5?"
+            },
+            {
+              "surface": "T5",
+              "value": "T5",
+              "start": 40,
+              "end": 42,
+              "clause": "What did the United States score in the T5?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "United States",
+              "value": "United States",
+              "start": 13,
+              "end": 26,
+              "clause": "What did the United States score in the T5?"
+            },
+            {
+              "surface": "T5",
+              "value": "T5",
+              "start": 40,
+              "end": 42,
+              "clause": "What did the United States score in the T5?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "United States",
+              "value": "United States",
+              "start": 13,
+              "end": 26,
+              "clause": "What did the United States score in the T5?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "United States is the country being asked about and appears in the Country field."
+            },
+            {
+              "surface": "T5",
+              "value": "T5",
+              "start": 40,
+              "end": 42,
+              "clause": "What did the United States score in the T5?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "T5 denotes the tied fifth-place value in the Place field."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "89004b736eff1044660fb3ce13ec5949c4d63b9d6b04c76f85fc0361e70740af",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4944,
+              "completion_tokens": 53,
+              "total_tokens": 4997,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "United States",
+              "value": "United States",
+              "start": 13,
+              "end": 26,
+              "clause": "What did the United States score in the T5?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "United States is the country being asked about and appears in the Country field.",
+              "operator": "="
+            },
+            {
+              "surface": "T5",
+              "value": "T5",
+              "start": 40,
+              "end": 42,
+              "clause": "What did the United States score in the T5?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "T5 denotes the tied fifth-place value in the Place field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "691f5a51ef9c3e66f895b0708a85d83cd4e28e3c47d418ea43a0680f383639a9",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5032,
+              "completion_tokens": 11,
+              "total_tokens": 5043,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "United States",
+              "value": "United States",
+              "start": 13,
+              "end": 26,
+              "clause": "What did the United States score in the T5?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "United States is the country being asked about and appears in the Country field.",
+              "operator": "="
+            },
+            {
+              "surface": "T5",
+              "value": "T5",
+              "start": 40,
+              "end": 42,
+              "clause": "What did the United States score in the T5?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "T5 denotes the tied fifth-place value in the Place field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "7a63cc9784dcc7eab9284a67b25d20261ce5deae9f63be73baad5cd9ff7aaee9",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4986,
+              "completion_tokens": 14,
+              "total_tokens": 5000,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "United States",
+              "value": "United States",
+              "start": 13,
+              "end": 26,
+              "clause": "What did the United States score in the T5?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "United States is the country being asked about and appears in the Country field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "T5",
+              "value": "T5",
+              "start": 40,
+              "end": 42,
+              "clause": "What did the United States score in the T5?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "T5 denotes the tied fifth-place value in the Place field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "United States",
+              "value": "United States",
+              "start": 13,
+              "end": 26,
+              "clause": "What did the United States score in the T5?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "United States is the country being asked about and appears in the Country field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "T5",
+              "value": "T5",
+              "start": 40,
+              "end": 42,
+              "clause": "What did the United States score in the T5?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "T5 denotes the tied fifth-place value in the Place field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "United States",
+              "value": "United States",
+              "start": 13,
+              "end": 26,
+              "clause": "What did the United States score in the T5?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "United States is the country being asked about and appears in the Country field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "T5",
+              "value": "T5",
+              "start": 40,
+              "end": 42,
+              "clause": "What did the United States score in the T5?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "T5 denotes the tied fifth-place value in the Place field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "United States"
+            ],
+            [
+              0,
+              0,
+              "T5"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "United States",
+          "value": "United States",
+          "start": 13,
+          "end": 26
+        },
+        {
+          "surface": "T5",
+          "value": "T5",
+          "start": 40,
+          "end": 42
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "United States",
+          "value": "United States",
+          "start": 13,
+          "end": 26,
+          "clause": "What did the United States score in the T5?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "United States is the country being asked about and appears in the Country field.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "T5",
+          "value": "T5",
+          "start": 40,
+          "end": 42,
+          "clause": "What did the United States score in the T5?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "T5 denotes the tied fifth-place value in the Place field.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          2,
+          0,
+          "United States"
+        ],
+        [
+          0,
+          0,
+          "T5"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9859
+}

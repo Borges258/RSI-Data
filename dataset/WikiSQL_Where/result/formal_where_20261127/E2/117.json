@@ -1,0 +1,767 @@
+{
+  "arm": "E2",
+  "position": 117,
+  "example_id": "test:8412:2-17256960-6",
+  "original_index": 8412,
+  "table_id": "2-17256960-6",
+  "question": "What country did Day & Age rank number 1 in Q prior to 2011?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        3,
+        2,
+        2011
+      ],
+      [
+        4,
+        1,
+        1
+      ],
+      [
+        0,
+        0,
+        "q"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      4,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      "Q"
+    ],
+    [
+      3,
+      2,
+      2011
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        "Q"
+      ],
+      [
+        3,
+        2,
+        2011
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "1",
+        "value": 1,
+        "start": 39,
+        "end": 40,
+        "clause": "What country did Day & Age rank number 1 in Q prior to 2011?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "'rank number 1' refers to the Rank field",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "Q",
+        "value": "Q",
+        "start": 44,
+        "end": 45,
+        "clause": "What country did Day & Age rank number 1 in Q prior to 2011?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "'in Q' names the Publication",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "2011",
+        "value": 2011,
+        "start": 55,
+        "end": 59,
+        "clause": "What country did Day & Age rank number 1 in Q prior to 2011?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "'prior to 2011' compares the Year field",
+        "operator": "<",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "1",
+        "value": "1",
+        "start": 39,
+        "end": 40
+      },
+      {
+        "surface": "Q",
+        "value": "Q",
+        "start": 44,
+        "end": 45
+      },
+      {
+        "surface": "2011",
+        "value": "2011",
+        "start": 55,
+        "end": 59
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What country did Day & Age rank number 1 in Q prior to 2011?",
+      "table": {
+        "header": [
+          "Publication",
+          "Country",
+          "Accolade",
+          "Year",
+          "Rank"
+        ],
+        "page_title": "Day & Age",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "real",
+          "real"
+        ],
+        "page_id": 17256960,
+        "id": "2-17256960-6",
+        "section_title": "Accolades",
+        "rows": [
+          [
+            "Q",
+            "UK",
+            "250 Best Albums of Q ' s Lifetime 1986–2010",
+            "2011",
+            "144"
+          ],
+          [
+            "Q",
+            "UK",
+            "50 Best Albums of the Year",
+            "2008",
+            "22"
+          ],
+          [
+            "New York Post",
+            "US",
+            "Top 10 Albums of the Year",
+            "2008",
+            "2"
+          ],
+          [
+            "Rolling Stone",
+            "US",
+            "Readers' Top 30 Albums of 2008",
+            "2008",
+            "1"
+          ],
+          [
+            "Rolling Stone",
+            "US",
+            "Top Album Covers of 2008",
+            "2008",
+            "1"
+          ],
+          [
+            "Rolling Stone",
+            "US",
+            "Most Underrated Album of the Decade: Readers' Poll",
+            "2010",
+            "6"
+          ]
+        ],
+        "caption": "Accolades",
+        "headers": [
+          "Publication",
+          "Country",
+          "Accolade",
+          "Year",
+          "Rank"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-17256960-6",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 3,
+          "conditions": [
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 39,
+              "end": 40
+            },
+            {
+              "surface": "Q",
+              "value": "Q",
+              "start": 44,
+              "end": 45
+            },
+            {
+              "surface": "2011",
+              "value": "2011",
+              "start": 55,
+              "end": 59
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "3d649875d6251e649aef3f811dda049cd874c9743537e84dcf4e31f7a369ead1",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4800,
+              "completion_tokens": 231,
+              "total_tokens": 5031,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 194
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 39,
+              "end": 40,
+              "clause": "What country did Day & Age rank number 1 in Q prior to 2011?"
+            },
+            {
+              "surface": "Q",
+              "value": "Q",
+              "start": 44,
+              "end": 45,
+              "clause": "What country did Day & Age rank number 1 in Q prior to 2011?"
+            },
+            {
+              "surface": "2011",
+              "value": "2011",
+              "start": 55,
+              "end": 59,
+              "clause": "What country did Day & Age rank number 1 in Q prior to 2011?"
+            }
+          ],
+          "count": 3
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 39,
+              "end": 40,
+              "clause": "What country did Day & Age rank number 1 in Q prior to 2011?"
+            },
+            {
+              "surface": "Q",
+              "value": "Q",
+              "start": 44,
+              "end": 45,
+              "clause": "What country did Day & Age rank number 1 in Q prior to 2011?"
+            },
+            {
+              "surface": "2011",
+              "value": "2011",
+              "start": 55,
+              "end": 59,
+              "clause": "What country did Day & Age rank number 1 in Q prior to 2011?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 39,
+              "end": 40,
+              "clause": "What country did Day & Age rank number 1 in Q prior to 2011?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'rank number 1' refers to the Rank field"
+            },
+            {
+              "surface": "Q",
+              "value": "Q",
+              "start": 44,
+              "end": 45,
+              "clause": "What country did Day & Age rank number 1 in Q prior to 2011?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'in Q' names the Publication"
+            },
+            {
+              "surface": "2011",
+              "value": "2011",
+              "start": 55,
+              "end": 59,
+              "clause": "What country did Day & Age rank number 1 in Q prior to 2011?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'prior to 2011' compares the Year field"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0085452a02019b4e605260271d42842973cfd009d40f702326b1e94e14fced22",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4917,
+              "completion_tokens": 119,
+              "total_tokens": 5036,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 57
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 39,
+              "end": 40,
+              "clause": "What country did Day & Age rank number 1 in Q prior to 2011?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'rank number 1' refers to the Rank field",
+              "operator": "="
+            },
+            {
+              "surface": "Q",
+              "value": "Q",
+              "start": 44,
+              "end": 45,
+              "clause": "What country did Day & Age rank number 1 in Q prior to 2011?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'in Q' names the Publication",
+              "operator": "="
+            },
+            {
+              "surface": "2011",
+              "value": "2011",
+              "start": 55,
+              "end": 59,
+              "clause": "What country did Day & Age rank number 1 in Q prior to 2011?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'prior to 2011' compares the Year field",
+              "operator": "<"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "5f98df2c9fad76752257fc3ac3d2759799b290a377ddf7bb6a584dfc191df9e2",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5018,
+              "completion_tokens": 14,
+              "total_tokens": 5032,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 39,
+              "end": 40,
+              "clause": "What country did Day & Age rank number 1 in Q prior to 2011?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'rank number 1' refers to the Rank field",
+              "operator": "="
+            },
+            {
+              "surface": "Q",
+              "value": "Q",
+              "start": 44,
+              "end": 45,
+              "clause": "What country did Day & Age rank number 1 in Q prior to 2011?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'in Q' names the Publication",
+              "operator": "="
+            },
+            {
+              "surface": "2011",
+              "value": "2011",
+              "start": 55,
+              "end": 59,
+              "clause": "What country did Day & Age rank number 1 in Q prior to 2011?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'prior to 2011' compares the Year field",
+              "operator": "<"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "66d01f5d1da3c4ea6c10c167aad8a379da25fd003917d168221354d2cf5be0fa",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4978,
+              "completion_tokens": 60,
+              "total_tokens": 5038,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 43
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 39,
+              "end": 40,
+              "clause": "What country did Day & Age rank number 1 in Q prior to 2011?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'rank number 1' refers to the Rank field",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Q",
+              "value": "Q",
+              "start": 44,
+              "end": 45,
+              "clause": "What country did Day & Age rank number 1 in Q prior to 2011?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'in Q' names the Publication",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2011",
+              "value": "2011",
+              "start": 55,
+              "end": 59,
+              "clause": "What country did Day & Age rank number 1 in Q prior to 2011?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'prior to 2011' compares the Year field",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1",
+              "value": 1,
+              "start": 39,
+              "end": 40,
+              "clause": "What country did Day & Age rank number 1 in Q prior to 2011?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'rank number 1' refers to the Rank field",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Q",
+              "value": "Q",
+              "start": 44,
+              "end": 45,
+              "clause": "What country did Day & Age rank number 1 in Q prior to 2011?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'in Q' names the Publication",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2011",
+              "value": 2011,
+              "start": 55,
+              "end": 59,
+              "clause": "What country did Day & Age rank number 1 in Q prior to 2011?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'prior to 2011' compares the Year field",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "1",
+              "value": 1,
+              "start": 39,
+              "end": 40,
+              "clause": "What country did Day & Age rank number 1 in Q prior to 2011?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'rank number 1' refers to the Rank field",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Q",
+              "value": "Q",
+              "start": 44,
+              "end": 45,
+              "clause": "What country did Day & Age rank number 1 in Q prior to 2011?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'in Q' names the Publication",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2011",
+              "value": 2011,
+              "start": 55,
+              "end": 59,
+              "clause": "What country did Day & Age rank number 1 in Q prior to 2011?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'prior to 2011' compares the Year field",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              "Q"
+            ],
+            [
+              3,
+              2,
+              2011
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "1",
+          "value": "1",
+          "start": 39,
+          "end": 40
+        },
+        {
+          "surface": "Q",
+          "value": "Q",
+          "start": 44,
+          "end": 45
+        },
+        {
+          "surface": "2011",
+          "value": "2011",
+          "start": 55,
+          "end": 59
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "1",
+          "value": 1,
+          "start": 39,
+          "end": 40,
+          "clause": "What country did Day & Age rank number 1 in Q prior to 2011?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "'rank number 1' refers to the Rank field",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "Q",
+          "value": "Q",
+          "start": 44,
+          "end": 45,
+          "clause": "What country did Day & Age rank number 1 in Q prior to 2011?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "'in Q' names the Publication",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "2011",
+          "value": 2011,
+          "start": 55,
+          "end": 59,
+          "clause": "What country did Day & Age rank number 1 in Q prior to 2011?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "'prior to 2011' compares the Year field",
+          "operator": "<",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 3,
+      "conds": [
+        [
+          4,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          "Q"
+        ],
+        [
+          3,
+          2,
+          2011
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 12125
+}

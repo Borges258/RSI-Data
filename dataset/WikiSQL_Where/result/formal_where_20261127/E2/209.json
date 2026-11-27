@@ -1,0 +1,459 @@
+{
+  "arm": "E2",
+  "position": 209,
+  "example_id": "test:4734:2-10577744-3",
+  "original_index": 4734,
+  "table_id": "2-10577744-3",
+  "question": "What is the highest ranked player who opposed Westmeath?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        5,
+        0,
+        "westmeath"
+      ]
+    ],
+    "agg": 1
+  },
+  "prediction_conds": [
+    [
+      5,
+      0,
+      "Westmeath"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        5,
+        0,
+        "Westmeath"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Westmeath",
+        "value": "Westmeath",
+        "start": 46,
+        "end": 55,
+        "clause": "What is the highest ranked player who opposed Westmeath?",
+        "columnIndex": 5,
+        "columnCandidates": [
+          5
+        ],
+        "columnMatchReason": "The wording 'opposed Westmeath' refers to the opponent, matching the Opposition field; a row has Opposition = Westmeath.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Westmeath",
+        "value": "Westmeath",
+        "start": 46,
+        "end": 55
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the highest ranked player who opposed Westmeath?",
+      "table": {
+        "header": [
+          "Rank",
+          "Player",
+          "County",
+          "Tally",
+          "Total",
+          "Opposition"
+        ],
+        "page_title": "1982 All-Ireland Senior Hurling Championship",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 10577744,
+        "id": "2-10577744-3",
+        "section_title": "Single game",
+        "rows": [
+          [
+            "1",
+            "P. J. Molloy",
+            "Galway",
+            "2–9",
+            "15",
+            "Antrim"
+          ],
+          [
+            "1",
+            "Billy Fitzpatrick",
+            "Kilkenny",
+            "2–7",
+            "13",
+            "Westmeath"
+          ],
+          [
+            "3",
+            "Seánie O'Leary",
+            "Cork",
+            "4–0",
+            "12",
+            "Waterford"
+          ],
+          [
+            "3",
+            "Michael Ryan",
+            "Westmeath",
+            "2–6",
+            "12",
+            "Dublin"
+          ],
+          [
+            "3",
+            "Tony O'Sullivan",
+            "Cork",
+            "0–12",
+            "12",
+            "Waterford"
+          ],
+          [
+            "6",
+            "Pádraig Horan",
+            "Offaly",
+            "2–5",
+            "11",
+            "Laois"
+          ],
+          [
+            "7",
+            "Pádraig Horan",
+            "Offaly",
+            "1–7",
+            "10",
+            "Wexford"
+          ],
+          [
+            "8",
+            "Noel Lane",
+            "Galway",
+            "2–3",
+            "9",
+            "Antrim"
+          ],
+          [
+            "8",
+            "Christy Heffernan",
+            "Kilkenny",
+            "2–3",
+            "9",
+            "Cork"
+          ],
+          [
+            "8",
+            "Pat Horgan",
+            "Cork",
+            "0–9",
+            "9",
+            "Waterford"
+          ]
+        ],
+        "caption": "Single game",
+        "headers": [
+          "Rank",
+          "Player",
+          "County",
+          "Tally",
+          "Total",
+          "Opposition"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-10577744-3",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Westmeath",
+              "value": "Westmeath",
+              "start": 46,
+              "end": 55
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b026109c6dc012cdeb180aa094b2fba6974745b121dbf7b60ffd2283ddfa2aaa",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4890,
+              "completion_tokens": 21,
+              "total_tokens": 4911,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Westmeath",
+              "value": "Westmeath",
+              "start": 46,
+              "end": 55,
+              "clause": "What is the highest ranked player who opposed Westmeath?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Westmeath",
+              "value": "Westmeath",
+              "start": 46,
+              "end": 55,
+              "clause": "What is the highest ranked player who opposed Westmeath?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Westmeath",
+              "value": "Westmeath",
+              "start": 46,
+              "end": 55,
+              "clause": "What is the highest ranked player who opposed Westmeath?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The wording 'opposed Westmeath' refers to the opponent, matching the Opposition field; a row has Opposition = Westmeath."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "3a7d346199a4b9c61589290d7bf74b3ab3b0f015cbb0d04efbff9bf7ea54f7d3",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4927,
+              "completion_tokens": 49,
+              "total_tokens": 4976,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Westmeath",
+              "value": "Westmeath",
+              "start": 46,
+              "end": 55,
+              "clause": "What is the highest ranked player who opposed Westmeath?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The wording 'opposed Westmeath' refers to the opponent, matching the Opposition field; a row has Opposition = Westmeath.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f64f44ab4456a5c73988368cead0eccacfc8f28fd62eb03b2efd52ce96707b9f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5000,
+              "completion_tokens": 9,
+              "total_tokens": 5009,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Westmeath",
+              "value": "Westmeath",
+              "start": 46,
+              "end": 55,
+              "clause": "What is the highest ranked player who opposed Westmeath?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The wording 'opposed Westmeath' refers to the opponent, matching the Opposition field; a row has Opposition = Westmeath.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "02b1cfbb840a92a218e08c9cc23cb1aa3682ebf9117fa04661db4cc8b0a9c7b5",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4951,
+              "completion_tokens": 12,
+              "total_tokens": 4963,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Westmeath",
+              "value": "Westmeath",
+              "start": 46,
+              "end": 55,
+              "clause": "What is the highest ranked player who opposed Westmeath?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The wording 'opposed Westmeath' refers to the opponent, matching the Opposition field; a row has Opposition = Westmeath.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Westmeath",
+              "value": "Westmeath",
+              "start": 46,
+              "end": 55,
+              "clause": "What is the highest ranked player who opposed Westmeath?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The wording 'opposed Westmeath' refers to the opponent, matching the Opposition field; a row has Opposition = Westmeath.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Westmeath",
+              "value": "Westmeath",
+              "start": 46,
+              "end": 55,
+              "clause": "What is the highest ranked player who opposed Westmeath?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The wording 'opposed Westmeath' refers to the opponent, matching the Opposition field; a row has Opposition = Westmeath.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              5,
+              0,
+              "Westmeath"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Westmeath",
+          "value": "Westmeath",
+          "start": 46,
+          "end": 55
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Westmeath",
+          "value": "Westmeath",
+          "start": 46,
+          "end": 55,
+          "clause": "What is the highest ranked player who opposed Westmeath?",
+          "columnIndex": 5,
+          "columnCandidates": [
+            5
+          ],
+          "columnMatchReason": "The wording 'opposed Westmeath' refers to the opponent, matching the Opposition field; a row has Opposition = Westmeath.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          5,
+          0,
+          "Westmeath"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 10172
+}

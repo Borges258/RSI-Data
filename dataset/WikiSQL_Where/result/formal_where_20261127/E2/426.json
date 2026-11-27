@@ -1,0 +1,592 @@
+{
+  "arm": "E2",
+  "position": 426,
+  "example_id": "test:11535:2-11622496-3",
+  "original_index": 11535,
+  "table_id": "2-11622496-3",
+  "question": "What is the total number of events that Al Geiberger has played with earnings larger than 527,033?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        1,
+        0,
+        "al geiberger"
+      ],
+      [
+        3,
+        1,
+        "527,033"
+      ]
+    ],
+    "agg": 3
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "Al Geiberger"
+    ],
+    [
+      3,
+      1,
+      "527,033"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "Al Geiberger"
+      ],
+      [
+        3,
+        1,
+        "527,033"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Al Geiberger",
+        "value": "Al Geiberger",
+        "start": 40,
+        "end": 52,
+        "clause": "What is the total number of events that Al Geiberger has played with earnings larger than 527",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The person named in the question corresponds to the Player field.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "527,033",
+        "value": "527,033",
+        "start": 90,
+        "end": 97,
+        "clause": "What is the total number of events that Al Geiberger has played with earnings larger than 527,033?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The threshold is explicitly described as earnings, matching Earnings ( $ ).",
+        "operator": ">",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Al Geiberger",
+        "value": "Al Geiberger",
+        "start": 40,
+        "end": 52
+      },
+      {
+        "surface": "527,033",
+        "value": "527,033",
+        "start": 90,
+        "end": 97
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the total number of events that Al Geiberger has played with earnings larger than 527,033?",
+      "table": {
+        "header": [
+          "Rank",
+          "Player",
+          "Country",
+          "Earnings ( $ )",
+          "Events",
+          "Wins"
+        ],
+        "page_title": "1989 Senior PGA Tour",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "real",
+          "real",
+          "real"
+        ],
+        "page_id": 11622496,
+        "id": "2-11622496-3",
+        "section_title": "Leaders",
+        "rows": [
+          [
+            "1",
+            "Bob Charles",
+            "New Zealand",
+            "725,887",
+            "27",
+            "5"
+          ],
+          [
+            "2",
+            "Orville Moody",
+            "United States",
+            "647,985",
+            "31",
+            "2"
+          ],
+          [
+            "3",
+            "Al Geiberger",
+            "United States",
+            "527,033",
+            "26",
+            "1"
+          ],
+          [
+            "4",
+            "Gary Player",
+            "South Africa",
+            "514,116",
+            "18",
+            "2"
+          ],
+          [
+            "5",
+            "Dave Hill",
+            "United States",
+            "488,541",
+            "26",
+            "2"
+          ]
+        ],
+        "caption": "Leaders",
+        "headers": [
+          "Rank",
+          "Player",
+          "Country",
+          "Earnings ( $ )",
+          "Events",
+          "Wins"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-11622496-3",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "Al Geiberger",
+              "value": "Al Geiberger",
+              "start": 40,
+              "end": 52
+            },
+            {
+              "surface": "527,033",
+              "value": "527,033",
+              "start": 90,
+              "end": 97
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "68e6f4d6894c243edebc3bc17f226ff6e69135fcce042906184273a94f4212ae",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4775,
+              "completion_tokens": 83,
+              "total_tokens": 4858,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 46
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Al Geiberger",
+              "value": "Al Geiberger",
+              "start": 40,
+              "end": 52,
+              "clause": "What is the total number of events that Al Geiberger has played with earnings larger than 527"
+            },
+            {
+              "surface": "527,033",
+              "value": "527,033",
+              "start": 90,
+              "end": 97,
+              "clause": "What is the total number of events that Al Geiberger has played with earnings larger than 527,033?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Al Geiberger",
+              "value": "Al Geiberger",
+              "start": 40,
+              "end": 52,
+              "clause": "What is the total number of events that Al Geiberger has played with earnings larger than 527"
+            },
+            {
+              "surface": "527,033",
+              "value": "527,033",
+              "start": 90,
+              "end": 97,
+              "clause": "What is the total number of events that Al Geiberger has played with earnings larger than 527,033?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Al Geiberger",
+              "value": "Al Geiberger",
+              "start": 40,
+              "end": 52,
+              "clause": "What is the total number of events that Al Geiberger has played with earnings larger than 527",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The person named in the question corresponds to the Player field."
+            },
+            {
+              "surface": "527,033",
+              "value": "527,033",
+              "start": 90,
+              "end": 97,
+              "clause": "What is the total number of events that Al Geiberger has played with earnings larger than 527,033?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The threshold is explicitly described as earnings, matching Earnings ( $ )."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "1295ffac6621e4761cd3602627b25281f3e89db4d2e05453b6347c94b46ce408",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4869,
+              "completion_tokens": 50,
+              "total_tokens": 4919,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Al Geiberger",
+              "value": "Al Geiberger",
+              "start": 40,
+              "end": 52,
+              "clause": "What is the total number of events that Al Geiberger has played with earnings larger than 527",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The person named in the question corresponds to the Player field.",
+              "operator": "="
+            },
+            {
+              "surface": "527,033",
+              "value": "527,033",
+              "start": 90,
+              "end": 97,
+              "clause": "What is the total number of events that Al Geiberger has played with earnings larger than 527,033?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The threshold is explicitly described as earnings, matching Earnings ( $ ).",
+              "operator": ">"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "629afddcacc4257a9eb399553c2fd3558b6527acf3466354b751a8c27906eab0",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4954,
+              "completion_tokens": 11,
+              "total_tokens": 4965,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Al Geiberger",
+              "value": "Al Geiberger",
+              "start": 40,
+              "end": 52,
+              "clause": "What is the total number of events that Al Geiberger has played with earnings larger than 527",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The person named in the question corresponds to the Player field.",
+              "operator": "="
+            },
+            {
+              "surface": "527,033",
+              "value": "527,033",
+              "start": 90,
+              "end": 97,
+              "clause": "What is the total number of events that Al Geiberger has played with earnings larger than 527,033?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The threshold is explicitly described as earnings, matching Earnings ( $ ).",
+              "operator": ">"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "58d9e0f85accce3a7bfef9ad88ae368ebcbbb47a57cd8a8c391ec98bfe63c713",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4909,
+              "completion_tokens": 17,
+              "total_tokens": 4926,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Al Geiberger",
+              "value": "Al Geiberger",
+              "start": 40,
+              "end": 52,
+              "clause": "What is the total number of events that Al Geiberger has played with earnings larger than 527",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The person named in the question corresponds to the Player field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "527,033",
+              "value": "527,033",
+              "start": 90,
+              "end": 97,
+              "clause": "What is the total number of events that Al Geiberger has played with earnings larger than 527,033?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The threshold is explicitly described as earnings, matching Earnings ( $ ).",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Al Geiberger",
+              "value": "Al Geiberger",
+              "start": 40,
+              "end": 52,
+              "clause": "What is the total number of events that Al Geiberger has played with earnings larger than 527",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The person named in the question corresponds to the Player field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "527,033",
+              "value": "527,033",
+              "start": 90,
+              "end": 97,
+              "clause": "What is the total number of events that Al Geiberger has played with earnings larger than 527,033?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The threshold is explicitly described as earnings, matching Earnings ( $ ).",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Al Geiberger",
+              "value": "Al Geiberger",
+              "start": 40,
+              "end": 52,
+              "clause": "What is the total number of events that Al Geiberger has played with earnings larger than 527",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The person named in the question corresponds to the Player field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "527,033",
+              "value": "527,033",
+              "start": 90,
+              "end": 97,
+              "clause": "What is the total number of events that Al Geiberger has played with earnings larger than 527,033?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The threshold is explicitly described as earnings, matching Earnings ( $ ).",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              "Al Geiberger"
+            ],
+            [
+              3,
+              1,
+              "527,033"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Al Geiberger",
+          "value": "Al Geiberger",
+          "start": 40,
+          "end": 52
+        },
+        {
+          "surface": "527,033",
+          "value": "527,033",
+          "start": 90,
+          "end": 97
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Al Geiberger",
+          "value": "Al Geiberger",
+          "start": 40,
+          "end": 52,
+          "clause": "What is the total number of events that Al Geiberger has played with earnings larger than 527",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The person named in the question corresponds to the Player field.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "527,033",
+          "value": "527,033",
+          "start": 90,
+          "end": 97,
+          "clause": "What is the total number of events that Al Geiberger has played with earnings larger than 527,033?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The threshold is explicitly described as earnings, matching Earnings ( $ ).",
+          "operator": ">",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          1,
+          0,
+          "Al Geiberger"
+        ],
+        [
+          3,
+          1,
+          "527,033"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9890
+}

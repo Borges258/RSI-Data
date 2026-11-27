@@ -1,0 +1,451 @@
+{
+  "arm": "E2",
+  "position": 395,
+  "example_id": "test:15654:2-12233253-1",
+  "original_index": 15654,
+  "table_id": "2-12233253-1",
+  "question": "Who all played mixed doubles in 2010?",
+  "gold_sql": {
+    "sel": 5,
+    "conds": [
+      [
+        0,
+        0,
+        2010
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      2010
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        2010
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "2010",
+        "value": 2010,
+        "start": 32,
+        "end": 36,
+        "clause": "Who all played mixed doubles in 2010?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "The condition 'in 2010' refers to the Year field, and the Year column contains 2010.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "2010",
+        "value": "2010",
+        "start": 32,
+        "end": 36
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Who all played mixed doubles in 2010?",
+      "table": {
+        "header": [
+          "Year",
+          "Men's singles",
+          "Women's singles",
+          "Men's doubles",
+          "Women's doubles",
+          "Mixed doubles"
+        ],
+        "page_title": "Estonian International",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 12233253,
+        "id": "2-12233253-1",
+        "section_title": "Previous winners",
+        "rows": [
+          [
+            "2004",
+            "Yuichi Ikeda",
+            "Kati Tolmoff",
+            "Theodoros Vekos George Patis",
+            "Kati Tolmoff Solenn Pasturel",
+            "Ilkka Nyqvist Leena Löytömäki"
+          ],
+          [
+            "2005",
+            "Jean-Michel Lefort",
+            "Kati Tolmoff",
+            "Benoit Azzopard Baptiste Careme",
+            "Piret Hamer Helen Reino",
+            "Jean-Michel Lefort Akvile Stapusaityte"
+          ],
+          [
+            "2006",
+            "Kęstutis Navickas",
+            "Kati Tolmoff",
+            "Andrej Ashmarin Anton Nazarenko",
+            "Claudia Vogelgsang Caren Hückstädt",
+            "Adam Cwalina Malgorzata Kurdelska"
+          ],
+          [
+            "2007",
+            "Kristian Nielsen",
+            "Kati Tolmoff",
+            "Tuomas Nuorteva Mikko Vikman",
+            "Lucia Tavera Sandra Chirlaque",
+            "Anton Nazarenko Evgenia Antipova"
+          ],
+          [
+            "2008",
+            "No competition",
+            "No competition",
+            "No competition",
+            "No competition",
+            "No competition"
+          ],
+          [
+            "2009",
+            "Ville Lång",
+            "Tatjana Bibik",
+            "Naoki Kawamae Shoji Sato",
+            "Cai Jiani Rong Bo",
+            "Zhang Yi Cai Jiani"
+          ],
+          [
+            "2010",
+            "Cancelled",
+            "Cancelled",
+            "Cancelled",
+            "Cancelled",
+            "Cancelled"
+          ],
+          [
+            "2011",
+            "Ville Lång",
+            "Michelle Kit Ying Chan",
+            "Peter Käsbauer Josh Zurwonne",
+            "Selena Piek Iris Tabeling",
+            "Jacco Arends Selena Piek"
+          ],
+          [
+            "2012",
+            "Ville Lång",
+            "Judith Meulendijks",
+            "Laurent Constantin Sebastien Vincent",
+            "Selena Piek Iris Tabeling",
+            "Dave Khodabux Selena Piek"
+          ]
+        ],
+        "caption": "Previous winners",
+        "headers": [
+          "Year",
+          "Men's singles",
+          "Women's singles",
+          "Men's doubles",
+          "Women's doubles",
+          "Mixed doubles"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-12233253-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "2010",
+              "value": "2010",
+              "start": 32,
+              "end": 36
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "2ce70df6689fee722ba07d56ab910380ce1ec98fa34bccc276122b0ccaef7092",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5020,
+              "completion_tokens": 19,
+              "total_tokens": 5039,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2010",
+              "value": "2010",
+              "start": 32,
+              "end": 36,
+              "clause": "Who all played mixed doubles in 2010?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "2010",
+              "value": "2010",
+              "start": 32,
+              "end": 36,
+              "clause": "Who all played mixed doubles in 2010?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2010",
+              "value": "2010",
+              "start": 32,
+              "end": 36,
+              "clause": "Who all played mixed doubles in 2010?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The condition 'in 2010' refers to the Year field, and the Year column contains 2010."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "8310868a3073b6ad5fbf962d1b4b9dce8d09ab080f47800f01703183215e494d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5053,
+              "completion_tokens": 44,
+              "total_tokens": 5097,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2010",
+              "value": "2010",
+              "start": 32,
+              "end": 36,
+              "clause": "Who all played mixed doubles in 2010?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The condition 'in 2010' refers to the Year field, and the Year column contains 2010.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "195df40c7868b7278bfba78d0457716b39402d51467c2a8f03bd9d80906ef68f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5121,
+              "completion_tokens": 9,
+              "total_tokens": 5130,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2010",
+              "value": "2010",
+              "start": 32,
+              "end": 36,
+              "clause": "Who all played mixed doubles in 2010?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The condition 'in 2010' refers to the Year field, and the Year column contains 2010.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "38478d27dbd569b7fbc2401d08bac0ed7994aaf8de75bce49549d852b811a0bb",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5072,
+              "completion_tokens": 11,
+              "total_tokens": 5083,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2010",
+              "value": "2010",
+              "start": 32,
+              "end": 36,
+              "clause": "Who all played mixed doubles in 2010?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The condition 'in 2010' refers to the Year field, and the Year column contains 2010.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2010",
+              "value": 2010,
+              "start": 32,
+              "end": 36,
+              "clause": "Who all played mixed doubles in 2010?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The condition 'in 2010' refers to the Year field, and the Year column contains 2010.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "2010",
+              "value": 2010,
+              "start": 32,
+              "end": 36,
+              "clause": "Who all played mixed doubles in 2010?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The condition 'in 2010' refers to the Year field, and the Year column contains 2010.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              2010
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "2010",
+          "value": "2010",
+          "start": 32,
+          "end": 36
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "2010",
+          "value": 2010,
+          "start": 32,
+          "end": 36,
+          "clause": "Who all played mixed doubles in 2010?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "The condition 'in 2010' refers to the Year field, and the Year column contains 2010.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          0,
+          0,
+          2010
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7094
+}

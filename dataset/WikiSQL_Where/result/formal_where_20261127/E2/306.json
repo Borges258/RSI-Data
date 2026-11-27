@@ -1,0 +1,411 @@
+{
+  "arm": "E2",
+  "position": 306,
+  "example_id": "test:385:1-11944282-1",
+  "original_index": 385,
+  "table_id": "1-11944282-1",
+  "question": "What is the total amount of allied-unrelated where the component is human capital?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        0,
+        0,
+        "Human Capital"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "Human Capital"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "Human Capital"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "human capital",
+        "value": "Human Capital",
+        "start": 68,
+        "end": 81,
+        "clause": "What is the total amount of allied-unrelated where the component is human capital?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "The question explicitly says the component is human capital; 'Component' is header index 0 and contains 'Human Capital'.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "human capital",
+        "value": "Human Capital",
+        "start": 68,
+        "end": 81
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the total amount of allied-unrelated where the component is human capital?",
+      "table": {
+        "header": [
+          "Component",
+          "Integrated",
+          "Allied-Related",
+          "Allied-Unrelated",
+          "Holding"
+        ],
+        "page_title": "Operating model",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "id": "1-11944282-1",
+        "section_title": "Origins in corporate strategy",
+        "caption": "Origins in corporate strategy",
+        "rows": [
+          [
+            "Business Strategy",
+            "One",
+            "Many",
+            "Many",
+            "Many"
+          ],
+          [
+            "Customers",
+            "Same",
+            "Shared",
+            "Some shared",
+            "Many"
+          ],
+          [
+            "Corporate Role",
+            "Resource allocations",
+            "Define Protocols",
+            "Define Protocols",
+            "Financial roll-ups and analysis"
+          ],
+          [
+            "Human Capital",
+            "Common",
+            "Some Shared",
+            "Some Shared",
+            "Independent"
+          ],
+          [
+            "IT Systems",
+            "Common",
+            "Common",
+            "Few, interconnected",
+            "Different"
+          ]
+        ],
+        "name": "table_11944282_1",
+        "headers": [
+          "Component",
+          "Integrated",
+          "Allied-Related",
+          "Allied-Unrelated",
+          "Holding"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-11944282-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "human capital",
+              "value": "Human Capital",
+              "start": 68,
+              "end": 81
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "7b3ae173dd9199298eaa761b3c88717995e609519eb29761f0af450b4acc1e07",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4755,
+              "completion_tokens": 19,
+              "total_tokens": 4774,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "human capital",
+              "value": "Human Capital",
+              "start": 68,
+              "end": 81,
+              "clause": "What is the total amount of allied-unrelated where the component is human capital?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "human capital",
+              "value": "Human Capital",
+              "start": 68,
+              "end": 81,
+              "clause": "What is the total amount of allied-unrelated where the component is human capital?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "human capital",
+              "value": "Human Capital",
+              "start": 68,
+              "end": 81,
+              "clause": "What is the total amount of allied-unrelated where the component is human capital?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly says the component is human capital; 'Component' is header index 0 and contains 'Human Capital'."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "150e9a60d7985bb624b7afb2405e3bf4afde78104380d9f8aaa7168dab29f6d0",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4794,
+              "completion_tokens": 45,
+              "total_tokens": 4839,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "human capital",
+              "value": "Human Capital",
+              "start": 68,
+              "end": 81,
+              "clause": "What is the total amount of allied-unrelated where the component is human capital?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly says the component is human capital; 'Component' is header index 0 and contains 'Human Capital'.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "8ab9106b853fc8e20ca41109c09b68f85378193216451356f7c53e9b8e850805",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4864,
+              "completion_tokens": 9,
+              "total_tokens": 4873,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "human capital",
+              "value": "Human Capital",
+              "start": 68,
+              "end": 81,
+              "clause": "What is the total amount of allied-unrelated where the component is human capital?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly says the component is human capital; 'Component' is header index 0 and contains 'Human Capital'.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "fbe319ad021345114e72c794f512b383e1358d4d36037a9b710092e6e5e26285",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4815,
+              "completion_tokens": 11,
+              "total_tokens": 4826,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "human capital",
+              "value": "Human Capital",
+              "start": 68,
+              "end": 81,
+              "clause": "What is the total amount of allied-unrelated where the component is human capital?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly says the component is human capital; 'Component' is header index 0 and contains 'Human Capital'.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "human capital",
+              "value": "Human Capital",
+              "start": 68,
+              "end": 81,
+              "clause": "What is the total amount of allied-unrelated where the component is human capital?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly says the component is human capital; 'Component' is header index 0 and contains 'Human Capital'.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "human capital",
+              "value": "Human Capital",
+              "start": 68,
+              "end": 81,
+              "clause": "What is the total amount of allied-unrelated where the component is human capital?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly says the component is human capital; 'Component' is header index 0 and contains 'Human Capital'.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              "Human Capital"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "human capital",
+          "value": "Human Capital",
+          "start": 68,
+          "end": 81
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "human capital",
+          "value": "Human Capital",
+          "start": 68,
+          "end": 81,
+          "clause": "What is the total amount of allied-unrelated where the component is human capital?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "The question explicitly says the component is human capital; 'Component' is header index 0 and contains 'Human Capital'.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          0,
+          0,
+          "Human Capital"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7375
+}

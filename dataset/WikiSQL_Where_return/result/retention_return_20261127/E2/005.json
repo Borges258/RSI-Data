@@ -1,0 +1,472 @@
+{
+  "arm": "E2",
+  "position": 5,
+  "example_id": "test:277:1-11622896-1",
+  "original_index": 277,
+  "table_id": "1-11622896-1",
+  "question": "What is the largest 1st prize( $ ) at the South Carolina location?",
+  "gold_sql": {
+    "sel": 6,
+    "conds": [
+      [
+        2,
+        0,
+        "South Carolina"
+      ]
+    ],
+    "agg": 1
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "South Carolina"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "South Carolina"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "South Carolina",
+        "value": "South Carolina",
+        "start": 42,
+        "end": 56,
+        "clause": "What is the largest 1st prize( $ ) at the South Carolina location?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The question explicitly identifies South Carolina as a location, matching the Location header and its row value.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "South Carolina",
+        "value": "South Carolina",
+        "start": 42,
+        "end": 56
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the largest 1st prize( $ ) at the South Carolina location?",
+      "table": {
+        "header": [
+          "Date",
+          "Tournament",
+          "Location",
+          "Purse( $ )",
+          "Winner",
+          "Score",
+          "1st Prize( $ )"
+        ],
+        "page_title": "1982 Senior PGA Tour",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "real",
+          "text",
+          "text",
+          "real"
+        ],
+        "id": "1-11622896-1",
+        "section_title": "Tournament results",
+        "caption": "Tournament results",
+        "rows": [
+          [
+            "Apr 4",
+            "Michelob Senior Classic",
+            "Florida",
+            125000,
+            "Don January (4)",
+            "278 (-10)",
+            20000
+          ],
+          [
+            "Jun 13",
+            "Marlboro Classic",
+            "Massachusetts",
+            150000,
+            "Arnold Palmer (3)",
+            "276 (-8)",
+            25000
+          ],
+          [
+            "Jun 27",
+            "Peter Jackson Champions",
+            "Canada",
+            200000,
+            "Bob Goalby (2)",
+            "273 (-15)",
+            32500
+          ],
+          [
+            "Jul 11",
+            "U.S. Senior Open",
+            "Oregon",
+            150000,
+            "Miller Barber (4)",
+            "282 (-2)",
+            28648
+          ],
+          [
+            "Aug 15",
+            "Denver Post Champions of Golf",
+            "Colorado",
+            150000,
+            "Arnold Palmer (4)",
+            "275 (-5)",
+            25000
+          ],
+          [
+            "Aug 22",
+            "Greater Syracuse Senior's Pro Golf Classic",
+            "New York",
+            150000,
+            "Bill Collins (1)",
+            "285 (1)",
+            25000
+          ],
+          [
+            "Aug 28",
+            "Shootout at Jeremy Ranch",
+            "Utah",
+            150000,
+            "Billy Casper (1)",
+            "279 (-9)",
+            25000
+          ],
+          [
+            "Sep 19",
+            "Merrill Lynch/Golf Digest Commemorative Pro-Am",
+            "Rhode Island",
+            125000,
+            "Billy Casper (2)",
+            "206 (-10)",
+            22500
+          ],
+          [
+            "Oct 17",
+            "Suntree Classic",
+            "Florida",
+            135000,
+            "Miller Barber (5)",
+            "264 (-24)",
+            22500
+          ],
+          [
+            "Oct 24",
+            "Hilton Head Seniors International",
+            "South Carolina",
+            112500,
+            "Miller Barber (6) Dan Sikes (1)",
+            "138 (-6)",
+            15000
+          ]
+        ],
+        "name": "table_11622896_1",
+        "headers": [
+          "Date",
+          "Tournament",
+          "Location",
+          "Purse( $ )",
+          "Winner",
+          "Score",
+          "1st Prize( $ )"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-11622896-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "South Carolina",
+              "value": "South Carolina",
+              "start": 42,
+              "end": 56
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "3458d8b4540c7420cb5e97e0ac6ac375dbb0c3aae45fdc7204c58610ecb333bb",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5013,
+              "completion_tokens": 19,
+              "total_tokens": 5032,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "South Carolina",
+              "value": "South Carolina",
+              "start": 42,
+              "end": 56,
+              "clause": "What is the largest 1st prize( $ ) at the South Carolina location?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "South Carolina",
+              "value": "South Carolina",
+              "start": 42,
+              "end": 56,
+              "clause": "What is the largest 1st prize( $ ) at the South Carolina location?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "South Carolina",
+              "value": "South Carolina",
+              "start": 42,
+              "end": 56,
+              "clause": "What is the largest 1st prize( $ ) at the South Carolina location?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies South Carolina as a location, matching the Location header and its row value."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "dca28d662c0b0307cd94edf317d53acec2f9efd1bc807634030643c14510664f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5053,
+              "completion_tokens": 40,
+              "total_tokens": 5093,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "South Carolina",
+              "value": "South Carolina",
+              "start": 42,
+              "end": 56,
+              "clause": "What is the largest 1st prize( $ ) at the South Carolina location?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies South Carolina as a location, matching the Location header and its row value.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0fccc28411427a90c84d7915f7e89ec640f457d6f3a6b61de4cd5aa94fb259cb",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5117,
+              "completion_tokens": 9,
+              "total_tokens": 5126,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "South Carolina",
+              "value": "South Carolina",
+              "start": 42,
+              "end": 56,
+              "clause": "What is the largest 1st prize( $ ) at the South Carolina location?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies South Carolina as a location, matching the Location header and its row value.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "650c590a9f4c218460c5d16c90be02a019b42164e51bb2b5180404f45d904ffa",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5068,
+              "completion_tokens": 11,
+              "total_tokens": 5079,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "South Carolina",
+              "value": "South Carolina",
+              "start": 42,
+              "end": 56,
+              "clause": "What is the largest 1st prize( $ ) at the South Carolina location?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies South Carolina as a location, matching the Location header and its row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "South Carolina",
+              "value": "South Carolina",
+              "start": 42,
+              "end": 56,
+              "clause": "What is the largest 1st prize( $ ) at the South Carolina location?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies South Carolina as a location, matching the Location header and its row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "South Carolina",
+              "value": "South Carolina",
+              "start": 42,
+              "end": 56,
+              "clause": "What is the largest 1st prize( $ ) at the South Carolina location?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies South Carolina as a location, matching the Location header and its row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "South Carolina"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "South Carolina",
+          "value": "South Carolina",
+          "start": 42,
+          "end": 56
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "South Carolina",
+          "value": "South Carolina",
+          "start": 42,
+          "end": 56,
+          "clause": "What is the largest 1st prize( $ ) at the South Carolina location?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The question explicitly identifies South Carolina as a location, matching the Location header and its row value.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          2,
+          0,
+          "South Carolina"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8515
+}

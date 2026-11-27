@@ -1,0 +1,2497 @@
+{
+  "arm": "E3",
+  "position": 281,
+  "example_id": "test:11560:2-10790651-4",
+  "original_index": 11560,
+  "table_id": "2-10790651-4",
+  "question": "How many people were in attendance at Glenferrie Oval?",
+  "gold_sql": {
+    "sel": 5,
+    "conds": [
+      [
+        4,
+        0,
+        "glenferrie oval"
+      ]
+    ],
+    "agg": 2
+  },
+  "prediction_conds": [
+    [
+      4,
+      0,
+      "Glenferrie Oval"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        0,
+        "Glenferrie Oval"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Glenferrie Oval",
+        "value": "Glenferrie Oval",
+        "start": 38,
+        "end": 53,
+        "clause": "How many people were in attendance at Glenferrie Oval?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The location phrase 'at Glenferrie Oval' denotes the Venue field, and the exact venue appears in that column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Glenferrie Oval",
+        "value": "Glenferrie Oval",
+        "start": 38,
+        "end": 53
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "How many people were in attendance at Glenferrie Oval?",
+      "table": {
+        "header": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ],
+        "page_title": "1935 VFL season",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 10790651,
+        "id": "2-10790651-4",
+        "section_title": "Round 4",
+        "rows": [
+          [
+            "Hawthorn",
+            "6.17 (53)",
+            "St Kilda",
+            "16.8 (104)",
+            "Glenferrie Oval",
+            "11,000",
+            "18 May 1935"
+          ],
+          [
+            "Fitzroy",
+            "18.16 (124)",
+            "North Melbourne",
+            "10.14 (74)",
+            "Brunswick Street Oval",
+            "13,000",
+            "18 May 1935"
+          ],
+          [
+            "Richmond",
+            "18.20 (128)",
+            "Melbourne",
+            "14.8 (92)",
+            "Punt Road Oval",
+            "15,000",
+            "18 May 1935"
+          ],
+          [
+            "Footscray",
+            "7.8 (50)",
+            "Essendon",
+            "16.5 (101)",
+            "Western Oval",
+            "17,000",
+            "18 May 1935"
+          ],
+          [
+            "Geelong",
+            "14.17 (101)",
+            "Collingwood",
+            "17.13 (115)",
+            "Corio Oval",
+            "13,000",
+            "18 May 1935"
+          ],
+          [
+            "South Melbourne",
+            "13.19 (97)",
+            "Carlton",
+            "14.6 (90)",
+            "Lake Oval",
+            "35,000",
+            "18 May 1935"
+          ]
+        ],
+        "caption": "Round 4",
+        "headers": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ]
+      },
+      "structure": "{\"id\":\"wikisql-where-2-10790651-4\",\"elements\":[{\"id\":\"g-eq\",\"name\":\"等值比较 =\",\"type\":\"model\",\"color\":\"#73d13d\",\"x\":80,\"y\":80,\"select\":false,\"locked\":false,\"pendant\":{\"data\":{\"type\":\"model\",\"detail\":{\"id\":\"g-eq\",\"knowledge\":{\"id\":\"g-eq\",\"title\":\"等值比较 =\",\"kind\":\"OPERATOR\",\"source\":\"HUMAN\",\"scope\":\"GLOBAL\",\"trust\":\"EXPLICIT_RULE\",\"support\":\"SUPPORTED\",\"statement\":\"明确的属性等值表达可映射到 WikiSQL 运算符 0；不得只凭介词猜测字段。\",\"cues\":[\"is\",\"equals\",\"equal to\"],\"structured\":{\"operator\":0,\"sql\":\"=\",\"requires\":[\"column\",\"value\"]}},\"model\":{\"module\":\"where_knowledge\",\"modelTitle\":\"等值比较 =\",\"name\":\"g-eq\",\"id\":\"g-eq\",\"pk\":[\"id\"],\"fields\":[{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"明确的属性等值表达可映射到 WikiSQL 运算符 0；不得只凭介词猜测字段。\",\"type\":\"String\"},{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"GLOBAL\",\"type\":\"String\"}]},\"component\":{\"id\":\"g-eq\",\"modelId\":\"g-eq\",\"isCollapse\":false,\"x\":80,\"y\":80},\"fields\":[{\"field\":{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"明确的属性等值表达可映射到 WikiSQL 运算符 0；不得只凭介词猜测字段。\",\"type\":\"String\"}},{\"field\":{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"GLOBAL\",\"type\":\"String\"}}],\"familyId\":\"wikisql.where\",\"thirdParty\":false,\"size\":{\"width\":200,\"height\":80}}}}},{\"id\":\"g-gt\",\"name\":\"严格大于 >\",\"type\":\"model\",\"color\":\"#73d13d\",\"x\":360,\"y\":80,\"select\":false,\"locked\":false,\"pendant\":{\"data\":{\"type\":\"model\",\"detail\":{\"id\":\"g-gt\",\"knowledge\":{\"id\":\"g-gt\",\"title\":\"严格大于 >\",\"kind\":\"OPERATOR\",\"source\":\"HUMAN\",\"scope\":\"GLOBAL\",\"trust\":\"EXPLICIT_RULE\",\"support\":\"SUPPORTED\",\"statement\":\"more than、greater than、bigger than 表示严格大于，不含边界。\",\"cues\":[\"more than\",\"greater than\",\"bigger than\"],\"structured\":{\"operator\":1,\"sql\":\">\",\"inclusive\":false}},\"model\":{\"module\":\"where_knowledge\",\"modelTitle\":\"严格大于 >\",\"name\":\"g-gt\",\"id\":\"g-gt\",\"pk\":[\"id\"],\"fields\":[{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"more than、greater than、bigger than 表示严格大于，不含边界。\",\"type\":\"String\"},{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"GLOBAL\",\"type\":\"String\"}]},\"component\":{\"id\":\"g-gt\",\"modelId\":\"g-gt\",\"isCollapse\":false,\"x\":360,\"y\":80},\"fields\":[{\"field\":{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"more than、greater than、bigger than 表示严格大于，不含边界。\",\"type\":\"String\"}},{\"field\":{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"GLOBAL\",\"type\":\"String\"}}],\"familyId\":\"wikisql.where\",\"thirdParty\":false,\"size\":{\"width\":200,\"height\":80}}}}},{\"id\":\"g-lt\",\"name\":\"严格小于 <\",\"type\":\"model\",\"color\":\"#73d13d\",\"x\":640,\"y\":80,\"select\":false,\"locked\":false,\"pendant\":{\"data\":{\"type\":\"model\",\"detail\":{\"id\":\"g-lt\",\"knowledge\":{\"id\":\"g-lt\",\"title\":\"严格小于 <\",\"kind\":\"OPERATOR\",\"source\":\"HUMAN\",\"scope\":\"GLOBAL\",\"trust\":\"EXPLICIT_RULE\",\"support\":\"SUPPORTED\",\"statement\":\"less than、smaller than 表示严格小于，不含边界。\",\"cues\":[\"less than\",\"smaller than\"],\"structured\":{\"operator\":2,\"sql\":\"<\",\"inclusive\":false}},\"model\":{\"module\":\"where_knowledge\",\"modelTitle\":\"严格小于 <\",\"name\":\"g-lt\",\"id\":\"g-lt\",\"pk\":[\"id\"],\"fields\":[{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"less than、smaller than 表示严格小于，不含边界。\",\"type\":\"String\"},{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"GLOBAL\",\"type\":\"String\"}]},\"component\":{\"id\":\"g-lt\",\"modelId\":\"g-lt\",\"isCollapse\":false,\"x\":640,\"y\":80},\"fields\":[{\"field\":{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"less than、smaller than 表示严格小于，不含边界。\",\"type\":\"String\"}},{\"field\":{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"GLOBAL\",\"type\":\"String\"}}],\"familyId\":\"wikisql.where\",\"thirdParty\":false,\"size\":{\"width\":200,\"height\":80}}}}},{\"id\":\"g-inclusive\",\"name\":\"含边界比较\",\"type\":\"model\",\"color\":\"#73d13d\",\"x\":80,\"y\":225,\"select\":false,\"locked\":false,\"pendant\":{\"data\":{\"type\":\"model\",\"detail\":{\"id\":\"g-inclusive\",\"knowledge\":{\"id\":\"g-inclusive\",\"title\":\"含边界比较\",\"kind\":\"OPERATOR\",\"source\":\"HUMAN\",\"scope\":\"GLOBAL\",\"trust\":\"EXPLICIT_RULE\",\"support\":\"SUPPORTED\",\"statement\":\"at least、no less than、at most 等含边界；保留 >= 或 <= 的原始语义，最终仅在当前表上存在等价谓词时转换为 WikiSQL 标准编码。\",\"cues\":[\"at least\",\"no less than\",\"at most\",\"no more than\"],\"structured\":{\"semanticOperators\":[\">=\",\"<=\"],\"output\":\"standardWikiSqlWhenEquivalent\",\"otherwise\":\"UNREPRESENTABLE_OPERATOR\"}},\"model\":{\"module\":\"where_knowledge\",\"modelTitle\":\"含边界比较\",\"name\":\"g-inclusive\",\"id\":\"g-inclusive\",\"pk\":[\"id\"],\"fields\":[{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"at least、no less than、at most 等含边界；保留 >= 或 <= 的原始语义，最终仅在当前表上存在等价谓词时转换为 WikiSQL 标准编码。\",\"type\":\"String\"},{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"GLOBAL\",\"type\":\"String\"}]},\"component\":{\"id\":\"g-inclusive\",\"modelId\":\"g-inclusive\",\"isCollapse\":false,\"x\":80,\"y\":225},\"fields\":[{\"field\":{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"at least、no less than、at most 等含边界；保留 >= 或 <= 的原始语义，最终仅在当前表上存在等价谓词时转换为 WikiSQL 标准编码。\",\"type\":\"String\"}},{\"field\":{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"GLOBAL\",\"type\":\"String\"}}],\"familyId\":\"wikisql.where\",\"thirdParty\":false,\"size\":{\"width\":200,\"height\":80}}}}},{\"id\":\"g-literal\",\"name\":\"精确保留条件值\",\"type\":\"model\",\"color\":\"#73d13d\",\"x\":360,\"y\":225,\"select\":false,\"locked\":false,\"pendant\":{\"data\":{\"type\":\"model\",\"detail\":{\"id\":\"g-literal\",\"knowledge\":{\"id\":\"g-literal\",\"title\":\"精确保留条件值\",\"kind\":\"VALUE\",\"source\":\"HUMAN\",\"scope\":\"GLOBAL\",\"trust\":\"EXPLICIT_RULE\",\"support\":\"SUPPORTED\",\"statement\":\"表格中的文本取值优先采用当前表内原样字面量，包括大小写、标点、连字符与括号。\",\"cues\":[\"named\",\"for\",\"with\"],\"structured\":{\"source\":\"current_table_cell\",\"preserveSurfaceForm\":true}},\"model\":{\"module\":\"where_knowledge\",\"modelTitle\":\"精确保留条件值\",\"name\":\"g-literal\",\"id\":\"g-literal\",\"pk\":[\"id\"],\"fields\":[{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"表格中的文本取值优先采用当前表内原样字面量，包括大小写、标点、连字符与括号。\",\"type\":\"String\"},{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"GLOBAL\",\"type\":\"String\"}]},\"component\":{\"id\":\"g-literal\",\"modelId\":\"g-literal\",\"isCollapse\":false,\"x\":360,\"y\":225},\"fields\":[{\"field\":{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"表格中的文本取值优先采用当前表内原样字面量，包括大小写、标点、连字符与括号。\",\"type\":\"String\"}},{\"field\":{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"GLOBAL\",\"type\":\"String\"}}],\"familyId\":\"wikisql.where\",\"thirdParty\":false,\"size\":{\"width\":200,\"height\":80}}}}},{\"id\":\"g-threshold\",\"name\":\"问题中的数值阈值\",\"type\":\"model\",\"color\":\"#73d13d\",\"x\":640,\"y\":225,\"select\":false,\"locked\":false,\"pendant\":{\"data\":{\"type\":\"model\",\"detail\":{\"id\":\"g-threshold\",\"knowledge\":{\"id\":\"g-threshold\",\"title\":\"问题中的数值阈值\",\"kind\":\"VALUE\",\"source\":\"HUMAN\",\"scope\":\"GLOBAL\",\"trust\":\"EXPLICIT_RULE\",\"support\":\"SUPPORTED\",\"statement\":\"比较阈值可直接来自问题，不要求出现在表格样本值中；先确认所属字段和单位。\",\"cues\":[\"than\",\"above\",\"below\"],\"structured\":{\"source\":\"question\",\"valueMayBeAbsentFromRows\":true}},\"model\":{\"module\":\"where_knowledge\",\"modelTitle\":\"问题中的数值阈值\",\"name\":\"g-threshold\",\"id\":\"g-threshold\",\"pk\":[\"id\"],\"fields\":[{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"比较阈值可直接来自问题，不要求出现在表格样本值中；先确认所属字段和单位。\",\"type\":\"String\"},{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"GLOBAL\",\"type\":\"String\"}]},\"component\":{\"id\":\"g-threshold\",\"modelId\":\"g-threshold\",\"isCollapse\":false,\"x\":640,\"y\":225},\"fields\":[{\"field\":{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"比较阈值可直接来自问题，不要求出现在表格样本值中；先确认所属字段和单位。\",\"type\":\"String\"}},{\"field\":{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"GLOBAL\",\"type\":\"String\"}}],\"familyId\":\"wikisql.where\",\"thirdParty\":false,\"size\":{\"width\":200,\"height\":80}}}}},{\"id\":\"g-and\",\"name\":\"合取 AND\",\"type\":\"model\",\"color\":\"#73d13d\",\"x\":80,\"y\":370,\"select\":false,\"locked\":false,\"pendant\":{\"data\":{\"type\":\"model\",\"detail\":{\"id\":\"g-and\",\"knowledge\":{\"id\":\"g-and\",\"title\":\"合取 AND\",\"kind\":\"LOGIC\",\"source\":\"HUMAN\",\"scope\":\"GLOBAL\",\"trust\":\"EXPLICIT_RULE\",\"support\":\"SUPPORTED\",\"statement\":\"两个独立 WHERE 限定需要各自保留并按 AND 组合；不能把一个条件的值绑定到另一字段。\",\"cues\":[\"and\",\"with\",\"where\"],\"structured\":{\"connective\":\"AND\",\"preserveAllPredicates\":true}},\"model\":{\"module\":\"where_knowledge\",\"modelTitle\":\"合取 AND\",\"name\":\"g-and\",\"id\":\"g-and\",\"pk\":[\"id\"],\"fields\":[{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"两个独立 WHERE 限定需要各自保留并按 AND 组合；不能把一个条件的值绑定到另一字段。\",\"type\":\"String\"},{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"GLOBAL\",\"type\":\"String\"}]},\"component\":{\"id\":\"g-and\",\"modelId\":\"g-and\",\"isCollapse\":false,\"x\":80,\"y\":370},\"fields\":[{\"field\":{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"两个独立 WHERE 限定需要各自保留并按 AND 组合；不能把一个条件的值绑定到另一字段。\",\"type\":\"String\"}},{\"field\":{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"GLOBAL\",\"type\":\"String\"}}],\"familyId\":\"wikisql.where\",\"thirdParty\":false,\"size\":{\"width\":200,\"height\":80}}}}},{\"id\":\"g-or\",\"name\":\"析取 OR\",\"type\":\"model\",\"color\":\"#ff7875\",\"x\":360,\"y\":370,\"select\":false,\"locked\":false,\"pendant\":{\"data\":{\"type\":\"model\",\"detail\":{\"id\":\"g-or\",\"knowledge\":{\"id\":\"g-or\",\"title\":\"析取 OR\",\"kind\":\"LOGIC\",\"source\":\"HUMAN\",\"scope\":\"GLOBAL\",\"trust\":\"EXPLICIT_RULE\",\"support\":\"CLARIFY\",\"statement\":\"明确的 or/任一条件是析取；WikiSQL 当前 WHERE 结构只有合取，不能擅自改成 AND。\",\"cues\":[\"or\",\"either\"],\"structured\":{\"connective\":\"OR\",\"unsupportedInWikiSql\":true,\"action\":\"CLARIFY\"}},\"model\":{\"module\":\"where_knowledge\",\"modelTitle\":\"析取 OR\",\"name\":\"g-or\",\"id\":\"g-or\",\"pk\":[\"id\"],\"fields\":[{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"明确的 or/任一条件是析取；WikiSQL 当前 WHERE 结构只有合取，不能擅自改成 AND。\",\"type\":\"String\"},{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"GLOBAL\",\"type\":\"String\"}]},\"component\":{\"id\":\"g-or\",\"modelId\":\"g-or\",\"isCollapse\":false,\"x\":360,\"y\":370},\"fields\":[{\"field\":{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"明确的 or/任一条件是析取；WikiSQL 当前 WHERE 结构只有合取，不能擅自改成 AND。\",\"type\":\"String\"}},{\"field\":{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"GLOBAL\",\"type\":\"String\"}}],\"familyId\":\"wikisql.where\",\"thirdParty\":false,\"size\":{\"width\":200,\"height\":80}}}}},{\"id\":\"g-column\",\"name\":\"限定字段与输出字段分离\",\"type\":\"model\",\"color\":\"#73d13d\",\"x\":640,\"y\":370,\"select\":false,\"locked\":false,\"pendant\":{\"data\":{\"type\":\"model\",\"detail\":{\"id\":\"g-column\",\"knowledge\":{\"id\":\"g-column\",\"title\":\"限定字段与输出字段分离\",\"kind\":\"DISAMBIGUATION\",\"source\":\"HUMAN\",\"scope\":\"GLOBAL\",\"trust\":\"EXPLICIT_RULE\",\"support\":\"SUPPORTED\",\"statement\":\"WHERE 条件列须由限定短语、表头、类型和值共同确定；被询问的输出列不必是过滤列。\",\"cues\":[\"where\",\"for\",\"with\"],\"structured\":{\"bind\":\"filter_attribute\",\"distinguishFrom\":\"requested_output\"}},\"model\":{\"module\":\"where_knowledge\",\"modelTitle\":\"限定字段与输出字段分离\",\"name\":\"g-column\",\"id\":\"g-column\",\"pk\":[\"id\"],\"fields\":[{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"WHERE 条件列须由限定短语、表头、类型和值共同确定；被询问的输出列不必是过滤列。\",\"type\":\"String\"},{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"GLOBAL\",\"type\":\"String\"}]},\"component\":{\"id\":\"g-column\",\"modelId\":\"g-column\",\"isCollapse\":false,\"x\":640,\"y\":370},\"fields\":[{\"field\":{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"WHERE 条件列须由限定短语、表头、类型和值共同确定；被询问的输出列不必是过滤列。\",\"type\":\"String\"}},{\"field\":{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"GLOBAL\",\"type\":\"String\"}}],\"familyId\":\"wikisql.where\",\"thirdParty\":false,\"size\":{\"width\":200,\"height\":80}}}}},{\"id\":\"g-count\",\"name\":\"条件逐项核对\",\"type\":\"model\",\"color\":\"#73d13d\",\"x\":80,\"y\":515,\"select\":false,\"locked\":false,\"pendant\":{\"data\":{\"type\":\"model\",\"detail\":{\"id\":\"g-count\",\"knowledge\":{\"id\":\"g-count\",\"title\":\"条件逐项核对\",\"kind\":\"DISAMBIGUATION\",\"source\":\"HUMAN\",\"scope\":\"GLOBAL\",\"trust\":\"EXPLICIT_RULE\",\"support\":\"SUPPORTED\",\"statement\":\"将问题中的每个独立限定归为一条谓词，并检查遗漏、重复和把输出描述误作过滤的情况。\",\"cues\":[\"where\",\"with\",\"and\"],\"structured\":{\"check\":[\"missing\",\"duplicate\",\"output_as_filter\"],\"maxWikiSqlConditions\":4}},\"model\":{\"module\":\"where_knowledge\",\"modelTitle\":\"条件逐项核对\",\"name\":\"g-count\",\"id\":\"g-count\",\"pk\":[\"id\"],\"fields\":[{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"将问题中的每个独立限定归为一条谓词，并检查遗漏、重复和把输出描述误作过滤的情况。\",\"type\":\"String\"},{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"GLOBAL\",\"type\":\"String\"}]},\"component\":{\"id\":\"g-count\",\"modelId\":\"g-count\",\"isCollapse\":false,\"x\":80,\"y\":515},\"fields\":[{\"field\":{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"将问题中的每个独立限定归为一条谓词，并检查遗漏、重复和把输出描述误作过滤的情况。\",\"type\":\"String\"}},{\"field\":{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"GLOBAL\",\"type\":\"String\"}}],\"familyId\":\"wikisql.where\",\"thirdParty\":false,\"size\":{\"width\":200,\"height\":80}}}}},{\"id\":\"g-ambiguous\",\"name\":\"极值语义消歧\",\"type\":\"model\",\"color\":\"#ff7875\",\"x\":360,\"y\":515,\"select\":false,\"locked\":false,\"pendant\":{\"data\":{\"type\":\"model\",\"detail\":{\"id\":\"g-ambiguous\",\"knowledge\":{\"id\":\"g-ambiguous\",\"title\":\"极值语义消歧\",\"kind\":\"DISAMBIGUATION\",\"source\":\"HUMAN\",\"scope\":\"GLOBAL\",\"trust\":\"EXPLICIT_RULE\",\"support\":\"CLARIFY\",\"statement\":\"highest/lowest 可能描述被查询结果，也可能限定某行；缺少明确限定对象时不臆造 WHERE 比较。\",\"cues\":[\"highest\",\"lowest\",\"maximum\",\"minimum\"],\"structured\":{\"action\":\"CLARIFY\",\"avoidInventedPredicate\":true}},\"model\":{\"module\":\"where_knowledge\",\"modelTitle\":\"极值语义消歧\",\"name\":\"g-ambiguous\",\"id\":\"g-ambiguous\",\"pk\":[\"id\"],\"fields\":[{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"highest/lowest 可能描述被查询结果，也可能限定某行；缺少明确限定对象时不臆造 WHERE 比较。\",\"type\":\"String\"},{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"GLOBAL\",\"type\":\"String\"}]},\"component\":{\"id\":\"g-ambiguous\",\"modelId\":\"g-ambiguous\",\"isCollapse\":false,\"x\":360,\"y\":515},\"fields\":[{\"field\":{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"highest/lowest 可能描述被查询结果，也可能限定某行；缺少明确限定对象时不臆造 WHERE 比较。\",\"type\":\"String\"}},{\"field\":{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"GLOBAL\",\"type\":\"String\"}}],\"familyId\":\"wikisql.where\",\"thirdParty\":false,\"size\":{\"width\":200,\"height\":80}}}}},{\"id\":\"d-implicit-eq\",\"name\":\"省略 where 的实体限定\",\"type\":\"model\",\"color\":\"#faad14\",\"x\":950,\"y\":80,\"select\":false,\"locked\":false,\"pendant\":{\"data\":{\"type\":\"model\",\"detail\":{\"id\":\"d-implicit-eq\",\"knowledge\":{\"id\":\"d-implicit-eq\",\"title\":\"省略 where 的实体限定\",\"kind\":\"PATTERN\",\"source\":\"WIKISQL_TRAIN\",\"scope\":\"DATASET\",\"trust\":\"STATISTICAL_REFERENCE\",\"support\":\"SUPPORTED\",\"statement\":\"“for South Australia”在训练样例中对应一条等值条件；具体列必须按当前表重新绑定。\",\"cues\":[\"for <entity>\"],\"structured\":{\"shape\":\"one_equality_predicate\",\"columnIsTableDependent\":true},\"evidence\":[{\"trainLine\":1,\"question\":\"Tell me what the notes are for South Australia \",\"conds\":[[3,0,\"SOUTH AUSTRALIA\"]]}]},\"model\":{\"module\":\"where_knowledge\",\"modelTitle\":\"省略 where 的实体限定\",\"name\":\"d-implicit-eq\",\"id\":\"d-implicit-eq\",\"pk\":[\"id\"],\"fields\":[{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"“for South Australia”在训练样例中对应一条等值条件；具体列必须按当前表重新绑定。\",\"type\":\"String\"},{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"DATASET\",\"type\":\"String\"}]},\"component\":{\"id\":\"d-implicit-eq\",\"modelId\":\"d-implicit-eq\",\"isCollapse\":false,\"x\":950,\"y\":80},\"fields\":[{\"field\":{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"“for South Australia”在训练样例中对应一条等值条件；具体列必须按当前表重新绑定。\",\"type\":\"String\"}},{\"field\":{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"DATASET\",\"type\":\"String\"}}],\"familyId\":\"wikisql.where\",\"thirdParty\":false,\"size\":{\"width\":200,\"height\":80}}}}},{\"id\":\"d-explicit-eq\",\"name\":\"显式属性等值\",\"type\":\"model\",\"color\":\"#faad14\",\"x\":1230,\"y\":80,\"select\":false,\"locked\":false,\"pendant\":{\"data\":{\"type\":\"model\",\"detail\":{\"id\":\"d-explicit-eq\",\"knowledge\":{\"id\":\"d-explicit-eq\",\"title\":\"显式属性等值\",\"kind\":\"PATTERN\",\"source\":\"WIKISQL_TRAIN\",\"scope\":\"DATASET\",\"trust\":\"STATISTICAL_REFERENCE\",\"support\":\"SUPPORTED\",\"statement\":\"“where/when <field> is <value>”是等值表达的一种观察模式，不保证所有 is 均为 WHERE。\",\"cues\":[\"where <field> is <value>\",\"when <field> is <value>\"],\"structured\":{\"shape\":\"one_equality_predicate\",\"requireFilterAttribute\":true},\"evidence\":[{\"trainLine\":10,\"question\":\"what is the powertrain (engine/transmission) when the order year is 2000?\",\"conds\":[[0,0,\"2000\"]]}]},\"model\":{\"module\":\"where_knowledge\",\"modelTitle\":\"显式属性等值\",\"name\":\"d-explicit-eq\",\"id\":\"d-explicit-eq\",\"pk\":[\"id\"],\"fields\":[{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"“where/when <field> is <value>”是等值表达的一种观察模式，不保证所有 is 均为 WHERE。\",\"type\":\"String\"},{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"DATASET\",\"type\":\"String\"}]},\"component\":{\"id\":\"d-explicit-eq\",\"modelId\":\"d-explicit-eq\",\"isCollapse\":false,\"x\":1230,\"y\":80},\"fields\":[{\"field\":{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"“where/when <field> is <value>”是等值表达的一种观察模式，不保证所有 is 均为 WHERE。\",\"type\":\"String\"}},{\"field\":{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"DATASET\",\"type\":\"String\"}}],\"familyId\":\"wikisql.where\",\"thirdParty\":false,\"size\":{\"width\":200,\"height\":80}}}}},{\"id\":\"d-gt\",\"name\":\"训练集严格大于表达\",\"type\":\"model\",\"color\":\"#faad14\",\"x\":950,\"y\":225,\"select\":false,\"locked\":false,\"pendant\":{\"data\":{\"type\":\"model\",\"detail\":{\"id\":\"d-gt\",\"knowledge\":{\"id\":\"d-gt\",\"title\":\"训练集严格大于表达\",\"kind\":\"PATTERN\",\"source\":\"WIKISQL_TRAIN\",\"scope\":\"DATASET\",\"trust\":\"STATISTICAL_REFERENCE\",\"support\":\"SUPPORTED\",\"statement\":\"“bigger than 51092.0”对应严格大于；训练中的阈值可归一为数值。\",\"cues\":[\"bigger than <number>\"],\"structured\":{\"shape\":\"numeric_comparison\",\"operator\":1},\"evidence\":[{\"trainLine\":135,\"question\":\"What's the 2001 census of the region of Abruzzo where the 1871 census is bigger than 51092.0?\",\"conds\":[[6,0,\"Abruzzo\"],[2,1,51092]]}]},\"model\":{\"module\":\"where_knowledge\",\"modelTitle\":\"训练集严格大于表达\",\"name\":\"d-gt\",\"id\":\"d-gt\",\"pk\":[\"id\"],\"fields\":[{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"“bigger than 51092.0”对应严格大于；训练中的阈值可归一为数值。\",\"type\":\"String\"},{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"DATASET\",\"type\":\"String\"}]},\"component\":{\"id\":\"d-gt\",\"modelId\":\"d-gt\",\"isCollapse\":false,\"x\":950,\"y\":225},\"fields\":[{\"field\":{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"“bigger than 51092.0”对应严格大于；训练中的阈值可归一为数值。\",\"type\":\"String\"}},{\"field\":{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"DATASET\",\"type\":\"String\"}}],\"familyId\":\"wikisql.where\",\"thirdParty\":false,\"size\":{\"width\":200,\"height\":80}}}}},{\"id\":\"d-lt-and-gt\",\"name\":\"双比较条件\",\"type\":\"model\",\"color\":\"#faad14\",\"x\":1230,\"y\":225,\"select\":false,\"locked\":false,\"pendant\":{\"data\":{\"type\":\"model\",\"detail\":{\"id\":\"d-lt-and-gt\",\"knowledge\":{\"id\":\"d-lt-and-gt\",\"title\":\"双比较条件\",\"kind\":\"PATTERN\",\"source\":\"WIKISQL_TRAIN\",\"scope\":\"DATASET\",\"trust\":\"STATISTICAL_REFERENCE\",\"support\":\"SUPPORTED\",\"statement\":\"同句的 less than 与 bigger than 可约束不同字段，并以 AND 连接。\",\"cues\":[\"<fieldA> less than <a> and <fieldB> bigger than <b>\"],\"structured\":{\"shape\":\"two_conjunctive_comparisons\",\"operators\":[2,1]},\"evidence\":[{\"trainLine\":649,\"question\":\"What is the english title where the premiere is less than 30.0 and the finale is bigger than 36.0?\",\"conds\":[[5,2,30],[6,1,36]]}]},\"model\":{\"module\":\"where_knowledge\",\"modelTitle\":\"双比较条件\",\"name\":\"d-lt-and-gt\",\"id\":\"d-lt-and-gt\",\"pk\":[\"id\"],\"fields\":[{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"同句的 less than 与 bigger than 可约束不同字段，并以 AND 连接。\",\"type\":\"String\"},{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"DATASET\",\"type\":\"String\"}]},\"component\":{\"id\":\"d-lt-and-gt\",\"modelId\":\"d-lt-and-gt\",\"isCollapse\":false,\"x\":1230,\"y\":225},\"fields\":[{\"field\":{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"同句的 less than 与 bigger than 可约束不同字段，并以 AND 连接。\",\"type\":\"String\"}},{\"field\":{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"DATASET\",\"type\":\"String\"}}],\"familyId\":\"wikisql.where\",\"thirdParty\":false,\"size\":{\"width\":200,\"height\":80}}}}},{\"id\":\"d-with-two\",\"name\":\"with 引出的第二限定\",\"type\":\"model\",\"color\":\"#faad14\",\"x\":950,\"y\":370,\"select\":false,\"locked\":false,\"pendant\":{\"data\":{\"type\":\"model\",\"detail\":{\"id\":\"d-with-two\",\"knowledge\":{\"id\":\"d-with-two\",\"title\":\"with 引出的第二限定\",\"kind\":\"PATTERN\",\"source\":\"WIKISQL_TRAIN\",\"scope\":\"DATASET\",\"trust\":\"STATISTICAL_REFERENCE\",\"support\":\"SUPPORTED\",\"statement\":\"with 短语可以补充第二个等值限定；是否真的构成条件须依当前问题和 Schema 判断。\",\"cues\":[\"for <entity> with <field> <value>\"],\"structured\":{\"shape\":\"two_conjunctive_equalities\",\"needsColumnDisambiguation\":true},\"evidence\":[{\"trainLine\":87,\"question\":\"What is the population for County Mayo with the English Name Carrowteige?\",\"conds\":[[0,0,\"County Mayo\"],[1,0,\"Carrowteige\"]]}]},\"model\":{\"module\":\"where_knowledge\",\"modelTitle\":\"with 引出的第二限定\",\"name\":\"d-with-two\",\"id\":\"d-with-two\",\"pk\":[\"id\"],\"fields\":[{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"with 短语可以补充第二个等值限定；是否真的构成条件须依当前问题和 Schema 判断。\",\"type\":\"String\"},{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"DATASET\",\"type\":\"String\"}]},\"component\":{\"id\":\"d-with-two\",\"modelId\":\"d-with-two\",\"isCollapse\":false,\"x\":950,\"y\":370},\"fields\":[{\"field\":{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"with 短语可以补充第二个等值限定；是否真的构成条件须依当前问题和 Schema 判断。\",\"type\":\"String\"}},{\"field\":{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"DATASET\",\"type\":\"String\"}}],\"familyId\":\"wikisql.where\",\"thirdParty\":false,\"size\":{\"width\":200,\"height\":80}}}}},{\"id\":\"d-literal-form\",\"name\":\"复杂文本值原样匹配\",\"type\":\"model\",\"color\":\"#faad14\",\"x\":1230,\"y\":370,\"select\":false,\"locked\":false,\"pendant\":{\"data\":{\"type\":\"model\",\"detail\":{\"id\":\"d-literal-form\",\"knowledge\":{\"id\":\"d-literal-form\",\"title\":\"复杂文本值原样匹配\",\"kind\":\"PATTERN\",\"source\":\"WIKISQL_TRAIN\",\"scope\":\"DATASET\",\"trust\":\"STATISTICAL_REFERENCE\",\"support\":\"SUPPORTED\",\"statement\":\"带破折号与括号的表格值可能是一整个等值字面量，不应按数字或连词拆解。\",\"cues\":[\"0–0\",\"3–1\"],\"structured\":{\"shape\":\"text_equality\",\"preservePunctuation\":true},\"evidence\":[{\"trainLine\":52,\"question\":\"what's the total number of singles w-l with doubles w-l of 0–0 and total w-l of 3–1\",\"conds\":[[4,0,\"0–0\"],[2,0,\"3–1\"]]}]},\"model\":{\"module\":\"where_knowledge\",\"modelTitle\":\"复杂文本值原样匹配\",\"name\":\"d-literal-form\",\"id\":\"d-literal-form\",\"pk\":[\"id\"],\"fields\":[{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"带破折号与括号的表格值可能是一整个等值字面量，不应按数字或连词拆解。\",\"type\":\"String\"},{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"DATASET\",\"type\":\"String\"}]},\"component\":{\"id\":\"d-literal-form\",\"modelId\":\"d-literal-form\",\"isCollapse\":false,\"x\":1230,\"y\":370},\"fields\":[{\"field\":{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"带破折号与括号的表格值可能是一整个等值字面量，不应按数字或连词拆解。\",\"type\":\"String\"}},{\"field\":{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"DATASET\",\"type\":\"String\"}}],\"familyId\":\"wikisql.where\",\"thirdParty\":false,\"size\":{\"width\":200,\"height\":80}}}}},{\"id\":\"p-text\",\"name\":\"文本等值 WHERE\",\"type\":\"model\",\"color\":\"#597ef7\",\"x\":1530,\"y\":80,\"select\":false,\"locked\":false,\"pendant\":{\"data\":{\"type\":\"model\",\"detail\":{\"id\":\"p-text\",\"knowledge\":{\"id\":\"p-text\",\"title\":\"文本等值 WHERE\",\"kind\":\"PATTERN\",\"source\":\"HUMAN\",\"scope\":\"GLOBAL\",\"trust\":\"EXPLICIT_RULE\",\"support\":\"SUPPORTED\",\"statement\":\"先定位限定字段，再以当前表的精确取值形成单条等值条件。\",\"cues\":[\"for <entity>\",\"where <field> is <text>\"],\"structured\":{\"slots\":[\"filter_column\",\"exact_table_value\"],\"operator\":0,\"conditionCount\":1}},\"model\":{\"module\":\"where_knowledge\",\"modelTitle\":\"文本等值 WHERE\",\"name\":\"p-text\",\"id\":\"p-text\",\"pk\":[\"id\"],\"fields\":[{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"先定位限定字段，再以当前表的精确取值形成单条等值条件。\",\"type\":\"String\"},{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"GLOBAL\",\"type\":\"String\"}]},\"component\":{\"id\":\"p-text\",\"modelId\":\"p-text\",\"isCollapse\":false,\"x\":1530,\"y\":80},\"fields\":[{\"field\":{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"先定位限定字段，再以当前表的精确取值形成单条等值条件。\",\"type\":\"String\"}},{\"field\":{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"GLOBAL\",\"type\":\"String\"}}],\"familyId\":\"wikisql.where\",\"thirdParty\":false,\"size\":{\"width\":200,\"height\":80}}}}},{\"id\":\"p-number\",\"name\":\"数值比较 WHERE\",\"type\":\"model\",\"color\":\"#597ef7\",\"x\":1530,\"y\":260,\"select\":false,\"locked\":false,\"pendant\":{\"data\":{\"type\":\"model\",\"detail\":{\"id\":\"p-number\",\"knowledge\":{\"id\":\"p-number\",\"title\":\"数值比较 WHERE\",\"kind\":\"PATTERN\",\"source\":\"HUMAN\",\"scope\":\"GLOBAL\",\"trust\":\"EXPLICIT_RULE\",\"support\":\"SUPPORTED\",\"statement\":\"从限定短语绑定数值字段，区分严格比较方向，再提取问题中的阈值。\",\"cues\":[\"<field> greater than <number>\",\"<field> less than <number>\"],\"structured\":{\"slots\":[\"numeric_filter_column\",\"comparison_operator\",\"question_threshold\"],\"conditionCount\":1}},\"model\":{\"module\":\"where_knowledge\",\"modelTitle\":\"数值比较 WHERE\",\"name\":\"p-number\",\"id\":\"p-number\",\"pk\":[\"id\"],\"fields\":[{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"从限定短语绑定数值字段，区分严格比较方向，再提取问题中的阈值。\",\"type\":\"String\"},{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"GLOBAL\",\"type\":\"String\"}]},\"component\":{\"id\":\"p-number\",\"modelId\":\"p-number\",\"isCollapse\":false,\"x\":1530,\"y\":260},\"fields\":[{\"field\":{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"从限定短语绑定数值字段，区分严格比较方向，再提取问题中的阈值。\",\"type\":\"String\"}},{\"field\":{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"GLOBAL\",\"type\":\"String\"}}],\"familyId\":\"wikisql.where\",\"thirdParty\":false,\"size\":{\"width\":200,\"height\":80}}}}},{\"id\":\"p-multi\",\"name\":\"多条件合取 WHERE\",\"type\":\"model\",\"color\":\"#597ef7\",\"x\":1530,\"y\":440,\"select\":false,\"locked\":false,\"pendant\":{\"data\":{\"type\":\"model\",\"detail\":{\"id\":\"p-multi\",\"knowledge\":{\"id\":\"p-multi\",\"title\":\"多条件合取 WHERE\",\"kind\":\"PATTERN\",\"source\":\"HUMAN\",\"scope\":\"GLOBAL\",\"trust\":\"EXPLICIT_RULE\",\"support\":\"SUPPORTED\",\"statement\":\"逐项识别独立条件，保持每个条件的字段、运算符、值配对，再作 AND 组合。\",\"cues\":[\"<conditionA> and <conditionB>\",\"<entity> with <attribute> <value>\"],\"structured\":{\"slots\":[\"predicate_1\",\"predicate_2\"],\"connective\":\"AND\",\"maximumConditions\":4}},\"model\":{\"module\":\"where_knowledge\",\"modelTitle\":\"多条件合取 WHERE\",\"name\":\"p-multi\",\"id\":\"p-multi\",\"pk\":[\"id\"],\"fields\":[{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"逐项识别独立条件，保持每个条件的字段、运算符、值配对，再作 AND 组合。\",\"type\":\"String\"},{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"GLOBAL\",\"type\":\"String\"}]},\"component\":{\"id\":\"p-multi\",\"modelId\":\"p-multi\",\"isCollapse\":false,\"x\":1530,\"y\":440},\"fields\":[{\"field\":{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"逐项识别独立条件，保持每个条件的字段、运算符、值配对，再作 AND 组合。\",\"type\":\"String\"}},{\"field\":{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"GLOBAL\",\"type\":\"String\"}}],\"familyId\":\"wikisql.where\",\"thirdParty\":false,\"size\":{\"width\":200,\"height\":80}}}}},{\"id\":\"p-unsupported\",\"name\":\"不可表达条件识别\",\"type\":\"model\",\"color\":\"#597ef7\",\"x\":1530,\"y\":620,\"select\":false,\"locked\":false,\"pendant\":{\"data\":{\"type\":\"model\",\"detail\":{\"id\":\"p-unsupported\",\"knowledge\":{\"id\":\"p-unsupported\",\"title\":\"不可表达条件识别\",\"kind\":\"PATTERN\",\"source\":\"HUMAN\",\"scope\":\"GLOBAL\",\"trust\":\"EXPLICIT_RULE\",\"support\":\"CLARIFY\",\"statement\":\"析取意图无法直接表达；含边界比较仅在当前表不存在等价标准谓词时停止生成，不能做语义近似。\",\"cues\":[\"at least\",\"at most\",\"or\"],\"structured\":{\"action\":\"CLARIFY_IF_UNREPRESENTABLE\",\"neverApproximate\":true}},\"model\":{\"module\":\"where_knowledge\",\"modelTitle\":\"不可表达条件识别\",\"name\":\"p-unsupported\",\"id\":\"p-unsupported\",\"pk\":[\"id\"],\"fields\":[{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"析取意图无法直接表达；含边界比较仅在当前表不存在等价标准谓词时停止生成，不能做语义近似。\",\"type\":\"String\"},{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"GLOBAL\",\"type\":\"String\"}]},\"component\":{\"id\":\"p-unsupported\",\"modelId\":\"p-unsupported\",\"isCollapse\":false,\"x\":1530,\"y\":620},\"fields\":[{\"field\":{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"析取意图无法直接表达；含边界比较仅在当前表不存在等价标准谓词时停止生成，不能做语义近似。\",\"type\":\"String\"}},{\"field\":{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"GLOBAL\",\"type\":\"String\"}}],\"familyId\":\"wikisql.where\",\"thirdParty\":false,\"size\":{\"width\":200,\"height\":80}}}}},{\"id\":\"t-2-10790651-4-field-0\",\"name\":\"字段 0: Home team\",\"type\":\"model\",\"color\":\"#13a8a8\",\"x\":1830,\"y\":80,\"select\":false,\"locked\":false,\"pendant\":{\"data\":{\"type\":\"model\",\"detail\":{\"id\":\"t-2-10790651-4-field-0\",\"knowledge\":{\"id\":\"t-2-10790651-4-field-0\",\"title\":\"字段 0: Home team\",\"kind\":\"COLUMN\",\"source\":\"CURRENT_SCHEMA\",\"scope\":\"TABLE\",\"trust\":\"CURRENT_TABLE_FACT\",\"support\":\"SUPPORTED\",\"tableId\":\"2-10790651-4\",\"statement\":\"当前表字段 Home team 的类型与取值证据；只在表 2-10790651-4 内有效。\",\"structured\":{\"column\":0,\"header\":\"Home team\",\"type\":\"text\",\"distinctValues\":[\"Hawthorn\",\"Fitzroy\",\"Richmond\",\"Footscray\",\"Geelong\",\"South Melbourne\"],\"valueEvidenceScope\":\"supplied_rows_only\",\"operatorGuidance\":{\"equality\":\"SUPPORTED\",\"strictNumericComparison\":\"CLARIFY_TYPE_MISMATCH\",\"inclusiveComparison\":\"CLARIFY_UNSUPPORTED\"}}},\"model\":{\"module\":\"where_knowledge\",\"modelTitle\":\"字段 0: Home team\",\"name\":\"t-2-10790651-4-field-0\",\"id\":\"t-2-10790651-4-field-0\",\"pk\":[\"id\"],\"fields\":[{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"当前表字段 Home team 的类型与取值证据；只在表 2-10790651-4 内有效。\",\"type\":\"String\"},{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"TABLE\",\"type\":\"String\"}]},\"component\":{\"id\":\"t-2-10790651-4-field-0\",\"modelId\":\"t-2-10790651-4-field-0\",\"isCollapse\":false,\"x\":1830,\"y\":80},\"fields\":[{\"field\":{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"当前表字段 Home team 的类型与取值证据；只在表 2-10790651-4 内有效。\",\"type\":\"String\"}},{\"field\":{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"TABLE\",\"type\":\"String\"}}],\"familyId\":\"wikisql.where\",\"thirdParty\":false,\"size\":{\"width\":200,\"height\":80}}}}},{\"id\":\"t-2-10790651-4-field-1\",\"name\":\"字段 1: Home team score\",\"type\":\"model\",\"color\":\"#13a8a8\",\"x\":2110,\"y\":80,\"select\":false,\"locked\":false,\"pendant\":{\"data\":{\"type\":\"model\",\"detail\":{\"id\":\"t-2-10790651-4-field-1\",\"knowledge\":{\"id\":\"t-2-10790651-4-field-1\",\"title\":\"字段 1: Home team score\",\"kind\":\"COLUMN\",\"source\":\"CURRENT_SCHEMA\",\"scope\":\"TABLE\",\"trust\":\"CURRENT_TABLE_FACT\",\"support\":\"SUPPORTED\",\"tableId\":\"2-10790651-4\",\"statement\":\"当前表字段 Home team score 的类型与取值证据；只在表 2-10790651-4 内有效。\",\"structured\":{\"column\":1,\"header\":\"Home team score\",\"type\":\"text\",\"distinctValues\":[\"6.17 (53)\",\"18.16 (124)\",\"18.20 (128)\",\"7.8 (50)\",\"14.17 (101)\",\"13.19 (97)\"],\"valueEvidenceScope\":\"supplied_rows_only\",\"operatorGuidance\":{\"equality\":\"SUPPORTED\",\"strictNumericComparison\":\"CLARIFY_TYPE_MISMATCH\",\"inclusiveComparison\":\"CLARIFY_UNSUPPORTED\"}}},\"model\":{\"module\":\"where_knowledge\",\"modelTitle\":\"字段 1: Home team score\",\"name\":\"t-2-10790651-4-field-1\",\"id\":\"t-2-10790651-4-field-1\",\"pk\":[\"id\"],\"fields\":[{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"当前表字段 Home team score 的类型与取值证据；只在表 2-10790651-4 内有效。\",\"type\":\"String\"},{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"TABLE\",\"type\":\"String\"}]},\"component\":{\"id\":\"t-2-10790651-4-field-1\",\"modelId\":\"t-2-10790651-4-field-1\",\"isCollapse\":false,\"x\":2110,\"y\":80},\"fields\":[{\"field\":{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"当前表字段 Home team score 的类型与取值证据；只在表 2-10790651-4 内有效。\",\"type\":\"String\"}},{\"field\":{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"TABLE\",\"type\":\"String\"}}],\"familyId\":\"wikisql.where\",\"thirdParty\":false,\"size\":{\"width\":200,\"height\":80}}}}},{\"id\":\"t-2-10790651-4-field-2\",\"name\":\"字段 2: Away team\",\"type\":\"model\",\"color\":\"#13a8a8\",\"x\":1830,\"y\":225,\"select\":false,\"locked\":false,\"pendant\":{\"data\":{\"type\":\"model\",\"detail\":{\"id\":\"t-2-10790651-4-field-2\",\"knowledge\":{\"id\":\"t-2-10790651-4-field-2\",\"title\":\"字段 2: Away team\",\"kind\":\"COLUMN\",\"source\":\"CURRENT_SCHEMA\",\"scope\":\"TABLE\",\"trust\":\"CURRENT_TABLE_FACT\",\"support\":\"SUPPORTED\",\"tableId\":\"2-10790651-4\",\"statement\":\"当前表字段 Away team 的类型与取值证据；只在表 2-10790651-4 内有效。\",\"structured\":{\"column\":2,\"header\":\"Away team\",\"type\":\"text\",\"distinctValues\":[\"St Kilda\",\"North Melbourne\",\"Melbourne\",\"Essendon\",\"Collingwood\",\"Carlton\"],\"valueEvidenceScope\":\"supplied_rows_only\",\"operatorGuidance\":{\"equality\":\"SUPPORTED\",\"strictNumericComparison\":\"CLARIFY_TYPE_MISMATCH\",\"inclusiveComparison\":\"CLARIFY_UNSUPPORTED\"}}},\"model\":{\"module\":\"where_knowledge\",\"modelTitle\":\"字段 2: Away team\",\"name\":\"t-2-10790651-4-field-2\",\"id\":\"t-2-10790651-4-field-2\",\"pk\":[\"id\"],\"fields\":[{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"当前表字段 Away team 的类型与取值证据；只在表 2-10790651-4 内有效。\",\"type\":\"String\"},{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"TABLE\",\"type\":\"String\"}]},\"component\":{\"id\":\"t-2-10790651-4-field-2\",\"modelId\":\"t-2-10790651-4-field-2\",\"isCollapse\":false,\"x\":1830,\"y\":225},\"fields\":[{\"field\":{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"当前表字段 Away team 的类型与取值证据；只在表 2-10790651-4 内有效。\",\"type\":\"String\"}},{\"field\":{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"TABLE\",\"type\":\"String\"}}],\"familyId\":\"wikisql.where\",\"thirdParty\":false,\"size\":{\"width\":200,\"height\":80}}}}},{\"id\":\"t-2-10790651-4-field-3\",\"name\":\"字段 3: Away team score\",\"type\":\"model\",\"color\":\"#13a8a8\",\"x\":2110,\"y\":225,\"select\":false,\"locked\":false,\"pendant\":{\"data\":{\"type\":\"model\",\"detail\":{\"id\":\"t-2-10790651-4-field-3\",\"knowledge\":{\"id\":\"t-2-10790651-4-field-3\",\"title\":\"字段 3: Away team score\",\"kind\":\"COLUMN\",\"source\":\"CURRENT_SCHEMA\",\"scope\":\"TABLE\",\"trust\":\"CURRENT_TABLE_FACT\",\"support\":\"SUPPORTED\",\"tableId\":\"2-10790651-4\",\"statement\":\"当前表字段 Away team score 的类型与取值证据；只在表 2-10790651-4 内有效。\",\"structured\":{\"column\":3,\"header\":\"Away team score\",\"type\":\"text\",\"distinctValues\":[\"16.8 (104)\",\"10.14 (74)\",\"14.8 (92)\",\"16.5 (101)\",\"17.13 (115)\",\"14.6 (90)\"],\"valueEvidenceScope\":\"supplied_rows_only\",\"operatorGuidance\":{\"equality\":\"SUPPORTED\",\"strictNumericComparison\":\"CLARIFY_TYPE_MISMATCH\",\"inclusiveComparison\":\"CLARIFY_UNSUPPORTED\"}}},\"model\":{\"module\":\"where_knowledge\",\"modelTitle\":\"字段 3: Away team score\",\"name\":\"t-2-10790651-4-field-3\",\"id\":\"t-2-10790651-4-field-3\",\"pk\":[\"id\"],\"fields\":[{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"当前表字段 Away team score 的类型与取值证据；只在表 2-10790651-4 内有效。\",\"type\":\"String\"},{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"TABLE\",\"type\":\"String\"}]},\"component\":{\"id\":\"t-2-10790651-4-field-3\",\"modelId\":\"t-2-10790651-4-field-3\",\"isCollapse\":false,\"x\":2110,\"y\":225},\"fields\":[{\"field\":{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"当前表字段 Away team score 的类型与取值证据；只在表 2-10790651-4 内有效。\",\"type\":\"String\"}},{\"field\":{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"TABLE\",\"type\":\"String\"}}],\"familyId\":\"wikisql.where\",\"thirdParty\":false,\"size\":{\"width\":200,\"height\":80}}}}},{\"id\":\"t-2-10790651-4-field-4\",\"name\":\"字段 4: Venue\",\"type\":\"model\",\"color\":\"#13a8a8\",\"x\":1830,\"y\":370,\"select\":false,\"locked\":false,\"pendant\":{\"data\":{\"type\":\"model\",\"detail\":{\"id\":\"t-2-10790651-4-field-4\",\"knowledge\":{\"id\":\"t-2-10790651-4-field-4\",\"title\":\"字段 4: Venue\",\"kind\":\"COLUMN\",\"source\":\"CURRENT_SCHEMA\",\"scope\":\"TABLE\",\"trust\":\"CURRENT_TABLE_FACT\",\"support\":\"SUPPORTED\",\"tableId\":\"2-10790651-4\",\"statement\":\"当前表字段 Venue 的类型与取值证据；只在表 2-10790651-4 内有效。\",\"structured\":{\"column\":4,\"header\":\"Venue\",\"type\":\"text\",\"distinctValues\":[\"Glenferrie Oval\",\"Brunswick Street Oval\",\"Punt Road Oval\",\"Western Oval\",\"Corio Oval\",\"Lake Oval\"],\"valueEvidenceScope\":\"supplied_rows_only\",\"operatorGuidance\":{\"equality\":\"SUPPORTED\",\"strictNumericComparison\":\"CLARIFY_TYPE_MISMATCH\",\"inclusiveComparison\":\"CLARIFY_UNSUPPORTED\"}}},\"model\":{\"module\":\"where_knowledge\",\"modelTitle\":\"字段 4: Venue\",\"name\":\"t-2-10790651-4-field-4\",\"id\":\"t-2-10790651-4-field-4\",\"pk\":[\"id\"],\"fields\":[{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"当前表字段 Venue 的类型与取值证据；只在表 2-10790651-4 内有效。\",\"type\":\"String\"},{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"TABLE\",\"type\":\"String\"}]},\"component\":{\"id\":\"t-2-10790651-4-field-4\",\"modelId\":\"t-2-10790651-4-field-4\",\"isCollapse\":false,\"x\":1830,\"y\":370},\"fields\":[{\"field\":{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"当前表字段 Venue 的类型与取值证据；只在表 2-10790651-4 内有效。\",\"type\":\"String\"}},{\"field\":{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"TABLE\",\"type\":\"String\"}}],\"familyId\":\"wikisql.where\",\"thirdParty\":false,\"size\":{\"width\":200,\"height\":80}}}}},{\"id\":\"t-2-10790651-4-field-5\",\"name\":\"字段 5: Crowd\",\"type\":\"model\",\"color\":\"#13a8a8\",\"x\":2110,\"y\":370,\"select\":false,\"locked\":false,\"pendant\":{\"data\":{\"type\":\"model\",\"detail\":{\"id\":\"t-2-10790651-4-field-5\",\"knowledge\":{\"id\":\"t-2-10790651-4-field-5\",\"title\":\"字段 5: Crowd\",\"kind\":\"COLUMN\",\"source\":\"CURRENT_SCHEMA\",\"scope\":\"TABLE\",\"trust\":\"CURRENT_TABLE_FACT\",\"support\":\"SUPPORTED\",\"tableId\":\"2-10790651-4\",\"statement\":\"当前表字段 Crowd 的类型与取值证据；只在表 2-10790651-4 内有效。\",\"structured\":{\"column\":5,\"header\":\"Crowd\",\"type\":\"real\",\"distinctValues\":[\"11,000\",\"13,000\",\"15,000\",\"17,000\",\"35,000\"],\"valueEvidenceScope\":\"supplied_rows_only\",\"operatorGuidance\":{\"equality\":\"SUPPORTED\",\"strictNumericComparison\":\"SUPPORTED\",\"inclusiveComparison\":\"CLARIFY_UNSUPPORTED\"}}},\"model\":{\"module\":\"where_knowledge\",\"modelTitle\":\"字段 5: Crowd\",\"name\":\"t-2-10790651-4-field-5\",\"id\":\"t-2-10790651-4-field-5\",\"pk\":[\"id\"],\"fields\":[{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"当前表字段 Crowd 的类型与取值证据；只在表 2-10790651-4 内有效。\",\"type\":\"String\"},{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"TABLE\",\"type\":\"String\"}]},\"component\":{\"id\":\"t-2-10790651-4-field-5\",\"modelId\":\"t-2-10790651-4-field-5\",\"isCollapse\":false,\"x\":2110,\"y\":370},\"fields\":[{\"field\":{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"当前表字段 Crowd 的类型与取值证据；只在表 2-10790651-4 内有效。\",\"type\":\"String\"}},{\"field\":{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"TABLE\",\"type\":\"String\"}}],\"familyId\":\"wikisql.where\",\"thirdParty\":false,\"size\":{\"width\":200,\"height\":80}}}}},{\"id\":\"t-2-10790651-4-field-6\",\"name\":\"字段 6: Date\",\"type\":\"model\",\"color\":\"#13a8a8\",\"x\":1830,\"y\":515,\"select\":false,\"locked\":false,\"pendant\":{\"data\":{\"type\":\"model\",\"detail\":{\"id\":\"t-2-10790651-4-field-6\",\"knowledge\":{\"id\":\"t-2-10790651-4-field-6\",\"title\":\"字段 6: Date\",\"kind\":\"COLUMN\",\"source\":\"CURRENT_SCHEMA\",\"scope\":\"TABLE\",\"trust\":\"CURRENT_TABLE_FACT\",\"support\":\"SUPPORTED\",\"tableId\":\"2-10790651-4\",\"statement\":\"当前表字段 Date 的类型与取值证据；只在表 2-10790651-4 内有效。\",\"structured\":{\"column\":6,\"header\":\"Date\",\"type\":\"text\",\"distinctValues\":[\"18 May 1935\"],\"valueEvidenceScope\":\"supplied_rows_only\",\"operatorGuidance\":{\"equality\":\"SUPPORTED\",\"strictNumericComparison\":\"CLARIFY_TYPE_MISMATCH\",\"inclusiveComparison\":\"CLARIFY_UNSUPPORTED\"}}},\"model\":{\"module\":\"where_knowledge\",\"modelTitle\":\"字段 6: Date\",\"name\":\"t-2-10790651-4-field-6\",\"id\":\"t-2-10790651-4-field-6\",\"pk\":[\"id\"],\"fields\":[{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"当前表字段 Date 的类型与取值证据；只在表 2-10790651-4 内有效。\",\"type\":\"String\"},{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"TABLE\",\"type\":\"String\"}]},\"component\":{\"id\":\"t-2-10790651-4-field-6\",\"modelId\":\"t-2-10790651-4-field-6\",\"isCollapse\":false,\"x\":1830,\"y\":515},\"fields\":[{\"field\":{\"name\":\"statement\",\"fieldTitle\":\"知识内容\",\"notes\":\"当前表字段 Date 的类型与取值证据；只在表 2-10790651-4 内有效。\",\"type\":\"String\"}},{\"field\":{\"name\":\"scope\",\"fieldTitle\":\"作用域\",\"notes\":\"TABLE\",\"type\":\"String\"}}],\"familyId\":\"wikisql.where\",\"thirdParty\":false,\"size\":{\"width\":200,\"height\":80}}}}}],\"links\":[{\"id\":\"where-rel-g-column-p-text\",\"name\":\"CONSTRAINS\",\"type\":\"relation\",\"color\":\"#8c8c8c\",\"points\":[],\"fromElementId\":\"g-column\",\"toElementId\":\"p-text\",\"pendant\":{\"data\":{\"type\":\"relation\",\"detail\":{\"id\":\"where-rel-g-column-p-text\",\"knowledgeRelation\":{\"id\":\"where-rel-g-column-p-text\",\"from\":\"g-column\",\"to\":\"p-text\",\"relation\":\"CONSTRAINS\",\"statement\":\"等值条件必须先确认过滤字段\"},\"link\":{\"id\":\"where-rel-g-column-p-text\",\"relationId\":\"where-rel-g-column-p-text\",\"color\":\"#8c8c8c\",\"points\":[]},\"thirdParty\":false}}}},{\"id\":\"where-rel-g-eq-p-text\",\"name\":\"COMBINES_WITH\",\"type\":\"relation\",\"color\":\"#8c8c8c\",\"points\":[],\"fromElementId\":\"g-eq\",\"toElementId\":\"p-text\",\"pendant\":{\"data\":{\"type\":\"relation\",\"detail\":{\"id\":\"where-rel-g-eq-p-text\",\"knowledgeRelation\":{\"id\":\"where-rel-g-eq-p-text\",\"from\":\"g-eq\",\"to\":\"p-text\",\"relation\":\"COMBINES_WITH\",\"statement\":\"等值运算符参与文本条件\"},\"link\":{\"id\":\"where-rel-g-eq-p-text\",\"relationId\":\"where-rel-g-eq-p-text\",\"color\":\"#8c8c8c\",\"points\":[]},\"thirdParty\":false}}}},{\"id\":\"where-rel-g-literal-p-text\",\"name\":\"COMBINES_WITH\",\"type\":\"relation\",\"color\":\"#8c8c8c\",\"points\":[],\"fromElementId\":\"g-literal\",\"toElementId\":\"p-text\",\"pendant\":{\"data\":{\"type\":\"relation\",\"detail\":{\"id\":\"where-rel-g-literal-p-text\",\"knowledgeRelation\":{\"id\":\"where-rel-g-literal-p-text\",\"from\":\"g-literal\",\"to\":\"p-text\",\"relation\":\"COMBINES_WITH\",\"statement\":\"采用当前表的精确取值\"},\"link\":{\"id\":\"where-rel-g-literal-p-text\",\"relationId\":\"where-rel-g-literal-p-text\",\"color\":\"#8c8c8c\",\"points\":[]},\"thirdParty\":false}}}},{\"id\":\"where-rel-g-column-p-number\",\"name\":\"CONSTRAINS\",\"type\":\"relation\",\"color\":\"#8c8c8c\",\"points\":[],\"fromElementId\":\"g-column\",\"toElementId\":\"p-number\",\"pendant\":{\"data\":{\"type\":\"relation\",\"detail\":{\"id\":\"where-rel-g-column-p-number\",\"knowledgeRelation\":{\"id\":\"where-rel-g-column-p-number\",\"from\":\"g-column\",\"to\":\"p-number\",\"relation\":\"CONSTRAINS\",\"statement\":\"比较条件绑定数值字段\"},\"link\":{\"id\":\"where-rel-g-column-p-number\",\"relationId\":\"where-rel-g-column-p-number\",\"color\":\"#8c8c8c\",\"points\":[]},\"thirdParty\":false}}}},{\"id\":\"where-rel-g-gt-p-number\",\"name\":\"COMBINES_WITH\",\"type\":\"relation\",\"color\":\"#8c8c8c\",\"points\":[],\"fromElementId\":\"g-gt\",\"toElementId\":\"p-number\",\"pendant\":{\"data\":{\"type\":\"relation\",\"detail\":{\"id\":\"where-rel-g-gt-p-number\",\"knowledgeRelation\":{\"id\":\"where-rel-g-gt-p-number\",\"from\":\"g-gt\",\"to\":\"p-number\",\"relation\":\"COMBINES_WITH\",\"statement\":\"严格大于分支\"},\"link\":{\"id\":\"where-rel-g-gt-p-number\",\"relationId\":\"where-rel-g-gt-p-number\",\"color\":\"#8c8c8c\",\"points\":[]},\"thirdParty\":false}}}},{\"id\":\"where-rel-g-lt-p-number\",\"name\":\"COMBINES_WITH\",\"type\":\"relation\",\"color\":\"#8c8c8c\",\"points\":[],\"fromElementId\":\"g-lt\",\"toElementId\":\"p-number\",\"pendant\":{\"data\":{\"type\":\"relation\",\"detail\":{\"id\":\"where-rel-g-lt-p-number\",\"knowledgeRelation\":{\"id\":\"where-rel-g-lt-p-number\",\"from\":\"g-lt\",\"to\":\"p-number\",\"relation\":\"COMBINES_WITH\",\"statement\":\"严格小于分支\"},\"link\":{\"id\":\"where-rel-g-lt-p-number\",\"relationId\":\"where-rel-g-lt-p-number\",\"color\":\"#8c8c8c\",\"points\":[]},\"thirdParty\":false}}}},{\"id\":\"where-rel-g-threshold-p-number\",\"name\":\"COMBINES_WITH\",\"type\":\"relation\",\"color\":\"#8c8c8c\",\"points\":[],\"fromElementId\":\"g-threshold\",\"toElementId\":\"p-number\",\"pendant\":{\"data\":{\"type\":\"relation\",\"detail\":{\"id\":\"where-rel-g-threshold-p-number\",\"knowledgeRelation\":{\"id\":\"where-rel-g-threshold-p-number\",\"from\":\"g-threshold\",\"to\":\"p-number\",\"relation\":\"COMBINES_WITH\",\"statement\":\"阈值来自问题\"},\"link\":{\"id\":\"where-rel-g-threshold-p-number\",\"relationId\":\"where-rel-g-threshold-p-number\",\"color\":\"#8c8c8c\",\"points\":[]},\"thirdParty\":false}}}},{\"id\":\"where-rel-g-and-p-multi\",\"name\":\"COMBINES_WITH\",\"type\":\"relation\",\"color\":\"#8c8c8c\",\"points\":[],\"fromElementId\":\"g-and\",\"toElementId\":\"p-multi\",\"pendant\":{\"data\":{\"type\":\"relation\",\"detail\":{\"id\":\"where-rel-g-and-p-multi\",\"knowledgeRelation\":{\"id\":\"where-rel-g-and-p-multi\",\"from\":\"g-and\",\"to\":\"p-multi\",\"relation\":\"COMBINES_WITH\",\"statement\":\"独立谓词以 AND 组合\"},\"link\":{\"id\":\"where-rel-g-and-p-multi\",\"relationId\":\"where-rel-g-and-p-multi\",\"color\":\"#8c8c8c\",\"points\":[]},\"thirdParty\":false}}}},{\"id\":\"where-rel-g-count-p-multi\",\"name\":\"CONSTRAINS\",\"type\":\"relation\",\"color\":\"#8c8c8c\",\"points\":[],\"fromElementId\":\"g-count\",\"toElementId\":\"p-multi\",\"pendant\":{\"data\":{\"type\":\"relation\",\"detail\":{\"id\":\"where-rel-g-count-p-multi\",\"knowledgeRelation\":{\"id\":\"where-rel-g-count-p-multi\",\"from\":\"g-count\",\"to\":\"p-multi\",\"relation\":\"CONSTRAINS\",\"statement\":\"检查遗漏与重复\"},\"link\":{\"id\":\"where-rel-g-count-p-multi\",\"relationId\":\"where-rel-g-count-p-multi\",\"color\":\"#8c8c8c\",\"points\":[]},\"thirdParty\":false}}}},{\"id\":\"where-rel-p-text-p-multi\",\"name\":\"COMBINES_WITH\",\"type\":\"relation\",\"color\":\"#8c8c8c\",\"points\":[],\"fromElementId\":\"p-text\",\"toElementId\":\"p-multi\",\"pendant\":{\"data\":{\"type\":\"relation\",\"detail\":{\"id\":\"where-rel-p-text-p-multi\",\"knowledgeRelation\":{\"id\":\"where-rel-p-text-p-multi\",\"from\":\"p-text\",\"to\":\"p-multi\",\"relation\":\"COMBINES_WITH\",\"statement\":\"文本条件可参与组合\"},\"link\":{\"id\":\"where-rel-p-text-p-multi\",\"relationId\":\"where-rel-p-text-p-multi\",\"color\":\"#8c8c8c\",\"points\":[]},\"thirdParty\":false}}}},{\"id\":\"where-rel-p-number-p-multi\",\"name\":\"COMBINES_WITH\",\"type\":\"relation\",\"color\":\"#8c8c8c\",\"points\":[],\"fromElementId\":\"p-number\",\"toElementId\":\"p-multi\",\"pendant\":{\"data\":{\"type\":\"relation\",\"detail\":{\"id\":\"where-rel-p-number-p-multi\",\"knowledgeRelation\":{\"id\":\"where-rel-p-number-p-multi\",\"from\":\"p-number\",\"to\":\"p-multi\",\"relation\":\"COMBINES_WITH\",\"statement\":\"数值条件可参与组合\"},\"link\":{\"id\":\"where-rel-p-number-p-multi\",\"relationId\":\"where-rel-p-number-p-multi\",\"color\":\"#8c8c8c\",\"points\":[]},\"thirdParty\":false}}}},{\"id\":\"where-rel-g-inclusive-p-unsupported\",\"name\":\"CONSTRAINS\",\"type\":\"relation\",\"color\":\"#8c8c8c\",\"points\":[],\"fromElementId\":\"g-inclusive\",\"toElementId\":\"p-unsupported\",\"pendant\":{\"data\":{\"type\":\"relation\",\"detail\":{\"id\":\"where-rel-g-inclusive-p-unsupported\",\"knowledgeRelation\":{\"id\":\"where-rel-g-inclusive-p-unsupported\",\"from\":\"g-inclusive\",\"to\":\"p-unsupported\",\"relation\":\"CONSTRAINS\",\"statement\":\"含边界比较仅在无法等价转换时停止\"},\"link\":{\"id\":\"where-rel-g-inclusive-p-unsupported\",\"relationId\":\"where-rel-g-inclusive-p-unsupported\",\"color\":\"#8c8c8c\",\"points\":[]},\"thirdParty\":false}}}},{\"id\":\"where-rel-g-or-p-unsupported\",\"name\":\"SUPPORTS\",\"type\":\"relation\",\"color\":\"#8c8c8c\",\"points\":[],\"fromElementId\":\"g-or\",\"toElementId\":\"p-unsupported\",\"pendant\":{\"data\":{\"type\":\"relation\",\"detail\":{\"id\":\"where-rel-g-or-p-unsupported\",\"knowledgeRelation\":{\"id\":\"where-rel-g-or-p-unsupported\",\"from\":\"g-or\",\"to\":\"p-unsupported\",\"relation\":\"SUPPORTS\",\"statement\":\"析取不可直接表达\"},\"link\":{\"id\":\"where-rel-g-or-p-unsupported\",\"relationId\":\"where-rel-g-or-p-unsupported\",\"color\":\"#8c8c8c\",\"points\":[]},\"thirdParty\":false}}}},{\"id\":\"where-rel-d-implicit-eq-p-text\",\"name\":\"ILLUSTRATES\",\"type\":\"relation\",\"color\":\"#8c8c8c\",\"points\":[],\"fromElementId\":\"d-implicit-eq\",\"toElementId\":\"p-text\",\"pendant\":{\"data\":{\"type\":\"relation\",\"detail\":{\"id\":\"where-rel-d-implicit-eq-p-text\",\"knowledgeRelation\":{\"id\":\"where-rel-d-implicit-eq-p-text\",\"from\":\"d-implicit-eq\",\"to\":\"p-text\",\"relation\":\"ILLUSTRATES\",\"statement\":\"训练集中的隐式等值样例\"},\"link\":{\"id\":\"where-rel-d-implicit-eq-p-text\",\"relationId\":\"where-rel-d-implicit-eq-p-text\",\"color\":\"#8c8c8c\",\"points\":[]},\"thirdParty\":false}}}},{\"id\":\"where-rel-d-explicit-eq-p-text\",\"name\":\"ILLUSTRATES\",\"type\":\"relation\",\"color\":\"#8c8c8c\",\"points\":[],\"fromElementId\":\"d-explicit-eq\",\"toElementId\":\"p-text\",\"pendant\":{\"data\":{\"type\":\"relation\",\"detail\":{\"id\":\"where-rel-d-explicit-eq-p-text\",\"knowledgeRelation\":{\"id\":\"where-rel-d-explicit-eq-p-text\",\"from\":\"d-explicit-eq\",\"to\":\"p-text\",\"relation\":\"ILLUSTRATES\",\"statement\":\"训练集中的显式等值样例\"},\"link\":{\"id\":\"where-rel-d-explicit-eq-p-text\",\"relationId\":\"where-rel-d-explicit-eq-p-text\",\"color\":\"#8c8c8c\",\"points\":[]},\"thirdParty\":false}}}},{\"id\":\"where-rel-d-gt-p-number\",\"name\":\"ILLUSTRATES\",\"type\":\"relation\",\"color\":\"#8c8c8c\",\"points\":[],\"fromElementId\":\"d-gt\",\"toElementId\":\"p-number\",\"pendant\":{\"data\":{\"type\":\"relation\",\"detail\":{\"id\":\"where-rel-d-gt-p-number\",\"knowledgeRelation\":{\"id\":\"where-rel-d-gt-p-number\",\"from\":\"d-gt\",\"to\":\"p-number\",\"relation\":\"ILLUSTRATES\",\"statement\":\"训练集中的严格大于样例\"},\"link\":{\"id\":\"where-rel-d-gt-p-number\",\"relationId\":\"where-rel-d-gt-p-number\",\"color\":\"#8c8c8c\",\"points\":[]},\"thirdParty\":false}}}},{\"id\":\"where-rel-d-lt-and-gt-p-multi\",\"name\":\"ILLUSTRATES\",\"type\":\"relation\",\"color\":\"#8c8c8c\",\"points\":[],\"fromElementId\":\"d-lt-and-gt\",\"toElementId\":\"p-multi\",\"pendant\":{\"data\":{\"type\":\"relation\",\"detail\":{\"id\":\"where-rel-d-lt-and-gt-p-multi\",\"knowledgeRelation\":{\"id\":\"where-rel-d-lt-and-gt-p-multi\",\"from\":\"d-lt-and-gt\",\"to\":\"p-multi\",\"relation\":\"ILLUSTRATES\",\"statement\":\"训练集中的双比较样例\"},\"link\":{\"id\":\"where-rel-d-lt-and-gt-p-multi\",\"relationId\":\"where-rel-d-lt-and-gt-p-multi\",\"color\":\"#8c8c8c\",\"points\":[]},\"thirdParty\":false}}}},{\"id\":\"where-rel-d-with-two-p-multi\",\"name\":\"ILLUSTRATES\",\"type\":\"relation\",\"color\":\"#8c8c8c\",\"points\":[],\"fromElementId\":\"d-with-two\",\"toElementId\":\"p-multi\",\"pendant\":{\"data\":{\"type\":\"relation\",\"detail\":{\"id\":\"where-rel-d-with-two-p-multi\",\"knowledgeRelation\":{\"id\":\"where-rel-d-with-two-p-multi\",\"from\":\"d-with-two\",\"to\":\"p-multi\",\"relation\":\"ILLUSTRATES\",\"statement\":\"训练集中的 with 双限定样例\"},\"link\":{\"id\":\"where-rel-d-with-two-p-multi\",\"relationId\":\"where-rel-d-with-two-p-multi\",\"color\":\"#8c8c8c\",\"points\":[]},\"thirdParty\":false}}}},{\"id\":\"where-rel-d-literal-form-g-literal\",\"name\":\"ILLUSTRATES\",\"type\":\"relation\",\"color\":\"#8c8c8c\",\"points\":[],\"fromElementId\":\"d-literal-form\",\"toElementId\":\"g-literal\",\"pendant\":{\"data\":{\"type\":\"relation\",\"detail\":{\"id\":\"where-rel-d-literal-form-g-literal\",\"knowledgeRelation\":{\"id\":\"where-rel-d-literal-form-g-literal\",\"from\":\"d-literal-form\",\"to\":\"g-literal\",\"relation\":\"ILLUSTRATES\",\"statement\":\"训练集中的复杂文本值样例\"},\"link\":{\"id\":\"where-rel-d-literal-form-g-literal\",\"relationId\":\"where-rel-d-literal-form-g-literal\",\"color\":\"#8c8c8c\",\"points\":[]},\"thirdParty\":false}}}},{\"id\":\"where-rel-g-ambiguous-g-count\",\"name\":\"DISAMBIGUATES\",\"type\":\"relation\",\"color\":\"#8c8c8c\",\"points\":[],\"fromElementId\":\"g-ambiguous\",\"toElementId\":\"g-count\",\"pendant\":{\"data\":{\"type\":\"relation\",\"detail\":{\"id\":\"where-rel-g-ambiguous-g-count\",\"knowledgeRelation\":{\"id\":\"where-rel-g-ambiguous-g-count\",\"from\":\"g-ambiguous\",\"to\":\"g-count\",\"relation\":\"DISAMBIGUATES\",\"statement\":\"避免凭极值词臆造过滤条件\"},\"link\":{\"id\":\"where-rel-g-ambiguous-g-count\",\"relationId\":\"where-rel-g-ambiguous-g-count\",\"color\":\"#8c8c8c\",\"points\":[]},\"thirdParty\":false}}}},{\"id\":\"where-rel-t-2-10790651-4-field-0-g-column\",\"name\":\"SUPPORTS\",\"type\":\"relation\",\"color\":\"#8c8c8c\",\"points\":[],\"fromElementId\":\"t-2-10790651-4-field-0\",\"toElementId\":\"g-column\",\"pendant\":{\"data\":{\"type\":\"relation\",\"detail\":{\"id\":\"where-rel-t-2-10790651-4-field-0-g-column\",\"knowledgeRelation\":{\"id\":\"where-rel-t-2-10790651-4-field-0-g-column\",\"from\":\"t-2-10790651-4-field-0\",\"to\":\"g-column\",\"relation\":\"SUPPORTS\",\"statement\":\"当前表字段用于过滤列绑定\"},\"link\":{\"id\":\"where-rel-t-2-10790651-4-field-0-g-column\",\"relationId\":\"where-rel-t-2-10790651-4-field-0-g-column\",\"color\":\"#8c8c8c\",\"points\":[]},\"thirdParty\":false}}}},{\"id\":\"where-rel-t-2-10790651-4-field-0-g-literal\",\"name\":\"SUPPORTS\",\"type\":\"relation\",\"color\":\"#8c8c8c\",\"points\":[],\"fromElementId\":\"t-2-10790651-4-field-0\",\"toElementId\":\"g-literal\",\"pendant\":{\"data\":{\"type\":\"relation\",\"detail\":{\"id\":\"where-rel-t-2-10790651-4-field-0-g-literal\",\"knowledgeRelation\":{\"id\":\"where-rel-t-2-10790651-4-field-0-g-literal\",\"from\":\"t-2-10790651-4-field-0\",\"to\":\"g-literal\",\"relation\":\"SUPPORTS\",\"statement\":\"当前表取值用于精确值匹配\"},\"link\":{\"id\":\"where-rel-t-2-10790651-4-field-0-g-literal\",\"relationId\":\"where-rel-t-2-10790651-4-field-0-g-literal\",\"color\":\"#8c8c8c\",\"points\":[]},\"thirdParty\":false}}}},{\"id\":\"where-rel-t-2-10790651-4-field-1-g-column\",\"name\":\"SUPPORTS\",\"type\":\"relation\",\"color\":\"#8c8c8c\",\"points\":[],\"fromElementId\":\"t-2-10790651-4-field-1\",\"toElementId\":\"g-column\",\"pendant\":{\"data\":{\"type\":\"relation\",\"detail\":{\"id\":\"where-rel-t-2-10790651-4-field-1-g-column\",\"knowledgeRelation\":{\"id\":\"where-rel-t-2-10790651-4-field-1-g-column\",\"from\":\"t-2-10790651-4-field-1\",\"to\":\"g-column\",\"relation\":\"SUPPORTS\",\"statement\":\"当前表字段用于过滤列绑定\"},\"link\":{\"id\":\"where-rel-t-2-10790651-4-field-1-g-column\",\"relationId\":\"where-rel-t-2-10790651-4-field-1-g-column\",\"color\":\"#8c8c8c\",\"points\":[]},\"thirdParty\":false}}}},{\"id\":\"where-rel-t-2-10790651-4-field-1-g-literal\",\"name\":\"SUPPORTS\",\"type\":\"relation\",\"color\":\"#8c8c8c\",\"points\":[],\"fromElementId\":\"t-2-10790651-4-field-1\",\"toElementId\":\"g-literal\",\"pendant\":{\"data\":{\"type\":\"relation\",\"detail\":{\"id\":\"where-rel-t-2-10790651-4-field-1-g-literal\",\"knowledgeRelation\":{\"id\":\"where-rel-t-2-10790651-4-field-1-g-literal\",\"from\":\"t-2-10790651-4-field-1\",\"to\":\"g-literal\",\"relation\":\"SUPPORTS\",\"statement\":\"当前表取值用于精确值匹配\"},\"link\":{\"id\":\"where-rel-t-2-10790651-4-field-1-g-literal\",\"relationId\":\"where-rel-t-2-10790651-4-field-1-g-literal\",\"color\":\"#8c8c8c\",\"points\":[]},\"thirdParty\":false}}}},{\"id\":\"where-rel-t-2-10790651-4-field-2-g-column\",\"name\":\"SUPPORTS\",\"type\":\"relation\",\"color\":\"#8c8c8c\",\"points\":[],\"fromElementId\":\"t-2-10790651-4-field-2\",\"toElementId\":\"g-column\",\"pendant\":{\"data\":{\"type\":\"relation\",\"detail\":{\"id\":\"where-rel-t-2-10790651-4-field-2-g-column\",\"knowledgeRelation\":{\"id\":\"where-rel-t-2-10790651-4-field-2-g-column\",\"from\":\"t-2-10790651-4-field-2\",\"to\":\"g-column\",\"relation\":\"SUPPORTS\",\"statement\":\"当前表字段用于过滤列绑定\"},\"link\":{\"id\":\"where-rel-t-2-10790651-4-field-2-g-column\",\"relationId\":\"where-rel-t-2-10790651-4-field-2-g-column\",\"color\":\"#8c8c8c\",\"points\":[]},\"thirdParty\":false}}}},{\"id\":\"where-rel-t-2-10790651-4-field-2-g-literal\",\"name\":\"SUPPORTS\",\"type\":\"relation\",\"color\":\"#8c8c8c\",\"points\":[],\"fromElementId\":\"t-2-10790651-4-field-2\",\"toElementId\":\"g-literal\",\"pendant\":{\"data\":{\"type\":\"relation\",\"detail\":{\"id\":\"where-rel-t-2-10790651-4-field-2-g-literal\",\"knowledgeRelation\":{\"id\":\"where-rel-t-2-10790651-4-field-2-g-literal\",\"from\":\"t-2-10790651-4-field-2\",\"to\":\"g-literal\",\"relation\":\"SUPPORTS\",\"statement\":\"当前表取值用于精确值匹配\"},\"link\":{\"id\":\"where-rel-t-2-10790651-4-field-2-g-literal\",\"relationId\":\"where-rel-t-2-10790651-4-field-2-g-literal\",\"color\":\"#8c8c8c\",\"points\":[]},\"thirdParty\":false}}}},{\"id\":\"where-rel-t-2-10790651-4-field-3-g-column\",\"name\":\"SUPPORTS\",\"type\":\"relation\",\"color\":\"#8c8c8c\",\"points\":[],\"fromElementId\":\"t-2-10790651-4-field-3\",\"toElementId\":\"g-column\",\"pendant\":{\"data\":{\"type\":\"relation\",\"detail\":{\"id\":\"where-rel-t-2-10790651-4-field-3-g-column\",\"knowledgeRelation\":{\"id\":\"where-rel-t-2-10790651-4-field-3-g-column\",\"from\":\"t-2-10790651-4-field-3\",\"to\":\"g-column\",\"relation\":\"SUPPORTS\",\"statement\":\"当前表字段用于过滤列绑定\"},\"link\":{\"id\":\"where-rel-t-2-10790651-4-field-3-g-column\",\"relationId\":\"where-rel-t-2-10790651-4-field-3-g-column\",\"color\":\"#8c8c8c\",\"points\":[]},\"thirdParty\":false}}}},{\"id\":\"where-rel-t-2-10790651-4-field-3-g-literal\",\"name\":\"SUPPORTS\",\"type\":\"relation\",\"color\":\"#8c8c8c\",\"points\":[],\"fromElementId\":\"t-2-10790651-4-field-3\",\"toElementId\":\"g-literal\",\"pendant\":{\"data\":{\"type\":\"relation\",\"detail\":{\"id\":\"where-rel-t-2-10790651-4-field-3-g-literal\",\"knowledgeRelation\":{\"id\":\"where-rel-t-2-10790651-4-field-3-g-literal\",\"from\":\"t-2-10790651-4-field-3\",\"to\":\"g-literal\",\"relation\":\"SUPPORTS\",\"statement\":\"当前表取值用于精确值匹配\"},\"link\":{\"id\":\"where-rel-t-2-10790651-4-field-3-g-literal\",\"relationId\":\"where-rel-t-2-10790651-4-field-3-g-literal\",\"color\":\"#8c8c8c\",\"points\":[]},\"thirdParty\":false}}}},{\"id\":\"where-rel-t-2-10790651-4-field-4-g-column\",\"name\":\"SUPPORTS\",\"type\":\"relation\",\"color\":\"#8c8c8c\",\"points\":[],\"fromElementId\":\"t-2-10790651-4-field-4\",\"toElementId\":\"g-column\",\"pendant\":{\"data\":{\"type\":\"relation\",\"detail\":{\"id\":\"where-rel-t-2-10790651-4-field-4-g-column\",\"knowledgeRelation\":{\"id\":\"where-rel-t-2-10790651-4-field-4-g-column\",\"from\":\"t-2-10790651-4-field-4\",\"to\":\"g-column\",\"relation\":\"SUPPORTS\",\"statement\":\"当前表字段用于过滤列绑定\"},\"link\":{\"id\":\"where-rel-t-2-10790651-4-field-4-g-column\",\"relationId\":\"where-rel-t-2-10790651-4-field-4-g-column\",\"color\":\"#8c8c8c\",\"points\":[]},\"thirdParty\":false}}}},{\"id\":\"where-rel-t-2-10790651-4-field-4-g-literal\",\"name\":\"SUPPORTS\",\"type\":\"relation\",\"color\":\"#8c8c8c\",\"points\":[],\"fromElementId\":\"t-2-10790651-4-field-4\",\"toElementId\":\"g-literal\",\"pendant\":{\"data\":{\"type\":\"relation\",\"detail\":{\"id\":\"where-rel-t-2-10790651-4-field-4-g-literal\",\"knowledgeRelation\":{\"id\":\"where-rel-t-2-10790651-4-field-4-g-literal\",\"from\":\"t-2-10790651-4-field-4\",\"to\":\"g-literal\",\"relation\":\"SUPPORTS\",\"statement\":\"当前表取值用于精确值匹配\"},\"link\":{\"id\":\"where-rel-t-2-10790651-4-field-4-g-literal\",\"relationId\":\"where-rel-t-2-10790651-4-field-4-g-literal\",\"color\":\"#8c8c8c\",\"points\":[]},\"thirdParty\":false}}}},{\"id\":\"where-rel-t-2-10790651-4-field-5-g-column\",\"name\":\"SUPPORTS\",\"type\":\"relation\",\"color\":\"#8c8c8c\",\"points\":[],\"fromElementId\":\"t-2-10790651-4-field-5\",\"toElementId\":\"g-column\",\"pendant\":{\"data\":{\"type\":\"relation\",\"detail\":{\"id\":\"where-rel-t-2-10790651-4-field-5-g-column\",\"knowledgeRelation\":{\"id\":\"where-rel-t-2-10790651-4-field-5-g-column\",\"from\":\"t-2-10790651-4-field-5\",\"to\":\"g-column\",\"relation\":\"SUPPORTS\",\"statement\":\"当前表字段用于过滤列绑定\"},\"link\":{\"id\":\"where-rel-t-2-10790651-4-field-5-g-column\",\"relationId\":\"where-rel-t-2-10790651-4-field-5-g-column\",\"color\":\"#8c8c8c\",\"points\":[]},\"thirdParty\":false}}}},{\"id\":\"where-rel-t-2-10790651-4-field-5-g-literal\",\"name\":\"SUPPORTS\",\"type\":\"relation\",\"color\":\"#8c8c8c\",\"points\":[],\"fromElementId\":\"t-2-10790651-4-field-5\",\"toElementId\":\"g-literal\",\"pendant\":{\"data\":{\"type\":\"relation\",\"detail\":{\"id\":\"where-rel-t-2-10790651-4-field-5-g-literal\",\"knowledgeRelation\":{\"id\":\"where-rel-t-2-10790651-4-field-5-g-literal\",\"from\":\"t-2-10790651-4-field-5\",\"to\":\"g-literal\",\"relation\":\"SUPPORTS\",\"statement\":\"当前表取值用于精确值匹配\"},\"link\":{\"id\":\"where-rel-t-2-10790651-4-field-5-g-literal\",\"relationId\":\"where-rel-t-2-10790651-4-field-5-g-literal\",\"color\":\"#8c8c8c\",\"points\":[]},\"thirdParty\":false}}}},{\"id\":\"where-rel-t-2-10790651-4-field-6-g-column\",\"name\":\"SUPPORTS\",\"type\":\"relation\",\"color\":\"#8c8c8c\",\"points\":[],\"fromElementId\":\"t-2-10790651-4-field-6\",\"toElementId\":\"g-column\",\"pendant\":{\"data\":{\"type\":\"relation\",\"detail\":{\"id\":\"where-rel-t-2-10790651-4-field-6-g-column\",\"knowledgeRelation\":{\"id\":\"where-rel-t-2-10790651-4-field-6-g-column\",\"from\":\"t-2-10790651-4-field-6\",\"to\":\"g-column\",\"relation\":\"SUPPORTS\",\"statement\":\"当前表字段用于过滤列绑定\"},\"link\":{\"id\":\"where-rel-t-2-10790651-4-field-6-g-column\",\"relationId\":\"where-rel-t-2-10790651-4-field-6-g-column\",\"color\":\"#8c8c8c\",\"points\":[]},\"thirdParty\":false}}}},{\"id\":\"where-rel-t-2-10790651-4-field-6-g-literal\",\"name\":\"SUPPORTS\",\"type\":\"relation\",\"color\":\"#8c8c8c\",\"points\":[],\"fromElementId\":\"t-2-10790651-4-field-6\",\"toElementId\":\"g-literal\",\"pendant\":{\"data\":{\"type\":\"relation\",\"detail\":{\"id\":\"where-rel-t-2-10790651-4-field-6-g-literal\",\"knowledgeRelation\":{\"id\":\"where-rel-t-2-10790651-4-field-6-g-literal\",\"from\":\"t-2-10790651-4-field-6\",\"to\":\"g-literal\",\"relation\":\"SUPPORTS\",\"statement\":\"当前表取值用于精确值匹配\"},\"link\":{\"id\":\"where-rel-t-2-10790651-4-field-6-g-literal\",\"relationId\":\"where-rel-t-2-10790651-4-field-6-g-literal\",\"color\":\"#8c8c8c\",\"points\":[]},\"thirdParty\":false}}}}]}",
+      "knowledge": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-10790651-4",
+        "atoms": [
+          {
+            "id": "g-eq",
+            "title": "等值比较 =",
+            "kind": "OPERATOR",
+            "source": "HUMAN",
+            "scope": "GLOBAL",
+            "trust": "EXPLICIT_RULE",
+            "support": "SUPPORTED",
+            "statement": "明确的属性等值表达可映射到 WikiSQL 运算符 0；不得只凭介词猜测字段。",
+            "cues": [
+              "is",
+              "equals",
+              "equal to"
+            ],
+            "structured": {
+              "operator": 0,
+              "sql": "=",
+              "requires": [
+                "column",
+                "value"
+              ]
+            }
+          },
+          {
+            "id": "g-gt",
+            "title": "严格大于 >",
+            "kind": "OPERATOR",
+            "source": "HUMAN",
+            "scope": "GLOBAL",
+            "trust": "EXPLICIT_RULE",
+            "support": "SUPPORTED",
+            "statement": "more than、greater than、bigger than 表示严格大于，不含边界。",
+            "cues": [
+              "more than",
+              "greater than",
+              "bigger than"
+            ],
+            "structured": {
+              "operator": 1,
+              "sql": ">",
+              "inclusive": false
+            }
+          },
+          {
+            "id": "g-lt",
+            "title": "严格小于 <",
+            "kind": "OPERATOR",
+            "source": "HUMAN",
+            "scope": "GLOBAL",
+            "trust": "EXPLICIT_RULE",
+            "support": "SUPPORTED",
+            "statement": "less than、smaller than 表示严格小于，不含边界。",
+            "cues": [
+              "less than",
+              "smaller than"
+            ],
+            "structured": {
+              "operator": 2,
+              "sql": "<",
+              "inclusive": false
+            }
+          },
+          {
+            "id": "g-inclusive",
+            "title": "含边界比较",
+            "kind": "OPERATOR",
+            "source": "HUMAN",
+            "scope": "GLOBAL",
+            "trust": "EXPLICIT_RULE",
+            "support": "SUPPORTED",
+            "statement": "at least、no less than、at most 等含边界；保留 >= 或 <= 的原始语义，最终仅在当前表上存在等价谓词时转换为 WikiSQL 标准编码。",
+            "cues": [
+              "at least",
+              "no less than",
+              "at most",
+              "no more than"
+            ],
+            "structured": {
+              "semanticOperators": [
+                ">=",
+                "<="
+              ],
+              "output": "standardWikiSqlWhenEquivalent",
+              "otherwise": "UNREPRESENTABLE_OPERATOR"
+            }
+          },
+          {
+            "id": "g-literal",
+            "title": "精确保留条件值",
+            "kind": "VALUE",
+            "source": "HUMAN",
+            "scope": "GLOBAL",
+            "trust": "EXPLICIT_RULE",
+            "support": "SUPPORTED",
+            "statement": "表格中的文本取值优先采用当前表内原样字面量，包括大小写、标点、连字符与括号。",
+            "cues": [
+              "named",
+              "for",
+              "with"
+            ],
+            "structured": {
+              "source": "current_table_cell",
+              "preserveSurfaceForm": true
+            }
+          },
+          {
+            "id": "g-threshold",
+            "title": "问题中的数值阈值",
+            "kind": "VALUE",
+            "source": "HUMAN",
+            "scope": "GLOBAL",
+            "trust": "EXPLICIT_RULE",
+            "support": "SUPPORTED",
+            "statement": "比较阈值可直接来自问题，不要求出现在表格样本值中；先确认所属字段和单位。",
+            "cues": [
+              "than",
+              "above",
+              "below"
+            ],
+            "structured": {
+              "source": "question",
+              "valueMayBeAbsentFromRows": true
+            }
+          },
+          {
+            "id": "g-and",
+            "title": "合取 AND",
+            "kind": "LOGIC",
+            "source": "HUMAN",
+            "scope": "GLOBAL",
+            "trust": "EXPLICIT_RULE",
+            "support": "SUPPORTED",
+            "statement": "两个独立 WHERE 限定需要各自保留并按 AND 组合；不能把一个条件的值绑定到另一字段。",
+            "cues": [
+              "and",
+              "with",
+              "where"
+            ],
+            "structured": {
+              "connective": "AND",
+              "preserveAllPredicates": true
+            }
+          },
+          {
+            "id": "g-or",
+            "title": "析取 OR",
+            "kind": "LOGIC",
+            "source": "HUMAN",
+            "scope": "GLOBAL",
+            "trust": "EXPLICIT_RULE",
+            "support": "CLARIFY",
+            "statement": "明确的 or/任一条件是析取；WikiSQL 当前 WHERE 结构只有合取，不能擅自改成 AND。",
+            "cues": [
+              "or",
+              "either"
+            ],
+            "structured": {
+              "connective": "OR",
+              "unsupportedInWikiSql": true,
+              "action": "CLARIFY"
+            }
+          },
+          {
+            "id": "g-column",
+            "title": "限定字段与输出字段分离",
+            "kind": "DISAMBIGUATION",
+            "source": "HUMAN",
+            "scope": "GLOBAL",
+            "trust": "EXPLICIT_RULE",
+            "support": "SUPPORTED",
+            "statement": "WHERE 条件列须由限定短语、表头、类型和值共同确定；被询问的输出列不必是过滤列。",
+            "cues": [
+              "where",
+              "for",
+              "with"
+            ],
+            "structured": {
+              "bind": "filter_attribute",
+              "distinguishFrom": "requested_output"
+            }
+          },
+          {
+            "id": "g-count",
+            "title": "条件逐项核对",
+            "kind": "DISAMBIGUATION",
+            "source": "HUMAN",
+            "scope": "GLOBAL",
+            "trust": "EXPLICIT_RULE",
+            "support": "SUPPORTED",
+            "statement": "将问题中的每个独立限定归为一条谓词，并检查遗漏、重复和把输出描述误作过滤的情况。",
+            "cues": [
+              "where",
+              "with",
+              "and"
+            ],
+            "structured": {
+              "check": [
+                "missing",
+                "duplicate",
+                "output_as_filter"
+              ],
+              "maxWikiSqlConditions": 4
+            }
+          },
+          {
+            "id": "g-ambiguous",
+            "title": "极值语义消歧",
+            "kind": "DISAMBIGUATION",
+            "source": "HUMAN",
+            "scope": "GLOBAL",
+            "trust": "EXPLICIT_RULE",
+            "support": "CLARIFY",
+            "statement": "highest/lowest 可能描述被查询结果，也可能限定某行；缺少明确限定对象时不臆造 WHERE 比较。",
+            "cues": [
+              "highest",
+              "lowest",
+              "maximum",
+              "minimum"
+            ],
+            "structured": {
+              "action": "CLARIFY",
+              "avoidInventedPredicate": true
+            }
+          },
+          {
+            "id": "t-2-10790651-4-field-0",
+            "title": "字段 0: Home team",
+            "kind": "COLUMN",
+            "source": "CURRENT_SCHEMA",
+            "scope": "TABLE",
+            "trust": "CURRENT_TABLE_FACT",
+            "support": "SUPPORTED",
+            "tableId": "2-10790651-4",
+            "statement": "当前表字段 Home team 的类型与取值证据；只在表 2-10790651-4 内有效。",
+            "structured": {
+              "column": 0,
+              "header": "Home team",
+              "type": "text",
+              "distinctValues": [
+                "Hawthorn",
+                "Fitzroy",
+                "Richmond",
+                "Footscray",
+                "Geelong",
+                "South Melbourne"
+              ],
+              "valueEvidenceScope": "supplied_rows_only",
+              "operatorGuidance": {
+                "equality": "SUPPORTED",
+                "strictNumericComparison": "CLARIFY_TYPE_MISMATCH",
+                "inclusiveComparison": "CLARIFY_UNSUPPORTED"
+              }
+            }
+          },
+          {
+            "id": "t-2-10790651-4-field-1",
+            "title": "字段 1: Home team score",
+            "kind": "COLUMN",
+            "source": "CURRENT_SCHEMA",
+            "scope": "TABLE",
+            "trust": "CURRENT_TABLE_FACT",
+            "support": "SUPPORTED",
+            "tableId": "2-10790651-4",
+            "statement": "当前表字段 Home team score 的类型与取值证据；只在表 2-10790651-4 内有效。",
+            "structured": {
+              "column": 1,
+              "header": "Home team score",
+              "type": "text",
+              "distinctValues": [
+                "6.17 (53)",
+                "18.16 (124)",
+                "18.20 (128)",
+                "7.8 (50)",
+                "14.17 (101)",
+                "13.19 (97)"
+              ],
+              "valueEvidenceScope": "supplied_rows_only",
+              "operatorGuidance": {
+                "equality": "SUPPORTED",
+                "strictNumericComparison": "CLARIFY_TYPE_MISMATCH",
+                "inclusiveComparison": "CLARIFY_UNSUPPORTED"
+              }
+            }
+          },
+          {
+            "id": "t-2-10790651-4-field-2",
+            "title": "字段 2: Away team",
+            "kind": "COLUMN",
+            "source": "CURRENT_SCHEMA",
+            "scope": "TABLE",
+            "trust": "CURRENT_TABLE_FACT",
+            "support": "SUPPORTED",
+            "tableId": "2-10790651-4",
+            "statement": "当前表字段 Away team 的类型与取值证据；只在表 2-10790651-4 内有效。",
+            "structured": {
+              "column": 2,
+              "header": "Away team",
+              "type": "text",
+              "distinctValues": [
+                "St Kilda",
+                "North Melbourne",
+                "Melbourne",
+                "Essendon",
+                "Collingwood",
+                "Carlton"
+              ],
+              "valueEvidenceScope": "supplied_rows_only",
+              "operatorGuidance": {
+                "equality": "SUPPORTED",
+                "strictNumericComparison": "CLARIFY_TYPE_MISMATCH",
+                "inclusiveComparison": "CLARIFY_UNSUPPORTED"
+              }
+            }
+          },
+          {
+            "id": "t-2-10790651-4-field-3",
+            "title": "字段 3: Away team score",
+            "kind": "COLUMN",
+            "source": "CURRENT_SCHEMA",
+            "scope": "TABLE",
+            "trust": "CURRENT_TABLE_FACT",
+            "support": "SUPPORTED",
+            "tableId": "2-10790651-4",
+            "statement": "当前表字段 Away team score 的类型与取值证据；只在表 2-10790651-4 内有效。",
+            "structured": {
+              "column": 3,
+              "header": "Away team score",
+              "type": "text",
+              "distinctValues": [
+                "16.8 (104)",
+                "10.14 (74)",
+                "14.8 (92)",
+                "16.5 (101)",
+                "17.13 (115)",
+                "14.6 (90)"
+              ],
+              "valueEvidenceScope": "supplied_rows_only",
+              "operatorGuidance": {
+                "equality": "SUPPORTED",
+                "strictNumericComparison": "CLARIFY_TYPE_MISMATCH",
+                "inclusiveComparison": "CLARIFY_UNSUPPORTED"
+              }
+            }
+          },
+          {
+            "id": "t-2-10790651-4-field-4",
+            "title": "字段 4: Venue",
+            "kind": "COLUMN",
+            "source": "CURRENT_SCHEMA",
+            "scope": "TABLE",
+            "trust": "CURRENT_TABLE_FACT",
+            "support": "SUPPORTED",
+            "tableId": "2-10790651-4",
+            "statement": "当前表字段 Venue 的类型与取值证据；只在表 2-10790651-4 内有效。",
+            "structured": {
+              "column": 4,
+              "header": "Venue",
+              "type": "text",
+              "distinctValues": [
+                "Glenferrie Oval",
+                "Brunswick Street Oval",
+                "Punt Road Oval",
+                "Western Oval",
+                "Corio Oval",
+                "Lake Oval"
+              ],
+              "valueEvidenceScope": "supplied_rows_only",
+              "operatorGuidance": {
+                "equality": "SUPPORTED",
+                "strictNumericComparison": "CLARIFY_TYPE_MISMATCH",
+                "inclusiveComparison": "CLARIFY_UNSUPPORTED"
+              }
+            }
+          },
+          {
+            "id": "t-2-10790651-4-field-5",
+            "title": "字段 5: Crowd",
+            "kind": "COLUMN",
+            "source": "CURRENT_SCHEMA",
+            "scope": "TABLE",
+            "trust": "CURRENT_TABLE_FACT",
+            "support": "SUPPORTED",
+            "tableId": "2-10790651-4",
+            "statement": "当前表字段 Crowd 的类型与取值证据；只在表 2-10790651-4 内有效。",
+            "structured": {
+              "column": 5,
+              "header": "Crowd",
+              "type": "real",
+              "distinctValues": [
+                "11,000",
+                "13,000",
+                "15,000",
+                "17,000",
+                "35,000"
+              ],
+              "valueEvidenceScope": "supplied_rows_only",
+              "operatorGuidance": {
+                "equality": "SUPPORTED",
+                "strictNumericComparison": "SUPPORTED",
+                "inclusiveComparison": "CLARIFY_UNSUPPORTED"
+              }
+            }
+          },
+          {
+            "id": "t-2-10790651-4-field-6",
+            "title": "字段 6: Date",
+            "kind": "COLUMN",
+            "source": "CURRENT_SCHEMA",
+            "scope": "TABLE",
+            "trust": "CURRENT_TABLE_FACT",
+            "support": "SUPPORTED",
+            "tableId": "2-10790651-4",
+            "statement": "当前表字段 Date 的类型与取值证据；只在表 2-10790651-4 内有效。",
+            "structured": {
+              "column": 6,
+              "header": "Date",
+              "type": "text",
+              "distinctValues": [
+                "18 May 1935"
+              ],
+              "valueEvidenceScope": "supplied_rows_only",
+              "operatorGuidance": {
+                "equality": "SUPPORTED",
+                "strictNumericComparison": "CLARIFY_TYPE_MISMATCH",
+                "inclusiveComparison": "CLARIFY_UNSUPPORTED"
+              }
+            }
+          }
+        ],
+        "patterns": [
+          {
+            "id": "d-implicit-eq",
+            "title": "省略 where 的实体限定",
+            "kind": "PATTERN",
+            "source": "WIKISQL_TRAIN",
+            "scope": "DATASET",
+            "trust": "STATISTICAL_REFERENCE",
+            "support": "SUPPORTED",
+            "statement": "“for South Australia”在训练样例中对应一条等值条件；具体列必须按当前表重新绑定。",
+            "cues": [
+              "for <entity>"
+            ],
+            "structured": {
+              "shape": "one_equality_predicate",
+              "columnIsTableDependent": true
+            },
+            "evidence": [
+              {
+                "trainLine": 1,
+                "question": "Tell me what the notes are for South Australia ",
+                "conds": [
+                  [
+                    3,
+                    0,
+                    "SOUTH AUSTRALIA"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "id": "d-explicit-eq",
+            "title": "显式属性等值",
+            "kind": "PATTERN",
+            "source": "WIKISQL_TRAIN",
+            "scope": "DATASET",
+            "trust": "STATISTICAL_REFERENCE",
+            "support": "SUPPORTED",
+            "statement": "“where/when <field> is <value>”是等值表达的一种观察模式，不保证所有 is 均为 WHERE。",
+            "cues": [
+              "where <field> is <value>",
+              "when <field> is <value>"
+            ],
+            "structured": {
+              "shape": "one_equality_predicate",
+              "requireFilterAttribute": true
+            },
+            "evidence": [
+              {
+                "trainLine": 10,
+                "question": "what is the powertrain (engine/transmission) when the order year is 2000?",
+                "conds": [
+                  [
+                    0,
+                    0,
+                    "2000"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "id": "d-gt",
+            "title": "训练集严格大于表达",
+            "kind": "PATTERN",
+            "source": "WIKISQL_TRAIN",
+            "scope": "DATASET",
+            "trust": "STATISTICAL_REFERENCE",
+            "support": "SUPPORTED",
+            "statement": "“bigger than 51092.0”对应严格大于；训练中的阈值可归一为数值。",
+            "cues": [
+              "bigger than <number>"
+            ],
+            "structured": {
+              "shape": "numeric_comparison",
+              "operator": 1
+            },
+            "evidence": [
+              {
+                "trainLine": 135,
+                "question": "What's the 2001 census of the region of Abruzzo where the 1871 census is bigger than 51092.0?",
+                "conds": [
+                  [
+                    6,
+                    0,
+                    "Abruzzo"
+                  ],
+                  [
+                    2,
+                    1,
+                    51092
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "id": "d-lt-and-gt",
+            "title": "双比较条件",
+            "kind": "PATTERN",
+            "source": "WIKISQL_TRAIN",
+            "scope": "DATASET",
+            "trust": "STATISTICAL_REFERENCE",
+            "support": "SUPPORTED",
+            "statement": "同句的 less than 与 bigger than 可约束不同字段，并以 AND 连接。",
+            "cues": [
+              "<fieldA> less than <a> and <fieldB> bigger than <b>"
+            ],
+            "structured": {
+              "shape": "two_conjunctive_comparisons",
+              "operators": [
+                2,
+                1
+              ]
+            },
+            "evidence": [
+              {
+                "trainLine": 649,
+                "question": "What is the english title where the premiere is less than 30.0 and the finale is bigger than 36.0?",
+                "conds": [
+                  [
+                    5,
+                    2,
+                    30
+                  ],
+                  [
+                    6,
+                    1,
+                    36
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "id": "d-with-two",
+            "title": "with 引出的第二限定",
+            "kind": "PATTERN",
+            "source": "WIKISQL_TRAIN",
+            "scope": "DATASET",
+            "trust": "STATISTICAL_REFERENCE",
+            "support": "SUPPORTED",
+            "statement": "with 短语可以补充第二个等值限定；是否真的构成条件须依当前问题和 Schema 判断。",
+            "cues": [
+              "for <entity> with <field> <value>"
+            ],
+            "structured": {
+              "shape": "two_conjunctive_equalities",
+              "needsColumnDisambiguation": true
+            },
+            "evidence": [
+              {
+                "trainLine": 87,
+                "question": "What is the population for County Mayo with the English Name Carrowteige?",
+                "conds": [
+                  [
+                    0,
+                    0,
+                    "County Mayo"
+                  ],
+                  [
+                    1,
+                    0,
+                    "Carrowteige"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "id": "d-literal-form",
+            "title": "复杂文本值原样匹配",
+            "kind": "PATTERN",
+            "source": "WIKISQL_TRAIN",
+            "scope": "DATASET",
+            "trust": "STATISTICAL_REFERENCE",
+            "support": "SUPPORTED",
+            "statement": "带破折号与括号的表格值可能是一整个等值字面量，不应按数字或连词拆解。",
+            "cues": [
+              "0–0",
+              "3–1"
+            ],
+            "structured": {
+              "shape": "text_equality",
+              "preservePunctuation": true
+            },
+            "evidence": [
+              {
+                "trainLine": 52,
+                "question": "what's the total number of singles w-l with doubles w-l of 0–0 and total w-l of 3–1",
+                "conds": [
+                  [
+                    4,
+                    0,
+                    "0–0"
+                  ],
+                  [
+                    2,
+                    0,
+                    "3–1"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "id": "p-text",
+            "title": "文本等值 WHERE",
+            "kind": "PATTERN",
+            "source": "HUMAN",
+            "scope": "GLOBAL",
+            "trust": "EXPLICIT_RULE",
+            "support": "SUPPORTED",
+            "statement": "先定位限定字段，再以当前表的精确取值形成单条等值条件。",
+            "cues": [
+              "for <entity>",
+              "where <field> is <text>"
+            ],
+            "structured": {
+              "slots": [
+                "filter_column",
+                "exact_table_value"
+              ],
+              "operator": 0,
+              "conditionCount": 1
+            }
+          },
+          {
+            "id": "p-number",
+            "title": "数值比较 WHERE",
+            "kind": "PATTERN",
+            "source": "HUMAN",
+            "scope": "GLOBAL",
+            "trust": "EXPLICIT_RULE",
+            "support": "SUPPORTED",
+            "statement": "从限定短语绑定数值字段，区分严格比较方向，再提取问题中的阈值。",
+            "cues": [
+              "<field> greater than <number>",
+              "<field> less than <number>"
+            ],
+            "structured": {
+              "slots": [
+                "numeric_filter_column",
+                "comparison_operator",
+                "question_threshold"
+              ],
+              "conditionCount": 1
+            }
+          },
+          {
+            "id": "p-multi",
+            "title": "多条件合取 WHERE",
+            "kind": "PATTERN",
+            "source": "HUMAN",
+            "scope": "GLOBAL",
+            "trust": "EXPLICIT_RULE",
+            "support": "SUPPORTED",
+            "statement": "逐项识别独立条件，保持每个条件的字段、运算符、值配对，再作 AND 组合。",
+            "cues": [
+              "<conditionA> and <conditionB>",
+              "<entity> with <attribute> <value>"
+            ],
+            "structured": {
+              "slots": [
+                "predicate_1",
+                "predicate_2"
+              ],
+              "connective": "AND",
+              "maximumConditions": 4
+            }
+          },
+          {
+            "id": "p-unsupported",
+            "title": "不可表达条件识别",
+            "kind": "PATTERN",
+            "source": "HUMAN",
+            "scope": "GLOBAL",
+            "trust": "EXPLICIT_RULE",
+            "support": "CLARIFY",
+            "statement": "析取意图无法直接表达；含边界比较仅在当前表不存在等价标准谓词时停止生成，不能做语义近似。",
+            "cues": [
+              "at least",
+              "at most",
+              "or"
+            ],
+            "structured": {
+              "action": "CLARIFY_IF_UNREPRESENTABLE",
+              "neverApproximate": true
+            }
+          }
+        ],
+        "relations": [
+          {
+            "id": "where-rel-g-column-p-text",
+            "from": "g-column",
+            "to": "p-text",
+            "relation": "CONSTRAINS",
+            "statement": "等值条件必须先确认过滤字段"
+          },
+          {
+            "id": "where-rel-g-eq-p-text",
+            "from": "g-eq",
+            "to": "p-text",
+            "relation": "COMBINES_WITH",
+            "statement": "等值运算符参与文本条件"
+          },
+          {
+            "id": "where-rel-g-literal-p-text",
+            "from": "g-literal",
+            "to": "p-text",
+            "relation": "COMBINES_WITH",
+            "statement": "采用当前表的精确取值"
+          },
+          {
+            "id": "where-rel-g-column-p-number",
+            "from": "g-column",
+            "to": "p-number",
+            "relation": "CONSTRAINS",
+            "statement": "比较条件绑定数值字段"
+          },
+          {
+            "id": "where-rel-g-gt-p-number",
+            "from": "g-gt",
+            "to": "p-number",
+            "relation": "COMBINES_WITH",
+            "statement": "严格大于分支"
+          },
+          {
+            "id": "where-rel-g-lt-p-number",
+            "from": "g-lt",
+            "to": "p-number",
+            "relation": "COMBINES_WITH",
+            "statement": "严格小于分支"
+          },
+          {
+            "id": "where-rel-g-threshold-p-number",
+            "from": "g-threshold",
+            "to": "p-number",
+            "relation": "COMBINES_WITH",
+            "statement": "阈值来自问题"
+          },
+          {
+            "id": "where-rel-g-and-p-multi",
+            "from": "g-and",
+            "to": "p-multi",
+            "relation": "COMBINES_WITH",
+            "statement": "独立谓词以 AND 组合"
+          },
+          {
+            "id": "where-rel-g-count-p-multi",
+            "from": "g-count",
+            "to": "p-multi",
+            "relation": "CONSTRAINS",
+            "statement": "检查遗漏与重复"
+          },
+          {
+            "id": "where-rel-p-text-p-multi",
+            "from": "p-text",
+            "to": "p-multi",
+            "relation": "COMBINES_WITH",
+            "statement": "文本条件可参与组合"
+          },
+          {
+            "id": "where-rel-p-number-p-multi",
+            "from": "p-number",
+            "to": "p-multi",
+            "relation": "COMBINES_WITH",
+            "statement": "数值条件可参与组合"
+          },
+          {
+            "id": "where-rel-g-inclusive-p-unsupported",
+            "from": "g-inclusive",
+            "to": "p-unsupported",
+            "relation": "CONSTRAINS",
+            "statement": "含边界比较仅在无法等价转换时停止"
+          },
+          {
+            "id": "where-rel-g-or-p-unsupported",
+            "from": "g-or",
+            "to": "p-unsupported",
+            "relation": "SUPPORTS",
+            "statement": "析取不可直接表达"
+          },
+          {
+            "id": "where-rel-d-implicit-eq-p-text",
+            "from": "d-implicit-eq",
+            "to": "p-text",
+            "relation": "ILLUSTRATES",
+            "statement": "训练集中的隐式等值样例"
+          },
+          {
+            "id": "where-rel-d-explicit-eq-p-text",
+            "from": "d-explicit-eq",
+            "to": "p-text",
+            "relation": "ILLUSTRATES",
+            "statement": "训练集中的显式等值样例"
+          },
+          {
+            "id": "where-rel-d-gt-p-number",
+            "from": "d-gt",
+            "to": "p-number",
+            "relation": "ILLUSTRATES",
+            "statement": "训练集中的严格大于样例"
+          },
+          {
+            "id": "where-rel-d-lt-and-gt-p-multi",
+            "from": "d-lt-and-gt",
+            "to": "p-multi",
+            "relation": "ILLUSTRATES",
+            "statement": "训练集中的双比较样例"
+          },
+          {
+            "id": "where-rel-d-with-two-p-multi",
+            "from": "d-with-two",
+            "to": "p-multi",
+            "relation": "ILLUSTRATES",
+            "statement": "训练集中的 with 双限定样例"
+          },
+          {
+            "id": "where-rel-d-literal-form-g-literal",
+            "from": "d-literal-form",
+            "to": "g-literal",
+            "relation": "ILLUSTRATES",
+            "statement": "训练集中的复杂文本值样例"
+          },
+          {
+            "id": "where-rel-g-ambiguous-g-count",
+            "from": "g-ambiguous",
+            "to": "g-count",
+            "relation": "DISAMBIGUATES",
+            "statement": "避免凭极值词臆造过滤条件"
+          },
+          {
+            "id": "where-rel-t-2-10790651-4-field-0-g-column",
+            "from": "t-2-10790651-4-field-0",
+            "to": "g-column",
+            "relation": "SUPPORTS",
+            "statement": "当前表字段用于过滤列绑定"
+          },
+          {
+            "id": "where-rel-t-2-10790651-4-field-0-g-literal",
+            "from": "t-2-10790651-4-field-0",
+            "to": "g-literal",
+            "relation": "SUPPORTS",
+            "statement": "当前表取值用于精确值匹配"
+          },
+          {
+            "id": "where-rel-t-2-10790651-4-field-1-g-column",
+            "from": "t-2-10790651-4-field-1",
+            "to": "g-column",
+            "relation": "SUPPORTS",
+            "statement": "当前表字段用于过滤列绑定"
+          },
+          {
+            "id": "where-rel-t-2-10790651-4-field-1-g-literal",
+            "from": "t-2-10790651-4-field-1",
+            "to": "g-literal",
+            "relation": "SUPPORTS",
+            "statement": "当前表取值用于精确值匹配"
+          },
+          {
+            "id": "where-rel-t-2-10790651-4-field-2-g-column",
+            "from": "t-2-10790651-4-field-2",
+            "to": "g-column",
+            "relation": "SUPPORTS",
+            "statement": "当前表字段用于过滤列绑定"
+          },
+          {
+            "id": "where-rel-t-2-10790651-4-field-2-g-literal",
+            "from": "t-2-10790651-4-field-2",
+            "to": "g-literal",
+            "relation": "SUPPORTS",
+            "statement": "当前表取值用于精确值匹配"
+          },
+          {
+            "id": "where-rel-t-2-10790651-4-field-3-g-column",
+            "from": "t-2-10790651-4-field-3",
+            "to": "g-column",
+            "relation": "SUPPORTS",
+            "statement": "当前表字段用于过滤列绑定"
+          },
+          {
+            "id": "where-rel-t-2-10790651-4-field-3-g-literal",
+            "from": "t-2-10790651-4-field-3",
+            "to": "g-literal",
+            "relation": "SUPPORTS",
+            "statement": "当前表取值用于精确值匹配"
+          },
+          {
+            "id": "where-rel-t-2-10790651-4-field-4-g-column",
+            "from": "t-2-10790651-4-field-4",
+            "to": "g-column",
+            "relation": "SUPPORTS",
+            "statement": "当前表字段用于过滤列绑定"
+          },
+          {
+            "id": "where-rel-t-2-10790651-4-field-4-g-literal",
+            "from": "t-2-10790651-4-field-4",
+            "to": "g-literal",
+            "relation": "SUPPORTS",
+            "statement": "当前表取值用于精确值匹配"
+          },
+          {
+            "id": "where-rel-t-2-10790651-4-field-5-g-column",
+            "from": "t-2-10790651-4-field-5",
+            "to": "g-column",
+            "relation": "SUPPORTS",
+            "statement": "当前表字段用于过滤列绑定"
+          },
+          {
+            "id": "where-rel-t-2-10790651-4-field-5-g-literal",
+            "from": "t-2-10790651-4-field-5",
+            "to": "g-literal",
+            "relation": "SUPPORTS",
+            "statement": "当前表取值用于精确值匹配"
+          },
+          {
+            "id": "where-rel-t-2-10790651-4-field-6-g-column",
+            "from": "t-2-10790651-4-field-6",
+            "to": "g-column",
+            "relation": "SUPPORTS",
+            "statement": "当前表字段用于过滤列绑定"
+          },
+          {
+            "id": "where-rel-t-2-10790651-4-field-6-g-literal",
+            "from": "t-2-10790651-4-field-6",
+            "to": "g-literal",
+            "relation": "SUPPORTS",
+            "statement": "当前表取值用于精确值匹配"
+          }
+        ],
+        "datasetSummary": {
+          "source": "dataset/WikiSQL/data/train.jsonl",
+          "questions": 56355,
+          "questionsWithWhere": 55932,
+          "questionsWithMultipleConditions": 16836,
+          "conditionOperatorCounts": {
+            "equals": 63880,
+            "greaterThan": 6606,
+            "lessThan": 6243
+          },
+          "maximumObservedConditions": 4,
+          "interpretation": "Descriptive training-set counts only; do not override an explicit question or current table."
+        },
+        "precedence": [
+          "CURRENT_TABLE_FACT",
+          "EXPLICIT_RULE",
+          "STATISTICAL_REFERENCE"
+        ],
+        "note": "Trust precedence applies within the same fact type: current table facts ground fields/values; explicit rules govern operator meaning; train patterns are references, not rules. CLARIFY nodes identify unsupported WikiSQL WHERE semantics."
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-10790651-4",
+        "atoms": [
+          {
+            "id": "g-eq",
+            "title": "等值比较 =",
+            "kind": "OPERATOR",
+            "source": "HUMAN",
+            "scope": "GLOBAL",
+            "trust": "EXPLICIT_RULE",
+            "support": "SUPPORTED",
+            "statement": "明确的属性等值表达可映射到 WikiSQL 运算符 0；不得只凭介词猜测字段。",
+            "cues": [
+              "is",
+              "equals",
+              "equal to"
+            ],
+            "structured": {
+              "operator": 0,
+              "sql": "=",
+              "requires": [
+                "column",
+                "value"
+              ]
+            }
+          },
+          {
+            "id": "g-gt",
+            "title": "严格大于 >",
+            "kind": "OPERATOR",
+            "source": "HUMAN",
+            "scope": "GLOBAL",
+            "trust": "EXPLICIT_RULE",
+            "support": "SUPPORTED",
+            "statement": "more than、greater than、bigger than 表示严格大于，不含边界。",
+            "cues": [
+              "more than",
+              "greater than",
+              "bigger than"
+            ],
+            "structured": {
+              "operator": 1,
+              "sql": ">",
+              "inclusive": false
+            }
+          },
+          {
+            "id": "g-lt",
+            "title": "严格小于 <",
+            "kind": "OPERATOR",
+            "source": "HUMAN",
+            "scope": "GLOBAL",
+            "trust": "EXPLICIT_RULE",
+            "support": "SUPPORTED",
+            "statement": "less than、smaller than 表示严格小于，不含边界。",
+            "cues": [
+              "less than",
+              "smaller than"
+            ],
+            "structured": {
+              "operator": 2,
+              "sql": "<",
+              "inclusive": false
+            }
+          },
+          {
+            "id": "g-inclusive",
+            "title": "含边界比较",
+            "kind": "OPERATOR",
+            "source": "HUMAN",
+            "scope": "GLOBAL",
+            "trust": "EXPLICIT_RULE",
+            "support": "SUPPORTED",
+            "statement": "at least、no less than、at most 等含边界；保留 >= 或 <= 的原始语义，最终仅在当前表上存在等价谓词时转换为 WikiSQL 标准编码。",
+            "cues": [
+              "at least",
+              "no less than",
+              "at most",
+              "no more than"
+            ],
+            "structured": {
+              "semanticOperators": [
+                ">=",
+                "<="
+              ],
+              "output": "standardWikiSqlWhenEquivalent",
+              "otherwise": "UNREPRESENTABLE_OPERATOR"
+            }
+          },
+          {
+            "id": "g-literal",
+            "title": "精确保留条件值",
+            "kind": "VALUE",
+            "source": "HUMAN",
+            "scope": "GLOBAL",
+            "trust": "EXPLICIT_RULE",
+            "support": "SUPPORTED",
+            "statement": "表格中的文本取值优先采用当前表内原样字面量，包括大小写、标点、连字符与括号。",
+            "cues": [
+              "named",
+              "for",
+              "with"
+            ],
+            "structured": {
+              "source": "current_table_cell",
+              "preserveSurfaceForm": true
+            }
+          },
+          {
+            "id": "g-threshold",
+            "title": "问题中的数值阈值",
+            "kind": "VALUE",
+            "source": "HUMAN",
+            "scope": "GLOBAL",
+            "trust": "EXPLICIT_RULE",
+            "support": "SUPPORTED",
+            "statement": "比较阈值可直接来自问题，不要求出现在表格样本值中；先确认所属字段和单位。",
+            "cues": [
+              "than",
+              "above",
+              "below"
+            ],
+            "structured": {
+              "source": "question",
+              "valueMayBeAbsentFromRows": true
+            }
+          },
+          {
+            "id": "g-and",
+            "title": "合取 AND",
+            "kind": "LOGIC",
+            "source": "HUMAN",
+            "scope": "GLOBAL",
+            "trust": "EXPLICIT_RULE",
+            "support": "SUPPORTED",
+            "statement": "两个独立 WHERE 限定需要各自保留并按 AND 组合；不能把一个条件的值绑定到另一字段。",
+            "cues": [
+              "and",
+              "with",
+              "where"
+            ],
+            "structured": {
+              "connective": "AND",
+              "preserveAllPredicates": true
+            }
+          },
+          {
+            "id": "g-or",
+            "title": "析取 OR",
+            "kind": "LOGIC",
+            "source": "HUMAN",
+            "scope": "GLOBAL",
+            "trust": "EXPLICIT_RULE",
+            "support": "CLARIFY",
+            "statement": "明确的 or/任一条件是析取；WikiSQL 当前 WHERE 结构只有合取，不能擅自改成 AND。",
+            "cues": [
+              "or",
+              "either"
+            ],
+            "structured": {
+              "connective": "OR",
+              "unsupportedInWikiSql": true,
+              "action": "CLARIFY"
+            }
+          },
+          {
+            "id": "g-column",
+            "title": "限定字段与输出字段分离",
+            "kind": "DISAMBIGUATION",
+            "source": "HUMAN",
+            "scope": "GLOBAL",
+            "trust": "EXPLICIT_RULE",
+            "support": "SUPPORTED",
+            "statement": "WHERE 条件列须由限定短语、表头、类型和值共同确定；被询问的输出列不必是过滤列。",
+            "cues": [
+              "where",
+              "for",
+              "with"
+            ],
+            "structured": {
+              "bind": "filter_attribute",
+              "distinguishFrom": "requested_output"
+            }
+          },
+          {
+            "id": "g-count",
+            "title": "条件逐项核对",
+            "kind": "DISAMBIGUATION",
+            "source": "HUMAN",
+            "scope": "GLOBAL",
+            "trust": "EXPLICIT_RULE",
+            "support": "SUPPORTED",
+            "statement": "将问题中的每个独立限定归为一条谓词，并检查遗漏、重复和把输出描述误作过滤的情况。",
+            "cues": [
+              "where",
+              "with",
+              "and"
+            ],
+            "structured": {
+              "check": [
+                "missing",
+                "duplicate",
+                "output_as_filter"
+              ],
+              "maxWikiSqlConditions": 4
+            }
+          },
+          {
+            "id": "g-ambiguous",
+            "title": "极值语义消歧",
+            "kind": "DISAMBIGUATION",
+            "source": "HUMAN",
+            "scope": "GLOBAL",
+            "trust": "EXPLICIT_RULE",
+            "support": "CLARIFY",
+            "statement": "highest/lowest 可能描述被查询结果，也可能限定某行；缺少明确限定对象时不臆造 WHERE 比较。",
+            "cues": [
+              "highest",
+              "lowest",
+              "maximum",
+              "minimum"
+            ],
+            "structured": {
+              "action": "CLARIFY",
+              "avoidInventedPredicate": true
+            }
+          },
+          {
+            "id": "t-2-10790651-4-field-0",
+            "title": "字段 0: Home team",
+            "kind": "COLUMN",
+            "source": "CURRENT_SCHEMA",
+            "scope": "TABLE",
+            "trust": "CURRENT_TABLE_FACT",
+            "support": "SUPPORTED",
+            "tableId": "2-10790651-4",
+            "statement": "当前表字段 Home team 的类型与取值证据；只在表 2-10790651-4 内有效。",
+            "structured": {
+              "column": 0,
+              "header": "Home team",
+              "type": "text",
+              "distinctValues": [
+                "Hawthorn",
+                "Fitzroy",
+                "Richmond",
+                "Footscray",
+                "Geelong",
+                "South Melbourne"
+              ],
+              "valueEvidenceScope": "supplied_rows_only",
+              "operatorGuidance": {
+                "equality": "SUPPORTED",
+                "strictNumericComparison": "CLARIFY_TYPE_MISMATCH",
+                "inclusiveComparison": "CLARIFY_UNSUPPORTED"
+              }
+            }
+          },
+          {
+            "id": "t-2-10790651-4-field-1",
+            "title": "字段 1: Home team score",
+            "kind": "COLUMN",
+            "source": "CURRENT_SCHEMA",
+            "scope": "TABLE",
+            "trust": "CURRENT_TABLE_FACT",
+            "support": "SUPPORTED",
+            "tableId": "2-10790651-4",
+            "statement": "当前表字段 Home team score 的类型与取值证据；只在表 2-10790651-4 内有效。",
+            "structured": {
+              "column": 1,
+              "header": "Home team score",
+              "type": "text",
+              "distinctValues": [
+                "6.17 (53)",
+                "18.16 (124)",
+                "18.20 (128)",
+                "7.8 (50)",
+                "14.17 (101)",
+                "13.19 (97)"
+              ],
+              "valueEvidenceScope": "supplied_rows_only",
+              "operatorGuidance": {
+                "equality": "SUPPORTED",
+                "strictNumericComparison": "CLARIFY_TYPE_MISMATCH",
+                "inclusiveComparison": "CLARIFY_UNSUPPORTED"
+              }
+            }
+          },
+          {
+            "id": "t-2-10790651-4-field-2",
+            "title": "字段 2: Away team",
+            "kind": "COLUMN",
+            "source": "CURRENT_SCHEMA",
+            "scope": "TABLE",
+            "trust": "CURRENT_TABLE_FACT",
+            "support": "SUPPORTED",
+            "tableId": "2-10790651-4",
+            "statement": "当前表字段 Away team 的类型与取值证据；只在表 2-10790651-4 内有效。",
+            "structured": {
+              "column": 2,
+              "header": "Away team",
+              "type": "text",
+              "distinctValues": [
+                "St Kilda",
+                "North Melbourne",
+                "Melbourne",
+                "Essendon",
+                "Collingwood",
+                "Carlton"
+              ],
+              "valueEvidenceScope": "supplied_rows_only",
+              "operatorGuidance": {
+                "equality": "SUPPORTED",
+                "strictNumericComparison": "CLARIFY_TYPE_MISMATCH",
+                "inclusiveComparison": "CLARIFY_UNSUPPORTED"
+              }
+            }
+          },
+          {
+            "id": "t-2-10790651-4-field-3",
+            "title": "字段 3: Away team score",
+            "kind": "COLUMN",
+            "source": "CURRENT_SCHEMA",
+            "scope": "TABLE",
+            "trust": "CURRENT_TABLE_FACT",
+            "support": "SUPPORTED",
+            "tableId": "2-10790651-4",
+            "statement": "当前表字段 Away team score 的类型与取值证据；只在表 2-10790651-4 内有效。",
+            "structured": {
+              "column": 3,
+              "header": "Away team score",
+              "type": "text",
+              "distinctValues": [
+                "16.8 (104)",
+                "10.14 (74)",
+                "14.8 (92)",
+                "16.5 (101)",
+                "17.13 (115)",
+                "14.6 (90)"
+              ],
+              "valueEvidenceScope": "supplied_rows_only",
+              "operatorGuidance": {
+                "equality": "SUPPORTED",
+                "strictNumericComparison": "CLARIFY_TYPE_MISMATCH",
+                "inclusiveComparison": "CLARIFY_UNSUPPORTED"
+              }
+            }
+          },
+          {
+            "id": "t-2-10790651-4-field-4",
+            "title": "字段 4: Venue",
+            "kind": "COLUMN",
+            "source": "CURRENT_SCHEMA",
+            "scope": "TABLE",
+            "trust": "CURRENT_TABLE_FACT",
+            "support": "SUPPORTED",
+            "tableId": "2-10790651-4",
+            "statement": "当前表字段 Venue 的类型与取值证据；只在表 2-10790651-4 内有效。",
+            "structured": {
+              "column": 4,
+              "header": "Venue",
+              "type": "text",
+              "distinctValues": [
+                "Glenferrie Oval",
+                "Brunswick Street Oval",
+                "Punt Road Oval",
+                "Western Oval",
+                "Corio Oval",
+                "Lake Oval"
+              ],
+              "valueEvidenceScope": "supplied_rows_only",
+              "operatorGuidance": {
+                "equality": "SUPPORTED",
+                "strictNumericComparison": "CLARIFY_TYPE_MISMATCH",
+                "inclusiveComparison": "CLARIFY_UNSUPPORTED"
+              }
+            }
+          },
+          {
+            "id": "t-2-10790651-4-field-5",
+            "title": "字段 5: Crowd",
+            "kind": "COLUMN",
+            "source": "CURRENT_SCHEMA",
+            "scope": "TABLE",
+            "trust": "CURRENT_TABLE_FACT",
+            "support": "SUPPORTED",
+            "tableId": "2-10790651-4",
+            "statement": "当前表字段 Crowd 的类型与取值证据；只在表 2-10790651-4 内有效。",
+            "structured": {
+              "column": 5,
+              "header": "Crowd",
+              "type": "real",
+              "distinctValues": [
+                "11,000",
+                "13,000",
+                "15,000",
+                "17,000",
+                "35,000"
+              ],
+              "valueEvidenceScope": "supplied_rows_only",
+              "operatorGuidance": {
+                "equality": "SUPPORTED",
+                "strictNumericComparison": "SUPPORTED",
+                "inclusiveComparison": "CLARIFY_UNSUPPORTED"
+              }
+            }
+          },
+          {
+            "id": "t-2-10790651-4-field-6",
+            "title": "字段 6: Date",
+            "kind": "COLUMN",
+            "source": "CURRENT_SCHEMA",
+            "scope": "TABLE",
+            "trust": "CURRENT_TABLE_FACT",
+            "support": "SUPPORTED",
+            "tableId": "2-10790651-4",
+            "statement": "当前表字段 Date 的类型与取值证据；只在表 2-10790651-4 内有效。",
+            "structured": {
+              "column": 6,
+              "header": "Date",
+              "type": "text",
+              "distinctValues": [
+                "18 May 1935"
+              ],
+              "valueEvidenceScope": "supplied_rows_only",
+              "operatorGuidance": {
+                "equality": "SUPPORTED",
+                "strictNumericComparison": "CLARIFY_TYPE_MISMATCH",
+                "inclusiveComparison": "CLARIFY_UNSUPPORTED"
+              }
+            }
+          }
+        ],
+        "patterns": [
+          {
+            "id": "d-implicit-eq",
+            "title": "省略 where 的实体限定",
+            "kind": "PATTERN",
+            "source": "WIKISQL_TRAIN",
+            "scope": "DATASET",
+            "trust": "STATISTICAL_REFERENCE",
+            "support": "SUPPORTED",
+            "statement": "“for South Australia”在训练样例中对应一条等值条件；具体列必须按当前表重新绑定。",
+            "cues": [
+              "for <entity>"
+            ],
+            "structured": {
+              "shape": "one_equality_predicate",
+              "columnIsTableDependent": true
+            },
+            "evidence": [
+              {
+                "trainLine": 1,
+                "question": "Tell me what the notes are for South Australia ",
+                "conds": [
+                  [
+                    3,
+                    0,
+                    "SOUTH AUSTRALIA"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "id": "d-explicit-eq",
+            "title": "显式属性等值",
+            "kind": "PATTERN",
+            "source": "WIKISQL_TRAIN",
+            "scope": "DATASET",
+            "trust": "STATISTICAL_REFERENCE",
+            "support": "SUPPORTED",
+            "statement": "“where/when <field> is <value>”是等值表达的一种观察模式，不保证所有 is 均为 WHERE。",
+            "cues": [
+              "where <field> is <value>",
+              "when <field> is <value>"
+            ],
+            "structured": {
+              "shape": "one_equality_predicate",
+              "requireFilterAttribute": true
+            },
+            "evidence": [
+              {
+                "trainLine": 10,
+                "question": "what is the powertrain (engine/transmission) when the order year is 2000?",
+                "conds": [
+                  [
+                    0,
+                    0,
+                    "2000"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "id": "d-gt",
+            "title": "训练集严格大于表达",
+            "kind": "PATTERN",
+            "source": "WIKISQL_TRAIN",
+            "scope": "DATASET",
+            "trust": "STATISTICAL_REFERENCE",
+            "support": "SUPPORTED",
+            "statement": "“bigger than 51092.0”对应严格大于；训练中的阈值可归一为数值。",
+            "cues": [
+              "bigger than <number>"
+            ],
+            "structured": {
+              "shape": "numeric_comparison",
+              "operator": 1
+            },
+            "evidence": [
+              {
+                "trainLine": 135,
+                "question": "What's the 2001 census of the region of Abruzzo where the 1871 census is bigger than 51092.0?",
+                "conds": [
+                  [
+                    6,
+                    0,
+                    "Abruzzo"
+                  ],
+                  [
+                    2,
+                    1,
+                    51092
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "id": "d-lt-and-gt",
+            "title": "双比较条件",
+            "kind": "PATTERN",
+            "source": "WIKISQL_TRAIN",
+            "scope": "DATASET",
+            "trust": "STATISTICAL_REFERENCE",
+            "support": "SUPPORTED",
+            "statement": "同句的 less than 与 bigger than 可约束不同字段，并以 AND 连接。",
+            "cues": [
+              "<fieldA> less than <a> and <fieldB> bigger than <b>"
+            ],
+            "structured": {
+              "shape": "two_conjunctive_comparisons",
+              "operators": [
+                2,
+                1
+              ]
+            },
+            "evidence": [
+              {
+                "trainLine": 649,
+                "question": "What is the english title where the premiere is less than 30.0 and the finale is bigger than 36.0?",
+                "conds": [
+                  [
+                    5,
+                    2,
+                    30
+                  ],
+                  [
+                    6,
+                    1,
+                    36
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "id": "d-with-two",
+            "title": "with 引出的第二限定",
+            "kind": "PATTERN",
+            "source": "WIKISQL_TRAIN",
+            "scope": "DATASET",
+            "trust": "STATISTICAL_REFERENCE",
+            "support": "SUPPORTED",
+            "statement": "with 短语可以补充第二个等值限定；是否真的构成条件须依当前问题和 Schema 判断。",
+            "cues": [
+              "for <entity> with <field> <value>"
+            ],
+            "structured": {
+              "shape": "two_conjunctive_equalities",
+              "needsColumnDisambiguation": true
+            },
+            "evidence": [
+              {
+                "trainLine": 87,
+                "question": "What is the population for County Mayo with the English Name Carrowteige?",
+                "conds": [
+                  [
+                    0,
+                    0,
+                    "County Mayo"
+                  ],
+                  [
+                    1,
+                    0,
+                    "Carrowteige"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "id": "d-literal-form",
+            "title": "复杂文本值原样匹配",
+            "kind": "PATTERN",
+            "source": "WIKISQL_TRAIN",
+            "scope": "DATASET",
+            "trust": "STATISTICAL_REFERENCE",
+            "support": "SUPPORTED",
+            "statement": "带破折号与括号的表格值可能是一整个等值字面量，不应按数字或连词拆解。",
+            "cues": [
+              "0–0",
+              "3–1"
+            ],
+            "structured": {
+              "shape": "text_equality",
+              "preservePunctuation": true
+            },
+            "evidence": [
+              {
+                "trainLine": 52,
+                "question": "what's the total number of singles w-l with doubles w-l of 0–0 and total w-l of 3–1",
+                "conds": [
+                  [
+                    4,
+                    0,
+                    "0–0"
+                  ],
+                  [
+                    2,
+                    0,
+                    "3–1"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "id": "p-text",
+            "title": "文本等值 WHERE",
+            "kind": "PATTERN",
+            "source": "HUMAN",
+            "scope": "GLOBAL",
+            "trust": "EXPLICIT_RULE",
+            "support": "SUPPORTED",
+            "statement": "先定位限定字段，再以当前表的精确取值形成单条等值条件。",
+            "cues": [
+              "for <entity>",
+              "where <field> is <text>"
+            ],
+            "structured": {
+              "slots": [
+                "filter_column",
+                "exact_table_value"
+              ],
+              "operator": 0,
+              "conditionCount": 1
+            }
+          },
+          {
+            "id": "p-number",
+            "title": "数值比较 WHERE",
+            "kind": "PATTERN",
+            "source": "HUMAN",
+            "scope": "GLOBAL",
+            "trust": "EXPLICIT_RULE",
+            "support": "SUPPORTED",
+            "statement": "从限定短语绑定数值字段，区分严格比较方向，再提取问题中的阈值。",
+            "cues": [
+              "<field> greater than <number>",
+              "<field> less than <number>"
+            ],
+            "structured": {
+              "slots": [
+                "numeric_filter_column",
+                "comparison_operator",
+                "question_threshold"
+              ],
+              "conditionCount": 1
+            }
+          },
+          {
+            "id": "p-multi",
+            "title": "多条件合取 WHERE",
+            "kind": "PATTERN",
+            "source": "HUMAN",
+            "scope": "GLOBAL",
+            "trust": "EXPLICIT_RULE",
+            "support": "SUPPORTED",
+            "statement": "逐项识别独立条件，保持每个条件的字段、运算符、值配对，再作 AND 组合。",
+            "cues": [
+              "<conditionA> and <conditionB>",
+              "<entity> with <attribute> <value>"
+            ],
+            "structured": {
+              "slots": [
+                "predicate_1",
+                "predicate_2"
+              ],
+              "connective": "AND",
+              "maximumConditions": 4
+            }
+          },
+          {
+            "id": "p-unsupported",
+            "title": "不可表达条件识别",
+            "kind": "PATTERN",
+            "source": "HUMAN",
+            "scope": "GLOBAL",
+            "trust": "EXPLICIT_RULE",
+            "support": "CLARIFY",
+            "statement": "析取意图无法直接表达；含边界比较仅在当前表不存在等价标准谓词时停止生成，不能做语义近似。",
+            "cues": [
+              "at least",
+              "at most",
+              "or"
+            ],
+            "structured": {
+              "action": "CLARIFY_IF_UNREPRESENTABLE",
+              "neverApproximate": true
+            }
+          }
+        ],
+        "relations": [
+          {
+            "id": "where-rel-g-column-p-text",
+            "from": "g-column",
+            "to": "p-text",
+            "relation": "CONSTRAINS",
+            "statement": "等值条件必须先确认过滤字段"
+          },
+          {
+            "id": "where-rel-g-eq-p-text",
+            "from": "g-eq",
+            "to": "p-text",
+            "relation": "COMBINES_WITH",
+            "statement": "等值运算符参与文本条件"
+          },
+          {
+            "id": "where-rel-g-literal-p-text",
+            "from": "g-literal",
+            "to": "p-text",
+            "relation": "COMBINES_WITH",
+            "statement": "采用当前表的精确取值"
+          },
+          {
+            "id": "where-rel-g-column-p-number",
+            "from": "g-column",
+            "to": "p-number",
+            "relation": "CONSTRAINS",
+            "statement": "比较条件绑定数值字段"
+          },
+          {
+            "id": "where-rel-g-gt-p-number",
+            "from": "g-gt",
+            "to": "p-number",
+            "relation": "COMBINES_WITH",
+            "statement": "严格大于分支"
+          },
+          {
+            "id": "where-rel-g-lt-p-number",
+            "from": "g-lt",
+            "to": "p-number",
+            "relation": "COMBINES_WITH",
+            "statement": "严格小于分支"
+          },
+          {
+            "id": "where-rel-g-threshold-p-number",
+            "from": "g-threshold",
+            "to": "p-number",
+            "relation": "COMBINES_WITH",
+            "statement": "阈值来自问题"
+          },
+          {
+            "id": "where-rel-g-and-p-multi",
+            "from": "g-and",
+            "to": "p-multi",
+            "relation": "COMBINES_WITH",
+            "statement": "独立谓词以 AND 组合"
+          },
+          {
+            "id": "where-rel-g-count-p-multi",
+            "from": "g-count",
+            "to": "p-multi",
+            "relation": "CONSTRAINS",
+            "statement": "检查遗漏与重复"
+          },
+          {
+            "id": "where-rel-p-text-p-multi",
+            "from": "p-text",
+            "to": "p-multi",
+            "relation": "COMBINES_WITH",
+            "statement": "文本条件可参与组合"
+          },
+          {
+            "id": "where-rel-p-number-p-multi",
+            "from": "p-number",
+            "to": "p-multi",
+            "relation": "COMBINES_WITH",
+            "statement": "数值条件可参与组合"
+          },
+          {
+            "id": "where-rel-g-inclusive-p-unsupported",
+            "from": "g-inclusive",
+            "to": "p-unsupported",
+            "relation": "CONSTRAINS",
+            "statement": "含边界比较仅在无法等价转换时停止"
+          },
+          {
+            "id": "where-rel-g-or-p-unsupported",
+            "from": "g-or",
+            "to": "p-unsupported",
+            "relation": "SUPPORTS",
+            "statement": "析取不可直接表达"
+          },
+          {
+            "id": "where-rel-d-implicit-eq-p-text",
+            "from": "d-implicit-eq",
+            "to": "p-text",
+            "relation": "ILLUSTRATES",
+            "statement": "训练集中的隐式等值样例"
+          },
+          {
+            "id": "where-rel-d-explicit-eq-p-text",
+            "from": "d-explicit-eq",
+            "to": "p-text",
+            "relation": "ILLUSTRATES",
+            "statement": "训练集中的显式等值样例"
+          },
+          {
+            "id": "where-rel-d-gt-p-number",
+            "from": "d-gt",
+            "to": "p-number",
+            "relation": "ILLUSTRATES",
+            "statement": "训练集中的严格大于样例"
+          },
+          {
+            "id": "where-rel-d-lt-and-gt-p-multi",
+            "from": "d-lt-and-gt",
+            "to": "p-multi",
+            "relation": "ILLUSTRATES",
+            "statement": "训练集中的双比较样例"
+          },
+          {
+            "id": "where-rel-d-with-two-p-multi",
+            "from": "d-with-two",
+            "to": "p-multi",
+            "relation": "ILLUSTRATES",
+            "statement": "训练集中的 with 双限定样例"
+          },
+          {
+            "id": "where-rel-d-literal-form-g-literal",
+            "from": "d-literal-form",
+            "to": "g-literal",
+            "relation": "ILLUSTRATES",
+            "statement": "训练集中的复杂文本值样例"
+          },
+          {
+            "id": "where-rel-g-ambiguous-g-count",
+            "from": "g-ambiguous",
+            "to": "g-count",
+            "relation": "DISAMBIGUATES",
+            "statement": "避免凭极值词臆造过滤条件"
+          },
+          {
+            "id": "where-rel-t-2-10790651-4-field-0-g-column",
+            "from": "t-2-10790651-4-field-0",
+            "to": "g-column",
+            "relation": "SUPPORTS",
+            "statement": "当前表字段用于过滤列绑定"
+          },
+          {
+            "id": "where-rel-t-2-10790651-4-field-0-g-literal",
+            "from": "t-2-10790651-4-field-0",
+            "to": "g-literal",
+            "relation": "SUPPORTS",
+            "statement": "当前表取值用于精确值匹配"
+          },
+          {
+            "id": "where-rel-t-2-10790651-4-field-1-g-column",
+            "from": "t-2-10790651-4-field-1",
+            "to": "g-column",
+            "relation": "SUPPORTS",
+            "statement": "当前表字段用于过滤列绑定"
+          },
+          {
+            "id": "where-rel-t-2-10790651-4-field-1-g-literal",
+            "from": "t-2-10790651-4-field-1",
+            "to": "g-literal",
+            "relation": "SUPPORTS",
+            "statement": "当前表取值用于精确值匹配"
+          },
+          {
+            "id": "where-rel-t-2-10790651-4-field-2-g-column",
+            "from": "t-2-10790651-4-field-2",
+            "to": "g-column",
+            "relation": "SUPPORTS",
+            "statement": "当前表字段用于过滤列绑定"
+          },
+          {
+            "id": "where-rel-t-2-10790651-4-field-2-g-literal",
+            "from": "t-2-10790651-4-field-2",
+            "to": "g-literal",
+            "relation": "SUPPORTS",
+            "statement": "当前表取值用于精确值匹配"
+          },
+          {
+            "id": "where-rel-t-2-10790651-4-field-3-g-column",
+            "from": "t-2-10790651-4-field-3",
+            "to": "g-column",
+            "relation": "SUPPORTS",
+            "statement": "当前表字段用于过滤列绑定"
+          },
+          {
+            "id": "where-rel-t-2-10790651-4-field-3-g-literal",
+            "from": "t-2-10790651-4-field-3",
+            "to": "g-literal",
+            "relation": "SUPPORTS",
+            "statement": "当前表取值用于精确值匹配"
+          },
+          {
+            "id": "where-rel-t-2-10790651-4-field-4-g-column",
+            "from": "t-2-10790651-4-field-4",
+            "to": "g-column",
+            "relation": "SUPPORTS",
+            "statement": "当前表字段用于过滤列绑定"
+          },
+          {
+            "id": "where-rel-t-2-10790651-4-field-4-g-literal",
+            "from": "t-2-10790651-4-field-4",
+            "to": "g-literal",
+            "relation": "SUPPORTS",
+            "statement": "当前表取值用于精确值匹配"
+          },
+          {
+            "id": "where-rel-t-2-10790651-4-field-5-g-column",
+            "from": "t-2-10790651-4-field-5",
+            "to": "g-column",
+            "relation": "SUPPORTS",
+            "statement": "当前表字段用于过滤列绑定"
+          },
+          {
+            "id": "where-rel-t-2-10790651-4-field-5-g-literal",
+            "from": "t-2-10790651-4-field-5",
+            "to": "g-literal",
+            "relation": "SUPPORTS",
+            "statement": "当前表取值用于精确值匹配"
+          },
+          {
+            "id": "where-rel-t-2-10790651-4-field-6-g-column",
+            "from": "t-2-10790651-4-field-6",
+            "to": "g-column",
+            "relation": "SUPPORTS",
+            "statement": "当前表字段用于过滤列绑定"
+          },
+          {
+            "id": "where-rel-t-2-10790651-4-field-6-g-literal",
+            "from": "t-2-10790651-4-field-6",
+            "to": "g-literal",
+            "relation": "SUPPORTS",
+            "statement": "当前表取值用于精确值匹配"
+          }
+        ]
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Glenferrie Oval",
+              "value": "Glenferrie Oval",
+              "start": 38,
+              "end": 53
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "abb17abea595d05ee8f0f51483ccdb39e0b0e2b9ddc2850a8ee5d54127e4436c",
+            "knowledgeIds": [
+              "g-eq",
+              "g-gt",
+              "g-lt",
+              "g-inclusive",
+              "g-literal",
+              "g-threshold",
+              "g-and",
+              "g-or",
+              "g-column",
+              "g-count",
+              "g-ambiguous",
+              "t-2-10790651-4-field-0",
+              "t-2-10790651-4-field-1",
+              "t-2-10790651-4-field-2",
+              "t-2-10790651-4-field-3",
+              "t-2-10790651-4-field-4",
+              "t-2-10790651-4-field-5",
+              "t-2-10790651-4-field-6",
+              "d-implicit-eq",
+              "d-explicit-eq",
+              "d-gt",
+              "d-lt-and-gt",
+              "d-with-two",
+              "d-literal-form",
+              "p-text",
+              "p-number",
+              "p-multi",
+              "p-unsupported"
+            ],
+            "usage": {
+              "prompt_tokens": 10186,
+              "completion_tokens": 27,
+              "total_tokens": 10213,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Glenferrie Oval",
+              "value": "Glenferrie Oval",
+              "start": 38,
+              "end": 53,
+              "clause": "How many people were in attendance at Glenferrie Oval?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Glenferrie Oval",
+              "value": "Glenferrie Oval",
+              "start": 38,
+              "end": 53,
+              "clause": "How many people were in attendance at Glenferrie Oval?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Glenferrie Oval",
+              "value": "Glenferrie Oval",
+              "start": 38,
+              "end": 53,
+              "clause": "How many people were in attendance at Glenferrie Oval?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The location phrase 'at Glenferrie Oval' denotes the Venue field, and the exact venue appears in that column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c13cab2095731b1f2f574169dc503e076b1f4c28bdcd80e68dc6ea659a79902d",
+            "knowledgeIds": [
+              "g-eq",
+              "g-gt",
+              "g-lt",
+              "g-inclusive",
+              "g-literal",
+              "g-threshold",
+              "g-and",
+              "g-or",
+              "g-column",
+              "g-count",
+              "g-ambiguous",
+              "t-2-10790651-4-field-0",
+              "t-2-10790651-4-field-1",
+              "t-2-10790651-4-field-2",
+              "t-2-10790651-4-field-3",
+              "t-2-10790651-4-field-4",
+              "t-2-10790651-4-field-5",
+              "t-2-10790651-4-field-6",
+              "d-implicit-eq",
+              "d-explicit-eq",
+              "d-gt",
+              "d-lt-and-gt",
+              "d-with-two",
+              "d-literal-form",
+              "p-text",
+              "p-number",
+              "p-multi",
+              "p-unsupported"
+            ],
+            "usage": {
+              "prompt_tokens": 10230,
+              "completion_tokens": 46,
+              "total_tokens": 10276,
+              "prompt_tokens_details": {
+                "cached_tokens": 9984
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Glenferrie Oval",
+              "value": "Glenferrie Oval",
+              "start": 38,
+              "end": 53,
+              "clause": "How many people were in attendance at Glenferrie Oval?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The location phrase 'at Glenferrie Oval' denotes the Venue field, and the exact venue appears in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "372b51f201ae722def6b9585cf404f03a8d3e7b4622c9c98c988e1c3e3273217",
+            "knowledgeIds": [
+              "g-eq",
+              "g-gt",
+              "g-lt",
+              "g-inclusive",
+              "g-literal",
+              "g-threshold",
+              "g-and",
+              "g-or",
+              "g-column",
+              "g-count",
+              "g-ambiguous",
+              "t-2-10790651-4-field-0",
+              "t-2-10790651-4-field-1",
+              "t-2-10790651-4-field-2",
+              "t-2-10790651-4-field-3",
+              "t-2-10790651-4-field-4",
+              "t-2-10790651-4-field-5",
+              "t-2-10790651-4-field-6",
+              "d-implicit-eq",
+              "d-explicit-eq",
+              "d-gt",
+              "d-lt-and-gt",
+              "d-with-two",
+              "d-literal-form",
+              "p-text",
+              "p-number",
+              "p-multi",
+              "p-unsupported"
+            ],
+            "usage": {
+              "prompt_tokens": 10300,
+              "completion_tokens": 9,
+              "total_tokens": 10309,
+              "prompt_tokens_details": {
+                "cached_tokens": 9984
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Glenferrie Oval",
+              "value": "Glenferrie Oval",
+              "start": 38,
+              "end": 53,
+              "clause": "How many people were in attendance at Glenferrie Oval?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The location phrase 'at Glenferrie Oval' denotes the Venue field, and the exact venue appears in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "194716f4be64efe84134644d0fb47547ebe5cd540abe9c4b69345b837e727a2e",
+            "knowledgeIds": [
+              "g-eq",
+              "g-gt",
+              "g-lt",
+              "g-inclusive",
+              "g-literal",
+              "g-threshold",
+              "g-and",
+              "g-or",
+              "g-column",
+              "g-count",
+              "g-ambiguous",
+              "t-2-10790651-4-field-0",
+              "t-2-10790651-4-field-1",
+              "t-2-10790651-4-field-2",
+              "t-2-10790651-4-field-3",
+              "t-2-10790651-4-field-4",
+              "t-2-10790651-4-field-5",
+              "t-2-10790651-4-field-6",
+              "d-implicit-eq",
+              "d-explicit-eq",
+              "d-gt",
+              "d-lt-and-gt",
+              "d-with-two",
+              "d-literal-form",
+              "p-text",
+              "p-number",
+              "p-multi",
+              "p-unsupported"
+            ],
+            "usage": {
+              "prompt_tokens": 10251,
+              "completion_tokens": 15,
+              "total_tokens": 10266,
+              "prompt_tokens_details": {
+                "cached_tokens": 9984
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Glenferrie Oval",
+              "value": "Glenferrie Oval",
+              "start": 38,
+              "end": 53,
+              "clause": "How many people were in attendance at Glenferrie Oval?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The location phrase 'at Glenferrie Oval' denotes the Venue field, and the exact venue appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Glenferrie Oval",
+              "value": "Glenferrie Oval",
+              "start": 38,
+              "end": 53,
+              "clause": "How many people were in attendance at Glenferrie Oval?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The location phrase 'at Glenferrie Oval' denotes the Venue field, and the exact venue appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Glenferrie Oval",
+              "value": "Glenferrie Oval",
+              "start": 38,
+              "end": 53,
+              "clause": "How many people were in attendance at Glenferrie Oval?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The location phrase 'at Glenferrie Oval' denotes the Venue field, and the exact venue appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              0,
+              "Glenferrie Oval"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Glenferrie Oval",
+          "value": "Glenferrie Oval",
+          "start": 38,
+          "end": 53
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Glenferrie Oval",
+          "value": "Glenferrie Oval",
+          "start": 38,
+          "end": 53,
+          "clause": "How many people were in attendance at Glenferrie Oval?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The location phrase 'at Glenferrie Oval' denotes the Venue field, and the exact venue appears in that column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          4,
+          0,
+          "Glenferrie Oval"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8407
+}

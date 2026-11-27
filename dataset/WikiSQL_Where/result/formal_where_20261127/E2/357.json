@@ -1,0 +1,614 @@
+{
+  "arm": "E2",
+  "position": 357,
+  "example_id": "test:6186:2-13880730-8",
+  "original_index": 6186,
+  "table_id": "2-13880730-8",
+  "question": "What was the Attendance during the Tamworth Away game?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        3,
+        0,
+        "tamworth"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [],
+  "status": "GROUNDING_FAILED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "GROUNDING_FAILED",
+    "valid": false,
+    "errors": [
+      "condition 1: grounding NO_MATCH"
+    ],
+    "conditions": [
+      {
+        "surface": "Tamworth",
+        "value": "Tamworth",
+        "start": 35,
+        "end": 43,
+        "clause": "What was the Attendance during the Tamworth Away game?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "Tamworth appears as a team in the Away team column for the referenced game.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "Away",
+        "value": "Away",
+        "start": 44,
+        "end": 48,
+        "clause": "What was the Attendance during the Tamworth Away game?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "Away explicitly identifies the Away team field.",
+        "operator": "=",
+        "grounded": false,
+        "groundingStatus": "NO_MATCH",
+        "groundingReview": {
+          "column": null,
+          "reason": "\"Away\" describes Tamworth's role in the game; the Away team cell contains \"Tamworth\", not the literal \"Away\"."
+        }
+      }
+    ],
+    "stage": "WHERE_CONDITION_VALIDATE",
+    "originalConditions": [
+      {
+        "surface": "Tamworth",
+        "value": "Tamworth",
+        "start": 35,
+        "end": 43
+      },
+      {
+        "surface": "Away",
+        "value": "Away",
+        "start": 44,
+        "end": 48
+      }
+    ],
+    "halt": true,
+    "completed": false,
+    "conds": [],
+    "warnings": [],
+    "request": {
+      "question": "What was the Attendance during the Tamworth Away game?",
+      "table": {
+        "header": [
+          "Tie no",
+          "Home team",
+          "Score",
+          "Away team",
+          "Attendance"
+        ],
+        "page_title": "2007–08 Conference League Cup",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "real"
+        ],
+        "page_id": 13880730,
+        "id": "2-13880730-8",
+        "section_title": "Northern Section",
+        "rows": [
+          [
+            "1",
+            "Stafford Rangers",
+            "0–2 (aet)",
+            "York City",
+            "515"
+          ],
+          [
+            "2",
+            "Histon",
+            "1–2",
+            "Halifax Town",
+            "231"
+          ],
+          [
+            "3",
+            "Cambridge United",
+            "0–1",
+            "Rushden & Diamonds",
+            "1,309"
+          ],
+          [
+            "4",
+            "Nuneaton Borough",
+            "2–1",
+            "Altrincham",
+            "533"
+          ],
+          [
+            "5",
+            "Hinckley United",
+            "1–2",
+            "Kidderminster Harriers",
+            "474"
+          ],
+          [
+            "6",
+            "Droylsden",
+            "2–1 (aet)",
+            "Farsley Celtic",
+            "224"
+          ],
+          [
+            "7",
+            "Barrow",
+            "0–2",
+            "Northwich Victoria",
+            "708"
+          ],
+          [
+            "8",
+            "Burton Albion",
+            "2–1",
+            "Tamworth",
+            "1,152"
+          ]
+        ],
+        "caption": "Northern Section",
+        "headers": [
+          "Tie no",
+          "Home team",
+          "Score",
+          "Away team",
+          "Attendance"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-13880730-8",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 9,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "Tamworth",
+              "value": "Tamworth",
+              "start": 35,
+              "end": 43
+            },
+            {
+              "surface": "Away",
+              "value": "Away",
+              "start": 44,
+              "end": 48
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f50c13c2d40d576763e6ed238dab14250a9d5749caf9f018dd8621517b4721da",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4821,
+              "completion_tokens": 27,
+              "total_tokens": 4848,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Tamworth",
+              "value": "Tamworth",
+              "start": 35,
+              "end": 43,
+              "clause": "What was the Attendance during the Tamworth Away game?"
+            },
+            {
+              "surface": "Away",
+              "value": "Away",
+              "start": 44,
+              "end": 48,
+              "clause": "What was the Attendance during the Tamworth Away game?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Tamworth",
+              "value": "Tamworth",
+              "start": 35,
+              "end": 43,
+              "clause": "What was the Attendance during the Tamworth Away game?"
+            },
+            {
+              "surface": "Away",
+              "value": "Away",
+              "start": 44,
+              "end": 48,
+              "clause": "What was the Attendance during the Tamworth Away game?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Tamworth",
+              "value": "Tamworth",
+              "start": 35,
+              "end": 43,
+              "clause": "What was the Attendance during the Tamworth Away game?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Tamworth appears as a team in the Away team column for the referenced game."
+            },
+            {
+              "surface": "Away",
+              "value": "Away",
+              "start": 44,
+              "end": 48,
+              "clause": "What was the Attendance during the Tamworth Away game?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Away explicitly identifies the Away team field."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "53c96464ebbc4e85ad95dfa4e4d4da25ea63b51134775a7fae600d68c6652d0a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4886,
+              "completion_tokens": 49,
+              "total_tokens": 4935,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Tamworth",
+              "value": "Tamworth",
+              "start": 35,
+              "end": 43,
+              "clause": "What was the Attendance during the Tamworth Away game?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Tamworth appears as a team in the Away team column for the referenced game.",
+              "operator": "="
+            },
+            {
+              "surface": "Away",
+              "value": "Away",
+              "start": 44,
+              "end": 48,
+              "clause": "What was the Attendance during the Tamworth Away game?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Away explicitly identifies the Away team field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "920d58dac224aed76b6b8d89658671f6dc21ae089dd512d49312de875de3cb60",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4970,
+              "completion_tokens": 11,
+              "total_tokens": 4981,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Tamworth",
+              "value": "Tamworth",
+              "start": 35,
+              "end": 43,
+              "clause": "What was the Attendance during the Tamworth Away game?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Tamworth appears as a team in the Away team column for the referenced game.",
+              "operator": "="
+            },
+            {
+              "surface": "Away",
+              "value": "Away",
+              "start": 44,
+              "end": 48,
+              "clause": "What was the Attendance during the Tamworth Away game?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Away explicitly identifies the Away team field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "aaf40403389ef3997c24cb26687b1debcec9582ce1e4de811e3ddd0f1700810f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4924,
+              "completion_tokens": 62,
+              "total_tokens": 4986,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 47
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Tamworth",
+              "value": "Tamworth",
+              "start": 35,
+              "end": 43,
+              "clause": "What was the Attendance during the Tamworth Away game?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Tamworth appears as a team in the Away team column for the referenced game.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Away",
+              "value": "Away",
+              "start": 44,
+              "end": 48,
+              "clause": "What was the Attendance during the Tamworth Away game?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Away explicitly identifies the Away team field.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": null,
+                "reason": "\"Away\" describes Tamworth's role in the game; the Away team cell contains \"Tamworth\", not the literal \"Away\"."
+              }
+            }
+          ],
+          "reviewModelCalls": [
+            {
+              "model": "gpt-5.6-sol",
+              "promptSha256": "1034a678c2c35ad412529dae788f483ec8ef40d51eab28da564b5eaa7cf2d4c0",
+              "knowledgeIds": [],
+              "usage": {
+                "prompt_tokens": 4898,
+                "completion_tokens": 92,
+                "total_tokens": 4990,
+                "prompt_tokens_details": {
+                  "cached_tokens": 4608
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 50
+                }
+              }
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "1034a678c2c35ad412529dae788f483ec8ef40d51eab28da564b5eaa7cf2d4c0",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4898,
+              "completion_tokens": 92,
+              "total_tokens": 4990,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 50
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Tamworth",
+              "value": "Tamworth",
+              "start": 35,
+              "end": 43,
+              "clause": "What was the Attendance during the Tamworth Away game?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Tamworth appears as a team in the Away team column for the referenced game.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Away",
+              "value": "Away",
+              "start": 44,
+              "end": 48,
+              "clause": "What was the Attendance during the Tamworth Away game?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Away explicitly identifies the Away team field.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": null,
+                "reason": "\"Away\" describes Tamworth's role in the game; the Away team cell contains \"Tamworth\", not the literal \"Away\"."
+              }
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "GROUNDING_FAILED",
+          "valid": false,
+          "errors": [
+            "condition 1: grounding NO_MATCH"
+          ],
+          "conditions": [
+            {
+              "surface": "Tamworth",
+              "value": "Tamworth",
+              "start": 35,
+              "end": 43,
+              "clause": "What was the Attendance during the Tamworth Away game?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Tamworth appears as a team in the Away team column for the referenced game.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Away",
+              "value": "Away",
+              "start": 44,
+              "end": 48,
+              "clause": "What was the Attendance during the Tamworth Away game?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Away explicitly identifies the Away team field.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": null,
+                "reason": "\"Away\" describes Tamworth's role in the game; the Away team cell contains \"Tamworth\", not the literal \"Away\"."
+              }
+            }
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "GROUNDING_FAILED",
+        "stage": "WHERE_CONDITION_VALIDATE",
+        "halt": true,
+        "completed": false,
+        "errors": [
+          "condition 1: grounding NO_MATCH"
+        ],
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Tamworth",
+          "value": "Tamworth",
+          "start": 35,
+          "end": 43
+        },
+        {
+          "surface": "Away",
+          "value": "Away",
+          "start": 44,
+          "end": 48
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Tamworth",
+          "value": "Tamworth",
+          "start": 35,
+          "end": 43,
+          "clause": "What was the Attendance during the Tamworth Away game?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "Tamworth appears as a team in the Away team column for the referenced game.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "Away",
+          "value": "Away",
+          "start": 44,
+          "end": 48,
+          "clause": "What was the Attendance during the Tamworth Away game?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "Away explicitly identifies the Away team field.",
+          "operator": "=",
+          "grounded": false,
+          "groundingStatus": "NO_MATCH",
+          "groundingReview": {
+            "column": null,
+            "reason": "\"Away\" describes Tamworth's role in the game; the Away team cell contains \"Tamworth\", not the literal \"Away\"."
+          }
+        }
+      ],
+      "count": 2
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": false,
+  "elapsed_ms": 11859
+}

@@ -1,0 +1,474 @@
+{
+  "arm": "E2",
+  "position": 252,
+  "example_id": "test:10097:2-17335271-1",
+  "original_index": 10097,
+  "table_id": "2-17335271-1",
+  "question": "What was Team Dnepr's position in 2006?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        0,
+        0,
+        "dnepr"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "Dnepr"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "Dnepr"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Dnepr",
+        "value": "Dnepr",
+        "start": 14,
+        "end": 19,
+        "clause": "What was Team Dnepr's position in 2006?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "'Team Dnepr' identifies Dnepr as a value in the Team column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Dnepr",
+        "value": "Dnepr",
+        "start": 14,
+        "end": 19
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What was Team Dnepr's position in 2006?",
+      "table": {
+        "header": [
+          "Team",
+          "Location",
+          "Venue",
+          "Capacity",
+          "Position in 2006"
+        ],
+        "page_title": "2007 Belarusian Premier League",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 17335271,
+        "id": "2-17335271-1",
+        "section_title": "Teams and venues",
+        "rows": [
+          [
+            "BATE",
+            "Borisov",
+            "City Stadium",
+            "5,500",
+            "1"
+          ],
+          [
+            "Dinamo Minsk",
+            "Minsk",
+            "Dinamo, Minsk",
+            "41,040",
+            "2"
+          ],
+          [
+            "Shakhtyor",
+            "Soligorsk",
+            "Stroitel",
+            "5,000",
+            "3"
+          ],
+          [
+            "MTZ-RIPO",
+            "Minsk",
+            "Traktor",
+            "17,600",
+            "4"
+          ],
+          [
+            "Gomel",
+            "Gomel",
+            "Central, Gomel",
+            "11,800",
+            "5"
+          ],
+          [
+            "Vitebsk",
+            "Vitebsk",
+            "Central, Vitebsk",
+            "8,300",
+            "6"
+          ],
+          [
+            "Naftan",
+            "Novopolotsk",
+            "Atlant",
+            "6,500",
+            "7"
+          ],
+          [
+            "Darida",
+            "Minsk Raion",
+            "Darida",
+            "6,000",
+            "8"
+          ],
+          [
+            "Dinamo Brest",
+            "Brest",
+            "OSK Brestskiy",
+            "10,080",
+            "9"
+          ],
+          [
+            "Neman",
+            "Grodno",
+            "Neman",
+            "6,300",
+            "10"
+          ],
+          [
+            "Torpedo",
+            "Zhodino",
+            "Torpedo, Zhodino",
+            "3,020",
+            "11"
+          ],
+          [
+            "Dnepr",
+            "Mogilev",
+            "Spartak, Mogilev",
+            "11,200",
+            "12"
+          ],
+          [
+            "Minsk",
+            "Minsk",
+            "Torpedo, Minsk",
+            "5,200",
+            "First league , 1"
+          ],
+          [
+            "Smorgon",
+            "Smorgon",
+            "Yunost",
+            "3,500",
+            "First league , 2"
+          ]
+        ],
+        "caption": "Teams and venues",
+        "headers": [
+          "Team",
+          "Location",
+          "Venue",
+          "Capacity",
+          "Position in 2006"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-17335271-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Dnepr",
+              "value": "Dnepr",
+              "start": 14,
+              "end": 19
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "44ad35766c4cb121401c2665f9a2a27b413123a70e00b78ab7bf5d686ec29582",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4956,
+              "completion_tokens": 21,
+              "total_tokens": 4977,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Dnepr",
+              "value": "Dnepr",
+              "start": 14,
+              "end": 19,
+              "clause": "What was Team Dnepr's position in 2006?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Dnepr",
+              "value": "Dnepr",
+              "start": 14,
+              "end": 19,
+              "clause": "What was Team Dnepr's position in 2006?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Dnepr",
+              "value": "Dnepr",
+              "start": 14,
+              "end": 19,
+              "clause": "What was Team Dnepr's position in 2006?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'Team Dnepr' identifies Dnepr as a value in the Team column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "beec1190ab7e6196207146b51362e27cadfce76ba70699c3d4f46cc1949175e6",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4994,
+              "completion_tokens": 39,
+              "total_tokens": 5033,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Dnepr",
+              "value": "Dnepr",
+              "start": 14,
+              "end": 19,
+              "clause": "What was Team Dnepr's position in 2006?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'Team Dnepr' identifies Dnepr as a value in the Team column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "9e928a6f7c45b38c766cbccfc7bfacbf04f5bd6c8fc5aeb5d77f1a459a679b1f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5056,
+              "completion_tokens": 9,
+              "total_tokens": 5065,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Dnepr",
+              "value": "Dnepr",
+              "start": 14,
+              "end": 19,
+              "clause": "What was Team Dnepr's position in 2006?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'Team Dnepr' identifies Dnepr as a value in the Team column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "642f2f3dda87fee74ff34aecc9c36c788fba1fccaba9897b25b189e4318d0439",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5007,
+              "completion_tokens": 12,
+              "total_tokens": 5019,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Dnepr",
+              "value": "Dnepr",
+              "start": 14,
+              "end": 19,
+              "clause": "What was Team Dnepr's position in 2006?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'Team Dnepr' identifies Dnepr as a value in the Team column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Dnepr",
+              "value": "Dnepr",
+              "start": 14,
+              "end": 19,
+              "clause": "What was Team Dnepr's position in 2006?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'Team Dnepr' identifies Dnepr as a value in the Team column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Dnepr",
+              "value": "Dnepr",
+              "start": 14,
+              "end": 19,
+              "clause": "What was Team Dnepr's position in 2006?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'Team Dnepr' identifies Dnepr as a value in the Team column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              "Dnepr"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Dnepr",
+          "value": "Dnepr",
+          "start": 14,
+          "end": 19
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Dnepr",
+          "value": "Dnepr",
+          "start": 14,
+          "end": 19,
+          "clause": "What was Team Dnepr's position in 2006?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "'Team Dnepr' identifies Dnepr as a value in the Team column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          0,
+          0,
+          "Dnepr"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7171
+}

@@ -1,0 +1,418 @@
+{
+  "arm": "E2",
+  "position": 234,
+  "example_id": "test:9280:2-16351707-1",
+  "original_index": 9280,
+  "table_id": "2-16351707-1",
+  "question": "Which season has rank 2?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        0,
+        0,
+        "2"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "2"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "2"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "2",
+        "value": "2",
+        "start": 22,
+        "end": 23,
+        "clause": "Which season has rank 2?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "The question explicitly says \"rank 2,\" and \"Rank\" is schema column 0 with row value \"2\".",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "2",
+        "value": "2",
+        "start": 22,
+        "end": 23
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Which season has rank 2?",
+      "table": {
+        "header": [
+          "Rank",
+          "Runs",
+          "Opponent",
+          "Venue",
+          "Season"
+        ],
+        "page_title": "Tasmania cricket team List A records",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 16351707,
+        "id": "2-16351707-1",
+        "section_title": "Highest team totals",
+        "rows": [
+          [
+            "1",
+            "340/5",
+            "South Australia",
+            "Bellerive Oval , Hobart",
+            "2004/05"
+          ],
+          [
+            "2",
+            "327/7",
+            "New South Wales",
+            "Bankstown Oval , Sydney",
+            "2001/02"
+          ],
+          [
+            "3",
+            "311/8",
+            "Victoria",
+            "Melbourne Cricket Ground , Melbourne",
+            "2002/03"
+          ],
+          [
+            "4",
+            "299/9",
+            "New South Wales",
+            "Bellerive Oval , Hobart",
+            "2005/06"
+          ],
+          [
+            "5",
+            "298/5",
+            "Victoria",
+            "Bellerive Oval , Hobart",
+            "2004/05"
+          ],
+          [
+            "Source: . Last updated: 28 June 2007.",
+            "Source: . Last updated: 28 June 2007.",
+            "Source: . Last updated: 28 June 2007.",
+            "Source: . Last updated: 28 June 2007.",
+            "Source: . Last updated: 28 June 2007."
+          ]
+        ],
+        "caption": "Highest team totals",
+        "headers": [
+          "Rank",
+          "Runs",
+          "Opponent",
+          "Venue",
+          "Season"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-16351707-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "2",
+              "value": "2",
+              "start": 22,
+              "end": 23
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "af6cdc2baa277087df341c012b4dcf5cec3b06fb688d665d9ff45580e791e8ad",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4840,
+              "completion_tokens": 17,
+              "total_tokens": 4857,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2",
+              "value": "2",
+              "start": 22,
+              "end": 23,
+              "clause": "Which season has rank 2?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "2",
+              "value": "2",
+              "start": 22,
+              "end": 23,
+              "clause": "Which season has rank 2?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2",
+              "value": "2",
+              "start": 22,
+              "end": 23,
+              "clause": "Which season has rank 2?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly says \"rank 2,\" and \"Rank\" is schema column 0 with row value \"2\"."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "4dcc160a8d96256c14f5e3a8aad4fe6b4e93b45da5683c6ad6b983a4b592a7b2",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4868,
+              "completion_tokens": 46,
+              "total_tokens": 4914,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2",
+              "value": "2",
+              "start": 22,
+              "end": 23,
+              "clause": "Which season has rank 2?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly says \"rank 2,\" and \"Rank\" is schema column 0 with row value \"2\".",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "493a41fab33c9b36da2e21b18525bdda9a7ecfe28eb044885385c7af9df7acdd",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4938,
+              "completion_tokens": 9,
+              "total_tokens": 4947,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2",
+              "value": "2",
+              "start": 22,
+              "end": 23,
+              "clause": "Which season has rank 2?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly says \"rank 2,\" and \"Rank\" is schema column 0 with row value \"2\".",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "aea6ad7f1122a4e63433723961b027c56965953835f7512814dfd3bbb51b3209",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4889,
+              "completion_tokens": 10,
+              "total_tokens": 4899,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2",
+              "value": "2",
+              "start": 22,
+              "end": 23,
+              "clause": "Which season has rank 2?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly says \"rank 2,\" and \"Rank\" is schema column 0 with row value \"2\".",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2",
+              "value": "2",
+              "start": 22,
+              "end": 23,
+              "clause": "Which season has rank 2?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly says \"rank 2,\" and \"Rank\" is schema column 0 with row value \"2\".",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "2",
+              "value": "2",
+              "start": 22,
+              "end": 23,
+              "clause": "Which season has rank 2?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question explicitly says \"rank 2,\" and \"Rank\" is schema column 0 with row value \"2\".",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              "2"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "2",
+          "value": "2",
+          "start": 22,
+          "end": 23
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "2",
+          "value": "2",
+          "start": 22,
+          "end": 23,
+          "clause": "Which season has rank 2?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "The question explicitly says \"rank 2,\" and \"Rank\" is schema column 0 with row value \"2\".",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          0,
+          0,
+          "2"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 13110
+}

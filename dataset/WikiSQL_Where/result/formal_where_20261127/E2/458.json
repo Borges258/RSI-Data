@@ -1,0 +1,741 @@
+{
+  "arm": "E2",
+  "position": 458,
+  "example_id": "test:15367:2-1304940-1",
+  "original_index": 15367,
+  "table_id": "2-1304940-1",
+  "question": "How many votes did Others receive where Kerry has 44.6%, and Bush more than 163,650 votes?",
+  "gold_sql": {
+    "sel": 6,
+    "conds": [
+      [
+        1,
+        0,
+        "44.6%"
+      ],
+      [
+        4,
+        1,
+        "163,650"
+      ]
+    ],
+    "agg": 3
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "44.6%"
+    ],
+    [
+      4,
+      1,
+      "163,650"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "44.6%"
+      ],
+      [
+        4,
+        1,
+        "163,650"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "44.6%",
+        "value": "44.6%",
+        "start": 50,
+        "end": 55,
+        "clause": "How many votes did Others receive where Kerry has 44.6%,",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The clause attributes 44.6% to Kerry, matching the Kerry % field.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "more than 163,650",
+        "value": "163,650",
+        "start": 66,
+        "end": 83,
+        "clause": "and Bush more than 163,650 votes?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The clause asks for Bush votes, matching the numeric Bush # field; 'more than' supplies the comparison operator.",
+        "operator": ">",
+        "grounded": true,
+        "groundingStatus": "NORMALIZED_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "44.6%",
+        "value": "44.6%",
+        "start": 50,
+        "end": 55
+      },
+      {
+        "surface": "more than 163,650",
+        "value": "163650",
+        "start": 66,
+        "end": 83
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "How many votes did Others receive where Kerry has 44.6%, and Bush more than 163,650 votes?",
+      "table": {
+        "header": [
+          "County",
+          "Kerry %",
+          "Kerry #",
+          "Bush %",
+          "Bush #",
+          "Others %",
+          "Others #"
+        ],
+        "page_title": "United States presidential election in New Jersey, 2004",
+        "types": [
+          "text",
+          "text",
+          "real",
+          "text",
+          "real",
+          "text",
+          "real"
+        ],
+        "page_id": 1304940,
+        "id": "2-1304940-1",
+        "section_title": "By county",
+        "rows": [
+          [
+            "Atlantic",
+            "52.5%",
+            "55,746",
+            "46.6%",
+            "49,487",
+            "0.9%",
+            "864"
+          ],
+          [
+            "Bergen",
+            "51.9%",
+            "207,666",
+            "47.4%",
+            "189,833",
+            "0.7%",
+            "2,745"
+          ],
+          [
+            "Burlington",
+            "53.1%",
+            "110,411",
+            "46.1%",
+            "95,936",
+            "0.8%",
+            "1,609"
+          ],
+          [
+            "Camden",
+            "62.4%",
+            "137,765",
+            "36.9%",
+            "81,427",
+            "0.7%",
+            "1,741"
+          ],
+          [
+            "Cape May",
+            "42.3%",
+            "21,475",
+            "56.8%",
+            "28,832",
+            "0.9%",
+            "455"
+          ],
+          [
+            "Cumberland",
+            "52.4%",
+            "27,875",
+            "45.8%",
+            "24,362",
+            "1.8%",
+            "948"
+          ],
+          [
+            "Essex",
+            "70.4%",
+            "203,681",
+            "28.8%",
+            "83,374",
+            "0.8%",
+            "2,293"
+          ],
+          [
+            "Gloucester",
+            "52.2%",
+            "66,835",
+            "46.9%",
+            "60,033",
+            "0.9%",
+            "1,096"
+          ],
+          [
+            "Hudson",
+            "67.3%",
+            "127,447",
+            "32.0%",
+            "60,646",
+            "0.7%",
+            "1,353"
+          ],
+          [
+            "Hunterdon",
+            "39.1%",
+            "26,050",
+            "59.8%",
+            "39,888",
+            "1.1%",
+            "742"
+          ],
+          [
+            "Mercer",
+            "61.3%",
+            "91,580",
+            "37.9%",
+            "56,604",
+            "0.8%",
+            "1,326"
+          ],
+          [
+            "Middlesex",
+            "56.3%",
+            "166,628",
+            "42.8%",
+            "126,492",
+            "0.9%",
+            "2,685"
+          ],
+          [
+            "Monmouth",
+            "44.6%",
+            "133,773",
+            "54.6%",
+            "163,650",
+            "0.8%",
+            "2,516"
+          ],
+          [
+            "Morris",
+            "41.7%",
+            "98,066",
+            "57.5%",
+            "135,241",
+            "0.8%",
+            "1,847"
+          ],
+          [
+            "Ocean",
+            "39.0%",
+            "99,839",
+            "60.2%",
+            "154,204",
+            "0.8%",
+            "2,263"
+          ],
+          [
+            "Passaic",
+            "55.4%",
+            "94,962",
+            "43.9%",
+            "75,200",
+            "0.7%",
+            "1,149"
+          ],
+          [
+            "Salem",
+            "46.2%",
+            "13,749",
+            "52.8%",
+            "15,721",
+            "1.0%",
+            "311"
+          ],
+          [
+            "Somerset",
+            "47.4%",
+            "66,476",
+            "51.7%",
+            "72,508",
+            "0.9%",
+            "1,295"
+          ],
+          [
+            "Sussex",
+            "34.6%",
+            "23,990",
+            "64.1%",
+            "44,506",
+            "1.3%",
+            "900"
+          ],
+          [
+            "Union",
+            "58.7%",
+            "119,372",
+            "40.6%",
+            "82,517",
+            "0.7%",
+            "1,498"
+          ],
+          [
+            "Warren",
+            "37.4%",
+            "18,044",
+            "61.3%",
+            "29,542",
+            "1.3%",
+            "622"
+          ]
+        ],
+        "caption": "By county",
+        "headers": [
+          "County",
+          "Kerry %",
+          "Kerry #",
+          "Bush %",
+          "Bush #",
+          "Others %",
+          "Others #"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-1304940-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "44.6%",
+              "value": "44.6%",
+              "start": 50,
+              "end": 55
+            },
+            {
+              "surface": "more than 163,650",
+              "value": "163650",
+              "start": 66,
+              "end": 83
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "81cac802d7257e41c4f66257e0690532ba389b3a31492be9c7dd100cc1aa5f2c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5347,
+              "completion_tokens": 37,
+              "total_tokens": 5384,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "44.6%",
+              "value": "44.6%",
+              "start": 50,
+              "end": 55,
+              "clause": "How many votes did Others receive where Kerry has 44.6%,"
+            },
+            {
+              "surface": "more than 163,650",
+              "value": "163650",
+              "start": 66,
+              "end": 83,
+              "clause": "and Bush more than 163,650 votes?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "44.6%",
+              "value": "44.6%",
+              "start": 50,
+              "end": 55,
+              "clause": "How many votes did Others receive where Kerry has 44.6%,"
+            },
+            {
+              "surface": "more than 163,650",
+              "value": "163650",
+              "start": 66,
+              "end": 83,
+              "clause": "and Bush more than 163,650 votes?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "44.6%",
+              "value": "44.6%",
+              "start": 50,
+              "end": 55,
+              "clause": "How many votes did Others receive where Kerry has 44.6%,",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause attributes 44.6% to Kerry, matching the Kerry % field."
+            },
+            {
+              "surface": "more than 163,650",
+              "value": "163650",
+              "start": 66,
+              "end": 83,
+              "clause": "and Bush more than 163,650 votes?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause asks for Bush votes, matching the numeric Bush # field; 'more than' supplies the comparison operator."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "12d0dec0ba30d9e665b0250589cc8bbb96111aedf64d93c5e4c4a6fa27c839c2",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5425,
+              "completion_tokens": 65,
+              "total_tokens": 5490,
+              "prompt_tokens_details": {
+                "cached_tokens": 5120
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "44.6%",
+              "value": "44.6%",
+              "start": 50,
+              "end": 55,
+              "clause": "How many votes did Others receive where Kerry has 44.6%,",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause attributes 44.6% to Kerry, matching the Kerry % field.",
+              "operator": "="
+            },
+            {
+              "surface": "more than 163,650",
+              "value": "163650",
+              "start": 66,
+              "end": 83,
+              "clause": "and Bush more than 163,650 votes?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause asks for Bush votes, matching the numeric Bush # field; 'more than' supplies the comparison operator.",
+              "operator": ">"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "5db5e51a0f2087a8f7a635e89d2a1c4b600bed789c322509de09f475a0a267ca",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5524,
+              "completion_tokens": 11,
+              "total_tokens": 5535,
+              "prompt_tokens_details": {
+                "cached_tokens": 5120
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "44.6%",
+              "value": "44.6%",
+              "start": 50,
+              "end": 55,
+              "clause": "How many votes did Others receive where Kerry has 44.6%,",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause attributes 44.6% to Kerry, matching the Kerry % field.",
+              "operator": "="
+            },
+            {
+              "surface": "more than 163,650",
+              "value": 163650,
+              "start": 66,
+              "end": 83,
+              "clause": "and Bush more than 163,650 votes?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause asks for Bush votes, matching the numeric Bush # field; 'more than' supplies the comparison operator.",
+              "operator": ">"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "305cea8768ecb9d028e10a3f2f6df87ecf436a47b8adb2cfc0ef7c54b580ce08",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5478,
+              "completion_tokens": 14,
+              "total_tokens": 5492,
+              "prompt_tokens_details": {
+                "cached_tokens": 5120
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "44.6%",
+              "value": "44.6%",
+              "start": 50,
+              "end": 55,
+              "clause": "How many votes did Others receive where Kerry has 44.6%,",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause attributes 44.6% to Kerry, matching the Kerry % field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "more than 163,650",
+              "value": "163,650",
+              "start": 66,
+              "end": 83,
+              "clause": "and Bush more than 163,650 votes?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause asks for Bush votes, matching the numeric Bush # field; 'more than' supplies the comparison operator.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "NORMALIZED_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "44.6%",
+              "value": "44.6%",
+              "start": 50,
+              "end": 55,
+              "clause": "How many votes did Others receive where Kerry has 44.6%,",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause attributes 44.6% to Kerry, matching the Kerry % field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "more than 163,650",
+              "value": "163,650",
+              "start": 66,
+              "end": 83,
+              "clause": "and Bush more than 163,650 votes?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause asks for Bush votes, matching the numeric Bush # field; 'more than' supplies the comparison operator.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "NORMALIZED_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "44.6%",
+              "value": "44.6%",
+              "start": 50,
+              "end": 55,
+              "clause": "How many votes did Others receive where Kerry has 44.6%,",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause attributes 44.6% to Kerry, matching the Kerry % field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "more than 163,650",
+              "value": "163,650",
+              "start": 66,
+              "end": 83,
+              "clause": "and Bush more than 163,650 votes?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause asks for Bush votes, matching the numeric Bush # field; 'more than' supplies the comparison operator.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "NORMALIZED_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              "44.6%"
+            ],
+            [
+              4,
+              1,
+              "163,650"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "44.6%",
+          "value": "44.6%",
+          "start": 50,
+          "end": 55
+        },
+        {
+          "surface": "more than 163,650",
+          "value": "163650",
+          "start": 66,
+          "end": 83
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "44.6%",
+          "value": "44.6%",
+          "start": 50,
+          "end": 55,
+          "clause": "How many votes did Others receive where Kerry has 44.6%,",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The clause attributes 44.6% to Kerry, matching the Kerry % field.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "more than 163,650",
+          "value": "163,650",
+          "start": 66,
+          "end": 83,
+          "clause": "and Bush more than 163,650 votes?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The clause asks for Bush votes, matching the numeric Bush # field; 'more than' supplies the comparison operator.",
+          "operator": ">",
+          "grounded": true,
+          "groundingStatus": "NORMALIZED_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          1,
+          0,
+          "44.6%"
+        ],
+        [
+          4,
+          1,
+          "163,650"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7891
+}

@@ -1,0 +1,592 @@
+{
+  "arm": "E2",
+  "position": 294,
+  "example_id": "test:14564:2-1219572-1",
+  "original_index": 14564,
+  "table_id": "2-1219572-1",
+  "question": "What game, played on October 17 in front of 49,347 fans, had the lowest score?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        1,
+        0,
+        "october 17"
+      ],
+      [
+        5,
+        0,
+        "49,347"
+      ]
+    ],
+    "agg": 2
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "October 17"
+    ],
+    [
+      5,
+      0,
+      "49,347"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "October 17"
+      ],
+      [
+        5,
+        0,
+        "49,347"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "October 17",
+        "value": "October 17",
+        "start": 21,
+        "end": 31,
+        "clause": "played on October 17 in front of 49",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "'played on' indicates the Date field; October 17 appears in Date.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "49,347",
+        "value": "49,347",
+        "start": 44,
+        "end": 50,
+        "clause": "played on October 17 in front of 49,347 fans",
+        "columnIndex": 5,
+        "columnCandidates": [
+          5
+        ],
+        "columnMatchReason": "'fans' and 'in front of' indicate Attendance; 49,347 appears in Attendance.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "October 17",
+        "value": "October 17",
+        "start": 21,
+        "end": 31
+      },
+      {
+        "surface": "49,347",
+        "value": "49,347",
+        "start": 44,
+        "end": 50
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What game, played on October 17 in front of 49,347 fans, had the lowest score?",
+      "table": {
+        "header": [
+          "Game",
+          "Date",
+          "Score",
+          "Location",
+          "Time",
+          "Attendance"
+        ],
+        "page_title": "1974 World Series",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text",
+          "real"
+        ],
+        "page_id": 1219572,
+        "id": "2-1219572-1",
+        "section_title": "Summary",
+        "rows": [
+          [
+            "1",
+            "October 12",
+            "Oakland A's – 3, Los Angeles Dodgers – 2",
+            "Dodger Stadium",
+            "2:43",
+            "55,974"
+          ],
+          [
+            "2",
+            "October 13",
+            "Oakland A's – 2, Los Angeles Dodgers – 3",
+            "Dodger Stadium",
+            "2:40",
+            "55,989"
+          ],
+          [
+            "3",
+            "October 15",
+            "Los Angeles Dodgers – 2, Oakland A's – 3",
+            "Oakland-Alameda County Coliseum",
+            "2:35",
+            "49,347"
+          ],
+          [
+            "4",
+            "October 16",
+            "Los Angeles Dodgers – 2, Oakland A's – 5",
+            "Oakland-Alameda County Coliseum",
+            "2:17",
+            "49,347"
+          ],
+          [
+            "5",
+            "October 17",
+            "Los Angeles Dodgers – 2, Oakland A's – 3",
+            "Oakland-Alameda County Coliseum",
+            "2:23",
+            "49,347"
+          ]
+        ],
+        "caption": "Summary",
+        "headers": [
+          "Game",
+          "Date",
+          "Score",
+          "Location",
+          "Time",
+          "Attendance"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-1219572-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "October 17",
+              "value": "October 17",
+              "start": 21,
+              "end": 31
+            },
+            {
+              "surface": "49,347",
+              "value": "49,347",
+              "start": 44,
+              "end": 50
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "84ad8ce01ee767d91734b59ef544a2766ed2cbb45612d50fff19c9b0004c153f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4854,
+              "completion_tokens": 93,
+              "total_tokens": 4947,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 58
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "October 17",
+              "value": "October 17",
+              "start": 21,
+              "end": 31,
+              "clause": "played on October 17 in front of 49"
+            },
+            {
+              "surface": "49,347",
+              "value": "49,347",
+              "start": 44,
+              "end": 50,
+              "clause": "played on October 17 in front of 49,347 fans"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "October 17",
+              "value": "October 17",
+              "start": 21,
+              "end": 31,
+              "clause": "played on October 17 in front of 49"
+            },
+            {
+              "surface": "49,347",
+              "value": "49,347",
+              "start": 44,
+              "end": 50,
+              "clause": "played on October 17 in front of 49,347 fans"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "October 17",
+              "value": "October 17",
+              "start": 21,
+              "end": 31,
+              "clause": "played on October 17 in front of 49",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'played on' indicates the Date field; October 17 appears in Date."
+            },
+            {
+              "surface": "49,347",
+              "value": "49,347",
+              "start": 44,
+              "end": 50,
+              "clause": "played on October 17 in front of 49,347 fans",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "'fans' and 'in front of' indicate Attendance; 49,347 appears in Attendance."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "822f7845df8b8d12f29dcfa1aa55978277dd1944b6e1146919dd749c7182f092",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4926,
+              "completion_tokens": 61,
+              "total_tokens": 4987,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "October 17",
+              "value": "October 17",
+              "start": 21,
+              "end": 31,
+              "clause": "played on October 17 in front of 49",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'played on' indicates the Date field; October 17 appears in Date.",
+              "operator": "="
+            },
+            {
+              "surface": "49,347",
+              "value": "49,347",
+              "start": 44,
+              "end": 50,
+              "clause": "played on October 17 in front of 49,347 fans",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "'fans' and 'in front of' indicate Attendance; 49,347 appears in Attendance.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "cf91a7ce67fdb690a76d78e2941a8cb1ae4927cd57e58d038d23c134668d2d8e",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5020,
+              "completion_tokens": 11,
+              "total_tokens": 5031,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "October 17",
+              "value": "October 17",
+              "start": 21,
+              "end": 31,
+              "clause": "played on October 17 in front of 49",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'played on' indicates the Date field; October 17 appears in Date.",
+              "operator": "="
+            },
+            {
+              "surface": "49,347",
+              "value": "49,347",
+              "start": 44,
+              "end": 50,
+              "clause": "played on October 17 in front of 49,347 fans",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "'fans' and 'in front of' indicate Attendance; 49,347 appears in Attendance.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "14c5ca833630452acbec1cc2b65d78be2983b6ad43fc770201530e99554724f0",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4974,
+              "completion_tokens": 16,
+              "total_tokens": 4990,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "October 17",
+              "value": "October 17",
+              "start": 21,
+              "end": 31,
+              "clause": "played on October 17 in front of 49",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'played on' indicates the Date field; October 17 appears in Date.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "49,347",
+              "value": "49,347",
+              "start": 44,
+              "end": 50,
+              "clause": "played on October 17 in front of 49,347 fans",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "'fans' and 'in front of' indicate Attendance; 49,347 appears in Attendance.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "October 17",
+              "value": "October 17",
+              "start": 21,
+              "end": 31,
+              "clause": "played on October 17 in front of 49",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'played on' indicates the Date field; October 17 appears in Date.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "49,347",
+              "value": "49,347",
+              "start": 44,
+              "end": 50,
+              "clause": "played on October 17 in front of 49,347 fans",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "'fans' and 'in front of' indicate Attendance; 49,347 appears in Attendance.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "October 17",
+              "value": "October 17",
+              "start": 21,
+              "end": 31,
+              "clause": "played on October 17 in front of 49",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "'played on' indicates the Date field; October 17 appears in Date.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "49,347",
+              "value": "49,347",
+              "start": 44,
+              "end": 50,
+              "clause": "played on October 17 in front of 49,347 fans",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "'fans' and 'in front of' indicate Attendance; 49,347 appears in Attendance.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              "October 17"
+            ],
+            [
+              5,
+              0,
+              "49,347"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "October 17",
+          "value": "October 17",
+          "start": 21,
+          "end": 31
+        },
+        {
+          "surface": "49,347",
+          "value": "49,347",
+          "start": 44,
+          "end": 50
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "October 17",
+          "value": "October 17",
+          "start": 21,
+          "end": 31,
+          "clause": "played on October 17 in front of 49",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "'played on' indicates the Date field; October 17 appears in Date.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "49,347",
+          "value": "49,347",
+          "start": 44,
+          "end": 50,
+          "clause": "played on October 17 in front of 49,347 fans",
+          "columnIndex": 5,
+          "columnCandidates": [
+            5
+          ],
+          "columnMatchReason": "'fans' and 'in front of' indicate Attendance; 49,347 appears in Attendance.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          1,
+          0,
+          "October 17"
+        ],
+        [
+          5,
+          0,
+          "49,347"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9875
+}

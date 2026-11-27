@@ -1,0 +1,411 @@
+{
+  "arm": "E2",
+  "position": 296,
+  "example_id": "test:11717:2-1117909-2",
+  "original_index": 11717,
+  "table_id": "2-1117909-2",
+  "question": "Name the opponent in the final for year of 1888",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        0,
+        0,
+        1888
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      1888
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        1888
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "1888",
+        "value": 1888,
+        "start": 43,
+        "end": 47,
+        "clause": "Name the opponent in the final for year of 1888",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "The phrase 'year of 1888' explicitly identifies the Year field, and 1888 appears in that column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "1888",
+        "value": "1888",
+        "start": 43,
+        "end": 47
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Name the opponent in the final for year of 1888",
+      "table": {
+        "header": [
+          "Year",
+          "Tournament",
+          "Partner",
+          "Opponent in the final",
+          "Score"
+        ],
+        "page_title": "Ernest Renshaw",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 1117909,
+        "id": "2-1117909-2",
+        "section_title": "Doubles (5)",
+        "rows": [
+          [
+            "1884",
+            "Wimbledon",
+            "William Renshaw",
+            "Ernest Lewis E.L. Williams",
+            "6–3, 6–1, 1–6, 6–4"
+          ],
+          [
+            "1885",
+            "Wimbledon",
+            "William Renshaw",
+            "C.E. Farrer A.J. Stanley",
+            "6–3, 6–3, 10–8"
+          ],
+          [
+            "1886",
+            "Wimbledon",
+            "William Renshaw",
+            "C.E. Farrer A.J. Stanley",
+            "6–3, 6–3, 4–6, 7–5"
+          ],
+          [
+            "1888",
+            "Wimbledon",
+            "William Renshaw",
+            "Herbert Wilberforce Patrick Bowes-Lyon",
+            "2–6, 1–6, 6–3, 6–4, 6–3"
+          ],
+          [
+            "1889",
+            "Wimbledon",
+            "William Renshaw",
+            "Ernest Lewis George Hillyard",
+            "6–4, 6–4, 3–6, 0–6, 6–1"
+          ]
+        ],
+        "caption": "Doubles (5)",
+        "headers": [
+          "Year",
+          "Tournament",
+          "Partner",
+          "Opponent in the final",
+          "Score"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-1117909-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "1888",
+              "value": "1888",
+              "start": 43,
+              "end": 47
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d06760b3289c2615aa0c2cc9dae738c7004992a626d491d59775e74fef992ee8",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4881,
+              "completion_tokens": 19,
+              "total_tokens": 4900,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1888",
+              "value": "1888",
+              "start": 43,
+              "end": 47,
+              "clause": "Name the opponent in the final for year of 1888"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "1888",
+              "value": "1888",
+              "start": 43,
+              "end": 47,
+              "clause": "Name the opponent in the final for year of 1888"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1888",
+              "value": "1888",
+              "start": 43,
+              "end": 47,
+              "clause": "Name the opponent in the final for year of 1888",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The phrase 'year of 1888' explicitly identifies the Year field, and 1888 appears in that column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "2cfb3c82d8d23b20625041bf45fa527275fd6cb0665461993e414766051846c6",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4916,
+              "completion_tokens": 45,
+              "total_tokens": 4961,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1888",
+              "value": "1888",
+              "start": 43,
+              "end": 47,
+              "clause": "Name the opponent in the final for year of 1888",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The phrase 'year of 1888' explicitly identifies the Year field, and 1888 appears in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f655e2dfb9b8fcf9ac817be98f9469886aaf0824baa007d28afe1ac3617abdf7",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4985,
+              "completion_tokens": 9,
+              "total_tokens": 4994,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1888",
+              "value": "1888",
+              "start": 43,
+              "end": 47,
+              "clause": "Name the opponent in the final for year of 1888",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The phrase 'year of 1888' explicitly identifies the Year field, and 1888 appears in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "2446717a47dca67b3e1e66fdde973a1c9897be4f483fa2c98a828cde4bfaae8a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4936,
+              "completion_tokens": 11,
+              "total_tokens": 4947,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1888",
+              "value": "1888",
+              "start": 43,
+              "end": 47,
+              "clause": "Name the opponent in the final for year of 1888",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The phrase 'year of 1888' explicitly identifies the Year field, and 1888 appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1888",
+              "value": 1888,
+              "start": 43,
+              "end": 47,
+              "clause": "Name the opponent in the final for year of 1888",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The phrase 'year of 1888' explicitly identifies the Year field, and 1888 appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "1888",
+              "value": 1888,
+              "start": 43,
+              "end": 47,
+              "clause": "Name the opponent in the final for year of 1888",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The phrase 'year of 1888' explicitly identifies the Year field, and 1888 appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              1888
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "1888",
+          "value": "1888",
+          "start": 43,
+          "end": 47
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "1888",
+          "value": 1888,
+          "start": 43,
+          "end": 47,
+          "clause": "Name the opponent in the final for year of 1888",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "The phrase 'year of 1888' explicitly identifies the Year field, and 1888 appears in that column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          0,
+          0,
+          1888
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9031
+}

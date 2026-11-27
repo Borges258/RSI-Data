@@ -1,0 +1,720 @@
+{
+  "arm": "E2",
+  "position": 500,
+  "example_id": "test:10321:2-1123403-2",
+  "original_index": 10321,
+  "table_id": "2-1123403-2",
+  "question": "How many laps did Nick Heidfeld drive on grids larger than 4?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        4,
+        1,
+        4
+      ],
+      [
+        0,
+        0,
+        "nick heidfeld"
+      ]
+    ],
+    "agg": 4
+  },
+  "prediction_conds": [],
+  "status": "GROUNDING_FAILED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "GROUNDING_FAILED",
+    "valid": false,
+    "errors": [
+      "condition 1: grounding NO_MATCH",
+      "condition 1: nonnumeric value for real column"
+    ],
+    "conditions": [
+      {
+        "surface": "Nick Heidfeld",
+        "value": "Nick Heidfeld",
+        "start": 18,
+        "end": 31,
+        "clause": "How many laps did Nick Heidfeld drive on grids larger than 4?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "Nick Heidfeld is identified as a Driver in the matching row.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "larger than 4",
+        "value": "larger than 4",
+        "start": 47,
+        "end": 60,
+        "clause": "How many laps did Nick Heidfeld drive on grids larger than 4?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The phrase 'grids larger than 4' explicitly refers to the numeric Grid field.",
+        "operator": ">",
+        "grounded": false,
+        "groundingStatus": "NO_MATCH",
+        "groundingReview": {
+          "column": 4,
+          "reason": "The phrase 'grids larger than 4' refers to the numeric Grid column; Nick Heidfeld's Grid value is 19, which satisfies > 4."
+        }
+      }
+    ],
+    "stage": "WHERE_CONDITION_VALIDATE",
+    "originalConditions": [
+      {
+        "surface": "Nick Heidfeld",
+        "value": "Nick Heidfeld",
+        "start": 18,
+        "end": 31
+      },
+      {
+        "surface": "larger than 4",
+        "value": "larger than 4",
+        "start": 47,
+        "end": 60
+      }
+    ],
+    "halt": true,
+    "completed": false,
+    "conds": [],
+    "warnings": [
+      "value model disagreed with extracted question span; original retained"
+    ],
+    "request": {
+      "question": "How many laps did Nick Heidfeld drive on grids larger than 4?",
+      "table": {
+        "header": [
+          "Driver",
+          "Constructor",
+          "Laps",
+          "Time/Retired",
+          "Grid"
+        ],
+        "page_title": "2000 Hungarian Grand Prix",
+        "types": [
+          "text",
+          "text",
+          "real",
+          "text",
+          "real"
+        ],
+        "page_id": 1123403,
+        "id": "2-1123403-2",
+        "section_title": "Race",
+        "rows": [
+          [
+            "Mika Häkkinen",
+            "McLaren - Mercedes",
+            "77",
+            "1:45:33.869",
+            "3"
+          ],
+          [
+            "Michael Schumacher",
+            "Ferrari",
+            "77",
+            "+7.917",
+            "1"
+          ],
+          [
+            "David Coulthard",
+            "McLaren - Mercedes",
+            "77",
+            "+8.455",
+            "2"
+          ],
+          [
+            "Rubens Barrichello",
+            "Ferrari",
+            "77",
+            "+44.157",
+            "5"
+          ],
+          [
+            "Ralf Schumacher",
+            "Williams - BMW",
+            "77",
+            "+50.437",
+            "4"
+          ],
+          [
+            "Heinz-Harald Frentzen",
+            "Jordan - Mugen-Honda",
+            "77",
+            "+1:08.099",
+            "6"
+          ],
+          [
+            "Jarno Trulli",
+            "Jordan - Mugen-Honda",
+            "76",
+            "+1 Lap",
+            "12"
+          ],
+          [
+            "Eddie Irvine",
+            "Jaguar - Cosworth",
+            "76",
+            "+1 Lap",
+            "10"
+          ],
+          [
+            "Jenson Button",
+            "Williams - BMW",
+            "76",
+            "+1 Lap",
+            "8"
+          ],
+          [
+            "Mika Salo",
+            "Sauber - Petronas",
+            "76",
+            "+1 Lap",
+            "9"
+          ],
+          [
+            "Alexander Wurz",
+            "Benetton - Playlife",
+            "76",
+            "+1 Lap",
+            "11"
+          ],
+          [
+            "Jacques Villeneuve",
+            "BAR - Honda",
+            "75",
+            "+2 Laps",
+            "16"
+          ],
+          [
+            "Jos Verstappen",
+            "Arrows - Supertec",
+            "75",
+            "+2 Laps",
+            "20"
+          ],
+          [
+            "Ricardo Zonta",
+            "BAR - Honda",
+            "75",
+            "+2 Laps",
+            "18"
+          ],
+          [
+            "Marc Gené",
+            "Minardi - Fondmetal",
+            "74",
+            "+3 Laps",
+            "21"
+          ],
+          [
+            "Pedro de la Rosa",
+            "Arrows - Supertec",
+            "73",
+            "+4 Laps",
+            "15"
+          ],
+          [
+            "Gastón Mazzacane",
+            "Minardi - Fondmetal",
+            "68",
+            "Engine",
+            "22"
+          ],
+          [
+            "Johnny Herbert",
+            "Jaguar - Cosworth",
+            "67",
+            "Gearbox",
+            "17"
+          ],
+          [
+            "Pedro Diniz",
+            "Sauber - Petronas",
+            "62",
+            "Transmission",
+            "13"
+          ],
+          [
+            "Giancarlo Fisichella",
+            "Benetton - Playlife",
+            "31",
+            "Brakes",
+            "7"
+          ],
+          [
+            "Nick Heidfeld",
+            "Prost - Peugeot",
+            "22",
+            "Electrical",
+            "19"
+          ],
+          [
+            "Jean Alesi",
+            "Prost - Peugeot",
+            "11",
+            "Suspension",
+            "14"
+          ]
+        ],
+        "caption": "Race",
+        "headers": [
+          "Driver",
+          "Constructor",
+          "Laps",
+          "Time/Retired",
+          "Grid"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-1123403-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 9,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "Nick Heidfeld",
+              "value": "Nick Heidfeld",
+              "start": 18,
+              "end": 31
+            },
+            {
+              "surface": "larger than 4",
+              "value": "larger than 4",
+              "start": 47,
+              "end": 60
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "3e055dd5aad8a138495c73a04bf8bd37e39a13ecbacfd0892cb15e9ba65c4068",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5092,
+              "completion_tokens": 39,
+              "total_tokens": 5131,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Nick Heidfeld",
+              "value": "Nick Heidfeld",
+              "start": 18,
+              "end": 31,
+              "clause": "How many laps did Nick Heidfeld drive on grids larger than 4?"
+            },
+            {
+              "surface": "larger than 4",
+              "value": "larger than 4",
+              "start": 47,
+              "end": 60,
+              "clause": "How many laps did Nick Heidfeld drive on grids larger than 4?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Nick Heidfeld",
+              "value": "Nick Heidfeld",
+              "start": 18,
+              "end": 31,
+              "clause": "How many laps did Nick Heidfeld drive on grids larger than 4?"
+            },
+            {
+              "surface": "larger than 4",
+              "value": "larger than 4",
+              "start": 47,
+              "end": 60,
+              "clause": "How many laps did Nick Heidfeld drive on grids larger than 4?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Nick Heidfeld",
+              "value": "Nick Heidfeld",
+              "start": 18,
+              "end": 31,
+              "clause": "How many laps did Nick Heidfeld drive on grids larger than 4?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Nick Heidfeld is identified as a Driver in the matching row."
+            },
+            {
+              "surface": "larger than 4",
+              "value": "larger than 4",
+              "start": 47,
+              "end": 60,
+              "clause": "How many laps did Nick Heidfeld drive on grids larger than 4?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'grids larger than 4' explicitly refers to the numeric Grid field."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "1c4c5056fe1945563e30ec4c303f2a14d009df60b89a2cb38869d4af356e115c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5179,
+              "completion_tokens": 57,
+              "total_tokens": 5236,
+              "prompt_tokens_details": {
+                "cached_tokens": 4864
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Nick Heidfeld",
+              "value": "Nick Heidfeld",
+              "start": 18,
+              "end": 31,
+              "clause": "How many laps did Nick Heidfeld drive on grids larger than 4?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Nick Heidfeld is identified as a Driver in the matching row.",
+              "operator": "="
+            },
+            {
+              "surface": "larger than 4",
+              "value": "larger than 4",
+              "start": 47,
+              "end": 60,
+              "clause": "How many laps did Nick Heidfeld drive on grids larger than 4?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'grids larger than 4' explicitly refers to the numeric Grid field.",
+              "operator": ">"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ac1b49fbe04f8c2e40b576644aa488f42c423d768bedbe96865e01a8bd69abb4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5271,
+              "completion_tokens": 11,
+              "total_tokens": 5282,
+              "prompt_tokens_details": {
+                "cached_tokens": 4864
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "warnings": [
+            "value model disagreed with extracted question span; original retained"
+          ],
+          "conditions": [
+            {
+              "surface": "Nick Heidfeld",
+              "value": "Nick Heidfeld",
+              "start": 18,
+              "end": 31,
+              "clause": "How many laps did Nick Heidfeld drive on grids larger than 4?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Nick Heidfeld is identified as a Driver in the matching row.",
+              "operator": "="
+            },
+            {
+              "surface": "larger than 4",
+              "value": "larger than 4",
+              "start": 47,
+              "end": 60,
+              "clause": "How many laps did Nick Heidfeld drive on grids larger than 4?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'grids larger than 4' explicitly refers to the numeric Grid field.",
+              "operator": ">"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0d38665ee0bb78177de2c2dce0fbab6f41e6e945d3f9882165989745317ba3e5",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5225,
+              "completion_tokens": 14,
+              "total_tokens": 5239,
+              "prompt_tokens_details": {
+                "cached_tokens": 4864
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Nick Heidfeld",
+              "value": "Nick Heidfeld",
+              "start": 18,
+              "end": 31,
+              "clause": "How many laps did Nick Heidfeld drive on grids larger than 4?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Nick Heidfeld is identified as a Driver in the matching row.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "larger than 4",
+              "value": "larger than 4",
+              "start": 47,
+              "end": 60,
+              "clause": "How many laps did Nick Heidfeld drive on grids larger than 4?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'grids larger than 4' explicitly refers to the numeric Grid field.",
+              "operator": ">",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 4,
+                "reason": "The phrase 'grids larger than 4' refers to the numeric Grid column; Nick Heidfeld's Grid value is 19, which satisfies > 4."
+              }
+            }
+          ],
+          "reviewModelCalls": [
+            {
+              "model": "gpt-5.6-sol",
+              "promptSha256": "860506e02e7dbd309269212079b6bd01bed162766fa7d9a708647295e2782a0a",
+              "knowledgeIds": [],
+              "usage": {
+                "prompt_tokens": 5192,
+                "completion_tokens": 46,
+                "total_tokens": 5238,
+                "prompt_tokens_details": {
+                  "cached_tokens": 4864
+                }
+              }
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "860506e02e7dbd309269212079b6bd01bed162766fa7d9a708647295e2782a0a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5192,
+              "completion_tokens": 46,
+              "total_tokens": 5238,
+              "prompt_tokens_details": {
+                "cached_tokens": 4864
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Nick Heidfeld",
+              "value": "Nick Heidfeld",
+              "start": 18,
+              "end": 31,
+              "clause": "How many laps did Nick Heidfeld drive on grids larger than 4?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Nick Heidfeld is identified as a Driver in the matching row.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "larger than 4",
+              "value": "larger than 4",
+              "start": 47,
+              "end": 60,
+              "clause": "How many laps did Nick Heidfeld drive on grids larger than 4?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'grids larger than 4' explicitly refers to the numeric Grid field.",
+              "operator": ">",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 4,
+                "reason": "The phrase 'grids larger than 4' refers to the numeric Grid column; Nick Heidfeld's Grid value is 19, which satisfies > 4."
+              }
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "GROUNDING_FAILED",
+          "valid": false,
+          "errors": [
+            "condition 1: grounding NO_MATCH",
+            "condition 1: nonnumeric value for real column"
+          ],
+          "conditions": [
+            {
+              "surface": "Nick Heidfeld",
+              "value": "Nick Heidfeld",
+              "start": 18,
+              "end": 31,
+              "clause": "How many laps did Nick Heidfeld drive on grids larger than 4?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Nick Heidfeld is identified as a Driver in the matching row.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "larger than 4",
+              "value": "larger than 4",
+              "start": 47,
+              "end": 60,
+              "clause": "How many laps did Nick Heidfeld drive on grids larger than 4?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'grids larger than 4' explicitly refers to the numeric Grid field.",
+              "operator": ">",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 4,
+                "reason": "The phrase 'grids larger than 4' refers to the numeric Grid column; Nick Heidfeld's Grid value is 19, which satisfies > 4."
+              }
+            }
+          ]
+        }
+      },
+      "warnings": [
+        "value model disagreed with extracted question span; original retained"
+      ],
+      "execution": {
+        "status": "GROUNDING_FAILED",
+        "stage": "WHERE_CONDITION_VALIDATE",
+        "halt": true,
+        "completed": false,
+        "errors": [
+          "condition 1: grounding NO_MATCH",
+          "condition 1: nonnumeric value for real column"
+        ],
+        "warnings": [
+          "value model disagreed with extracted question span; original retained"
+        ]
+      },
+      "originalConditions": [
+        {
+          "surface": "Nick Heidfeld",
+          "value": "Nick Heidfeld",
+          "start": 18,
+          "end": 31
+        },
+        {
+          "surface": "larger than 4",
+          "value": "larger than 4",
+          "start": 47,
+          "end": 60
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Nick Heidfeld",
+          "value": "Nick Heidfeld",
+          "start": 18,
+          "end": 31,
+          "clause": "How many laps did Nick Heidfeld drive on grids larger than 4?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "Nick Heidfeld is identified as a Driver in the matching row.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "larger than 4",
+          "value": "larger than 4",
+          "start": 47,
+          "end": 60,
+          "clause": "How many laps did Nick Heidfeld drive on grids larger than 4?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The phrase 'grids larger than 4' explicitly refers to the numeric Grid field.",
+          "operator": ">",
+          "grounded": false,
+          "groundingStatus": "NO_MATCH",
+          "groundingReview": {
+            "column": 4,
+            "reason": "The phrase 'grids larger than 4' refers to the numeric Grid column; Nick Heidfeld's Grid value is 19, which satisfies > 4."
+          }
+        }
+      ],
+      "count": 2
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": false,
+  "elapsed_ms": 12641
+}

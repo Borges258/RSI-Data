@@ -1,0 +1,467 @@
+{
+  "arm": "E2",
+  "position": 81,
+  "example_id": "test:5213:2-14083524-2",
+  "original_index": 5213,
+  "table_id": "2-14083524-2",
+  "question": "what day did the team go to toronto",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        1,
+        0,
+        "toronto"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      3,
+      0,
+      "Toronto"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        0,
+        "Toronto"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "toronto",
+        "value": "Toronto",
+        "start": 28,
+        "end": 35,
+        "clause": "what day did the team go to toronto",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "\"go to Toronto\" indicates the game location/opponent's venue; row evidence shows Vancouver as Visitor and Toronto as Home.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "toronto",
+        "value": "Toronto",
+        "start": 28,
+        "end": 35
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "what day did the team go to toronto",
+      "table": {
+        "header": [
+          "Date",
+          "Visitor",
+          "Score",
+          "Home",
+          "Record"
+        ],
+        "page_title": "1971–72 Vancouver Canucks season",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 14083524,
+        "id": "2-14083524-2",
+        "section_title": "Game log",
+        "rows": [
+          [
+            "October 8",
+            "Toronto",
+            "3–2",
+            "Vancouver",
+            "0–1–0"
+          ],
+          [
+            "October 10",
+            "Los Angeles",
+            "4–2",
+            "Vancouver",
+            "0–2–0"
+          ],
+          [
+            "October 12",
+            "Philadelphia",
+            "2–3",
+            "Vancouver",
+            "1–2–0"
+          ],
+          [
+            "October 15",
+            "Vancouver",
+            "9–6",
+            "California",
+            "2–2–0"
+          ],
+          [
+            "October 16",
+            "Pittsburgh",
+            "2–1",
+            "Vancouver",
+            "2–3–0"
+          ],
+          [
+            "October 19",
+            "Vancouver",
+            "3–1",
+            "St. Louis",
+            "3–3–0"
+          ],
+          [
+            "October 20",
+            "Vancouver",
+            "0–7",
+            "Minnesota",
+            "3–4–0"
+          ],
+          [
+            "October 22",
+            "Montreal",
+            "6–0",
+            "Vancouver",
+            "3–5–0"
+          ],
+          [
+            "October 24",
+            "Boston",
+            "4–3",
+            "Vancouver",
+            "3–6–0"
+          ],
+          [
+            "October 27",
+            "Vancouver",
+            "0–0",
+            "Toronto",
+            "3–6–1"
+          ],
+          [
+            "October 28",
+            "Vancouver",
+            "2–3",
+            "Philadelphia",
+            "3–7–1"
+          ],
+          [
+            "October 30",
+            "Buffalo",
+            "4–4",
+            "Vancouver",
+            "3–7–2"
+          ],
+          [
+            "October 31",
+            "Chicago",
+            "2–6",
+            "Vancouver",
+            "4–7–2"
+          ]
+        ],
+        "caption": "Game log",
+        "headers": [
+          "Date",
+          "Visitor",
+          "Score",
+          "Home",
+          "Record"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-14083524-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "toronto",
+              "value": "Toronto",
+              "start": 28,
+              "end": 35
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "598c183fbaf4af6420b5121bb74b0bbfd617705d46b3542e2ef8e8944979dbbd",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4930,
+              "completion_tokens": 18,
+              "total_tokens": 4948,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "toronto",
+              "value": "Toronto",
+              "start": 28,
+              "end": 35,
+              "clause": "what day did the team go to toronto"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "toronto",
+              "value": "Toronto",
+              "start": 28,
+              "end": 35,
+              "clause": "what day did the team go to toronto"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "toronto",
+              "value": "Toronto",
+              "start": 28,
+              "end": 35,
+              "clause": "what day did the team go to toronto",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "\"go to Toronto\" indicates the game location/opponent's venue; row evidence shows Vancouver as Visitor and Toronto as Home."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "cc755546130d4ee281ca76fd6c4e7f2f3989c9c3290d9ea093222829bd4ea5b2",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4961,
+              "completion_tokens": 46,
+              "total_tokens": 5007,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "toronto",
+              "value": "Toronto",
+              "start": 28,
+              "end": 35,
+              "clause": "what day did the team go to toronto",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "\"go to Toronto\" indicates the game location/opponent's venue; row evidence shows Vancouver as Visitor and Toronto as Home.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "100943caad2e990b6354e43b3bf09104b4fa826a92b57ae9631f19863915c132",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5031,
+              "completion_tokens": 9,
+              "total_tokens": 5040,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "toronto",
+              "value": "Toronto",
+              "start": 28,
+              "end": 35,
+              "clause": "what day did the team go to toronto",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "\"go to Toronto\" indicates the game location/opponent's venue; row evidence shows Vancouver as Visitor and Toronto as Home.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e8aa7c33e95ba618c7f0603ff374f97f11575371464498cda5abbd2a03d53572",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4982,
+              "completion_tokens": 10,
+              "total_tokens": 4992,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "toronto",
+              "value": "Toronto",
+              "start": 28,
+              "end": 35,
+              "clause": "what day did the team go to toronto",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "\"go to Toronto\" indicates the game location/opponent's venue; row evidence shows Vancouver as Visitor and Toronto as Home.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "toronto",
+              "value": "Toronto",
+              "start": 28,
+              "end": 35,
+              "clause": "what day did the team go to toronto",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "\"go to Toronto\" indicates the game location/opponent's venue; row evidence shows Vancouver as Visitor and Toronto as Home.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "toronto",
+              "value": "Toronto",
+              "start": 28,
+              "end": 35,
+              "clause": "what day did the team go to toronto",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "\"go to Toronto\" indicates the game location/opponent's venue; row evidence shows Vancouver as Visitor and Toronto as Home.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              0,
+              "Toronto"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "toronto",
+          "value": "Toronto",
+          "start": 28,
+          "end": 35
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "toronto",
+          "value": "Toronto",
+          "start": 28,
+          "end": 35,
+          "clause": "what day did the team go to toronto",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "\"go to Toronto\" indicates the game location/opponent's venue; row evidence shows Vancouver as Visitor and Toronto as Home.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          3,
+          0,
+          "Toronto"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7859
+}

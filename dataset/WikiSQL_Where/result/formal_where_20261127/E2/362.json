@@ -1,0 +1,418 @@
+{
+  "arm": "E2",
+  "position": 362,
+  "example_id": "test:6554:2-14781412-2",
+  "original_index": 6554,
+  "table_id": "2-14781412-2",
+  "question": "What year did the event in Hiroshima take place?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        1,
+        0,
+        "hiroshima"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "Hiroshima"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "Hiroshima"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Hiroshima",
+        "value": "Hiroshima",
+        "start": 27,
+        "end": 36,
+        "clause": "What year did the event in Hiroshima take place?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "Hiroshima is identified as the event location, matching the Location header and row evidence.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Hiroshima",
+        "value": "Hiroshima",
+        "start": 27,
+        "end": 36
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What year did the event in Hiroshima take place?",
+      "table": {
+        "header": [
+          "Year",
+          "Location",
+          "Gold",
+          "Silver",
+          "Bronze"
+        ],
+        "page_title": "Equestrian at the Asian Games",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 14781412,
+        "id": "2-14781412-2",
+        "section_title": "Individual",
+        "rows": [
+          [
+            "1986",
+            "Seoul",
+            "Suh Jung-Kyun",
+            "Hiroshi Hoketsu",
+            "Shin Chang-Moo"
+          ],
+          [
+            "1994",
+            "Hiroshima",
+            "Mieko Yagi",
+            "Yoshitaka Serimachi",
+            "Shin Chang-Moo"
+          ],
+          [
+            "1998",
+            "Bangkok",
+            "Suh Jung-Kyun",
+            "Shin Chang-Moo",
+            "Toshihide Takechi"
+          ],
+          [
+            "2002",
+            "Busan",
+            "Choi Jun-Sang",
+            "Suh Jung-Kyun",
+            "Naoki Hitomi"
+          ],
+          [
+            "2006",
+            "Doha",
+            "Choi Jun-Sang",
+            "Yukiko Noge",
+            "Qabil Ambak Fathil"
+          ],
+          [
+            "2010",
+            "Guangzhou",
+            "Hwang Young Shik",
+            "Mahamad Nur",
+            "Qabil Fathil"
+          ]
+        ],
+        "caption": "Individual",
+        "headers": [
+          "Year",
+          "Location",
+          "Gold",
+          "Silver",
+          "Bronze"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-14781412-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Hiroshima",
+              "value": "Hiroshima",
+              "start": 27,
+              "end": 36
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "3c74dfa9e70a0155ef3302faec3e68502dc91cb17063f0775c36a1ee73c4cab4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4816,
+              "completion_tokens": 21,
+              "total_tokens": 4837,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Hiroshima",
+              "value": "Hiroshima",
+              "start": 27,
+              "end": 36,
+              "clause": "What year did the event in Hiroshima take place?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Hiroshima",
+              "value": "Hiroshima",
+              "start": 27,
+              "end": 36,
+              "clause": "What year did the event in Hiroshima take place?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Hiroshima",
+              "value": "Hiroshima",
+              "start": 27,
+              "end": 36,
+              "clause": "What year did the event in Hiroshima take place?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Hiroshima is identified as the event location, matching the Location header and row evidence."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "3f48767f7d2ce979baf6d20421efcb740184a7de9d0a934edb39a1359cc43ad5",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4851,
+              "completion_tokens": 39,
+              "total_tokens": 4890,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Hiroshima",
+              "value": "Hiroshima",
+              "start": 27,
+              "end": 36,
+              "clause": "What year did the event in Hiroshima take place?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Hiroshima is identified as the event location, matching the Location header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "01c03e24ecdad6ed651464a5db1b9f09cf56e2801e57da786302a3610e46d690",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4914,
+              "completion_tokens": 9,
+              "total_tokens": 4923,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Hiroshima",
+              "value": "Hiroshima",
+              "start": 27,
+              "end": 36,
+              "clause": "What year did the event in Hiroshima take place?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Hiroshima is identified as the event location, matching the Location header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ff5019407edfcf4a1529b7b323c8b427b87684dedeea77a51262a5a1a21a1234",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4865,
+              "completion_tokens": 12,
+              "total_tokens": 4877,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Hiroshima",
+              "value": "Hiroshima",
+              "start": 27,
+              "end": 36,
+              "clause": "What year did the event in Hiroshima take place?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Hiroshima is identified as the event location, matching the Location header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Hiroshima",
+              "value": "Hiroshima",
+              "start": 27,
+              "end": 36,
+              "clause": "What year did the event in Hiroshima take place?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Hiroshima is identified as the event location, matching the Location header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Hiroshima",
+              "value": "Hiroshima",
+              "start": 27,
+              "end": 36,
+              "clause": "What year did the event in Hiroshima take place?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Hiroshima is identified as the event location, matching the Location header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              "Hiroshima"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Hiroshima",
+          "value": "Hiroshima",
+          "start": 27,
+          "end": 36
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Hiroshima",
+          "value": "Hiroshima",
+          "start": 27,
+          "end": 36,
+          "clause": "What year did the event in Hiroshima take place?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "Hiroshima is identified as the event location, matching the Location header and row evidence.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          1,
+          0,
+          "Hiroshima"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 10469
+}

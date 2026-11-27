@@ -1,0 +1,454 @@
+{
+  "arm": "E2",
+  "position": 474,
+  "example_id": "test:7058:2-15618241-1",
+  "original_index": 7058,
+  "table_id": "2-15618241-1",
+  "question": "How many winner's shares have ai miyazato as the champion?",
+  "gold_sql": {
+    "sel": 8,
+    "conds": [
+      [
+        2,
+        0,
+        "ai miyazato"
+      ]
+    ],
+    "agg": 4
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "Ai Miyazato"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "Ai Miyazato"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "ai miyazato",
+        "value": "Ai Miyazato",
+        "start": 30,
+        "end": 41,
+        "clause": "How many winner's shares have ai miyazato as the champion?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The question explicitly says \"Ai Miyazato\" is the champion, matching the Champion header and row value.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "ai miyazato",
+        "value": "Ai Miyazato",
+        "start": 30,
+        "end": 41
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "How many winner's shares have ai miyazato as the champion?",
+      "table": {
+        "header": [
+          "Year",
+          "Dates",
+          "Champion",
+          "Country",
+          "Score",
+          "Margin of victory",
+          "Tournament Location",
+          "Purse ( US$ )",
+          "Winner's share"
+        ],
+        "page_title": "HSBC Women's Champions",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "real",
+          "real"
+        ],
+        "page_id": 15618241,
+        "id": "2-15618241-1",
+        "section_title": "Winners",
+        "rows": [
+          [
+            "2013",
+            "Feb 28 – Mar 3",
+            "Stacy Lewis",
+            "United States",
+            "273 (−15)",
+            "1 stroke",
+            "Sentosa Golf Club",
+            "1,400,000",
+            "210,000"
+          ],
+          [
+            "2012",
+            "Feb 23–26",
+            "Angela Stanford",
+            "United States",
+            "278 (−10)",
+            "Playoff",
+            "Tanah Merah Country Club",
+            "1,400,000",
+            "210,000"
+          ],
+          [
+            "2011",
+            "Feb 24–27",
+            "Karrie Webb",
+            "Australia",
+            "275 (−13)",
+            "1 stroke",
+            "Tanah Merah Country Club",
+            "1,400,000",
+            "210,000"
+          ],
+          [
+            "2010",
+            "Feb 25–28",
+            "Ai Miyazato",
+            "Japan",
+            "278 (−10)",
+            "2 strokes",
+            "Tanah Merah Country Club",
+            "1,300,000",
+            "195,000"
+          ],
+          [
+            "2009",
+            "Mar 5–8",
+            "Jiyai Shin",
+            "South Korea",
+            "277 (−11)",
+            "2 strokes",
+            "Tanah Merah Country Club",
+            "2,000,000",
+            "300,000"
+          ],
+          [
+            "2008",
+            "Feb 28 – Mar 2",
+            "Lorena Ochoa",
+            "Mexico",
+            "268 (−20)",
+            "11 strokes",
+            "Tanah Merah Country Club",
+            "2,000,000",
+            "300,000"
+          ]
+        ],
+        "caption": "Winners",
+        "headers": [
+          "Year",
+          "Dates",
+          "Champion",
+          "Country",
+          "Score",
+          "Margin of victory",
+          "Tournament Location",
+          "Purse ( US$ )",
+          "Winner's share"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-15618241-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "ai miyazato",
+              "value": "Ai Miyazato",
+              "start": 30,
+              "end": 41
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e357ff120d4659000358668fdb513e1ea4fdb84ffcc64cdc595824daf96238bf",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4968,
+              "completion_tokens": 23,
+              "total_tokens": 4991,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "ai miyazato",
+              "value": "Ai Miyazato",
+              "start": 30,
+              "end": 41,
+              "clause": "How many winner's shares have ai miyazato as the champion?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "ai miyazato",
+              "value": "Ai Miyazato",
+              "start": 30,
+              "end": 41,
+              "clause": "How many winner's shares have ai miyazato as the champion?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "ai miyazato",
+              "value": "Ai Miyazato",
+              "start": 30,
+              "end": 41,
+              "clause": "How many winner's shares have ai miyazato as the champion?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly says \"Ai Miyazato\" is the champion, matching the Champion header and row value."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "de974bb3fe84267fe4e97b63a65f40c8525765bddb304c3e785fd544d82e8a3d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5009,
+              "completion_tokens": 43,
+              "total_tokens": 5052,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "ai miyazato",
+              "value": "Ai Miyazato",
+              "start": 30,
+              "end": 41,
+              "clause": "How many winner's shares have ai miyazato as the champion?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly says \"Ai Miyazato\" is the champion, matching the Champion header and row value.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "cfe661d09aa2d3c00d153d72de3dbf7c4d6f5c0d96d87955316098b276cffb28",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5076,
+              "completion_tokens": 9,
+              "total_tokens": 5085,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "ai miyazato",
+              "value": "Ai Miyazato",
+              "start": 30,
+              "end": 41,
+              "clause": "How many winner's shares have ai miyazato as the champion?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly says \"Ai Miyazato\" is the champion, matching the Champion header and row value.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "5faeb3e9f3d232aa79f723dcdadad07fdb12fcb717b6839b4ac0259faa59c642",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5027,
+              "completion_tokens": 13,
+              "total_tokens": 5040,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "ai miyazato",
+              "value": "Ai Miyazato",
+              "start": 30,
+              "end": 41,
+              "clause": "How many winner's shares have ai miyazato as the champion?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly says \"Ai Miyazato\" is the champion, matching the Champion header and row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "ai miyazato",
+              "value": "Ai Miyazato",
+              "start": 30,
+              "end": 41,
+              "clause": "How many winner's shares have ai miyazato as the champion?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly says \"Ai Miyazato\" is the champion, matching the Champion header and row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "ai miyazato",
+              "value": "Ai Miyazato",
+              "start": 30,
+              "end": 41,
+              "clause": "How many winner's shares have ai miyazato as the champion?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly says \"Ai Miyazato\" is the champion, matching the Champion header and row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "Ai Miyazato"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "ai miyazato",
+          "value": "Ai Miyazato",
+          "start": 30,
+          "end": 41
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "ai miyazato",
+          "value": "Ai Miyazato",
+          "start": 30,
+          "end": 41,
+          "clause": "How many winner's shares have ai miyazato as the champion?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The question explicitly says \"Ai Miyazato\" is the champion, matching the Champion header and row value.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          2,
+          0,
+          "Ai Miyazato"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7953
+}

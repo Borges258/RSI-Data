@@ -1,0 +1,642 @@
+{
+  "arm": "E2",
+  "position": 368,
+  "example_id": "test:7081:2-16078390-2",
+  "original_index": 7081,
+  "table_id": "2-16078390-2",
+  "question": "What is the Enrollment for the Coyotes Founded in 1891?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        2,
+        0,
+        1891
+      ],
+      [
+        5,
+        0,
+        "coyotes"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      5,
+      0,
+      "Coyotes"
+    ],
+    [
+      2,
+      0,
+      1891
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        5,
+        0,
+        "Coyotes"
+      ],
+      [
+        2,
+        0,
+        1891
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Coyotes",
+        "value": "Coyotes",
+        "start": 31,
+        "end": 38,
+        "clause": "What is the Enrollment for the Coyotes Founded in 1891?",
+        "columnIndex": 5,
+        "columnCandidates": [
+          5
+        ],
+        "columnMatchReason": "Coyotes is identified as the team nickname in the question context and matches Team Nickname cells.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "1891",
+        "value": 1891,
+        "start": 50,
+        "end": 54,
+        "clause": "What is the Enrollment for the Coyotes Founded in 1891?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "Founded explicitly modifies 1891, matching the Founded field and its year values.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Coyotes",
+        "value": "Coyotes",
+        "start": 31,
+        "end": 38
+      },
+      {
+        "surface": "1891",
+        "value": "1891",
+        "start": 50,
+        "end": 54
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the Enrollment for the Coyotes Founded in 1891?",
+      "table": {
+        "header": [
+          "Institution",
+          "Location",
+          "Founded",
+          "Affiliation",
+          "Enrollment",
+          "Team Nickname",
+          "Primary conference"
+        ],
+        "page_title": "Pacific Northwest Collegiate Lacrosse League",
+        "types": [
+          "text",
+          "text",
+          "real",
+          "text",
+          "real",
+          "text",
+          "text"
+        ],
+        "page_id": 16078390,
+        "id": "2-16078390-2",
+        "section_title": "Division II",
+        "rows": [
+          [
+            "Central Washington University",
+            "Ellensburg, Washington",
+            "1891",
+            "Public",
+            "10,400",
+            "Wildcats",
+            "GNAC ( Division II )"
+          ],
+          [
+            "College of Idaho",
+            "Caldwell, Idaho",
+            "1891",
+            "Private",
+            "1,050",
+            "Coyotes",
+            "Cascade ( NAIA )"
+          ],
+          [
+            "Gonzaga University",
+            "Spokane, Washington",
+            "1887",
+            "Private/ Catholic",
+            "7,272",
+            "Bulldogs",
+            "WCC ( Division I )"
+          ],
+          [
+            "Pacific Lutheran University",
+            "Parkland, Washington",
+            "1890",
+            "Private/ Lutheran",
+            "3,669",
+            "Lutes",
+            "NWC ( Division III )"
+          ],
+          [
+            "University of Portland",
+            "Portland, Oregon",
+            "1901",
+            "Private/Catholic",
+            "3,537",
+            "Pilots",
+            "WCC ( Division I )"
+          ],
+          [
+            "University of Puget Sound",
+            "Tacoma, Washington",
+            "1888",
+            "Private",
+            "2,600",
+            "Loggers",
+            "NWC ( Division III )"
+          ],
+          [
+            "Southern Oregon University",
+            "Ashland, Oregon",
+            "1872",
+            "Public",
+            "4,560",
+            "Raiders",
+            "Cascade ( NAIA )"
+          ],
+          [
+            "Western Oregon University",
+            "Monmouth, Oregon",
+            "1856",
+            "Public",
+            "5,654",
+            "Wolves",
+            "GNAC ( Division II )"
+          ],
+          [
+            "Western Washington University",
+            "Bellingham, Washington",
+            "1893",
+            "Public",
+            "14,575",
+            "Vikings",
+            "GNAC ( Division II )"
+          ],
+          [
+            "Whitman College",
+            "Walla Walla, Washington",
+            "1859",
+            "Private/ Non-sectarian",
+            "1,450",
+            "Fighting Missionaries",
+            "NWC ( Division III )"
+          ]
+        ],
+        "caption": "Division II",
+        "headers": [
+          "Institution",
+          "Location",
+          "Founded",
+          "Affiliation",
+          "Enrollment",
+          "Team Nickname",
+          "Primary conference"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-16078390-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "Coyotes",
+              "value": "Coyotes",
+              "start": 31,
+              "end": 38
+            },
+            {
+              "surface": "1891",
+              "value": "1891",
+              "start": 50,
+              "end": 54
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "aa71224725cd1150d3527d9e3117894f9ef04d2cd244b3009c7f1ff3b537f5d0",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4997,
+              "completion_tokens": 29,
+              "total_tokens": 5026,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Coyotes",
+              "value": "Coyotes",
+              "start": 31,
+              "end": 38,
+              "clause": "What is the Enrollment for the Coyotes Founded in 1891?"
+            },
+            {
+              "surface": "1891",
+              "value": "1891",
+              "start": 50,
+              "end": 54,
+              "clause": "What is the Enrollment for the Coyotes Founded in 1891?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Coyotes",
+              "value": "Coyotes",
+              "start": 31,
+              "end": 38,
+              "clause": "What is the Enrollment for the Coyotes Founded in 1891?"
+            },
+            {
+              "surface": "1891",
+              "value": "1891",
+              "start": 50,
+              "end": 54,
+              "clause": "What is the Enrollment for the Coyotes Founded in 1891?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Coyotes",
+              "value": "Coyotes",
+              "start": 31,
+              "end": 38,
+              "clause": "What is the Enrollment for the Coyotes Founded in 1891?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "Coyotes is identified as the team nickname in the question context and matches Team Nickname cells."
+            },
+            {
+              "surface": "1891",
+              "value": "1891",
+              "start": 50,
+              "end": 54,
+              "clause": "What is the Enrollment for the Coyotes Founded in 1891?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Founded explicitly modifies 1891, matching the Founded field and its year values."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "568ad2db3aae4a3c4c867305382a89a649737afe6ef27fe67874c96dc0f6468a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5070,
+              "completion_tokens": 60,
+              "total_tokens": 5130,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Coyotes",
+              "value": "Coyotes",
+              "start": 31,
+              "end": 38,
+              "clause": "What is the Enrollment for the Coyotes Founded in 1891?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "Coyotes is identified as the team nickname in the question context and matches Team Nickname cells.",
+              "operator": "="
+            },
+            {
+              "surface": "1891",
+              "value": "1891",
+              "start": 50,
+              "end": 54,
+              "clause": "What is the Enrollment for the Coyotes Founded in 1891?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Founded explicitly modifies 1891, matching the Founded field and its year values.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "cc2c9cd572cc98ff93b028a382e591590b9bf2e81d5d5e966d3f85c04dea54b4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5165,
+              "completion_tokens": 11,
+              "total_tokens": 5176,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Coyotes",
+              "value": "Coyotes",
+              "start": 31,
+              "end": 38,
+              "clause": "What is the Enrollment for the Coyotes Founded in 1891?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "Coyotes is identified as the team nickname in the question context and matches Team Nickname cells.",
+              "operator": "="
+            },
+            {
+              "surface": "1891",
+              "value": "1891",
+              "start": 50,
+              "end": 54,
+              "clause": "What is the Enrollment for the Coyotes Founded in 1891?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Founded explicitly modifies 1891, matching the Founded field and its year values.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "15fc83101deee26f434540b04a0ef8752e41e0c7f045dfb14d3722086672d9a4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5119,
+              "completion_tokens": 14,
+              "total_tokens": 5133,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Coyotes",
+              "value": "Coyotes",
+              "start": 31,
+              "end": 38,
+              "clause": "What is the Enrollment for the Coyotes Founded in 1891?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "Coyotes is identified as the team nickname in the question context and matches Team Nickname cells.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "1891",
+              "value": "1891",
+              "start": 50,
+              "end": 54,
+              "clause": "What is the Enrollment for the Coyotes Founded in 1891?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Founded explicitly modifies 1891, matching the Founded field and its year values.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Coyotes",
+              "value": "Coyotes",
+              "start": 31,
+              "end": 38,
+              "clause": "What is the Enrollment for the Coyotes Founded in 1891?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "Coyotes is identified as the team nickname in the question context and matches Team Nickname cells.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "1891",
+              "value": 1891,
+              "start": 50,
+              "end": 54,
+              "clause": "What is the Enrollment for the Coyotes Founded in 1891?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Founded explicitly modifies 1891, matching the Founded field and its year values.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Coyotes",
+              "value": "Coyotes",
+              "start": 31,
+              "end": 38,
+              "clause": "What is the Enrollment for the Coyotes Founded in 1891?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "Coyotes is identified as the team nickname in the question context and matches Team Nickname cells.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "1891",
+              "value": 1891,
+              "start": 50,
+              "end": 54,
+              "clause": "What is the Enrollment for the Coyotes Founded in 1891?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Founded explicitly modifies 1891, matching the Founded field and its year values.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              5,
+              0,
+              "Coyotes"
+            ],
+            [
+              2,
+              0,
+              1891
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Coyotes",
+          "value": "Coyotes",
+          "start": 31,
+          "end": 38
+        },
+        {
+          "surface": "1891",
+          "value": "1891",
+          "start": 50,
+          "end": 54
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Coyotes",
+          "value": "Coyotes",
+          "start": 31,
+          "end": 38,
+          "clause": "What is the Enrollment for the Coyotes Founded in 1891?",
+          "columnIndex": 5,
+          "columnCandidates": [
+            5
+          ],
+          "columnMatchReason": "Coyotes is identified as the team nickname in the question context and matches Team Nickname cells.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "1891",
+          "value": 1891,
+          "start": 50,
+          "end": 54,
+          "clause": "What is the Enrollment for the Coyotes Founded in 1891?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "Founded explicitly modifies 1891, matching the Founded field and its year values.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          5,
+          0,
+          "Coyotes"
+        ],
+        [
+          2,
+          0,
+          1891
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8594
+}

@@ -1,0 +1,759 @@
+{
+  "arm": "E2",
+  "position": 257,
+  "example_id": "test:15870:2-12962193-3",
+  "original_index": 15870,
+  "table_id": "2-12962193-3",
+  "question": "what is the highest top-5 when the top-25 is less than 4, cuts made is more than 3 and wins is 0?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        3,
+        2,
+        4
+      ],
+      [
+        5,
+        1,
+        3
+      ],
+      [
+        1,
+        0,
+        0
+      ]
+    ],
+    "agg": 1
+  },
+  "prediction_conds": [
+    [
+      3,
+      2,
+      4
+    ],
+    [
+      5,
+      1,
+      3
+    ],
+    [
+      1,
+      0,
+      0
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        2,
+        4
+      ],
+      [
+        5,
+        1,
+        3
+      ],
+      [
+        1,
+        0,
+        0
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "4",
+        "value": 4,
+        "start": 55,
+        "end": 56,
+        "clause": "what is the highest top-5 when the top-25 is less than 4, cuts made is more than 3",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "Explicitly refers to Top-25 being less than 4.",
+        "operator": "<",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "3",
+        "value": 3,
+        "start": 81,
+        "end": 82,
+        "clause": "cuts made is more than 3",
+        "columnIndex": 5,
+        "columnCandidates": [
+          5
+        ],
+        "columnMatchReason": "Explicitly refers to Cuts made being more than 3.",
+        "operator": ">",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "0",
+        "value": 0,
+        "start": 95,
+        "end": 96,
+        "clause": "and wins is 0?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "Explicitly refers to Wins being 0.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "4",
+        "value": "4",
+        "start": 55,
+        "end": 56
+      },
+      {
+        "surface": "3",
+        "value": "3",
+        "start": 81,
+        "end": 82
+      },
+      {
+        "surface": "0",
+        "value": "0",
+        "start": 95,
+        "end": 96
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "what is the highest top-5 when the top-25 is less than 4, cuts made is more than 3 and wins is 0?",
+      "table": {
+        "header": [
+          "Tournament",
+          "Wins",
+          "Top-5",
+          "Top-25",
+          "Events",
+          "Cuts made"
+        ],
+        "page_title": "Ross Fisher",
+        "types": [
+          "text",
+          "real",
+          "real",
+          "real",
+          "real",
+          "real"
+        ],
+        "page_id": 12962193,
+        "id": "2-12962193-3",
+        "section_title": "Summary",
+        "rows": [
+          [
+            "Masters Tournament",
+            "0",
+            "0",
+            "1",
+            "4",
+            "3"
+          ],
+          [
+            "U.S. Open",
+            "0",
+            "1",
+            "1",
+            "3",
+            "1"
+          ],
+          [
+            "The Open Championship",
+            "0",
+            "0",
+            "1",
+            "6",
+            "4"
+          ],
+          [
+            "PGA Championship",
+            "0",
+            "0",
+            "1",
+            "4",
+            "2"
+          ],
+          [
+            "Totals",
+            "0",
+            "1",
+            "4",
+            "17",
+            "10"
+          ]
+        ],
+        "caption": "Summary",
+        "headers": [
+          "Tournament",
+          "Wins",
+          "Top-5",
+          "Top-25",
+          "Events",
+          "Cuts made"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-12962193-3",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 3,
+          "conditions": [
+            {
+              "surface": "4",
+              "value": "4",
+              "start": 55,
+              "end": 56
+            },
+            {
+              "surface": "3",
+              "value": "3",
+              "start": 81,
+              "end": 82
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 95,
+              "end": 96
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "082a93de6e1b466809271fb7d7967fdd040ac6db7b2b1d823c871b2ee7a6f863",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4765,
+              "completion_tokens": 33,
+              "total_tokens": 4798,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "4",
+              "value": "4",
+              "start": 55,
+              "end": 56,
+              "clause": "what is the highest top-5 when the top-25 is less than 4, cuts made is more than 3"
+            },
+            {
+              "surface": "3",
+              "value": "3",
+              "start": 81,
+              "end": 82,
+              "clause": "cuts made is more than 3"
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 95,
+              "end": 96,
+              "clause": "and wins is 0?"
+            }
+          ],
+          "count": 3
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "4",
+              "value": "4",
+              "start": 55,
+              "end": 56,
+              "clause": "what is the highest top-5 when the top-25 is less than 4, cuts made is more than 3"
+            },
+            {
+              "surface": "3",
+              "value": "3",
+              "start": 81,
+              "end": 82,
+              "clause": "cuts made is more than 3"
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 95,
+              "end": 96,
+              "clause": "and wins is 0?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "4",
+              "value": "4",
+              "start": 55,
+              "end": 56,
+              "clause": "what is the highest top-5 when the top-25 is less than 4, cuts made is more than 3",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicitly refers to Top-25 being less than 4."
+            },
+            {
+              "surface": "3",
+              "value": "3",
+              "start": 81,
+              "end": 82,
+              "clause": "cuts made is more than 3",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "Explicitly refers to Cuts made being more than 3."
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 95,
+              "end": 96,
+              "clause": "and wins is 0?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Explicitly refers to Wins being 0."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d0bf273cc695bb9f39eb510d568aad4aa40488cbd546d72fa38510c6f36ab07b",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4864,
+              "completion_tokens": 63,
+              "total_tokens": 4927,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "4",
+              "value": "4",
+              "start": 55,
+              "end": 56,
+              "clause": "what is the highest top-5 when the top-25 is less than 4, cuts made is more than 3",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicitly refers to Top-25 being less than 4.",
+              "operator": "<"
+            },
+            {
+              "surface": "3",
+              "value": "3",
+              "start": 81,
+              "end": 82,
+              "clause": "cuts made is more than 3",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "Explicitly refers to Cuts made being more than 3.",
+              "operator": ">"
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 95,
+              "end": 96,
+              "clause": "and wins is 0?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Explicitly refers to Wins being 0.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "05bb1120e95f628bb44c79048db02abdbd0a3397ae75eac501cf2bfb9bf0ab11",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4973,
+              "completion_tokens": 13,
+              "total_tokens": 4986,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "4",
+              "value": 4,
+              "start": 55,
+              "end": 56,
+              "clause": "what is the highest top-5 when the top-25 is less than 4, cuts made is more than 3",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicitly refers to Top-25 being less than 4.",
+              "operator": "<"
+            },
+            {
+              "surface": "3",
+              "value": 3,
+              "start": 81,
+              "end": 82,
+              "clause": "cuts made is more than 3",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "Explicitly refers to Cuts made being more than 3.",
+              "operator": ">"
+            },
+            {
+              "surface": "0",
+              "value": 0,
+              "start": 95,
+              "end": 96,
+              "clause": "and wins is 0?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Explicitly refers to Wins being 0.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "74e53a8b1e875ebdba19590b9c45d1286e34cc4be608294aa70b01eaf4fe1ba7",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4930,
+              "completion_tokens": 13,
+              "total_tokens": 4943,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "4",
+              "value": "4",
+              "start": 55,
+              "end": 56,
+              "clause": "what is the highest top-5 when the top-25 is less than 4, cuts made is more than 3",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicitly refers to Top-25 being less than 4.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "3",
+              "value": "3",
+              "start": 81,
+              "end": 82,
+              "clause": "cuts made is more than 3",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "Explicitly refers to Cuts made being more than 3.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 95,
+              "end": 96,
+              "clause": "and wins is 0?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Explicitly refers to Wins being 0.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "4",
+              "value": 4,
+              "start": 55,
+              "end": 56,
+              "clause": "what is the highest top-5 when the top-25 is less than 4, cuts made is more than 3",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicitly refers to Top-25 being less than 4.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "3",
+              "value": 3,
+              "start": 81,
+              "end": 82,
+              "clause": "cuts made is more than 3",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "Explicitly refers to Cuts made being more than 3.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "0",
+              "value": 0,
+              "start": 95,
+              "end": 96,
+              "clause": "and wins is 0?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Explicitly refers to Wins being 0.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "4",
+              "value": 4,
+              "start": 55,
+              "end": 56,
+              "clause": "what is the highest top-5 when the top-25 is less than 4, cuts made is more than 3",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicitly refers to Top-25 being less than 4.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "3",
+              "value": 3,
+              "start": 81,
+              "end": 82,
+              "clause": "cuts made is more than 3",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "Explicitly refers to Cuts made being more than 3.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "0",
+              "value": 0,
+              "start": 95,
+              "end": 96,
+              "clause": "and wins is 0?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Explicitly refers to Wins being 0.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              2,
+              4
+            ],
+            [
+              5,
+              1,
+              3
+            ],
+            [
+              1,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "4",
+          "value": "4",
+          "start": 55,
+          "end": 56
+        },
+        {
+          "surface": "3",
+          "value": "3",
+          "start": 81,
+          "end": 82
+        },
+        {
+          "surface": "0",
+          "value": "0",
+          "start": 95,
+          "end": 96
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "4",
+          "value": 4,
+          "start": 55,
+          "end": 56,
+          "clause": "what is the highest top-5 when the top-25 is less than 4, cuts made is more than 3",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "Explicitly refers to Top-25 being less than 4.",
+          "operator": "<",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "3",
+          "value": 3,
+          "start": 81,
+          "end": 82,
+          "clause": "cuts made is more than 3",
+          "columnIndex": 5,
+          "columnCandidates": [
+            5
+          ],
+          "columnMatchReason": "Explicitly refers to Cuts made being more than 3.",
+          "operator": ">",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "0",
+          "value": 0,
+          "start": 95,
+          "end": 96,
+          "clause": "and wins is 0?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "Explicitly refers to Wins being 0.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 3,
+      "conds": [
+        [
+          3,
+          2,
+          4
+        ],
+        [
+          5,
+          1,
+          3
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7610
+}

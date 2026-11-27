@@ -1,0 +1,446 @@
+{
+  "arm": "E2",
+  "position": 443,
+  "example_id": "test:13536:2-18876359-2",
+  "original_index": 13536,
+  "table_id": "2-18876359-2",
+  "question": "In what years did Salina Kosgei compete in Singapore?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        2,
+        0,
+        "singapore"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "Singapore"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "Singapore"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Singapore",
+        "value": "Singapore",
+        "start": 43,
+        "end": 52,
+        "clause": "In what years did Salina Kosgei compete in Singapore?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "'in Singapore' denotes the competition location, matching the Venue header and the Singapore cell.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Singapore",
+        "value": "Singapore",
+        "start": 43,
+        "end": 52
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "In what years did Salina Kosgei compete in Singapore?",
+      "table": {
+        "header": [
+          "Year",
+          "Competition",
+          "Venue",
+          "Position",
+          "Event"
+        ],
+        "page_title": "Salina Kosgei",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 18876359,
+        "id": "2-18876359-2",
+        "section_title": "Road races",
+        "rows": [
+          [
+            "2004",
+            "Paris Marathon",
+            "Paris, France",
+            "1st",
+            "Marathon"
+          ],
+          [
+            "2005",
+            "Prague International Marathon",
+            "Prague , Czech Republic",
+            "1st",
+            "Marathon"
+          ],
+          [
+            "2005",
+            "Virginia Beach Rock 'n' Roll Half Marathon",
+            "Virginia Beach, VA , USA",
+            "2nd",
+            "Half marathon"
+          ],
+          [
+            "2006",
+            "Lisbon Half Marathon",
+            "Lisbon, Portugal",
+            "1st",
+            "Half marathon"
+          ],
+          [
+            "2006",
+            "Singapore Marathon",
+            "Singapore",
+            "1st",
+            "Marathon"
+          ],
+          [
+            "2007",
+            "Tokyo Marathon",
+            "Tokyo, Japan",
+            "2nd",
+            "Marathon"
+          ],
+          [
+            "2007",
+            "London Marathon",
+            "London, United Kingdom",
+            "4th",
+            "Marathon"
+          ],
+          [
+            "2008",
+            "Ras Al Khaimah Half Marathon",
+            "Ras Al Khaimah , UAE",
+            "1st",
+            "Half marathon"
+          ],
+          [
+            "2008",
+            "Lisbon Half Marathon",
+            "Lisbon, Portugal",
+            "1st",
+            "Half marathon"
+          ],
+          [
+            "2009",
+            "Boston Marathon",
+            "Boston , USA",
+            "1st",
+            "Marathon"
+          ]
+        ],
+        "caption": "Road races",
+        "headers": [
+          "Year",
+          "Competition",
+          "Venue",
+          "Position",
+          "Event"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-18876359-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Singapore",
+              "value": "Singapore",
+              "start": 43,
+              "end": 52
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "8b821b23c8d321962a86287c26ffe9b77040dc92fa3ecf578e472c421a9cd3ad",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4865,
+              "completion_tokens": 17,
+              "total_tokens": 4882,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Singapore",
+              "value": "Singapore",
+              "start": 43,
+              "end": 52,
+              "clause": "In what years did Salina Kosgei compete in Singapore?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Singapore",
+              "value": "Singapore",
+              "start": 43,
+              "end": 52,
+              "clause": "In what years did Salina Kosgei compete in Singapore?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Singapore",
+              "value": "Singapore",
+              "start": 43,
+              "end": 52,
+              "clause": "In what years did Salina Kosgei compete in Singapore?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'in Singapore' denotes the competition location, matching the Venue header and the Singapore cell."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e7d921d2e351d2d20880cfeef7ffc4f88a60c7c593f275646c0d71183ccb8e69",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4899,
+              "completion_tokens": 39,
+              "total_tokens": 4938,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Singapore",
+              "value": "Singapore",
+              "start": 43,
+              "end": 52,
+              "clause": "In what years did Salina Kosgei compete in Singapore?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'in Singapore' denotes the competition location, matching the Venue header and the Singapore cell.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "360ca26b2b471fd692a90f4d40e9fe161c72b86c7ba1858cfb6a63c61741fc47",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4961,
+              "completion_tokens": 9,
+              "total_tokens": 4970,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Singapore",
+              "value": "Singapore",
+              "start": 43,
+              "end": 52,
+              "clause": "In what years did Salina Kosgei compete in Singapore?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'in Singapore' denotes the competition location, matching the Venue header and the Singapore cell.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f2f15e0e08d8d2499b6396bf8dca9eb55d6ce83d36d1f77953426cfae0edfd66",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4912,
+              "completion_tokens": 10,
+              "total_tokens": 4922,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Singapore",
+              "value": "Singapore",
+              "start": 43,
+              "end": 52,
+              "clause": "In what years did Salina Kosgei compete in Singapore?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'in Singapore' denotes the competition location, matching the Venue header and the Singapore cell.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Singapore",
+              "value": "Singapore",
+              "start": 43,
+              "end": 52,
+              "clause": "In what years did Salina Kosgei compete in Singapore?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'in Singapore' denotes the competition location, matching the Venue header and the Singapore cell.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Singapore",
+              "value": "Singapore",
+              "start": 43,
+              "end": 52,
+              "clause": "In what years did Salina Kosgei compete in Singapore?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "'in Singapore' denotes the competition location, matching the Venue header and the Singapore cell.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "Singapore"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Singapore",
+          "value": "Singapore",
+          "start": 43,
+          "end": 52
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Singapore",
+          "value": "Singapore",
+          "start": 43,
+          "end": 52,
+          "clause": "In what years did Salina Kosgei compete in Singapore?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "'in Singapore' denotes the competition location, matching the Venue header and the Singapore cell.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          2,
+          0,
+          "Singapore"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8312
+}

@@ -1,0 +1,588 @@
+{
+  "arm": "E2",
+  "position": 128,
+  "example_id": "test:9376:2-16590039-1",
+  "original_index": 9376,
+  "table_id": "2-16590039-1",
+  "question": "What was the Lead for the 2009 WCC when Wang Bingyu news was the skip?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        1,
+        0,
+        "wang bingyu"
+      ],
+      [
+        0,
+        0,
+        "2009 wcc"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "2009 WCC"
+    ],
+    [
+      1,
+      0,
+      "Wang Bingyu"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "2009 WCC"
+      ],
+      [
+        1,
+        0,
+        "Wang Bingyu"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "2009 WCC",
+        "value": "2009 WCC",
+        "start": 26,
+        "end": 34,
+        "clause": "What was the Lead for the 2009 WCC when Wang Bingyu news was the skip?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "The question identifies 2009 WCC as the Event, matching the Event header and row evidence.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "Wang Bingyu",
+        "value": "Wang Bingyu",
+        "start": 40,
+        "end": 51,
+        "clause": "What was the Lead for the 2009 WCC when Wang Bingyu news was the skip?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The phrase 'was the skip' explicitly assigns Wang Bingyu to the Skip field, matching the Skip header and row evidence.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "2009 WCC",
+        "value": "2009 WCC",
+        "start": 26,
+        "end": 34
+      },
+      {
+        "surface": "Wang Bingyu",
+        "value": "Wang Bingyu",
+        "start": 40,
+        "end": 51
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What was the Lead for the 2009 WCC when Wang Bingyu news was the skip?",
+      "table": {
+        "header": [
+          "Event",
+          "Skip",
+          "Lead",
+          "Alternate",
+          "Result"
+        ],
+        "page_title": "Wang Bingyu",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 16590039,
+        "id": "2-16590039-1",
+        "section_title": "Teammates",
+        "rows": [
+          [
+            "2010 OG",
+            "Wang Bingyu",
+            "Zhou Yan",
+            "Liu Jinli",
+            "3rd (6-3)"
+          ],
+          [
+            "2009 WCC",
+            "Wang Bingyu",
+            "Zhou Yan",
+            "Liu Jinli",
+            "1st (10-1)"
+          ],
+          [
+            "2008 WCC",
+            "Wang Bingyu",
+            "Zhou Yan",
+            "Liu Jinli",
+            "2nd (9-2)"
+          ],
+          [
+            "2007 WCC",
+            "Wang Bingyu(3rd)",
+            "Zhou Yan",
+            "Sun Yue",
+            "7th (5-6)"
+          ],
+          [
+            "2006 WCC",
+            "Wang Bingyu",
+            "Zhou Yan",
+            "Sun Yue",
+            "T-5th (6-5)"
+          ],
+          [
+            "2005 WCC",
+            "Wang Bingyu",
+            "Zhou Yan",
+            "Yu Xinna",
+            "T-7th (4-7)"
+          ]
+        ],
+        "caption": "Teammates",
+        "headers": [
+          "Event",
+          "Skip",
+          "Lead",
+          "Alternate",
+          "Result"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-16590039-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "2009 WCC",
+              "value": "2009 WCC",
+              "start": 26,
+              "end": 34
+            },
+            {
+              "surface": "Wang Bingyu",
+              "value": "Wang Bingyu",
+              "start": 40,
+              "end": 51
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "34601564b3999cca62b273bedb053fe35a35a2aae3e351c4b1389adf72cd03d3",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4841,
+              "completion_tokens": 37,
+              "total_tokens": 4878,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2009 WCC",
+              "value": "2009 WCC",
+              "start": 26,
+              "end": 34,
+              "clause": "What was the Lead for the 2009 WCC when Wang Bingyu news was the skip?"
+            },
+            {
+              "surface": "Wang Bingyu",
+              "value": "Wang Bingyu",
+              "start": 40,
+              "end": 51,
+              "clause": "What was the Lead for the 2009 WCC when Wang Bingyu news was the skip?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "2009 WCC",
+              "value": "2009 WCC",
+              "start": 26,
+              "end": 34,
+              "clause": "What was the Lead for the 2009 WCC when Wang Bingyu news was the skip?"
+            },
+            {
+              "surface": "Wang Bingyu",
+              "value": "Wang Bingyu",
+              "start": 40,
+              "end": 51,
+              "clause": "What was the Lead for the 2009 WCC when Wang Bingyu news was the skip?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2009 WCC",
+              "value": "2009 WCC",
+              "start": 26,
+              "end": 34,
+              "clause": "What was the Lead for the 2009 WCC when Wang Bingyu news was the skip?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question identifies 2009 WCC as the Event, matching the Event header and row evidence."
+            },
+            {
+              "surface": "Wang Bingyu",
+              "value": "Wang Bingyu",
+              "start": 40,
+              "end": 51,
+              "clause": "What was the Lead for the 2009 WCC when Wang Bingyu news was the skip?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'was the skip' explicitly assigns Wang Bingyu to the Skip field, matching the Skip header and row evidence."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "cfb83d3d8402a7873ca24cad377b9b8d448fad9d2e50d7b9810f3caf0b245926",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4934,
+              "completion_tokens": 70,
+              "total_tokens": 5004,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2009 WCC",
+              "value": "2009 WCC",
+              "start": 26,
+              "end": 34,
+              "clause": "What was the Lead for the 2009 WCC when Wang Bingyu news was the skip?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question identifies 2009 WCC as the Event, matching the Event header and row evidence.",
+              "operator": "="
+            },
+            {
+              "surface": "Wang Bingyu",
+              "value": "Wang Bingyu",
+              "start": 40,
+              "end": 51,
+              "clause": "What was the Lead for the 2009 WCC when Wang Bingyu news was the skip?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'was the skip' explicitly assigns Wang Bingyu to the Skip field, matching the Skip header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d92b0518143ca2eb8e4fb8bc1e39bebf467a9631559185f328edc5654776db0b",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5039,
+              "completion_tokens": 11,
+              "total_tokens": 5050,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2009 WCC",
+              "value": "2009 WCC",
+              "start": 26,
+              "end": 34,
+              "clause": "What was the Lead for the 2009 WCC when Wang Bingyu news was the skip?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question identifies 2009 WCC as the Event, matching the Event header and row evidence.",
+              "operator": "="
+            },
+            {
+              "surface": "Wang Bingyu",
+              "value": "Wang Bingyu",
+              "start": 40,
+              "end": 51,
+              "clause": "What was the Lead for the 2009 WCC when Wang Bingyu news was the skip?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'was the skip' explicitly assigns Wang Bingyu to the Skip field, matching the Skip header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "00df3e82b81141997e95f6773a4854ad18997d3b9ce6ff073a3d7ef2499421fb",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4993,
+              "completion_tokens": 18,
+              "total_tokens": 5011,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2009 WCC",
+              "value": "2009 WCC",
+              "start": 26,
+              "end": 34,
+              "clause": "What was the Lead for the 2009 WCC when Wang Bingyu news was the skip?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question identifies 2009 WCC as the Event, matching the Event header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Wang Bingyu",
+              "value": "Wang Bingyu",
+              "start": 40,
+              "end": 51,
+              "clause": "What was the Lead for the 2009 WCC when Wang Bingyu news was the skip?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'was the skip' explicitly assigns Wang Bingyu to the Skip field, matching the Skip header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "2009 WCC",
+              "value": "2009 WCC",
+              "start": 26,
+              "end": 34,
+              "clause": "What was the Lead for the 2009 WCC when Wang Bingyu news was the skip?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question identifies 2009 WCC as the Event, matching the Event header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Wang Bingyu",
+              "value": "Wang Bingyu",
+              "start": 40,
+              "end": 51,
+              "clause": "What was the Lead for the 2009 WCC when Wang Bingyu news was the skip?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'was the skip' explicitly assigns Wang Bingyu to the Skip field, matching the Skip header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "2009 WCC",
+              "value": "2009 WCC",
+              "start": 26,
+              "end": 34,
+              "clause": "What was the Lead for the 2009 WCC when Wang Bingyu news was the skip?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The question identifies 2009 WCC as the Event, matching the Event header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Wang Bingyu",
+              "value": "Wang Bingyu",
+              "start": 40,
+              "end": 51,
+              "clause": "What was the Lead for the 2009 WCC when Wang Bingyu news was the skip?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'was the skip' explicitly assigns Wang Bingyu to the Skip field, matching the Skip header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              "2009 WCC"
+            ],
+            [
+              1,
+              0,
+              "Wang Bingyu"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "2009 WCC",
+          "value": "2009 WCC",
+          "start": 26,
+          "end": 34
+        },
+        {
+          "surface": "Wang Bingyu",
+          "value": "Wang Bingyu",
+          "start": 40,
+          "end": 51
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "2009 WCC",
+          "value": "2009 WCC",
+          "start": 26,
+          "end": 34,
+          "clause": "What was the Lead for the 2009 WCC when Wang Bingyu news was the skip?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "The question identifies 2009 WCC as the Event, matching the Event header and row evidence.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "Wang Bingyu",
+          "value": "Wang Bingyu",
+          "start": 40,
+          "end": 51,
+          "clause": "What was the Lead for the 2009 WCC when Wang Bingyu news was the skip?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The phrase 'was the skip' explicitly assigns Wang Bingyu to the Skip field, matching the Skip header and row evidence.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          0,
+          0,
+          "2009 WCC"
+        ],
+        [
+          1,
+          0,
+          "Wang Bingyu"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8766
+}

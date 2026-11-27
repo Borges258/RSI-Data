@@ -1,0 +1,589 @@
+{
+  "arm": "E2",
+  "position": 194,
+  "example_id": "test:15730:2-1255353-1",
+  "original_index": 15730,
+  "table_id": "2-1255353-1",
+  "question": "What category did MCG get a nominee in?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        4,
+        0,
+        "mcg"
+      ],
+      [
+        5,
+        0,
+        "nominee"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      4,
+      0,
+      "MCG"
+    ],
+    [
+      5,
+      0,
+      "Nominee"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        0,
+        "MCG"
+      ],
+      [
+        5,
+        0,
+        "Nominee"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "MCG",
+        "value": "MCG",
+        "start": 18,
+        "end": 21,
+        "clause": "What category did MCG get a nominee in?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "MCG is the label associated with the relevant Grammy entries.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "nominee",
+        "value": "Nominee",
+        "start": 28,
+        "end": 35,
+        "clause": "What category did MCG get a nominee in?",
+        "columnIndex": 5,
+        "columnCandidates": [
+          5
+        ],
+        "columnMatchReason": "Nominee is the result status specified by the question.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "MCG",
+        "value": "MCG",
+        "start": 18,
+        "end": 21
+      },
+      {
+        "surface": "nominee",
+        "value": "Nominee",
+        "start": 28,
+        "end": 35
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What category did MCG get a nominee in?",
+      "table": {
+        "header": [
+          "Year",
+          "Category",
+          "Title",
+          "Genre",
+          "Label",
+          "Result"
+        ],
+        "page_title": "The Dixie Hummingbirds",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 1255353,
+        "id": "2-1255353-1",
+        "section_title": "Grammy history",
+        "rows": [
+          [
+            "Year",
+            "Category",
+            "Title",
+            "Genre",
+            "Label",
+            "Result"
+          ],
+          [
+            "2007",
+            "Best Traditional Gospel Album",
+            "Still Keeping It Real",
+            "Gospel",
+            "MCG",
+            "Nominee"
+          ],
+          [
+            "2000",
+            "Best Traditional Gospel Album",
+            "Music In The Air",
+            "Gospel",
+            "House Of Blues",
+            "Nominee"
+          ],
+          [
+            "1994",
+            "Best Traditional Gospel Album",
+            "In Good Health",
+            "Gospel",
+            "Atlanta International",
+            "Nominee"
+          ],
+          [
+            "1973",
+            "Best Soul Gospel Performance",
+            "\" Loves Me Like a Rock \"",
+            "Gospel",
+            "MCG",
+            "Winner"
+          ]
+        ],
+        "caption": "Grammy history",
+        "headers": [
+          "Year",
+          "Category",
+          "Title",
+          "Genre",
+          "Label",
+          "Result"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-1255353-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "MCG",
+              "value": "MCG",
+              "start": 18,
+              "end": 21
+            },
+            {
+              "surface": "nominee",
+              "value": "Nominee",
+              "start": 28,
+              "end": 35
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "4d7e6668a904b4ab8435f0bda0814528ff45117b0b58e9bde9597af33ed1cfca",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4775,
+              "completion_tokens": 29,
+              "total_tokens": 4804,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "MCG",
+              "value": "MCG",
+              "start": 18,
+              "end": 21,
+              "clause": "What category did MCG get a nominee in?"
+            },
+            {
+              "surface": "nominee",
+              "value": "Nominee",
+              "start": 28,
+              "end": 35,
+              "clause": "What category did MCG get a nominee in?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "MCG",
+              "value": "MCG",
+              "start": 18,
+              "end": 21,
+              "clause": "What category did MCG get a nominee in?"
+            },
+            {
+              "surface": "nominee",
+              "value": "Nominee",
+              "start": 28,
+              "end": 35,
+              "clause": "What category did MCG get a nominee in?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "MCG",
+              "value": "MCG",
+              "start": 18,
+              "end": 21,
+              "clause": "What category did MCG get a nominee in?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "MCG is the label associated with the relevant Grammy entries."
+            },
+            {
+              "surface": "nominee",
+              "value": "Nominee",
+              "start": 28,
+              "end": 35,
+              "clause": "What category did MCG get a nominee in?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "Nominee is the result status specified by the question."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "6031ae9b9c0226a3832a7ceec47645a594b26f94feb1825bce833299c6c651f0",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4840,
+              "completion_tokens": 48,
+              "total_tokens": 4888,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "MCG",
+              "value": "MCG",
+              "start": 18,
+              "end": 21,
+              "clause": "What category did MCG get a nominee in?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "MCG is the label associated with the relevant Grammy entries.",
+              "operator": "="
+            },
+            {
+              "surface": "nominee",
+              "value": "Nominee",
+              "start": 28,
+              "end": 35,
+              "clause": "What category did MCG get a nominee in?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "Nominee is the result status specified by the question.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ba33f169d5beb31232df1a48eb386980a3734aaee9ca69422aef3fd924fb8bcd",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4923,
+              "completion_tokens": 11,
+              "total_tokens": 4934,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "MCG",
+              "value": "MCG",
+              "start": 18,
+              "end": 21,
+              "clause": "What category did MCG get a nominee in?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "MCG is the label associated with the relevant Grammy entries.",
+              "operator": "="
+            },
+            {
+              "surface": "nominee",
+              "value": "Nominee",
+              "start": 28,
+              "end": 35,
+              "clause": "What category did MCG get a nominee in?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "Nominee is the result status specified by the question.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "1404f5647f1d9029f7fbff3dfe4ae19f3eca232ad13219914727b1a345782f27",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4877,
+              "completion_tokens": 14,
+              "total_tokens": 4891,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "MCG",
+              "value": "MCG",
+              "start": 18,
+              "end": 21,
+              "clause": "What category did MCG get a nominee in?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "MCG is the label associated with the relevant Grammy entries.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "nominee",
+              "value": "Nominee",
+              "start": 28,
+              "end": 35,
+              "clause": "What category did MCG get a nominee in?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "Nominee is the result status specified by the question.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "MCG",
+              "value": "MCG",
+              "start": 18,
+              "end": 21,
+              "clause": "What category did MCG get a nominee in?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "MCG is the label associated with the relevant Grammy entries.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "nominee",
+              "value": "Nominee",
+              "start": 28,
+              "end": 35,
+              "clause": "What category did MCG get a nominee in?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "Nominee is the result status specified by the question.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "MCG",
+              "value": "MCG",
+              "start": 18,
+              "end": 21,
+              "clause": "What category did MCG get a nominee in?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "MCG is the label associated with the relevant Grammy entries.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "nominee",
+              "value": "Nominee",
+              "start": 28,
+              "end": 35,
+              "clause": "What category did MCG get a nominee in?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "Nominee is the result status specified by the question.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              0,
+              "MCG"
+            ],
+            [
+              5,
+              0,
+              "Nominee"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "MCG",
+          "value": "MCG",
+          "start": 18,
+          "end": 21
+        },
+        {
+          "surface": "nominee",
+          "value": "Nominee",
+          "start": 28,
+          "end": 35
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "MCG",
+          "value": "MCG",
+          "start": 18,
+          "end": 21,
+          "clause": "What category did MCG get a nominee in?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "MCG is the label associated with the relevant Grammy entries.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "nominee",
+          "value": "Nominee",
+          "start": 28,
+          "end": 35,
+          "clause": "What category did MCG get a nominee in?",
+          "columnIndex": 5,
+          "columnCandidates": [
+            5
+          ],
+          "columnMatchReason": "Nominee is the result status specified by the question.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          4,
+          0,
+          "MCG"
+        ],
+        [
+          5,
+          0,
+          "Nominee"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8453
+}

@@ -1,0 +1,823 @@
+{
+  "arm": "E2",
+  "position": 258,
+  "example_id": "test:10350:2-11801912-6",
+  "original_index": 10350,
+  "table_id": "2-11801912-6",
+  "question": "Which attendance has the 25–17–5 record?",
+  "gold_sql": {
+    "sel": 5,
+    "conds": [
+      [
+        6,
+        0,
+        "25–17–5"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      6,
+      0,
+      "25–17–5"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        6,
+        0,
+        "25–17–5"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "25–17–5",
+        "value": "25–17–5",
+        "start": 25,
+        "end": 32,
+        "clause": "Which attendance has the 25–17–5 record?",
+        "columnIndex": 6,
+        "columnCandidates": [
+          6
+        ],
+        "columnMatchReason": "The question asks for attendance associated with the 25–17–5 value, which appears in the Record column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "25–17–5",
+        "value": "25–17–5",
+        "start": 25,
+        "end": 32
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Which attendance has the 25–17–5 record?",
+      "table": {
+        "header": [
+          "Date",
+          "Visitor",
+          "Score",
+          "Home",
+          "Decision",
+          "Attendance",
+          "Record"
+        ],
+        "page_title": "2007–08 Dallas Stars season",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 11801912,
+        "id": "2-11801912-6",
+        "section_title": "January",
+        "rows": [
+          [
+            "January 2",
+            "Dallas",
+            "1 – 4",
+            "Detroit",
+            "Turco",
+            "20,066",
+            "23–14–4"
+          ],
+          [
+            "January 3",
+            "Dallas",
+            "3 – 6",
+            "Minnesota",
+            "Smith",
+            "18,568",
+            "23–15–4"
+          ],
+          [
+            "January 5",
+            "Detroit",
+            "3 – 0",
+            "Dallas",
+            "Smith",
+            "18,584",
+            "23–16–4"
+          ],
+          [
+            "January 7",
+            "Minnesota",
+            "1 – 3",
+            "Dallas",
+            "Turco",
+            "17,502",
+            "24–16–4"
+          ],
+          [
+            "January 9",
+            "Dallas",
+            "3 – 1",
+            "Chicago",
+            "Turco",
+            "15,469",
+            "25–16–4"
+          ],
+          [
+            "January 10",
+            "Dallas",
+            "2 – 4",
+            "St. Louis",
+            "Smith",
+            "16,805",
+            "25–17–4"
+          ],
+          [
+            "January 12",
+            "Dallas",
+            "3 – 4",
+            "Los Angeles",
+            "Turco",
+            "16,916",
+            "25–17–5"
+          ],
+          [
+            "January 15",
+            "Dallas",
+            "2 – 4",
+            "Anaheim",
+            "Turco",
+            "17,174",
+            "25–18–5"
+          ],
+          [
+            "January 17",
+            "Dallas",
+            "4 – 2",
+            "San Jose",
+            "Turco",
+            "17,496",
+            "26–18–5"
+          ],
+          [
+            "January 19",
+            "Columbus",
+            "1 – 3",
+            "Dallas",
+            "Smith",
+            "17,811",
+            "27–18–5"
+          ],
+          [
+            "January 20",
+            "Anaheim",
+            "2 – 5",
+            "Dallas",
+            "Turco",
+            "18,461",
+            "28–18–5"
+          ],
+          [
+            "January 22",
+            "Columbus",
+            "4 – 2",
+            "Dallas",
+            "Smith",
+            "17,087",
+            "28–19–5"
+          ],
+          [
+            "January 24",
+            "Buffalo",
+            "2 – 1",
+            "Dallas",
+            "Turco",
+            "18,532",
+            "28–20–5"
+          ],
+          [
+            "January 29",
+            "Dallas",
+            "4 – 3",
+            "Vancouver",
+            "Turco",
+            "18,630",
+            "29–20–5"
+          ]
+        ],
+        "caption": "January",
+        "headers": [
+          "Date",
+          "Visitor",
+          "Score",
+          "Home",
+          "Decision",
+          "Attendance",
+          "Record"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-11801912-6",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "25–17–5",
+              "value": "25–17–5",
+              "start": 25,
+              "end": 32
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "273d2d9e9d5b58c8f41e4f717f0914ed0608e175228aa4b1f54b59a5c73d1a11",
+            "knowledgeIds": [],
+            "usage": {
+              "attribution": {
+                "items": {
+                  "msg_0ad15d583f86da69016b0902f9a7ec87d18b096069763d9e08": {
+                    "input_tokens": 86,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 86,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0ad15d583f86da69016b0902f9a7ec87d19a3d6d3dbc853df3": {
+                    "input_tokens": 64,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 64,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0ad15d583f86da69016b0902f9a7ec87d1b2d488ed13df5098": {
+                    "input_tokens": 527,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 527,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0ad15d583f86da69016b090303d3ec87d1899d6e1111a32e24": {
+                    "input_tokens": 0,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 27,
+                    "content": [
+                      {
+                        "input_tokens": 0,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 27
+                      }
+                    ]
+                  },
+                  "rs_0ad15d583f86da69016b0903038d2487d19b2dc232f1474132": {
+                    "input_tokens": 2,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 61
+                  }
+                },
+                "request_fields": {
+                  "instructions": {
+                    "input_tokens": 4380,
+                    "cached_tokens": 4000,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0
+                  }
+                }
+              },
+              "prompt_tokens": 10973,
+              "completion_tokens": 88,
+              "total_tokens": 11061,
+              "prompt_tokens_details": {
+                "cache_write_tokens_details": {
+                  "ttl_30m_tokens": 0,
+                  "ttl_12h_tokens": 0
+                },
+                "cached_tokens": 9600
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 61
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "25–17–5",
+              "value": "25–17–5",
+              "start": 25,
+              "end": 32,
+              "clause": "Which attendance has the 25–17–5 record?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "25–17–5",
+              "value": "25–17–5",
+              "start": 25,
+              "end": 32,
+              "clause": "Which attendance has the 25–17–5 record?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "25–17–5",
+              "value": "25–17–5",
+              "start": 25,
+              "end": 32,
+              "clause": "Which attendance has the 25–17–5 record?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "The question asks for attendance associated with the 25–17–5 value, which appears in the Record column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "05cc64493bd9e043b7a96afdddace80e06b791a1b6e9827844bd10e2df3b035b",
+            "knowledgeIds": [],
+            "usage": {
+              "attribution": {
+                "items": {
+                  "msg_0fbbe29fca058cb1016b09030675b487d280cd827903ad3005": {
+                    "input_tokens": 64,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 64,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0fbbe29fca058cb1016b09030675b487d2968fa1d216a0b52c": {
+                    "input_tokens": 127,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 127,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0fbbe29fca058cb1016b09030675b487d2b3310e301f192a80": {
+                    "input_tokens": 527,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 527,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0fbbe29fca058cb1016b090310c64087d29f8b2ca91d4463a8": {
+                    "input_tokens": 0,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 46,
+                    "content": [
+                      {
+                        "input_tokens": 0,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 46
+                      }
+                    ]
+                  },
+                  "rs_0fbbe29fca058cb1016b09031098d087d284610a314794f26c": {
+                    "input_tokens": 2,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 46
+                  }
+                },
+                "request_fields": {
+                  "instructions": {
+                    "input_tokens": 4380,
+                    "cached_tokens": 4000,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0
+                  }
+                }
+              },
+              "prompt_tokens": 11014,
+              "completion_tokens": 92,
+              "total_tokens": 11106,
+              "prompt_tokens_details": {
+                "cache_write_tokens_details": {
+                  "ttl_30m_tokens": 0,
+                  "ttl_12h_tokens": 0
+                },
+                "cached_tokens": 9600
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 46
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "25–17–5",
+              "value": "25–17–5",
+              "start": 25,
+              "end": 32,
+              "clause": "Which attendance has the 25–17–5 record?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "The question asks for attendance associated with the 25–17–5 value, which appears in the Record column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "9891427986a03fe137f3ee4ec74cf825f0dd7da2ea2df1d7efb78e813845520c",
+            "knowledgeIds": [],
+            "usage": {
+              "attribution": {
+                "items": {
+                  "msg_00511454c13698aa016b09031382e487d1910fe1c7559253eb": {
+                    "input_tokens": 64,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 64,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_00511454c13698aa016b09031382e487d198985a3d101e9a47": {
+                    "input_tokens": 195,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 195,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_00511454c13698aa016b09031382e487d1a7afccbf7fcc4d3a": {
+                    "input_tokens": 527,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 527,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_00511454c13698aa016b09031bbd6c87d18741e77d3d0e7f36": {
+                    "input_tokens": 0,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 11,
+                    "content": [
+                      {
+                        "input_tokens": 0,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 11
+                      }
+                    ]
+                  },
+                  "rs_00511454c13698aa016b09031b903487d19040f300beca238f": {
+                    "input_tokens": 2,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 12
+                  }
+                },
+                "request_fields": {
+                  "instructions": {
+                    "input_tokens": 4380,
+                    "cached_tokens": 4000,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0
+                  }
+                }
+              },
+              "prompt_tokens": 11082,
+              "completion_tokens": 23,
+              "total_tokens": 11105,
+              "prompt_tokens_details": {
+                "cache_write_tokens_details": {
+                  "ttl_30m_tokens": 0,
+                  "ttl_12h_tokens": 0
+                },
+                "cached_tokens": 9600
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 12
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "25–17–5",
+              "value": "25–17–5",
+              "start": 25,
+              "end": 32,
+              "clause": "Which attendance has the 25–17–5 record?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "The question asks for attendance associated with the 25–17–5 value, which appears in the Record column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f12da81b74f61ac337aa5cb7bac6ebda7ea15aee3402926cd19d5dc839e596e4",
+            "knowledgeIds": [],
+            "usage": {
+              "attribution": {
+                "items": {
+                  "msg_06dc22d86f9e05e1016b09031dfb0087d084b878bd65132b59": {
+                    "input_tokens": 146,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 146,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_06dc22d86f9e05e1016b09031dfb0087d0ab4360b829324edd": {
+                    "input_tokens": 527,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 527,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_06dc22d86f9e05e1016b09031dfb0087d0ab501b7c218e7020": {
+                    "input_tokens": 64,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 64,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_06dc22d86f9e05e1016b09031e99b487d0aca3b6b3485bf06a": {
+                    "input_tokens": 2,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 14,
+                    "content": [
+                      {
+                        "input_tokens": 2,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 14
+                      }
+                    ]
+                  }
+                },
+                "request_fields": {
+                  "instructions": {
+                    "input_tokens": 4380,
+                    "cached_tokens": 4000,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0
+                  }
+                }
+              },
+              "prompt_tokens": 11033,
+              "completion_tokens": 14,
+              "total_tokens": 11047,
+              "prompt_tokens_details": {
+                "cache_write_tokens_details": {
+                  "ttl_30m_tokens": 0,
+                  "ttl_12h_tokens": 0
+                },
+                "cached_tokens": 9600
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "25–17–5",
+              "value": "25–17–5",
+              "start": 25,
+              "end": 32,
+              "clause": "Which attendance has the 25–17–5 record?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "The question asks for attendance associated with the 25–17–5 value, which appears in the Record column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "25–17–5",
+              "value": "25–17–5",
+              "start": 25,
+              "end": 32,
+              "clause": "Which attendance has the 25–17–5 record?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "The question asks for attendance associated with the 25–17–5 value, which appears in the Record column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "25–17–5",
+              "value": "25–17–5",
+              "start": 25,
+              "end": 32,
+              "clause": "Which attendance has the 25–17–5 record?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "The question asks for attendance associated with the 25–17–5 value, which appears in the Record column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              6,
+              0,
+              "25–17–5"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "25–17–5",
+          "value": "25–17–5",
+          "start": 25,
+          "end": 32
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "25–17–5",
+          "value": "25–17–5",
+          "start": 25,
+          "end": 32,
+          "clause": "Which attendance has the 25–17–5 record?",
+          "columnIndex": 6,
+          "columnCandidates": [
+            6
+          ],
+          "columnMatchReason": "The question asks for attendance associated with the 25–17–5 value, which appears in the Record column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          6,
+          0,
+          "25–17–5"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 38844
+}

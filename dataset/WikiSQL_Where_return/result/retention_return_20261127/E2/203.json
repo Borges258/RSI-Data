@@ -1,0 +1,825 @@
+{
+  "arm": "E2",
+  "position": 203,
+  "example_id": "test:7619:2-1533082-1",
+  "original_index": 7619,
+  "table_id": "2-1533082-1",
+  "question": "What frame size has pcm 4 ch/16 bit/48khz as audio coding and dvcam as the format name and 4:1:1 as the color sampling?",
+  "gold_sql": {
+    "sel": 5,
+    "conds": [
+      [
+        7,
+        0,
+        "pcm 4 ch/16 bit/48khz"
+      ],
+      [
+        0,
+        0,
+        "dvcam"
+      ],
+      [
+        4,
+        0,
+        "4:1:1"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      7,
+      0,
+      "PCM 4 ch/16 bit/48kHz"
+    ],
+    [
+      0,
+      0,
+      "DVCAM"
+    ],
+    [
+      4,
+      0,
+      "4:1:1"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        7,
+        0,
+        "PCM 4 ch/16 bit/48kHz"
+      ],
+      [
+        0,
+        0,
+        "DVCAM"
+      ],
+      [
+        4,
+        0,
+        "4:1:1"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "pcm 4 ch/16 bit/48khz",
+        "value": "PCM 4 ch/16 bit/48kHz",
+        "start": 20,
+        "end": 41,
+        "clause": "What frame size has pcm 4 ch/16 bit/48khz as audio coding",
+        "columnIndex": 7,
+        "columnCandidates": [
+          7
+        ],
+        "columnMatchReason": "Explicitly identified as audio coding; matches the Audio coding header.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "dvcam",
+        "value": "DVCAM",
+        "start": 62,
+        "end": 67,
+        "clause": "and dvcam as the format name",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "Explicitly identified as the format name; matches the Format name header.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "4:1:1",
+        "value": "4:1:1",
+        "start": 91,
+        "end": 96,
+        "clause": "and 4:1:1 as the color sampling?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "Explicitly identified as color sampling; matches the Color sampling header.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "pcm 4 ch/16 bit/48khz",
+        "value": "PCM 4 ch/16 bit/48kHz",
+        "start": 20,
+        "end": 41
+      },
+      {
+        "surface": "dvcam",
+        "value": "DVCAM",
+        "start": 62,
+        "end": 67
+      },
+      {
+        "surface": "4:1:1",
+        "value": "4:1:1",
+        "start": 91,
+        "end": 96
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What frame size has pcm 4 ch/16 bit/48khz as audio coding and dvcam as the format name and 4:1:1 as the color sampling?",
+      "table": {
+        "header": [
+          "Format name",
+          "Container",
+          "Video coding",
+          "Bit depth",
+          "Color sampling",
+          "Frame size",
+          "Video bit rate, Mbit/s",
+          "Audio coding"
+        ],
+        "page_title": "XDCAM",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "real",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 1533082,
+        "id": "2-1533082-1",
+        "section_title": "XDCAM Formats",
+        "rows": [
+          [
+            "DVCAM",
+            "MXF , DV-AVI",
+            "DV",
+            "8",
+            "4:2:0",
+            "720x576",
+            "25 (CBR)",
+            "PCM 4 ch/16 bit/48kHz"
+          ],
+          [
+            "DVCAM",
+            "MXF , DV-AVI",
+            "DV",
+            "8",
+            "4:1:1",
+            "720x480",
+            "25 (CBR)",
+            "PCM 4 ch/16 bit/48kHz"
+          ],
+          [
+            "MPEG IMX",
+            "MXF",
+            "MPEG-2 422P@ML",
+            "8",
+            "4:2:2",
+            "720x576",
+            "30 (CBR), 40 (CBR), 50(CBR)",
+            "PCM 8 ch/16 bit/48kHz, or 4 ch/24 bit/48kHz"
+          ],
+          [
+            "MPEG IMX",
+            "MXF",
+            "MPEG-2 422P@ML",
+            "8",
+            "4:2:2",
+            "720x480",
+            "30 (CBR), 40 (CBR), 50(CBR)",
+            "PCM 8 ch/16 bit/48kHz, or 4 ch/24 bit/48kHz"
+          ],
+          [
+            "MPEG HD",
+            "MXF, MP4",
+            "MPEG-2 MP@H14/HL",
+            "8",
+            "4:2:0",
+            "1920x1080",
+            "35 (VBR)",
+            "PCM 4 ch/16 bit/48kHz"
+          ],
+          [
+            "MPEG HD",
+            "MXF, MP4",
+            "MPEG-2 MP@H14/HL",
+            "8",
+            "4:2:0",
+            "1440x1080",
+            "18 (VBR), 25 (CBR), 35 (VBR)",
+            "PCM 4 ch/16 bit/48kHz"
+          ],
+          [
+            "MPEG HD",
+            "MXF, MP4",
+            "MPEG-2 MP@H14/HL",
+            "8",
+            "4:2:0",
+            "1280x720",
+            "25 (CBR), 35 (VBR), 19 (CBR)",
+            "PCM 4 ch/16 bit/48kHz"
+          ],
+          [
+            "MPEG HD422",
+            "MXF",
+            "MPEG-2 422P@HL",
+            "8",
+            "4:2:2",
+            "1920x1080",
+            "50 (CBR)",
+            "PCM 8 ch/24 bit/48kHz, or 4 ch/24 bit/48kHz"
+          ],
+          [
+            "MPEG HD422",
+            "MXF",
+            "MPEG-2 422P@HL",
+            "8",
+            "4:2:2",
+            "1280x720",
+            "50 (CBR)",
+            "PCM 8 ch/24 bit/48kHz, or 4 ch/24 bit/48kHz"
+          ],
+          [
+            "Proxy AV",
+            "MXF",
+            "MPEG-4 Part-2 (ASP)",
+            "8",
+            "4:2:0",
+            "CIF (50i - 352x288)",
+            "1.5",
+            "A-Law 4 ch/8 bit/8kHz"
+          ]
+        ],
+        "caption": "XDCAM Formats",
+        "headers": [
+          "Format name",
+          "Container",
+          "Video coding",
+          "Bit depth",
+          "Color sampling",
+          "Frame size",
+          "Video bit rate, Mbit/s",
+          "Audio coding"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-1533082-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 3,
+          "conditions": [
+            {
+              "surface": "pcm 4 ch/16 bit/48khz",
+              "value": "PCM 4 ch/16 bit/48kHz",
+              "start": 20,
+              "end": 41
+            },
+            {
+              "surface": "dvcam",
+              "value": "DVCAM",
+              "start": 62,
+              "end": 67
+            },
+            {
+              "surface": "4:1:1",
+              "value": "4:1:1",
+              "start": 91,
+              "end": 96
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "fd01598c016f21a3e19d611a6343a2454bf530ac8a3b4c6978fe81446d6f62a5",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5330,
+              "completion_tokens": 65,
+              "total_tokens": 5395,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "pcm 4 ch/16 bit/48khz",
+              "value": "PCM 4 ch/16 bit/48kHz",
+              "start": 20,
+              "end": 41,
+              "clause": "What frame size has pcm 4 ch/16 bit/48khz as audio coding"
+            },
+            {
+              "surface": "dvcam",
+              "value": "DVCAM",
+              "start": 62,
+              "end": 67,
+              "clause": "and dvcam as the format name"
+            },
+            {
+              "surface": "4:1:1",
+              "value": "4:1:1",
+              "start": 91,
+              "end": 96,
+              "clause": "and 4:1:1 as the color sampling?"
+            }
+          ],
+          "count": 3
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "pcm 4 ch/16 bit/48khz",
+              "value": "PCM 4 ch/16 bit/48kHz",
+              "start": 20,
+              "end": 41,
+              "clause": "What frame size has pcm 4 ch/16 bit/48khz as audio coding"
+            },
+            {
+              "surface": "dvcam",
+              "value": "DVCAM",
+              "start": 62,
+              "end": 67,
+              "clause": "and dvcam as the format name"
+            },
+            {
+              "surface": "4:1:1",
+              "value": "4:1:1",
+              "start": 91,
+              "end": 96,
+              "clause": "and 4:1:1 as the color sampling?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "pcm 4 ch/16 bit/48khz",
+              "value": "PCM 4 ch/16 bit/48kHz",
+              "start": 20,
+              "end": 41,
+              "clause": "What frame size has pcm 4 ch/16 bit/48khz as audio coding",
+              "columnIndex": 7,
+              "columnCandidates": [
+                7
+              ],
+              "columnMatchReason": "Explicitly identified as audio coding; matches the Audio coding header."
+            },
+            {
+              "surface": "dvcam",
+              "value": "DVCAM",
+              "start": 62,
+              "end": 67,
+              "clause": "and dvcam as the format name",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Explicitly identified as the format name; matches the Format name header."
+            },
+            {
+              "surface": "4:1:1",
+              "value": "4:1:1",
+              "start": 91,
+              "end": 96,
+              "clause": "and 4:1:1 as the color sampling?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Explicitly identified as color sampling; matches the Color sampling header."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "522ac4f1e73138baa61ac803369f211c09159430349fbed2ee77500f2511d57e",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5461,
+              "completion_tokens": 69,
+              "total_tokens": 5530,
+              "prompt_tokens_details": {
+                "cached_tokens": 5120
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "pcm 4 ch/16 bit/48khz",
+              "value": "PCM 4 ch/16 bit/48kHz",
+              "start": 20,
+              "end": 41,
+              "clause": "What frame size has pcm 4 ch/16 bit/48khz as audio coding",
+              "columnIndex": 7,
+              "columnCandidates": [
+                7
+              ],
+              "columnMatchReason": "Explicitly identified as audio coding; matches the Audio coding header.",
+              "operator": "="
+            },
+            {
+              "surface": "dvcam",
+              "value": "DVCAM",
+              "start": 62,
+              "end": 67,
+              "clause": "and dvcam as the format name",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Explicitly identified as the format name; matches the Format name header.",
+              "operator": "="
+            },
+            {
+              "surface": "4:1:1",
+              "value": "4:1:1",
+              "start": 91,
+              "end": 96,
+              "clause": "and 4:1:1 as the color sampling?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Explicitly identified as color sampling; matches the Color sampling header.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ceb80f20cd3a0d3ae486a66233e2d898cda9a1e8d85a6ceefcab6bd298928965",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5576,
+              "completion_tokens": 13,
+              "total_tokens": 5589,
+              "prompt_tokens_details": {
+                "cached_tokens": 5120
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "pcm 4 ch/16 bit/48khz",
+              "value": "PCM 4 ch/16 bit/48kHz",
+              "start": 20,
+              "end": 41,
+              "clause": "What frame size has pcm 4 ch/16 bit/48khz as audio coding",
+              "columnIndex": 7,
+              "columnCandidates": [
+                7
+              ],
+              "columnMatchReason": "Explicitly identified as audio coding; matches the Audio coding header.",
+              "operator": "="
+            },
+            {
+              "surface": "dvcam",
+              "value": "DVCAM",
+              "start": 62,
+              "end": 67,
+              "clause": "and dvcam as the format name",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Explicitly identified as the format name; matches the Format name header.",
+              "operator": "="
+            },
+            {
+              "surface": "4:1:1",
+              "value": "4:1:1",
+              "start": 91,
+              "end": 96,
+              "clause": "and 4:1:1 as the color sampling?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Explicitly identified as color sampling; matches the Color sampling header.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a892c953393f4e6ee665d15a6f0f7240de7678fb89f2c10e39b8b63ce263bb07",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5533,
+              "completion_tokens": 30,
+              "total_tokens": 5563,
+              "prompt_tokens_details": {
+                "cached_tokens": 5120
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "pcm 4 ch/16 bit/48khz",
+              "value": "PCM 4 ch/16 bit/48kHz",
+              "start": 20,
+              "end": 41,
+              "clause": "What frame size has pcm 4 ch/16 bit/48khz as audio coding",
+              "columnIndex": 7,
+              "columnCandidates": [
+                7
+              ],
+              "columnMatchReason": "Explicitly identified as audio coding; matches the Audio coding header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "dvcam",
+              "value": "DVCAM",
+              "start": 62,
+              "end": 67,
+              "clause": "and dvcam as the format name",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Explicitly identified as the format name; matches the Format name header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "4:1:1",
+              "value": "4:1:1",
+              "start": 91,
+              "end": 96,
+              "clause": "and 4:1:1 as the color sampling?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Explicitly identified as color sampling; matches the Color sampling header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "pcm 4 ch/16 bit/48khz",
+              "value": "PCM 4 ch/16 bit/48kHz",
+              "start": 20,
+              "end": 41,
+              "clause": "What frame size has pcm 4 ch/16 bit/48khz as audio coding",
+              "columnIndex": 7,
+              "columnCandidates": [
+                7
+              ],
+              "columnMatchReason": "Explicitly identified as audio coding; matches the Audio coding header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "dvcam",
+              "value": "DVCAM",
+              "start": 62,
+              "end": 67,
+              "clause": "and dvcam as the format name",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Explicitly identified as the format name; matches the Format name header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "4:1:1",
+              "value": "4:1:1",
+              "start": 91,
+              "end": 96,
+              "clause": "and 4:1:1 as the color sampling?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Explicitly identified as color sampling; matches the Color sampling header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "pcm 4 ch/16 bit/48khz",
+              "value": "PCM 4 ch/16 bit/48kHz",
+              "start": 20,
+              "end": 41,
+              "clause": "What frame size has pcm 4 ch/16 bit/48khz as audio coding",
+              "columnIndex": 7,
+              "columnCandidates": [
+                7
+              ],
+              "columnMatchReason": "Explicitly identified as audio coding; matches the Audio coding header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "dvcam",
+              "value": "DVCAM",
+              "start": 62,
+              "end": 67,
+              "clause": "and dvcam as the format name",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Explicitly identified as the format name; matches the Format name header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "4:1:1",
+              "value": "4:1:1",
+              "start": 91,
+              "end": 96,
+              "clause": "and 4:1:1 as the color sampling?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Explicitly identified as color sampling; matches the Color sampling header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              7,
+              0,
+              "PCM 4 ch/16 bit/48kHz"
+            ],
+            [
+              0,
+              0,
+              "DVCAM"
+            ],
+            [
+              4,
+              0,
+              "4:1:1"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "pcm 4 ch/16 bit/48khz",
+          "value": "PCM 4 ch/16 bit/48kHz",
+          "start": 20,
+          "end": 41
+        },
+        {
+          "surface": "dvcam",
+          "value": "DVCAM",
+          "start": 62,
+          "end": 67
+        },
+        {
+          "surface": "4:1:1",
+          "value": "4:1:1",
+          "start": 91,
+          "end": 96
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "pcm 4 ch/16 bit/48khz",
+          "value": "PCM 4 ch/16 bit/48kHz",
+          "start": 20,
+          "end": 41,
+          "clause": "What frame size has pcm 4 ch/16 bit/48khz as audio coding",
+          "columnIndex": 7,
+          "columnCandidates": [
+            7
+          ],
+          "columnMatchReason": "Explicitly identified as audio coding; matches the Audio coding header.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "dvcam",
+          "value": "DVCAM",
+          "start": 62,
+          "end": 67,
+          "clause": "and dvcam as the format name",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "Explicitly identified as the format name; matches the Format name header.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "4:1:1",
+          "value": "4:1:1",
+          "start": 91,
+          "end": 96,
+          "clause": "and 4:1:1 as the color sampling?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "Explicitly identified as color sampling; matches the Color sampling header.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 3,
+      "conds": [
+        [
+          7,
+          0,
+          "PCM 4 ch/16 bit/48kHz"
+        ],
+        [
+          0,
+          0,
+          "DVCAM"
+        ],
+        [
+          4,
+          0,
+          "4:1:1"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9453
+}

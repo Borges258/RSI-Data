@@ -1,0 +1,463 @@
+{
+  "arm": "E2",
+  "position": 414,
+  "example_id": "test:11111:2-11954383-1",
+  "original_index": 11111,
+  "table_id": "2-11954383-1",
+  "question": "How many golden tickets were given out when the auditions were held in San Francisco, California?",
+  "gold_sql": {
+    "sel": 6,
+    "conds": [
+      [
+        1,
+        0,
+        "san francisco, california"
+      ]
+    ],
+    "agg": 3
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "San Francisco, California"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "San Francisco, California"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "San Francisco, California",
+        "value": "San Francisco, California",
+        "start": 71,
+        "end": 96,
+        "clause": "How many golden tickets were given out when the auditions were held in San Francisco, California?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The question identifies where the auditions were held, matching the Audition City field; the row contains San Francisco, California in column 1.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "San Francisco, California",
+        "value": "San Francisco, California",
+        "start": 71,
+        "end": 96
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "How many golden tickets were given out when the auditions were held in San Francisco, California?",
+      "table": {
+        "header": [
+          "Episode Air Date",
+          "Audition City",
+          "Date",
+          "First Audition Venue",
+          "Callback Date",
+          "Callback Venue",
+          "Golden Tickets"
+        ],
+        "page_title": "American Idol (season 8)",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "real"
+        ],
+        "page_id": 11954383,
+        "id": "2-11954383-1",
+        "section_title": "Regional auditions",
+        "rows": [
+          [
+            "January 13, 2009",
+            "Phoenix, Arizona",
+            "July 25, 2008",
+            "Jobing.com Arena , Glendale",
+            "September 2008",
+            "The Boulders, Scottsdale",
+            "27"
+          ],
+          [
+            "January 14, 2009",
+            "Kansas City, Missouri",
+            "August 8, 2008",
+            "Kemper Arena",
+            "October 5, 2008",
+            "Firestone Building",
+            "27"
+          ],
+          [
+            "January 20, 2009",
+            "San Francisco, California",
+            "July 17, 2008",
+            "Cow Palace",
+            "September 13, 2008",
+            "Westin St. Francis",
+            "12"
+          ],
+          [
+            "January 21, 2009",
+            "Louisville, Kentucky",
+            "July 21, 2008",
+            "Freedom Hall",
+            "September 7–8, 2008",
+            "Churchill Downs",
+            "19"
+          ],
+          [
+            "January 27, 2009",
+            "Jacksonville, Florida",
+            "August 13, 2008",
+            "Jacksonville Veterans Memorial Arena",
+            "September 3, 2008",
+            "Amelia Island Plantation",
+            "16"
+          ],
+          [
+            "January 28, 2009",
+            "Salt Lake City, Utah",
+            "July 29, 2008",
+            "EnergySolutions Arena",
+            "September 18–19, 2008",
+            "Wells Fargo Center",
+            "13"
+          ],
+          [
+            "January 29, 2009",
+            "New York City, New York",
+            "August 19, 2008",
+            "Izod Center , East Rutherford",
+            "August 26, 2008",
+            "Chelsea Piers , New York",
+            "26"
+          ],
+          [
+            "January 29, 2009",
+            "San Juan, Puerto Rico",
+            "August 2, 2008",
+            "Coliseo de Puerto Rico",
+            "September 2008",
+            "Conrad San Juan Condado Plaza",
+            "9"
+          ],
+          [
+            "Total Tickets to Hollywood",
+            "Total Tickets to Hollywood",
+            "Total Tickets to Hollywood",
+            "Total Tickets to Hollywood",
+            "Total Tickets to Hollywood",
+            "Total Tickets to Hollywood",
+            "149"
+          ]
+        ],
+        "caption": "Regional auditions",
+        "headers": [
+          "Episode Air Date",
+          "Audition City",
+          "Date",
+          "First Audition Venue",
+          "Callback Date",
+          "Callback Venue",
+          "Golden Tickets"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-11954383-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "San Francisco, California",
+              "value": "San Francisco, California",
+              "start": 71,
+              "end": 96
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f517a19c880ef73808cc4c1a9151e5b002992c8e862ad0da194efbfb5a7a213d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5079,
+              "completion_tokens": 23,
+              "total_tokens": 5102,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "San Francisco, California",
+              "value": "San Francisco, California",
+              "start": 71,
+              "end": 96,
+              "clause": "How many golden tickets were given out when the auditions were held in San Francisco, California?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "San Francisco, California",
+              "value": "San Francisco, California",
+              "start": 71,
+              "end": 96,
+              "clause": "How many golden tickets were given out when the auditions were held in San Francisco, California?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "San Francisco, California",
+              "value": "San Francisco, California",
+              "start": 71,
+              "end": 96,
+              "clause": "How many golden tickets were given out when the auditions were held in San Francisco, California?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question identifies where the auditions were held, matching the Audition City field; the row contains San Francisco, California in column 1."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "970d0c92fac1d85d63ebcac6cff0bd99071d9b20c38d8c8aeebf7af3a5ac7ff3",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5124,
+              "completion_tokens": 49,
+              "total_tokens": 5173,
+              "prompt_tokens_details": {
+                "cached_tokens": 4864
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "San Francisco, California",
+              "value": "San Francisco, California",
+              "start": 71,
+              "end": 96,
+              "clause": "How many golden tickets were given out when the auditions were held in San Francisco, California?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question identifies where the auditions were held, matching the Audition City field; the row contains San Francisco, California in column 1.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "529ffb342589d043b70f00c1414dad857fc64ed92e1ec82f244a3d45500d90fa",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5197,
+              "completion_tokens": 9,
+              "total_tokens": 5206,
+              "prompt_tokens_details": {
+                "cached_tokens": 4864
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "San Francisco, California",
+              "value": "San Francisco, California",
+              "start": 71,
+              "end": 96,
+              "clause": "How many golden tickets were given out when the auditions were held in San Francisco, California?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question identifies where the auditions were held, matching the Audition City field; the row contains San Francisco, California in column 1.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "60734c973d66853e0e4a04eceabb214dc617120ea1ed9d7beabb7692f4dfb159",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5148,
+              "completion_tokens": 13,
+              "total_tokens": 5161,
+              "prompt_tokens_details": {
+                "cached_tokens": 4864
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "San Francisco, California",
+              "value": "San Francisco, California",
+              "start": 71,
+              "end": 96,
+              "clause": "How many golden tickets were given out when the auditions were held in San Francisco, California?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question identifies where the auditions were held, matching the Audition City field; the row contains San Francisco, California in column 1.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "San Francisco, California",
+              "value": "San Francisco, California",
+              "start": 71,
+              "end": 96,
+              "clause": "How many golden tickets were given out when the auditions were held in San Francisco, California?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question identifies where the auditions were held, matching the Audition City field; the row contains San Francisco, California in column 1.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "San Francisco, California",
+              "value": "San Francisco, California",
+              "start": 71,
+              "end": 96,
+              "clause": "How many golden tickets were given out when the auditions were held in San Francisco, California?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question identifies where the auditions were held, matching the Audition City field; the row contains San Francisco, California in column 1.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              "San Francisco, California"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "San Francisco, California",
+          "value": "San Francisco, California",
+          "start": 71,
+          "end": 96
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "San Francisco, California",
+          "value": "San Francisco, California",
+          "start": 71,
+          "end": 96,
+          "clause": "How many golden tickets were given out when the auditions were held in San Francisco, California?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The question identifies where the auditions were held, matching the Audition City field; the row contains San Francisco, California in column 1.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          1,
+          0,
+          "San Francisco, California"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9859
+}

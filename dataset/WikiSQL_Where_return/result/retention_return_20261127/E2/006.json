@@ -1,0 +1,422 @@
+{
+  "arm": "E2",
+  "position": 6,
+  "example_id": "test:292:1-11677100-12",
+  "original_index": 292,
+  "table_id": "1-11677100-12",
+  "question": "Which position did the player from the hometown of Dallas, TX play?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        3,
+        0,
+        "Dallas, TX"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      3,
+      0,
+      "Dallas, TX"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        0,
+        "Dallas, TX"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Dallas, TX",
+        "value": "Dallas, TX",
+        "start": 51,
+        "end": 61,
+        "clause": "Which position did the player from the hometown of Dallas, TX play?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The question explicitly identifies Dallas, TX as the player's hometown, matching the Hometown field.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Dallas, TX",
+        "value": "Dallas, TX",
+        "start": 51,
+        "end": 61
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Which position did the player from the hometown of Dallas, TX play?",
+      "table": {
+        "id": "1-11677100-12",
+        "header": [
+          "Player",
+          "Position",
+          "School",
+          "Hometown",
+          "MLB Draft"
+        ],
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "rows": [
+          [
+            "Clayton Kershaw",
+            "Pitcher",
+            "Highland Park High School",
+            "Dallas, TX",
+            "1st Round - 7th Pick of 2006 Draft ( Dodgers )"
+          ],
+          [
+            "Hank Conger",
+            "Catcher",
+            "Huntington Beach High School",
+            "Huntington Beach, CA",
+            "1st Round - 25th Pick of 2006 Draft ( Angels )"
+          ],
+          [
+            "Chris Marrero",
+            "Infielder",
+            "Monsignor Pace High School",
+            "Opa-locka, FL",
+            "1st Round - 15th Pick of 2006 Draft ( Nationals )"
+          ],
+          [
+            "Billy Rowell",
+            "Infielder",
+            "Bishop Eustace Preparatory School",
+            "Pennsauken, NJ",
+            "1st Round - 9th Pick of 2006 Draft ( Orioles )"
+          ],
+          [
+            "Chris Parmelee",
+            "Outfielder",
+            "Chino Hills High School",
+            "Chino Hills, CA",
+            "1st Round - 20th Pick of 2006 Draft ( Twins )"
+          ],
+          [
+            "Jason Place",
+            "Outfielder",
+            "Wren High School",
+            "Piedmont, SC",
+            "1st Round - 27th Pick of 2006 Draft ( Red Sox )"
+          ],
+          [
+            "Travis Snider",
+            "Outfielder",
+            "Jackson High School",
+            "Mill Creek, WA",
+            "1st Round - 14th Pick of 2006 Draft ( Blue Jays )"
+          ]
+        ],
+        "name": "table_11677100_12",
+        "headers": [
+          "Player",
+          "Position",
+          "School",
+          "Hometown",
+          "MLB Draft"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-11677100-12",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Dallas, TX",
+              "value": "Dallas, TX",
+              "start": 51,
+              "end": 61
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "4907ee2fd05e6fea88e5abb040158bf914dd3b779425328df6b2c5154f5554f3",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4919,
+              "completion_tokens": 21,
+              "total_tokens": 4940,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Dallas, TX",
+              "value": "Dallas, TX",
+              "start": 51,
+              "end": 61,
+              "clause": "Which position did the player from the hometown of Dallas, TX play?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Dallas, TX",
+              "value": "Dallas, TX",
+              "start": 51,
+              "end": 61,
+              "clause": "Which position did the player from the hometown of Dallas, TX play?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Dallas, TX",
+              "value": "Dallas, TX",
+              "start": 51,
+              "end": 61,
+              "clause": "Which position did the player from the hometown of Dallas, TX play?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies Dallas, TX as the player's hometown, matching the Hometown field."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b6396fad1c3ea07ec77a4014997d1ed6454921ae241252f89b947afbceb5fbb3",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4958,
+              "completion_tokens": 39,
+              "total_tokens": 4997,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Dallas, TX",
+              "value": "Dallas, TX",
+              "start": 51,
+              "end": 61,
+              "clause": "Which position did the player from the hometown of Dallas, TX play?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies Dallas, TX as the player's hometown, matching the Hometown field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "8cd7ca97b5be2370f55cba0e5a7c344ed5ef2c1a9ed7b760ca6d134baef087f7",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5021,
+              "completion_tokens": 9,
+              "total_tokens": 5030,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Dallas, TX",
+              "value": "Dallas, TX",
+              "start": 51,
+              "end": 61,
+              "clause": "Which position did the player from the hometown of Dallas, TX play?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies Dallas, TX as the player's hometown, matching the Hometown field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "998535e76a703cc952b50213d3c707f7c4fc9c867bf596ce4737fc5507f1b427",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4972,
+              "completion_tokens": 12,
+              "total_tokens": 4984,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Dallas, TX",
+              "value": "Dallas, TX",
+              "start": 51,
+              "end": 61,
+              "clause": "Which position did the player from the hometown of Dallas, TX play?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies Dallas, TX as the player's hometown, matching the Hometown field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Dallas, TX",
+              "value": "Dallas, TX",
+              "start": 51,
+              "end": 61,
+              "clause": "Which position did the player from the hometown of Dallas, TX play?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies Dallas, TX as the player's hometown, matching the Hometown field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Dallas, TX",
+              "value": "Dallas, TX",
+              "start": 51,
+              "end": 61,
+              "clause": "Which position did the player from the hometown of Dallas, TX play?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies Dallas, TX as the player's hometown, matching the Hometown field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              0,
+              "Dallas, TX"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Dallas, TX",
+          "value": "Dallas, TX",
+          "start": 51,
+          "end": 61
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Dallas, TX",
+          "value": "Dallas, TX",
+          "start": 51,
+          "end": 61,
+          "clause": "Which position did the player from the hometown of Dallas, TX play?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The question explicitly identifies Dallas, TX as the player's hometown, matching the Hometown field.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          3,
+          0,
+          "Dallas, TX"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 10110
+}

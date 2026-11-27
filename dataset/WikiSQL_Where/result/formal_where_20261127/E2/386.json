@@ -1,0 +1,419 @@
+{
+  "arm": "E2",
+  "position": 386,
+  "example_id": "test:7899:2-17058178-1",
+  "original_index": 7899,
+  "table_id": "2-17058178-1",
+  "question": "WHAT WAS THE PICK NUMBER FOR BRANDON RUSH?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        2,
+        0,
+        "brandon rush"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "Brandon Rush"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "Brandon Rush"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "BRANDON RUSH",
+        "value": "Brandon Rush",
+        "start": 29,
+        "end": 41,
+        "clause": "WHAT WAS THE PICK NUMBER FOR BRANDON RUSH?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The named person Brandon Rush matches the Player field, and the row evidence places that value in the Player column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "BRANDON RUSH",
+        "value": "Brandon Rush",
+        "start": 29,
+        "end": 41
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "WHAT WAS THE PICK NUMBER FOR BRANDON RUSH?",
+      "table": {
+        "header": [
+          "Round",
+          "Pick",
+          "Player",
+          "Position",
+          "Nationality",
+          "College"
+        ],
+        "page_title": "2008–09 Portland Trail Blazers season",
+        "types": [
+          "real",
+          "real",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 17058178,
+        "id": "2-17058178-1",
+        "section_title": "Draft picks",
+        "rows": [
+          [
+            "1",
+            "13",
+            "Brandon Rush",
+            "Guard",
+            "USA",
+            "Kansas"
+          ],
+          [
+            "1",
+            "27",
+            "Darrell Arthur",
+            "Power Forward",
+            "USA",
+            "Kansas"
+          ],
+          [
+            "2",
+            "33",
+            "Joey Dorsey",
+            "Center",
+            "USA",
+            "Memphis"
+          ],
+          [
+            "2",
+            "36",
+            "Ömer Aşık",
+            "Center",
+            "Turkey",
+            "Fenerbahçe Ülker"
+          ],
+          [
+            "2",
+            "55",
+            "Mike Taylor",
+            "Guard",
+            "USA",
+            "Iowa State"
+          ]
+        ],
+        "caption": "Draft picks",
+        "headers": [
+          "Round",
+          "Pick",
+          "Player",
+          "Position",
+          "Nationality",
+          "College"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-17058178-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "BRANDON RUSH",
+              "value": "Brandon Rush",
+              "start": 29,
+              "end": 41
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "3423d670f75bf6ed484b9ee0a3df4e5dc87e3b79817803d4d4d61f880d214cb3",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4759,
+              "completion_tokens": 23,
+              "total_tokens": 4782,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "BRANDON RUSH",
+              "value": "Brandon Rush",
+              "start": 29,
+              "end": 41,
+              "clause": "WHAT WAS THE PICK NUMBER FOR BRANDON RUSH?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "BRANDON RUSH",
+              "value": "Brandon Rush",
+              "start": 29,
+              "end": 41,
+              "clause": "WHAT WAS THE PICK NUMBER FOR BRANDON RUSH?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "BRANDON RUSH",
+              "value": "Brandon Rush",
+              "start": 29,
+              "end": 41,
+              "clause": "WHAT WAS THE PICK NUMBER FOR BRANDON RUSH?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The named person Brandon Rush matches the Player field, and the row evidence places that value in the Player column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "23cc53663c61c317fadbd95a04b26509be1498f369916ee2d7b40530569c546d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4797,
+              "completion_tokens": 43,
+              "total_tokens": 4840,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "BRANDON RUSH",
+              "value": "Brandon Rush",
+              "start": 29,
+              "end": 41,
+              "clause": "WHAT WAS THE PICK NUMBER FOR BRANDON RUSH?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The named person Brandon Rush matches the Player field, and the row evidence places that value in the Player column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "cd781d869ef258313eecc2610305eac8717b337d7667a62faa6f6ba437066b35",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4864,
+              "completion_tokens": 9,
+              "total_tokens": 4873,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "BRANDON RUSH",
+              "value": "Brandon Rush",
+              "start": 29,
+              "end": 41,
+              "clause": "WHAT WAS THE PICK NUMBER FOR BRANDON RUSH?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The named person Brandon Rush matches the Player field, and the row evidence places that value in the Player column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "325b93a6d90e2bf33d42e272d922db4cab5144b28f656cf8fe2df43638edac3c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4815,
+              "completion_tokens": 12,
+              "total_tokens": 4827,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "BRANDON RUSH",
+              "value": "Brandon Rush",
+              "start": 29,
+              "end": 41,
+              "clause": "WHAT WAS THE PICK NUMBER FOR BRANDON RUSH?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The named person Brandon Rush matches the Player field, and the row evidence places that value in the Player column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "BRANDON RUSH",
+              "value": "Brandon Rush",
+              "start": 29,
+              "end": 41,
+              "clause": "WHAT WAS THE PICK NUMBER FOR BRANDON RUSH?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The named person Brandon Rush matches the Player field, and the row evidence places that value in the Player column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "BRANDON RUSH",
+              "value": "Brandon Rush",
+              "start": 29,
+              "end": 41,
+              "clause": "WHAT WAS THE PICK NUMBER FOR BRANDON RUSH?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The named person Brandon Rush matches the Player field, and the row evidence places that value in the Player column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "Brandon Rush"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "BRANDON RUSH",
+          "value": "Brandon Rush",
+          "start": 29,
+          "end": 41
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "BRANDON RUSH",
+          "value": "Brandon Rush",
+          "start": 29,
+          "end": 41,
+          "clause": "WHAT WAS THE PICK NUMBER FOR BRANDON RUSH?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The named person Brandon Rush matches the Player field, and the row evidence places that value in the Player column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          2,
+          0,
+          "Brandon Rush"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7109
+}

@@ -1,0 +1,124 @@
+{
+  "arm": "E1",
+  "position": 462,
+  "example_id": "test:4903:2-1054817-1",
+  "original_index": 4903,
+  "table_id": "2-1054817-1",
+  "question": "How many teams played before 2008, had a K League Classic of runners-up, and a Manager of kim ho?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        0,
+        2,
+        2008
+      ],
+      [
+        2,
+        0,
+        "runners-up"
+      ],
+      [
+        5,
+        0,
+        "kim ho"
+      ]
+    ],
+    "agg": 4
+  },
+  "prediction_conds": [
+    [
+      0,
+      2,
+      2008
+    ],
+    [
+      2,
+      0,
+      "Runners-up"
+    ],
+    [
+      5,
+      0,
+      "Kim Ho"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": "gpt-5.6-sol",
+  "usage": {
+    "prompt_tokens": 10203,
+    "completion_tokens": 66,
+    "total_tokens": 10269,
+    "prompt_tokens_details": {
+      "cached_tokens": 4224
+    }
+  },
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        2,
+        2008
+      ],
+      [
+        2,
+        0,
+        "Runners-up"
+      ],
+      [
+        5,
+        0,
+        "Kim Ho"
+      ]
+    ],
+    "explanation": "Season is strictly before 2008, K League Classic equals Runners-up, and Manager equals the table literal Kim Ho.",
+    "version": "wikisql-where-prior-v1",
+    "tableId": "2-1054817-1",
+    "knowledgeIds": [
+      "g-eq",
+      "g-gt",
+      "g-lt",
+      "g-inclusive",
+      "g-literal",
+      "g-threshold",
+      "g-and",
+      "g-or",
+      "g-column",
+      "g-count",
+      "g-ambiguous",
+      "t-2-1054817-1-field-0",
+      "t-2-1054817-1-field-1",
+      "t-2-1054817-1-field-2",
+      "t-2-1054817-1-field-3",
+      "t-2-1054817-1-field-4",
+      "t-2-1054817-1-field-5",
+      "d-implicit-eq",
+      "d-explicit-eq",
+      "d-gt",
+      "d-lt-and-gt",
+      "d-with-two",
+      "d-literal-form",
+      "p-text",
+      "p-number",
+      "p-multi",
+      "p-unsupported"
+    ],
+    "promptSha256": "e0915d7fea5659ec8ac9971a87a51290f25ba1fad31939ec8f37f9a2702ed72a",
+    "model": "gpt-5.6-sol",
+    "usage": {
+      "prompt_tokens": 10203,
+      "completion_tokens": 66,
+      "total_tokens": 10269,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      }
+    },
+    "latencyMs": 2831
+  },
+  "source": "where_prior_parse",
+  "safe_completed": true,
+  "elapsed_ms": 2844
+}

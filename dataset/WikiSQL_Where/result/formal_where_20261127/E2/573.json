@@ -1,0 +1,759 @@
+{
+  "arm": "E2",
+  "position": 573,
+  "example_id": "test:11432:2-1111814-1",
+  "original_index": 11432,
+  "table_id": "2-1111814-1",
+  "question": "what is the attendance when the location is veterans stadium, the game is more than 3 and the time is 2:21?",
+  "gold_sql": {
+    "sel": 5,
+    "conds": [
+      [
+        3,
+        0,
+        "veterans stadium"
+      ],
+      [
+        0,
+        1,
+        3
+      ],
+      [
+        4,
+        0,
+        "2:21"
+      ]
+    ],
+    "agg": 5
+  },
+  "prediction_conds": [
+    [
+      3,
+      0,
+      "Veterans Stadium"
+    ],
+    [
+      0,
+      1,
+      3
+    ],
+    [
+      4,
+      0,
+      "2:21"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        0,
+        "Veterans Stadium"
+      ],
+      [
+        0,
+        1,
+        3
+      ],
+      [
+        4,
+        0,
+        "2:21"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "veterans stadium",
+        "value": "Veterans Stadium",
+        "start": 44,
+        "end": 60,
+        "clause": "what is the attendance when the location is veterans stadium, the game is more than 3",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "Explicitly identified as location; Veterans Stadium appears in Location cells.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "more than 3",
+        "value": 3,
+        "start": 74,
+        "end": 85,
+        "clause": "the game is more than 3",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "Explicitly identified as game; numeric comparison applies to the Game field.",
+        "operator": ">",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "2:21",
+        "value": "2:21",
+        "start": 102,
+        "end": 106,
+        "clause": "and the time is 2:21?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "Explicitly identified as time; 2:21 appears in the Time field.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "veterans stadium",
+        "value": "Veterans Stadium",
+        "start": 44,
+        "end": 60
+      },
+      {
+        "surface": "more than 3",
+        "value": "3",
+        "start": 74,
+        "end": 85
+      },
+      {
+        "surface": "2:21",
+        "value": "2:21",
+        "start": 102,
+        "end": 106
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "what is the attendance when the location is veterans stadium, the game is more than 3 and the time is 2:21?",
+      "table": {
+        "header": [
+          "Game",
+          "Date",
+          "Score",
+          "Location",
+          "Time",
+          "Attendance"
+        ],
+        "page_title": "1983 World Series",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text",
+          "real"
+        ],
+        "page_id": 1111814,
+        "id": "2-1111814-1",
+        "section_title": "Summary",
+        "rows": [
+          [
+            "1",
+            "October 11",
+            "Philadelphia Phillies – 2, Baltimore Orioles – 1",
+            "Memorial Stadium",
+            "2:22",
+            "52,204"
+          ],
+          [
+            "2",
+            "October 12",
+            "Philadelphia Phillies – 1, Baltimore Orioles – 4",
+            "Memorial Stadium",
+            "2:27",
+            "52,132"
+          ],
+          [
+            "3",
+            "October 14",
+            "Baltimore Orioles – 3, Philadelphia Phillies – 2",
+            "Veterans Stadium",
+            "2:35",
+            "65,792"
+          ],
+          [
+            "4",
+            "October 15",
+            "Baltimore Orioles – 5, Philadelphia Phillies – 4",
+            "Veterans Stadium",
+            "2:50",
+            "66,947"
+          ],
+          [
+            "5",
+            "October 16",
+            "Baltimore Orioles – 5, Philadelphia Phillies – 0",
+            "Veterans Stadium",
+            "2:21",
+            "67,064"
+          ]
+        ],
+        "caption": "Summary",
+        "headers": [
+          "Game",
+          "Date",
+          "Score",
+          "Location",
+          "Time",
+          "Attendance"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-1111814-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 3,
+          "conditions": [
+            {
+              "surface": "veterans stadium",
+              "value": "Veterans Stadium",
+              "start": 44,
+              "end": 60
+            },
+            {
+              "surface": "more than 3",
+              "value": "3",
+              "start": 74,
+              "end": 85
+            },
+            {
+              "surface": "2:21",
+              "value": "2:21",
+              "start": 102,
+              "end": 106
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "2f5e6155dfc4a7d95ae58143f918adfb563fcc45918ba9665d13326efac9f61f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4838,
+              "completion_tokens": 45,
+              "total_tokens": 4883,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "veterans stadium",
+              "value": "Veterans Stadium",
+              "start": 44,
+              "end": 60,
+              "clause": "what is the attendance when the location is veterans stadium, the game is more than 3"
+            },
+            {
+              "surface": "more than 3",
+              "value": "3",
+              "start": 74,
+              "end": 85,
+              "clause": "the game is more than 3"
+            },
+            {
+              "surface": "2:21",
+              "value": "2:21",
+              "start": 102,
+              "end": 106,
+              "clause": "and the time is 2:21?"
+            }
+          ],
+          "count": 3
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "veterans stadium",
+              "value": "Veterans Stadium",
+              "start": 44,
+              "end": 60,
+              "clause": "what is the attendance when the location is veterans stadium, the game is more than 3"
+            },
+            {
+              "surface": "more than 3",
+              "value": "3",
+              "start": 74,
+              "end": 85,
+              "clause": "the game is more than 3"
+            },
+            {
+              "surface": "2:21",
+              "value": "2:21",
+              "start": 102,
+              "end": 106,
+              "clause": "and the time is 2:21?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "veterans stadium",
+              "value": "Veterans Stadium",
+              "start": 44,
+              "end": 60,
+              "clause": "what is the attendance when the location is veterans stadium, the game is more than 3",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicitly identified as location; Veterans Stadium appears in Location cells."
+            },
+            {
+              "surface": "more than 3",
+              "value": "3",
+              "start": 74,
+              "end": 85,
+              "clause": "the game is more than 3",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Explicitly identified as game; numeric comparison applies to the Game field."
+            },
+            {
+              "surface": "2:21",
+              "value": "2:21",
+              "start": 102,
+              "end": 106,
+              "clause": "and the time is 2:21?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Explicitly identified as time; 2:21 appears in the Time field."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "fe52ece6d5da2dd885413212d651c69de372d7b99461306b7b5761644c0c8c6a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4945,
+              "completion_tokens": 72,
+              "total_tokens": 5017,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "veterans stadium",
+              "value": "Veterans Stadium",
+              "start": 44,
+              "end": 60,
+              "clause": "what is the attendance when the location is veterans stadium, the game is more than 3",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicitly identified as location; Veterans Stadium appears in Location cells.",
+              "operator": "="
+            },
+            {
+              "surface": "more than 3",
+              "value": "3",
+              "start": 74,
+              "end": 85,
+              "clause": "the game is more than 3",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Explicitly identified as game; numeric comparison applies to the Game field.",
+              "operator": ">"
+            },
+            {
+              "surface": "2:21",
+              "value": "2:21",
+              "start": 102,
+              "end": 106,
+              "clause": "and the time is 2:21?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Explicitly identified as time; 2:21 appears in the Time field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "38ecc99c682057614264ccc8ae59415c5c4484ef598b6a2eb50cffc972cef274",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5063,
+              "completion_tokens": 12,
+              "total_tokens": 5075,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "veterans stadium",
+              "value": "Veterans Stadium",
+              "start": 44,
+              "end": 60,
+              "clause": "what is the attendance when the location is veterans stadium, the game is more than 3",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicitly identified as location; Veterans Stadium appears in Location cells.",
+              "operator": "="
+            },
+            {
+              "surface": "more than 3",
+              "value": "3",
+              "start": 74,
+              "end": 85,
+              "clause": "the game is more than 3",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Explicitly identified as game; numeric comparison applies to the Game field.",
+              "operator": ">"
+            },
+            {
+              "surface": "2:21",
+              "value": "2:21",
+              "start": 102,
+              "end": 106,
+              "clause": "and the time is 2:21?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Explicitly identified as time; 2:21 appears in the Time field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "feb95600e8690314320793b621faa3bcf497c3b66604103a1c7f628655fcb080",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5020,
+              "completion_tokens": 18,
+              "total_tokens": 5038,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "veterans stadium",
+              "value": "Veterans Stadium",
+              "start": 44,
+              "end": 60,
+              "clause": "what is the attendance when the location is veterans stadium, the game is more than 3",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicitly identified as location; Veterans Stadium appears in Location cells.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "more than 3",
+              "value": "3",
+              "start": 74,
+              "end": 85,
+              "clause": "the game is more than 3",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Explicitly identified as game; numeric comparison applies to the Game field.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2:21",
+              "value": "2:21",
+              "start": 102,
+              "end": 106,
+              "clause": "and the time is 2:21?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Explicitly identified as time; 2:21 appears in the Time field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "veterans stadium",
+              "value": "Veterans Stadium",
+              "start": 44,
+              "end": 60,
+              "clause": "what is the attendance when the location is veterans stadium, the game is more than 3",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicitly identified as location; Veterans Stadium appears in Location cells.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "more than 3",
+              "value": 3,
+              "start": 74,
+              "end": 85,
+              "clause": "the game is more than 3",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Explicitly identified as game; numeric comparison applies to the Game field.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2:21",
+              "value": "2:21",
+              "start": 102,
+              "end": 106,
+              "clause": "and the time is 2:21?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Explicitly identified as time; 2:21 appears in the Time field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "veterans stadium",
+              "value": "Veterans Stadium",
+              "start": 44,
+              "end": 60,
+              "clause": "what is the attendance when the location is veterans stadium, the game is more than 3",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicitly identified as location; Veterans Stadium appears in Location cells.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "more than 3",
+              "value": 3,
+              "start": 74,
+              "end": 85,
+              "clause": "the game is more than 3",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Explicitly identified as game; numeric comparison applies to the Game field.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2:21",
+              "value": "2:21",
+              "start": 102,
+              "end": 106,
+              "clause": "and the time is 2:21?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Explicitly identified as time; 2:21 appears in the Time field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              0,
+              "Veterans Stadium"
+            ],
+            [
+              0,
+              1,
+              3
+            ],
+            [
+              4,
+              0,
+              "2:21"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "veterans stadium",
+          "value": "Veterans Stadium",
+          "start": 44,
+          "end": 60
+        },
+        {
+          "surface": "more than 3",
+          "value": "3",
+          "start": 74,
+          "end": 85
+        },
+        {
+          "surface": "2:21",
+          "value": "2:21",
+          "start": 102,
+          "end": 106
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "veterans stadium",
+          "value": "Veterans Stadium",
+          "start": 44,
+          "end": 60,
+          "clause": "what is the attendance when the location is veterans stadium, the game is more than 3",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "Explicitly identified as location; Veterans Stadium appears in Location cells.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "more than 3",
+          "value": 3,
+          "start": 74,
+          "end": 85,
+          "clause": "the game is more than 3",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "Explicitly identified as game; numeric comparison applies to the Game field.",
+          "operator": ">",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "2:21",
+          "value": "2:21",
+          "start": 102,
+          "end": 106,
+          "clause": "and the time is 2:21?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "Explicitly identified as time; 2:21 appears in the Time field.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 3,
+      "conds": [
+        [
+          3,
+          0,
+          "Veterans Stadium"
+        ],
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          4,
+          0,
+          "2:21"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8641
+}

@@ -1,0 +1,139 @@
+{
+  "arm": "E1",
+  "position": 291,
+  "example_id": "test:11625:2-1205243-11",
+  "original_index": 11625,
+  "table_id": "2-1205243-11",
+  "question": "What is the total number of goals that Malaysia scored where they played more than 1 game, had more than 1 draw, lost fewer than 19 games, and had more than 3 goals scored against them?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        2,
+        2,
+        19
+      ],
+      [
+        4,
+        1,
+        3
+      ]
+    ],
+    "agg": 3
+  },
+  "prediction_conds": [
+    [
+      0,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      1
+    ],
+    [
+      2,
+      2,
+      19
+    ],
+    [
+      4,
+      1,
+      3
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": "gpt-5.6-sol",
+  "usage": {
+    "prompt_tokens": 10686,
+    "completion_tokens": 73,
+    "total_tokens": 10759,
+    "prompt_tokens_details": {
+      "cached_tokens": 4224
+    }
+  },
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        2,
+        2,
+        19
+      ],
+      [
+        4,
+        1,
+        3
+      ]
+    ],
+    "explanation": "Four AND conditions map directly to Games played > 1, Drawn* > 1, Lost < 19, and Goals against > 3.",
+    "version": "wikisql-where-prior-v1",
+    "tableId": "2-1205243-11",
+    "knowledgeIds": [
+      "g-eq",
+      "g-gt",
+      "g-lt",
+      "g-inclusive",
+      "g-literal",
+      "g-threshold",
+      "g-and",
+      "g-or",
+      "g-column",
+      "g-count",
+      "g-ambiguous",
+      "t-2-1205243-11-field-0",
+      "t-2-1205243-11-field-1",
+      "t-2-1205243-11-field-2",
+      "t-2-1205243-11-field-3",
+      "t-2-1205243-11-field-4",
+      "t-2-1205243-11-field-5",
+      "d-implicit-eq",
+      "d-explicit-eq",
+      "d-gt",
+      "d-lt-and-gt",
+      "d-with-two",
+      "d-literal-form",
+      "p-text",
+      "p-number",
+      "p-multi",
+      "p-unsupported"
+    ],
+    "promptSha256": "feb974b2128e657448ab2474f39acb647bb5819c49ec4e5ed9b2270af47a9e91",
+    "model": "gpt-5.6-sol",
+    "usage": {
+      "prompt_tokens": 10686,
+      "completion_tokens": 73,
+      "total_tokens": 10759,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      }
+    },
+    "latencyMs": 2908
+  },
+  "source": "where_prior_parse",
+  "safe_completed": true,
+  "elapsed_ms": 2922
+}

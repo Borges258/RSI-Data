@@ -1,0 +1,517 @@
+{
+  "arm": "E2",
+  "position": 133,
+  "example_id": "test:4782:2-10747009-16",
+  "original_index": 4782,
+  "table_id": "2-10747009-16",
+  "question": "What is the average crowd size when the home team scored 9.20 (74)?",
+  "gold_sql": {
+    "sel": 5,
+    "conds": [
+      [
+        1,
+        0,
+        "9.20 (74)"
+      ]
+    ],
+    "agg": 5
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "9.20 (74)"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "9.20 (74)"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "9.20 (74)",
+        "value": "9.20 (74)",
+        "start": 57,
+        "end": 66,
+        "clause": "What is the average crowd size when the home team scored 9.20 (74)?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The wording 'home team scored' directly identifies the 'Home team score' column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "9.20 (74)",
+        "value": "9.20 (74)",
+        "start": 57,
+        "end": 66
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the average crowd size when the home team scored 9.20 (74)?",
+      "table": {
+        "header": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ],
+        "page_title": "1927 VFL season",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 10747009,
+        "id": "2-10747009-16",
+        "section_title": "Round 16",
+        "rows": [
+          [
+            "Geelong",
+            "13.8 (86)",
+            "Melbourne",
+            "9.7 (61)",
+            "Corio Oval",
+            "17,200",
+            "27 August 1927"
+          ],
+          [
+            "Essendon",
+            "9.18 (72)",
+            "St Kilda",
+            "7.6 (48)",
+            "Windy Hill",
+            "9,000",
+            "27 August 1927"
+          ],
+          [
+            "Richmond",
+            "14.15 (99)",
+            "North Melbourne",
+            "9.8 (62)",
+            "Punt Road Oval",
+            "10,000",
+            "27 August 1927"
+          ],
+          [
+            "South Melbourne",
+            "9.20 (74)",
+            "Footscray",
+            "10.10 (70)",
+            "Lake Oval",
+            "9,000",
+            "27 August 1927"
+          ],
+          [
+            "Fitzroy",
+            "14.11 (95)",
+            "Collingwood",
+            "13.10 (88)",
+            "Brunswick Street Oval",
+            "25,000",
+            "27 August 1927"
+          ],
+          [
+            "Hawthorn",
+            "10.10 (70)",
+            "Carlton",
+            "14.14 (98)",
+            "Glenferrie Oval",
+            "8,000",
+            "27 August 1927"
+          ]
+        ],
+        "caption": "Round 16",
+        "headers": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-10747009-16",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "9.20 (74)",
+              "value": "9.20 (74)",
+              "start": 57,
+              "end": 66
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c358d0e4a1f87a62e38a019e93a4714417906172c79e17a53fa02518b9754e37",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4915,
+              "completion_tokens": 27,
+              "total_tokens": 4942,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "9.20 (74)",
+              "value": "9.20 (74)",
+              "start": 57,
+              "end": 66,
+              "clause": "What is the average crowd size when the home team scored 9.20 (74)?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "9.20 (74)",
+              "value": "9.20 (74)",
+              "start": 57,
+              "end": 66,
+              "clause": "What is the average crowd size when the home team scored 9.20 (74)?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "9.20 (74)",
+              "value": "9.20 (74)",
+              "start": 57,
+              "end": 66,
+              "clause": "What is the average crowd size when the home team scored 9.20 (74)?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The wording 'home team scored' directly identifies the 'Home team score' column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "8f5653b1e7e2b2b560ce0e95c658058a6e6e04937834b30d8ff4283e1a59e356",
+            "knowledgeIds": [],
+            "usage": {
+              "attribution": {
+                "items": {
+                  "msg_082ad129ca96dde8016b08fdbbe11087d1887b8bcd91e8c730": {
+                    "input_tokens": 136,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 136,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_082ad129ca96dde8016b08fdbbe11087d19f9b199154f56575": {
+                    "input_tokens": 383,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 383,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_082ad129ca96dde8016b08fdbbe11087d1b391042b4f4bb71d": {
+                    "input_tokens": 64,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 64,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_082ad129ca96dde8016b08fdc8404087d199f3d1f191916e0f": {
+                    "input_tokens": 0,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 40,
+                    "content": [
+                      {
+                        "input_tokens": 0,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 40
+                      }
+                    ]
+                  },
+                  "rs_082ad129ca96dde8016b08fdc8131c87d1ab129be76c6c1071": {
+                    "input_tokens": 2,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 44
+                  }
+                },
+                "request_fields": {
+                  "instructions": {
+                    "input_tokens": 4380,
+                    "cached_tokens": 3968,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0
+                  }
+                }
+              },
+              "prompt_tokens": 4965,
+              "completion_tokens": 84,
+              "total_tokens": 5049,
+              "prompt_tokens_details": {
+                "cache_write_tokens_details": {
+                  "ttl_30m_tokens": 0,
+                  "ttl_12h_tokens": 0
+                },
+                "cached_tokens": 3968
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 44
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "9.20 (74)",
+              "value": "9.20 (74)",
+              "start": 57,
+              "end": 66,
+              "clause": "What is the average crowd size when the home team scored 9.20 (74)?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The wording 'home team scored' directly identifies the 'Home team score' column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f470f511dafd3af11ea3c17a6348eed7a83c282c2384480a1a87b10757f1570c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5026,
+              "completion_tokens": 9,
+              "total_tokens": 5035,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "9.20 (74)",
+              "value": "9.20 (74)",
+              "start": 57,
+              "end": 66,
+              "clause": "What is the average crowd size when the home team scored 9.20 (74)?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The wording 'home team scored' directly identifies the 'Home team score' column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "1090fc98916a96f1e943ce82534f1df0526c3b8c4279dc3ea9a94cb0b8ae3d6d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4977,
+              "completion_tokens": 15,
+              "total_tokens": 4992,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "9.20 (74)",
+              "value": "9.20 (74)",
+              "start": 57,
+              "end": 66,
+              "clause": "What is the average crowd size when the home team scored 9.20 (74)?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The wording 'home team scored' directly identifies the 'Home team score' column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "9.20 (74)",
+              "value": "9.20 (74)",
+              "start": 57,
+              "end": 66,
+              "clause": "What is the average crowd size when the home team scored 9.20 (74)?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The wording 'home team scored' directly identifies the 'Home team score' column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "9.20 (74)",
+              "value": "9.20 (74)",
+              "start": 57,
+              "end": 66,
+              "clause": "What is the average crowd size when the home team scored 9.20 (74)?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The wording 'home team scored' directly identifies the 'Home team score' column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              "9.20 (74)"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "9.20 (74)",
+          "value": "9.20 (74)",
+          "start": 57,
+          "end": 66
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "9.20 (74)",
+          "value": "9.20 (74)",
+          "start": 57,
+          "end": 66,
+          "clause": "What is the average crowd size when the home team scored 9.20 (74)?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The wording 'home team scored' directly identifies the 'Home team score' column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          1,
+          0,
+          "9.20 (74)"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 41204
+}

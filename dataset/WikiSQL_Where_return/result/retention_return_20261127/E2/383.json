@@ -1,0 +1,642 @@
+{
+  "arm": "E2",
+  "position": 383,
+  "example_id": "test:15076:2-1252109-3",
+  "original_index": 15076,
+  "table_id": "2-1252109-3",
+  "question": "What is the least amount of points the entrant Simoniz received before 1960?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        0,
+        2,
+        1960
+      ],
+      [
+        1,
+        0,
+        "simoniz"
+      ]
+    ],
+    "agg": 2
+  },
+  "prediction_conds": [],
+  "status": "GROUNDING_FAILED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "GROUNDING_FAILED",
+    "valid": false,
+    "errors": [
+      "condition 1: grounding NO_MATCH",
+      "condition 1: nonnumeric value for real column"
+    ],
+    "conditions": [
+      {
+        "surface": "Simoniz",
+        "value": "Simoniz",
+        "start": 47,
+        "end": 54,
+        "clause": "What is the least amount of points the entrant Simoniz received before 1960?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The question explicitly identifies Simoniz as the entrant, matching the Entrant column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "before 1960",
+        "value": "< 1960",
+        "start": 64,
+        "end": 75,
+        "clause": "What is the least amount of points the entrant Simoniz received before 1960?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "Before 1960 is a temporal comparison matching the Year column.",
+        "operator": "<",
+        "grounded": false,
+        "groundingStatus": "NO_MATCH",
+        "groundingReview": {
+          "column": 0,
+          "reason": "“Before 1960” is a temporal constraint on the Year field, whose cells contain years including 1959 and 1960."
+        }
+      }
+    ],
+    "stage": "WHERE_CONDITION_VALIDATE",
+    "originalConditions": [
+      {
+        "surface": "Simoniz",
+        "value": "Simoniz",
+        "start": 47,
+        "end": 54
+      },
+      {
+        "surface": "before 1960",
+        "value": "< 1960",
+        "start": 64,
+        "end": 75
+      }
+    ],
+    "halt": true,
+    "completed": false,
+    "conds": [],
+    "warnings": [
+      "value model disagreed with extracted question span; original retained"
+    ],
+    "request": {
+      "question": "What is the least amount of points the entrant Simoniz received before 1960?",
+      "table": {
+        "header": [
+          "Year",
+          "Entrant",
+          "Chassis",
+          "Engine",
+          "Points"
+        ],
+        "page_title": "Jim Rathmann",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "real"
+        ],
+        "page_id": 1252109,
+        "id": "2-1252109-3",
+        "section_title": "Complete Formula One World Championship results",
+        "rows": [
+          [
+            "1950",
+            "Pioneer Auto Repair",
+            "Wetteroth",
+            "Offenhauser L4",
+            "0"
+          ],
+          [
+            "1952",
+            "Grancor-Wynn's Oil",
+            "Kurtis Kraft 3000",
+            "Offenhauser L4",
+            "6"
+          ],
+          [
+            "1953",
+            "Travelon Trailer",
+            "Kurtis Kraft 500B",
+            "Offenhauser L4",
+            "0"
+          ],
+          [
+            "1954",
+            "Bardahl",
+            "Kurtis Kraft 500C",
+            "Offenhauser L4",
+            "0"
+          ],
+          [
+            "1955",
+            "Belond Miracle Power",
+            "Epperly",
+            "Offenhauser L4",
+            "0"
+          ],
+          [
+            "1956",
+            "Hopkins",
+            "Kurtis Kraft 500C",
+            "Offenhauser L4",
+            "0"
+          ],
+          [
+            "1957",
+            "Chiropractic",
+            "Epperly Indy Roadster",
+            "Offenhauser L4",
+            "7"
+          ],
+          [
+            "1958",
+            "Leader Card 500 Roadster",
+            "Epperly Indy Roadster",
+            "Offenhauser L4",
+            "2"
+          ],
+          [
+            "1959",
+            "Simoniz",
+            "Watson Indy Roadster",
+            "Offenhauser L4",
+            "6"
+          ],
+          [
+            "1960",
+            "Ken-Paul",
+            "Watson Indy Roadster",
+            "Offenhauser L4",
+            "8"
+          ]
+        ],
+        "caption": "Complete Formula One World Championship results",
+        "headers": [
+          "Year",
+          "Entrant",
+          "Chassis",
+          "Engine",
+          "Points"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-1252109-3",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 9,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "Simoniz",
+              "value": "Simoniz",
+              "start": 47,
+              "end": 54
+            },
+            {
+              "surface": "before 1960",
+              "value": "< 1960",
+              "start": 64,
+              "end": 75
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c08424d078be5aa7a4f42a7f590ee343494717e176a45a015b3a9659ae8840db",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4909,
+              "completion_tokens": 33,
+              "total_tokens": 4942,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Simoniz",
+              "value": "Simoniz",
+              "start": 47,
+              "end": 54,
+              "clause": "What is the least amount of points the entrant Simoniz received before 1960?"
+            },
+            {
+              "surface": "before 1960",
+              "value": "< 1960",
+              "start": 64,
+              "end": 75,
+              "clause": "What is the least amount of points the entrant Simoniz received before 1960?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Simoniz",
+              "value": "Simoniz",
+              "start": 47,
+              "end": 54,
+              "clause": "What is the least amount of points the entrant Simoniz received before 1960?"
+            },
+            {
+              "surface": "before 1960",
+              "value": "< 1960",
+              "start": 64,
+              "end": 75,
+              "clause": "What is the least amount of points the entrant Simoniz received before 1960?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Simoniz",
+              "value": "Simoniz",
+              "start": 47,
+              "end": 54,
+              "clause": "What is the least amount of points the entrant Simoniz received before 1960?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly identifies Simoniz as the entrant, matching the Entrant column."
+            },
+            {
+              "surface": "before 1960",
+              "value": "< 1960",
+              "start": 64,
+              "end": 75,
+              "clause": "What is the least amount of points the entrant Simoniz received before 1960?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Before 1960 is a temporal comparison matching the Year column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "46d1b4d397e7b1a5499c53d725b9d15eb46711a45fa4b9547e48d285b7b1c9a1",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4992,
+              "completion_tokens": 54,
+              "total_tokens": 5046,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Simoniz",
+              "value": "Simoniz",
+              "start": 47,
+              "end": 54,
+              "clause": "What is the least amount of points the entrant Simoniz received before 1960?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly identifies Simoniz as the entrant, matching the Entrant column.",
+              "operator": "="
+            },
+            {
+              "surface": "before 1960",
+              "value": "< 1960",
+              "start": 64,
+              "end": 75,
+              "clause": "What is the least amount of points the entrant Simoniz received before 1960?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Before 1960 is a temporal comparison matching the Year column.",
+              "operator": "<"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ddb89b97a5c9e145e20410a244989dd1ef02b5462fa2ef1d30f8471f1a9d121c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5081,
+              "completion_tokens": 12,
+              "total_tokens": 5093,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "warnings": [
+            "value model disagreed with extracted question span; original retained"
+          ],
+          "conditions": [
+            {
+              "surface": "Simoniz",
+              "value": "Simoniz",
+              "start": 47,
+              "end": 54,
+              "clause": "What is the least amount of points the entrant Simoniz received before 1960?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly identifies Simoniz as the entrant, matching the Entrant column.",
+              "operator": "="
+            },
+            {
+              "surface": "before 1960",
+              "value": "< 1960",
+              "start": 64,
+              "end": 75,
+              "clause": "What is the least amount of points the entrant Simoniz received before 1960?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Before 1960 is a temporal comparison matching the Year column.",
+              "operator": "<"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "2d6b25d7c85712b4a22cc4a470d27d8f790fb957e7bce370bf59a0f125d7cedf",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5035,
+              "completion_tokens": 13,
+              "total_tokens": 5048,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Simoniz",
+              "value": "Simoniz",
+              "start": 47,
+              "end": 54,
+              "clause": "What is the least amount of points the entrant Simoniz received before 1960?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly identifies Simoniz as the entrant, matching the Entrant column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "before 1960",
+              "value": "< 1960",
+              "start": 64,
+              "end": 75,
+              "clause": "What is the least amount of points the entrant Simoniz received before 1960?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Before 1960 is a temporal comparison matching the Year column.",
+              "operator": "<",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 0,
+                "reason": "“Before 1960” is a temporal constraint on the Year field, whose cells contain years including 1959 and 1960."
+              }
+            }
+          ],
+          "reviewModelCalls": [
+            {
+              "model": "gpt-5.6-sol",
+              "promptSha256": "93ea7a23c56cd062f7fa4e478ebd672579c87ed767614b551a3a7205cfd13f4f",
+              "knowledgeIds": [],
+              "usage": {
+                "prompt_tokens": 5003,
+                "completion_tokens": 66,
+                "total_tokens": 5069,
+                "prompt_tokens_details": {
+                  "cached_tokens": 4224
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 24
+                }
+              }
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "93ea7a23c56cd062f7fa4e478ebd672579c87ed767614b551a3a7205cfd13f4f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5003,
+              "completion_tokens": 66,
+              "total_tokens": 5069,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 24
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Simoniz",
+              "value": "Simoniz",
+              "start": 47,
+              "end": 54,
+              "clause": "What is the least amount of points the entrant Simoniz received before 1960?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly identifies Simoniz as the entrant, matching the Entrant column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "before 1960",
+              "value": "< 1960",
+              "start": 64,
+              "end": 75,
+              "clause": "What is the least amount of points the entrant Simoniz received before 1960?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Before 1960 is a temporal comparison matching the Year column.",
+              "operator": "<",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 0,
+                "reason": "“Before 1960” is a temporal constraint on the Year field, whose cells contain years including 1959 and 1960."
+              }
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "GROUNDING_FAILED",
+          "valid": false,
+          "errors": [
+            "condition 1: grounding NO_MATCH",
+            "condition 1: nonnumeric value for real column"
+          ],
+          "conditions": [
+            {
+              "surface": "Simoniz",
+              "value": "Simoniz",
+              "start": 47,
+              "end": 54,
+              "clause": "What is the least amount of points the entrant Simoniz received before 1960?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly identifies Simoniz as the entrant, matching the Entrant column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "before 1960",
+              "value": "< 1960",
+              "start": 64,
+              "end": 75,
+              "clause": "What is the least amount of points the entrant Simoniz received before 1960?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Before 1960 is a temporal comparison matching the Year column.",
+              "operator": "<",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 0,
+                "reason": "“Before 1960” is a temporal constraint on the Year field, whose cells contain years including 1959 and 1960."
+              }
+            }
+          ]
+        }
+      },
+      "warnings": [
+        "value model disagreed with extracted question span; original retained"
+      ],
+      "execution": {
+        "status": "GROUNDING_FAILED",
+        "stage": "WHERE_CONDITION_VALIDATE",
+        "halt": true,
+        "completed": false,
+        "errors": [
+          "condition 1: grounding NO_MATCH",
+          "condition 1: nonnumeric value for real column"
+        ],
+        "warnings": [
+          "value model disagreed with extracted question span; original retained"
+        ]
+      },
+      "originalConditions": [
+        {
+          "surface": "Simoniz",
+          "value": "Simoniz",
+          "start": 47,
+          "end": 54
+        },
+        {
+          "surface": "before 1960",
+          "value": "< 1960",
+          "start": 64,
+          "end": 75
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Simoniz",
+          "value": "Simoniz",
+          "start": 47,
+          "end": 54,
+          "clause": "What is the least amount of points the entrant Simoniz received before 1960?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The question explicitly identifies Simoniz as the entrant, matching the Entrant column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "before 1960",
+          "value": "< 1960",
+          "start": 64,
+          "end": 75,
+          "clause": "What is the least amount of points the entrant Simoniz received before 1960?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "Before 1960 is a temporal comparison matching the Year column.",
+          "operator": "<",
+          "grounded": false,
+          "groundingStatus": "NO_MATCH",
+          "groundingReview": {
+            "column": 0,
+            "reason": "“Before 1960” is a temporal constraint on the Year field, whose cells contain years including 1959 and 1960."
+          }
+        }
+      ],
+      "count": 2
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": false,
+  "elapsed_ms": 10515
+}

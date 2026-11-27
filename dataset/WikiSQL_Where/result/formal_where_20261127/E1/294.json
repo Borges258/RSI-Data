@@ -1,0 +1,109 @@
+{
+  "arm": "E1",
+  "position": 294,
+  "example_id": "test:14564:2-1219572-1",
+  "original_index": 14564,
+  "table_id": "2-1219572-1",
+  "question": "What game, played on October 17 in front of 49,347 fans, had the lowest score?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        1,
+        0,
+        "october 17"
+      ],
+      [
+        5,
+        0,
+        "49,347"
+      ]
+    ],
+    "agg": 2
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "October 17"
+    ],
+    [
+      5,
+      0,
+      49347
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": "gpt-5.6-sol",
+  "usage": {
+    "prompt_tokens": 9814,
+    "completion_tokens": 55,
+    "total_tokens": 9869,
+    "prompt_tokens_details": {
+      "cached_tokens": 4224
+    }
+  },
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "October 17"
+      ],
+      [
+        5,
+        0,
+        49347
+      ]
+    ],
+    "explanation": "Date and attendance are explicit equality filters; lowest score describes the requested result, not an additional WHERE condition.",
+    "version": "wikisql-where-prior-v1",
+    "tableId": "2-1219572-1",
+    "knowledgeIds": [
+      "g-eq",
+      "g-gt",
+      "g-lt",
+      "g-inclusive",
+      "g-literal",
+      "g-threshold",
+      "g-and",
+      "g-or",
+      "g-column",
+      "g-count",
+      "g-ambiguous",
+      "t-2-1219572-1-field-0",
+      "t-2-1219572-1-field-1",
+      "t-2-1219572-1-field-2",
+      "t-2-1219572-1-field-3",
+      "t-2-1219572-1-field-4",
+      "t-2-1219572-1-field-5",
+      "d-implicit-eq",
+      "d-explicit-eq",
+      "d-gt",
+      "d-lt-and-gt",
+      "d-with-two",
+      "d-literal-form",
+      "p-text",
+      "p-number",
+      "p-multi",
+      "p-unsupported"
+    ],
+    "promptSha256": "50f8bfebf43b59675d7676938304e70df831077add20dc7236781b81d084e5df",
+    "model": "gpt-5.6-sol",
+    "usage": {
+      "prompt_tokens": 9814,
+      "completion_tokens": 55,
+      "total_tokens": 9869,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      }
+    },
+    "latencyMs": 2250
+  },
+  "source": "where_prior_parse",
+  "safe_completed": true,
+  "elapsed_ms": 2281
+}

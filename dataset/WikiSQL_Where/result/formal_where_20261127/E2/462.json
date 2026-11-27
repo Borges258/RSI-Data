@@ -1,0 +1,861 @@
+{
+  "arm": "E2",
+  "position": 462,
+  "example_id": "test:4903:2-1054817-1",
+  "original_index": 4903,
+  "table_id": "2-1054817-1",
+  "question": "How many teams played before 2008, had a K League Classic of runners-up, and a Manager of kim ho?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        0,
+        2,
+        2008
+      ],
+      [
+        2,
+        0,
+        "runners-up"
+      ],
+      [
+        5,
+        0,
+        "kim ho"
+      ]
+    ],
+    "agg": 4
+  },
+  "prediction_conds": [],
+  "status": "GROUNDING_FAILED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "GROUNDING_FAILED",
+    "valid": false,
+    "errors": [
+      "condition 0: grounding NO_MATCH",
+      "condition 0: nonnumeric value for real column"
+    ],
+    "conditions": [
+      {
+        "surface": "before 2008",
+        "value": "< 2008",
+        "start": 22,
+        "end": 33,
+        "clause": "How many teams played before 2008, had a K League Classic of runners-up,",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "'before 2008' refers to the Season field, whose values are years.",
+        "operator": "<",
+        "grounded": false,
+        "groundingStatus": "NO_MATCH",
+        "groundingReview": {
+          "column": 0,
+          "reason": "'before 2008' is a temporal constraint on the Season column, whose cells are years including 1996 through 2007."
+        }
+      },
+      {
+        "surface": "runners-up",
+        "value": "Runners-up",
+        "start": 61,
+        "end": 71,
+        "clause": "had a K League Classic of runners-up,",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The clause explicitly names K League Classic, which contains 'Runners-up'.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "kim ho",
+        "value": "Kim Ho",
+        "start": 90,
+        "end": 96,
+        "clause": "and a Manager of kim ho?",
+        "columnIndex": 5,
+        "columnCandidates": [
+          5
+        ],
+        "columnMatchReason": "The clause explicitly names Manager, which contains 'Kim Ho'.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "stage": "WHERE_CONDITION_VALIDATE",
+    "originalConditions": [
+      {
+        "surface": "before 2008",
+        "value": "< 2008",
+        "start": 22,
+        "end": 33
+      },
+      {
+        "surface": "runners-up",
+        "value": "Runners-up",
+        "start": 61,
+        "end": 71
+      },
+      {
+        "surface": "kim ho",
+        "value": "Kim Ho",
+        "start": 90,
+        "end": 96
+      }
+    ],
+    "halt": true,
+    "completed": false,
+    "conds": [],
+    "warnings": [
+      "value model disagreed with extracted question span; original retained"
+    ],
+    "request": {
+      "question": "How many teams played before 2008, had a K League Classic of runners-up, and a Manager of kim ho?",
+      "table": {
+        "header": [
+          "Season",
+          "Teams",
+          "K League Classic",
+          "K-League Cup",
+          "FA Cup",
+          "Manager"
+        ],
+        "page_title": "Suwon Samsung Bluewings",
+        "types": [
+          "real",
+          "real",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 1054817,
+        "id": "2-1054817-1",
+        "section_title": "Season records",
+        "rows": [
+          [
+            "1996",
+            "9",
+            "Runners-up",
+            "6th( A )",
+            "Runners-up",
+            "Kim Ho"
+          ],
+          [
+            "1997",
+            "10",
+            "5th",
+            "6th( A ) 3rd( P )",
+            "Quarter-finals",
+            "Kim Ho"
+          ],
+          [
+            "1998",
+            "10",
+            "Champions",
+            "6th( A ) 4th( PM )",
+            "Quarter-finals",
+            "Kim Ho"
+          ],
+          [
+            "1999",
+            "10",
+            "Champions",
+            "Champions( A ) Champions( D )",
+            "1st round",
+            "Kim Ho"
+          ],
+          [
+            "2000",
+            "10",
+            "5th",
+            "Champions( A ) 8th( D )",
+            "Quarter-finals",
+            "Kim Ho"
+          ],
+          [
+            "2001",
+            "10",
+            "3rd",
+            "Champions( A )",
+            "1st round",
+            "Kim Ho"
+          ],
+          [
+            "2002",
+            "10",
+            "3rd",
+            "4th( A )",
+            "Champions",
+            "Kim Ho"
+          ],
+          [
+            "2003",
+            "12",
+            "3rd",
+            "No competition",
+            "Round of 32",
+            "Kim Ho"
+          ],
+          [
+            "2004",
+            "13",
+            "Champions",
+            "4th( S )",
+            "Round of 16",
+            "Cha Bum-Kun"
+          ],
+          [
+            "2005",
+            "13",
+            "10th",
+            "Champions( S )",
+            "Round of 16",
+            "Cha Bum-Kun"
+          ],
+          [
+            "2006",
+            "14",
+            "Runners-up",
+            "12th( S )",
+            "Runners-up",
+            "Cha Bum-Kun"
+          ],
+          [
+            "2007",
+            "14",
+            "3rd",
+            "Semi-finals( S )",
+            "Round of 16",
+            "Cha Bum-Kun"
+          ],
+          [
+            "2008",
+            "14",
+            "Champions",
+            "Champions( S )",
+            "Round of 16",
+            "Cha Bum-Kun"
+          ],
+          [
+            "2009",
+            "15",
+            "10th",
+            "Quarter-finals( PK )",
+            "Champions",
+            "Cha Bum-Kun"
+          ],
+          [
+            "2010",
+            "15",
+            "7th",
+            "Semi-finals( PC )",
+            "Champions",
+            "Cha Bum-Kun Yoon Sung-Hyo"
+          ],
+          [
+            "2011",
+            "16",
+            "4th",
+            "Semi-finals( RC )",
+            "Runners-up",
+            "Yoon Sung-Hyo"
+          ],
+          [
+            "2012",
+            "16",
+            "4th",
+            "No Competition",
+            "Quarter-finals",
+            "Yoon Sung-Hyo"
+          ]
+        ],
+        "caption": "Season records",
+        "headers": [
+          "Season",
+          "Teams",
+          "K League Classic",
+          "K-League Cup",
+          "FA Cup",
+          "Manager"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-1054817-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 9,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 3,
+          "conditions": [
+            {
+              "surface": "before 2008",
+              "value": "< 2008",
+              "start": 22,
+              "end": 33
+            },
+            {
+              "surface": "runners-up",
+              "value": "Runners-up",
+              "start": 61,
+              "end": 71
+            },
+            {
+              "surface": "kim ho",
+              "value": "Kim Ho",
+              "start": 90,
+              "end": 96
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c87f417c40910f914e0aba4e13438074eeb867b5bd6f2a5b6d43a8ebfb7004f1",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5110,
+              "completion_tokens": 45,
+              "total_tokens": 5155,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "before 2008",
+              "value": "< 2008",
+              "start": 22,
+              "end": 33,
+              "clause": "How many teams played before 2008, had a K League Classic of runners-up,"
+            },
+            {
+              "surface": "runners-up",
+              "value": "Runners-up",
+              "start": 61,
+              "end": 71,
+              "clause": "had a K League Classic of runners-up,"
+            },
+            {
+              "surface": "kim ho",
+              "value": "Kim Ho",
+              "start": 90,
+              "end": 96,
+              "clause": "and a Manager of kim ho?"
+            }
+          ],
+          "count": 3
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "before 2008",
+              "value": "< 2008",
+              "start": 22,
+              "end": 33,
+              "clause": "How many teams played before 2008, had a K League Classic of runners-up,"
+            },
+            {
+              "surface": "runners-up",
+              "value": "Runners-up",
+              "start": 61,
+              "end": 71,
+              "clause": "had a K League Classic of runners-up,"
+            },
+            {
+              "surface": "kim ho",
+              "value": "Kim Ho",
+              "start": 90,
+              "end": 96,
+              "clause": "and a Manager of kim ho?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "before 2008",
+              "value": "< 2008",
+              "start": 22,
+              "end": 33,
+              "clause": "How many teams played before 2008, had a K League Classic of runners-up,",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'before 2008' refers to the Season field, whose values are years."
+            },
+            {
+              "surface": "runners-up",
+              "value": "Runners-up",
+              "start": 61,
+              "end": 71,
+              "clause": "had a K League Classic of runners-up,",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The clause explicitly names K League Classic, which contains 'Runners-up'."
+            },
+            {
+              "surface": "kim ho",
+              "value": "Kim Ho",
+              "start": 90,
+              "end": 96,
+              "clause": "and a Manager of kim ho?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The clause explicitly names Manager, which contains 'Kim Ho'."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "13478fa2684a3909fbf8296a95ce7f688bf333f6aaac777125152c4358a29c82",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5217,
+              "completion_tokens": 74,
+              "total_tokens": 5291,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "before 2008",
+              "value": "< 2008",
+              "start": 22,
+              "end": 33,
+              "clause": "How many teams played before 2008, had a K League Classic of runners-up,",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'before 2008' refers to the Season field, whose values are years.",
+              "operator": "<"
+            },
+            {
+              "surface": "runners-up",
+              "value": "Runners-up",
+              "start": 61,
+              "end": 71,
+              "clause": "had a K League Classic of runners-up,",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The clause explicitly names K League Classic, which contains 'Runners-up'.",
+              "operator": "="
+            },
+            {
+              "surface": "kim ho",
+              "value": "Kim Ho",
+              "start": 90,
+              "end": 96,
+              "clause": "and a Manager of kim ho?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The clause explicitly names Manager, which contains 'Kim Ho'.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "92dc015125ca9bb3b098e96aea3b37befaad3af9effa832f6cde4340d4e6db25",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5337,
+              "completion_tokens": 13,
+              "total_tokens": 5350,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "warnings": [
+            "value model disagreed with extracted question span; original retained"
+          ],
+          "conditions": [
+            {
+              "surface": "before 2008",
+              "value": "< 2008",
+              "start": 22,
+              "end": 33,
+              "clause": "How many teams played before 2008, had a K League Classic of runners-up,",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'before 2008' refers to the Season field, whose values are years.",
+              "operator": "<"
+            },
+            {
+              "surface": "runners-up",
+              "value": "Runners-up",
+              "start": 61,
+              "end": 71,
+              "clause": "had a K League Classic of runners-up,",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The clause explicitly names K League Classic, which contains 'Runners-up'.",
+              "operator": "="
+            },
+            {
+              "surface": "kim ho",
+              "value": "Kim Ho",
+              "start": 90,
+              "end": 96,
+              "clause": "and a Manager of kim ho?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The clause explicitly names Manager, which contains 'Kim Ho'.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ed2a33bc0edef7b9053d4dd412fa0b7478ac5dc8c0aa76d612c868da173d3a3f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5294,
+              "completion_tokens": 18,
+              "total_tokens": 5312,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "before 2008",
+              "value": "< 2008",
+              "start": 22,
+              "end": 33,
+              "clause": "How many teams played before 2008, had a K League Classic of runners-up,",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'before 2008' refers to the Season field, whose values are years.",
+              "operator": "<",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 0,
+                "reason": "'before 2008' is a temporal constraint on the Season column, whose cells are years including 1996 through 2007."
+              }
+            },
+            {
+              "surface": "runners-up",
+              "value": "Runners-up",
+              "start": 61,
+              "end": 71,
+              "clause": "had a K League Classic of runners-up,",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The clause explicitly names K League Classic, which contains 'Runners-up'.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "kim ho",
+              "value": "Kim Ho",
+              "start": 90,
+              "end": 96,
+              "clause": "and a Manager of kim ho?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The clause explicitly names Manager, which contains 'Kim Ho'.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ],
+          "reviewModelCalls": [
+            {
+              "model": "gpt-5.6-sol",
+              "promptSha256": "bb247b259cf94043ee70ee3b9cdeb235cd77b64d37f2bff897b38cb5470f979f",
+              "knowledgeIds": [],
+              "usage": {
+                "prompt_tokens": 5208,
+                "completion_tokens": 70,
+                "total_tokens": 5278,
+                "prompt_tokens_details": {
+                  "cached_tokens": 4224
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 29
+                }
+              }
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "bb247b259cf94043ee70ee3b9cdeb235cd77b64d37f2bff897b38cb5470f979f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5208,
+              "completion_tokens": 70,
+              "total_tokens": 5278,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 29
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "before 2008",
+              "value": "< 2008",
+              "start": 22,
+              "end": 33,
+              "clause": "How many teams played before 2008, had a K League Classic of runners-up,",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'before 2008' refers to the Season field, whose values are years.",
+              "operator": "<",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 0,
+                "reason": "'before 2008' is a temporal constraint on the Season column, whose cells are years including 1996 through 2007."
+              }
+            },
+            {
+              "surface": "runners-up",
+              "value": "Runners-up",
+              "start": 61,
+              "end": 71,
+              "clause": "had a K League Classic of runners-up,",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The clause explicitly names K League Classic, which contains 'Runners-up'.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "kim ho",
+              "value": "Kim Ho",
+              "start": 90,
+              "end": 96,
+              "clause": "and a Manager of kim ho?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The clause explicitly names Manager, which contains 'Kim Ho'.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "GROUNDING_FAILED",
+          "valid": false,
+          "errors": [
+            "condition 0: grounding NO_MATCH",
+            "condition 0: nonnumeric value for real column"
+          ],
+          "conditions": [
+            {
+              "surface": "before 2008",
+              "value": "< 2008",
+              "start": 22,
+              "end": 33,
+              "clause": "How many teams played before 2008, had a K League Classic of runners-up,",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'before 2008' refers to the Season field, whose values are years.",
+              "operator": "<",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 0,
+                "reason": "'before 2008' is a temporal constraint on the Season column, whose cells are years including 1996 through 2007."
+              }
+            },
+            {
+              "surface": "runners-up",
+              "value": "Runners-up",
+              "start": 61,
+              "end": 71,
+              "clause": "had a K League Classic of runners-up,",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The clause explicitly names K League Classic, which contains 'Runners-up'.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "kim ho",
+              "value": "Kim Ho",
+              "start": 90,
+              "end": 96,
+              "clause": "and a Manager of kim ho?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The clause explicitly names Manager, which contains 'Kim Ho'.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        }
+      },
+      "warnings": [
+        "value model disagreed with extracted question span; original retained"
+      ],
+      "execution": {
+        "status": "GROUNDING_FAILED",
+        "stage": "WHERE_CONDITION_VALIDATE",
+        "halt": true,
+        "completed": false,
+        "errors": [
+          "condition 0: grounding NO_MATCH",
+          "condition 0: nonnumeric value for real column"
+        ],
+        "warnings": [
+          "value model disagreed with extracted question span; original retained"
+        ]
+      },
+      "originalConditions": [
+        {
+          "surface": "before 2008",
+          "value": "< 2008",
+          "start": 22,
+          "end": 33
+        },
+        {
+          "surface": "runners-up",
+          "value": "Runners-up",
+          "start": 61,
+          "end": 71
+        },
+        {
+          "surface": "kim ho",
+          "value": "Kim Ho",
+          "start": 90,
+          "end": 96
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "before 2008",
+          "value": "< 2008",
+          "start": 22,
+          "end": 33,
+          "clause": "How many teams played before 2008, had a K League Classic of runners-up,",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "'before 2008' refers to the Season field, whose values are years.",
+          "operator": "<",
+          "grounded": false,
+          "groundingStatus": "NO_MATCH",
+          "groundingReview": {
+            "column": 0,
+            "reason": "'before 2008' is a temporal constraint on the Season column, whose cells are years including 1996 through 2007."
+          }
+        },
+        {
+          "surface": "runners-up",
+          "value": "Runners-up",
+          "start": 61,
+          "end": 71,
+          "clause": "had a K League Classic of runners-up,",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The clause explicitly names K League Classic, which contains 'Runners-up'.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "kim ho",
+          "value": "Kim Ho",
+          "start": 90,
+          "end": 96,
+          "clause": "and a Manager of kim ho?",
+          "columnIndex": 5,
+          "columnCandidates": [
+            5
+          ],
+          "columnMatchReason": "The clause explicitly names Manager, which contains 'Kim Ho'.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 3
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": false,
+  "elapsed_ms": 10782
+}

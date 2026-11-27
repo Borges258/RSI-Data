@@ -1,0 +1,642 @@
+{
+  "arm": "E2",
+  "position": 521,
+  "example_id": "test:13236:2-176533-1",
+  "original_index": 13236,
+  "table_id": "2-176533-1",
+  "question": "With an Area km 2 of less than 130.68, what is McAdam's Population?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        2,
+        2,
+        130.68
+      ],
+      [
+        0,
+        0,
+        "mcadam"
+      ]
+    ],
+    "agg": 4
+  },
+  "prediction_conds": [],
+  "status": "GROUNDING_FAILED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "GROUNDING_FAILED",
+    "valid": false,
+    "errors": [
+      "condition 0: grounding NO_MATCH",
+      "condition 0: nonnumeric value for real column"
+    ],
+    "conditions": [
+      {
+        "surface": "less than 130.68",
+        "value": "< 130.68",
+        "start": 21,
+        "end": 37,
+        "clause": "With an Area km 2 of less than 130.68",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "Explicitly refers to the 'Area km 2' field and uses a numeric less-than comparison.",
+        "operator": "<",
+        "grounded": false,
+        "groundingStatus": "NO_MATCH",
+        "groundingReview": {
+          "column": 2,
+          "reason": "The question explicitly names 'Area km 2', and column 2 contains numeric area values supporting a less-than comparison with 130.68."
+        }
+      },
+      {
+        "surface": "McAdam",
+        "value": "McAdam",
+        "start": 47,
+        "end": 53,
+        "clause": "what is McAdam's Population?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "McAdam is the entity whose population is requested and appears under 'Official Name'.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "stage": "WHERE_CONDITION_VALIDATE",
+    "originalConditions": [
+      {
+        "surface": "less than 130.68",
+        "value": "< 130.68",
+        "start": 21,
+        "end": 37
+      },
+      {
+        "surface": "McAdam",
+        "value": "McAdam",
+        "start": 47,
+        "end": 53
+      }
+    ],
+    "halt": true,
+    "completed": false,
+    "conds": [],
+    "warnings": [
+      "value model disagreed with extracted question span; original retained"
+    ],
+    "request": {
+      "question": "With an Area km 2 of less than 130.68, what is McAdam's Population?",
+      "table": {
+        "header": [
+          "Official Name",
+          "Status",
+          "Area km 2",
+          "Population",
+          "Census Ranking"
+        ],
+        "page_title": "York County, New Brunswick",
+        "types": [
+          "text",
+          "text",
+          "real",
+          "real",
+          "text"
+        ],
+        "page_id": 176533,
+        "id": "2-176533-1",
+        "section_title": "Communities",
+        "rows": [
+          [
+            "Fredericton",
+            "City",
+            "130.68",
+            "56,224",
+            "90 of 5,008"
+          ],
+          [
+            "New Maryland",
+            "Village",
+            "21.23",
+            "4,232",
+            "791 of 5,008"
+          ],
+          [
+            "Upper Miramichi",
+            "Rural community",
+            "1,835.01",
+            "2,373",
+            "1,180 of 5,008"
+          ],
+          [
+            "McAdam",
+            "Village",
+            "14.47",
+            "1,284",
+            "1,773 of 5,008"
+          ],
+          [
+            "Nackawic",
+            "Town",
+            "8.40",
+            "1,049",
+            "2,016 of 5,008"
+          ],
+          [
+            "Stanley",
+            "Village",
+            "17.34",
+            "419",
+            "3,234 of 5,008"
+          ],
+          [
+            "Canterbury",
+            "Village",
+            "5.34",
+            "331",
+            "3,527 of 5,008"
+          ],
+          [
+            "Harvey",
+            "Village",
+            "2.46",
+            "363",
+            "3,420 of 5,008"
+          ],
+          [
+            "Millville",
+            "Village",
+            "12.16",
+            "307",
+            "3,612 of 5,008"
+          ],
+          [
+            "Meductic",
+            "Village",
+            "5.57",
+            "270",
+            "3,741 of 5,008"
+          ]
+        ],
+        "caption": "Communities",
+        "headers": [
+          "Official Name",
+          "Status",
+          "Area km 2",
+          "Population",
+          "Census Ranking"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-176533-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 9,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "less than 130.68",
+              "value": "< 130.68",
+              "start": 21,
+              "end": 37
+            },
+            {
+              "surface": "McAdam",
+              "value": "McAdam",
+              "start": 47,
+              "end": 53
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "7888dfa90b66a3e5ce4db32e41e82540c612508128f2c537f07d1aef6385b11c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4908,
+              "completion_tokens": 36,
+              "total_tokens": 4944,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "less than 130.68",
+              "value": "< 130.68",
+              "start": 21,
+              "end": 37,
+              "clause": "With an Area km 2 of less than 130.68"
+            },
+            {
+              "surface": "McAdam",
+              "value": "McAdam",
+              "start": 47,
+              "end": 53,
+              "clause": "what is McAdam's Population?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "less than 130.68",
+              "value": "< 130.68",
+              "start": 21,
+              "end": 37,
+              "clause": "With an Area km 2 of less than 130.68"
+            },
+            {
+              "surface": "McAdam",
+              "value": "McAdam",
+              "start": 47,
+              "end": 53,
+              "clause": "what is McAdam's Population?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "less than 130.68",
+              "value": "< 130.68",
+              "start": 21,
+              "end": 37,
+              "clause": "With an Area km 2 of less than 130.68",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Explicitly refers to the 'Area km 2' field and uses a numeric less-than comparison."
+            },
+            {
+              "surface": "McAdam",
+              "value": "McAdam",
+              "start": 47,
+              "end": 53,
+              "clause": "what is McAdam's Population?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "McAdam is the entity whose population is requested and appears under 'Official Name'."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "35b04a9ff81a4dc6986e6251d8186e24fb228d6b3f39af4f208e0d174d88684c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4980,
+              "completion_tokens": 61,
+              "total_tokens": 5041,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "less than 130.68",
+              "value": "< 130.68",
+              "start": 21,
+              "end": 37,
+              "clause": "With an Area km 2 of less than 130.68",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Explicitly refers to the 'Area km 2' field and uses a numeric less-than comparison.",
+              "operator": "<"
+            },
+            {
+              "surface": "McAdam",
+              "value": "McAdam",
+              "start": 47,
+              "end": 53,
+              "clause": "what is McAdam's Population?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "McAdam is the entity whose population is requested and appears under 'Official Name'.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a8aafbddb0b865729aa28875ba2e23e7f1d86ecce4a7aadea4efaefdff66b133",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5077,
+              "completion_tokens": 11,
+              "total_tokens": 5088,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "warnings": [
+            "value model disagreed with extracted question span; original retained"
+          ],
+          "conditions": [
+            {
+              "surface": "less than 130.68",
+              "value": "< 130.68",
+              "start": 21,
+              "end": 37,
+              "clause": "With an Area km 2 of less than 130.68",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Explicitly refers to the 'Area km 2' field and uses a numeric less-than comparison.",
+              "operator": "<"
+            },
+            {
+              "surface": "McAdam",
+              "value": "McAdam",
+              "start": 47,
+              "end": 53,
+              "clause": "what is McAdam's Population?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "McAdam is the entity whose population is requested and appears under 'Official Name'.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "127fa2dbec5c128a02903183b19ef4a3370e15aebd66cea5a3dd9cc6dfd5ffa2",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5031,
+              "completion_tokens": 15,
+              "total_tokens": 5046,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "less than 130.68",
+              "value": "< 130.68",
+              "start": 21,
+              "end": 37,
+              "clause": "With an Area km 2 of less than 130.68",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Explicitly refers to the 'Area km 2' field and uses a numeric less-than comparison.",
+              "operator": "<",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 2,
+                "reason": "The question explicitly names 'Area km 2', and column 2 contains numeric area values supporting a less-than comparison with 130.68."
+              }
+            },
+            {
+              "surface": "McAdam",
+              "value": "McAdam",
+              "start": 47,
+              "end": 53,
+              "clause": "what is McAdam's Population?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "McAdam is the entity whose population is requested and appears under 'Official Name'.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ],
+          "reviewModelCalls": [
+            {
+              "model": "gpt-5.6-sol",
+              "promptSha256": "0a256b1e8821590b6aee1de05fe86a214d144391f69fa412a08b3e29e2a27f43",
+              "knowledgeIds": [],
+              "usage": {
+                "prompt_tokens": 5008,
+                "completion_tokens": 100,
+                "total_tokens": 5108,
+                "prompt_tokens_details": {
+                  "cached_tokens": 4224
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 57
+                }
+              }
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0a256b1e8821590b6aee1de05fe86a214d144391f69fa412a08b3e29e2a27f43",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5008,
+              "completion_tokens": 100,
+              "total_tokens": 5108,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 57
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "less than 130.68",
+              "value": "< 130.68",
+              "start": 21,
+              "end": 37,
+              "clause": "With an Area km 2 of less than 130.68",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Explicitly refers to the 'Area km 2' field and uses a numeric less-than comparison.",
+              "operator": "<",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 2,
+                "reason": "The question explicitly names 'Area km 2', and column 2 contains numeric area values supporting a less-than comparison with 130.68."
+              }
+            },
+            {
+              "surface": "McAdam",
+              "value": "McAdam",
+              "start": 47,
+              "end": 53,
+              "clause": "what is McAdam's Population?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "McAdam is the entity whose population is requested and appears under 'Official Name'.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "GROUNDING_FAILED",
+          "valid": false,
+          "errors": [
+            "condition 0: grounding NO_MATCH",
+            "condition 0: nonnumeric value for real column"
+          ],
+          "conditions": [
+            {
+              "surface": "less than 130.68",
+              "value": "< 130.68",
+              "start": 21,
+              "end": 37,
+              "clause": "With an Area km 2 of less than 130.68",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Explicitly refers to the 'Area km 2' field and uses a numeric less-than comparison.",
+              "operator": "<",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 2,
+                "reason": "The question explicitly names 'Area km 2', and column 2 contains numeric area values supporting a less-than comparison with 130.68."
+              }
+            },
+            {
+              "surface": "McAdam",
+              "value": "McAdam",
+              "start": 47,
+              "end": 53,
+              "clause": "what is McAdam's Population?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "McAdam is the entity whose population is requested and appears under 'Official Name'.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        }
+      },
+      "warnings": [
+        "value model disagreed with extracted question span; original retained"
+      ],
+      "execution": {
+        "status": "GROUNDING_FAILED",
+        "stage": "WHERE_CONDITION_VALIDATE",
+        "halt": true,
+        "completed": false,
+        "errors": [
+          "condition 0: grounding NO_MATCH",
+          "condition 0: nonnumeric value for real column"
+        ],
+        "warnings": [
+          "value model disagreed with extracted question span; original retained"
+        ]
+      },
+      "originalConditions": [
+        {
+          "surface": "less than 130.68",
+          "value": "< 130.68",
+          "start": 21,
+          "end": 37
+        },
+        {
+          "surface": "McAdam",
+          "value": "McAdam",
+          "start": 47,
+          "end": 53
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "less than 130.68",
+          "value": "< 130.68",
+          "start": 21,
+          "end": 37,
+          "clause": "With an Area km 2 of less than 130.68",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "Explicitly refers to the 'Area km 2' field and uses a numeric less-than comparison.",
+          "operator": "<",
+          "grounded": false,
+          "groundingStatus": "NO_MATCH",
+          "groundingReview": {
+            "column": 2,
+            "reason": "The question explicitly names 'Area km 2', and column 2 contains numeric area values supporting a less-than comparison with 130.68."
+          }
+        },
+        {
+          "surface": "McAdam",
+          "value": "McAdam",
+          "start": 47,
+          "end": 53,
+          "clause": "what is McAdam's Population?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "McAdam is the entity whose population is requested and appears under 'Official Name'.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": false,
+  "elapsed_ms": 12172
+}

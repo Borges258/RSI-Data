@@ -1,0 +1,595 @@
+{
+  "arm": "E2",
+  "position": 300,
+  "example_id": "test:11818:2-1189288-1",
+  "original_index": 11818,
+  "table_id": "2-1189288-1",
+  "question": "What is the expiring term for Daryl Hecht when the appointing governor is Tom Vilsack?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        3,
+        0,
+        "tom vilsack"
+      ],
+      [
+        0,
+        0,
+        "daryl hecht"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "Daryl Hecht"
+    ],
+    [
+      3,
+      0,
+      "Tom Vilsack"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "Daryl Hecht"
+      ],
+      [
+        3,
+        0,
+        "Tom Vilsack"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Daryl Hecht",
+        "value": "Daryl Hecht",
+        "start": 30,
+        "end": 41,
+        "clause": "What is the expiring term for Daryl Hecht when the appointing governor is Tom Vilsack?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "Daryl Hecht identifies the justice by name; the Name column contains that justice.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "Tom Vilsack",
+        "value": "Tom Vilsack",
+        "start": 74,
+        "end": 85,
+        "clause": "What is the expiring term for Daryl Hecht when the appointing governor is Tom Vilsack?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The question explicitly identifies Tom Vilsack as the appointing governor, matching the Appointing Governor column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Daryl Hecht",
+        "value": "Daryl Hecht",
+        "start": 30,
+        "end": 41
+      },
+      {
+        "surface": "Tom Vilsack",
+        "value": "Tom Vilsack",
+        "start": 74,
+        "end": 85
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the expiring term for Daryl Hecht when the appointing governor is Tom Vilsack?",
+      "table": {
+        "header": [
+          "Name",
+          "Appointed/Elected",
+          "Term expires",
+          "Appointing Governor",
+          "Governor's Party Affiliation"
+        ],
+        "page_title": "Iowa Supreme Court",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 1189288,
+        "id": "2-1189288-1",
+        "section_title": "Justices",
+        "rows": [
+          [
+            "Chief Justice Mark Cady",
+            "1998",
+            "December 31, 2016",
+            "Terry Branstad",
+            "Republican"
+          ],
+          [
+            "David Wiggins",
+            "2003",
+            "December 31, 2020",
+            "Tom Vilsack",
+            "Democratic"
+          ],
+          [
+            "Daryl Hecht",
+            "2006",
+            "December 31, 2016",
+            "Tom Vilsack",
+            "Democratic"
+          ],
+          [
+            "Brent R. Appel",
+            "2006",
+            "December 31, 2016",
+            "Tom Vilsack",
+            "Democratic"
+          ],
+          [
+            "Bruce B. Zager",
+            "February 2011",
+            "December 31, 2020",
+            "Terry Branstad",
+            "Republican"
+          ],
+          [
+            "Edward Mansfield Category:Articles with hCards",
+            "February 2011",
+            "December 31, 2020",
+            "Terry Branstad",
+            "Republican"
+          ],
+          [
+            "Thomas D. Waterman",
+            "February 2011",
+            "December 31, 2020",
+            "Terry Branstad",
+            "Republican"
+          ]
+        ],
+        "caption": "Justices",
+        "headers": [
+          "Name",
+          "Appointed/Elected",
+          "Term expires",
+          "Appointing Governor",
+          "Governor's Party Affiliation"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-1189288-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "Daryl Hecht",
+              "value": "Daryl Hecht",
+              "start": 30,
+              "end": 41
+            },
+            {
+              "surface": "Tom Vilsack",
+              "value": "Tom Vilsack",
+              "start": 74,
+              "end": 85
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "cbbf58c4881d7dd7b617db1e4a7fef2afb4387b6a5e1384ff1453411ce6068ef",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4886,
+              "completion_tokens": 37,
+              "total_tokens": 4923,
+              "prompt_tokens_details": {
+                "cached_tokens": 3200
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Daryl Hecht",
+              "value": "Daryl Hecht",
+              "start": 30,
+              "end": 41,
+              "clause": "What is the expiring term for Daryl Hecht when the appointing governor is Tom Vilsack?"
+            },
+            {
+              "surface": "Tom Vilsack",
+              "value": "Tom Vilsack",
+              "start": 74,
+              "end": 85,
+              "clause": "What is the expiring term for Daryl Hecht when the appointing governor is Tom Vilsack?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Daryl Hecht",
+              "value": "Daryl Hecht",
+              "start": 30,
+              "end": 41,
+              "clause": "What is the expiring term for Daryl Hecht when the appointing governor is Tom Vilsack?"
+            },
+            {
+              "surface": "Tom Vilsack",
+              "value": "Tom Vilsack",
+              "start": 74,
+              "end": 85,
+              "clause": "What is the expiring term for Daryl Hecht when the appointing governor is Tom Vilsack?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Daryl Hecht",
+              "value": "Daryl Hecht",
+              "start": 30,
+              "end": 41,
+              "clause": "What is the expiring term for Daryl Hecht when the appointing governor is Tom Vilsack?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Daryl Hecht identifies the justice by name; the Name column contains that justice."
+            },
+            {
+              "surface": "Tom Vilsack",
+              "value": "Tom Vilsack",
+              "start": 74,
+              "end": 85,
+              "clause": "What is the expiring term for Daryl Hecht when the appointing governor is Tom Vilsack?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies Tom Vilsack as the appointing governor, matching the Appointing Governor column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c2bdaf974e1d6247afa7a81fcc9053b9237dcb8dc1bc321c8cee72437506fa6b",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4983,
+              "completion_tokens": 64,
+              "total_tokens": 5047,
+              "prompt_tokens_details": {
+                "cached_tokens": 3200
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Daryl Hecht",
+              "value": "Daryl Hecht",
+              "start": 30,
+              "end": 41,
+              "clause": "What is the expiring term for Daryl Hecht when the appointing governor is Tom Vilsack?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Daryl Hecht identifies the justice by name; the Name column contains that justice.",
+              "operator": "="
+            },
+            {
+              "surface": "Tom Vilsack",
+              "value": "Tom Vilsack",
+              "start": 74,
+              "end": 85,
+              "clause": "What is the expiring term for Daryl Hecht when the appointing governor is Tom Vilsack?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies Tom Vilsack as the appointing governor, matching the Appointing Governor column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "90b3b592462d4f08ff36bf674e2167e8e672b24522006c14d499cf76dc734c13",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5082,
+              "completion_tokens": 11,
+              "total_tokens": 5093,
+              "prompt_tokens_details": {
+                "cached_tokens": 3200
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Daryl Hecht",
+              "value": "Daryl Hecht",
+              "start": 30,
+              "end": 41,
+              "clause": "What is the expiring term for Daryl Hecht when the appointing governor is Tom Vilsack?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Daryl Hecht identifies the justice by name; the Name column contains that justice.",
+              "operator": "="
+            },
+            {
+              "surface": "Tom Vilsack",
+              "value": "Tom Vilsack",
+              "start": 74,
+              "end": 85,
+              "clause": "What is the expiring term for Daryl Hecht when the appointing governor is Tom Vilsack?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies Tom Vilsack as the appointing governor, matching the Appointing Governor column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "397af1c7de0d27d34c9cc7e93cb5aee654942dea155d07516baaf67e6a500e37",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5036,
+              "completion_tokens": 18,
+              "total_tokens": 5054,
+              "prompt_tokens_details": {
+                "cached_tokens": 3200
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Daryl Hecht",
+              "value": "Daryl Hecht",
+              "start": 30,
+              "end": 41,
+              "clause": "What is the expiring term for Daryl Hecht when the appointing governor is Tom Vilsack?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Daryl Hecht identifies the justice by name; the Name column contains that justice.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Tom Vilsack",
+              "value": "Tom Vilsack",
+              "start": 74,
+              "end": 85,
+              "clause": "What is the expiring term for Daryl Hecht when the appointing governor is Tom Vilsack?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies Tom Vilsack as the appointing governor, matching the Appointing Governor column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Daryl Hecht",
+              "value": "Daryl Hecht",
+              "start": 30,
+              "end": 41,
+              "clause": "What is the expiring term for Daryl Hecht when the appointing governor is Tom Vilsack?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Daryl Hecht identifies the justice by name; the Name column contains that justice.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Tom Vilsack",
+              "value": "Tom Vilsack",
+              "start": 74,
+              "end": 85,
+              "clause": "What is the expiring term for Daryl Hecht when the appointing governor is Tom Vilsack?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies Tom Vilsack as the appointing governor, matching the Appointing Governor column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Daryl Hecht",
+              "value": "Daryl Hecht",
+              "start": 30,
+              "end": 41,
+              "clause": "What is the expiring term for Daryl Hecht when the appointing governor is Tom Vilsack?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Daryl Hecht identifies the justice by name; the Name column contains that justice.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Tom Vilsack",
+              "value": "Tom Vilsack",
+              "start": 74,
+              "end": 85,
+              "clause": "What is the expiring term for Daryl Hecht when the appointing governor is Tom Vilsack?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies Tom Vilsack as the appointing governor, matching the Appointing Governor column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              "Daryl Hecht"
+            ],
+            [
+              3,
+              0,
+              "Tom Vilsack"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Daryl Hecht",
+          "value": "Daryl Hecht",
+          "start": 30,
+          "end": 41
+        },
+        {
+          "surface": "Tom Vilsack",
+          "value": "Tom Vilsack",
+          "start": 74,
+          "end": 85
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Daryl Hecht",
+          "value": "Daryl Hecht",
+          "start": 30,
+          "end": 41,
+          "clause": "What is the expiring term for Daryl Hecht when the appointing governor is Tom Vilsack?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "Daryl Hecht identifies the justice by name; the Name column contains that justice.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "Tom Vilsack",
+          "value": "Tom Vilsack",
+          "start": 74,
+          "end": 85,
+          "clause": "What is the expiring term for Daryl Hecht when the appointing governor is Tom Vilsack?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The question explicitly identifies Tom Vilsack as the appointing governor, matching the Appointing Governor column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          0,
+          0,
+          "Daryl Hecht"
+        ],
+        [
+          3,
+          0,
+          "Tom Vilsack"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 19953
+}

@@ -1,0 +1,472 @@
+{
+  "arm": "E2",
+  "position": 316,
+  "example_id": "test:1343:1-15824796-5",
+  "original_index": 1343,
+  "table_id": "1-15824796-5",
+  "question": "What is the airdate when the title is \"topsy turvy\"?",
+  "gold_sql": {
+    "sel": 5,
+    "conds": [
+      [
+        2,
+        0,
+        "\"Topsy Turvy\""
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "\"Topsy Turvy\""
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "\"Topsy Turvy\""
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "topsy turvy",
+        "value": "\"Topsy Turvy\"",
+        "start": 39,
+        "end": 50,
+        "clause": "What is the airdate when the title is \"topsy turvy\"?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The clause explicitly identifies the condition as the title, matching the Title header; the row contains \"Topsy Turvy\" in that column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "topsy turvy",
+        "value": "\"Topsy Turvy\"",
+        "start": 39,
+        "end": 50
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the airdate when the title is \"topsy turvy\"?",
+      "table": {
+        "id": "1-15824796-5",
+        "header": [
+          "Series #",
+          "Season #",
+          "Title",
+          "Directed by:",
+          "Written by:",
+          "Original air date"
+        ],
+        "types": [
+          "real",
+          "real",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "rows": [
+          [
+            66,
+            1,
+            "\"Joey\"",
+            "Harry Gerstad",
+            "David Chantler",
+            "February 18, 1956"
+          ],
+          [
+            67,
+            2,
+            "\"The Unlucky Number\"",
+            "Harry Gerstad",
+            "David Chantler",
+            "February 25, 1956"
+          ],
+          [
+            68,
+            3,
+            "\"The Big Freeze\"",
+            "Harry Gerstad",
+            "David Chantler",
+            "March 3, 1956"
+          ],
+          [
+            69,
+            4,
+            "\"Peril by Sea\"",
+            "Harry Gerstad",
+            "David Chantler",
+            "March 10, 1956"
+          ],
+          [
+            70,
+            5,
+            "\"Topsy Turvy\"",
+            "Harry Gerstad",
+            "David Chantler",
+            "April 21, 1956"
+          ],
+          [
+            71,
+            6,
+            "\"Jimmy the Kid\"",
+            "Philip Ford",
+            "Leroy H. Zehren",
+            "April 28, 1956"
+          ],
+          [
+            72,
+            7,
+            "\"The Girl Who Hired Superman\"",
+            "Philip Ford",
+            "David Chantler",
+            "May 5, 1956"
+          ],
+          [
+            73,
+            8,
+            "\"The Wedding of Superman\"",
+            "Philip Ford",
+            "Jackson Gillis",
+            "May 12, 1956"
+          ],
+          [
+            74,
+            9,
+            "\"Dagger Island\"",
+            "Philip Ford",
+            "Robert Leslie Bellem",
+            "May 19, 1956"
+          ],
+          [
+            75,
+            10,
+            "\"Blackmail\"",
+            "Harry Gerstad",
+            "David Chantler, Oliver Drake",
+            "May 26, 1956"
+          ],
+          [
+            76,
+            11,
+            "\"The Deadly Rock\"",
+            "Harry Gerstad",
+            "Jackson Gillis",
+            "June 2, 1956"
+          ],
+          [
+            77,
+            12,
+            "\"The Phantom Ring\"",
+            "Philip Ford",
+            "David Chantler",
+            "June 9, 1956"
+          ]
+        ],
+        "name": "table_15824796_5",
+        "headers": [
+          "Series #",
+          "Season #",
+          "Title",
+          "Directed by:",
+          "Written by:",
+          "Original air date"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-15824796-5",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "topsy turvy",
+              "value": "\"Topsy Turvy\"",
+              "start": 39,
+              "end": 50
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "37b1c7c5dc6cbd067eeff4625f1469a329d834175491ca216c5603177f199347",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5005,
+              "completion_tokens": 25,
+              "total_tokens": 5030,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "topsy turvy",
+              "value": "\"Topsy Turvy\"",
+              "start": 39,
+              "end": 50,
+              "clause": "What is the airdate when the title is \"topsy turvy\"?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "topsy turvy",
+              "value": "\"Topsy Turvy\"",
+              "start": 39,
+              "end": 50,
+              "clause": "What is the airdate when the title is \"topsy turvy\"?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "topsy turvy",
+              "value": "\"Topsy Turvy\"",
+              "start": 39,
+              "end": 50,
+              "clause": "What is the airdate when the title is \"topsy turvy\"?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The clause explicitly identifies the condition as the title, matching the Title header; the row contains \"Topsy Turvy\" in that column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "25edd8416b9b3ca58f58b429233139d29f8fd3f901da94ca037e07605a0c7bfa",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5050,
+              "completion_tokens": 49,
+              "total_tokens": 5099,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "topsy turvy",
+              "value": "\"Topsy Turvy\"",
+              "start": 39,
+              "end": 50,
+              "clause": "What is the airdate when the title is \"topsy turvy\"?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The clause explicitly identifies the condition as the title, matching the Title header; the row contains \"Topsy Turvy\" in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c9a0e391228f2043a8ac72c24a2d0a7143519d999660df2fac4288017a0e8c1d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5123,
+              "completion_tokens": 9,
+              "total_tokens": 5132,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "topsy turvy",
+              "value": "\"Topsy Turvy\"",
+              "start": 39,
+              "end": 50,
+              "clause": "What is the airdate when the title is \"topsy turvy\"?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The clause explicitly identifies the condition as the title, matching the Title header; the row contains \"Topsy Turvy\" in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "4947a2dfaac9851762f1fad5057e8443ba98e1bf3a6546fdead403d2b544cad4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5074,
+              "completion_tokens": 15,
+              "total_tokens": 5089,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "topsy turvy",
+              "value": "\"Topsy Turvy\"",
+              "start": 39,
+              "end": 50,
+              "clause": "What is the airdate when the title is \"topsy turvy\"?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The clause explicitly identifies the condition as the title, matching the Title header; the row contains \"Topsy Turvy\" in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "topsy turvy",
+              "value": "\"Topsy Turvy\"",
+              "start": 39,
+              "end": 50,
+              "clause": "What is the airdate when the title is \"topsy turvy\"?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The clause explicitly identifies the condition as the title, matching the Title header; the row contains \"Topsy Turvy\" in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "topsy turvy",
+              "value": "\"Topsy Turvy\"",
+              "start": 39,
+              "end": 50,
+              "clause": "What is the airdate when the title is \"topsy turvy\"?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The clause explicitly identifies the condition as the title, matching the Title header; the row contains \"Topsy Turvy\" in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "\"Topsy Turvy\""
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "topsy turvy",
+          "value": "\"Topsy Turvy\"",
+          "start": 39,
+          "end": 50
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "topsy turvy",
+          "value": "\"Topsy Turvy\"",
+          "start": 39,
+          "end": 50,
+          "clause": "What is the airdate when the title is \"topsy turvy\"?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The clause explicitly identifies the condition as the title, matching the Title header; the row contains \"Topsy Turvy\" in that column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          2,
+          0,
+          "\"Topsy Turvy\""
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8078
+}

@@ -1,0 +1,511 @@
+{
+  "arm": "E2",
+  "position": 16,
+  "example_id": "test:1160:1-14977252-2",
+  "original_index": 1160,
+  "table_id": "1-14977252-2",
+  "question": "Name the jury of 10 points",
+  "gold_sql": {
+    "sel": 5,
+    "conds": [
+      [
+        4,
+        0,
+        10
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      4,
+      0,
+      10
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        0,
+        10
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "10",
+        "value": 10,
+        "start": 17,
+        "end": 19,
+        "clause": "Name the jury of 10 points",
+        "columnIndex": 4,
+        "columnCandidates": [
+          5
+        ],
+        "columnMatchReason": "The question explicitly refers to the jury, matching the Professional Jury header; 10 is a value in that column.",
+        "operator": "=",
+        "columnRecovery": "VALUE_AND_EXPLICIT_HEADER",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "10",
+        "value": "10",
+        "start": 17,
+        "end": 19
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Name the jury of 10 points",
+      "table": {
+        "id": "1-14977252-2",
+        "header": [
+          "Draw",
+          "Artist",
+          "Song",
+          "Televote",
+          "Points",
+          "Professional Jury",
+          "TRM Committee",
+          "Total",
+          "Place"
+        ],
+        "types": [
+          "real",
+          "text",
+          "text",
+          "real",
+          "real",
+          "real",
+          "real",
+          "real",
+          "real"
+        ],
+        "rows": [
+          [
+            1,
+            "Liusia Znamensky",
+            "\"Don't deceive my heart\"",
+            410,
+            0,
+            3,
+            2,
+            5,
+            11
+          ],
+          [
+            2,
+            "Elena Dermidjean",
+            "\"Living creatures\"",
+            1350,
+            7,
+            5,
+            10,
+            22,
+            5
+          ],
+          [
+            3,
+            "Scroom",
+            "\"Jane\"",
+            458,
+            0,
+            1,
+            4,
+            5,
+            12
+          ],
+          [
+            4,
+            "Galina Scoda",
+            "\"Your own vision\"",
+            1329,
+            6,
+            6,
+            12,
+            24,
+            4
+          ],
+          [
+            5,
+            "Dana Marchitan",
+            "\"Your name\"",
+            1223,
+            5,
+            4,
+            3,
+            12,
+            8
+          ],
+          [
+            6,
+            "Jay Mon",
+            "\"Point of view\"",
+            773,
+            2,
+            2,
+            6,
+            10,
+            9
+          ],
+          [
+            7,
+            "Catrina Pislaru",
+            "\"Dance with me\"",
+            644,
+            1,
+            7,
+            5,
+            13,
+            7
+          ],
+          [
+            8,
+            "Cristina Rujitcaia",
+            "\"You make me feel crazy\"",
+            829,
+            3,
+            3,
+            2,
+            8,
+            10
+          ],
+          [
+            9,
+            "Geta Burlacu",
+            "\" A Century of Love \"",
+            4293,
+            10,
+            12,
+            8,
+            30,
+            1
+          ],
+          [
+            10,
+            "Edict",
+            "\"I believe\"",
+            1124,
+            4,
+            6,
+            7,
+            17,
+            6
+          ],
+          [
+            11,
+            "Alexa",
+            "\"We are one\"",
+            7665,
+            12,
+            8,
+            7,
+            27,
+            3
+          ]
+        ],
+        "name": "table_14977252_2",
+        "headers": [
+          "Draw",
+          "Artist",
+          "Song",
+          "Televote",
+          "Points",
+          "Professional Jury",
+          "TRM Committee",
+          "Total",
+          "Place"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-14977252-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "10",
+              "value": "10",
+              "start": 17,
+              "end": 19
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c7944031d502141861e74a1d315b1a7374710e5eaa5178a9f6635eb69cf362fc",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4944,
+              "completion_tokens": 17,
+              "total_tokens": 4961,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "10",
+              "value": "10",
+              "start": 17,
+              "end": 19,
+              "clause": "Name the jury of 10 points"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "10",
+              "value": "10",
+              "start": 17,
+              "end": 19,
+              "clause": "Name the jury of 10 points"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "10",
+              "value": "10",
+              "start": 17,
+              "end": 19,
+              "clause": "Name the jury of 10 points",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly refers to the jury, matching the Professional Jury header; 10 is a value in that column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "2d22494c1b79c00360cb132dbe57201c97a55800851455343aa519c14b5ed19d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4972,
+              "completion_tokens": 44,
+              "total_tokens": 5016,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "10",
+              "value": "10",
+              "start": 17,
+              "end": 19,
+              "clause": "Name the jury of 10 points",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly refers to the jury, matching the Professional Jury header; 10 is a value in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "09874462c1b070770a0e09d40851a4635538e006289af0a1de2d20a34cbf9a90",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5040,
+              "completion_tokens": 9,
+              "total_tokens": 5049,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "10",
+              "value": 10,
+              "start": 17,
+              "end": 19,
+              "clause": "Name the jury of 10 points",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly refers to the jury, matching the Professional Jury header; 10 is a value in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "535d02109b89b2f8b441bcd32cca32152c8b55e2833d8796ca00977cdb798c56",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4991,
+              "completion_tokens": 9,
+              "total_tokens": 5000,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "10",
+              "value": "10",
+              "start": 17,
+              "end": 19,
+              "clause": "Name the jury of 10 points",
+              "columnIndex": 4,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly refers to the jury, matching the Professional Jury header; 10 is a value in that column.",
+              "operator": "=",
+              "columnRecovery": "VALUE_AND_EXPLICIT_HEADER",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "10",
+              "value": 10,
+              "start": 17,
+              "end": 19,
+              "clause": "Name the jury of 10 points",
+              "columnIndex": 4,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly refers to the jury, matching the Professional Jury header; 10 is a value in that column.",
+              "operator": "=",
+              "columnRecovery": "VALUE_AND_EXPLICIT_HEADER",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "10",
+              "value": 10,
+              "start": 17,
+              "end": 19,
+              "clause": "Name the jury of 10 points",
+              "columnIndex": 4,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly refers to the jury, matching the Professional Jury header; 10 is a value in that column.",
+              "operator": "=",
+              "columnRecovery": "VALUE_AND_EXPLICIT_HEADER",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              0,
+              10
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "10",
+          "value": "10",
+          "start": 17,
+          "end": 19
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "10",
+          "value": 10,
+          "start": 17,
+          "end": 19,
+          "clause": "Name the jury of 10 points",
+          "columnIndex": 4,
+          "columnCandidates": [
+            5
+          ],
+          "columnMatchReason": "The question explicitly refers to the jury, matching the Professional Jury header; 10 is a value in that column.",
+          "operator": "=",
+          "columnRecovery": "VALUE_AND_EXPLICIT_HEADER",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          4,
+          0,
+          10
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7735
+}

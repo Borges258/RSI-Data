@@ -1,0 +1,832 @@
+{
+  "arm": "E2",
+  "position": 85,
+  "example_id": "test:2974:1-23916539-3",
+  "original_index": 2974,
+  "table_id": "1-23916539-3",
+  "question": "What is the record if the location is Clarke Stadium?",
+  "gold_sql": {
+    "sel": 6,
+    "conds": [
+      [
+        3,
+        0,
+        "Clarke Stadium"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      3,
+      0,
+      "Clarke Stadium"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        0,
+        "Clarke Stadium"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Clarke Stadium",
+        "value": "Clarke Stadium",
+        "start": 38,
+        "end": 52,
+        "clause": "What is the record if the location is Clarke Stadium?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The question explicitly names the location, matching the Location header and the Clarke Stadium cell.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Clarke Stadium",
+        "value": "Clarke Stadium",
+        "start": 38,
+        "end": 52
+      }
+    ],
+    "warnings": [
+      "value model disagreed with extracted question span; original retained"
+    ],
+    "request": {
+      "question": "What is the record if the location is Clarke Stadium?",
+      "table": {
+        "header": [
+          "Week",
+          "Date",
+          "Opponent",
+          "Location",
+          "Final Score",
+          "Attendance",
+          "Record"
+        ],
+        "page_title": "1961 Toronto Argonauts season",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "id": "1-23916539-3",
+        "section_title": "Schedule",
+        "caption": "Schedule",
+        "rows": [
+          [
+            1,
+            "August 14",
+            "Blue Bombers",
+            "Exhibition Stadium",
+            "L 14–13",
+            27189,
+            "0–1–0"
+          ],
+          [
+            2,
+            "August 20",
+            "Tiger-Cats",
+            "Exhibition Stadium",
+            "L 28–24",
+            27809,
+            "0–2–0"
+          ],
+          [
+            3,
+            "August 25",
+            "@ Alouettes",
+            "Molson Stadium",
+            "W 15–10",
+            18522,
+            "1–2–0"
+          ],
+          [
+            4,
+            "September 4",
+            "@ Tiger-Cats",
+            "Civic Stadium",
+            "L 21–19",
+            26533,
+            "1–3–0"
+          ],
+          [
+            5,
+            "September 10",
+            "Roughriders",
+            "Exhibition Stadium",
+            "W 27–7",
+            24047,
+            "2–3–0"
+          ],
+          [
+            6,
+            "September 16",
+            "@ Eskimos",
+            "Clarke Stadium",
+            "T 8–8",
+            21510,
+            "2–3–1"
+          ],
+          [
+            6,
+            "September 18",
+            "@ Lions",
+            "Empire Stadium",
+            "W 15–7",
+            24428,
+            "3–3–1"
+          ],
+          [
+            7,
+            "September 24",
+            "Rough Riders",
+            "Exhibition Stadium",
+            "L 29–10",
+            30648,
+            "3–4–1"
+          ],
+          [
+            8,
+            "September 29",
+            "Stampeders",
+            "Exhibition Stadium",
+            "W 22–19",
+            23546,
+            "4–4–1"
+          ],
+          [
+            9,
+            "October 7",
+            "@ Alouettes",
+            "Molson Stadium",
+            "W 33–27",
+            19075,
+            "5–4–1"
+          ],
+          [
+            10,
+            "October 15",
+            "Tiger-Cats",
+            "Exhibition Stadium",
+            "L 37–10",
+            29553,
+            "5–5–1"
+          ],
+          [
+            11,
+            "October 21",
+            "@ Rough Riders",
+            "Landsdowne Park",
+            "W 21–7",
+            18821,
+            "6–5–1"
+          ],
+          [
+            12,
+            "October 29",
+            "Alouettes",
+            "Exhibition Stadium",
+            "W 15–9",
+            23316,
+            "7–5–1"
+          ]
+        ],
+        "name": "table_23916539_3",
+        "headers": [
+          "Week",
+          "Date",
+          "Opponent",
+          "Location",
+          "Final Score",
+          "Attendance",
+          "Record"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-23916539-3",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Clarke Stadium",
+              "value": "Clarke Stadium",
+              "start": 38,
+              "end": 52
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "fd41a8dede3a706f67ebd2cafcd225faf6f7e3a9f3fa5d6af1b55f86e1531037",
+            "knowledgeIds": [],
+            "usage": {
+              "attribution": {
+                "items": {
+                  "msg_0c986b630ecbfd33016b08fc3174fc87d08b6d574f1ffea761": {
+                    "input_tokens": 64,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 64,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0c986b630ecbfd33016b08fc3174fc87d08e50374b506b041e": {
+                    "input_tokens": 86,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 86,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0c986b630ecbfd33016b08fc3174fc87d0bf0b484b3c57b162": {
+                    "input_tokens": 539,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 539,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0c986b630ecbfd33016b08fc3c9e1887d08b131493d82cdf55": {
+                    "input_tokens": 0,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 23,
+                    "content": [
+                      {
+                        "input_tokens": 0,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 23
+                      }
+                    ]
+                  },
+                  "rs_0c986b630ecbfd33016b08fc3c596c87d0994797276cd5fd1b": {
+                    "input_tokens": 2,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 27
+                  }
+                },
+                "request_fields": {
+                  "instructions": {
+                    "input_tokens": 4380,
+                    "cached_tokens": 4000,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0
+                  }
+                }
+              },
+              "prompt_tokens": 10985,
+              "completion_tokens": 50,
+              "total_tokens": 11035,
+              "prompt_tokens_details": {
+                "cache_write_tokens_details": {
+                  "ttl_30m_tokens": 0,
+                  "ttl_12h_tokens": 0
+                },
+                "cached_tokens": 9600
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 27
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Clarke Stadium",
+              "value": "Clarke Stadium",
+              "start": 38,
+              "end": 52,
+              "clause": "What is the record if the location is Clarke Stadium?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Clarke Stadium",
+              "value": "Clarke Stadium",
+              "start": 38,
+              "end": 52,
+              "clause": "What is the record if the location is Clarke Stadium?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Clarke Stadium",
+              "value": "Clarke Stadium",
+              "start": 38,
+              "end": 52,
+              "clause": "What is the record if the location is Clarke Stadium?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly names the location, matching the Location header and the Clarke Stadium cell."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "542adef7b7bf8ef9f7c7688df24ba6f72648faa4f38a09151735fc53b300d5f8",
+            "knowledgeIds": [],
+            "usage": {
+              "attribution": {
+                "items": {
+                  "msg_0a60eb5ab8c82806016b08fc3e946c87d08268adc9a6067486": {
+                    "input_tokens": 122,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 122,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0a60eb5ab8c82806016b08fc3e946c87d09794ee6e223e11e2": {
+                    "input_tokens": 64,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 64,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0a60eb5ab8c82806016b08fc3e946c87d09ec022d10f47773c": {
+                    "input_tokens": 539,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 539,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0a60eb5ab8c82806016b08fc480a7087d0ab6bfada68fbb706": {
+                    "input_tokens": 0,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 40,
+                    "content": [
+                      {
+                        "input_tokens": 0,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 40
+                      }
+                    ]
+                  },
+                  "rs_0a60eb5ab8c82806016b08fc47dd1c87d0b66e18efb9a64047": {
+                    "input_tokens": 2,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 25
+                  }
+                },
+                "request_fields": {
+                  "instructions": {
+                    "input_tokens": 4380,
+                    "cached_tokens": 4000,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0
+                  }
+                }
+              },
+              "prompt_tokens": 11021,
+              "completion_tokens": 65,
+              "total_tokens": 11086,
+              "prompt_tokens_details": {
+                "cache_write_tokens_details": {
+                  "ttl_30m_tokens": 0,
+                  "ttl_12h_tokens": 0
+                },
+                "cached_tokens": 9600
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 25
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Clarke Stadium",
+              "value": "Clarke Stadium",
+              "start": 38,
+              "end": 52,
+              "clause": "What is the record if the location is Clarke Stadium?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly names the location, matching the Location header and the Clarke Stadium cell.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c451b1e23732155274ed741441551ab9241144e9fc7109086ab6b2fa31e25604",
+            "knowledgeIds": [],
+            "usage": {
+              "attribution": {
+                "items": {
+                  "msg_00634acec4ca8333016b08fc5c8e7087d081bfa58d05d5ba1e": {
+                    "input_tokens": 64,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 64,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_00634acec4ca8333016b08fc5c8e7487d0aa8935557bf06570": {
+                    "input_tokens": 184,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 184,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_00634acec4ca8333016b08fc5c8e7487d0b484029534bd7d0f": {
+                    "input_tokens": 539,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 539,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_00634acec4ca8333016b08fc66654487d09f724f84a5f76ef7": {
+                    "input_tokens": 0,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 11,
+                    "content": [
+                      {
+                        "input_tokens": 0,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 11
+                      }
+                    ]
+                  },
+                  "rs_00634acec4ca8333016b08fc664e1087d0858e2f703ae4bf1a": {
+                    "input_tokens": 2,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 12
+                  }
+                },
+                "request_fields": {
+                  "instructions": {
+                    "input_tokens": 4380,
+                    "cached_tokens": 4000,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0
+                  }
+                }
+              },
+              "prompt_tokens": 11083,
+              "completion_tokens": 23,
+              "total_tokens": 11106,
+              "prompt_tokens_details": {
+                "cache_write_tokens_details": {
+                  "ttl_30m_tokens": 0,
+                  "ttl_12h_tokens": 0
+                },
+                "cached_tokens": 9600
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 12
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "warnings": [
+            "value model disagreed with extracted question span; original retained"
+          ],
+          "conditions": [
+            {
+              "surface": "Clarke Stadium",
+              "value": "Clarke Stadium",
+              "start": 38,
+              "end": 52,
+              "clause": "What is the record if the location is Clarke Stadium?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly names the location, matching the Location header and the Clarke Stadium cell.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d0a65ff8cac60c7d278668ac856a69e6da36df77cd800e06cf061d054a87b0d8",
+            "knowledgeIds": [],
+            "usage": {
+              "attribution": {
+                "items": {
+                  "msg_06ac028825efbd53016b08fc7ab05087d08047c40f941fffa8": {
+                    "input_tokens": 539,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 539,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_06ac028825efbd53016b08fc7ab05087d09dcf5af3e0869757": {
+                    "input_tokens": 135,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 135,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_06ac028825efbd53016b08fc7ab05087d0bfd8c82827064715": {
+                    "input_tokens": 64,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 64,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_06ac028825efbd53016b08fc7bff5887d0b660590bc5deb853": {
+                    "input_tokens": 0,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 16,
+                    "content": [
+                      {
+                        "input_tokens": 0,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 16
+                      }
+                    ]
+                  },
+                  "rs_06ac028825efbd53016b08fc7be38887d0ab1c057ef619035f": {
+                    "input_tokens": 2,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 30
+                  }
+                },
+                "request_fields": {
+                  "instructions": {
+                    "input_tokens": 4380,
+                    "cached_tokens": 4000,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0
+                  }
+                }
+              },
+              "prompt_tokens": 11034,
+              "completion_tokens": 46,
+              "total_tokens": 11080,
+              "prompt_tokens_details": {
+                "cache_write_tokens_details": {
+                  "ttl_30m_tokens": 0,
+                  "ttl_12h_tokens": 0
+                },
+                "cached_tokens": 9600
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 30
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Clarke Stadium",
+              "value": "Clarke Stadium",
+              "start": 38,
+              "end": 52,
+              "clause": "What is the record if the location is Clarke Stadium?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly names the location, matching the Location header and the Clarke Stadium cell.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Clarke Stadium",
+              "value": "Clarke Stadium",
+              "start": 38,
+              "end": 52,
+              "clause": "What is the record if the location is Clarke Stadium?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly names the location, matching the Location header and the Clarke Stadium cell.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Clarke Stadium",
+              "value": "Clarke Stadium",
+              "start": 38,
+              "end": 52,
+              "clause": "What is the record if the location is Clarke Stadium?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly names the location, matching the Location header and the Clarke Stadium cell.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              0,
+              "Clarke Stadium"
+            ]
+          ]
+        }
+      },
+      "warnings": [
+        "value model disagreed with extracted question span; original retained"
+      ],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": [
+          "value model disagreed with extracted question span; original retained"
+        ]
+      },
+      "originalConditions": [
+        {
+          "surface": "Clarke Stadium",
+          "value": "Clarke Stadium",
+          "start": 38,
+          "end": 52
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Clarke Stadium",
+          "value": "Clarke Stadium",
+          "start": 38,
+          "end": 52,
+          "clause": "What is the record if the location is Clarke Stadium?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The question explicitly names the location, matching the Location header and the Clarke Stadium cell.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          3,
+          0,
+          "Clarke Stadium"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 106265
+}

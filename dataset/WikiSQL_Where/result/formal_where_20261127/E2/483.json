@@ -1,0 +1,411 @@
+{
+  "arm": "E2",
+  "position": 483,
+  "example_id": "test:8872:2-17396-1",
+  "original_index": 8872,
+  "table_id": "2-17396-1",
+  "question": "From how many years did tampa, FL depart?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        2,
+        0,
+        "tampa, fl"
+      ]
+    ],
+    "agg": 4
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "Tampa, FL"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "Tampa, FL"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "tampa, FL",
+        "value": "Tampa, FL",
+        "start": 24,
+        "end": 33,
+        "clause": "From how many years did tampa, FL depart?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The preposition \"From\" and verb \"depart\" indicate the departure-location field, matching \"Departed From\"; the row value \"Tampa, FL\" confirms it.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "tampa, FL",
+        "value": "Tampa, FL",
+        "start": 24,
+        "end": 33
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "From how many years did tampa, FL depart?",
+      "table": {
+        "header": [
+          "Year",
+          "Ship",
+          "Departed From",
+          "Departed On",
+          "Returned On"
+        ],
+        "page_title": "Kid Rock",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 17396,
+        "id": "2-17396-1",
+        "section_title": "Cruises",
+        "rows": [
+          [
+            "2010",
+            "Carnival Inspiration",
+            "Tampa, FL",
+            "April 29, 2010",
+            "May 3, 2010"
+          ],
+          [
+            "2011",
+            "Carnival Triumph",
+            "New Orleans, LA",
+            "April 7, 2011",
+            "April 11, 2011"
+          ],
+          [
+            "2012",
+            "Carnival Destiny",
+            "Miami, FL",
+            "April 26, 2012",
+            "April 30, 2012"
+          ],
+          [
+            "2013",
+            "Norwegian Pearl",
+            "Miami, FL",
+            "March 6, 2013",
+            "March 10, 2013"
+          ],
+          [
+            "2014",
+            "Norwegian Cruise Lines",
+            "TDB",
+            "Unknown",
+            "Unknown"
+          ]
+        ],
+        "caption": "Cruises",
+        "headers": [
+          "Year",
+          "Ship",
+          "Departed From",
+          "Departed On",
+          "Returned On"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-17396-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "tampa, FL",
+              "value": "Tampa, FL",
+              "start": 24,
+              "end": 33
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "48b1f2ef71b7e44c1d87326c73ede715ee8c856c3fe0a7af3e8902e3263f44a4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4795,
+              "completion_tokens": 23,
+              "total_tokens": 4818,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "tampa, FL",
+              "value": "Tampa, FL",
+              "start": 24,
+              "end": 33,
+              "clause": "From how many years did tampa, FL depart?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "tampa, FL",
+              "value": "Tampa, FL",
+              "start": 24,
+              "end": 33,
+              "clause": "From how many years did tampa, FL depart?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "tampa, FL",
+              "value": "Tampa, FL",
+              "start": 24,
+              "end": 33,
+              "clause": "From how many years did tampa, FL depart?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The preposition \"From\" and verb \"depart\" indicate the departure-location field, matching \"Departed From\"; the row value \"Tampa, FL\" confirms it."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "6ca10f104dcad70848e41842907f9329d78464f0289475ea4c47051db25a1f36",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4832,
+              "completion_tokens": 57,
+              "total_tokens": 4889,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "tampa, FL",
+              "value": "Tampa, FL",
+              "start": 24,
+              "end": 33,
+              "clause": "From how many years did tampa, FL depart?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The preposition \"From\" and verb \"depart\" indicate the departure-location field, matching \"Departed From\"; the row value \"Tampa, FL\" confirms it.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0ea23c97dc394313556b909e51f6b3968c06a93530f9a7fc7ac2f0b027e55f05",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4913,
+              "completion_tokens": 9,
+              "total_tokens": 4922,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "tampa, FL",
+              "value": "Tampa, FL",
+              "start": 24,
+              "end": 33,
+              "clause": "From how many years did tampa, FL depart?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The preposition \"From\" and verb \"depart\" indicate the departure-location field, matching \"Departed From\"; the row value \"Tampa, FL\" confirms it.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "dcd026577933a19d30e00db387373a70c794443e0b52527a8745262350f658a2",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4864,
+              "completion_tokens": 13,
+              "total_tokens": 4877,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "tampa, FL",
+              "value": "Tampa, FL",
+              "start": 24,
+              "end": 33,
+              "clause": "From how many years did tampa, FL depart?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The preposition \"From\" and verb \"depart\" indicate the departure-location field, matching \"Departed From\"; the row value \"Tampa, FL\" confirms it.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "tampa, FL",
+              "value": "Tampa, FL",
+              "start": 24,
+              "end": 33,
+              "clause": "From how many years did tampa, FL depart?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The preposition \"From\" and verb \"depart\" indicate the departure-location field, matching \"Departed From\"; the row value \"Tampa, FL\" confirms it.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "tampa, FL",
+              "value": "Tampa, FL",
+              "start": 24,
+              "end": 33,
+              "clause": "From how many years did tampa, FL depart?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The preposition \"From\" and verb \"depart\" indicate the departure-location field, matching \"Departed From\"; the row value \"Tampa, FL\" confirms it.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "Tampa, FL"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "tampa, FL",
+          "value": "Tampa, FL",
+          "start": 24,
+          "end": 33
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "tampa, FL",
+          "value": "Tampa, FL",
+          "start": 24,
+          "end": 33,
+          "clause": "From how many years did tampa, FL depart?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The preposition \"From\" and verb \"depart\" indicate the departure-location field, matching \"Departed From\"; the row value \"Tampa, FL\" confirms it.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          2,
+          0,
+          "Tampa, FL"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8906
+}

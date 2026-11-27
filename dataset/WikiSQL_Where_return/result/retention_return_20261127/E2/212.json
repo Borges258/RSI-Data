@@ -1,0 +1,581 @@
+{
+  "arm": "E2",
+  "position": 212,
+  "example_id": "test:8021:2-16251064-1",
+  "original_index": 8021,
+  "table_id": "2-16251064-1",
+  "question": "What shows for playing when the opponent was Real España, in the 2012–13 season?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        3,
+        0,
+        "real españa"
+      ],
+      [
+        1,
+        0,
+        "2012–13"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      3,
+      0,
+      "Real España"
+    ],
+    [
+      1,
+      0,
+      "2012–13"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        0,
+        "Real España"
+      ],
+      [
+        1,
+        0,
+        "2012–13"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Real España",
+        "value": "Real España",
+        "start": 45,
+        "end": 56,
+        "clause": "What shows for playing when the opponent was Real España",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The clause explicitly identifies Real España as the opponent, matching the Opponent column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "2012–13",
+        "value": "2012–13",
+        "start": 65,
+        "end": 72,
+        "clause": "in the 2012–13 season?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The question explicitly identifies 2012–13 as the season, matching the Season column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Real España",
+        "value": "Real España",
+        "start": 45,
+        "end": 56
+      },
+      {
+        "surface": "2012–13",
+        "value": "2012–13",
+        "start": 65,
+        "end": 72
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What shows for playing when the opponent was Real España, in the 2012–13 season?",
+      "table": {
+        "header": [
+          "Date",
+          "Season",
+          "Playing for",
+          "Opponent",
+          "Final score"
+        ],
+        "page_title": "David Molina",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 16251064,
+        "id": "2-16251064-1",
+        "section_title": "Domestic goals summary",
+        "rows": [
+          [
+            "4 October 2008",
+            "2008–09",
+            "Motagua",
+            "Real España",
+            "2–3 L"
+          ],
+          [
+            "5 November 2008",
+            "2008–09",
+            "Motagua",
+            "Vida",
+            "1–0 W"
+          ],
+          [
+            "3 March 2009",
+            "2008–09",
+            "Motagua",
+            "Real Juventud",
+            "1–1 D"
+          ],
+          [
+            "29 January 2012",
+            "2011–12",
+            "Motagua",
+            "Atlético Choloma",
+            "1–0 W"
+          ],
+          [
+            "16 November 2012",
+            "2012–13",
+            "Motagua",
+            "Real España",
+            "4–1 W"
+          ]
+        ],
+        "caption": "Domestic goals summary",
+        "headers": [
+          "Date",
+          "Season",
+          "Playing for",
+          "Opponent",
+          "Final score"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-16251064-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "Real España",
+              "value": "Real España",
+              "start": 45,
+              "end": 56
+            },
+            {
+              "surface": "2012–13",
+              "value": "2012–13",
+              "start": 65,
+              "end": 72
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "113630bd885b4276f35ef59fb5ff61715dc563a7fbd0f100584b8d4c0b33547f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4790,
+              "completion_tokens": 33,
+              "total_tokens": 4823,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Real España",
+              "value": "Real España",
+              "start": 45,
+              "end": 56,
+              "clause": "What shows for playing when the opponent was Real España"
+            },
+            {
+              "surface": "2012–13",
+              "value": "2012–13",
+              "start": 65,
+              "end": 72,
+              "clause": "in the 2012–13 season?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Real España",
+              "value": "Real España",
+              "start": 45,
+              "end": 56,
+              "clause": "What shows for playing when the opponent was Real España"
+            },
+            {
+              "surface": "2012–13",
+              "value": "2012–13",
+              "start": 65,
+              "end": 72,
+              "clause": "in the 2012–13 season?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Real España",
+              "value": "Real España",
+              "start": 45,
+              "end": 56,
+              "clause": "What shows for playing when the opponent was Real España",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly identifies Real España as the opponent, matching the Opponent column."
+            },
+            {
+              "surface": "2012–13",
+              "value": "2012–13",
+              "start": 65,
+              "end": 72,
+              "clause": "in the 2012–13 season?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly identifies 2012–13 as the season, matching the Season column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "2530beb22c7ca538c343c7113bf8f6d6a707625f7dcc0ea8ac327d45782bcd7a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4858,
+              "completion_tokens": 59,
+              "total_tokens": 4917,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Real España",
+              "value": "Real España",
+              "start": 45,
+              "end": 56,
+              "clause": "What shows for playing when the opponent was Real España",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly identifies Real España as the opponent, matching the Opponent column.",
+              "operator": "="
+            },
+            {
+              "surface": "2012–13",
+              "value": "2012–13",
+              "start": 65,
+              "end": 72,
+              "clause": "in the 2012–13 season?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly identifies 2012–13 as the season, matching the Season column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e208c2d1149aae0478b5cc2ccaae2b2ffcca8a5be54add72048f2b1a17d42cc5",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4952,
+              "completion_tokens": 11,
+              "total_tokens": 4963,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Real España",
+              "value": "Real España",
+              "start": 45,
+              "end": 56,
+              "clause": "What shows for playing when the opponent was Real España",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly identifies Real España as the opponent, matching the Opponent column.",
+              "operator": "="
+            },
+            {
+              "surface": "2012–13",
+              "value": "2012–13",
+              "start": 65,
+              "end": 72,
+              "clause": "in the 2012–13 season?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly identifies 2012–13 as the season, matching the Season column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c82efbcfefe9b1f82bf6edfcc399bb17800416d8aeffdbbc1b9cb1094765083a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4906,
+              "completion_tokens": 16,
+              "total_tokens": 4922,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Real España",
+              "value": "Real España",
+              "start": 45,
+              "end": 56,
+              "clause": "What shows for playing when the opponent was Real España",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly identifies Real España as the opponent, matching the Opponent column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2012–13",
+              "value": "2012–13",
+              "start": 65,
+              "end": 72,
+              "clause": "in the 2012–13 season?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly identifies 2012–13 as the season, matching the Season column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Real España",
+              "value": "Real España",
+              "start": 45,
+              "end": 56,
+              "clause": "What shows for playing when the opponent was Real España",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly identifies Real España as the opponent, matching the Opponent column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2012–13",
+              "value": "2012–13",
+              "start": 65,
+              "end": 72,
+              "clause": "in the 2012–13 season?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly identifies 2012–13 as the season, matching the Season column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Real España",
+              "value": "Real España",
+              "start": 45,
+              "end": 56,
+              "clause": "What shows for playing when the opponent was Real España",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly identifies Real España as the opponent, matching the Opponent column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2012–13",
+              "value": "2012–13",
+              "start": 65,
+              "end": 72,
+              "clause": "in the 2012–13 season?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly identifies 2012–13 as the season, matching the Season column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              0,
+              "Real España"
+            ],
+            [
+              1,
+              0,
+              "2012–13"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Real España",
+          "value": "Real España",
+          "start": 45,
+          "end": 56
+        },
+        {
+          "surface": "2012–13",
+          "value": "2012–13",
+          "start": 65,
+          "end": 72
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Real España",
+          "value": "Real España",
+          "start": 45,
+          "end": 56,
+          "clause": "What shows for playing when the opponent was Real España",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The clause explicitly identifies Real España as the opponent, matching the Opponent column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "2012–13",
+          "value": "2012–13",
+          "start": 65,
+          "end": 72,
+          "clause": "in the 2012–13 season?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The question explicitly identifies 2012–13 as the season, matching the Season column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          3,
+          0,
+          "Real España"
+        ],
+        [
+          1,
+          0,
+          "2012–13"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9141
+}

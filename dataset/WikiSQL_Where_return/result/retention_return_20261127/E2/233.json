@@ -1,0 +1,427 @@
+{
+  "arm": "E2",
+  "position": 233,
+  "example_id": "test:9248:2-16625915-2",
+  "original_index": 9248,
+  "table_id": "2-16625915-2",
+  "question": "What country did Chris Witty represent?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        2,
+        0,
+        "chris witty"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "Chris Witty"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "Chris Witty"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Chris Witty",
+        "value": "Chris Witty",
+        "start": 17,
+        "end": 28,
+        "clause": "What country did Chris Witty represent?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The condition names a person; matching row evidence places Chris Witty in the Name column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Chris Witty",
+        "value": "Chris Witty",
+        "start": 17,
+        "end": 28
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What country did Chris Witty represent?",
+      "table": {
+        "header": [
+          "Event",
+          "Time",
+          "Name",
+          "Nation",
+          "Games",
+          "Date"
+        ],
+        "page_title": "List of Olympic records in speed skating",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 16625915,
+        "id": "2-16625915-2",
+        "section_title": "Women's records",
+        "rows": [
+          [
+            "500 metres",
+            "37.30",
+            "Catriona Le May Doan",
+            "Canada (CAN)",
+            "2002 Salt Lake City",
+            "13 February 2002"
+          ],
+          [
+            "1000 metres",
+            "1:13.83",
+            "Chris Witty",
+            "United States (USA)",
+            "2002 Salt Lake City",
+            "17 February 2002"
+          ],
+          [
+            "1500 metres",
+            "1:54.02",
+            "Anni Friesinger",
+            "Germany (GER)",
+            "2002 Salt Lake City",
+            "20 February 2002"
+          ],
+          [
+            "3000 metres",
+            "3:57.70",
+            "Claudia Pechstein",
+            "Germany (GER)",
+            "2002 Salt Lake City",
+            "10 February 2002"
+          ],
+          [
+            "5000 metres",
+            "6:46.91",
+            "Claudia Pechstein",
+            "Germany (GER)",
+            "2002 Salt Lake City",
+            "23 February 2002"
+          ],
+          [
+            "Team pursuit (6 laps)",
+            "3:01.24",
+            "Kristina Groves Cindy Klassen Christine Nesbitt",
+            "Canada (CAN)",
+            "2006 Turin",
+            "15 February 2006"
+          ]
+        ],
+        "caption": "Women's records",
+        "headers": [
+          "Event",
+          "Time",
+          "Name",
+          "Nation",
+          "Games",
+          "Date"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-16625915-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Chris Witty",
+              "value": "Chris Witty",
+              "start": 17,
+              "end": 28
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "5a9073feb43fc3938ef677e822f2d937583aa2c4e31ef1fd5a96c9fa03577258",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4875,
+              "completion_tokens": 21,
+              "total_tokens": 4896,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Chris Witty",
+              "value": "Chris Witty",
+              "start": 17,
+              "end": 28,
+              "clause": "What country did Chris Witty represent?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Chris Witty",
+              "value": "Chris Witty",
+              "start": 17,
+              "end": 28,
+              "clause": "What country did Chris Witty represent?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Chris Witty",
+              "value": "Chris Witty",
+              "start": 17,
+              "end": 28,
+              "clause": "What country did Chris Witty represent?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The condition names a person; matching row evidence places Chris Witty in the Name column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "1efa56081e2430a985d967170951b12af118f8c22848ba88c0b4fe36f79fd2c7",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4908,
+              "completion_tokens": 39,
+              "total_tokens": 4947,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Chris Witty",
+              "value": "Chris Witty",
+              "start": 17,
+              "end": 28,
+              "clause": "What country did Chris Witty represent?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The condition names a person; matching row evidence places Chris Witty in the Name column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c7b549138d8ecdeba5b688fe94cbd8b9e8b4d2bad77287bf411d3322ea3eea36",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4971,
+              "completion_tokens": 9,
+              "total_tokens": 4980,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Chris Witty",
+              "value": "Chris Witty",
+              "start": 17,
+              "end": 28,
+              "clause": "What country did Chris Witty represent?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The condition names a person; matching row evidence places Chris Witty in the Name column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "9fadca7666ddd7c9cbd491e80df12783d4f83212cc13e89d0637f656c2c9582d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4922,
+              "completion_tokens": 12,
+              "total_tokens": 4934,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Chris Witty",
+              "value": "Chris Witty",
+              "start": 17,
+              "end": 28,
+              "clause": "What country did Chris Witty represent?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The condition names a person; matching row evidence places Chris Witty in the Name column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Chris Witty",
+              "value": "Chris Witty",
+              "start": 17,
+              "end": 28,
+              "clause": "What country did Chris Witty represent?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The condition names a person; matching row evidence places Chris Witty in the Name column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Chris Witty",
+              "value": "Chris Witty",
+              "start": 17,
+              "end": 28,
+              "clause": "What country did Chris Witty represent?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The condition names a person; matching row evidence places Chris Witty in the Name column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "Chris Witty"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Chris Witty",
+          "value": "Chris Witty",
+          "start": 17,
+          "end": 28
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Chris Witty",
+          "value": "Chris Witty",
+          "start": 17,
+          "end": 28,
+          "clause": "What country did Chris Witty represent?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The condition names a person; matching row evidence places Chris Witty in the Name column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          2,
+          0,
+          "Chris Witty"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8640
+}

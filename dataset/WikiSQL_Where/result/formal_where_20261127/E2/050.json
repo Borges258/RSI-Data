@@ -1,0 +1,464 @@
+{
+  "arm": "E2",
+  "position": 50,
+  "example_id": "test:3587:1-2655016-9",
+  "original_index": 3587,
+  "table_id": "1-2655016-9",
+  "question": "what is the series number of the \"harry bladder special\"?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        2,
+        0,
+        "\"Harry Bladder Special\""
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "\"Harry Bladder Special\""
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "\"Harry Bladder Special\""
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "harry bladder special",
+        "value": "\"Harry Bladder Special\"",
+        "start": 34,
+        "end": 55,
+        "clause": "what is the series number of the \"harry bladder special\"?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The condition names an episode, and the exact value appears under the 'Episode title' field.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "harry bladder special",
+        "value": "\"Harry Bladder Special\"",
+        "start": 34,
+        "end": 55
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "what is the series number of the \"harry bladder special\"?",
+      "table": {
+        "id": "1-2655016-9",
+        "header": [
+          "Season #",
+          "Series #",
+          "Episode title",
+          "Original air date",
+          "Nick prod. #"
+        ],
+        "types": [
+          "real",
+          "real",
+          "text",
+          "text",
+          "text"
+        ],
+        "rows": [
+          [
+            1,
+            123,
+            "\" B2K \"",
+            "September 21, 2002",
+            "827"
+          ],
+          [
+            3,
+            125,
+            "\" Yasmeen \"",
+            "October5,2002",
+            "829"
+          ],
+          [
+            4,
+            126,
+            "\" Jeffrey Licon / Jennifer Love Hewitt \"",
+            "October12,2002",
+            "830"
+          ],
+          [
+            5,
+            127,
+            "\" Justin Timberlake / Aaron Carter \"",
+            "October19,2002",
+            "831"
+          ],
+          [
+            6,
+            128,
+            "\" Tom Green / Avril Lavigne \"",
+            "October26,2002",
+            "832"
+          ],
+          [
+            7,
+            129,
+            "\" 3LW \"",
+            "November2,2002",
+            "833"
+          ],
+          [
+            8,
+            130,
+            "\" Nick Carter / BBMak \"",
+            "November9,2002",
+            "834"
+          ],
+          [
+            9,
+            131,
+            "\"Harry Bladder Special\"",
+            "November16,2002",
+            "Special"
+          ],
+          [
+            10,
+            132,
+            "\" Justincase / Britney Spears \"",
+            "November23,2002",
+            "835"
+          ],
+          [
+            11,
+            133,
+            "\" Nick Cannon / Monica \"",
+            "January25,2003",
+            "836"
+          ],
+          [
+            12,
+            134,
+            "\" Debbie Gibson \"",
+            "February1,2003",
+            "837"
+          ],
+          [
+            13,
+            135,
+            "\" Matthew Lillard / O-Town \"",
+            "February8,2003",
+            "838"
+          ],
+          [
+            14,
+            136,
+            "\" Tom Green / No Secrets \"",
+            "February15,2003",
+            "839"
+          ]
+        ],
+        "name": "table_2655016_9",
+        "headers": [
+          "Season #",
+          "Series #",
+          "Episode title",
+          "Original air date",
+          "Nick prod. #"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-2655016-9",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "harry bladder special",
+              "value": "\"Harry Bladder Special\"",
+              "start": 34,
+              "end": 55
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a618e882e246412ee9179090e48fd581e48901e89109894cccf64828ef4b4b2c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4935,
+              "completion_tokens": 25,
+              "total_tokens": 4960,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "harry bladder special",
+              "value": "\"Harry Bladder Special\"",
+              "start": 34,
+              "end": 55,
+              "clause": "what is the series number of the \"harry bladder special\"?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "harry bladder special",
+              "value": "\"Harry Bladder Special\"",
+              "start": 34,
+              "end": 55,
+              "clause": "what is the series number of the \"harry bladder special\"?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "harry bladder special",
+              "value": "\"Harry Bladder Special\"",
+              "start": 34,
+              "end": 55,
+              "clause": "what is the series number of the \"harry bladder special\"?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The condition names an episode, and the exact value appears under the 'Episode title' field."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b495d7f8877b78e5ea621d6d11758954edd922dec8a94d3a22621496322e6dee",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4978,
+              "completion_tokens": 40,
+              "total_tokens": 5018,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "harry bladder special",
+              "value": "\"Harry Bladder Special\"",
+              "start": 34,
+              "end": 55,
+              "clause": "what is the series number of the \"harry bladder special\"?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The condition names an episode, and the exact value appears under the 'Episode title' field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "810c1f687e7537d82401b3c85085c8c21b491a964182d030d2d513d4f00cdd8d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5042,
+              "completion_tokens": 9,
+              "total_tokens": 5051,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "harry bladder special",
+              "value": "\"Harry Bladder Special\"",
+              "start": 34,
+              "end": 55,
+              "clause": "what is the series number of the \"harry bladder special\"?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The condition names an episode, and the exact value appears under the 'Episode title' field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "8d42733736303646a9731a39b8e5d70d53b42e863927103af9e41cd2f6459f1d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4993,
+              "completion_tokens": 15,
+              "total_tokens": 5008,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "harry bladder special",
+              "value": "\"Harry Bladder Special\"",
+              "start": 34,
+              "end": 55,
+              "clause": "what is the series number of the \"harry bladder special\"?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The condition names an episode, and the exact value appears under the 'Episode title' field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "harry bladder special",
+              "value": "\"Harry Bladder Special\"",
+              "start": 34,
+              "end": 55,
+              "clause": "what is the series number of the \"harry bladder special\"?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The condition names an episode, and the exact value appears under the 'Episode title' field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "harry bladder special",
+              "value": "\"Harry Bladder Special\"",
+              "start": 34,
+              "end": 55,
+              "clause": "what is the series number of the \"harry bladder special\"?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The condition names an episode, and the exact value appears under the 'Episode title' field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "\"Harry Bladder Special\""
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "harry bladder special",
+          "value": "\"Harry Bladder Special\"",
+          "start": 34,
+          "end": 55
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "harry bladder special",
+          "value": "\"Harry Bladder Special\"",
+          "start": 34,
+          "end": 55,
+          "clause": "what is the series number of the \"harry bladder special\"?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The condition names an episode, and the exact value appears under the 'Episode title' field.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          2,
+          0,
+          "\"Harry Bladder Special\""
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8547
+}

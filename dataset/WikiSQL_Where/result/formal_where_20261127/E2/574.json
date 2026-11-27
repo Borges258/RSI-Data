@@ -1,0 +1,612 @@
+{
+  "arm": "E2",
+  "position": 574,
+  "example_id": "test:11977:2-10869537-17",
+  "original_index": 11977,
+  "table_id": "2-10869537-17",
+  "question": "What was the attendance when St Kilda played as the away team?",
+  "gold_sql": {
+    "sel": 5,
+    "conds": [
+      [
+        2,
+        0,
+        "st kilda"
+      ]
+    ],
+    "agg": 5
+  },
+  "prediction_conds": [],
+  "status": "GROUNDING_FAILED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "GROUNDING_FAILED",
+    "valid": false,
+    "errors": [
+      "condition 1: grounding NO_MATCH"
+    ],
+    "conditions": [
+      {
+        "surface": "St Kilda",
+        "value": "St Kilda",
+        "start": 29,
+        "end": 37,
+        "clause": "What was the attendance when St Kilda played as the away team?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The question says St Kilda played as the away team, and row evidence places St Kilda under Away team.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "away",
+        "value": "away",
+        "start": 52,
+        "end": 56,
+        "clause": "What was the attendance when St Kilda played as the away team?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "Away explicitly refers to the Away team field.",
+        "operator": "=",
+        "grounded": false,
+        "groundingStatus": "NO_MATCH",
+        "groundingReview": {
+          "column": null,
+          "reason": "The intended field is Away team, but the literal value \"away\" conflicts with the cells; the matching cell value is \"St Kilda\"."
+        }
+      }
+    ],
+    "stage": "WHERE_CONDITION_VALIDATE",
+    "originalConditions": [
+      {
+        "surface": "St Kilda",
+        "value": "St Kilda",
+        "start": 29,
+        "end": 37
+      },
+      {
+        "surface": "away",
+        "value": "away",
+        "start": 52,
+        "end": 56
+      }
+    ],
+    "halt": true,
+    "completed": false,
+    "conds": [],
+    "warnings": [],
+    "request": {
+      "question": "What was the attendance when St Kilda played as the away team?",
+      "table": {
+        "header": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ],
+        "page_title": "1973 VFL season",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 10869537,
+        "id": "2-10869537-17",
+        "section_title": "Round 17",
+        "rows": [
+          [
+            "Essendon",
+            "15.12 (102)",
+            "St Kilda",
+            "10.19 (79)",
+            "Windy Hill",
+            "21,469",
+            "28 July 1973"
+          ],
+          [
+            "Carlton",
+            "15.17 (107)",
+            "Richmond",
+            "10.21 (81)",
+            "Princes Park",
+            "28,592",
+            "28 July 1973"
+          ],
+          [
+            "South Melbourne",
+            "19.16 (130)",
+            "North Melbourne",
+            "14.7 (91)",
+            "Lake Oval",
+            "13,637",
+            "28 July 1973"
+          ],
+          [
+            "Hawthorn",
+            "15.10 (100)",
+            "Fitzroy",
+            "9.9 (63)",
+            "Glenferrie Oval",
+            "12,386",
+            "28 July 1973"
+          ],
+          [
+            "Melbourne",
+            "12.15 (87)",
+            "Collingwood",
+            "17.24 (126)",
+            "MCG",
+            "37,838",
+            "28 July 1973"
+          ],
+          [
+            "Footscray",
+            "21.15 (141)",
+            "Geelong",
+            "13.14 (92)",
+            "VFL Park",
+            "13,546",
+            "28 July 1973"
+          ]
+        ],
+        "caption": "Round 17",
+        "headers": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-10869537-17",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 9,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "St Kilda",
+              "value": "St Kilda",
+              "start": 29,
+              "end": 37
+            },
+            {
+              "surface": "away",
+              "value": "away",
+              "start": 52,
+              "end": 56
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "aa74b1622990d69759e6e0d2c85315de26b875a31473c25a7a4111a1c21772e1",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4908,
+              "completion_tokens": 29,
+              "total_tokens": 4937,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "St Kilda",
+              "value": "St Kilda",
+              "start": 29,
+              "end": 37,
+              "clause": "What was the attendance when St Kilda played as the away team?"
+            },
+            {
+              "surface": "away",
+              "value": "away",
+              "start": 52,
+              "end": 56,
+              "clause": "What was the attendance when St Kilda played as the away team?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "St Kilda",
+              "value": "St Kilda",
+              "start": 29,
+              "end": 37,
+              "clause": "What was the attendance when St Kilda played as the away team?"
+            },
+            {
+              "surface": "away",
+              "value": "away",
+              "start": 52,
+              "end": 56,
+              "clause": "What was the attendance when St Kilda played as the away team?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "St Kilda",
+              "value": "St Kilda",
+              "start": 29,
+              "end": 37,
+              "clause": "What was the attendance when St Kilda played as the away team?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question says St Kilda played as the away team, and row evidence places St Kilda under Away team."
+            },
+            {
+              "surface": "away",
+              "value": "away",
+              "start": 52,
+              "end": 56,
+              "clause": "What was the attendance when St Kilda played as the away team?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Away explicitly refers to the Away team field."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "5dff19204efe660f4f9a0b25eabe2b7007214e9dc841786d954963b4da43675c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4981,
+              "completion_tokens": 57,
+              "total_tokens": 5038,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "St Kilda",
+              "value": "St Kilda",
+              "start": 29,
+              "end": 37,
+              "clause": "What was the attendance when St Kilda played as the away team?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question says St Kilda played as the away team, and row evidence places St Kilda under Away team.",
+              "operator": "="
+            },
+            {
+              "surface": "away",
+              "value": "away",
+              "start": 52,
+              "end": 56,
+              "clause": "What was the attendance when St Kilda played as the away team?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Away explicitly refers to the Away team field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "7e4e17a4f3268609aa4fdaa0a9c0219f55a4067ea6f63b2974ef017ec3c68d33",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5073,
+              "completion_tokens": 11,
+              "total_tokens": 5084,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "St Kilda",
+              "value": "St Kilda",
+              "start": 29,
+              "end": 37,
+              "clause": "What was the attendance when St Kilda played as the away team?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question says St Kilda played as the away team, and row evidence places St Kilda under Away team.",
+              "operator": "="
+            },
+            {
+              "surface": "away",
+              "value": "away",
+              "start": 52,
+              "end": 56,
+              "clause": "What was the attendance when St Kilda played as the away team?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Away explicitly refers to the Away team field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "537309c4ac36e0dd4b433135588065e58a9d333bfd3cc44ed5e0baa2e6637f41",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5027,
+              "completion_tokens": 97,
+              "total_tokens": 5124,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 81
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "St Kilda",
+              "value": "St Kilda",
+              "start": 29,
+              "end": 37,
+              "clause": "What was the attendance when St Kilda played as the away team?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question says St Kilda played as the away team, and row evidence places St Kilda under Away team.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "away",
+              "value": "away",
+              "start": 52,
+              "end": 56,
+              "clause": "What was the attendance when St Kilda played as the away team?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Away explicitly refers to the Away team field.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": null,
+                "reason": "The intended field is Away team, but the literal value \"away\" conflicts with the cells; the matching cell value is \"St Kilda\"."
+              }
+            }
+          ],
+          "reviewModelCalls": [
+            {
+              "model": "gpt-5.6-sol",
+              "promptSha256": "c5a29077c6de7e86ee55f5ba383bab12fa4f59671fd96a315635667a64e963c4",
+              "knowledgeIds": [],
+              "usage": {
+                "prompt_tokens": 4989,
+                "completion_tokens": 42,
+                "total_tokens": 5031,
+                "prompt_tokens_details": {
+                  "cached_tokens": 4224
+                }
+              }
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c5a29077c6de7e86ee55f5ba383bab12fa4f59671fd96a315635667a64e963c4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4989,
+              "completion_tokens": 42,
+              "total_tokens": 5031,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "St Kilda",
+              "value": "St Kilda",
+              "start": 29,
+              "end": 37,
+              "clause": "What was the attendance when St Kilda played as the away team?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question says St Kilda played as the away team, and row evidence places St Kilda under Away team.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "away",
+              "value": "away",
+              "start": 52,
+              "end": 56,
+              "clause": "What was the attendance when St Kilda played as the away team?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Away explicitly refers to the Away team field.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": null,
+                "reason": "The intended field is Away team, but the literal value \"away\" conflicts with the cells; the matching cell value is \"St Kilda\"."
+              }
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "GROUNDING_FAILED",
+          "valid": false,
+          "errors": [
+            "condition 1: grounding NO_MATCH"
+          ],
+          "conditions": [
+            {
+              "surface": "St Kilda",
+              "value": "St Kilda",
+              "start": 29,
+              "end": 37,
+              "clause": "What was the attendance when St Kilda played as the away team?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question says St Kilda played as the away team, and row evidence places St Kilda under Away team.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "away",
+              "value": "away",
+              "start": 52,
+              "end": 56,
+              "clause": "What was the attendance when St Kilda played as the away team?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Away explicitly refers to the Away team field.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": null,
+                "reason": "The intended field is Away team, but the literal value \"away\" conflicts with the cells; the matching cell value is \"St Kilda\"."
+              }
+            }
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "GROUNDING_FAILED",
+        "stage": "WHERE_CONDITION_VALIDATE",
+        "halt": true,
+        "completed": false,
+        "errors": [
+          "condition 1: grounding NO_MATCH"
+        ],
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "St Kilda",
+          "value": "St Kilda",
+          "start": 29,
+          "end": 37
+        },
+        {
+          "surface": "away",
+          "value": "away",
+          "start": 52,
+          "end": 56
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "St Kilda",
+          "value": "St Kilda",
+          "start": 29,
+          "end": 37,
+          "clause": "What was the attendance when St Kilda played as the away team?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The question says St Kilda played as the away team, and row evidence places St Kilda under Away team.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "away",
+          "value": "away",
+          "start": 52,
+          "end": 56,
+          "clause": "What was the attendance when St Kilda played as the away team?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "Away explicitly refers to the Away team field.",
+          "operator": "=",
+          "grounded": false,
+          "groundingStatus": "NO_MATCH",
+          "groundingReview": {
+            "column": null,
+            "reason": "The intended field is Away team, but the literal value \"away\" conflicts with the cells; the matching cell value is \"St Kilda\"."
+          }
+        }
+      ],
+      "count": 2
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": false,
+  "elapsed_ms": 11781
+}

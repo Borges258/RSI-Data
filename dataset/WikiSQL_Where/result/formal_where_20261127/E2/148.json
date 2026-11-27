@@ -1,0 +1,612 @@
+{
+  "arm": "E2",
+  "position": 148,
+  "example_id": "test:11546:2-10806592-2",
+  "original_index": 11546,
+  "table_id": "2-10806592-2",
+  "question": "In the game where the crowd was 11,327 and the hoem team scored 13.17 (95) How much did the away team score?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        5,
+        1,
+        "11,327"
+      ],
+      [
+        1,
+        0,
+        "13.17 (95)"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      5,
+      0,
+      "11,327"
+    ],
+    [
+      1,
+      0,
+      "13.17 (95)"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        5,
+        0,
+        "11,327"
+      ],
+      [
+        1,
+        0,
+        "13.17 (95)"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "11,327",
+        "value": "11,327",
+        "start": 32,
+        "end": 38,
+        "clause": "In the game where the crowd was 11,327",
+        "columnIndex": 5,
+        "columnCandidates": [
+          5
+        ],
+        "columnMatchReason": "The clause explicitly identifies 11,327 as the crowd, matching the Crowd header.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "13.17 (95)",
+        "value": "13.17 (95)",
+        "start": 64,
+        "end": 74,
+        "clause": "and the hoem team scored 13.17 (95) How much did the away team score?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The clause identifies 13.17 (95) as the home team score despite the typo 'hoem', matching the Home team score header.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "11,327",
+        "value": "11,327",
+        "start": 32,
+        "end": 38
+      },
+      {
+        "surface": "13.17 (95)",
+        "value": "13.17 (95)",
+        "start": 64,
+        "end": 74
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "In the game where the crowd was 11,327 and the hoem team scored 13.17 (95) How much did the away team score?",
+      "table": {
+        "header": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ],
+        "page_title": "1938 VFL season",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 10806592,
+        "id": "2-10806592-2",
+        "section_title": "Round 2",
+        "rows": [
+          [
+            "North Melbourne",
+            "9.10 (64)",
+            "South Melbourne",
+            "6.8 (44)",
+            "Arden Street Oval",
+            "11,000",
+            "30 April 1938"
+          ],
+          [
+            "Collingwood",
+            "18.19 (127)",
+            "Essendon",
+            "9.20 (74)",
+            "Victoria Park",
+            "15,000",
+            "30 April 1938"
+          ],
+          [
+            "Carlton",
+            "12.23 (95)",
+            "Richmond",
+            "14.10 (94)",
+            "Princes Park",
+            "32,000",
+            "30 April 1938"
+          ],
+          [
+            "Melbourne",
+            "14.8 (92)",
+            "Hawthorn",
+            "16.15 (111)",
+            "MCG",
+            "11,327",
+            "30 April 1938"
+          ],
+          [
+            "St Kilda",
+            "13.16 (94)",
+            "Geelong",
+            "8.17 (65)",
+            "Junction Oval",
+            "17,000",
+            "30 April 1938"
+          ],
+          [
+            "Footscray",
+            "13.17 (95)",
+            "Fitzroy",
+            "10.5 (65)",
+            "Western Oval",
+            "15,000",
+            "30 April 1938"
+          ]
+        ],
+        "caption": "Round 2",
+        "headers": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-10806592-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "11,327",
+              "value": "11,327",
+              "start": 32,
+              "end": 38
+            },
+            {
+              "surface": "13.17 (95)",
+              "value": "13.17 (95)",
+              "start": 64,
+              "end": 74
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "49a0bbbefd59e3c1d8e231f82f8b3b79e88a548b4d3f747780b95f68a250589b",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4923,
+              "completion_tokens": 106,
+              "total_tokens": 5029,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 65
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "11,327",
+              "value": "11,327",
+              "start": 32,
+              "end": 38,
+              "clause": "In the game where the crowd was 11,327"
+            },
+            {
+              "surface": "13.17 (95)",
+              "value": "13.17 (95)",
+              "start": 64,
+              "end": 74,
+              "clause": "and the hoem team scored 13.17 (95) How much did the away team score?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "11,327",
+              "value": "11,327",
+              "start": 32,
+              "end": 38,
+              "clause": "In the game where the crowd was 11,327"
+            },
+            {
+              "surface": "13.17 (95)",
+              "value": "13.17 (95)",
+              "start": 64,
+              "end": 74,
+              "clause": "and the hoem team scored 13.17 (95) How much did the away team score?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "11,327",
+              "value": "11,327",
+              "start": 32,
+              "end": 38,
+              "clause": "In the game where the crowd was 11,327",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The clause explicitly identifies 11,327 as the crowd, matching the Crowd header."
+            },
+            {
+              "surface": "13.17 (95)",
+              "value": "13.17 (95)",
+              "start": 64,
+              "end": 74,
+              "clause": "and the hoem team scored 13.17 (95) How much did the away team score?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause identifies 13.17 (95) as the home team score despite the typo 'hoem', matching the Home team score header."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "26737a55512527ecad021dbbf65897855b99024def9844384fbbd559953226f9",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5010,
+              "completion_tokens": 71,
+              "total_tokens": 5081,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "11,327",
+              "value": "11,327",
+              "start": 32,
+              "end": 38,
+              "clause": "In the game where the crowd was 11,327",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The clause explicitly identifies 11,327 as the crowd, matching the Crowd header.",
+              "operator": "="
+            },
+            {
+              "surface": "13.17 (95)",
+              "value": "13.17 (95)",
+              "start": 64,
+              "end": 74,
+              "clause": "and the hoem team scored 13.17 (95) How much did the away team score?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause identifies 13.17 (95) as the home team score despite the typo 'hoem', matching the Home team score header.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "69c616265b540e12a9e28b7ed48e69f3b336b18d7fde5dde9c7e92178944597a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5116,
+              "completion_tokens": 11,
+              "total_tokens": 5127,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "11,327",
+              "value": "11,327",
+              "start": 32,
+              "end": 38,
+              "clause": "In the game where the crowd was 11,327",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The clause explicitly identifies 11,327 as the crowd, matching the Crowd header.",
+              "operator": "="
+            },
+            {
+              "surface": "13.17 (95)",
+              "value": "13.17 (95)",
+              "start": 64,
+              "end": 74,
+              "clause": "and the hoem team scored 13.17 (95) How much did the away team score?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause identifies 13.17 (95) as the home team score despite the typo 'hoem', matching the Home team score header.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e2b29bf12f83ecf0ee7d8583bec5dd5357b069cc6d2e50276615dc30a73ac581",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5070,
+              "completion_tokens": 34,
+              "total_tokens": 5104,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 13
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "11,327",
+              "value": "11,327",
+              "start": 32,
+              "end": 38,
+              "clause": "In the game where the crowd was 11,327",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The clause explicitly identifies 11,327 as the crowd, matching the Crowd header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "13.17 (95)",
+              "value": "13.17 (95)",
+              "start": 64,
+              "end": 74,
+              "clause": "and the hoem team scored 13.17 (95) How much did the away team score?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause identifies 13.17 (95) as the home team score despite the typo 'hoem', matching the Home team score header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "11,327",
+              "value": "11,327",
+              "start": 32,
+              "end": 38,
+              "clause": "In the game where the crowd was 11,327",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The clause explicitly identifies 11,327 as the crowd, matching the Crowd header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "13.17 (95)",
+              "value": "13.17 (95)",
+              "start": 64,
+              "end": 74,
+              "clause": "and the hoem team scored 13.17 (95) How much did the away team score?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause identifies 13.17 (95) as the home team score despite the typo 'hoem', matching the Home team score header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "11,327",
+              "value": "11,327",
+              "start": 32,
+              "end": 38,
+              "clause": "In the game where the crowd was 11,327",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The clause explicitly identifies 11,327 as the crowd, matching the Crowd header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "13.17 (95)",
+              "value": "13.17 (95)",
+              "start": 64,
+              "end": 74,
+              "clause": "and the hoem team scored 13.17 (95) How much did the away team score?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause identifies 13.17 (95) as the home team score despite the typo 'hoem', matching the Home team score header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              5,
+              0,
+              "11,327"
+            ],
+            [
+              1,
+              0,
+              "13.17 (95)"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "11,327",
+          "value": "11,327",
+          "start": 32,
+          "end": 38
+        },
+        {
+          "surface": "13.17 (95)",
+          "value": "13.17 (95)",
+          "start": 64,
+          "end": 74
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "11,327",
+          "value": "11,327",
+          "start": 32,
+          "end": 38,
+          "clause": "In the game where the crowd was 11,327",
+          "columnIndex": 5,
+          "columnCandidates": [
+            5
+          ],
+          "columnMatchReason": "The clause explicitly identifies 11,327 as the crowd, matching the Crowd header.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "13.17 (95)",
+          "value": "13.17 (95)",
+          "start": 64,
+          "end": 74,
+          "clause": "and the hoem team scored 13.17 (95) How much did the away team score?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The clause identifies 13.17 (95) as the home team score despite the typo 'hoem', matching the Home team score header.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          5,
+          0,
+          "11,327"
+        ],
+        [
+          1,
+          0,
+          "13.17 (95)"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 11188
+}

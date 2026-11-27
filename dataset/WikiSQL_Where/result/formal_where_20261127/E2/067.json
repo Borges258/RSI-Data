@@ -1,0 +1,612 @@
+{
+  "arm": "E2",
+  "position": 67,
+  "example_id": "test:4555:2-10775890-15",
+  "original_index": 4555,
+  "table_id": "2-10775890-15",
+  "question": "What day did the VFL pay MCG with attendance of 16,300?",
+  "gold_sql": {
+    "sel": 6,
+    "conds": [
+      [
+        5,
+        1,
+        "16,300"
+      ],
+      [
+        4,
+        0,
+        "mcg"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      4,
+      0,
+      "MCG"
+    ],
+    [
+      5,
+      0,
+      "16,300"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        0,
+        "MCG"
+      ],
+      [
+        5,
+        0,
+        "16,300"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "MCG",
+        "value": "MCG",
+        "start": 25,
+        "end": 28,
+        "clause": "What day did the VFL pay MCG with attendance of 16",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "MCG is a venue name and appears under Venue.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "16,300",
+        "value": "16,300",
+        "start": 48,
+        "end": 54,
+        "clause": "What day did the VFL pay MCG with attendance of 16,300?",
+        "columnIndex": 5,
+        "columnCandidates": [
+          5
+        ],
+        "columnMatchReason": "The question identifies 16,300 as attendance, corresponding to Crowd.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "MCG",
+        "value": "MCG",
+        "start": 25,
+        "end": 28
+      },
+      {
+        "surface": "16,300",
+        "value": "16,300",
+        "start": 48,
+        "end": 54
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What day did the VFL pay MCG with attendance of 16,300?",
+      "table": {
+        "header": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ],
+        "page_title": "1960 VFL season",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 10775890,
+        "id": "2-10775890-15",
+        "section_title": "Round 15",
+        "rows": [
+          [
+            "North Melbourne",
+            "14.16 (100)",
+            "South Melbourne",
+            "9.20 (74)",
+            "Arden Street Oval",
+            "10,000",
+            "6 August 1960"
+          ],
+          [
+            "Fitzroy",
+            "13.13 (91)",
+            "Richmond",
+            "10.11 (71)",
+            "Brunswick Street Oval",
+            "14,232",
+            "6 August 1960"
+          ],
+          [
+            "Essendon",
+            "14.11 (95)",
+            "Footscray",
+            "8.10 (58)",
+            "Windy Hill",
+            "21,000",
+            "6 August 1960"
+          ],
+          [
+            "St Kilda",
+            "9.16 (70)",
+            "Geelong",
+            "13.9 (87)",
+            "Junction Oval",
+            "16,300",
+            "6 August 1960"
+          ],
+          [
+            "Melbourne",
+            "16.15 (111)",
+            "Collingwood",
+            "9.11 (65)",
+            "MCG",
+            "81,099",
+            "6 August 1960"
+          ],
+          [
+            "Hawthorn",
+            "13.10 (88)",
+            "Carlton",
+            "9.7 (61)",
+            "Glenferrie Oval",
+            "16,000",
+            "6 August 1960"
+          ]
+        ],
+        "caption": "Round 15",
+        "headers": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-10775890-15",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "MCG",
+              "value": "MCG",
+              "start": 25,
+              "end": 28
+            },
+            {
+              "surface": "16,300",
+              "value": "16,300",
+              "start": 48,
+              "end": 54
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "450ebcdeed1ce4cc149ca26da6fd586efcaa895f16a68fca468c8fc5029772c7",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4914,
+              "completion_tokens": 88,
+              "total_tokens": 5002,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 55
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "MCG",
+              "value": "MCG",
+              "start": 25,
+              "end": 28,
+              "clause": "What day did the VFL pay MCG with attendance of 16"
+            },
+            {
+              "surface": "16,300",
+              "value": "16,300",
+              "start": 48,
+              "end": 54,
+              "clause": "What day did the VFL pay MCG with attendance of 16,300?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "MCG",
+              "value": "MCG",
+              "start": 25,
+              "end": 28,
+              "clause": "What day did the VFL pay MCG with attendance of 16"
+            },
+            {
+              "surface": "16,300",
+              "value": "16,300",
+              "start": 48,
+              "end": 54,
+              "clause": "What day did the VFL pay MCG with attendance of 16,300?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "MCG",
+              "value": "MCG",
+              "start": 25,
+              "end": 28,
+              "clause": "What day did the VFL pay MCG with attendance of 16",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "MCG is a venue name and appears under Venue."
+            },
+            {
+              "surface": "16,300",
+              "value": "16,300",
+              "start": 48,
+              "end": 54,
+              "clause": "What day did the VFL pay MCG with attendance of 16,300?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question identifies 16,300 as attendance, corresponding to Crowd."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "cd9e8d7eb7a01d1e9ac9412698b59d8a41af581096bf0717f4379b67717dfc87",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4992,
+              "completion_tokens": 50,
+              "total_tokens": 5042,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "MCG",
+              "value": "MCG",
+              "start": 25,
+              "end": 28,
+              "clause": "What day did the VFL pay MCG with attendance of 16",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "MCG is a venue name and appears under Venue.",
+              "operator": "="
+            },
+            {
+              "surface": "16,300",
+              "value": "16,300",
+              "start": 48,
+              "end": 54,
+              "clause": "What day did the VFL pay MCG with attendance of 16,300?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question identifies 16,300 as attendance, corresponding to Crowd.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "57710b34203880d7881b20cc907edc7bdee29317f28ae9c3b28fe0784d424e5a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5077,
+              "completion_tokens": 11,
+              "total_tokens": 5088,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "MCG",
+              "value": "MCG",
+              "start": 25,
+              "end": 28,
+              "clause": "What day did the VFL pay MCG with attendance of 16",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "MCG is a venue name and appears under Venue.",
+              "operator": "="
+            },
+            {
+              "surface": "16,300",
+              "value": "16,300",
+              "start": 48,
+              "end": 54,
+              "clause": "What day did the VFL pay MCG with attendance of 16,300?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question identifies 16,300 as attendance, corresponding to Crowd.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "15bd506dcd4f9cb584756610e1e6daf7dc2f5401f74dd31bed9082924de78f30",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5031,
+              "completion_tokens": 51,
+              "total_tokens": 5082,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 34
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "MCG",
+              "value": "MCG",
+              "start": 25,
+              "end": 28,
+              "clause": "What day did the VFL pay MCG with attendance of 16",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "MCG is a venue name and appears under Venue.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "16,300",
+              "value": "16,300",
+              "start": 48,
+              "end": 54,
+              "clause": "What day did the VFL pay MCG with attendance of 16,300?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question identifies 16,300 as attendance, corresponding to Crowd.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "MCG",
+              "value": "MCG",
+              "start": 25,
+              "end": 28,
+              "clause": "What day did the VFL pay MCG with attendance of 16",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "MCG is a venue name and appears under Venue.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "16,300",
+              "value": "16,300",
+              "start": 48,
+              "end": 54,
+              "clause": "What day did the VFL pay MCG with attendance of 16,300?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question identifies 16,300 as attendance, corresponding to Crowd.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "MCG",
+              "value": "MCG",
+              "start": 25,
+              "end": 28,
+              "clause": "What day did the VFL pay MCG with attendance of 16",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "MCG is a venue name and appears under Venue.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "16,300",
+              "value": "16,300",
+              "start": 48,
+              "end": 54,
+              "clause": "What day did the VFL pay MCG with attendance of 16,300?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question identifies 16,300 as attendance, corresponding to Crowd.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              0,
+              "MCG"
+            ],
+            [
+              5,
+              0,
+              "16,300"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "MCG",
+          "value": "MCG",
+          "start": 25,
+          "end": 28
+        },
+        {
+          "surface": "16,300",
+          "value": "16,300",
+          "start": 48,
+          "end": 54
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "MCG",
+          "value": "MCG",
+          "start": 25,
+          "end": 28,
+          "clause": "What day did the VFL pay MCG with attendance of 16",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "MCG is a venue name and appears under Venue.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "16,300",
+          "value": "16,300",
+          "start": 48,
+          "end": 54,
+          "clause": "What day did the VFL pay MCG with attendance of 16,300?",
+          "columnIndex": 5,
+          "columnCandidates": [
+            5
+          ],
+          "columnMatchReason": "The question identifies 16,300 as attendance, corresponding to Crowd.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          4,
+          0,
+          "MCG"
+        ],
+        [
+          5,
+          0,
+          "16,300"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8953
+}

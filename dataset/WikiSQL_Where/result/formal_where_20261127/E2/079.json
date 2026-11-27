@@ -1,0 +1,771 @@
+{
+  "arm": "E2",
+  "position": 79,
+  "example_id": "test:5053:2-14176339-4",
+  "original_index": 5053,
+  "table_id": "2-14176339-4",
+  "question": "What city had a score of 20 in aigburth after 1907?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        4,
+        1,
+        1907
+      ],
+      [
+        0,
+        1,
+        20
+      ],
+      [
+        2,
+        0,
+        "aigburth"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [],
+  "status": "GROUNDING_FAILED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "GROUNDING_FAILED",
+    "valid": false,
+    "errors": [
+      "condition 2: grounding NO_MATCH",
+      "condition 2: nonnumeric value for real column"
+    ],
+    "conditions": [
+      {
+        "surface": "20",
+        "value": 20,
+        "start": 25,
+        "end": 27,
+        "clause": "What city had a score of 20 in aigburth after 1907?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "Explicitly described as a score, matching Score.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "aigburth",
+        "value": "Aigburth",
+        "start": 31,
+        "end": 39,
+        "clause": "What city had a score of 20 in aigburth after 1907?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "Aigburth is identified as the venue in the table.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "after 1907",
+        "value": "> 1907",
+        "start": 40,
+        "end": 50,
+        "clause": "What city had a score of 20 in aigburth after 1907?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "Temporal condition matches the Year field.",
+        "operator": ">",
+        "grounded": false,
+        "groundingStatus": "NO_MATCH",
+        "groundingReview": {
+          "column": 4,
+          "reason": "“after 1907” is a temporal comparison, and candidate column 4 is Year with numeric year values including dates later than 1907."
+        }
+      }
+    ],
+    "stage": "WHERE_CONDITION_VALIDATE",
+    "originalConditions": [
+      {
+        "surface": "20",
+        "value": "20",
+        "start": 25,
+        "end": 27
+      },
+      {
+        "surface": "aigburth",
+        "value": "Aigburth",
+        "start": 31,
+        "end": 39
+      },
+      {
+        "surface": "after 1907",
+        "value": "> 1907",
+        "start": 40,
+        "end": 50
+      }
+    ],
+    "halt": true,
+    "completed": false,
+    "conds": [],
+    "warnings": [
+      "value model disagreed with extracted question span; original retained"
+    ],
+    "request": {
+      "question": "What city had a score of 20 in aigburth after 1907?",
+      "table": {
+        "header": [
+          "Score",
+          "Opposition",
+          "Venue",
+          "City",
+          "Year"
+        ],
+        "page_title": "List of Lancashire County Cricket Club records",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "real"
+        ],
+        "page_id": 14176339,
+        "id": "2-14176339-4",
+        "section_title": "Lowest totals against Lancashire",
+        "rows": [
+          [
+            "20",
+            "Essex",
+            "County Ground",
+            "Chelmsford",
+            "2013"
+          ],
+          [
+            "22",
+            "Glamorgan",
+            "Aigburth",
+            "Liverpool",
+            "1924"
+          ],
+          [
+            "24",
+            "Sussex",
+            "Old Trafford",
+            "Manchester",
+            "1890"
+          ],
+          [
+            "26",
+            "Glamorgan",
+            "Cardiff Arms Park",
+            "Cardiff",
+            "1958"
+          ],
+          [
+            "29",
+            "Somerset",
+            "Old Trafford",
+            "Manchester",
+            "1882"
+          ],
+          [
+            "29",
+            "Sussex",
+            "Aigburth",
+            "Liverpool",
+            "1907"
+          ],
+          [
+            "30",
+            "Marylebone Cricket Club",
+            "Lord's Cricket Ground",
+            "London",
+            "1886"
+          ]
+        ],
+        "caption": "Lowest totals against Lancashire",
+        "headers": [
+          "Score",
+          "Opposition",
+          "Venue",
+          "City",
+          "Year"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-14176339-4",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 9,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 3,
+          "conditions": [
+            {
+              "surface": "20",
+              "value": "20",
+              "start": 25,
+              "end": 27
+            },
+            {
+              "surface": "aigburth",
+              "value": "Aigburth",
+              "start": 31,
+              "end": 39
+            },
+            {
+              "surface": "after 1907",
+              "value": "> 1907",
+              "start": 40,
+              "end": 50
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "87ff3754dcdd402106c2d935ca0abbc49943aa8d4f574c0944f4a2b9ce66a801",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4789,
+              "completion_tokens": 45,
+              "total_tokens": 4834,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "20",
+              "value": "20",
+              "start": 25,
+              "end": 27,
+              "clause": "What city had a score of 20 in aigburth after 1907?"
+            },
+            {
+              "surface": "aigburth",
+              "value": "Aigburth",
+              "start": 31,
+              "end": 39,
+              "clause": "What city had a score of 20 in aigburth after 1907?"
+            },
+            {
+              "surface": "after 1907",
+              "value": "> 1907",
+              "start": 40,
+              "end": 50,
+              "clause": "What city had a score of 20 in aigburth after 1907?"
+            }
+          ],
+          "count": 3
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "20",
+              "value": "20",
+              "start": 25,
+              "end": 27,
+              "clause": "What city had a score of 20 in aigburth after 1907?"
+            },
+            {
+              "surface": "aigburth",
+              "value": "Aigburth",
+              "start": 31,
+              "end": 39,
+              "clause": "What city had a score of 20 in aigburth after 1907?"
+            },
+            {
+              "surface": "after 1907",
+              "value": "> 1907",
+              "start": 40,
+              "end": 50,
+              "clause": "What city had a score of 20 in aigburth after 1907?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "20",
+              "value": "20",
+              "start": 25,
+              "end": 27,
+              "clause": "What city had a score of 20 in aigburth after 1907?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Explicitly described as a score, matching Score."
+            },
+            {
+              "surface": "aigburth",
+              "value": "Aigburth",
+              "start": 31,
+              "end": 39,
+              "clause": "What city had a score of 20 in aigburth after 1907?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Aigburth is identified as the venue in the table."
+            },
+            {
+              "surface": "after 1907",
+              "value": "> 1907",
+              "start": 40,
+              "end": 50,
+              "clause": "What city had a score of 20 in aigburth after 1907?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Temporal condition matches the Year field."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "fb250ba980aaad462d1b9d1d1549ca1b67bee0bb6272e6d18cc8e53e6abdec1d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4913,
+              "completion_tokens": 59,
+              "total_tokens": 4972,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "20",
+              "value": "20",
+              "start": 25,
+              "end": 27,
+              "clause": "What city had a score of 20 in aigburth after 1907?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Explicitly described as a score, matching Score.",
+              "operator": "="
+            },
+            {
+              "surface": "aigburth",
+              "value": "Aigburth",
+              "start": 31,
+              "end": 39,
+              "clause": "What city had a score of 20 in aigburth after 1907?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Aigburth is identified as the venue in the table.",
+              "operator": "="
+            },
+            {
+              "surface": "after 1907",
+              "value": "> 1907",
+              "start": 40,
+              "end": 50,
+              "clause": "What city had a score of 20 in aigburth after 1907?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Temporal condition matches the Year field.",
+              "operator": ">"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "78046a68b6e22d232603f88f2669c5e67cdd11a11f4ee78b8c31695ab4e05a70",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5018,
+              "completion_tokens": 13,
+              "total_tokens": 5031,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "warnings": [
+            "value model disagreed with extracted question span; original retained"
+          ],
+          "conditions": [
+            {
+              "surface": "20",
+              "value": "20",
+              "start": 25,
+              "end": 27,
+              "clause": "What city had a score of 20 in aigburth after 1907?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Explicitly described as a score, matching Score.",
+              "operator": "="
+            },
+            {
+              "surface": "aigburth",
+              "value": "Aigburth",
+              "start": 31,
+              "end": 39,
+              "clause": "What city had a score of 20 in aigburth after 1907?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Aigburth is identified as the venue in the table.",
+              "operator": "="
+            },
+            {
+              "surface": "after 1907",
+              "value": "> 1907",
+              "start": 40,
+              "end": 50,
+              "clause": "What city had a score of 20 in aigburth after 1907?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Temporal condition matches the Year field.",
+              "operator": ">"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "2c9bde8e8c9f80879f81dddc8642d1e1a866f3b64d80f706850a69935c36ab7b",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4975,
+              "completion_tokens": 18,
+              "total_tokens": 4993,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "20",
+              "value": "20",
+              "start": 25,
+              "end": 27,
+              "clause": "What city had a score of 20 in aigburth after 1907?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Explicitly described as a score, matching Score.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "aigburth",
+              "value": "Aigburth",
+              "start": 31,
+              "end": 39,
+              "clause": "What city had a score of 20 in aigburth after 1907?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Aigburth is identified as the venue in the table.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "after 1907",
+              "value": "> 1907",
+              "start": 40,
+              "end": 50,
+              "clause": "What city had a score of 20 in aigburth after 1907?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Temporal condition matches the Year field.",
+              "operator": ">",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 4,
+                "reason": "“after 1907” is a temporal comparison, and candidate column 4 is Year with numeric year values including dates later than 1907."
+              }
+            }
+          ],
+          "reviewModelCalls": [
+            {
+              "model": "gpt-5.6-sol",
+              "promptSha256": "a0148bc3deb4a43db23eb5d3da3d61c305f6e8b92c3cebee23dbb29af1b7111a",
+              "knowledgeIds": [],
+              "usage": {
+                "prompt_tokens": 4877,
+                "completion_tokens": 95,
+                "total_tokens": 4972,
+                "prompt_tokens_details": {
+                  "cached_tokens": 4224
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 51
+                }
+              }
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a0148bc3deb4a43db23eb5d3da3d61c305f6e8b92c3cebee23dbb29af1b7111a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4877,
+              "completion_tokens": 95,
+              "total_tokens": 4972,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 51
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "20",
+              "value": 20,
+              "start": 25,
+              "end": 27,
+              "clause": "What city had a score of 20 in aigburth after 1907?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Explicitly described as a score, matching Score.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "aigburth",
+              "value": "Aigburth",
+              "start": 31,
+              "end": 39,
+              "clause": "What city had a score of 20 in aigburth after 1907?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Aigburth is identified as the venue in the table.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "after 1907",
+              "value": "> 1907",
+              "start": 40,
+              "end": 50,
+              "clause": "What city had a score of 20 in aigburth after 1907?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Temporal condition matches the Year field.",
+              "operator": ">",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 4,
+                "reason": "“after 1907” is a temporal comparison, and candidate column 4 is Year with numeric year values including dates later than 1907."
+              }
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "GROUNDING_FAILED",
+          "valid": false,
+          "errors": [
+            "condition 2: grounding NO_MATCH",
+            "condition 2: nonnumeric value for real column"
+          ],
+          "conditions": [
+            {
+              "surface": "20",
+              "value": 20,
+              "start": 25,
+              "end": 27,
+              "clause": "What city had a score of 20 in aigburth after 1907?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Explicitly described as a score, matching Score.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "aigburth",
+              "value": "Aigburth",
+              "start": 31,
+              "end": 39,
+              "clause": "What city had a score of 20 in aigburth after 1907?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Aigburth is identified as the venue in the table.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "after 1907",
+              "value": "> 1907",
+              "start": 40,
+              "end": 50,
+              "clause": "What city had a score of 20 in aigburth after 1907?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Temporal condition matches the Year field.",
+              "operator": ">",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 4,
+                "reason": "“after 1907” is a temporal comparison, and candidate column 4 is Year with numeric year values including dates later than 1907."
+              }
+            }
+          ]
+        }
+      },
+      "warnings": [
+        "value model disagreed with extracted question span; original retained"
+      ],
+      "execution": {
+        "status": "GROUNDING_FAILED",
+        "stage": "WHERE_CONDITION_VALIDATE",
+        "halt": true,
+        "completed": false,
+        "errors": [
+          "condition 2: grounding NO_MATCH",
+          "condition 2: nonnumeric value for real column"
+        ],
+        "warnings": [
+          "value model disagreed with extracted question span; original retained"
+        ]
+      },
+      "originalConditions": [
+        {
+          "surface": "20",
+          "value": "20",
+          "start": 25,
+          "end": 27
+        },
+        {
+          "surface": "aigburth",
+          "value": "Aigburth",
+          "start": 31,
+          "end": 39
+        },
+        {
+          "surface": "after 1907",
+          "value": "> 1907",
+          "start": 40,
+          "end": 50
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "20",
+          "value": 20,
+          "start": 25,
+          "end": 27,
+          "clause": "What city had a score of 20 in aigburth after 1907?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "Explicitly described as a score, matching Score.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "aigburth",
+          "value": "Aigburth",
+          "start": 31,
+          "end": 39,
+          "clause": "What city had a score of 20 in aigburth after 1907?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "Aigburth is identified as the venue in the table.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "after 1907",
+          "value": "> 1907",
+          "start": 40,
+          "end": 50,
+          "clause": "What city had a score of 20 in aigburth after 1907?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "Temporal condition matches the Year field.",
+          "operator": ">",
+          "grounded": false,
+          "groundingStatus": "NO_MATCH",
+          "groundingReview": {
+            "column": 4,
+            "reason": "“after 1907” is a temporal comparison, and candidate column 4 is Year with numeric year values including dates later than 1907."
+          }
+        }
+      ],
+      "count": 3
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": false,
+  "elapsed_ms": 13313
+}

@@ -1,0 +1,597 @@
+{
+  "arm": "E2",
+  "position": 180,
+  "example_id": "test:6530:2-15098383-3",
+  "original_index": 6530,
+  "table_id": "2-15098383-3",
+  "question": "What is year that has points larger than 46, and a rank of 6th?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        3,
+        1,
+        46
+      ],
+      [
+        4,
+        0,
+        "6th"
+      ]
+    ],
+    "agg": 4
+  },
+  "prediction_conds": [
+    [
+      3,
+      1,
+      46
+    ],
+    [
+      4,
+      0,
+      "6th"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        1,
+        46
+      ],
+      [
+        4,
+        0,
+        "6th"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "46",
+        "value": 46,
+        "start": 41,
+        "end": 43,
+        "clause": "What is year that has points larger than 46,",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The clause explicitly says points larger than 46, matching the Points header and numeric cells.",
+        "operator": ">",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "6th",
+        "value": "6th",
+        "start": 59,
+        "end": 62,
+        "clause": "and a rank of 6th?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The clause explicitly says a rank of 6th, matching the Rank header and ordinal cells.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "46",
+        "value": "46",
+        "start": 41,
+        "end": 43
+      },
+      {
+        "surface": "6th",
+        "value": "6th",
+        "start": 59,
+        "end": 62
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is year that has points larger than 46, and a rank of 6th?",
+      "table": {
+        "header": [
+          "Year",
+          "Class",
+          "Team",
+          "Points",
+          "Rank",
+          "Wins"
+        ],
+        "page_title": "Masahiro Shimizu",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "real",
+          "text",
+          "real"
+        ],
+        "page_id": 15098383,
+        "id": "2-15098383-3",
+        "section_title": "Motorcycle Grand Prix Results",
+        "rows": [
+          [
+            "1987",
+            "250cc",
+            "Honda",
+            "20",
+            "13th",
+            "0"
+          ],
+          [
+            "1988",
+            "250cc",
+            "Honda",
+            "68",
+            "10th",
+            "0"
+          ],
+          [
+            "1989",
+            "250cc",
+            "Honda",
+            "116",
+            "6th",
+            "0"
+          ],
+          [
+            "1990",
+            "250cc",
+            "Honda",
+            "100",
+            "7th",
+            "0"
+          ],
+          [
+            "1991",
+            "250cc",
+            "Honda",
+            "142",
+            "5th",
+            "0"
+          ],
+          [
+            "1992",
+            "250cc",
+            "Honda",
+            "46",
+            "9th",
+            "0"
+          ]
+        ],
+        "caption": "Motorcycle Grand Prix Results",
+        "headers": [
+          "Year",
+          "Class",
+          "Team",
+          "Points",
+          "Rank",
+          "Wins"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-15098383-3",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "46",
+              "value": "46",
+              "start": 41,
+              "end": 43
+            },
+            {
+              "surface": "6th",
+              "value": "6th",
+              "start": 59,
+              "end": 62
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "030d1a4cc5296ad17d55e60f9904e6862a2c16411eb8ebf1017d8cca0816e584",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4778,
+              "completion_tokens": 27,
+              "total_tokens": 4805,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "46",
+              "value": "46",
+              "start": 41,
+              "end": 43,
+              "clause": "What is year that has points larger than 46,"
+            },
+            {
+              "surface": "6th",
+              "value": "6th",
+              "start": 59,
+              "end": 62,
+              "clause": "and a rank of 6th?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "46",
+              "value": "46",
+              "start": 41,
+              "end": 43,
+              "clause": "What is year that has points larger than 46,"
+            },
+            {
+              "surface": "6th",
+              "value": "6th",
+              "start": 59,
+              "end": 62,
+              "clause": "and a rank of 6th?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "46",
+              "value": "46",
+              "start": 41,
+              "end": 43,
+              "clause": "What is year that has points larger than 46,",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly says points larger than 46, matching the Points header and numeric cells."
+            },
+            {
+              "surface": "6th",
+              "value": "6th",
+              "start": 59,
+              "end": 62,
+              "clause": "and a rank of 6th?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly says a rank of 6th, matching the Rank header and ordinal cells."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "143c3e01f1c09a9cc627810c8f133eb365302a9211618b78e74b3fdd56bfbdcf",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4840,
+              "completion_tokens": 62,
+              "total_tokens": 4902,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "46",
+              "value": "46",
+              "start": 41,
+              "end": 43,
+              "clause": "What is year that has points larger than 46,",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly says points larger than 46, matching the Points header and numeric cells.",
+              "operator": ">"
+            },
+            {
+              "surface": "6th",
+              "value": "6th",
+              "start": 59,
+              "end": 62,
+              "clause": "and a rank of 6th?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly says a rank of 6th, matching the Rank header and ordinal cells.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "accb8b1b8256f1c6809436c0125ac21c4f78a5de2b1129dd6fddfc408f0faf3c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4937,
+              "completion_tokens": 11,
+              "total_tokens": 4948,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "46",
+              "value": "46",
+              "start": 41,
+              "end": 43,
+              "clause": "What is year that has points larger than 46,",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly says points larger than 46, matching the Points header and numeric cells.",
+              "operator": ">"
+            },
+            {
+              "surface": "6th",
+              "value": "6th",
+              "start": 59,
+              "end": 62,
+              "clause": "and a rank of 6th?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly says a rank of 6th, matching the Rank header and ordinal cells.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "9450ee5065e70944ae19cd9523860360eccf1b69516241a99d260cb316bdc46a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4891,
+              "completion_tokens": 13,
+              "total_tokens": 4904,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "46",
+              "value": "46",
+              "start": 41,
+              "end": 43,
+              "clause": "What is year that has points larger than 46,",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly says points larger than 46, matching the Points header and numeric cells.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "6th",
+              "value": "6th",
+              "start": 59,
+              "end": 62,
+              "clause": "and a rank of 6th?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly says a rank of 6th, matching the Rank header and ordinal cells.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "46",
+              "value": 46,
+              "start": 41,
+              "end": 43,
+              "clause": "What is year that has points larger than 46,",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly says points larger than 46, matching the Points header and numeric cells.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "6th",
+              "value": "6th",
+              "start": 59,
+              "end": 62,
+              "clause": "and a rank of 6th?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly says a rank of 6th, matching the Rank header and ordinal cells.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "46",
+              "value": 46,
+              "start": 41,
+              "end": 43,
+              "clause": "What is year that has points larger than 46,",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly says points larger than 46, matching the Points header and numeric cells.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "6th",
+              "value": "6th",
+              "start": 59,
+              "end": 62,
+              "clause": "and a rank of 6th?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly says a rank of 6th, matching the Rank header and ordinal cells.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              1,
+              46
+            ],
+            [
+              4,
+              0,
+              "6th"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "46",
+          "value": "46",
+          "start": 41,
+          "end": 43
+        },
+        {
+          "surface": "6th",
+          "value": "6th",
+          "start": 59,
+          "end": 62
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "46",
+          "value": 46,
+          "start": 41,
+          "end": 43,
+          "clause": "What is year that has points larger than 46,",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The clause explicitly says points larger than 46, matching the Points header and numeric cells.",
+          "operator": ">",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "6th",
+          "value": "6th",
+          "start": 59,
+          "end": 62,
+          "clause": "and a rank of 6th?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The clause explicitly says a rank of 6th, matching the Rank header and ordinal cells.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          3,
+          1,
+          46
+        ],
+        [
+          4,
+          0,
+          "6th"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8562
+}

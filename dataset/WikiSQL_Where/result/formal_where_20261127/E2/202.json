@@ -1,0 +1,577 @@
+{
+  "arm": "E2",
+  "position": 202,
+  "example_id": "test:3389:1-25696729-8",
+  "original_index": 3389,
+  "table_id": "1-25696729-8",
+  "question": "What is the highest rebound  Dennis Rodman obtained within the 20 rebounds category given two of the following:points, rebounds, assists, steals, and blocked shots (points) greater equal to 5",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        5,
+        0,
+        5
+      ]
+    ],
+    "agg": 1
+  },
+  "prediction_conds": [],
+  "status": "GROUNDING_FAILED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "GROUNDING_FAILED",
+    "valid": false,
+    "errors": [
+      "condition 0: invalid column",
+      "condition 0: grounding NO_MATCH"
+    ],
+    "conditions": [
+      {
+        "surface": "5",
+        "value": "5",
+        "start": 190,
+        "end": 191,
+        "clause": "and blocked shots (points) greater equal to 5",
+        "columnMatchStatus": "UNRESOLVED",
+        "columnCandidates": [
+          {
+            "columnIndex": 5,
+            "header": "Double double",
+            "evidence": "EXACT_VALUE_MATCH"
+          }
+        ],
+        "columnMatchReason": "The condition explicitly refers to blocked shots (points), but the table has no points or blocked-shots column; matching the value 5 in other columns is insufficient.",
+        "operator": ">=",
+        "grounded": false,
+        "groundingStatus": "NO_MATCH",
+        "groundingReview": {
+          "column": null,
+          "reason": "The condition refers to points or blocked shots, but the only candidate is Double double; its cells containing 5 do not support that meaning."
+        }
+      }
+    ],
+    "stage": "WHERE_CONDITION_VALIDATE",
+    "originalConditions": [
+      {
+        "surface": "5",
+        "value": "5",
+        "start": 190,
+        "end": 191
+      }
+    ],
+    "halt": true,
+    "completed": false,
+    "conds": [],
+    "warnings": [],
+    "request": {
+      "question": "What is the highest rebound  Dennis Rodman obtained within the 20 rebounds category given two of the following:points, rebounds, assists, steals, and blocked shots (points) greater equal to 5",
+      "table": {
+        "header": [
+          "Season",
+          "Games started",
+          "20 rebounds",
+          "10 rebounds",
+          "10 offensive rebounds",
+          "Double double",
+          "Rebounding high"
+        ],
+        "page_title": "List of career achievements by Dennis Rodman",
+        "types": [
+          "text",
+          "real",
+          "real",
+          "real",
+          "real",
+          "real",
+          "real"
+        ],
+        "id": "1-25696729-8",
+        "section_title": "Career performances",
+        "caption": "Career performances",
+        "rows": [
+          [
+            "1986–87",
+            1,
+            0,
+            7,
+            0,
+            7,
+            16
+          ],
+          [
+            "1987–88",
+            32,
+            0,
+            33,
+            1,
+            29,
+            19
+          ],
+          [
+            "1988–89",
+            8,
+            2,
+            38,
+            1,
+            20,
+            22
+          ],
+          [
+            "1989–90",
+            43,
+            1,
+            35,
+            2,
+            22,
+            20
+          ],
+          [
+            "1990–91",
+            77,
+            3,
+            65,
+            2,
+            25,
+            24
+          ],
+          [
+            "1991–92",
+            80,
+            39,
+            77,
+            6,
+            42,
+            34
+          ],
+          [
+            "1992–93",
+            55,
+            29,
+            58,
+            7,
+            22,
+            27
+          ],
+          [
+            "1993–94",
+            51,
+            27,
+            74,
+            7,
+            7,
+            32
+          ],
+          [
+            "1994–95",
+            26,
+            20,
+            42,
+            4,
+            15,
+            30
+          ],
+          [
+            "1995–96",
+            57,
+            11,
+            57,
+            3,
+            5,
+            24
+          ],
+          [
+            "1996–97",
+            54,
+            9,
+            54,
+            4,
+            11,
+            26
+          ],
+          [
+            "1997–98",
+            66,
+            16,
+            66,
+            8,
+            5,
+            29
+          ],
+          [
+            "1998–99",
+            11,
+            1,
+            14,
+            0,
+            0,
+            20
+          ],
+          [
+            "1999–2000",
+            12,
+            1,
+            10,
+            0,
+            0,
+            21
+          ],
+          [
+            "Regular season",
+            573,
+            159,
+            630,
+            45,
+            210,
+            34
+          ],
+          [
+            "Playoffs",
+            89,
+            8,
+            83,
+            7,
+            28,
+            22
+          ]
+        ],
+        "name": "table_25696729_8",
+        "headers": [
+          "Season",
+          "Games started",
+          "20 rebounds",
+          "10 rebounds",
+          "10 offensive rebounds",
+          "Double double",
+          "Rebounding high"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-25696729-8",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 9,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "5",
+              "value": "5",
+              "start": 190,
+              "end": 191
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "74396a54f17021ccc3fc0b4c2058418f98c8fefa6fdf0318738f512194e548c6",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5010,
+              "completion_tokens": 163,
+              "total_tokens": 5173,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 144
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "5",
+              "value": "5",
+              "start": 190,
+              "end": 191,
+              "clause": "and blocked shots (points) greater equal to 5"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "5",
+              "value": "5",
+              "start": 190,
+              "end": 191,
+              "clause": "and blocked shots (points) greater equal to 5"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "5",
+              "value": "5",
+              "start": 190,
+              "end": 191,
+              "clause": "and blocked shots (points) greater equal to 5",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [],
+              "columnMatchReason": "The condition explicitly refers to blocked shots (points), but the table has no points or blocked-shots column; matching the value 5 in other columns is insufficient."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "fe58232dd65dcd3a0ee54036148106bb3e42e9128307762e8e7b12d8a0d8d1e1",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5042,
+              "completion_tokens": 140,
+              "total_tokens": 5182,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 86
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "5",
+              "value": "5",
+              "start": 190,
+              "end": 191,
+              "clause": "and blocked shots (points) greater equal to 5",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [],
+              "columnMatchReason": "The condition explicitly refers to blocked shots (points), but the table has no points or blocked-shots column; matching the value 5 in other columns is insufficient.",
+              "operator": ">="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "734ec5960f024b44588bf7b57f79e4c922ce855c35f0bec1dcb25390bb37a3b4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5123,
+              "completion_tokens": 10,
+              "total_tokens": 5133,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "5",
+              "value": "5",
+              "start": 190,
+              "end": 191,
+              "clause": "and blocked shots (points) greater equal to 5",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [],
+              "columnMatchReason": "The condition explicitly refers to blocked shots (points), but the table has no points or blocked-shots column; matching the value 5 in other columns is insufficient.",
+              "operator": ">="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "7425ccb9f2f26aef896d6aaf1f95c965ef71055f7592b5ff169a4de9a2440d8b",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5075,
+              "completion_tokens": 10,
+              "total_tokens": 5085,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "5",
+              "value": "5",
+              "start": 190,
+              "end": 191,
+              "clause": "and blocked shots (points) greater equal to 5",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [
+                {
+                  "columnIndex": 5,
+                  "header": "Double double",
+                  "evidence": "EXACT_VALUE_MATCH"
+                }
+              ],
+              "columnMatchReason": "The condition explicitly refers to blocked shots (points), but the table has no points or blocked-shots column; matching the value 5 in other columns is insufficient.",
+              "operator": ">=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": null,
+                "reason": "The condition refers to points or blocked shots, but the only candidate is Double double; its cells containing 5 do not support that meaning."
+              }
+            }
+          ],
+          "reviewModelCalls": [
+            {
+              "model": "gpt-5.6-sol",
+              "promptSha256": "2775637e155bcd0b9c9449e3209ae3669db2c3e4bb337012bb37a206f5492b0d",
+              "knowledgeIds": [],
+              "usage": {
+                "prompt_tokens": 5153,
+                "completion_tokens": 40,
+                "total_tokens": 5193,
+                "prompt_tokens_details": {
+                  "cached_tokens": 4224
+                }
+              }
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "2775637e155bcd0b9c9449e3209ae3669db2c3e4bb337012bb37a206f5492b0d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5153,
+              "completion_tokens": 40,
+              "total_tokens": 5193,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "5",
+              "value": "5",
+              "start": 190,
+              "end": 191,
+              "clause": "and blocked shots (points) greater equal to 5",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [
+                {
+                  "columnIndex": 5,
+                  "header": "Double double",
+                  "evidence": "EXACT_VALUE_MATCH"
+                }
+              ],
+              "columnMatchReason": "The condition explicitly refers to blocked shots (points), but the table has no points or blocked-shots column; matching the value 5 in other columns is insufficient.",
+              "operator": ">=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": null,
+                "reason": "The condition refers to points or blocked shots, but the only candidate is Double double; its cells containing 5 do not support that meaning."
+              }
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "GROUNDING_FAILED",
+          "valid": false,
+          "errors": [
+            "condition 0: invalid column",
+            "condition 0: grounding NO_MATCH"
+          ],
+          "conditions": [
+            {
+              "surface": "5",
+              "value": "5",
+              "start": 190,
+              "end": 191,
+              "clause": "and blocked shots (points) greater equal to 5",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [
+                {
+                  "columnIndex": 5,
+                  "header": "Double double",
+                  "evidence": "EXACT_VALUE_MATCH"
+                }
+              ],
+              "columnMatchReason": "The condition explicitly refers to blocked shots (points), but the table has no points or blocked-shots column; matching the value 5 in other columns is insufficient.",
+              "operator": ">=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": null,
+                "reason": "The condition refers to points or blocked shots, but the only candidate is Double double; its cells containing 5 do not support that meaning."
+              }
+            }
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "GROUNDING_FAILED",
+        "stage": "WHERE_CONDITION_VALIDATE",
+        "halt": true,
+        "completed": false,
+        "errors": [
+          "condition 0: invalid column",
+          "condition 0: grounding NO_MATCH"
+        ],
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "5",
+          "value": "5",
+          "start": 190,
+          "end": 191
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "5",
+          "value": "5",
+          "start": 190,
+          "end": 191,
+          "clause": "and blocked shots (points) greater equal to 5",
+          "columnMatchStatus": "UNRESOLVED",
+          "columnCandidates": [
+            {
+              "columnIndex": 5,
+              "header": "Double double",
+              "evidence": "EXACT_VALUE_MATCH"
+            }
+          ],
+          "columnMatchReason": "The condition explicitly refers to blocked shots (points), but the table has no points or blocked-shots column; matching the value 5 in other columns is insufficient.",
+          "operator": ">=",
+          "grounded": false,
+          "groundingStatus": "NO_MATCH",
+          "groundingReview": {
+            "column": null,
+            "reason": "The condition refers to points or blocked shots, but the only candidate is Double double; its cells containing 5 do not support that meaning."
+          }
+        }
+      ],
+      "count": 1
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": false,
+  "elapsed_ms": 12140
+}

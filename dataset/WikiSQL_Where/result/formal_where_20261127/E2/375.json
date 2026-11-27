@@ -1,0 +1,446 @@
+{
+  "arm": "E2",
+  "position": 375,
+  "example_id": "test:7188:2-1588821-4",
+  "original_index": 7188,
+  "table_id": "2-1588821-4",
+  "question": "How many floors have 207 w. hastings st. as the address?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        1,
+        0,
+        "207 w. hastings st."
+      ]
+    ],
+    "agg": 3
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "207 W. Hastings St."
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "207 W. Hastings St."
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "207 w. hastings st.",
+        "value": "207 W. Hastings St.",
+        "start": 21,
+        "end": 40,
+        "clause": "How many floors have 207 w. hastings st. as the address?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The question explicitly identifies the value as an address, matching the Street address header and row evidence.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "207 w. hastings st.",
+        "value": "207 W. Hastings St.",
+        "start": 21,
+        "end": 40
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "How many floors have 207 w. hastings st. as the address?",
+      "table": {
+        "header": [
+          "Name",
+          "Street address",
+          "Years as tallest",
+          "Height m / ft",
+          "Floors"
+        ],
+        "page_title": "List of tallest buildings in Vancouver",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "real"
+        ],
+        "page_id": 1588821,
+        "id": "2-1588821-4",
+        "section_title": "Timeline of tallest buildings",
+        "rows": [
+          [
+            "Spencer Building",
+            "515 W. Hastings St.",
+            "1900–1910",
+            "41 / 134",
+            "10"
+          ],
+          [
+            "Dominion Building",
+            "207 W. Hastings St.",
+            "1910–1912",
+            "53 / 175",
+            "14"
+          ],
+          [
+            "Sun Tower",
+            "100 W. Pender St.",
+            "1912–1914",
+            "84 / 276",
+            "17"
+          ],
+          [
+            "Marine Building",
+            "355 Burrard St.",
+            "1930–1939",
+            "98 / 321",
+            "21"
+          ],
+          [
+            "Hotel Vancouver",
+            "900 W. Georgia St.",
+            "1939–1972",
+            "111 / 364",
+            "17"
+          ],
+          [
+            "TD Tower",
+            "700 W. Georgia St.",
+            "1972–1973",
+            "127 / 417",
+            "30"
+          ],
+          [
+            "Royal Centre",
+            "1055 W. Georgia St.",
+            "1973–1977",
+            "141 / 464",
+            "37"
+          ],
+          [
+            "Harbour Centre",
+            "555 W. Hastings St.",
+            "1977–2001",
+            "146 / 481",
+            "28"
+          ],
+          [
+            "One Wall Centre",
+            "1000 Burrard St.",
+            "2001–2008",
+            "150 / 491",
+            "48"
+          ],
+          [
+            "Living Shangri-La",
+            "1120 W. Georgia St.",
+            "2008–present",
+            "201 / 659",
+            "62"
+          ]
+        ],
+        "caption": "Timeline of tallest buildings",
+        "headers": [
+          "Name",
+          "Street address",
+          "Years as tallest",
+          "Height m / ft",
+          "Floors"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-1588821-4",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "207 w. hastings st.",
+              "value": "207 W. Hastings St.",
+              "start": 21,
+              "end": 40
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ddcb36cf10c518159ecde179bd075604b6a3ba6a74cddd61705773ef956e817c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4922,
+              "completion_tokens": 27,
+              "total_tokens": 4949,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "207 w. hastings st.",
+              "value": "207 W. Hastings St.",
+              "start": 21,
+              "end": 40,
+              "clause": "How many floors have 207 w. hastings st. as the address?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "207 w. hastings st.",
+              "value": "207 W. Hastings St.",
+              "start": 21,
+              "end": 40,
+              "clause": "How many floors have 207 w. hastings st. as the address?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "207 w. hastings st.",
+              "value": "207 W. Hastings St.",
+              "start": 21,
+              "end": 40,
+              "clause": "How many floors have 207 w. hastings st. as the address?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly identifies the value as an address, matching the Street address header and row evidence."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "7d18eba0e2e08d79463592bff384b4027e606e7cd42e9b21502b06009060f781",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4968,
+              "completion_tokens": 40,
+              "total_tokens": 5008,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "207 w. hastings st.",
+              "value": "207 W. Hastings St.",
+              "start": 21,
+              "end": 40,
+              "clause": "How many floors have 207 w. hastings st. as the address?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly identifies the value as an address, matching the Street address header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "3f4dc78601aae4681bae515232ab32e1727ffe7d7e92423103651286b298b1a2",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5032,
+              "completion_tokens": 9,
+              "total_tokens": 5041,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "207 w. hastings st.",
+              "value": "207 W. Hastings St.",
+              "start": 21,
+              "end": 40,
+              "clause": "How many floors have 207 w. hastings st. as the address?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly identifies the value as an address, matching the Street address header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ec4c0da92e0754c5e405d81e8b16794fceb48da740a9b22d73dc54dc0e72eb84",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4983,
+              "completion_tokens": 15,
+              "total_tokens": 4998,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "207 w. hastings st.",
+              "value": "207 W. Hastings St.",
+              "start": 21,
+              "end": 40,
+              "clause": "How many floors have 207 w. hastings st. as the address?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly identifies the value as an address, matching the Street address header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "207 w. hastings st.",
+              "value": "207 W. Hastings St.",
+              "start": 21,
+              "end": 40,
+              "clause": "How many floors have 207 w. hastings st. as the address?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly identifies the value as an address, matching the Street address header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "207 w. hastings st.",
+              "value": "207 W. Hastings St.",
+              "start": 21,
+              "end": 40,
+              "clause": "How many floors have 207 w. hastings st. as the address?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly identifies the value as an address, matching the Street address header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              "207 W. Hastings St."
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "207 w. hastings st.",
+          "value": "207 W. Hastings St.",
+          "start": 21,
+          "end": 40
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "207 w. hastings st.",
+          "value": "207 W. Hastings St.",
+          "start": 21,
+          "end": 40,
+          "clause": "How many floors have 207 w. hastings st. as the address?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The question explicitly identifies the value as an address, matching the Street address header and row evidence.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          1,
+          0,
+          "207 W. Hastings St."
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7328
+}

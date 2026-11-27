@@ -1,0 +1,637 @@
+{
+  "arm": "E2",
+  "position": 164,
+  "example_id": "test:5908:2-13909382-6",
+  "original_index": 5908,
+  "table_id": "2-13909382-6",
+  "question": "Which Opponent has a February larger than 7 and Record of 37-16-4?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        1,
+        1,
+        7
+      ],
+      [
+        4,
+        0,
+        "37-16-4"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      1,
+      1,
+      7
+    ],
+    [
+      4,
+      0,
+      "37-16-4"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        1,
+        7
+      ],
+      [
+        4,
+        0,
+        "37-16-4"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "7",
+        "value": 7,
+        "start": 42,
+        "end": 43,
+        "clause": "Which Opponent has a February larger than 7",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The question explicitly compares February to 7; February is column 1 and contains numeric day values.",
+        "operator": ">",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "37-16-4",
+        "value": "37-16-4",
+        "start": 58,
+        "end": 65,
+        "clause": "and Record of 37-16-4?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The question explicitly states Record of 37-16-4; Record is column 4 and contains that exact value.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "7",
+        "value": "7",
+        "start": 42,
+        "end": 43
+      },
+      {
+        "surface": "37-16-4",
+        "value": "37-16-4",
+        "start": 58,
+        "end": 65
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Which Opponent has a February larger than 7 and Record of 37-16-4?",
+      "table": {
+        "header": [
+          "Game",
+          "February",
+          "Opponent",
+          "Score",
+          "Record"
+        ],
+        "page_title": "1993–94 New York Rangers season",
+        "types": [
+          "real",
+          "real",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 13909382,
+        "id": "2-13909382-6",
+        "section_title": "Schedule and Results",
+        "rows": [
+          [
+            "50",
+            "2",
+            "New York Islanders",
+            "4 - 4 OT",
+            "33-13-4"
+          ],
+          [
+            "51",
+            "3",
+            "@ Boston Bruins",
+            "3 - 0",
+            "34-13-4"
+          ],
+          [
+            "52",
+            "7",
+            "Washington Capitals",
+            "4 - 1",
+            "34-14-4"
+          ],
+          [
+            "53",
+            "9",
+            "@ Montreal Canadiens",
+            "4 - 3",
+            "34-15-4"
+          ],
+          [
+            "54",
+            "12",
+            "@ Ottawa Senators",
+            "4 - 3",
+            "35-15-4"
+          ],
+          [
+            "55",
+            "14",
+            "@ Quebec Nordiques",
+            "4 - 2",
+            "36-15-4"
+          ],
+          [
+            "56",
+            "18",
+            "Ottawa Senators",
+            "3 - 0",
+            "37-15-4"
+          ],
+          [
+            "57",
+            "19",
+            "@ Hartford Whalers",
+            "4 - 2",
+            "37-16-4"
+          ],
+          [
+            "58",
+            "21",
+            "Pittsburgh Penguins",
+            "4 - 3",
+            "38-16-4"
+          ],
+          [
+            "59",
+            "23",
+            "Boston Bruins",
+            "6 - 3",
+            "38-17-4"
+          ],
+          [
+            "60",
+            "24",
+            "@ New Jersey Devils",
+            "3 - 1",
+            "39-17-4"
+          ],
+          [
+            "61",
+            "26",
+            "@ Dallas Stars",
+            "3 - 1",
+            "39-18-4"
+          ],
+          [
+            "62",
+            "28",
+            "Philadelphia Flyers",
+            "4 - 1",
+            "40-18-4"
+          ]
+        ],
+        "caption": "Schedule and Results",
+        "headers": [
+          "Game",
+          "February",
+          "Opponent",
+          "Score",
+          "Record"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-13909382-6",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "7",
+              "value": "7",
+              "start": 42,
+              "end": 43
+            },
+            {
+              "surface": "37-16-4",
+              "value": "37-16-4",
+              "start": 58,
+              "end": 65
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "779b383e868a07eaa94979120316f00c169a03dde0906a23fbd5c3c275b1b2ee",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4937,
+              "completion_tokens": 33,
+              "total_tokens": 4970,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "7",
+              "value": "7",
+              "start": 42,
+              "end": 43,
+              "clause": "Which Opponent has a February larger than 7"
+            },
+            {
+              "surface": "37-16-4",
+              "value": "37-16-4",
+              "start": 58,
+              "end": 65,
+              "clause": "and Record of 37-16-4?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "7",
+              "value": "7",
+              "start": 42,
+              "end": 43,
+              "clause": "Which Opponent has a February larger than 7"
+            },
+            {
+              "surface": "37-16-4",
+              "value": "37-16-4",
+              "start": 58,
+              "end": 65,
+              "clause": "and Record of 37-16-4?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "7",
+              "value": "7",
+              "start": 42,
+              "end": 43,
+              "clause": "Which Opponent has a February larger than 7",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly compares February to 7; February is column 1 and contains numeric day values."
+            },
+            {
+              "surface": "37-16-4",
+              "value": "37-16-4",
+              "start": 58,
+              "end": 65,
+              "clause": "and Record of 37-16-4?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly states Record of 37-16-4; Record is column 4 and contains that exact value."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "5f80723d2957788b1026a5b8b8623c0e31954868ed0c699bb5baea3c769dc3ad",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5006,
+              "completion_tokens": 69,
+              "total_tokens": 5075,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "7",
+              "value": "7",
+              "start": 42,
+              "end": 43,
+              "clause": "Which Opponent has a February larger than 7",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly compares February to 7; February is column 1 and contains numeric day values.",
+              "operator": ">"
+            },
+            {
+              "surface": "37-16-4",
+              "value": "37-16-4",
+              "start": 58,
+              "end": 65,
+              "clause": "and Record of 37-16-4?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly states Record of 37-16-4; Record is column 4 and contains that exact value.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "2cf19b033c88880d54f30f6c0284d29c12fbe0209fb6294fcb7dedcbe8790e76",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5110,
+              "completion_tokens": 11,
+              "total_tokens": 5121,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "7",
+              "value": "7",
+              "start": 42,
+              "end": 43,
+              "clause": "Which Opponent has a February larger than 7",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly compares February to 7; February is column 1 and contains numeric day values.",
+              "operator": ">"
+            },
+            {
+              "surface": "37-16-4",
+              "value": "37-16-4",
+              "start": 58,
+              "end": 65,
+              "clause": "and Record of 37-16-4?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly states Record of 37-16-4; Record is column 4 and contains that exact value.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e903e6e1dbd80b4412d679dd918443d115ab3fcc9aa3cc2c759f4a4b54074797",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5064,
+              "completion_tokens": 16,
+              "total_tokens": 5080,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "7",
+              "value": "7",
+              "start": 42,
+              "end": 43,
+              "clause": "Which Opponent has a February larger than 7",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly compares February to 7; February is column 1 and contains numeric day values.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "37-16-4",
+              "value": "37-16-4",
+              "start": 58,
+              "end": 65,
+              "clause": "and Record of 37-16-4?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly states Record of 37-16-4; Record is column 4 and contains that exact value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "7",
+              "value": 7,
+              "start": 42,
+              "end": 43,
+              "clause": "Which Opponent has a February larger than 7",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly compares February to 7; February is column 1 and contains numeric day values.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "37-16-4",
+              "value": "37-16-4",
+              "start": 58,
+              "end": 65,
+              "clause": "and Record of 37-16-4?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly states Record of 37-16-4; Record is column 4 and contains that exact value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "7",
+              "value": 7,
+              "start": 42,
+              "end": 43,
+              "clause": "Which Opponent has a February larger than 7",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question explicitly compares February to 7; February is column 1 and contains numeric day values.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "37-16-4",
+              "value": "37-16-4",
+              "start": 58,
+              "end": 65,
+              "clause": "and Record of 37-16-4?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly states Record of 37-16-4; Record is column 4 and contains that exact value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              1,
+              7
+            ],
+            [
+              4,
+              0,
+              "37-16-4"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "7",
+          "value": "7",
+          "start": 42,
+          "end": 43
+        },
+        {
+          "surface": "37-16-4",
+          "value": "37-16-4",
+          "start": 58,
+          "end": 65
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "7",
+          "value": 7,
+          "start": 42,
+          "end": 43,
+          "clause": "Which Opponent has a February larger than 7",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The question explicitly compares February to 7; February is column 1 and contains numeric day values.",
+          "operator": ">",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "37-16-4",
+          "value": "37-16-4",
+          "start": 58,
+          "end": 65,
+          "clause": "and Record of 37-16-4?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The question explicitly states Record of 37-16-4; Record is column 4 and contains that exact value.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          1,
+          1,
+          7
+        ],
+        [
+          4,
+          0,
+          "37-16-4"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 6921
+}

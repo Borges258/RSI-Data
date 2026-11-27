@@ -1,0 +1,624 @@
+{
+  "arm": "E2",
+  "position": 65,
+  "example_id": "test:4475:2-10089291-3",
+  "original_index": 4475,
+  "table_id": "2-10089291-3",
+  "question": "Tell me the MPEG-2 of yes and MPEG-1 of yes",
+  "gold_sql": {
+    "sel": 5,
+    "conds": [
+      [
+        1,
+        0,
+        "yes"
+      ],
+      [
+        0,
+        0,
+        "yes"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "Yes"
+    ],
+    [
+      1,
+      0,
+      "Yes"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "Yes"
+      ],
+      [
+        1,
+        0,
+        "Yes"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "yes",
+        "value": "Yes",
+        "start": 22,
+        "end": 25,
+        "clause": "Tell me the MPEG-2 of yes",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "In 'MPEG-2 of yes', MPEG-2 is the requested result, so 'yes' constrains the paired MPEG-1 field.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "yes",
+        "value": "Yes",
+        "start": 40,
+        "end": 43,
+        "clause": "and MPEG-1 of yes",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "In 'MPEG-1 of yes', MPEG-1 is the requested result, so 'yes' constrains the paired MPEG-2 field.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "yes",
+        "value": "Yes",
+        "start": 22,
+        "end": 25
+      },
+      {
+        "surface": "yes",
+        "value": "Yes",
+        "start": 40,
+        "end": 43
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Tell me the MPEG-2 of yes and MPEG-1 of yes",
+      "table": {
+        "header": [
+          "MPEG-1",
+          "MPEG-2",
+          "MPEG-4 ASP ( MPEG-4 Part 2 ), i.e. DivX , XviD",
+          "H.264/MPEG-4 AVC ( MPEG-4 Part 10 )",
+          "QuickTime",
+          "RealVideo"
+        ],
+        "page_title": "Comparison of PVR software packages",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 10089291,
+        "id": "2-10089291-3",
+        "section_title": "Video format support",
+        "rows": [
+          [
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "No",
+            "No"
+          ],
+          [
+            "Yes",
+            "Yes",
+            "Unknown",
+            "Yes",
+            "Yes",
+            "Unknown"
+          ],
+          [
+            "Unknown",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Unknown",
+            "Unknown"
+          ],
+          [
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "No Possible with third-party software.",
+            "No"
+          ],
+          [
+            "Unknown",
+            "Unknown",
+            "Unknown",
+            "Unknown",
+            "Unknown",
+            "Unknown"
+          ],
+          [
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes"
+          ],
+          [
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Unknown"
+          ],
+          [
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes"
+          ],
+          [
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes",
+            "Yes Windows 7 only",
+            "No"
+          ]
+        ],
+        "caption": "Video format support",
+        "headers": [
+          "MPEG-1",
+          "MPEG-2",
+          "MPEG-4 ASP ( MPEG-4 Part 2 ), i.e. DivX , XviD",
+          "H.264/MPEG-4 AVC ( MPEG-4 Part 10 )",
+          "QuickTime",
+          "RealVideo"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-10089291-3",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "yes",
+              "value": "Yes",
+              "start": 22,
+              "end": 25
+            },
+            {
+              "surface": "yes",
+              "value": "Yes",
+              "start": 40,
+              "end": 43
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "418b95f4cf6b52305ba8a2b0c0427860b8f6d2105ffd31330b2c99fb1c0d8382",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4887,
+              "completion_tokens": 168,
+              "total_tokens": 5055,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 141
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "yes",
+              "value": "Yes",
+              "start": 22,
+              "end": 25,
+              "clause": "Tell me the MPEG-2 of yes"
+            },
+            {
+              "surface": "yes",
+              "value": "Yes",
+              "start": 40,
+              "end": 43,
+              "clause": "and MPEG-1 of yes"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "yes",
+              "value": "Yes",
+              "start": 22,
+              "end": 25,
+              "clause": "Tell me the MPEG-2 of yes"
+            },
+            {
+              "surface": "yes",
+              "value": "Yes",
+              "start": 40,
+              "end": 43,
+              "clause": "and MPEG-1 of yes"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "yes",
+              "value": "Yes",
+              "start": 22,
+              "end": 25,
+              "clause": "Tell me the MPEG-2 of yes",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "In 'MPEG-2 of yes', MPEG-2 is the requested result, so 'yes' constrains the paired MPEG-1 field."
+            },
+            {
+              "surface": "yes",
+              "value": "Yes",
+              "start": 40,
+              "end": 43,
+              "clause": "and MPEG-1 of yes",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "In 'MPEG-1 of yes', MPEG-1 is the requested result, so 'yes' constrains the paired MPEG-2 field."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "34bbbfe0659a86e04db7dae58e8626e2535282617278998e966be3d39105bd2a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4942,
+              "completion_tokens": 85,
+              "total_tokens": 5027,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "yes",
+              "value": "Yes",
+              "start": 22,
+              "end": 25,
+              "clause": "Tell me the MPEG-2 of yes",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "In 'MPEG-2 of yes', MPEG-2 is the requested result, so 'yes' constrains the paired MPEG-1 field.",
+              "operator": "="
+            },
+            {
+              "surface": "yes",
+              "value": "Yes",
+              "start": 40,
+              "end": 43,
+              "clause": "and MPEG-1 of yes",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "In 'MPEG-1 of yes', MPEG-1 is the requested result, so 'yes' constrains the paired MPEG-2 field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e8d22254c74f8a2af0b0d9fbbeb788b21a8d58dce670a0893a2ed8400de01ff9",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5062,
+              "completion_tokens": 11,
+              "total_tokens": 5073,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "yes",
+              "value": "Yes",
+              "start": 22,
+              "end": 25,
+              "clause": "Tell me the MPEG-2 of yes",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "In 'MPEG-2 of yes', MPEG-2 is the requested result, so 'yes' constrains the paired MPEG-1 field.",
+              "operator": "="
+            },
+            {
+              "surface": "yes",
+              "value": "Yes",
+              "start": 40,
+              "end": 43,
+              "clause": "and MPEG-1 of yes",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "In 'MPEG-1 of yes', MPEG-1 is the requested result, so 'yes' constrains the paired MPEG-2 field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "9fc7b0550c7cd99f4a0310af7ce607466c3b5d091c7de4015fefcb7d07afe0b3",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5016,
+              "completion_tokens": 12,
+              "total_tokens": 5028,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "yes",
+              "value": "Yes",
+              "start": 22,
+              "end": 25,
+              "clause": "Tell me the MPEG-2 of yes",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "In 'MPEG-2 of yes', MPEG-2 is the requested result, so 'yes' constrains the paired MPEG-1 field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "yes",
+              "value": "Yes",
+              "start": 40,
+              "end": 43,
+              "clause": "and MPEG-1 of yes",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "In 'MPEG-1 of yes', MPEG-1 is the requested result, so 'yes' constrains the paired MPEG-2 field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "yes",
+              "value": "Yes",
+              "start": 22,
+              "end": 25,
+              "clause": "Tell me the MPEG-2 of yes",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "In 'MPEG-2 of yes', MPEG-2 is the requested result, so 'yes' constrains the paired MPEG-1 field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "yes",
+              "value": "Yes",
+              "start": 40,
+              "end": 43,
+              "clause": "and MPEG-1 of yes",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "In 'MPEG-1 of yes', MPEG-1 is the requested result, so 'yes' constrains the paired MPEG-2 field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "yes",
+              "value": "Yes",
+              "start": 22,
+              "end": 25,
+              "clause": "Tell me the MPEG-2 of yes",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "In 'MPEG-2 of yes', MPEG-2 is the requested result, so 'yes' constrains the paired MPEG-1 field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "yes",
+              "value": "Yes",
+              "start": 40,
+              "end": 43,
+              "clause": "and MPEG-1 of yes",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "In 'MPEG-1 of yes', MPEG-1 is the requested result, so 'yes' constrains the paired MPEG-2 field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              "Yes"
+            ],
+            [
+              1,
+              0,
+              "Yes"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "yes",
+          "value": "Yes",
+          "start": 22,
+          "end": 25
+        },
+        {
+          "surface": "yes",
+          "value": "Yes",
+          "start": 40,
+          "end": 43
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "yes",
+          "value": "Yes",
+          "start": 22,
+          "end": 25,
+          "clause": "Tell me the MPEG-2 of yes",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "In 'MPEG-2 of yes', MPEG-2 is the requested result, so 'yes' constrains the paired MPEG-1 field.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "yes",
+          "value": "Yes",
+          "start": 40,
+          "end": 43,
+          "clause": "and MPEG-1 of yes",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "In 'MPEG-1 of yes', MPEG-1 is the requested result, so 'yes' constrains the paired MPEG-2 field.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          0,
+          0,
+          "Yes"
+        ],
+        [
+          1,
+          0,
+          "Yes"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 10016
+}

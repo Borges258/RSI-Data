@@ -1,0 +1,789 @@
+{
+  "arm": "E2",
+  "position": 98,
+  "example_id": "test:6196:2-14094649-22",
+  "original_index": 6196,
+  "table_id": "2-14094649-22",
+  "question": "Where is the company headquarted that has a Market value ( USD million) larger than 146,139, a Rank above 3, and a Primary industry of oil and gas?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        4,
+        1,
+        "146,139"
+      ],
+      [
+        0,
+        2,
+        3
+      ],
+      [
+        3,
+        0,
+        "oil and gas"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      4,
+      1,
+      "146,139"
+    ],
+    [
+      0,
+      1,
+      3
+    ],
+    [
+      3,
+      0,
+      "Oil and gas"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        1,
+        "146,139"
+      ],
+      [
+        0,
+        1,
+        3
+      ],
+      [
+        3,
+        0,
+        "Oil and gas"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "146,139",
+        "value": "146,139",
+        "start": 84,
+        "end": 91,
+        "clause": "Where is the company headquarted that has a Market value ( USD million) larger than 146,139, a Rank above 3,",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "Explicitly named Market value ( USD million); numeric rows support comparison to 146,139.",
+        "operator": ">",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "3",
+        "value": 3,
+        "start": 106,
+        "end": 107,
+        "clause": "a Rank above 3,",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "Explicitly named Rank; numeric rows support comparison above 3.",
+        "operator": ">",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "oil and gas",
+        "value": "Oil and gas",
+        "start": 135,
+        "end": 146,
+        "clause": "and a Primary industry of oil and gas?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "Explicitly named Primary industry; Oil and gas appears in that column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "146,139",
+        "value": "146,139",
+        "start": 84,
+        "end": 91
+      },
+      {
+        "surface": "3",
+        "value": "3",
+        "start": 106,
+        "end": 107
+      },
+      {
+        "surface": "oil and gas",
+        "value": "oil and gas",
+        "start": 135,
+        "end": 146
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Where is the company headquarted that has a Market value ( USD million) larger than 146,139, a Rank above 3, and a Primary industry of oil and gas?",
+      "table": {
+        "header": [
+          "Rank",
+          "Name",
+          "Headquarters",
+          "Primary industry",
+          "Market value ( USD million)"
+        ],
+        "page_title": "List of corporations by market capitalization",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "real"
+        ],
+        "page_id": 14094649,
+        "id": "2-14094649-22",
+        "section_title": "1998",
+        "rows": [
+          [
+            "1",
+            "General Electric",
+            "United States",
+            "Conglomerate",
+            "222,748"
+          ],
+          [
+            "2",
+            "Royal Dutch Shell",
+            "The Netherlands",
+            "Oil and gas",
+            "191,002"
+          ],
+          [
+            "3",
+            "Microsoft",
+            "United States",
+            "Software industry",
+            "159,660"
+          ],
+          [
+            "4",
+            "Exxon Mobil",
+            "United States",
+            "Oil and gas",
+            "157,970"
+          ],
+          [
+            "5",
+            "The Coca-Cola Company",
+            "United States",
+            "Beverage",
+            "151,288"
+          ],
+          [
+            "6",
+            "Intel Corporation",
+            "United States",
+            "Computer hardware",
+            "150,838"
+          ],
+          [
+            "7",
+            "Nippon Telegraph and Telephone",
+            "Japan",
+            "Telecommunications",
+            "146,139"
+          ],
+          [
+            "8",
+            "Merck",
+            "United States",
+            "Health care",
+            "120,757"
+          ],
+          [
+            "9",
+            "Toyota Motor Corporation",
+            "Japan",
+            "Automotive",
+            "116,585"
+          ],
+          [
+            "10",
+            "Novartis",
+            "Switzerland",
+            "Health care",
+            "104,468"
+          ]
+        ],
+        "caption": "1998",
+        "headers": [
+          "Rank",
+          "Name",
+          "Headquarters",
+          "Primary industry",
+          "Market value ( USD million)"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-14094649-22",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 3,
+          "conditions": [
+            {
+              "surface": "146,139",
+              "value": "146,139",
+              "start": 84,
+              "end": 91
+            },
+            {
+              "surface": "3",
+              "value": "3",
+              "start": 106,
+              "end": 107
+            },
+            {
+              "surface": "oil and gas",
+              "value": "oil and gas",
+              "start": 135,
+              "end": 146
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "cd7f997e0bc0d283fc62f2aa2435e635c6eef427b3a29d4534648d51d224fa6d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4874,
+              "completion_tokens": 115,
+              "total_tokens": 4989,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 72
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "146,139",
+              "value": "146,139",
+              "start": 84,
+              "end": 91,
+              "clause": "Where is the company headquarted that has a Market value ( USD million) larger than 146,139, a Rank above 3,"
+            },
+            {
+              "surface": "3",
+              "value": "3",
+              "start": 106,
+              "end": 107,
+              "clause": "a Rank above 3,"
+            },
+            {
+              "surface": "oil and gas",
+              "value": "oil and gas",
+              "start": 135,
+              "end": 146,
+              "clause": "and a Primary industry of oil and gas?"
+            }
+          ],
+          "count": 3
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "146,139",
+              "value": "146,139",
+              "start": 84,
+              "end": 91,
+              "clause": "Where is the company headquarted that has a Market value ( USD million) larger than 146,139, a Rank above 3,"
+            },
+            {
+              "surface": "3",
+              "value": "3",
+              "start": 106,
+              "end": 107,
+              "clause": "a Rank above 3,"
+            },
+            {
+              "surface": "oil and gas",
+              "value": "oil and gas",
+              "start": 135,
+              "end": 146,
+              "clause": "and a Primary industry of oil and gas?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "146,139",
+              "value": "146,139",
+              "start": 84,
+              "end": 91,
+              "clause": "Where is the company headquarted that has a Market value ( USD million) larger than 146,139, a Rank above 3,",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Explicitly named Market value ( USD million); numeric rows support comparison to 146,139."
+            },
+            {
+              "surface": "3",
+              "value": "3",
+              "start": 106,
+              "end": 107,
+              "clause": "a Rank above 3,",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Explicitly named Rank; numeric rows support comparison above 3."
+            },
+            {
+              "surface": "oil and gas",
+              "value": "oil and gas",
+              "start": 135,
+              "end": 146,
+              "clause": "and a Primary industry of oil and gas?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicitly named Primary industry; Oil and gas appears in that column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ed20468ec894dd8d959fa31da1276f3f03ae91a5c97d50a3bd3fd055e447ea93",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4987,
+              "completion_tokens": 75,
+              "total_tokens": 5062,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "146,139",
+              "value": "146,139",
+              "start": 84,
+              "end": 91,
+              "clause": "Where is the company headquarted that has a Market value ( USD million) larger than 146,139, a Rank above 3,",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Explicitly named Market value ( USD million); numeric rows support comparison to 146,139.",
+              "operator": ">"
+            },
+            {
+              "surface": "3",
+              "value": "3",
+              "start": 106,
+              "end": 107,
+              "clause": "a Rank above 3,",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Explicitly named Rank; numeric rows support comparison above 3.",
+              "operator": ">"
+            },
+            {
+              "surface": "oil and gas",
+              "value": "oil and gas",
+              "start": 135,
+              "end": 146,
+              "clause": "and a Primary industry of oil and gas?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicitly named Primary industry; Oil and gas appears in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e42e5b68fafd3839ad80f2644d1996a01003dd814bede4bab8795c3d18ce905a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5108,
+              "completion_tokens": 13,
+              "total_tokens": 5121,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "146,139",
+              "value": "146,139",
+              "start": 84,
+              "end": 91,
+              "clause": "Where is the company headquarted that has a Market value ( USD million) larger than 146,139, a Rank above 3,",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Explicitly named Market value ( USD million); numeric rows support comparison to 146,139.",
+              "operator": ">"
+            },
+            {
+              "surface": "3",
+              "value": "3",
+              "start": 106,
+              "end": 107,
+              "clause": "a Rank above 3,",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Explicitly named Rank; numeric rows support comparison above 3.",
+              "operator": ">"
+            },
+            {
+              "surface": "oil and gas",
+              "value": "Oil and gas",
+              "start": 135,
+              "end": 146,
+              "clause": "and a Primary industry of oil and gas?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicitly named Primary industry; Oil and gas appears in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "7023394de2060d7a64a3b655ef174e2afc8e07879ee70553ef4065ead785d84a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5065,
+              "completion_tokens": 18,
+              "total_tokens": 5083,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "146,139",
+              "value": "146,139",
+              "start": 84,
+              "end": 91,
+              "clause": "Where is the company headquarted that has a Market value ( USD million) larger than 146,139, a Rank above 3,",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Explicitly named Market value ( USD million); numeric rows support comparison to 146,139.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "3",
+              "value": "3",
+              "start": 106,
+              "end": 107,
+              "clause": "a Rank above 3,",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Explicitly named Rank; numeric rows support comparison above 3.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "oil and gas",
+              "value": "Oil and gas",
+              "start": 135,
+              "end": 146,
+              "clause": "and a Primary industry of oil and gas?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicitly named Primary industry; Oil and gas appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "146,139",
+              "value": "146,139",
+              "start": 84,
+              "end": 91,
+              "clause": "Where is the company headquarted that has a Market value ( USD million) larger than 146,139, a Rank above 3,",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Explicitly named Market value ( USD million); numeric rows support comparison to 146,139.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "3",
+              "value": 3,
+              "start": 106,
+              "end": 107,
+              "clause": "a Rank above 3,",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Explicitly named Rank; numeric rows support comparison above 3.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "oil and gas",
+              "value": "Oil and gas",
+              "start": 135,
+              "end": 146,
+              "clause": "and a Primary industry of oil and gas?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicitly named Primary industry; Oil and gas appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "146,139",
+              "value": "146,139",
+              "start": 84,
+              "end": 91,
+              "clause": "Where is the company headquarted that has a Market value ( USD million) larger than 146,139, a Rank above 3,",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Explicitly named Market value ( USD million); numeric rows support comparison to 146,139.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "3",
+              "value": 3,
+              "start": 106,
+              "end": 107,
+              "clause": "a Rank above 3,",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Explicitly named Rank; numeric rows support comparison above 3.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "oil and gas",
+              "value": "Oil and gas",
+              "start": 135,
+              "end": 146,
+              "clause": "and a Primary industry of oil and gas?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicitly named Primary industry; Oil and gas appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              1,
+              "146,139"
+            ],
+            [
+              0,
+              1,
+              3
+            ],
+            [
+              3,
+              0,
+              "Oil and gas"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "146,139",
+          "value": "146,139",
+          "start": 84,
+          "end": 91
+        },
+        {
+          "surface": "3",
+          "value": "3",
+          "start": 106,
+          "end": 107
+        },
+        {
+          "surface": "oil and gas",
+          "value": "oil and gas",
+          "start": 135,
+          "end": 146
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "146,139",
+          "value": "146,139",
+          "start": 84,
+          "end": 91,
+          "clause": "Where is the company headquarted that has a Market value ( USD million) larger than 146,139, a Rank above 3,",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "Explicitly named Market value ( USD million); numeric rows support comparison to 146,139.",
+          "operator": ">",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "3",
+          "value": 3,
+          "start": 106,
+          "end": 107,
+          "clause": "a Rank above 3,",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "Explicitly named Rank; numeric rows support comparison above 3.",
+          "operator": ">",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "oil and gas",
+          "value": "Oil and gas",
+          "start": 135,
+          "end": 146,
+          "clause": "and a Primary industry of oil and gas?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "Explicitly named Primary industry; Oil and gas appears in that column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 3,
+      "conds": [
+        [
+          4,
+          1,
+          "146,139"
+        ],
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          3,
+          0,
+          "Oil and gas"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8781
+}

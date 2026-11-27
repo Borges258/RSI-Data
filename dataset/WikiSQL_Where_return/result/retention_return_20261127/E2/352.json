@@ -1,0 +1,613 @@
+{
+  "arm": "E2",
+  "position": 352,
+  "example_id": "test:13797:2-18603914-6",
+  "original_index": 13797,
+  "table_id": "2-18603914-6",
+  "question": "What name has a rank less than 3, with 36.076 (1) as the 3rd run?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        0,
+        2,
+        3
+      ],
+      [
+        4,
+        0,
+        "36.076 (1)"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      2,
+      3
+    ],
+    [
+      4,
+      0,
+      "36.076 (1)"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        2,
+        3
+      ],
+      [
+        4,
+        0,
+        "36.076 (1)"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "3",
+        "value": 3,
+        "start": 31,
+        "end": 32,
+        "clause": "What name has a rank less than 3",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "The clause explicitly says rank less than 3, matching the Rank header.",
+        "operator": "<",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "36.076 (1)",
+        "value": "36.076 (1)",
+        "start": 39,
+        "end": 49,
+        "clause": "with 36.076 (1) as the 3rd run?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The clause explicitly identifies 36.076 (1) as the 3rd run, matching the 3rd run header and row evidence.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "3",
+        "value": "3",
+        "start": 31,
+        "end": 32
+      },
+      {
+        "surface": "36.076 (1)",
+        "value": "36.076 (1)",
+        "start": 39,
+        "end": 49
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What name has a rank less than 3, with 36.076 (1) as the 3rd run?",
+      "table": {
+        "header": [
+          "Rank",
+          "Name",
+          "1st run",
+          "2nd run",
+          "3rd run",
+          "Total"
+        ],
+        "page_title": "Cycling at the 2008 Summer Olympics – Men's BMX",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text",
+          "real"
+        ],
+        "page_id": 18603914,
+        "id": "2-18603914-6",
+        "section_title": "Heat 4",
+        "rows": [
+          [
+            "1",
+            "Jared Graves ( AUS )",
+            "38.067 (1)",
+            "36.496 (2)",
+            "36.076 (1)",
+            "4"
+          ],
+          [
+            "2",
+            "Cristian Becerine ( ARG )",
+            "38.399 (2)",
+            "42.733 (7)",
+            "36.985 (2)",
+            "11"
+          ],
+          [
+            "3",
+            "Roger Rinderknecht ( SUI )",
+            "54.234 (8)",
+            "36.462 (1)",
+            "37.136 (3)",
+            "12"
+          ],
+          [
+            "4",
+            "Damien Godet ( FRA )",
+            "41.241 (3)",
+            "40.221 (4)",
+            "38.023 (6)",
+            "13"
+          ],
+          [
+            "5",
+            "Sergio Salazar ( COL )",
+            "54.216 (7)",
+            "37.479 (3)",
+            "37.573 (5)",
+            "15"
+          ],
+          [
+            "6",
+            "Thomas Allier ( FRA )",
+            "41.594 (4)",
+            "41.043 (5)",
+            "38.037 (7)",
+            "16"
+          ],
+          [
+            "7",
+            "Luke Madill ( AUS )",
+            "51.198 (6)",
+            "1:02.432 (8)",
+            "37.420 (4)",
+            "18"
+          ],
+          [
+            "8",
+            "Sebastian Kartfjord ( NOR )",
+            "42.658 (4)",
+            "42.625 (6)",
+            "38.821 (8)",
+            "19"
+          ]
+        ],
+        "caption": "Heat 4",
+        "headers": [
+          "Rank",
+          "Name",
+          "1st run",
+          "2nd run",
+          "3rd run",
+          "Total"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-18603914-6",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "3",
+              "value": "3",
+              "start": 31,
+              "end": 32
+            },
+            {
+              "surface": "36.076 (1)",
+              "value": "36.076 (1)",
+              "start": 39,
+              "end": 49
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "8065fb6eab377d9fd6c09c82dd481769421869d81f678a2d3b213d60c56598de",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4977,
+              "completion_tokens": 35,
+              "total_tokens": 5012,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "3",
+              "value": "3",
+              "start": 31,
+              "end": 32,
+              "clause": "What name has a rank less than 3"
+            },
+            {
+              "surface": "36.076 (1)",
+              "value": "36.076 (1)",
+              "start": 39,
+              "end": 49,
+              "clause": "with 36.076 (1) as the 3rd run?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "3",
+              "value": "3",
+              "start": 31,
+              "end": 32,
+              "clause": "What name has a rank less than 3"
+            },
+            {
+              "surface": "36.076 (1)",
+              "value": "36.076 (1)",
+              "start": 39,
+              "end": 49,
+              "clause": "with 36.076 (1) as the 3rd run?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "3",
+              "value": "3",
+              "start": 31,
+              "end": 32,
+              "clause": "What name has a rank less than 3",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The clause explicitly says rank less than 3, matching the Rank header."
+            },
+            {
+              "surface": "36.076 (1)",
+              "value": "36.076 (1)",
+              "start": 39,
+              "end": 49,
+              "clause": "with 36.076 (1) as the 3rd run?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly identifies 36.076 (1) as the 3rd run, matching the 3rd run header and row evidence."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ba4cd1b300894a5b2afa54bc0e4eeee470621867808909e3625cc2668d682ebf",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5052,
+              "completion_tokens": 69,
+              "total_tokens": 5121,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "3",
+              "value": "3",
+              "start": 31,
+              "end": 32,
+              "clause": "What name has a rank less than 3",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The clause explicitly says rank less than 3, matching the Rank header.",
+              "operator": "<"
+            },
+            {
+              "surface": "36.076 (1)",
+              "value": "36.076 (1)",
+              "start": 39,
+              "end": 49,
+              "clause": "with 36.076 (1) as the 3rd run?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly identifies 36.076 (1) as the 3rd run, matching the 3rd run header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "090bd37a3c512fa8228a97590f3c58f948f5952200c740a9c06edba7ca731fe8",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5156,
+              "completion_tokens": 11,
+              "total_tokens": 5167,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "3",
+              "value": "3",
+              "start": 31,
+              "end": 32,
+              "clause": "What name has a rank less than 3",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The clause explicitly says rank less than 3, matching the Rank header.",
+              "operator": "<"
+            },
+            {
+              "surface": "36.076 (1)",
+              "value": "36.076 (1)",
+              "start": 39,
+              "end": 49,
+              "clause": "with 36.076 (1) as the 3rd run?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly identifies 36.076 (1) as the 3rd run, matching the 3rd run header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e596260c1d782f5c303b4e40d54c8bd995f045c0136bcbea8b424d76fb3c823d",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5110,
+              "completion_tokens": 17,
+              "total_tokens": 5127,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "3",
+              "value": "3",
+              "start": 31,
+              "end": 32,
+              "clause": "What name has a rank less than 3",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The clause explicitly says rank less than 3, matching the Rank header.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "36.076 (1)",
+              "value": "36.076 (1)",
+              "start": 39,
+              "end": 49,
+              "clause": "with 36.076 (1) as the 3rd run?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly identifies 36.076 (1) as the 3rd run, matching the 3rd run header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "3",
+              "value": 3,
+              "start": 31,
+              "end": 32,
+              "clause": "What name has a rank less than 3",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The clause explicitly says rank less than 3, matching the Rank header.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "36.076 (1)",
+              "value": "36.076 (1)",
+              "start": 39,
+              "end": 49,
+              "clause": "with 36.076 (1) as the 3rd run?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly identifies 36.076 (1) as the 3rd run, matching the 3rd run header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "3",
+              "value": 3,
+              "start": 31,
+              "end": 32,
+              "clause": "What name has a rank less than 3",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The clause explicitly says rank less than 3, matching the Rank header.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "36.076 (1)",
+              "value": "36.076 (1)",
+              "start": 39,
+              "end": 49,
+              "clause": "with 36.076 (1) as the 3rd run?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly identifies 36.076 (1) as the 3rd run, matching the 3rd run header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              2,
+              3
+            ],
+            [
+              4,
+              0,
+              "36.076 (1)"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "3",
+          "value": "3",
+          "start": 31,
+          "end": 32
+        },
+        {
+          "surface": "36.076 (1)",
+          "value": "36.076 (1)",
+          "start": 39,
+          "end": 49
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "3",
+          "value": 3,
+          "start": 31,
+          "end": 32,
+          "clause": "What name has a rank less than 3",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "The clause explicitly says rank less than 3, matching the Rank header.",
+          "operator": "<",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "36.076 (1)",
+          "value": "36.076 (1)",
+          "start": 39,
+          "end": 49,
+          "clause": "with 36.076 (1) as the 3rd run?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The clause explicitly identifies 36.076 (1) as the 3rd run, matching the 3rd run header and row evidence.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          4,
+          0,
+          "36.076 (1)"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9344
+}

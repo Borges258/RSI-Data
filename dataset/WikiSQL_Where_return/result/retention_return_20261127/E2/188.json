@@ -1,0 +1,712 @@
+{
+  "arm": "E2",
+  "position": 188,
+  "example_id": "test:6735:2-13648477-1",
+  "original_index": 6735,
+  "table_id": "2-13648477-1",
+  "question": "What was the time for a grid less than 6 for Noriyuki Haga?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        4,
+        2,
+        6
+      ],
+      [
+        0,
+        0,
+        "noriyuki haga"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [],
+  "status": "GROUNDING_FAILED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "GROUNDING_FAILED",
+    "valid": false,
+    "errors": [
+      "condition 0: grounding NO_MATCH",
+      "condition 0: nonnumeric value for real column"
+    ],
+    "conditions": [
+      {
+        "surface": "less than 6",
+        "value": "< 6",
+        "start": 29,
+        "end": 40,
+        "clause": "What was the time for a grid less than 6 for Noriyuki Haga?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "Explicitly modifies 'grid'; Grid is numeric and supports < 6.",
+        "operator": "<",
+        "grounded": false,
+        "groundingStatus": "NO_MATCH",
+        "groundingReview": {
+          "column": 4,
+          "reason": "The phrase 'grid less than 6' explicitly refers to the numeric Grid column; Noriyuki Haga's Grid value is 4, which satisfies < 6."
+        }
+      },
+      {
+        "surface": "Noriyuki Haga",
+        "value": "Noriyuki Haga",
+        "start": 45,
+        "end": 58,
+        "clause": "What was the time for a grid less than 6 for Noriyuki Haga?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "Names the rider; exact match appears in Rider.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "stage": "WHERE_CONDITION_VALIDATE",
+    "originalConditions": [
+      {
+        "surface": "less than 6",
+        "value": "< 6",
+        "start": 29,
+        "end": 40
+      },
+      {
+        "surface": "Noriyuki Haga",
+        "value": "Noriyuki Haga",
+        "start": 45,
+        "end": 58
+      }
+    ],
+    "halt": true,
+    "completed": false,
+    "conds": [],
+    "warnings": [
+      "value model disagreed with extracted question span; original retained"
+    ],
+    "request": {
+      "question": "What was the time for a grid less than 6 for Noriyuki Haga?",
+      "table": {
+        "header": [
+          "Rider",
+          "Bike",
+          "Laps",
+          "Time",
+          "Grid"
+        ],
+        "page_title": "2007 Magny-Cours Superbike World Championship round",
+        "types": [
+          "text",
+          "text",
+          "real",
+          "text",
+          "real"
+        ],
+        "page_id": 13648477,
+        "id": "2-13648477-1",
+        "section_title": "Superbike race 1 classification",
+        "rows": [
+          [
+            "Noriyuki Haga",
+            "Yamaha YZF-R1",
+            "23",
+            "38:33.762",
+            "4"
+          ],
+          [
+            "Troy Bayliss",
+            "Ducati 999 F07",
+            "23",
+            "+2.770",
+            "7"
+          ],
+          [
+            "Troy Corser",
+            "Yamaha YZF-R1",
+            "23",
+            "+3.735",
+            "3"
+          ],
+          [
+            "Max Neukirchner",
+            "Suzuki GSX-R1000 K7",
+            "23",
+            "+8.570",
+            "2"
+          ],
+          [
+            "Fonsi Nieto",
+            "Kawasaki ZX-10R",
+            "23",
+            "+12.925",
+            "9"
+          ],
+          [
+            "Max Biaggi",
+            "Suzuki GSX-R1000 K7",
+            "23",
+            "+13.283",
+            "6"
+          ],
+          [
+            "James Toseland",
+            "Honda CBR1000RR",
+            "23",
+            "+16.395",
+            "1"
+          ],
+          [
+            "Ruben Xaus",
+            "Ducati 999 F06",
+            "23",
+            "+22.581",
+            "10"
+          ],
+          [
+            "Régis Laconi",
+            "Kawasaki ZX-10R",
+            "23",
+            "+22.828",
+            "8"
+          ],
+          [
+            "Roberto Rolfo",
+            "Honda CBR1000RR",
+            "23",
+            "+32.729",
+            "11"
+          ],
+          [
+            "Shinichi Nakatomi",
+            "Yamaha YZF-R1",
+            "23",
+            "+38.305",
+            "17"
+          ],
+          [
+            "Karl Muggeridge",
+            "Honda CBR1000RR",
+            "23",
+            "+53.685",
+            "16"
+          ],
+          [
+            "Yoann Tiberio",
+            "Honda CBR1000RR",
+            "23",
+            "+53.799",
+            "14"
+          ],
+          [
+            "Michel Fabrizio",
+            "Honda CBR1000RR",
+            "23",
+            "+53.915",
+            "12"
+          ],
+          [
+            "Guillaume Dietrich",
+            "Suzuki GSX-R1000 K6",
+            "23",
+            "+56.474",
+            "18"
+          ],
+          [
+            "Steve Martin",
+            "Suzuki GSX-R1000 K6",
+            "23",
+            "+1:11.402",
+            "13"
+          ],
+          [
+            "Luca Morelli",
+            "Honda CBR1000RR",
+            "19",
+            "Retirement",
+            "19"
+          ],
+          [
+            "Jakub Smrž",
+            "Ducati 999 F05",
+            "4",
+            "Retirement",
+            "15"
+          ],
+          [
+            "Dean Ellison",
+            "Ducati 999RS",
+            "4",
+            "Retirement",
+            "20"
+          ],
+          [
+            "Lorenzo Lanzi",
+            "Ducati 999 F07",
+            "0",
+            "Retirement",
+            "5"
+          ]
+        ],
+        "caption": "Superbike race 1 classification",
+        "headers": [
+          "Rider",
+          "Bike",
+          "Laps",
+          "Time",
+          "Grid"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-13648477-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 9,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "less than 6",
+              "value": "< 6",
+              "start": 29,
+              "end": 40
+            },
+            {
+              "surface": "Noriyuki Haga",
+              "value": "Noriyuki Haga",
+              "start": 45,
+              "end": 58
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "5b395ec93954fcf30013799a86f40716c1843f765f39e8fb9f09a7c678273a85",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5126,
+              "completion_tokens": 38,
+              "total_tokens": 5164,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "less than 6",
+              "value": "< 6",
+              "start": 29,
+              "end": 40,
+              "clause": "What was the time for a grid less than 6 for Noriyuki Haga?"
+            },
+            {
+              "surface": "Noriyuki Haga",
+              "value": "Noriyuki Haga",
+              "start": 45,
+              "end": 58,
+              "clause": "What was the time for a grid less than 6 for Noriyuki Haga?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "less than 6",
+              "value": "< 6",
+              "start": 29,
+              "end": 40,
+              "clause": "What was the time for a grid less than 6 for Noriyuki Haga?"
+            },
+            {
+              "surface": "Noriyuki Haga",
+              "value": "Noriyuki Haga",
+              "start": 45,
+              "end": 58,
+              "clause": "What was the time for a grid less than 6 for Noriyuki Haga?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "less than 6",
+              "value": "< 6",
+              "start": 29,
+              "end": 40,
+              "clause": "What was the time for a grid less than 6 for Noriyuki Haga?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Explicitly modifies 'grid'; Grid is numeric and supports < 6."
+            },
+            {
+              "surface": "Noriyuki Haga",
+              "value": "Noriyuki Haga",
+              "start": 45,
+              "end": 58,
+              "clause": "What was the time for a grid less than 6 for Noriyuki Haga?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Names the rider; exact match appears in Rider."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ebc4db1666a6dff7c671e12a9b0fc892219f9b561e43a77145d98d8e548196be",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5216,
+              "completion_tokens": 50,
+              "total_tokens": 5266,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "less than 6",
+              "value": "< 6",
+              "start": 29,
+              "end": 40,
+              "clause": "What was the time for a grid less than 6 for Noriyuki Haga?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Explicitly modifies 'grid'; Grid is numeric and supports < 6.",
+              "operator": "<"
+            },
+            {
+              "surface": "Noriyuki Haga",
+              "value": "Noriyuki Haga",
+              "start": 45,
+              "end": 58,
+              "clause": "What was the time for a grid less than 6 for Noriyuki Haga?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Names the rider; exact match appears in Rider.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "afc6647781e22e315cf58f86e528660f8796426d97401ea5f23ef29ddda5f675",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5301,
+              "completion_tokens": 11,
+              "total_tokens": 5312,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "warnings": [
+            "value model disagreed with extracted question span; original retained"
+          ],
+          "conditions": [
+            {
+              "surface": "less than 6",
+              "value": "< 6",
+              "start": 29,
+              "end": 40,
+              "clause": "What was the time for a grid less than 6 for Noriyuki Haga?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Explicitly modifies 'grid'; Grid is numeric and supports < 6.",
+              "operator": "<"
+            },
+            {
+              "surface": "Noriyuki Haga",
+              "value": "Noriyuki Haga",
+              "start": 45,
+              "end": 58,
+              "clause": "What was the time for a grid less than 6 for Noriyuki Haga?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Names the rider; exact match appears in Rider.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "5f69ce81ff0a60b93852c8368eb6a2513c72f086e88005077ea629f2bde155ed",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5255,
+              "completion_tokens": 16,
+              "total_tokens": 5271,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "less than 6",
+              "value": "< 6",
+              "start": 29,
+              "end": 40,
+              "clause": "What was the time for a grid less than 6 for Noriyuki Haga?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Explicitly modifies 'grid'; Grid is numeric and supports < 6.",
+              "operator": "<",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 4,
+                "reason": "The phrase 'grid less than 6' explicitly refers to the numeric Grid column; Noriyuki Haga's Grid value is 4, which satisfies < 6."
+              }
+            },
+            {
+              "surface": "Noriyuki Haga",
+              "value": "Noriyuki Haga",
+              "start": 45,
+              "end": 58,
+              "clause": "What was the time for a grid less than 6 for Noriyuki Haga?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Names the rider; exact match appears in Rider.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ],
+          "reviewModelCalls": [
+            {
+              "model": "gpt-5.6-sol",
+              "promptSha256": "130ed09a3a4f016f5a10f32caaf5e51a5682d8d3f6c93456635c276a0368fab2",
+              "knowledgeIds": [],
+              "usage": {
+                "prompt_tokens": 5222,
+                "completion_tokens": 89,
+                "total_tokens": 5311,
+                "prompt_tokens_details": {
+                  "cached_tokens": 4224
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 40
+                }
+              }
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "130ed09a3a4f016f5a10f32caaf5e51a5682d8d3f6c93456635c276a0368fab2",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5222,
+              "completion_tokens": 89,
+              "total_tokens": 5311,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 40
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "less than 6",
+              "value": "< 6",
+              "start": 29,
+              "end": 40,
+              "clause": "What was the time for a grid less than 6 for Noriyuki Haga?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Explicitly modifies 'grid'; Grid is numeric and supports < 6.",
+              "operator": "<",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 4,
+                "reason": "The phrase 'grid less than 6' explicitly refers to the numeric Grid column; Noriyuki Haga's Grid value is 4, which satisfies < 6."
+              }
+            },
+            {
+              "surface": "Noriyuki Haga",
+              "value": "Noriyuki Haga",
+              "start": 45,
+              "end": 58,
+              "clause": "What was the time for a grid less than 6 for Noriyuki Haga?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Names the rider; exact match appears in Rider.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "GROUNDING_FAILED",
+          "valid": false,
+          "errors": [
+            "condition 0: grounding NO_MATCH",
+            "condition 0: nonnumeric value for real column"
+          ],
+          "conditions": [
+            {
+              "surface": "less than 6",
+              "value": "< 6",
+              "start": 29,
+              "end": 40,
+              "clause": "What was the time for a grid less than 6 for Noriyuki Haga?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "Explicitly modifies 'grid'; Grid is numeric and supports < 6.",
+              "operator": "<",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 4,
+                "reason": "The phrase 'grid less than 6' explicitly refers to the numeric Grid column; Noriyuki Haga's Grid value is 4, which satisfies < 6."
+              }
+            },
+            {
+              "surface": "Noriyuki Haga",
+              "value": "Noriyuki Haga",
+              "start": 45,
+              "end": 58,
+              "clause": "What was the time for a grid less than 6 for Noriyuki Haga?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Names the rider; exact match appears in Rider.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        }
+      },
+      "warnings": [
+        "value model disagreed with extracted question span; original retained"
+      ],
+      "execution": {
+        "status": "GROUNDING_FAILED",
+        "stage": "WHERE_CONDITION_VALIDATE",
+        "halt": true,
+        "completed": false,
+        "errors": [
+          "condition 0: grounding NO_MATCH",
+          "condition 0: nonnumeric value for real column"
+        ],
+        "warnings": [
+          "value model disagreed with extracted question span; original retained"
+        ]
+      },
+      "originalConditions": [
+        {
+          "surface": "less than 6",
+          "value": "< 6",
+          "start": 29,
+          "end": 40
+        },
+        {
+          "surface": "Noriyuki Haga",
+          "value": "Noriyuki Haga",
+          "start": 45,
+          "end": 58
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "less than 6",
+          "value": "< 6",
+          "start": 29,
+          "end": 40,
+          "clause": "What was the time for a grid less than 6 for Noriyuki Haga?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "Explicitly modifies 'grid'; Grid is numeric and supports < 6.",
+          "operator": "<",
+          "grounded": false,
+          "groundingStatus": "NO_MATCH",
+          "groundingReview": {
+            "column": 4,
+            "reason": "The phrase 'grid less than 6' explicitly refers to the numeric Grid column; Noriyuki Haga's Grid value is 4, which satisfies < 6."
+          }
+        },
+        {
+          "surface": "Noriyuki Haga",
+          "value": "Noriyuki Haga",
+          "start": 45,
+          "end": 58,
+          "clause": "What was the time for a grid less than 6 for Noriyuki Haga?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "Names the rider; exact match appears in Rider.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": false,
+  "elapsed_ms": 11250
+}

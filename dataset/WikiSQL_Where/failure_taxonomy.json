@@ -1,0 +1,28 @@
+{
+  "dataset": "WikiSQL_Where",
+  "data_dir": "dataset/WikiSQL_Where/data",
+  "records": 596,
+  "splits": { "test": 596, "train": 0, "dev": 0 },
+  "source": "WikiSQL E4 test failures (results/formal_test/test/E4/evaluated.jsonl, ex_correct=false)",
+  "selection": "gold.conds 非空 且 sorted(pred.conds) != sorted(gold.conds)",
+  "order": "test.jsonl 按 gold.sql.agg 升序(none,count,sum,max,avg,min)，同 agg 内按原始 test 索引",
+  "by_gold_agg": { "none": 196, "count": 160, "sum": 83, "max": 62, "avg": 52, "min": 43 },
+  "categories": [
+    { "id": "W01", "type": "值大小写不一致", "count": 282, "ratio": 0.4732 },
+    { "id": "W02", "type": "值不在表内(幻觉/引号差异)", "count": 102, "ratio": 0.1711 },
+    { "id": "W03", "type": "等值与范围混淆", "count": 95, "ratio": 0.1594 },
+    { "id": "W04", "type": "列映射错且伴随选列/聚合错", "count": 25, "ratio": 0.0419 },
+    { "id": "W05", "type": "仅列映射错", "count": 22, "ratio": 0.0369 },
+    { "id": "W06", "type": "多出条件", "count": 15, "ratio": 0.0252 },
+    { "id": "W07", "type": "表内值选错(歧义)", "count": 15, "ratio": 0.0252 },
+    { "id": "W08", "type": "比较方向反转", "count": 14, "ratio": 0.0235 },
+    { "id": "W09", "type": "遗漏部分条件", "count": 12, "ratio": 0.0201 },
+    { "id": "W10", "type": "运算符越界(输出非0/1/2)", "count": 5, "ratio": 0.0084 },
+    { "id": "W11", "type": "WHERE整体丢失(金标有条件,预测无条件)", "count": 4, "ratio": 0.0067 },
+    { "id": "W12", "type": "多条件复合错误(部分对部分错)", "count": 3, "ratio": 0.0050 },
+    { "id": "W13", "type": "值截断或扩写", "count": 1, "ratio": 0.0017 },
+    { "id": "W14", "type": "条件全错且数量不足", "count": 1, "ratio": 0.0017 }
+  ],
+  "overlay": { "agg_wrong": 329, "sel_wrong": 96, "where_only": 193 },
+  "excluded": { "order_only": 48, "gold_without_where": 9 }
+}

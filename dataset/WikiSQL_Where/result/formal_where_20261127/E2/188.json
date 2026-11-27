@@ -1,0 +1,499 @@
+{
+  "arm": "E2",
+  "position": 188,
+  "example_id": "test:15152:2-13065827-1",
+  "original_index": 15152,
+  "table_id": "2-13065827-1",
+  "question": "With a Division II of Portsmouth, what is the Division IV?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        3,
+        0,
+        "portsmouth"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [],
+  "status": "GROUNDING_FAILED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "GROUNDING_FAILED",
+    "valid": false,
+    "errors": [
+      "condition 0: grounding NO_MATCH"
+    ],
+    "conditions": [
+      {
+        "surface": "Portsmouth",
+        "value": "Portsmouth",
+        "start": 22,
+        "end": 32,
+        "clause": "With a Division II of Portsmouth",
+        "columnIndex": 1,
+        "columnCandidates": [
+          {
+            "columnIndex": 3,
+            "header": "Division III",
+            "evidence": "EXACT_VALUE_MATCH"
+          }
+        ],
+        "columnMatchReason": "The condition explicitly names Division II, which is schema index 1; Portsmouth appears in Division III in the table, but value presence does not override the named field.",
+        "operator": "=",
+        "groundingReason": "FIELD_VALUE_CONFLICT",
+        "grounded": false,
+        "groundingStatus": "NO_MATCH",
+        "groundingReview": {
+          "column": null,
+          "reason": "The question explicitly assigns Portsmouth to Division II, but Portsmouth appears only in Division III; the sole candidate is supported only by value presence and conflicts with the named field."
+        }
+      }
+    ],
+    "stage": "WHERE_CONDITION_VALIDATE",
+    "originalConditions": [
+      {
+        "surface": "Portsmouth",
+        "value": "Portsmouth",
+        "start": 22,
+        "end": 32
+      }
+    ],
+    "halt": true,
+    "completed": false,
+    "conds": [],
+    "warnings": [],
+    "request": {
+      "question": "With a Division II of Portsmouth, what is the Division IV?",
+      "table": {
+        "header": [
+          "Year",
+          "Division I",
+          "Division II",
+          "Division III",
+          "Division IV",
+          "Division V"
+        ],
+        "page_title": "NHIAA Football",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 13065827,
+        "id": "2-13065827-1",
+        "section_title": "Champions",
+        "rows": [
+          [
+            "2011",
+            "Exeter",
+            "Bishop Guertin",
+            "Portsmouth",
+            "Trinity",
+            "St. Thomas"
+          ],
+          [
+            "2010",
+            "Pinkerton Academy",
+            "Bishop Guertin",
+            "Souhegan",
+            "Lebanon",
+            "Kearsarge"
+          ],
+          [
+            "2009",
+            "Salem",
+            "Bishop Guertin",
+            "Souhegan",
+            "Plymouth",
+            "Trinity"
+          ],
+          [
+            "2008",
+            "Nashua South",
+            "Bishop Guertin",
+            "Souhegan",
+            "Plymouth",
+            "Pelham"
+          ],
+          [
+            "2007",
+            "Pinkerton Academy",
+            "Exeter",
+            "Plymouth",
+            "Laconia",
+            "Pelham"
+          ],
+          [
+            "2006",
+            "Pinkerton Academy",
+            "Bishop Guertin",
+            "Plymouth",
+            "St. Thomas",
+            "Bishop Brady"
+          ],
+          [
+            "2005",
+            "Pinkerton Academy",
+            "Bishop Guertin",
+            "Plymouth",
+            "Hanover",
+            "Bishop Brady"
+          ],
+          [
+            "2004",
+            "Manchester Central",
+            "Bishop Guertin",
+            "Souhegan",
+            "Hanover",
+            "Bow"
+          ]
+        ],
+        "caption": "Champions",
+        "headers": [
+          "Year",
+          "Division I",
+          "Division II",
+          "Division III",
+          "Division IV",
+          "Division V"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-13065827-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 9,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Portsmouth",
+              "value": "Portsmouth",
+              "start": 22,
+              "end": 32
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c23d92dfa266dca2eae217e5d0ea45cdb1bb8d8f4ec2b864a01dc810cdd69f20",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4870,
+              "completion_tokens": 51,
+              "total_tokens": 4921,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 30
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Portsmouth",
+              "value": "Portsmouth",
+              "start": 22,
+              "end": 32,
+              "clause": "With a Division II of Portsmouth"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Portsmouth",
+              "value": "Portsmouth",
+              "start": 22,
+              "end": 32,
+              "clause": "With a Division II of Portsmouth"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Portsmouth",
+              "value": "Portsmouth",
+              "start": 22,
+              "end": 32,
+              "clause": "With a Division II of Portsmouth",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The condition explicitly names Division II, which is schema index 1; Portsmouth appears in Division III in the table, but value presence does not override the named field."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "fa238441285c6a67ba2aafed0d2507ee45b359da29f91093987270a3cf027716",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4899,
+              "completion_tokens": 54,
+              "total_tokens": 4953,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Portsmouth",
+              "value": "Portsmouth",
+              "start": 22,
+              "end": 32,
+              "clause": "With a Division II of Portsmouth",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The condition explicitly names Division II, which is schema index 1; Portsmouth appears in Division III in the table, but value presence does not override the named field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "4ec2fce0de78c74301a96a38a5d91b58caa933ad29f8ad7ca1cce2b069cb26af",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4977,
+              "completion_tokens": 9,
+              "total_tokens": 4986,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Portsmouth",
+              "value": "Portsmouth",
+              "start": 22,
+              "end": 32,
+              "clause": "With a Division II of Portsmouth",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The condition explicitly names Division II, which is schema index 1; Portsmouth appears in Division III in the table, but value presence does not override the named field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "573f628ecb9819242f8eb4b42d8f6f651c5676b44fc5cc89f9d3f507d8761db2",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4928,
+              "completion_tokens": 11,
+              "total_tokens": 4939,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Portsmouth",
+              "value": "Portsmouth",
+              "start": 22,
+              "end": 32,
+              "clause": "With a Division II of Portsmouth",
+              "columnIndex": 1,
+              "columnCandidates": [
+                {
+                  "columnIndex": 3,
+                  "header": "Division III",
+                  "evidence": "EXACT_VALUE_MATCH"
+                }
+              ],
+              "columnMatchReason": "The condition explicitly names Division II, which is schema index 1; Portsmouth appears in Division III in the table, but value presence does not override the named field.",
+              "operator": "=",
+              "groundingReason": "FIELD_VALUE_CONFLICT",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": null,
+                "reason": "The question explicitly assigns Portsmouth to Division II, but Portsmouth appears only in Division III; the sole candidate is supported only by value presence and conflicts with the named field."
+              }
+            }
+          ],
+          "reviewModelCalls": [
+            {
+              "model": "gpt-5.6-sol",
+              "promptSha256": "3f760efa887afb3dca45312e535f3b7bc900625bb6e7a68f5f30dbc03d2bfae6",
+              "knowledgeIds": [],
+              "usage": {
+                "prompt_tokens": 5014,
+                "completion_tokens": 45,
+                "total_tokens": 5059,
+                "prompt_tokens_details": {
+                  "cached_tokens": 4224
+                }
+              }
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "3f760efa887afb3dca45312e535f3b7bc900625bb6e7a68f5f30dbc03d2bfae6",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5014,
+              "completion_tokens": 45,
+              "total_tokens": 5059,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Portsmouth",
+              "value": "Portsmouth",
+              "start": 22,
+              "end": 32,
+              "clause": "With a Division II of Portsmouth",
+              "columnIndex": 1,
+              "columnCandidates": [
+                {
+                  "columnIndex": 3,
+                  "header": "Division III",
+                  "evidence": "EXACT_VALUE_MATCH"
+                }
+              ],
+              "columnMatchReason": "The condition explicitly names Division II, which is schema index 1; Portsmouth appears in Division III in the table, but value presence does not override the named field.",
+              "operator": "=",
+              "groundingReason": "FIELD_VALUE_CONFLICT",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": null,
+                "reason": "The question explicitly assigns Portsmouth to Division II, but Portsmouth appears only in Division III; the sole candidate is supported only by value presence and conflicts with the named field."
+              }
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "GROUNDING_FAILED",
+          "valid": false,
+          "errors": [
+            "condition 0: grounding NO_MATCH"
+          ],
+          "conditions": [
+            {
+              "surface": "Portsmouth",
+              "value": "Portsmouth",
+              "start": 22,
+              "end": 32,
+              "clause": "With a Division II of Portsmouth",
+              "columnIndex": 1,
+              "columnCandidates": [
+                {
+                  "columnIndex": 3,
+                  "header": "Division III",
+                  "evidence": "EXACT_VALUE_MATCH"
+                }
+              ],
+              "columnMatchReason": "The condition explicitly names Division II, which is schema index 1; Portsmouth appears in Division III in the table, but value presence does not override the named field.",
+              "operator": "=",
+              "groundingReason": "FIELD_VALUE_CONFLICT",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": null,
+                "reason": "The question explicitly assigns Portsmouth to Division II, but Portsmouth appears only in Division III; the sole candidate is supported only by value presence and conflicts with the named field."
+              }
+            }
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "GROUNDING_FAILED",
+        "stage": "WHERE_CONDITION_VALIDATE",
+        "halt": true,
+        "completed": false,
+        "errors": [
+          "condition 0: grounding NO_MATCH"
+        ],
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Portsmouth",
+          "value": "Portsmouth",
+          "start": 22,
+          "end": 32
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Portsmouth",
+          "value": "Portsmouth",
+          "start": 22,
+          "end": 32,
+          "clause": "With a Division II of Portsmouth",
+          "columnIndex": 1,
+          "columnCandidates": [
+            {
+              "columnIndex": 3,
+              "header": "Division III",
+              "evidence": "EXACT_VALUE_MATCH"
+            }
+          ],
+          "columnMatchReason": "The condition explicitly names Division II, which is schema index 1; Portsmouth appears in Division III in the table, but value presence does not override the named field.",
+          "operator": "=",
+          "groundingReason": "FIELD_VALUE_CONFLICT",
+          "grounded": false,
+          "groundingStatus": "NO_MATCH",
+          "groundingReview": {
+            "column": null,
+            "reason": "The question explicitly assigns Portsmouth to Division II, but Portsmouth appears only in Division III; the sole candidate is supported only by value presence and conflicts with the named field."
+          }
+        }
+      ],
+      "count": 1
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": false,
+  "elapsed_ms": 9672
+}

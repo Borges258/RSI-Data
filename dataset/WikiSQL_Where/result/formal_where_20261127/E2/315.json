@@ -1,0 +1,463 @@
+{
+  "arm": "E2",
+  "position": 315,
+  "example_id": "test:1294:1-15637071-1",
+  "original_index": 1294,
+  "table_id": "1-15637071-1",
+  "question": "How large is the fleet size of the airline with the IATA code of 5j?",
+  "gold_sql": {
+    "sel": 5,
+    "conds": [
+      [
+        2,
+        0,
+        "5J"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "5J"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "5J"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "5j",
+        "value": "5J",
+        "start": 65,
+        "end": 67,
+        "clause": "How large is the fleet size of the airline with the IATA code of 5j?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The question explicitly identifies 5J as an IATA code, matching the IATA header and the Cebu Pacific row.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "5j",
+        "value": "5J",
+        "start": 65,
+        "end": 67
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "How large is the fleet size of the airline with the IATA code of 5j?",
+      "table": {
+        "header": [
+          "Airline",
+          "ICAO",
+          "IATA",
+          "Callsign",
+          "Commenced operations",
+          "Fleet size",
+          "Headquarters"
+        ],
+        "page_title": "List of airlines of the Philippines",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "real",
+          "real",
+          "text"
+        ],
+        "id": "1-15637071-1",
+        "section_title": "Commercial airlines",
+        "caption": "Commercial airlines",
+        "rows": [
+          [
+            "AirAsia Zest",
+            "EZD",
+            "Z2",
+            "ZEST",
+            1995,
+            11,
+            "Pasay City"
+          ],
+          [
+            "Cebu Pacific",
+            "CEB",
+            "5J",
+            "CEBU",
+            1996,
+            47,
+            "Pasay City"
+          ],
+          [
+            "Fil-Asian Airways",
+            "MSE",
+            "MX",
+            "FAA",
+            2008,
+            1,
+            "Lapu-Lapu City"
+          ],
+          [
+            "PAL Express",
+            "GAP",
+            "2P",
+            "AIRPHIL",
+            1996,
+            21,
+            "Pasay City"
+          ],
+          [
+            "Philippine Airlines",
+            "PAL",
+            "PR",
+            "PHILIPPINE",
+            1941,
+            51,
+            "Pasay City"
+          ],
+          [
+            "Philippines AirAsia",
+            "AAU",
+            "PQ",
+            "COOL RED",
+            2012,
+            3,
+            "Angeles City"
+          ],
+          [
+            "Sky Pasada",
+            "WCC",
+            "SP",
+            "PASADA",
+            2010,
+            2,
+            "Pasay City"
+          ],
+          [
+            "Spirit of Manila Airlines",
+            "MNP",
+            "SM",
+            "MANILA SKY",
+            2010,
+            3,
+            "Pasay City"
+          ],
+          [
+            "Tigerair Philippines",
+            "SRQ",
+            "DG",
+            "SEAIR",
+            1995,
+            17,
+            "Makati City"
+          ]
+        ],
+        "name": "table_15637071_1",
+        "headers": [
+          "Airline",
+          "ICAO",
+          "IATA",
+          "Callsign",
+          "Commenced operations",
+          "Fleet size",
+          "Headquarters"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-15637071-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "5j",
+              "value": "5J",
+              "start": 65,
+              "end": 67
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "8d3a4b1ca8f125f4ffa4516031ff12d1300cc55c133058a90e80326c16ab7f3f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4911,
+              "completion_tokens": 19,
+              "total_tokens": 4930,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "5j",
+              "value": "5J",
+              "start": 65,
+              "end": 67,
+              "clause": "How large is the fleet size of the airline with the IATA code of 5j?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "5j",
+              "value": "5J",
+              "start": 65,
+              "end": 67,
+              "clause": "How large is the fleet size of the airline with the IATA code of 5j?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "5j",
+              "value": "5J",
+              "start": 65,
+              "end": 67,
+              "clause": "How large is the fleet size of the airline with the IATA code of 5j?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies 5J as an IATA code, matching the IATA header and the Cebu Pacific row."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d4a07381569d69f4d2d2dd05e14fd4d9d0ddbbf23f3473191c6e747b9e26904c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4953,
+              "completion_tokens": 45,
+              "total_tokens": 4998,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "5j",
+              "value": "5J",
+              "start": 65,
+              "end": 67,
+              "clause": "How large is the fleet size of the airline with the IATA code of 5j?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies 5J as an IATA code, matching the IATA header and the Cebu Pacific row.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "8ea951458543023d8182fa99e0151ca58ea3d7cc9f72ff067c09c344d603446f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5022,
+              "completion_tokens": 9,
+              "total_tokens": 5031,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "5j",
+              "value": "5J",
+              "start": 65,
+              "end": 67,
+              "clause": "How large is the fleet size of the airline with the IATA code of 5j?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies 5J as an IATA code, matching the IATA header and the Cebu Pacific row.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "cb3af6a3421625d914ef468d6b00eb212c6577cee78c0741947ae94c66be0164",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4973,
+              "completion_tokens": 11,
+              "total_tokens": 4984,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "5j",
+              "value": "5J",
+              "start": 65,
+              "end": 67,
+              "clause": "How large is the fleet size of the airline with the IATA code of 5j?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies 5J as an IATA code, matching the IATA header and the Cebu Pacific row.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "5j",
+              "value": "5J",
+              "start": 65,
+              "end": 67,
+              "clause": "How large is the fleet size of the airline with the IATA code of 5j?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies 5J as an IATA code, matching the IATA header and the Cebu Pacific row.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "5j",
+              "value": "5J",
+              "start": 65,
+              "end": 67,
+              "clause": "How large is the fleet size of the airline with the IATA code of 5j?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies 5J as an IATA code, matching the IATA header and the Cebu Pacific row.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "5J"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "5j",
+          "value": "5J",
+          "start": 65,
+          "end": 67
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "5j",
+          "value": "5J",
+          "start": 65,
+          "end": 67,
+          "clause": "How large is the fleet size of the airline with the IATA code of 5j?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The question explicitly identifies 5J as an IATA code, matching the IATA header and the Cebu Pacific row.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          2,
+          0,
+          "5J"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7031
+}

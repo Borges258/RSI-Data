@@ -1,0 +1,600 @@
+{
+  "arm": "E2",
+  "position": 364,
+  "example_id": "test:6587:2-1524433-1",
+  "original_index": 6587,
+  "table_id": "2-1524433-1",
+  "question": "What is the total number of top-25 that has a top-10 smaller than 4 with 0 cuts?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        3,
+        2,
+        4
+      ],
+      [
+        6,
+        0,
+        0
+      ]
+    ],
+    "agg": 3
+  },
+  "prediction_conds": [
+    [
+      3,
+      2,
+      4
+    ],
+    [
+      6,
+      0,
+      0
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        2,
+        4
+      ],
+      [
+        6,
+        0,
+        0
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "4",
+        "value": 4,
+        "start": 66,
+        "end": 67,
+        "clause": "What is the total number of top-25 that has a top-10 smaller than 4 with 0 cuts?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The question explicitly says top-10 smaller than 4, matching the Top-10 header.",
+        "operator": "<",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "0",
+        "value": 0,
+        "start": 73,
+        "end": 74,
+        "clause": "What is the total number of top-25 that has a top-10 smaller than 4 with 0 cuts?",
+        "columnIndex": 6,
+        "columnCandidates": [
+          6
+        ],
+        "columnMatchReason": "The phrase 0 cuts refers to the Cuts made header.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "4",
+        "value": "4",
+        "start": 66,
+        "end": 67
+      },
+      {
+        "surface": "0",
+        "value": "0",
+        "start": 73,
+        "end": 74
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the total number of top-25 that has a top-10 smaller than 4 with 0 cuts?",
+      "table": {
+        "header": [
+          "Tournament",
+          "Wins",
+          "Top-5",
+          "Top-10",
+          "Top-25",
+          "Events",
+          "Cuts made"
+        ],
+        "page_title": "Tommy Horton",
+        "types": [
+          "text",
+          "real",
+          "real",
+          "real",
+          "real",
+          "real",
+          "real"
+        ],
+        "page_id": 1524433,
+        "id": "2-1524433-1",
+        "section_title": "Summary",
+        "rows": [
+          [
+            "Masters Tournament",
+            "0",
+            "0",
+            "0",
+            "0",
+            "4",
+            "0"
+          ],
+          [
+            "U.S. Open",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "The Open Championship",
+            "0",
+            "1",
+            "4",
+            "8",
+            "20",
+            "15"
+          ],
+          [
+            "PGA Championship",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "Totals",
+            "0",
+            "1",
+            "4",
+            "8",
+            "24",
+            "15"
+          ]
+        ],
+        "caption": "Summary",
+        "headers": [
+          "Tournament",
+          "Wins",
+          "Top-5",
+          "Top-10",
+          "Top-25",
+          "Events",
+          "Cuts made"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-1524433-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "4",
+              "value": "4",
+              "start": 66,
+              "end": 67
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 73,
+              "end": 74
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "75591f24431a8e4096bfe4366149797cbeb0a8a2d05e070d1aefa961b54bfcf4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4779,
+              "completion_tokens": 83,
+              "total_tokens": 4862,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 56
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "4",
+              "value": "4",
+              "start": 66,
+              "end": 67,
+              "clause": "What is the total number of top-25 that has a top-10 smaller than 4 with 0 cuts?"
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 73,
+              "end": 74,
+              "clause": "What is the total number of top-25 that has a top-10 smaller than 4 with 0 cuts?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "4",
+              "value": "4",
+              "start": 66,
+              "end": 67,
+              "clause": "What is the total number of top-25 that has a top-10 smaller than 4 with 0 cuts?"
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 73,
+              "end": 74,
+              "clause": "What is the total number of top-25 that has a top-10 smaller than 4 with 0 cuts?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "4",
+              "value": "4",
+              "start": 66,
+              "end": 67,
+              "clause": "What is the total number of top-25 that has a top-10 smaller than 4 with 0 cuts?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says top-10 smaller than 4, matching the Top-10 header."
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 73,
+              "end": 74,
+              "clause": "What is the total number of top-25 that has a top-10 smaller than 4 with 0 cuts?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "The phrase 0 cuts refers to the Cuts made header."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0e3a644068ea35af22ce7f668cf603fb7520619a792783a39e531ad2c5607e8b",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4868,
+              "completion_tokens": 56,
+              "total_tokens": 4924,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "4",
+              "value": "4",
+              "start": 66,
+              "end": 67,
+              "clause": "What is the total number of top-25 that has a top-10 smaller than 4 with 0 cuts?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says top-10 smaller than 4, matching the Top-10 header.",
+              "operator": "<"
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 73,
+              "end": 74,
+              "clause": "What is the total number of top-25 that has a top-10 smaller than 4 with 0 cuts?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "The phrase 0 cuts refers to the Cuts made header.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "eca30de1ac0d6703c0d3ff7a7c1ad1afc8f58e7c9778599cf5e51c6fbf6558f7",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4959,
+              "completion_tokens": 11,
+              "total_tokens": 4970,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "4",
+              "value": 4,
+              "start": 66,
+              "end": 67,
+              "clause": "What is the total number of top-25 that has a top-10 smaller than 4 with 0 cuts?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says top-10 smaller than 4, matching the Top-10 header.",
+              "operator": "<"
+            },
+            {
+              "surface": "0",
+              "value": 0,
+              "start": 73,
+              "end": 74,
+              "clause": "What is the total number of top-25 that has a top-10 smaller than 4 with 0 cuts?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "The phrase 0 cuts refers to the Cuts made header.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "1b18006898babfdebe0ca2f7e273278cd75a8acdff456ca65ddb13139908a5d9",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4913,
+              "completion_tokens": 11,
+              "total_tokens": 4924,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "4",
+              "value": "4",
+              "start": 66,
+              "end": 67,
+              "clause": "What is the total number of top-25 that has a top-10 smaller than 4 with 0 cuts?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says top-10 smaller than 4, matching the Top-10 header.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 73,
+              "end": 74,
+              "clause": "What is the total number of top-25 that has a top-10 smaller than 4 with 0 cuts?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "The phrase 0 cuts refers to the Cuts made header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "4",
+              "value": 4,
+              "start": 66,
+              "end": 67,
+              "clause": "What is the total number of top-25 that has a top-10 smaller than 4 with 0 cuts?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says top-10 smaller than 4, matching the Top-10 header.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "0",
+              "value": 0,
+              "start": 73,
+              "end": 74,
+              "clause": "What is the total number of top-25 that has a top-10 smaller than 4 with 0 cuts?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "The phrase 0 cuts refers to the Cuts made header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "4",
+              "value": 4,
+              "start": 66,
+              "end": 67,
+              "clause": "What is the total number of top-25 that has a top-10 smaller than 4 with 0 cuts?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly says top-10 smaller than 4, matching the Top-10 header.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "0",
+              "value": 0,
+              "start": 73,
+              "end": 74,
+              "clause": "What is the total number of top-25 that has a top-10 smaller than 4 with 0 cuts?",
+              "columnIndex": 6,
+              "columnCandidates": [
+                6
+              ],
+              "columnMatchReason": "The phrase 0 cuts refers to the Cuts made header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              2,
+              4
+            ],
+            [
+              6,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "4",
+          "value": "4",
+          "start": 66,
+          "end": 67
+        },
+        {
+          "surface": "0",
+          "value": "0",
+          "start": 73,
+          "end": 74
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "4",
+          "value": 4,
+          "start": 66,
+          "end": 67,
+          "clause": "What is the total number of top-25 that has a top-10 smaller than 4 with 0 cuts?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The question explicitly says top-10 smaller than 4, matching the Top-10 header.",
+          "operator": "<",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "0",
+          "value": 0,
+          "start": 73,
+          "end": 74,
+          "clause": "What is the total number of top-25 that has a top-10 smaller than 4 with 0 cuts?",
+          "columnIndex": 6,
+          "columnCandidates": [
+            6
+          ],
+          "columnMatchReason": "The phrase 0 cuts refers to the Cuts made header.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          3,
+          2,
+          4
+        ],
+        [
+          6,
+          0,
+          0
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8359
+}

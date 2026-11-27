@@ -1,0 +1,621 @@
+{
+  "arm": "E2",
+  "position": 534,
+  "example_id": "test:14318:2-18976447-3",
+  "original_index": 14318,
+  "table_id": "2-18976447-3",
+  "question": "What is the sum of Against values for teams with 5 losses and 0 draws?",
+  "gold_sql": {
+    "sel": 5,
+    "conds": [
+      [
+        3,
+        0,
+        5
+      ],
+      [
+        4,
+        0,
+        0
+      ]
+    ],
+    "agg": 4
+  },
+  "prediction_conds": [
+    [
+      3,
+      0,
+      5
+    ],
+    [
+      4,
+      0,
+      0
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        0,
+        5
+      ],
+      [
+        4,
+        0,
+        0
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "5",
+        "value": 5,
+        "start": 49,
+        "end": 50,
+        "clause": "What is the sum of Against values for teams with 5 losses",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The condition explicitly says '5 losses', matching the Losses header; row evidence includes a team with Losses = 5.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "0",
+        "value": 0,
+        "start": 62,
+        "end": 63,
+        "clause": "and 0 draws?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The condition explicitly says '0 draws', matching the Draws header; row evidence shows Draws = 0.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "5",
+        "value": "5",
+        "start": 49,
+        "end": 50
+      },
+      {
+        "surface": "0",
+        "value": "0",
+        "start": 62,
+        "end": 63
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the sum of Against values for teams with 5 losses and 0 draws?",
+      "table": {
+        "header": [
+          "Wimmera FL",
+          "Wins",
+          "Byes",
+          "Losses",
+          "Draws",
+          "Against"
+        ],
+        "page_title": "Wimmera Football League",
+        "types": [
+          "text",
+          "real",
+          "real",
+          "real",
+          "real",
+          "real"
+        ],
+        "page_id": 18976447,
+        "id": "2-18976447-3",
+        "section_title": "2008 Ladder",
+        "rows": [
+          [
+            "Horsham",
+            "14",
+            "2",
+            "2",
+            "0",
+            "1166"
+          ],
+          [
+            "Stawell",
+            "13",
+            "2",
+            "3",
+            "0",
+            "1067"
+          ],
+          [
+            "Warrack Eagles",
+            "11",
+            "2",
+            "5",
+            "0",
+            "1322"
+          ],
+          [
+            "Ararat",
+            "10",
+            "2",
+            "6",
+            "0",
+            "1365"
+          ],
+          [
+            "Horsham Saints",
+            "8",
+            "2",
+            "8",
+            "0",
+            "1457"
+          ],
+          [
+            "Dimboola",
+            "6",
+            "2",
+            "10",
+            "0",
+            "1650"
+          ],
+          [
+            "Nhill",
+            "6",
+            "2",
+            "10",
+            "0",
+            "1594"
+          ],
+          [
+            "Horsham Diggers",
+            "2",
+            "2",
+            "14",
+            "0",
+            "2139"
+          ],
+          [
+            "Minyip Murtoa",
+            "2",
+            "2",
+            "14",
+            "0",
+            "2200"
+          ]
+        ],
+        "caption": "2008 Ladder",
+        "headers": [
+          "Wimmera FL",
+          "Wins",
+          "Byes",
+          "Losses",
+          "Draws",
+          "Against"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-18976447-3",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "5",
+              "value": "5",
+              "start": 49,
+              "end": 50
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 62,
+              "end": 63
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "606ab10a2f05198f0cefdafa10ebdf527e5b8c3fadc0a416a0e2c1884032e2b5",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4836,
+              "completion_tokens": 25,
+              "total_tokens": 4861,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "5",
+              "value": "5",
+              "start": 49,
+              "end": 50,
+              "clause": "What is the sum of Against values for teams with 5 losses"
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 62,
+              "end": 63,
+              "clause": "and 0 draws?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "5",
+              "value": "5",
+              "start": 49,
+              "end": 50,
+              "clause": "What is the sum of Against values for teams with 5 losses"
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 62,
+              "end": 63,
+              "clause": "and 0 draws?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "5",
+              "value": "5",
+              "start": 49,
+              "end": 50,
+              "clause": "What is the sum of Against values for teams with 5 losses",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The condition explicitly says '5 losses', matching the Losses header; row evidence includes a team with Losses = 5."
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 62,
+              "end": 63,
+              "clause": "and 0 draws?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The condition explicitly says '0 draws', matching the Draws header; row evidence shows Draws = 0."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "581483b910769a6fb9a2c209694ea92ed694cf663c014ccf5b3e22b59e062607",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4895,
+              "completion_tokens": 74,
+              "total_tokens": 4969,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "5",
+              "value": "5",
+              "start": 49,
+              "end": 50,
+              "clause": "What is the sum of Against values for teams with 5 losses",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The condition explicitly says '5 losses', matching the Losses header; row evidence includes a team with Losses = 5.",
+              "operator": "="
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 62,
+              "end": 63,
+              "clause": "and 0 draws?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The condition explicitly says '0 draws', matching the Draws header; row evidence shows Draws = 0.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a5729e43cc2b8457bff9702aebc2bbe01f2d1a12e4f3bb35f7f6be954edfbcc1",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5004,
+              "completion_tokens": 11,
+              "total_tokens": 5015,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "5",
+              "value": "5",
+              "start": 49,
+              "end": 50,
+              "clause": "What is the sum of Against values for teams with 5 losses",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The condition explicitly says '5 losses', matching the Losses header; row evidence includes a team with Losses = 5.",
+              "operator": "="
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 62,
+              "end": 63,
+              "clause": "and 0 draws?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The condition explicitly says '0 draws', matching the Draws header; row evidence shows Draws = 0.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "43ce0fbe3012c456e50d943c875815afa5878723fdbe9e69e4b6358ff1b01331",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4958,
+              "completion_tokens": 12,
+              "total_tokens": 4970,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "5",
+              "value": "5",
+              "start": 49,
+              "end": 50,
+              "clause": "What is the sum of Against values for teams with 5 losses",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The condition explicitly says '5 losses', matching the Losses header; row evidence includes a team with Losses = 5.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "0",
+              "value": "0",
+              "start": 62,
+              "end": 63,
+              "clause": "and 0 draws?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The condition explicitly says '0 draws', matching the Draws header; row evidence shows Draws = 0.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "5",
+              "value": 5,
+              "start": 49,
+              "end": 50,
+              "clause": "What is the sum of Against values for teams with 5 losses",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The condition explicitly says '5 losses', matching the Losses header; row evidence includes a team with Losses = 5.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "0",
+              "value": 0,
+              "start": 62,
+              "end": 63,
+              "clause": "and 0 draws?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The condition explicitly says '0 draws', matching the Draws header; row evidence shows Draws = 0.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "5",
+              "value": 5,
+              "start": 49,
+              "end": 50,
+              "clause": "What is the sum of Against values for teams with 5 losses",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The condition explicitly says '5 losses', matching the Losses header; row evidence includes a team with Losses = 5.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "0",
+              "value": 0,
+              "start": 62,
+              "end": 63,
+              "clause": "and 0 draws?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The condition explicitly says '0 draws', matching the Draws header; row evidence shows Draws = 0.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              0,
+              5
+            ],
+            [
+              4,
+              0,
+              0
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "5",
+          "value": "5",
+          "start": 49,
+          "end": 50
+        },
+        {
+          "surface": "0",
+          "value": "0",
+          "start": 62,
+          "end": 63
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "5",
+          "value": 5,
+          "start": 49,
+          "end": 50,
+          "clause": "What is the sum of Against values for teams with 5 losses",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The condition explicitly says '5 losses', matching the Losses header; row evidence includes a team with Losses = 5.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "0",
+          "value": 0,
+          "start": 62,
+          "end": 63,
+          "clause": "and 0 draws?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The condition explicitly says '0 draws', matching the Draws header; row evidence shows Draws = 0.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          3,
+          0,
+          5
+        ],
+        [
+          4,
+          0,
+          0
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9312
+}

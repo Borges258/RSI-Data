@@ -1,0 +1,459 @@
+{
+  "arm": "E2",
+  "position": 58,
+  "example_id": "test:4168:1-29012710-1",
+  "original_index": 4168,
+  "table_id": "1-29012710-1",
+  "question": "what is the amount where the area is new brunswick",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        0,
+        0,
+        "New Brunswick"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "New Brunswick"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "New Brunswick"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "new brunswick",
+        "value": "New Brunswick",
+        "start": 37,
+        "end": 50,
+        "clause": "what is the amount where the area is new brunswick",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "'area' refers to the geographic Province field, and New Brunswick appears in that column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "new brunswick",
+        "value": "New Brunswick",
+        "start": 37,
+        "end": 50
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "what is the amount where the area is new brunswick",
+      "table": {
+        "header": [
+          "Province",
+          "Number of Dairy Farms",
+          "Number of Dairy Cows",
+          "Production (hectolitres)",
+          "Dairy Cows per Farm",
+          "Production (hectolitres) per Farm"
+        ],
+        "page_title": "Dairy farming in Canada",
+        "types": [
+          "text",
+          "real",
+          "real",
+          "real",
+          "real",
+          "real"
+        ],
+        "id": "1-29012710-1",
+        "section_title": "",
+        "caption": "See also",
+        "rows": [
+          [
+            "British Columbia",
+            512,
+            70500,
+            6766330,
+            138,
+            13215
+          ],
+          [
+            "Alberta",
+            592,
+            90000,
+            6603623,
+            152,
+            11155
+          ],
+          [
+            "Saskatchewan",
+            182,
+            30000,
+            2304452,
+            165,
+            12662
+          ],
+          [
+            "Manitoba",
+            344,
+            44500,
+            3213844,
+            129,
+            9343
+          ],
+          [
+            "Ontario",
+            4137,
+            322000,
+            25385472,
+            78,
+            6136
+          ],
+          [
+            "Quebec",
+            6281,
+            366000,
+            28958369,
+            58,
+            4610
+          ],
+          [
+            "New Brunswick",
+            219,
+            18700,
+            1335831,
+            85,
+            6100
+          ],
+          [
+            "Nova Scotia",
+            245,
+            22500,
+            1700045,
+            92,
+            6939
+          ],
+          [
+            "Prince Edward Island",
+            200,
+            13000,
+            1005675,
+            65,
+            5028
+          ],
+          [
+            "Newfoundland & Labrador",
+            34,
+            5900,
+            476783,
+            174,
+            14023
+          ]
+        ],
+        "name": "table_29012710_1",
+        "headers": [
+          "Province",
+          "Number of Dairy Farms",
+          "Number of Dairy Cows",
+          "Production (hectolitres)",
+          "Dairy Cows per Farm",
+          "Production (hectolitres) per Farm"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-29012710-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "new brunswick",
+              "value": "New Brunswick",
+              "start": 37,
+              "end": 50
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "7fa7939e307d314be58353a1d24bd98679d7f89e42188bbe8d3ad072b04660f6",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4904,
+              "completion_tokens": 20,
+              "total_tokens": 4924,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "new brunswick",
+              "value": "New Brunswick",
+              "start": 37,
+              "end": 50,
+              "clause": "what is the amount where the area is new brunswick"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "new brunswick",
+              "value": "New Brunswick",
+              "start": 37,
+              "end": 50,
+              "clause": "what is the amount where the area is new brunswick"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "new brunswick",
+              "value": "New Brunswick",
+              "start": 37,
+              "end": 50,
+              "clause": "what is the amount where the area is new brunswick",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'area' refers to the geographic Province field, and New Brunswick appears in that column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "75c6baa2f6735f526ede9ebea863894b8f2f33160b9205c93de9548e43e2926f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4939,
+              "completion_tokens": 39,
+              "total_tokens": 4978,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "new brunswick",
+              "value": "New Brunswick",
+              "start": 37,
+              "end": 50,
+              "clause": "what is the amount where the area is new brunswick",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'area' refers to the geographic Province field, and New Brunswick appears in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "787f52ddc547424a7900188fadb9c1e03e6a01aaea73268acccefec53a2be182",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5001,
+              "completion_tokens": 9,
+              "total_tokens": 5010,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "new brunswick",
+              "value": "New Brunswick",
+              "start": 37,
+              "end": 50,
+              "clause": "what is the amount where the area is new brunswick",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'area' refers to the geographic Province field, and New Brunswick appears in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "63e4c1e7cbc39593e01be4d0d151b60b69c5c10a36fefc012e42a66dd39b9af5",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4952,
+              "completion_tokens": 11,
+              "total_tokens": 4963,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "new brunswick",
+              "value": "New Brunswick",
+              "start": 37,
+              "end": 50,
+              "clause": "what is the amount where the area is new brunswick",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'area' refers to the geographic Province field, and New Brunswick appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "new brunswick",
+              "value": "New Brunswick",
+              "start": 37,
+              "end": 50,
+              "clause": "what is the amount where the area is new brunswick",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'area' refers to the geographic Province field, and New Brunswick appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "new brunswick",
+              "value": "New Brunswick",
+              "start": 37,
+              "end": 50,
+              "clause": "what is the amount where the area is new brunswick",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'area' refers to the geographic Province field, and New Brunswick appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              "New Brunswick"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "new brunswick",
+          "value": "New Brunswick",
+          "start": 37,
+          "end": 50
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "new brunswick",
+          "value": "New Brunswick",
+          "start": 37,
+          "end": 50,
+          "clause": "what is the amount where the area is new brunswick",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "'area' refers to the geographic Province field, and New Brunswick appears in that column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          0,
+          0,
+          "New Brunswick"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7421
+}

@@ -1,0 +1,591 @@
+{
+  "arm": "E2",
+  "position": 482,
+  "example_id": "test:8411:2-17256960-6",
+  "original_index": 8411,
+  "table_id": "2-17256960-6",
+  "question": "Where did Day & Age rank in the Rolling Stone in 2008?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        0,
+        0,
+        "rolling stone"
+      ],
+      [
+        3,
+        0,
+        2008
+      ]
+    ],
+    "agg": 4
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "Rolling Stone"
+    ],
+    [
+      3,
+      0,
+      2008
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "Rolling Stone"
+      ],
+      [
+        3,
+        0,
+        2008
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Rolling Stone",
+        "value": "Rolling Stone",
+        "start": 32,
+        "end": 45,
+        "clause": "Where did Day & Age rank in the Rolling Stone in 2008?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "'Rolling Stone' names the Publication, matching the Publication header and rows.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "2008",
+        "value": 2008,
+        "start": 49,
+        "end": 53,
+        "clause": "Where did Day & Age rank in the Rolling Stone in 2008?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "'in 2008' specifies the Year, matching the Year header and rows.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Rolling Stone",
+        "value": "Rolling Stone",
+        "start": 32,
+        "end": 45
+      },
+      {
+        "surface": "2008",
+        "value": "2008",
+        "start": 49,
+        "end": 53
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Where did Day & Age rank in the Rolling Stone in 2008?",
+      "table": {
+        "header": [
+          "Publication",
+          "Country",
+          "Accolade",
+          "Year",
+          "Rank"
+        ],
+        "page_title": "Day & Age",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "real",
+          "real"
+        ],
+        "page_id": 17256960,
+        "id": "2-17256960-6",
+        "section_title": "Accolades",
+        "rows": [
+          [
+            "Q",
+            "UK",
+            "250 Best Albums of Q ' s Lifetime 1986–2010",
+            "2011",
+            "144"
+          ],
+          [
+            "Q",
+            "UK",
+            "50 Best Albums of the Year",
+            "2008",
+            "22"
+          ],
+          [
+            "New York Post",
+            "US",
+            "Top 10 Albums of the Year",
+            "2008",
+            "2"
+          ],
+          [
+            "Rolling Stone",
+            "US",
+            "Readers' Top 30 Albums of 2008",
+            "2008",
+            "1"
+          ],
+          [
+            "Rolling Stone",
+            "US",
+            "Top Album Covers of 2008",
+            "2008",
+            "1"
+          ],
+          [
+            "Rolling Stone",
+            "US",
+            "Most Underrated Album of the Decade: Readers' Poll",
+            "2010",
+            "6"
+          ]
+        ],
+        "caption": "Accolades",
+        "headers": [
+          "Publication",
+          "Country",
+          "Accolade",
+          "Year",
+          "Rank"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-17256960-6",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "Rolling Stone",
+              "value": "Rolling Stone",
+              "start": 32,
+              "end": 45
+            },
+            {
+              "surface": "2008",
+              "value": "2008",
+              "start": 49,
+              "end": 53
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "14aa8499af7f2434b154a5687d4f64a309db2a759c8d9136336dadb99fb00043",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4797,
+              "completion_tokens": 84,
+              "total_tokens": 4881,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 53
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Rolling Stone",
+              "value": "Rolling Stone",
+              "start": 32,
+              "end": 45,
+              "clause": "Where did Day & Age rank in the Rolling Stone in 2008?"
+            },
+            {
+              "surface": "2008",
+              "value": "2008",
+              "start": 49,
+              "end": 53,
+              "clause": "Where did Day & Age rank in the Rolling Stone in 2008?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Rolling Stone",
+              "value": "Rolling Stone",
+              "start": 32,
+              "end": 45,
+              "clause": "Where did Day & Age rank in the Rolling Stone in 2008?"
+            },
+            {
+              "surface": "2008",
+              "value": "2008",
+              "start": 49,
+              "end": 53,
+              "clause": "Where did Day & Age rank in the Rolling Stone in 2008?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Rolling Stone",
+              "value": "Rolling Stone",
+              "start": 32,
+              "end": 45,
+              "clause": "Where did Day & Age rank in the Rolling Stone in 2008?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'Rolling Stone' names the Publication, matching the Publication header and rows."
+            },
+            {
+              "surface": "2008",
+              "value": "2008",
+              "start": 49,
+              "end": 53,
+              "clause": "Where did Day & Age rank in the Rolling Stone in 2008?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'in 2008' specifies the Year, matching the Year header and rows."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "74732862f1c585cd3c6d13c335ae1f9850f737adc25b78ad401ce6ba5544d5d0",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4872,
+              "completion_tokens": 57,
+              "total_tokens": 4929,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Rolling Stone",
+              "value": "Rolling Stone",
+              "start": 32,
+              "end": 45,
+              "clause": "Where did Day & Age rank in the Rolling Stone in 2008?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'Rolling Stone' names the Publication, matching the Publication header and rows.",
+              "operator": "="
+            },
+            {
+              "surface": "2008",
+              "value": "2008",
+              "start": 49,
+              "end": 53,
+              "clause": "Where did Day & Age rank in the Rolling Stone in 2008?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'in 2008' specifies the Year, matching the Year header and rows.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "784bbed0f66434b625ea87aaa7f53bd1cd0bdc37fc3d2a207d276c904b834303",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4962,
+              "completion_tokens": 11,
+              "total_tokens": 4973,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Rolling Stone",
+              "value": "Rolling Stone",
+              "start": 32,
+              "end": 45,
+              "clause": "Where did Day & Age rank in the Rolling Stone in 2008?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'Rolling Stone' names the Publication, matching the Publication header and rows.",
+              "operator": "="
+            },
+            {
+              "surface": "2008",
+              "value": 2008,
+              "start": 49,
+              "end": 53,
+              "clause": "Where did Day & Age rank in the Rolling Stone in 2008?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'in 2008' specifies the Year, matching the Year header and rows.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "636e763219b34e1ee4015028fe4e943a06bc3a823b514c88133e661bdaba0531",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4916,
+              "completion_tokens": 13,
+              "total_tokens": 4929,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Rolling Stone",
+              "value": "Rolling Stone",
+              "start": 32,
+              "end": 45,
+              "clause": "Where did Day & Age rank in the Rolling Stone in 2008?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'Rolling Stone' names the Publication, matching the Publication header and rows.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2008",
+              "value": "2008",
+              "start": 49,
+              "end": 53,
+              "clause": "Where did Day & Age rank in the Rolling Stone in 2008?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'in 2008' specifies the Year, matching the Year header and rows.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Rolling Stone",
+              "value": "Rolling Stone",
+              "start": 32,
+              "end": 45,
+              "clause": "Where did Day & Age rank in the Rolling Stone in 2008?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'Rolling Stone' names the Publication, matching the Publication header and rows.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2008",
+              "value": 2008,
+              "start": 49,
+              "end": 53,
+              "clause": "Where did Day & Age rank in the Rolling Stone in 2008?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'in 2008' specifies the Year, matching the Year header and rows.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Rolling Stone",
+              "value": "Rolling Stone",
+              "start": 32,
+              "end": 45,
+              "clause": "Where did Day & Age rank in the Rolling Stone in 2008?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'Rolling Stone' names the Publication, matching the Publication header and rows.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2008",
+              "value": 2008,
+              "start": 49,
+              "end": 53,
+              "clause": "Where did Day & Age rank in the Rolling Stone in 2008?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'in 2008' specifies the Year, matching the Year header and rows.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              "Rolling Stone"
+            ],
+            [
+              3,
+              0,
+              2008
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Rolling Stone",
+          "value": "Rolling Stone",
+          "start": 32,
+          "end": 45
+        },
+        {
+          "surface": "2008",
+          "value": "2008",
+          "start": 49,
+          "end": 53
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Rolling Stone",
+          "value": "Rolling Stone",
+          "start": 32,
+          "end": 45,
+          "clause": "Where did Day & Age rank in the Rolling Stone in 2008?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "'Rolling Stone' names the Publication, matching the Publication header and rows.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "2008",
+          "value": 2008,
+          "start": 49,
+          "end": 53,
+          "clause": "Where did Day & Age rank in the Rolling Stone in 2008?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "'in 2008' specifies the Year, matching the Year header and rows.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          0,
+          0,
+          "Rolling Stone"
+        ],
+        [
+          3,
+          0,
+          2008
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9219
+}

@@ -1,0 +1,123 @@
+{
+  "arm": "E1",
+  "position": 240,
+  "example_id": "test:9612:2-172352-2",
+  "original_index": 9612,
+  "table_id": "2-172352-2",
+  "question": "What is Cabinet, when Year is after 1981, when Fractievoorzitter is \"Hans Van Mierlo\", and when Chair is \"W.I.J.M. Vrijhoef\"?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        0,
+        1,
+        1981
+      ],
+      [
+        2,
+        0,
+        "hans van mierlo"
+      ],
+      [
+        4,
+        0,
+        "w.i.j.m. vrijhoef"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      1,
+      1981
+    ],
+    [
+      2,
+      0,
+      "Hans van Mierlo"
+    ],
+    [
+      4,
+      0,
+      "W.I.J.M. Vrijhoef"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": "gpt-5.6-sol",
+  "usage": {
+    "prompt_tokens": 10783,
+    "completion_tokens": 71,
+    "total_tokens": 10854,
+    "prompt_tokens_details": {
+      "cached_tokens": 4224
+    }
+  },
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        1,
+        1981
+      ],
+      [
+        2,
+        0,
+        "Hans van Mierlo"
+      ],
+      [
+        4,
+        0,
+        "W.I.J.M. Vrijhoef"
+      ]
+    ],
+    "explanation": "Three AND conditions: Year strictly after 1981, Fractievoorzitter and Chair equal exact table values.",
+    "version": "wikisql-where-prior-v1",
+    "tableId": "2-172352-2",
+    "knowledgeIds": [
+      "g-eq",
+      "g-gt",
+      "g-lt",
+      "g-inclusive",
+      "g-literal",
+      "g-threshold",
+      "g-and",
+      "g-or",
+      "g-column",
+      "g-count",
+      "g-ambiguous",
+      "t-2-172352-2-field-0",
+      "t-2-172352-2-field-1",
+      "t-2-172352-2-field-2",
+      "t-2-172352-2-field-3",
+      "t-2-172352-2-field-4",
+      "d-implicit-eq",
+      "d-explicit-eq",
+      "d-gt",
+      "d-lt-and-gt",
+      "d-with-two",
+      "d-literal-form",
+      "p-text",
+      "p-number",
+      "p-multi",
+      "p-unsupported"
+    ],
+    "promptSha256": "05480321bf053569679d3148e1e429a15e669869d482e5faaf390c37a7312380",
+    "model": "gpt-5.6-sol",
+    "usage": {
+      "prompt_tokens": 10783,
+      "completion_tokens": 71,
+      "total_tokens": 10854,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      }
+    },
+    "latencyMs": 2443
+  },
+  "source": "where_prior_parse",
+  "safe_completed": true,
+  "elapsed_ms": 2453
+}

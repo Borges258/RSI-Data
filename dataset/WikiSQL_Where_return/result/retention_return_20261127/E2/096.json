@@ -1,0 +1,577 @@
+{
+  "arm": "E2",
+  "position": 96,
+  "example_id": "test:3283:1-25505246-7",
+  "original_index": 3283,
+  "table_id": "1-25505246-7",
+  "question": "What were the round results when Hanne Skak Jensen faced Austria?",
+  "gold_sql": {
+    "sel": 7,
+    "conds": [
+      [
+        3,
+        0,
+        "Austria"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [],
+  "status": "GROUNDING_FAILED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "GROUNDING_FAILED",
+    "valid": false,
+    "errors": [
+      "condition 0: invalid column",
+      "condition 0: grounding NO_MATCH"
+    ],
+    "conditions": [
+      {
+        "surface": "Hanne Skak Jensen",
+        "value": "Hanne Skak Jensen",
+        "start": 33,
+        "end": 50,
+        "clause": "What were the round results when Hanne Skak Jensen faced Austria?",
+        "columnMatchStatus": "UNRESOLVED",
+        "columnCandidates": [],
+        "columnMatchReason": "Hanne Skak Jensen is the table subject/page title, not a supported row field condition.",
+        "operator": "=",
+        "grounded": false,
+        "groundingStatus": "NO_MATCH"
+      },
+      {
+        "surface": "Austria",
+        "value": "Austria",
+        "start": 57,
+        "end": 64,
+        "clause": "What were the round results when Hanne Skak Jensen faced Austria?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "Austria identifies who Jensen faced and appears in the Against column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "stage": "WHERE_CONDITION_VALIDATE",
+    "originalConditions": [
+      {
+        "surface": "Hanne Skak Jensen",
+        "value": "Hanne Skak Jensen",
+        "start": 33,
+        "end": 50
+      },
+      {
+        "surface": "Austria",
+        "value": "Austria",
+        "start": 57,
+        "end": 64
+      }
+    ],
+    "halt": true,
+    "completed": false,
+    "conds": [],
+    "warnings": [],
+    "request": {
+      "question": "What were the round results when Hanne Skak Jensen faced Austria?",
+      "table": {
+        "header": [
+          "Edition",
+          "Zone",
+          "Round",
+          "Against",
+          "Surface",
+          "Opponent",
+          "Outcome",
+          "Result"
+        ],
+        "page_title": "Hanne Skak Jensen",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "id": "1-25505246-7",
+        "section_title": "Fed Cup singles performances (9)",
+        "caption": "Fed Cup singles performances (9)",
+        "rows": [
+          [
+            2007,
+            "Europe/Africa Group I A",
+            "Round Robin",
+            "Switzerland",
+            "Clay",
+            "Emmanuelle Gagliardi",
+            "Loss",
+            "6–0, 6–0"
+          ],
+          [
+            2007,
+            "Europe/Africa Group I A",
+            "Round Robin",
+            "Netherlands",
+            "Clay",
+            "Nicole Thijssen",
+            "Loss",
+            "6–0, 6–4"
+          ],
+          [
+            2007,
+            "Europe/Africa Group I A",
+            "Playoff Semifinal",
+            "Hungary",
+            "Clay",
+            "Kyra Nagy",
+            "Loss",
+            "6–3, 6–0"
+          ],
+          [
+            2008,
+            "Europe/Africa Group I B",
+            "Round Robin",
+            "Switzerland",
+            "Carpet (i)",
+            "Emmanuelle Gagliardi",
+            "Loss",
+            "7–5, 6–2"
+          ],
+          [
+            2008,
+            "Europe/Africa Group I B",
+            "Round Robin",
+            "Great Britain",
+            "Carpet (i)",
+            "Anne Keothavong",
+            "Loss",
+            "4–6, 6–4, 6–2"
+          ],
+          [
+            2009,
+            "Europe/Africa Group I A",
+            "Round Robin",
+            "Belarus",
+            "Hard",
+            "Olga Govortsova",
+            "Loss",
+            "7–6(6), 7–6(5)"
+          ],
+          [
+            2009,
+            "Europe/Africa Group I A",
+            "Round Robin",
+            "Austria",
+            "Hard",
+            "Nikola Hoffmanova",
+            "Win",
+            "6–1, 7–5"
+          ],
+          [
+            2009,
+            "Europe/Africa Group I A",
+            "Round Robin",
+            "Slovenia",
+            "Hard",
+            "Andreja Klepač",
+            "Win",
+            "7–6(4), 6–3"
+          ]
+        ],
+        "name": "table_25505246_7",
+        "headers": [
+          "Edition",
+          "Zone",
+          "Round",
+          "Against",
+          "Surface",
+          "Opponent",
+          "Outcome",
+          "Result"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-25505246-7",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 9,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "Hanne Skak Jensen",
+              "value": "Hanne Skak Jensen",
+              "start": 33,
+              "end": 50
+            },
+            {
+              "surface": "Austria",
+              "value": "Austria",
+              "start": 57,
+              "end": 64
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "97e69bc1d77a5fd89ceae513780a1d4436418451ffb56e608a265e8aea84ed60",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5006,
+              "completion_tokens": 35,
+              "total_tokens": 5041,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Hanne Skak Jensen",
+              "value": "Hanne Skak Jensen",
+              "start": 33,
+              "end": 50,
+              "clause": "What were the round results when Hanne Skak Jensen faced Austria?"
+            },
+            {
+              "surface": "Austria",
+              "value": "Austria",
+              "start": 57,
+              "end": 64,
+              "clause": "What were the round results when Hanne Skak Jensen faced Austria?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Hanne Skak Jensen",
+              "value": "Hanne Skak Jensen",
+              "start": 33,
+              "end": 50,
+              "clause": "What were the round results when Hanne Skak Jensen faced Austria?"
+            },
+            {
+              "surface": "Austria",
+              "value": "Austria",
+              "start": 57,
+              "end": 64,
+              "clause": "What were the round results when Hanne Skak Jensen faced Austria?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Hanne Skak Jensen",
+              "value": "Hanne Skak Jensen",
+              "start": 33,
+              "end": 50,
+              "clause": "What were the round results when Hanne Skak Jensen faced Austria?",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [],
+              "columnMatchReason": "Hanne Skak Jensen is the table subject/page title, not a supported row field condition."
+            },
+            {
+              "surface": "Austria",
+              "value": "Austria",
+              "start": 57,
+              "end": 64,
+              "clause": "What were the round results when Hanne Skak Jensen faced Austria?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Austria identifies who Jensen faced and appears in the Against column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "5a6aa33cde23ba20c048368d45c0ca3c175b836090adf4e4314c0bbdcf54e02a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5085,
+              "completion_tokens": 56,
+              "total_tokens": 5141,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Hanne Skak Jensen",
+              "value": "Hanne Skak Jensen",
+              "start": 33,
+              "end": 50,
+              "clause": "What were the round results when Hanne Skak Jensen faced Austria?",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [],
+              "columnMatchReason": "Hanne Skak Jensen is the table subject/page title, not a supported row field condition.",
+              "operator": "="
+            },
+            {
+              "surface": "Austria",
+              "value": "Austria",
+              "start": 57,
+              "end": 64,
+              "clause": "What were the round results when Hanne Skak Jensen faced Austria?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Austria identifies who Jensen faced and appears in the Against column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "69232588e480051c924989e52a1d1404300e9b26c6aea2e0560b7d8826319d0a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5180,
+              "completion_tokens": 11,
+              "total_tokens": 5191,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Hanne Skak Jensen",
+              "value": "Hanne Skak Jensen",
+              "start": 33,
+              "end": 50,
+              "clause": "What were the round results when Hanne Skak Jensen faced Austria?",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [],
+              "columnMatchReason": "Hanne Skak Jensen is the table subject/page title, not a supported row field condition.",
+              "operator": "="
+            },
+            {
+              "surface": "Austria",
+              "value": "Austria",
+              "start": 57,
+              "end": 64,
+              "clause": "What were the round results when Hanne Skak Jensen faced Austria?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Austria identifies who Jensen faced and appears in the Against column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "bfaa9af6d15f8cc3999c3629921e18aceb20438a61d707307c3cdda20d1584a8",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5134,
+              "completion_tokens": 17,
+              "total_tokens": 5151,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Hanne Skak Jensen",
+              "value": "Hanne Skak Jensen",
+              "start": 33,
+              "end": 50,
+              "clause": "What were the round results when Hanne Skak Jensen faced Austria?",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [],
+              "columnMatchReason": "Hanne Skak Jensen is the table subject/page title, not a supported row field condition.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH"
+            },
+            {
+              "surface": "Austria",
+              "value": "Austria",
+              "start": 57,
+              "end": 64,
+              "clause": "What were the round results when Hanne Skak Jensen faced Austria?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Austria identifies who Jensen faced and appears in the Against column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Hanne Skak Jensen",
+              "value": "Hanne Skak Jensen",
+              "start": 33,
+              "end": 50,
+              "clause": "What were the round results when Hanne Skak Jensen faced Austria?",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [],
+              "columnMatchReason": "Hanne Skak Jensen is the table subject/page title, not a supported row field condition.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH"
+            },
+            {
+              "surface": "Austria",
+              "value": "Austria",
+              "start": 57,
+              "end": 64,
+              "clause": "What were the round results when Hanne Skak Jensen faced Austria?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Austria identifies who Jensen faced and appears in the Against column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "GROUNDING_FAILED",
+          "valid": false,
+          "errors": [
+            "condition 0: invalid column",
+            "condition 0: grounding NO_MATCH"
+          ],
+          "conditions": [
+            {
+              "surface": "Hanne Skak Jensen",
+              "value": "Hanne Skak Jensen",
+              "start": 33,
+              "end": 50,
+              "clause": "What were the round results when Hanne Skak Jensen faced Austria?",
+              "columnMatchStatus": "UNRESOLVED",
+              "columnCandidates": [],
+              "columnMatchReason": "Hanne Skak Jensen is the table subject/page title, not a supported row field condition.",
+              "operator": "=",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH"
+            },
+            {
+              "surface": "Austria",
+              "value": "Austria",
+              "start": 57,
+              "end": 64,
+              "clause": "What were the round results when Hanne Skak Jensen faced Austria?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Austria identifies who Jensen faced and appears in the Against column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "GROUNDING_FAILED",
+        "stage": "WHERE_CONDITION_VALIDATE",
+        "halt": true,
+        "completed": false,
+        "errors": [
+          "condition 0: invalid column",
+          "condition 0: grounding NO_MATCH"
+        ],
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Hanne Skak Jensen",
+          "value": "Hanne Skak Jensen",
+          "start": 33,
+          "end": 50
+        },
+        {
+          "surface": "Austria",
+          "value": "Austria",
+          "start": 57,
+          "end": 64
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Hanne Skak Jensen",
+          "value": "Hanne Skak Jensen",
+          "start": 33,
+          "end": 50,
+          "clause": "What were the round results when Hanne Skak Jensen faced Austria?",
+          "columnMatchStatus": "UNRESOLVED",
+          "columnCandidates": [],
+          "columnMatchReason": "Hanne Skak Jensen is the table subject/page title, not a supported row field condition.",
+          "operator": "=",
+          "grounded": false,
+          "groundingStatus": "NO_MATCH"
+        },
+        {
+          "surface": "Austria",
+          "value": "Austria",
+          "start": 57,
+          "end": 64,
+          "clause": "What were the round results when Hanne Skak Jensen faced Austria?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "Austria identifies who Jensen faced and appears in the Against column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": false,
+  "elapsed_ms": 9844
+}

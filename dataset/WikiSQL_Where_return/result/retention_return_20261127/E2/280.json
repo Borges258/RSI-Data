@@ -1,0 +1,411 @@
+{
+  "arm": "E2",
+  "position": 280,
+  "example_id": "test:11286:2-10848585-9",
+  "original_index": 11286,
+  "table_id": "2-10848585-9",
+  "question": "On what date was the match against the St. George Illawarra Dragons?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        1,
+        0,
+        "st. george illawarra dragons"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "St. George Illawarra Dragons"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "St. George Illawarra Dragons"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "St. George Illawarra Dragons",
+        "value": "St. George Illawarra Dragons",
+        "start": 39,
+        "end": 67,
+        "clause": "On what date was the match against the St. George Illawarra Dragons?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The phrase 'match against' identifies an opponent, and the value appears in the Opponent field.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "St. George Illawarra Dragons",
+        "value": "St. George Illawarra Dragons",
+        "start": 39,
+        "end": 67
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "On what date was the match against the St. George Illawarra Dragons?",
+      "table": {
+        "header": [
+          "Margin",
+          "Opponent",
+          "Score",
+          "Venue",
+          "Date"
+        ],
+        "page_title": "List of North Queensland Cowboys records",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 10848585,
+        "id": "2-10848585-9",
+        "section_title": "Biggest Wins",
+        "rows": [
+          [
+            "52",
+            "South Sydney Rabbitohs",
+            "60-8",
+            "Dairy Farmers Stadium",
+            "Rd 24 - 23 August 2003"
+          ],
+          [
+            "46",
+            "St. George Illawarra Dragons",
+            "50-4",
+            "Dairy Farmers Stadium",
+            "Rd 13 - 29 April 2000"
+          ],
+          [
+            "42",
+            "Cronulla Sharks",
+            "56-14",
+            "Dairy Farmers Stadium",
+            "Rd 13 - 4 June 2005"
+          ],
+          [
+            "40",
+            "Northern Eagles",
+            "50-10",
+            "Dairy Farmers Stadium",
+            "Rd 23 - 25 March 2000"
+          ],
+          [
+            "40",
+            "New Zealand Warriors",
+            "52-12",
+            "Dairy Farmers Stadium",
+            "Rd 8 - 11 August 2012"
+          ]
+        ],
+        "caption": "Biggest Wins",
+        "headers": [
+          "Margin",
+          "Opponent",
+          "Score",
+          "Venue",
+          "Date"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-10848585-9",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "St. George Illawarra Dragons",
+              "value": "St. George Illawarra Dragons",
+              "start": 39,
+              "end": 67
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "88e377c6f7fb4d7da33933d5d9ad0a75e4e229dab910f7414b3dacb2fcd51bd8",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4809,
+              "completion_tokens": 29,
+              "total_tokens": 4838,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "St. George Illawarra Dragons",
+              "value": "St. George Illawarra Dragons",
+              "start": 39,
+              "end": 67,
+              "clause": "On what date was the match against the St. George Illawarra Dragons?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "St. George Illawarra Dragons",
+              "value": "St. George Illawarra Dragons",
+              "start": 39,
+              "end": 67,
+              "clause": "On what date was the match against the St. George Illawarra Dragons?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "St. George Illawarra Dragons",
+              "value": "St. George Illawarra Dragons",
+              "start": 39,
+              "end": 67,
+              "clause": "On what date was the match against the St. George Illawarra Dragons?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'match against' identifies an opponent, and the value appears in the Opponent field."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e434557e03bd3fc38033a4fdbea7240ea3dddc05df345f06467b5a75bc3c55e1",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4858,
+              "completion_tokens": 41,
+              "total_tokens": 4899,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "St. George Illawarra Dragons",
+              "value": "St. George Illawarra Dragons",
+              "start": 39,
+              "end": 67,
+              "clause": "On what date was the match against the St. George Illawarra Dragons?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'match against' identifies an opponent, and the value appears in the Opponent field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "5fce1774a12f61712c36280a54476d2f7b2c1131ee6844c15ab0427f94bdc80b",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4923,
+              "completion_tokens": 9,
+              "total_tokens": 4932,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "St. George Illawarra Dragons",
+              "value": "St. George Illawarra Dragons",
+              "start": 39,
+              "end": 67,
+              "clause": "On what date was the match against the St. George Illawarra Dragons?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'match against' identifies an opponent, and the value appears in the Opponent field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a936dc52d209203fec32c06be6b1e7bc0f3eec293cea199b90feaa9097a56564",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4874,
+              "completion_tokens": 16,
+              "total_tokens": 4890,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "St. George Illawarra Dragons",
+              "value": "St. George Illawarra Dragons",
+              "start": 39,
+              "end": 67,
+              "clause": "On what date was the match against the St. George Illawarra Dragons?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'match against' identifies an opponent, and the value appears in the Opponent field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "St. George Illawarra Dragons",
+              "value": "St. George Illawarra Dragons",
+              "start": 39,
+              "end": 67,
+              "clause": "On what date was the match against the St. George Illawarra Dragons?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'match against' identifies an opponent, and the value appears in the Opponent field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "St. George Illawarra Dragons",
+              "value": "St. George Illawarra Dragons",
+              "start": 39,
+              "end": 67,
+              "clause": "On what date was the match against the St. George Illawarra Dragons?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'match against' identifies an opponent, and the value appears in the Opponent field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              "St. George Illawarra Dragons"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "St. George Illawarra Dragons",
+          "value": "St. George Illawarra Dragons",
+          "start": 39,
+          "end": 67
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "St. George Illawarra Dragons",
+          "value": "St. George Illawarra Dragons",
+          "start": 39,
+          "end": 67,
+          "clause": "On what date was the match against the St. George Illawarra Dragons?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The phrase 'match against' identifies an opponent, and the value appears in the Opponent field.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          1,
+          0,
+          "St. George Illawarra Dragons"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9890
+}

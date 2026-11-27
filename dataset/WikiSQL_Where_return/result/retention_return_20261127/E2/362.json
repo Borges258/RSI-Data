@@ -1,0 +1,646 @@
+{
+  "arm": "E2",
+  "position": 362,
+  "example_id": "test:14260:2-18672607-1",
+  "original_index": 14260,
+  "table_id": "2-18672607-1",
+  "question": "Which year did park tudor school join IHSAA class AA?",
+  "gold_sql": {
+    "sel": 7,
+    "conds": [
+      [
+        5,
+        0,
+        "aa"
+      ],
+      [
+        0,
+        0,
+        "park tudor"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "Park Tudor"
+    ],
+    [
+      4,
+      0,
+      "AA"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "Park Tudor"
+      ],
+      [
+        4,
+        0,
+        "AA"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "park tudor school",
+        "value": "Park Tudor",
+        "start": 15,
+        "end": 32,
+        "clause": "Which year did park tudor school join IHSAA class AA?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "'Park Tudor' identifies the school in the School column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "class AA",
+        "value": "AA",
+        "start": 44,
+        "end": 52,
+        "clause": "Which year did park tudor school join IHSAA class AA?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "'class AA' refers to the IHSAA Class field; Park Tudor's row has AA in that column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "park tudor school",
+        "value": "Park Tudor",
+        "start": 15,
+        "end": 32
+      },
+      {
+        "surface": "class AA",
+        "value": "AA",
+        "start": 44,
+        "end": 52
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Which year did park tudor school join IHSAA class AA?",
+      "table": {
+        "header": [
+          "School",
+          "Location",
+          "Mascot",
+          "Enrollment 12-13",
+          "IHSAA Class",
+          "IHSAA Class Football",
+          "County",
+          "Year Joined",
+          "Previous Conference"
+        ],
+        "page_title": "Indiana Crossroads Conference",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "real",
+          "text",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 18672607,
+        "id": "2-18672607-1",
+        "section_title": "Membership",
+        "rows": [
+          [
+            "Beech Grove",
+            "Beech Grove",
+            "Hornets",
+            "819",
+            "AAA",
+            "AAA",
+            "49 Marion",
+            "2005",
+            "Mid-State"
+          ],
+          [
+            "Cardinal Ritter",
+            "Indianapolis",
+            "Raiders",
+            "532",
+            "AA",
+            "AA",
+            "49 Marion",
+            "2005",
+            "Independents"
+          ],
+          [
+            "Lapel *",
+            "Lapel",
+            "Bulldogs",
+            "439",
+            "AA",
+            "A",
+            "48 Madison",
+            "2009",
+            "White River"
+          ],
+          [
+            "Lutheran",
+            "Indianapolis",
+            "Saints",
+            "212",
+            "A",
+            "A",
+            "49 Marion",
+            "2009",
+            "Independents"
+          ],
+          [
+            "Park Tudor",
+            "Indianapolis",
+            "Panthers",
+            "423",
+            "AA",
+            "AA",
+            "49 Marion",
+            "2005",
+            "independent"
+          ],
+          [
+            "Scecina Memorial",
+            "Indianapolis",
+            "Crusaders",
+            "340",
+            "AA",
+            "A",
+            "49 Marion",
+            "2005",
+            "Rangeline"
+          ],
+          [
+            "Speedway",
+            "Speedway",
+            "Sparkplugs",
+            "493",
+            "AA",
+            "AA",
+            "49 Marion",
+            "2010",
+            "West Central"
+          ],
+          [
+            "Triton Central",
+            "Fairland",
+            "Tigers",
+            "510",
+            "AA",
+            "AA",
+            "73 Shelby",
+            "2012",
+            "Mid-Hoosier"
+          ]
+        ],
+        "caption": "Membership",
+        "headers": [
+          "School",
+          "Location",
+          "Mascot",
+          "Enrollment 12-13",
+          "IHSAA Class",
+          "IHSAA Class Football",
+          "County",
+          "Year Joined",
+          "Previous Conference"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-18672607-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "park tudor school",
+              "value": "Park Tudor",
+              "start": 15,
+              "end": 32
+            },
+            {
+              "surface": "class AA",
+              "value": "AA",
+              "start": 44,
+              "end": 52
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0c6813c52e08161f906f3eca8584bbc2e475307b63331df12f0fd6837ee02086",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4931,
+              "completion_tokens": 30,
+              "total_tokens": 4961,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "park tudor school",
+              "value": "Park Tudor",
+              "start": 15,
+              "end": 32,
+              "clause": "Which year did park tudor school join IHSAA class AA?"
+            },
+            {
+              "surface": "class AA",
+              "value": "AA",
+              "start": 44,
+              "end": 52,
+              "clause": "Which year did park tudor school join IHSAA class AA?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "park tudor school",
+              "value": "Park Tudor",
+              "start": 15,
+              "end": 32,
+              "clause": "Which year did park tudor school join IHSAA class AA?"
+            },
+            {
+              "surface": "class AA",
+              "value": "AA",
+              "start": 44,
+              "end": 52,
+              "clause": "Which year did park tudor school join IHSAA class AA?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "park tudor school",
+              "value": "Park Tudor",
+              "start": 15,
+              "end": 32,
+              "clause": "Which year did park tudor school join IHSAA class AA?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'Park Tudor' identifies the school in the School column."
+            },
+            {
+              "surface": "class AA",
+              "value": "AA",
+              "start": 44,
+              "end": 52,
+              "clause": "Which year did park tudor school join IHSAA class AA?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'class AA' refers to the IHSAA Class field; Park Tudor's row has AA in that column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "9e138faf2a94b1ba203b90b4f533cc1d0cf4d467467cb0b19e788ca29b2b917f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5005,
+              "completion_tokens": 60,
+              "total_tokens": 5065,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "park tudor school",
+              "value": "Park Tudor",
+              "start": 15,
+              "end": 32,
+              "clause": "Which year did park tudor school join IHSAA class AA?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'Park Tudor' identifies the school in the School column.",
+              "operator": "="
+            },
+            {
+              "surface": "class AA",
+              "value": "AA",
+              "start": 44,
+              "end": 52,
+              "clause": "Which year did park tudor school join IHSAA class AA?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'class AA' refers to the IHSAA Class field; Park Tudor's row has AA in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "40110e6f97546e29670031b41644ac7c3535e98c44dc598bf6af4901752f27de",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5098,
+              "completion_tokens": 11,
+              "total_tokens": 5109,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "park tudor school",
+              "value": "Park Tudor",
+              "start": 15,
+              "end": 32,
+              "clause": "Which year did park tudor school join IHSAA class AA?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'Park Tudor' identifies the school in the School column.",
+              "operator": "="
+            },
+            {
+              "surface": "class AA",
+              "value": "AA",
+              "start": 44,
+              "end": 52,
+              "clause": "Which year did park tudor school join IHSAA class AA?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'class AA' refers to the IHSAA Class field; Park Tudor's row has AA in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "9114f88c7aef742b33472f712e55bf95ef4b0a9ece0c172edc32dadb1259b84b",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5052,
+              "completion_tokens": 13,
+              "total_tokens": 5065,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "park tudor school",
+              "value": "Park Tudor",
+              "start": 15,
+              "end": 32,
+              "clause": "Which year did park tudor school join IHSAA class AA?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'Park Tudor' identifies the school in the School column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "class AA",
+              "value": "AA",
+              "start": 44,
+              "end": 52,
+              "clause": "Which year did park tudor school join IHSAA class AA?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'class AA' refers to the IHSAA Class field; Park Tudor's row has AA in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "park tudor school",
+              "value": "Park Tudor",
+              "start": 15,
+              "end": 32,
+              "clause": "Which year did park tudor school join IHSAA class AA?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'Park Tudor' identifies the school in the School column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "class AA",
+              "value": "AA",
+              "start": 44,
+              "end": 52,
+              "clause": "Which year did park tudor school join IHSAA class AA?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'class AA' refers to the IHSAA Class field; Park Tudor's row has AA in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "park tudor school",
+              "value": "Park Tudor",
+              "start": 15,
+              "end": 32,
+              "clause": "Which year did park tudor school join IHSAA class AA?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "'Park Tudor' identifies the school in the School column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "class AA",
+              "value": "AA",
+              "start": 44,
+              "end": 52,
+              "clause": "Which year did park tudor school join IHSAA class AA?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "'class AA' refers to the IHSAA Class field; Park Tudor's row has AA in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              "Park Tudor"
+            ],
+            [
+              4,
+              0,
+              "AA"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "park tudor school",
+          "value": "Park Tudor",
+          "start": 15,
+          "end": 32
+        },
+        {
+          "surface": "class AA",
+          "value": "AA",
+          "start": 44,
+          "end": 52
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "park tudor school",
+          "value": "Park Tudor",
+          "start": 15,
+          "end": 32,
+          "clause": "Which year did park tudor school join IHSAA class AA?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "'Park Tudor' identifies the school in the School column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "class AA",
+          "value": "AA",
+          "start": 44,
+          "end": 52,
+          "clause": "Which year did park tudor school join IHSAA class AA?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "'class AA' refers to the IHSAA Class field; Park Tudor's row has AA in that column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          0,
+          0,
+          "Park Tudor"
+        ],
+        [
+          4,
+          0,
+          "AA"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8359
+}

@@ -1,0 +1,110 @@
+{
+  "arm": "E1",
+  "position": 0,
+  "example_id": "test:243:1-11497980-1",
+  "original_index": 243,
+  "table_id": "1-11497980-1",
+  "question": "If the engine make/capacity is MWM 6.10 TCA-EURO III (Turbo Intercooler) and  GVM (kg) Technical Capacity is 23000, what is the Torque Nm@rpm?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        6,
+        0,
+        "23000"
+      ],
+      [
+        1,
+        0,
+        "MWM 6.10 TCA-EURO III (Turbo Intercooler)"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "MWM 6.10 TCA-EURO III (Turbo Intercooler)"
+    ],
+    [
+      5,
+      0,
+      "23000"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": "gpt-5.6-sol",
+  "usage": {
+    "prompt_tokens": 11164,
+    "completion_tokens": 68,
+    "total_tokens": 11232,
+    "prompt_tokens_details": {
+      "cached_tokens": 4224
+    }
+  },
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "MWM 6.10 TCA-EURO III (Turbo Intercooler)"
+      ],
+      [
+        5,
+        0,
+        "23000"
+      ]
+    ],
+    "explanation": "Two explicit equality filters joined by AND: engine make/capacity and GVM technical capacity.",
+    "version": "wikisql-where-prior-v1",
+    "tableId": "1-11497980-1",
+    "knowledgeIds": [
+      "g-eq",
+      "g-gt",
+      "g-lt",
+      "g-inclusive",
+      "g-literal",
+      "g-threshold",
+      "g-and",
+      "g-or",
+      "g-column",
+      "g-count",
+      "g-ambiguous",
+      "t-1-11497980-1-field-0",
+      "t-1-11497980-1-field-1",
+      "t-1-11497980-1-field-2",
+      "t-1-11497980-1-field-3",
+      "t-1-11497980-1-field-4",
+      "t-1-11497980-1-field-5",
+      "t-1-11497980-1-field-6",
+      "d-implicit-eq",
+      "d-explicit-eq",
+      "d-gt",
+      "d-lt-and-gt",
+      "d-with-two",
+      "d-literal-form",
+      "p-text",
+      "p-number",
+      "p-multi",
+      "p-unsupported"
+    ],
+    "promptSha256": "e72bc7bd5c46575e8336456c7f59209b60ec906404d1666ea756b6ec216fd7d9",
+    "model": "gpt-5.6-sol",
+    "usage": {
+      "prompt_tokens": 11164,
+      "completion_tokens": 68,
+      "total_tokens": 11232,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      }
+    },
+    "latencyMs": 2826
+  },
+  "source": "where_prior_parse",
+  "safe_completed": true,
+  "elapsed_ms": 2844
+}

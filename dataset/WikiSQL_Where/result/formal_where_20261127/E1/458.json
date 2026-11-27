@@ -1,0 +1,110 @@
+{
+  "arm": "E1",
+  "position": 458,
+  "example_id": "test:15367:2-1304940-1",
+  "original_index": 15367,
+  "table_id": "2-1304940-1",
+  "question": "How many votes did Others receive where Kerry has 44.6%, and Bush more than 163,650 votes?",
+  "gold_sql": {
+    "sel": 6,
+    "conds": [
+      [
+        1,
+        0,
+        "44.6%"
+      ],
+      [
+        4,
+        1,
+        "163,650"
+      ]
+    ],
+    "agg": 3
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "44.6%"
+    ],
+    [
+      4,
+      1,
+      163650
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": "gpt-5.6-sol",
+  "usage": {
+    "prompt_tokens": 10996,
+    "completion_tokens": 56,
+    "total_tokens": 11052,
+    "prompt_tokens_details": {
+      "cached_tokens": 4224
+    }
+  },
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "44.6%"
+      ],
+      [
+        4,
+        1,
+        163650
+      ]
+    ],
+    "explanation": "Kerry % equals 44.6%, and Bush # is strictly greater than 163,650.",
+    "version": "wikisql-where-prior-v1",
+    "tableId": "2-1304940-1",
+    "knowledgeIds": [
+      "g-eq",
+      "g-gt",
+      "g-lt",
+      "g-inclusive",
+      "g-literal",
+      "g-threshold",
+      "g-and",
+      "g-or",
+      "g-column",
+      "g-count",
+      "g-ambiguous",
+      "t-2-1304940-1-field-0",
+      "t-2-1304940-1-field-1",
+      "t-2-1304940-1-field-2",
+      "t-2-1304940-1-field-3",
+      "t-2-1304940-1-field-4",
+      "t-2-1304940-1-field-5",
+      "t-2-1304940-1-field-6",
+      "d-implicit-eq",
+      "d-explicit-eq",
+      "d-gt",
+      "d-lt-and-gt",
+      "d-with-two",
+      "d-literal-form",
+      "p-text",
+      "p-number",
+      "p-multi",
+      "p-unsupported"
+    ],
+    "promptSha256": "86bd648c53f0a738f07f312d683e0367349d863cfdf20353b29f063ab2437226",
+    "model": "gpt-5.6-sol",
+    "usage": {
+      "prompt_tokens": 10996,
+      "completion_tokens": 56,
+      "total_tokens": 11052,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      }
+    },
+    "latencyMs": 2164
+  },
+  "source": "where_prior_parse",
+  "safe_completed": true,
+  "elapsed_ms": 2156
+}

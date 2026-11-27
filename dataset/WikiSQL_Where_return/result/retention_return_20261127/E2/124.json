@@ -1,0 +1,436 @@
+{
+  "arm": "E2",
+  "position": 124,
+  "example_id": "test:4551:2-10774891-2",
+  "original_index": 4551,
+  "table_id": "2-10774891-2",
+  "question": "What was the date when South Melbourne was the home team?",
+  "gold_sql": {
+    "sel": 6,
+    "conds": [
+      [
+        0,
+        0,
+        "south melbourne"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "South Melbourne"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "South Melbourne"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "South Melbourne",
+        "value": "South Melbourne",
+        "start": 23,
+        "end": 38,
+        "clause": "What was the date when South Melbourne was the home team?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "The clause explicitly identifies South Melbourne as the home team, matching the Home team field.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "South Melbourne",
+        "value": "South Melbourne",
+        "start": 23,
+        "end": 38
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What was the date when South Melbourne was the home team?",
+      "table": {
+        "header": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ],
+        "page_title": "1957 VFL season",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 10774891,
+        "id": "2-10774891-2",
+        "section_title": "Round 2",
+        "rows": [
+          [
+            "Hawthorn",
+            "9.22 (76)",
+            "Richmond",
+            "8.9 (57)",
+            "Glenferrie Oval",
+            "21,000",
+            "27 April 1957"
+          ],
+          [
+            "Footscray",
+            "12.13 (85)",
+            "St Kilda",
+            "7.11 (53)",
+            "Western Oval",
+            "29,497",
+            "27 April 1957"
+          ],
+          [
+            "Essendon",
+            "11.8 (74)",
+            "Fitzroy",
+            "8.15 (63)",
+            "Windy Hill",
+            "21,500",
+            "27 April 1957"
+          ],
+          [
+            "North Melbourne",
+            "9.13 (67)",
+            "Geelong",
+            "10.13 (73)",
+            "Arden Street Oval",
+            "12,000",
+            "27 April 1957"
+          ],
+          [
+            "Melbourne",
+            "10.20 (80)",
+            "Collingwood",
+            "10.12 (72)",
+            "MCG",
+            "45,571",
+            "27 April 1957"
+          ],
+          [
+            "South Melbourne",
+            "6.16 (52)",
+            "Carlton",
+            "10.16 (76)",
+            "Lake Oval",
+            "22,385",
+            "27 April 1957"
+          ]
+        ],
+        "caption": "Round 2",
+        "headers": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-10774891-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "South Melbourne",
+              "value": "South Melbourne",
+              "start": 23,
+              "end": 38
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "58be428f312a00bbbe4e9bed3c3a392c2526db083d3f10c07fe085bcab7e0fc5",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4906,
+              "completion_tokens": 19,
+              "total_tokens": 4925,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "South Melbourne",
+              "value": "South Melbourne",
+              "start": 23,
+              "end": 38,
+              "clause": "What was the date when South Melbourne was the home team?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "South Melbourne",
+              "value": "South Melbourne",
+              "start": 23,
+              "end": 38,
+              "clause": "What was the date when South Melbourne was the home team?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "South Melbourne",
+              "value": "South Melbourne",
+              "start": 23,
+              "end": 38,
+              "clause": "What was the date when South Melbourne was the home team?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The clause explicitly identifies South Melbourne as the home team, matching the Home team field."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0abb30e8ae2e008befdc54e43c672871b02a6c90037ee83571323e3477358142",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4941,
+              "completion_tokens": 38,
+              "total_tokens": 4979,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "South Melbourne",
+              "value": "South Melbourne",
+              "start": 23,
+              "end": 38,
+              "clause": "What was the date when South Melbourne was the home team?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The clause explicitly identifies South Melbourne as the home team, matching the Home team field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "37e2ea0a726f1b12dec48b16ed07f0a9f9b36c19be2aeb3d64c8b0db6156c676",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5003,
+              "completion_tokens": 9,
+              "total_tokens": 5012,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "South Melbourne",
+              "value": "South Melbourne",
+              "start": 23,
+              "end": 38,
+              "clause": "What was the date when South Melbourne was the home team?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The clause explicitly identifies South Melbourne as the home team, matching the Home team field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d6e18e2edb31b54fe2eaebbce8012848c4841311fe69d55338c3463a7a563e32",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4954,
+              "completion_tokens": 11,
+              "total_tokens": 4965,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "South Melbourne",
+              "value": "South Melbourne",
+              "start": 23,
+              "end": 38,
+              "clause": "What was the date when South Melbourne was the home team?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The clause explicitly identifies South Melbourne as the home team, matching the Home team field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "South Melbourne",
+              "value": "South Melbourne",
+              "start": 23,
+              "end": 38,
+              "clause": "What was the date when South Melbourne was the home team?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The clause explicitly identifies South Melbourne as the home team, matching the Home team field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "South Melbourne",
+              "value": "South Melbourne",
+              "start": 23,
+              "end": 38,
+              "clause": "What was the date when South Melbourne was the home team?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The clause explicitly identifies South Melbourne as the home team, matching the Home team field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              "South Melbourne"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "South Melbourne",
+          "value": "South Melbourne",
+          "start": 23,
+          "end": 38
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "South Melbourne",
+          "value": "South Melbourne",
+          "start": 23,
+          "end": 38,
+          "clause": "What was the date when South Melbourne was the home team?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "The clause explicitly identifies South Melbourne as the home team, matching the Home team field.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          0,
+          0,
+          "South Melbourne"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8547
+}

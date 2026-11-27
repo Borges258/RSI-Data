@@ -1,0 +1,470 @@
+{
+  "arm": "E2",
+  "position": 94,
+  "example_id": "test:3261:1-25330991-3",
+  "original_index": 3261,
+  "table_id": "1-25330991-3",
+  "question": "Name the james e. holmes for duane hensley",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        4,
+        0,
+        "Duane Hensley"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [],
+  "status": "GROUNDING_FAILED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "GROUNDING_FAILED",
+    "valid": false,
+    "errors": [
+      "condition 0: grounding NO_MATCH"
+    ],
+    "conditions": [
+      {
+        "surface": "duane hensley",
+        "value": "Duane Hensley",
+        "start": 29,
+        "end": 42,
+        "clause": "Name the james e. holmes for duane hensley",
+        "columnIndex": 0,
+        "columnCandidates": [
+          {
+            "columnIndex": 4,
+            "header": "Western Rockingham Middle School",
+            "evidence": "EXACT_VALUE_MATCH"
+          }
+        ],
+        "columnMatchReason": "Duane Hensley is a principal, so the condition targets the Information field's Principal row.",
+        "operator": "=",
+        "groundingReason": "FIELD_VALUE_CONFLICT",
+        "grounded": false,
+        "groundingStatus": "NO_MATCH",
+        "groundingReview": {
+          "column": 4,
+          "reason": "Duane Hensley appears in the Western Rockingham Middle School column on the Principal row, identifying the row whose James E. Holmes value is requested."
+        }
+      }
+    ],
+    "stage": "WHERE_CONDITION_VALIDATE",
+    "originalConditions": [
+      {
+        "surface": "duane hensley",
+        "value": "Duane Hensley",
+        "start": 29,
+        "end": 42
+      }
+    ],
+    "halt": true,
+    "completed": false,
+    "conds": [],
+    "warnings": [],
+    "request": {
+      "question": "Name the james e. holmes for duane hensley",
+      "table": {
+        "id": "1-25330991-3",
+        "header": [
+          "Information",
+          "James E. Holmes",
+          "Reidsville",
+          "Rockingham County",
+          "Western Rockingham Middle School"
+        ],
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "rows": [
+          [
+            "Location",
+            "Eden",
+            "Reidsville",
+            "Reidsville",
+            "Madison"
+          ],
+          [
+            "School colors",
+            "Burgundy, gray, white",
+            "Green/gold",
+            "Purple/white",
+            "Navy blue/gold"
+          ],
+          [
+            "School mascot",
+            "Mustang",
+            "Raider",
+            "Jaguar",
+            "Wildcat"
+          ],
+          [
+            "Principal",
+            "Brenda Nordan",
+            "Erselle Young",
+            "Joe Baez",
+            "Duane Hensley"
+          ],
+          [
+            "Enrollment",
+            "865",
+            "611",
+            "886",
+            "777"
+          ]
+        ],
+        "name": "table_25330991_3",
+        "headers": [
+          "Information",
+          "James E. Holmes",
+          "Reidsville",
+          "Rockingham County",
+          "Western Rockingham Middle School"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-25330991-3",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 9,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "duane hensley",
+              "value": "Duane Hensley",
+              "start": 29,
+              "end": 42
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ef03b1e6526aed45eaeac2802688e913d7a9f2d8193a3622a323ac913c38483f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4760,
+              "completion_tokens": 111,
+              "total_tokens": 4871,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 85
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "duane hensley",
+              "value": "Duane Hensley",
+              "start": 29,
+              "end": 42,
+              "clause": "Name the james e. holmes for duane hensley"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "duane hensley",
+              "value": "Duane Hensley",
+              "start": 29,
+              "end": 42,
+              "clause": "Name the james e. holmes for duane hensley"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "duane hensley",
+              "value": "Duane Hensley",
+              "start": 29,
+              "end": 42,
+              "clause": "Name the james e. holmes for duane hensley",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Duane Hensley is a principal, so the condition targets the Information field's Principal row."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "04e2858c0040c94e268113eafaa1f47b05065ca8f0ace695d8c29376dfd4ab14",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4800,
+              "completion_tokens": 41,
+              "total_tokens": 4841,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "duane hensley",
+              "value": "Duane Hensley",
+              "start": 29,
+              "end": 42,
+              "clause": "Name the james e. holmes for duane hensley",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Duane Hensley is a principal, so the condition targets the Information field's Principal row.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b47842f6acf09f83132ce76aabcfe50bfe9959108f35c4416427ffbbd5a5a0d0",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4865,
+              "completion_tokens": 9,
+              "total_tokens": 4874,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "duane hensley",
+              "value": "Duane Hensley",
+              "start": 29,
+              "end": 42,
+              "clause": "Name the james e. holmes for duane hensley",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Duane Hensley is a principal, so the condition targets the Information field's Principal row.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e00a24c66b2c22d0082f8027755db8371fd9c90b7099454fa651d0b5e81f983f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4816,
+              "completion_tokens": 14,
+              "total_tokens": 4830,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "duane hensley",
+              "value": "Duane Hensley",
+              "start": 29,
+              "end": 42,
+              "clause": "Name the james e. holmes for duane hensley",
+              "columnIndex": 0,
+              "columnCandidates": [
+                {
+                  "columnIndex": 4,
+                  "header": "Western Rockingham Middle School",
+                  "evidence": "EXACT_VALUE_MATCH"
+                }
+              ],
+              "columnMatchReason": "Duane Hensley is a principal, so the condition targets the Information field's Principal row.",
+              "operator": "=",
+              "groundingReason": "FIELD_VALUE_CONFLICT",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 4,
+                "reason": "Duane Hensley appears in the Western Rockingham Middle School column on the Principal row, identifying the row whose James E. Holmes value is requested."
+              }
+            }
+          ],
+          "reviewModelCalls": [
+            {
+              "model": "gpt-5.6-sol",
+              "promptSha256": "0ce50215bd4b2298be3fdfaab73dda8dfc8b20aa3d7d1535db625b577bfa923f",
+              "knowledgeIds": [],
+              "usage": {
+                "prompt_tokens": 4908,
+                "completion_tokens": 91,
+                "total_tokens": 4999,
+                "prompt_tokens_details": {
+                  "cached_tokens": 4224
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 46
+                }
+              }
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0ce50215bd4b2298be3fdfaab73dda8dfc8b20aa3d7d1535db625b577bfa923f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4908,
+              "completion_tokens": 91,
+              "total_tokens": 4999,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 46
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "duane hensley",
+              "value": "Duane Hensley",
+              "start": 29,
+              "end": 42,
+              "clause": "Name the james e. holmes for duane hensley",
+              "columnIndex": 0,
+              "columnCandidates": [
+                {
+                  "columnIndex": 4,
+                  "header": "Western Rockingham Middle School",
+                  "evidence": "EXACT_VALUE_MATCH"
+                }
+              ],
+              "columnMatchReason": "Duane Hensley is a principal, so the condition targets the Information field's Principal row.",
+              "operator": "=",
+              "groundingReason": "FIELD_VALUE_CONFLICT",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 4,
+                "reason": "Duane Hensley appears in the Western Rockingham Middle School column on the Principal row, identifying the row whose James E. Holmes value is requested."
+              }
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "GROUNDING_FAILED",
+          "valid": false,
+          "errors": [
+            "condition 0: grounding NO_MATCH"
+          ],
+          "conditions": [
+            {
+              "surface": "duane hensley",
+              "value": "Duane Hensley",
+              "start": 29,
+              "end": 42,
+              "clause": "Name the james e. holmes for duane hensley",
+              "columnIndex": 0,
+              "columnCandidates": [
+                {
+                  "columnIndex": 4,
+                  "header": "Western Rockingham Middle School",
+                  "evidence": "EXACT_VALUE_MATCH"
+                }
+              ],
+              "columnMatchReason": "Duane Hensley is a principal, so the condition targets the Information field's Principal row.",
+              "operator": "=",
+              "groundingReason": "FIELD_VALUE_CONFLICT",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": 4,
+                "reason": "Duane Hensley appears in the Western Rockingham Middle School column on the Principal row, identifying the row whose James E. Holmes value is requested."
+              }
+            }
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "GROUNDING_FAILED",
+        "stage": "WHERE_CONDITION_VALIDATE",
+        "halt": true,
+        "completed": false,
+        "errors": [
+          "condition 0: grounding NO_MATCH"
+        ],
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "duane hensley",
+          "value": "Duane Hensley",
+          "start": 29,
+          "end": 42
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "duane hensley",
+          "value": "Duane Hensley",
+          "start": 29,
+          "end": 42,
+          "clause": "Name the james e. holmes for duane hensley",
+          "columnIndex": 0,
+          "columnCandidates": [
+            {
+              "columnIndex": 4,
+              "header": "Western Rockingham Middle School",
+              "evidence": "EXACT_VALUE_MATCH"
+            }
+          ],
+          "columnMatchReason": "Duane Hensley is a principal, so the condition targets the Information field's Principal row.",
+          "operator": "=",
+          "groundingReason": "FIELD_VALUE_CONFLICT",
+          "grounded": false,
+          "groundingStatus": "NO_MATCH",
+          "groundingReview": {
+            "column": 4,
+            "reason": "Duane Hensley appears in the Western Rockingham Middle School column on the Principal row, identifying the row whose James E. Holmes value is requested."
+          }
+        }
+      ],
+      "count": 1
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": false,
+  "elapsed_ms": 14203
+}

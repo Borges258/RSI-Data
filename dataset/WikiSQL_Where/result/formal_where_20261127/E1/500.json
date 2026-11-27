@@ -1,0 +1,108 @@
+{
+  "arm": "E1",
+  "position": 500,
+  "example_id": "test:10321:2-1123403-2",
+  "original_index": 10321,
+  "table_id": "2-1123403-2",
+  "question": "How many laps did Nick Heidfeld drive on grids larger than 4?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        4,
+        1,
+        4
+      ],
+      [
+        0,
+        0,
+        "nick heidfeld"
+      ]
+    ],
+    "agg": 4
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "Nick Heidfeld"
+    ],
+    [
+      4,
+      1,
+      4
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": "gpt-5.6-sol",
+  "usage": {
+    "prompt_tokens": 9969,
+    "completion_tokens": 49,
+    "total_tokens": 10018,
+    "prompt_tokens_details": {
+      "cached_tokens": 4224
+    }
+  },
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "Nick Heidfeld"
+      ],
+      [
+        4,
+        1,
+        4
+      ]
+    ],
+    "explanation": "Filter Driver to Nick Heidfeld and Grid strictly greater than 4.",
+    "version": "wikisql-where-prior-v1",
+    "tableId": "2-1123403-2",
+    "knowledgeIds": [
+      "g-eq",
+      "g-gt",
+      "g-lt",
+      "g-inclusive",
+      "g-literal",
+      "g-threshold",
+      "g-and",
+      "g-or",
+      "g-column",
+      "g-count",
+      "g-ambiguous",
+      "t-2-1123403-2-field-0",
+      "t-2-1123403-2-field-1",
+      "t-2-1123403-2-field-2",
+      "t-2-1123403-2-field-3",
+      "t-2-1123403-2-field-4",
+      "d-implicit-eq",
+      "d-explicit-eq",
+      "d-gt",
+      "d-lt-and-gt",
+      "d-with-two",
+      "d-literal-form",
+      "p-text",
+      "p-number",
+      "p-multi",
+      "p-unsupported"
+    ],
+    "promptSha256": "9cc009e54c7ecbfe930e359f6453b676fcb27845427616558d0a0ff352622a52",
+    "model": "gpt-5.6-sol",
+    "usage": {
+      "prompt_tokens": 9969,
+      "completion_tokens": 49,
+      "total_tokens": 10018,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      }
+    },
+    "latencyMs": 2438
+  },
+  "source": "where_prior_parse",
+  "safe_completed": true,
+  "elapsed_ms": 2469
+}

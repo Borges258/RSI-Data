@@ -1,0 +1,465 @@
+{
+  "arm": "E2",
+  "position": 95,
+  "example_id": "test:3281:1-25505246-7",
+  "original_index": 3281,
+  "table_id": "1-25505246-7",
+  "question": "Who was Hanne Skak Jensen's opponent when facing Belarus?",
+  "gold_sql": {
+    "sel": 5,
+    "conds": [
+      [
+        3,
+        0,
+        "Belarus"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      3,
+      0,
+      "Belarus"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        0,
+        "Belarus"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Belarus",
+        "value": "Belarus",
+        "start": 49,
+        "end": 56,
+        "clause": "Who was Hanne Skak Jensen's opponent when facing Belarus?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "'facing Belarus' identifies the country in the Against field; the matching row has Against = Belarus, while Opponent contains the player's name.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Belarus",
+        "value": "Belarus",
+        "start": 49,
+        "end": 56
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Who was Hanne Skak Jensen's opponent when facing Belarus?",
+      "table": {
+        "header": [
+          "Edition",
+          "Zone",
+          "Round",
+          "Against",
+          "Surface",
+          "Opponent",
+          "Outcome",
+          "Result"
+        ],
+        "page_title": "Hanne Skak Jensen",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "id": "1-25505246-7",
+        "section_title": "Fed Cup singles performances (9)",
+        "caption": "Fed Cup singles performances (9)",
+        "rows": [
+          [
+            2007,
+            "Europe/Africa Group I A",
+            "Round Robin",
+            "Switzerland",
+            "Clay",
+            "Emmanuelle Gagliardi",
+            "Loss",
+            "6–0, 6–0"
+          ],
+          [
+            2007,
+            "Europe/Africa Group I A",
+            "Round Robin",
+            "Netherlands",
+            "Clay",
+            "Nicole Thijssen",
+            "Loss",
+            "6–0, 6–4"
+          ],
+          [
+            2007,
+            "Europe/Africa Group I A",
+            "Playoff Semifinal",
+            "Hungary",
+            "Clay",
+            "Kyra Nagy",
+            "Loss",
+            "6–3, 6–0"
+          ],
+          [
+            2008,
+            "Europe/Africa Group I B",
+            "Round Robin",
+            "Switzerland",
+            "Carpet (i)",
+            "Emmanuelle Gagliardi",
+            "Loss",
+            "7–5, 6–2"
+          ],
+          [
+            2008,
+            "Europe/Africa Group I B",
+            "Round Robin",
+            "Great Britain",
+            "Carpet (i)",
+            "Anne Keothavong",
+            "Loss",
+            "4–6, 6–4, 6–2"
+          ],
+          [
+            2009,
+            "Europe/Africa Group I A",
+            "Round Robin",
+            "Belarus",
+            "Hard",
+            "Olga Govortsova",
+            "Loss",
+            "7–6(6), 7–6(5)"
+          ],
+          [
+            2009,
+            "Europe/Africa Group I A",
+            "Round Robin",
+            "Austria",
+            "Hard",
+            "Nikola Hoffmanova",
+            "Win",
+            "6–1, 7–5"
+          ],
+          [
+            2009,
+            "Europe/Africa Group I A",
+            "Round Robin",
+            "Slovenia",
+            "Hard",
+            "Andreja Klepač",
+            "Win",
+            "7–6(4), 6–3"
+          ]
+        ],
+        "name": "table_25505246_7",
+        "headers": [
+          "Edition",
+          "Zone",
+          "Round",
+          "Against",
+          "Surface",
+          "Opponent",
+          "Outcome",
+          "Result"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-25505246-7",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Belarus",
+              "value": "Belarus",
+              "start": 49,
+              "end": 56
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d002a18d85b110cc34e430e14b6d6aa7d85ba0b695febe6aee129600007c1662",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5005,
+              "completion_tokens": 19,
+              "total_tokens": 5024,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Belarus",
+              "value": "Belarus",
+              "start": 49,
+              "end": 56,
+              "clause": "Who was Hanne Skak Jensen's opponent when facing Belarus?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Belarus",
+              "value": "Belarus",
+              "start": 49,
+              "end": 56,
+              "clause": "Who was Hanne Skak Jensen's opponent when facing Belarus?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Belarus",
+              "value": "Belarus",
+              "start": 49,
+              "end": 56,
+              "clause": "Who was Hanne Skak Jensen's opponent when facing Belarus?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'facing Belarus' identifies the country in the Against field; the matching row has Against = Belarus, while Opponent contains the player's name."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c290f51aef0319b56fd8ab1ecad1f60cdb5e3bd23740c4bd90b18f3629eb0f3e",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5041,
+              "completion_tokens": 50,
+              "total_tokens": 5091,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Belarus",
+              "value": "Belarus",
+              "start": 49,
+              "end": 56,
+              "clause": "Who was Hanne Skak Jensen's opponent when facing Belarus?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'facing Belarus' identifies the country in the Against field; the matching row has Against = Belarus, while Opponent contains the player's name.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a66144e7814518e8835928a2eb27a4bd91565811d990a3504c5e22f804dc6ccb",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5114,
+              "completion_tokens": 9,
+              "total_tokens": 5123,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Belarus",
+              "value": "Belarus",
+              "start": 49,
+              "end": 56,
+              "clause": "Who was Hanne Skak Jensen's opponent when facing Belarus?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'facing Belarus' identifies the country in the Against field; the matching row has Against = Belarus, while Opponent contains the player's name.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0ad4b647048529930abf8135c0b55eed764bc1fa114b91d04a8807e3dc639ad8",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5065,
+              "completion_tokens": 11,
+              "total_tokens": 5076,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Belarus",
+              "value": "Belarus",
+              "start": 49,
+              "end": 56,
+              "clause": "Who was Hanne Skak Jensen's opponent when facing Belarus?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'facing Belarus' identifies the country in the Against field; the matching row has Against = Belarus, while Opponent contains the player's name.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Belarus",
+              "value": "Belarus",
+              "start": 49,
+              "end": 56,
+              "clause": "Who was Hanne Skak Jensen's opponent when facing Belarus?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'facing Belarus' identifies the country in the Against field; the matching row has Against = Belarus, while Opponent contains the player's name.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Belarus",
+              "value": "Belarus",
+              "start": 49,
+              "end": 56,
+              "clause": "Who was Hanne Skak Jensen's opponent when facing Belarus?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "'facing Belarus' identifies the country in the Against field; the matching row has Against = Belarus, while Opponent contains the player's name.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              0,
+              "Belarus"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Belarus",
+          "value": "Belarus",
+          "start": 49,
+          "end": 56
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Belarus",
+          "value": "Belarus",
+          "start": 49,
+          "end": 56,
+          "clause": "Who was Hanne Skak Jensen's opponent when facing Belarus?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "'facing Belarus' identifies the country in the Against field; the matching row has Against = Belarus, while Opponent contains the player's name.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          3,
+          0,
+          "Belarus"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 10031
+}

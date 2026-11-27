@@ -1,0 +1,108 @@
+{
+  "arm": "E1",
+  "position": 234,
+  "example_id": "test:11301:2-11716268-1",
+  "original_index": 11301,
+  "table_id": "2-11716268-1",
+  "question": "What's the highest points for song \"budi tu\" with draw less than 7?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        0,
+        2,
+        7
+      ],
+      [
+        2,
+        0,
+        "\"budi tu\""
+      ]
+    ],
+    "agg": 1
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "\"Budi tu\""
+    ],
+    [
+      0,
+      2,
+      7
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": "gpt-5.6-sol",
+  "usage": {
+    "prompt_tokens": 9935,
+    "completion_tokens": 54,
+    "total_tokens": 9989,
+    "prompt_tokens_details": {
+      "cached_tokens": 4224
+    }
+  },
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "\"Budi tu\""
+      ],
+      [
+        0,
+        2,
+        7
+      ]
+    ],
+    "explanation": "Song equals the table literal \"Budi tu\" and Draw is strictly less than 7.",
+    "version": "wikisql-where-prior-v1",
+    "tableId": "2-11716268-1",
+    "knowledgeIds": [
+      "g-eq",
+      "g-gt",
+      "g-lt",
+      "g-inclusive",
+      "g-literal",
+      "g-threshold",
+      "g-and",
+      "g-or",
+      "g-column",
+      "g-count",
+      "g-ambiguous",
+      "t-2-11716268-1-field-0",
+      "t-2-11716268-1-field-1",
+      "t-2-11716268-1-field-2",
+      "t-2-11716268-1-field-3",
+      "t-2-11716268-1-field-4",
+      "d-implicit-eq",
+      "d-explicit-eq",
+      "d-gt",
+      "d-lt-and-gt",
+      "d-with-two",
+      "d-literal-form",
+      "p-text",
+      "p-number",
+      "p-multi",
+      "p-unsupported"
+    ],
+    "promptSha256": "c7f0cb93736b21bfcdf7a71bbd8aa867e735012c31562352fc46dce3f75b1920",
+    "model": "gpt-5.6-sol",
+    "usage": {
+      "prompt_tokens": 9935,
+      "completion_tokens": 54,
+      "total_tokens": 9989,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      }
+    },
+    "latencyMs": 2692
+  },
+  "source": "where_prior_parse",
+  "safe_completed": true,
+  "elapsed_ms": 2719
+}

@@ -1,0 +1,111 @@
+{
+  "arm": "E1",
+  "position": 220,
+  "example_id": "test:8405:2-17300749-3",
+  "original_index": 8405,
+  "table_id": "2-17300749-3",
+  "question": "What is Nationality, when NBA years [a ] is \"1\", and when Previous Team is \"Seattle Supersonics\"?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        6,
+        0,
+        "1"
+      ],
+      [
+        5,
+        0,
+        "seattle supersonics"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      6,
+      0,
+      "1"
+    ],
+    [
+      5,
+      0,
+      "Seattle SuperSonics"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": "gpt-5.6-sol",
+  "usage": {
+    "prompt_tokens": 11609,
+    "completion_tokens": 55,
+    "total_tokens": 11664,
+    "prompt_tokens_details": {
+      "cached_tokens": 4224
+    }
+  },
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        6,
+        0,
+        "1"
+      ],
+      [
+        5,
+        0,
+        "Seattle SuperSonics"
+      ]
+    ],
+    "explanation": "Two explicit equality filters joined by AND; the previous-team literal is grounded to the table's exact capitalization.",
+    "version": "wikisql-where-prior-v1",
+    "tableId": "2-17300749-3",
+    "knowledgeIds": [
+      "g-eq",
+      "g-gt",
+      "g-lt",
+      "g-inclusive",
+      "g-literal",
+      "g-threshold",
+      "g-and",
+      "g-or",
+      "g-column",
+      "g-count",
+      "g-ambiguous",
+      "t-2-17300749-3-field-0",
+      "t-2-17300749-3-field-1",
+      "t-2-17300749-3-field-2",
+      "t-2-17300749-3-field-3",
+      "t-2-17300749-3-field-4",
+      "t-2-17300749-3-field-5",
+      "t-2-17300749-3-field-6",
+      "t-2-17300749-3-field-7",
+      "d-implicit-eq",
+      "d-explicit-eq",
+      "d-gt",
+      "d-lt-and-gt",
+      "d-with-two",
+      "d-literal-form",
+      "p-text",
+      "p-number",
+      "p-multi",
+      "p-unsupported"
+    ],
+    "promptSha256": "f72b704646d6c9d320a69d09d71564ef214b53945e302ae2925ece9beba73d7a",
+    "model": "gpt-5.6-sol",
+    "usage": {
+      "prompt_tokens": 11609,
+      "completion_tokens": 55,
+      "total_tokens": 11664,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      }
+    },
+    "latencyMs": 2668
+  },
+  "source": "where_prior_parse",
+  "safe_completed": true,
+  "elapsed_ms": 2704
+}

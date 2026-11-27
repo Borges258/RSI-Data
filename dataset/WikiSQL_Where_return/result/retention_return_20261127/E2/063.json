@@ -1,0 +1,783 @@
+{
+  "arm": "E2",
+  "position": 63,
+  "example_id": "test:2209:1-1999350-1",
+  "original_index": 2209,
+  "table_id": "1-1999350-1",
+  "question": "What is the earliest year where playoffs was \"did not qualify,\" regular season was \"2nd, New England,\" and Open Canada Cup is \"N/A\"?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        4,
+        0,
+        "Did not qualify"
+      ],
+      [
+        3,
+        0,
+        "2nd, New England"
+      ],
+      [
+        5,
+        0,
+        "N/A"
+      ]
+    ],
+    "agg": 2
+  },
+  "prediction_conds": [
+    [
+      4,
+      0,
+      "Did not qualify"
+    ],
+    [
+      3,
+      0,
+      "2nd, New England"
+    ],
+    [
+      5,
+      0,
+      "N/A"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        0,
+        "Did not qualify"
+      ],
+      [
+        3,
+        0,
+        "2nd, New England"
+      ],
+      [
+        5,
+        0,
+        "N/A"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "did not qualify",
+        "value": "Did not qualify",
+        "start": 46,
+        "end": 61,
+        "clause": "What is the earliest year where playoffs was \"did not qualify,\" regular season was \"2nd, New England,\"",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The question explicitly assigns \"did not qualify\" to Playoffs, matching header index 4 and its cells.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "2nd, New England",
+        "value": "2nd, New England",
+        "start": 84,
+        "end": 100,
+        "clause": "\" regular season was \"2nd, New England,\"",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The question explicitly assigns \"2nd, New England\" to Regular Season, matching header index 3 and its cells.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "N/A",
+        "value": "N/A",
+        "start": 127,
+        "end": 130,
+        "clause": "and Open Canada Cup is \"N/A\"?",
+        "columnIndex": 5,
+        "columnCandidates": [
+          5
+        ],
+        "columnMatchReason": "The question explicitly assigns \"N/A\" to Open Canada Cup, matching header index 5 and its cells.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "did not qualify",
+        "value": "Did not qualify",
+        "start": 46,
+        "end": 61
+      },
+      {
+        "surface": "2nd, New England",
+        "value": "2nd, New England",
+        "start": 84,
+        "end": 100
+      },
+      {
+        "surface": "N/A",
+        "value": "N/A",
+        "start": 127,
+        "end": 130
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the earliest year where playoffs was \"did not qualify,\" regular season was \"2nd, New England,\" and Open Canada Cup is \"N/A\"?",
+      "table": {
+        "header": [
+          "Year",
+          "Division",
+          "League",
+          "Regular Season",
+          "Playoffs",
+          "Open Canada Cup"
+        ],
+        "page_title": "Ottawa Fury",
+        "types": [
+          "real",
+          "real",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "id": "1-1999350-1",
+        "section_title": "Year-by-year",
+        "caption": "Year-by-year",
+        "rows": [
+          [
+            2005,
+            4,
+            "USL PDL",
+            "3rd, Northeast",
+            "Did not qualify",
+            "Did not participate"
+          ],
+          [
+            2006,
+            4,
+            "USL PDL",
+            "2nd, New England",
+            "Did not qualify",
+            "Did not participate"
+          ],
+          [
+            2007,
+            4,
+            "USL PDL",
+            "7th, Northeast",
+            "Did not qualify",
+            "Did not participate"
+          ],
+          [
+            2008,
+            4,
+            "USL PDL",
+            "2nd, New England",
+            "Did not qualify",
+            "N/A"
+          ],
+          [
+            2009,
+            4,
+            "USL PDL",
+            "1st, Northeast",
+            "Divisional Finals",
+            "N/A"
+          ],
+          [
+            2010,
+            4,
+            "USL PDL",
+            "1st, Northeast",
+            "Conference Finals",
+            "N/A"
+          ],
+          [
+            2011,
+            4,
+            "USL PDL",
+            "4th, Northeast",
+            "Did not qualify",
+            "N/A"
+          ],
+          [
+            2012,
+            4,
+            "USL PDL",
+            "1st, Northeast",
+            "Conference Finals",
+            "N/A"
+          ]
+        ],
+        "name": "table_1999350_1",
+        "headers": [
+          "Year",
+          "Division",
+          "League",
+          "Regular Season",
+          "Playoffs",
+          "Open Canada Cup"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-1999350-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 3,
+          "conditions": [
+            {
+              "surface": "did not qualify",
+              "value": "Did not qualify",
+              "start": 46,
+              "end": 61
+            },
+            {
+              "surface": "2nd, New England",
+              "value": "2nd, New England",
+              "start": 84,
+              "end": 100
+            },
+            {
+              "surface": "N/A",
+              "value": "N/A",
+              "start": 127,
+              "end": 130
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e19e216cfb78dd91bbdb28375a68de72824c97ff63277023d25c766e53fbdafd",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4889,
+              "completion_tokens": 47,
+              "total_tokens": 4936,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "did not qualify",
+              "value": "Did not qualify",
+              "start": 46,
+              "end": 61,
+              "clause": "What is the earliest year where playoffs was \"did not qualify,\" regular season was \"2nd, New England,\""
+            },
+            {
+              "surface": "2nd, New England",
+              "value": "2nd, New England",
+              "start": 84,
+              "end": 100,
+              "clause": "\" regular season was \"2nd, New England,\""
+            },
+            {
+              "surface": "N/A",
+              "value": "N/A",
+              "start": 127,
+              "end": 130,
+              "clause": "and Open Canada Cup is \"N/A\"?"
+            }
+          ],
+          "count": 3
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "did not qualify",
+              "value": "Did not qualify",
+              "start": 46,
+              "end": 61,
+              "clause": "What is the earliest year where playoffs was \"did not qualify,\" regular season was \"2nd, New England,\""
+            },
+            {
+              "surface": "2nd, New England",
+              "value": "2nd, New England",
+              "start": 84,
+              "end": 100,
+              "clause": "\" regular season was \"2nd, New England,\""
+            },
+            {
+              "surface": "N/A",
+              "value": "N/A",
+              "start": 127,
+              "end": 130,
+              "clause": "and Open Canada Cup is \"N/A\"?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "did not qualify",
+              "value": "Did not qualify",
+              "start": 46,
+              "end": 61,
+              "clause": "What is the earliest year where playoffs was \"did not qualify,\" regular season was \"2nd, New England,\"",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly assigns \"did not qualify\" to Playoffs, matching header index 4 and its cells."
+            },
+            {
+              "surface": "2nd, New England",
+              "value": "2nd, New England",
+              "start": 84,
+              "end": 100,
+              "clause": "\" regular season was \"2nd, New England,\"",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly assigns \"2nd, New England\" to Regular Season, matching header index 3 and its cells."
+            },
+            {
+              "surface": "N/A",
+              "value": "N/A",
+              "start": 127,
+              "end": 130,
+              "clause": "and Open Canada Cup is \"N/A\"?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly assigns \"N/A\" to Open Canada Cup, matching header index 5 and its cells."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f199be1b6937ef5ad89fc073c4a1623c905021be893e311da93b22c890f52ab4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5008,
+              "completion_tokens": 97,
+              "total_tokens": 5105,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "did not qualify",
+              "value": "Did not qualify",
+              "start": 46,
+              "end": 61,
+              "clause": "What is the earliest year where playoffs was \"did not qualify,\" regular season was \"2nd, New England,\"",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly assigns \"did not qualify\" to Playoffs, matching header index 4 and its cells.",
+              "operator": "="
+            },
+            {
+              "surface": "2nd, New England",
+              "value": "2nd, New England",
+              "start": 84,
+              "end": 100,
+              "clause": "\" regular season was \"2nd, New England,\"",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly assigns \"2nd, New England\" to Regular Season, matching header index 3 and its cells.",
+              "operator": "="
+            },
+            {
+              "surface": "N/A",
+              "value": "N/A",
+              "start": 127,
+              "end": 130,
+              "clause": "and Open Canada Cup is \"N/A\"?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly assigns \"N/A\" to Open Canada Cup, matching header index 5 and its cells.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "988f8af00b21f84b39ea7ad31c834d470bbd019e67ed02ad6d48873fbcf9a6ea",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5151,
+              "completion_tokens": 13,
+              "total_tokens": 5164,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "did not qualify",
+              "value": "Did not qualify",
+              "start": 46,
+              "end": 61,
+              "clause": "What is the earliest year where playoffs was \"did not qualify,\" regular season was \"2nd, New England,\"",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly assigns \"did not qualify\" to Playoffs, matching header index 4 and its cells.",
+              "operator": "="
+            },
+            {
+              "surface": "2nd, New England",
+              "value": "2nd, New England",
+              "start": 84,
+              "end": 100,
+              "clause": "\" regular season was \"2nd, New England,\"",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly assigns \"2nd, New England\" to Regular Season, matching header index 3 and its cells.",
+              "operator": "="
+            },
+            {
+              "surface": "N/A",
+              "value": "N/A",
+              "start": 127,
+              "end": 130,
+              "clause": "and Open Canada Cup is \"N/A\"?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly assigns \"N/A\" to Open Canada Cup, matching header index 5 and its cells.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "2700bf47003e7c7cc3dfc27f492b9532a59267f2887060ae48295bc72d68ebee",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5108,
+              "completion_tokens": 21,
+              "total_tokens": 5129,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "did not qualify",
+              "value": "Did not qualify",
+              "start": 46,
+              "end": 61,
+              "clause": "What is the earliest year where playoffs was \"did not qualify,\" regular season was \"2nd, New England,\"",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly assigns \"did not qualify\" to Playoffs, matching header index 4 and its cells.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2nd, New England",
+              "value": "2nd, New England",
+              "start": 84,
+              "end": 100,
+              "clause": "\" regular season was \"2nd, New England,\"",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly assigns \"2nd, New England\" to Regular Season, matching header index 3 and its cells.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "N/A",
+              "value": "N/A",
+              "start": 127,
+              "end": 130,
+              "clause": "and Open Canada Cup is \"N/A\"?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly assigns \"N/A\" to Open Canada Cup, matching header index 5 and its cells.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "did not qualify",
+              "value": "Did not qualify",
+              "start": 46,
+              "end": 61,
+              "clause": "What is the earliest year where playoffs was \"did not qualify,\" regular season was \"2nd, New England,\"",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly assigns \"did not qualify\" to Playoffs, matching header index 4 and its cells.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2nd, New England",
+              "value": "2nd, New England",
+              "start": 84,
+              "end": 100,
+              "clause": "\" regular season was \"2nd, New England,\"",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly assigns \"2nd, New England\" to Regular Season, matching header index 3 and its cells.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "N/A",
+              "value": "N/A",
+              "start": 127,
+              "end": 130,
+              "clause": "and Open Canada Cup is \"N/A\"?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly assigns \"N/A\" to Open Canada Cup, matching header index 5 and its cells.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "did not qualify",
+              "value": "Did not qualify",
+              "start": 46,
+              "end": 61,
+              "clause": "What is the earliest year where playoffs was \"did not qualify,\" regular season was \"2nd, New England,\"",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly assigns \"did not qualify\" to Playoffs, matching header index 4 and its cells.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "2nd, New England",
+              "value": "2nd, New England",
+              "start": 84,
+              "end": 100,
+              "clause": "\" regular season was \"2nd, New England,\"",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly assigns \"2nd, New England\" to Regular Season, matching header index 3 and its cells.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "N/A",
+              "value": "N/A",
+              "start": 127,
+              "end": 130,
+              "clause": "and Open Canada Cup is \"N/A\"?",
+              "columnIndex": 5,
+              "columnCandidates": [
+                5
+              ],
+              "columnMatchReason": "The question explicitly assigns \"N/A\" to Open Canada Cup, matching header index 5 and its cells.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              0,
+              "Did not qualify"
+            ],
+            [
+              3,
+              0,
+              "2nd, New England"
+            ],
+            [
+              5,
+              0,
+              "N/A"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "did not qualify",
+          "value": "Did not qualify",
+          "start": 46,
+          "end": 61
+        },
+        {
+          "surface": "2nd, New England",
+          "value": "2nd, New England",
+          "start": 84,
+          "end": 100
+        },
+        {
+          "surface": "N/A",
+          "value": "N/A",
+          "start": 127,
+          "end": 130
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "did not qualify",
+          "value": "Did not qualify",
+          "start": 46,
+          "end": 61,
+          "clause": "What is the earliest year where playoffs was \"did not qualify,\" regular season was \"2nd, New England,\"",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The question explicitly assigns \"did not qualify\" to Playoffs, matching header index 4 and its cells.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "2nd, New England",
+          "value": "2nd, New England",
+          "start": 84,
+          "end": 100,
+          "clause": "\" regular season was \"2nd, New England,\"",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The question explicitly assigns \"2nd, New England\" to Regular Season, matching header index 3 and its cells.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "N/A",
+          "value": "N/A",
+          "start": 127,
+          "end": 130,
+          "clause": "and Open Canada Cup is \"N/A\"?",
+          "columnIndex": 5,
+          "columnCandidates": [
+            5
+          ],
+          "columnMatchReason": "The question explicitly assigns \"N/A\" to Open Canada Cup, matching header index 5 and its cells.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 3,
+      "conds": [
+        [
+          4,
+          0,
+          "Did not qualify"
+        ],
+        [
+          3,
+          0,
+          "2nd, New England"
+        ],
+        [
+          5,
+          0,
+          "N/A"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9469
+}

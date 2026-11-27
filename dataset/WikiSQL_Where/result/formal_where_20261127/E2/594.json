@@ -1,0 +1,637 @@
+{
+  "arm": "E2",
+  "position": 594,
+  "example_id": "test:15220:2-12538628-1",
+  "original_index": 15220,
+  "table_id": "2-12538628-1",
+  "question": "What year was the (Barcaldine) larger than 1,868 and the (Aramac) lower than 1,592?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        2,
+        1,
+        "1,868"
+      ],
+      [
+        3,
+        2,
+        "1,592"
+      ]
+    ],
+    "agg": 5
+  },
+  "prediction_conds": [
+    [
+      2,
+      1,
+      "1,868"
+    ],
+    [
+      3,
+      2,
+      "1,592"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        1,
+        "1,868"
+      ],
+      [
+        3,
+        2,
+        "1,592"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "1,868",
+        "value": "1,868",
+        "start": 43,
+        "end": 48,
+        "clause": "What year was the (Barcaldine) larger than 1,868",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The clause explicitly names (Barcaldine), matching header index 2; 1,868 also appears in that column.",
+        "operator": ">",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "1,592",
+        "value": "1,592",
+        "start": 77,
+        "end": 82,
+        "clause": "and the (Aramac) lower than 1,592?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The clause explicitly names (Aramac), matching header index 3; 1,592 also appears in that column.",
+        "operator": "<",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "1,868",
+        "value": "1,868",
+        "start": 43,
+        "end": 48
+      },
+      {
+        "surface": "1,592",
+        "value": "1,592",
+        "start": 77,
+        "end": 82
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What year was the (Barcaldine) larger than 1,868 and the (Aramac) lower than 1,592?",
+      "table": {
+        "header": [
+          "Year",
+          "Population (Total)",
+          "(Barcaldine)",
+          "(Aramac)",
+          "(Jericho)"
+        ],
+        "page_title": "Barcaldine Region",
+        "types": [
+          "real",
+          "real",
+          "real",
+          "real",
+          "real"
+        ],
+        "page_id": 12538628,
+        "id": "2-12538628-1",
+        "section_title": "Population",
+        "rows": [
+          [
+            "1933",
+            "5,905",
+            "2,612",
+            "1,679",
+            "1,614"
+          ],
+          [
+            "1947",
+            "5,218",
+            "2,147",
+            "1,592",
+            "1,479"
+          ],
+          [
+            "1954",
+            "5,514",
+            "2,200",
+            "1,714",
+            "1,600"
+          ],
+          [
+            "1961",
+            "5,797",
+            "2,384",
+            "1,790",
+            "1,623"
+          ],
+          [
+            "1966",
+            "5,435",
+            "2,282",
+            "1,652",
+            "1,501"
+          ],
+          [
+            "1971",
+            "4,456",
+            "1,868",
+            "1,168",
+            "1,420"
+          ],
+          [
+            "1976",
+            "4,059",
+            "1,780",
+            "1,059",
+            "1,220"
+          ],
+          [
+            "1981",
+            "4,042",
+            "1,783",
+            "1,082",
+            "1,177"
+          ],
+          [
+            "1986",
+            "3,981",
+            "1,779",
+            "1,097",
+            "1,105"
+          ],
+          [
+            "1991",
+            "3,762",
+            "1,813",
+            "832",
+            "1,117"
+          ],
+          [
+            "1996",
+            "3,594",
+            "1,850",
+            "778",
+            "966"
+          ],
+          [
+            "2001",
+            "3,536",
+            "1,773",
+            "742",
+            "1,021"
+          ],
+          [
+            "2006",
+            "3,492",
+            "1,818",
+            "754",
+            "920"
+          ]
+        ],
+        "caption": "Population",
+        "headers": [
+          "Year",
+          "Population (Total)",
+          "(Barcaldine)",
+          "(Aramac)",
+          "(Jericho)"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-12538628-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "1,868",
+              "value": "1,868",
+              "start": 43,
+              "end": 48
+            },
+            {
+              "surface": "1,592",
+              "value": "1,592",
+              "start": 77,
+              "end": 82
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "059f950867cbd9acc4fe8f7543667262724047b3c2d4639566365fb8e459aaf4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4953,
+              "completion_tokens": 33,
+              "total_tokens": 4986,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1,868",
+              "value": "1,868",
+              "start": 43,
+              "end": 48,
+              "clause": "What year was the (Barcaldine) larger than 1,868"
+            },
+            {
+              "surface": "1,592",
+              "value": "1,592",
+              "start": 77,
+              "end": 82,
+              "clause": "and the (Aramac) lower than 1,592?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "1,868",
+              "value": "1,868",
+              "start": 43,
+              "end": 48,
+              "clause": "What year was the (Barcaldine) larger than 1,868"
+            },
+            {
+              "surface": "1,592",
+              "value": "1,592",
+              "start": 77,
+              "end": 82,
+              "clause": "and the (Aramac) lower than 1,592?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1,868",
+              "value": "1,868",
+              "start": 43,
+              "end": 48,
+              "clause": "What year was the (Barcaldine) larger than 1,868",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The clause explicitly names (Barcaldine), matching header index 2; 1,868 also appears in that column."
+            },
+            {
+              "surface": "1,592",
+              "value": "1,592",
+              "start": 77,
+              "end": 82,
+              "clause": "and the (Aramac) lower than 1,592?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly names (Aramac), matching header index 3; 1,592 also appears in that column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b13678356f8adc18bbd1db8c7a3918655efe6707142f7f4b7919116b9c73d5a5",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5031,
+              "completion_tokens": 75,
+              "total_tokens": 5106,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1,868",
+              "value": "1,868",
+              "start": 43,
+              "end": 48,
+              "clause": "What year was the (Barcaldine) larger than 1,868",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The clause explicitly names (Barcaldine), matching header index 2; 1,868 also appears in that column.",
+              "operator": ">"
+            },
+            {
+              "surface": "1,592",
+              "value": "1,592",
+              "start": 77,
+              "end": 82,
+              "clause": "and the (Aramac) lower than 1,592?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly names (Aramac), matching header index 3; 1,592 also appears in that column.",
+              "operator": "<"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "97e16f0e657c511f91cae0e7f9d1fe2d4f35eba450ea81d4b5604360a854da3a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5141,
+              "completion_tokens": 12,
+              "total_tokens": 5153,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1,868",
+              "value": "1,868",
+              "start": 43,
+              "end": 48,
+              "clause": "What year was the (Barcaldine) larger than 1,868",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The clause explicitly names (Barcaldine), matching header index 2; 1,868 also appears in that column.",
+              "operator": ">"
+            },
+            {
+              "surface": "1,592",
+              "value": "1,592",
+              "start": 77,
+              "end": 82,
+              "clause": "and the (Aramac) lower than 1,592?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly names (Aramac), matching header index 3; 1,592 also appears in that column.",
+              "operator": "<"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e8875d6fd532789b5c8b8a15d530010950a9f4b2c80e3e3b246074e4905a5d8f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5095,
+              "completion_tokens": 16,
+              "total_tokens": 5111,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1,868",
+              "value": "1,868",
+              "start": 43,
+              "end": 48,
+              "clause": "What year was the (Barcaldine) larger than 1,868",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The clause explicitly names (Barcaldine), matching header index 2; 1,868 also appears in that column.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "1,592",
+              "value": "1,592",
+              "start": 77,
+              "end": 82,
+              "clause": "and the (Aramac) lower than 1,592?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly names (Aramac), matching header index 3; 1,592 also appears in that column.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1,868",
+              "value": "1,868",
+              "start": 43,
+              "end": 48,
+              "clause": "What year was the (Barcaldine) larger than 1,868",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The clause explicitly names (Barcaldine), matching header index 2; 1,868 also appears in that column.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "1,592",
+              "value": "1,592",
+              "start": 77,
+              "end": 82,
+              "clause": "and the (Aramac) lower than 1,592?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly names (Aramac), matching header index 3; 1,592 also appears in that column.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "1,868",
+              "value": "1,868",
+              "start": 43,
+              "end": 48,
+              "clause": "What year was the (Barcaldine) larger than 1,868",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The clause explicitly names (Barcaldine), matching header index 2; 1,868 also appears in that column.",
+              "operator": ">",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "1,592",
+              "value": "1,592",
+              "start": 77,
+              "end": 82,
+              "clause": "and the (Aramac) lower than 1,592?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly names (Aramac), matching header index 3; 1,592 also appears in that column.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              1,
+              "1,868"
+            ],
+            [
+              3,
+              2,
+              "1,592"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "1,868",
+          "value": "1,868",
+          "start": 43,
+          "end": 48
+        },
+        {
+          "surface": "1,592",
+          "value": "1,592",
+          "start": 77,
+          "end": 82
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "1,868",
+          "value": "1,868",
+          "start": 43,
+          "end": 48,
+          "clause": "What year was the (Barcaldine) larger than 1,868",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The clause explicitly names (Barcaldine), matching header index 2; 1,868 also appears in that column.",
+          "operator": ">",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "1,592",
+          "value": "1,592",
+          "start": 77,
+          "end": 82,
+          "clause": "and the (Aramac) lower than 1,592?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The clause explicitly names (Aramac), matching header index 3; 1,592 also appears in that column.",
+          "operator": "<",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          2,
+          1,
+          "1,868"
+        ],
+        [
+          3,
+          2,
+          "1,592"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8484
+}

@@ -1,0 +1,489 @@
+{
+  "arm": "E2",
+  "position": 266,
+  "example_id": "test:4931:2-10783853-16",
+  "original_index": 4931,
+  "table_id": "2-10783853-16",
+  "question": "What is the smallest crowd with fitzroy as the home team?",
+  "gold_sql": {
+    "sel": 5,
+    "conds": [
+      [
+        2,
+        0,
+        "fitzroy"
+      ]
+    ],
+    "agg": 2
+  },
+  "prediction_conds": [],
+  "status": "GROUNDING_FAILED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "GROUNDING_FAILED",
+    "valid": false,
+    "errors": [
+      "condition 0: grounding NO_MATCH"
+    ],
+    "conditions": [
+      {
+        "surface": "fitzroy",
+        "value": "Fitzroy",
+        "start": 32,
+        "end": 39,
+        "clause": "What is the smallest crowd with fitzroy as the home team?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          {
+            "columnIndex": 2,
+            "header": "Away team",
+            "evidence": "EXACT_VALUE_MATCH"
+          }
+        ],
+        "columnMatchReason": "The phrase 'as the home team' explicitly identifies the Home team field, even though Fitzroy appears only in the Away team column in the current rows.",
+        "operator": "=",
+        "groundingReason": "FIELD_VALUE_CONFLICT",
+        "grounded": false,
+        "groundingStatus": "NO_MATCH",
+        "groundingReview": {
+          "column": null,
+          "reason": "The question explicitly requires Fitzroy in the Home team field, but the only matching cell is in Away team; the candidate conflicts with the stated field."
+        }
+      }
+    ],
+    "stage": "WHERE_CONDITION_VALIDATE",
+    "originalConditions": [
+      {
+        "surface": "fitzroy",
+        "value": "Fitzroy",
+        "start": 32,
+        "end": 39
+      }
+    ],
+    "halt": true,
+    "completed": false,
+    "conds": [],
+    "warnings": [],
+    "request": {
+      "question": "What is the smallest crowd with fitzroy as the home team?",
+      "table": {
+        "header": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ],
+        "page_title": "1963 VFL season",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 10783853,
+        "id": "2-10783853-16",
+        "section_title": "Round 16",
+        "rows": [
+          [
+            "North Melbourne",
+            "12.12 (84)",
+            "South Melbourne",
+            "5.9 (39)",
+            "Arden Street Oval",
+            "9,506",
+            "24 August 1963"
+          ],
+          [
+            "Essendon",
+            "16.21 (117)",
+            "Fitzroy",
+            "5.6 (36)",
+            "Windy Hill",
+            "14,175",
+            "24 August 1963"
+          ],
+          [
+            "Carlton",
+            "10.18 (78)",
+            "Richmond",
+            "12.13 (85)",
+            "Princes Park",
+            "15,170",
+            "24 August 1963"
+          ],
+          [
+            "St Kilda",
+            "12.18 (90)",
+            "Geelong",
+            "8.21 (69)",
+            "Junction Oval",
+            "44,900",
+            "24 August 1963"
+          ],
+          [
+            "Hawthorn",
+            "13.21 (99)",
+            "Footscray",
+            "8.7 (55)",
+            "Glenferrie Oval",
+            "17,000",
+            "24 August 1963"
+          ],
+          [
+            "Melbourne",
+            "19.15 (129)",
+            "Collingwood",
+            "10.8 (68)",
+            "MCG",
+            "43,057",
+            "24 August 1963"
+          ]
+        ],
+        "caption": "Round 16",
+        "headers": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-10783853-16",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 9,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "fitzroy",
+              "value": "Fitzroy",
+              "start": 32,
+              "end": 39
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "68cfcafeb72fb1aefa84d258f5c616de969e5f7754d3093d8868cc69776d375e",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4910,
+              "completion_tokens": 21,
+              "total_tokens": 4931,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "fitzroy",
+              "value": "Fitzroy",
+              "start": 32,
+              "end": 39,
+              "clause": "What is the smallest crowd with fitzroy as the home team?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "fitzroy",
+              "value": "Fitzroy",
+              "start": 32,
+              "end": 39,
+              "clause": "What is the smallest crowd with fitzroy as the home team?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "fitzroy",
+              "value": "Fitzroy",
+              "start": 32,
+              "end": 39,
+              "clause": "What is the smallest crowd with fitzroy as the home team?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The phrase 'as the home team' explicitly identifies the Home team field, even though Fitzroy appears only in the Away team column in the current rows."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "193f7029085208d1a7adaee2381366f5471371da7cdbe4ba042bc658be8393a9",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4949,
+              "completion_tokens": 52,
+              "total_tokens": 5001,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "fitzroy",
+              "value": "Fitzroy",
+              "start": 32,
+              "end": 39,
+              "clause": "What is the smallest crowd with fitzroy as the home team?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The phrase 'as the home team' explicitly identifies the Home team field, even though Fitzroy appears only in the Away team column in the current rows.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "4570a7356a817b67e59735487668bcb0c005333522942b214a20096711623b37",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5025,
+              "completion_tokens": 9,
+              "total_tokens": 5034,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "fitzroy",
+              "value": "Fitzroy",
+              "start": 32,
+              "end": 39,
+              "clause": "What is the smallest crowd with fitzroy as the home team?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The phrase 'as the home team' explicitly identifies the Home team field, even though Fitzroy appears only in the Away team column in the current rows.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0951d408e47fc03bb8dbd50e367a8ea03f855e4cd859bff38e445034823b583f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4976,
+              "completion_tokens": 12,
+              "total_tokens": 4988,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "fitzroy",
+              "value": "Fitzroy",
+              "start": 32,
+              "end": 39,
+              "clause": "What is the smallest crowd with fitzroy as the home team?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                {
+                  "columnIndex": 2,
+                  "header": "Away team",
+                  "evidence": "EXACT_VALUE_MATCH"
+                }
+              ],
+              "columnMatchReason": "The phrase 'as the home team' explicitly identifies the Home team field, even though Fitzroy appears only in the Away team column in the current rows.",
+              "operator": "=",
+              "groundingReason": "FIELD_VALUE_CONFLICT",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": null,
+                "reason": "The question explicitly requires Fitzroy in the Home team field, but the only matching cell is in Away team; the candidate conflicts with the stated field."
+              }
+            }
+          ],
+          "reviewModelCalls": [
+            {
+              "model": "gpt-5.6-sol",
+              "promptSha256": "abd8c789b8ea5d9a201a541f6b9dbede4ebcedd78b6f3fbeb96b2efebde945f4",
+              "knowledgeIds": [],
+              "usage": {
+                "prompt_tokens": 5062,
+                "completion_tokens": 42,
+                "total_tokens": 5104,
+                "prompt_tokens_details": {
+                  "cached_tokens": 4224
+                }
+              }
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "abd8c789b8ea5d9a201a541f6b9dbede4ebcedd78b6f3fbeb96b2efebde945f4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5062,
+              "completion_tokens": 42,
+              "total_tokens": 5104,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "fitzroy",
+              "value": "Fitzroy",
+              "start": 32,
+              "end": 39,
+              "clause": "What is the smallest crowd with fitzroy as the home team?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                {
+                  "columnIndex": 2,
+                  "header": "Away team",
+                  "evidence": "EXACT_VALUE_MATCH"
+                }
+              ],
+              "columnMatchReason": "The phrase 'as the home team' explicitly identifies the Home team field, even though Fitzroy appears only in the Away team column in the current rows.",
+              "operator": "=",
+              "groundingReason": "FIELD_VALUE_CONFLICT",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": null,
+                "reason": "The question explicitly requires Fitzroy in the Home team field, but the only matching cell is in Away team; the candidate conflicts with the stated field."
+              }
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "GROUNDING_FAILED",
+          "valid": false,
+          "errors": [
+            "condition 0: grounding NO_MATCH"
+          ],
+          "conditions": [
+            {
+              "surface": "fitzroy",
+              "value": "Fitzroy",
+              "start": 32,
+              "end": 39,
+              "clause": "What is the smallest crowd with fitzroy as the home team?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                {
+                  "columnIndex": 2,
+                  "header": "Away team",
+                  "evidence": "EXACT_VALUE_MATCH"
+                }
+              ],
+              "columnMatchReason": "The phrase 'as the home team' explicitly identifies the Home team field, even though Fitzroy appears only in the Away team column in the current rows.",
+              "operator": "=",
+              "groundingReason": "FIELD_VALUE_CONFLICT",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": null,
+                "reason": "The question explicitly requires Fitzroy in the Home team field, but the only matching cell is in Away team; the candidate conflicts with the stated field."
+              }
+            }
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "GROUNDING_FAILED",
+        "stage": "WHERE_CONDITION_VALIDATE",
+        "halt": true,
+        "completed": false,
+        "errors": [
+          "condition 0: grounding NO_MATCH"
+        ],
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "fitzroy",
+          "value": "Fitzroy",
+          "start": 32,
+          "end": 39
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "fitzroy",
+          "value": "Fitzroy",
+          "start": 32,
+          "end": 39,
+          "clause": "What is the smallest crowd with fitzroy as the home team?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            {
+              "columnIndex": 2,
+              "header": "Away team",
+              "evidence": "EXACT_VALUE_MATCH"
+            }
+          ],
+          "columnMatchReason": "The phrase 'as the home team' explicitly identifies the Home team field, even though Fitzroy appears only in the Away team column in the current rows.",
+          "operator": "=",
+          "groundingReason": "FIELD_VALUE_CONFLICT",
+          "grounded": false,
+          "groundingStatus": "NO_MATCH",
+          "groundingReview": {
+            "column": null,
+            "reason": "The question explicitly requires Fitzroy in the Home team field, but the only matching cell is in Away team; the candidate conflicts with the stated field."
+          }
+        }
+      ],
+      "count": 1
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": false,
+  "elapsed_ms": 12281
+}

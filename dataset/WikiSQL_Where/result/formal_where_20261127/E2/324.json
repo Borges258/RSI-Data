@@ -1,0 +1,807 @@
+{
+  "arm": "E2",
+  "position": 324,
+  "example_id": "test:2562:1-221398-1",
+  "original_index": 2562,
+  "table_id": "1-221398-1",
+  "question": "How many prefectures have a population density of 16 people/kilometers squared?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        0,
+        0,
+        "16"
+      ]
+    ],
+    "agg": 3
+  },
+  "prediction_conds": [],
+  "status": "GROUNDING_FAILED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "GROUNDING_FAILED",
+    "valid": false,
+    "errors": [
+      "condition 0: grounding NO_MATCH"
+    ],
+    "conditions": [
+      {
+        "surface": "16",
+        "value": "16",
+        "start": 50,
+        "end": 52,
+        "clause": "How many prefectures have a population density of 16 people/kilometers squared?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          {
+            "columnIndex": 0,
+            "header": "Number in map",
+            "evidence": "EXACT_VALUE_MATCH"
+          }
+        ],
+        "columnMatchReason": "The question explicitly identifies population density in people per square kilometer, matching the 'Pop. density (/km²)' field; values such as 16.56 provide supporting row evidence.",
+        "operator": "=",
+        "groundingReason": "FIELD_VALUE_CONFLICT",
+        "grounded": false,
+        "groundingStatus": "NO_MATCH",
+        "groundingReview": {
+          "column": null,
+          "reason": "The intended field is 'Pop. density (/km²)' (column 4), but it is not among the supplied candidates; column 0 only contains the literal 16 as a map number and conflicts with the question's field meaning."
+        }
+      }
+    ],
+    "stage": "WHERE_CONDITION_VALIDATE",
+    "originalConditions": [
+      {
+        "surface": "16",
+        "value": "16",
+        "start": 50,
+        "end": 52
+      }
+    ],
+    "halt": true,
+    "completed": false,
+    "conds": [],
+    "warnings": [],
+    "request": {
+      "question": "How many prefectures have a population density of 16 people/kilometers squared?",
+      "table": {
+        "header": [
+          "Number in map",
+          "Prefecture",
+          "Area (km²)",
+          "Population (2001)",
+          "Pop. density (/km²)"
+        ],
+        "page_title": "Prefectures of Greece",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "id": "1-221398-1",
+        "section_title": "List of prefectures as of 2010",
+        "caption": "List of prefectures as of 2010",
+        "rows": [
+          [
+            "46",
+            "Aetolia-Acarnania",
+            "5460.888",
+            224429,
+            "41.10"
+          ],
+          [
+            "42",
+            "Larissa",
+            "5380.943",
+            279305,
+            "51.91"
+          ],
+          [
+            "24",
+            "Ioannina",
+            "4990.416",
+            170239,
+            "34.11"
+          ],
+          [
+            "5",
+            "Phthiotis",
+            "4440.765",
+            178771,
+            "40.26"
+          ],
+          [
+            "34",
+            "Arcadia",
+            "4418.736",
+            102035,
+            "23.09"
+          ],
+          [
+            "19",
+            "Evros",
+            "4241.615",
+            149354,
+            "35.21"
+          ],
+          [
+            "2",
+            "Euboea",
+            "4167.449",
+            215136,
+            "51.62"
+          ],
+          [
+            "12",
+            "Serres",
+            "3967.744",
+            200916,
+            "50.64"
+          ],
+          [
+            "13",
+            "Thessaloniki",
+            "3682.736",
+            1057825,
+            "287.24"
+          ],
+          [
+            "37",
+            "Laconia",
+            "3636.058",
+            99637,
+            "27.40"
+          ],
+          [
+            "51",
+            "Kozani",
+            "3515.853",
+            155324,
+            "44.18"
+          ],
+          [
+            "18",
+            "Drama",
+            "3468.293",
+            103975,
+            "29.98"
+          ],
+          [
+            "44",
+            "Trikala",
+            "3383.477",
+            138047,
+            "40.80"
+          ],
+          [
+            "45",
+            "Achaea",
+            "3271.507",
+            322789,
+            "98.67"
+          ],
+          [
+            "38",
+            "Messenia",
+            "2990.901",
+            176876,
+            "59.14"
+          ],
+          [
+            "6",
+            "Boeotia",
+            "2951.622",
+            131085,
+            "44.41"
+          ],
+          [
+            "7",
+            "Chalkidiki",
+            "2917.877",
+            104894,
+            "35.95"
+          ],
+          [
+            "40",
+            "Dodecanese",
+            "2714.295",
+            190071,
+            "70.03"
+          ],
+          [
+            "15",
+            "Heraklion",
+            "2641.220",
+            292489,
+            "110.74"
+          ],
+          [
+            "43",
+            "Magnesia",
+            "2636.272",
+            206995,
+            "78.52"
+          ],
+          [
+            "41",
+            "Karditsa",
+            "2635.954",
+            129541,
+            "49.14"
+          ],
+          [
+            "47",
+            "Elis",
+            "2617.776",
+            193288,
+            "73.84"
+          ],
+          [
+            "39",
+            "Cyclades",
+            "2571.691",
+            112615,
+            "43.79"
+          ],
+          [
+            "21",
+            "Rhodope",
+            "2543.145",
+            110828,
+            "43.58"
+          ],
+          [
+            "9",
+            "Kilkis",
+            "2518.880",
+            89056,
+            "35.36"
+          ],
+          [
+            "10",
+            "Pella",
+            "2505.774",
+            145797,
+            "58.18"
+          ],
+          [
+            "14",
+            "Chania",
+            "2375.849",
+            150387,
+            "63.30"
+          ],
+          [
+            "49",
+            "Grevena",
+            "2290.856",
+            37947,
+            "16.56"
+          ],
+          [
+            "36",
+            "Corinthia",
+            "2289.952",
+            154624,
+            "67.52"
+          ],
+          [
+            "35",
+            "Argolis",
+            "2154.309",
+            105770,
+            "49.10"
+          ],
+          [
+            "32",
+            "Lesbos",
+            "2153.727",
+            109118,
+            "50.66"
+          ],
+          [
+            "4",
+            "Phocis",
+            "2120.564",
+            48284,
+            "22.77"
+          ],
+          [
+            "20",
+            "Kavala",
+            "2111.705",
+            144850,
+            "68.59"
+          ],
+          [
+            "48",
+            "Florina",
+            "1924.564",
+            54768,
+            "28.46"
+          ],
+          [
+            "3",
+            "Evrytania",
+            "1868.911",
+            32053,
+            "17.15"
+          ],
+          [
+            "16",
+            "Lasithi",
+            "1822.764",
+            76319,
+            "41.87"
+          ],
+          [
+            "22",
+            "Xanthi",
+            "1792.992",
+            101856,
+            "56.81"
+          ],
+          [
+            "50",
+            "Kastoria",
+            "1720.133",
+            53483,
+            "31.09"
+          ],
+          [
+            "8",
+            "Imathia",
+            "1700.810",
+            143618,
+            "84.44"
+          ],
+          [
+            "23",
+            "Arta",
+            "1662.210",
+            78134,
+            "47.01"
+          ],
+          [
+            "11",
+            "Pieria",
+            "1516.702",
+            129846,
+            "85.61"
+          ],
+          [
+            "26",
+            "Thesprotia",
+            "1514.653",
+            46091,
+            "30.43"
+          ],
+          [
+            "1-2",
+            "East Attica",
+            "1512.993",
+            403918,
+            "266.97"
+          ],
+          [
+            "17",
+            "Rethymno",
+            "1496.047",
+            81936,
+            "54.77"
+          ],
+          [
+            "25",
+            "Preveza",
+            "1035.938",
+            59356,
+            "57.30"
+          ],
+          [
+            "1-4",
+            "West Attica",
+            "1004.007",
+            151612,
+            "151.01"
+          ],
+          [
+            "1-3",
+            "Piraeus",
+            "929.382",
+            541504,
+            "582.65"
+          ],
+          [
+            "28",
+            "Kefalonia",
+            "904.387",
+            39488,
+            "43.66"
+          ],
+          [
+            "31",
+            "Chios",
+            "904.227",
+            53408,
+            "59.06"
+          ],
+          [
+            "33",
+            "Samos",
+            "777.945",
+            43595,
+            "56.04"
+          ],
+          [
+            "27",
+            "Corfu (Kerkyra)",
+            "641.057",
+            111975,
+            "174.67"
+          ],
+          [
+            "30",
+            "Zakynthos",
+            "405.550",
+            39015,
+            "96.20"
+          ],
+          [
+            "1-1",
+            "Athens Prefecture",
+            "361.719",
+            2664776,
+            "7,366.98"
+          ],
+          [
+            "29",
+            "Lefkada",
+            "355.936",
+            22506,
+            "63.23"
+          ]
+        ],
+        "name": "table_221398_1",
+        "headers": [
+          "Number in map",
+          "Prefecture",
+          "Area (km²)",
+          "Population (2001)",
+          "Pop. density (/km²)"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-221398-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 9,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "16",
+              "value": "16",
+              "start": 50,
+              "end": 52
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c7ad4f256d7a57c5069d68629eb9eee8544f71a5999678d6db79304ba5d420de",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5743,
+              "completion_tokens": 17,
+              "total_tokens": 5760,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "16",
+              "value": "16",
+              "start": 50,
+              "end": 52,
+              "clause": "How many prefectures have a population density of 16 people/kilometers squared?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "16",
+              "value": "16",
+              "start": 50,
+              "end": 52,
+              "clause": "How many prefectures have a population density of 16 people/kilometers squared?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "16",
+              "value": "16",
+              "start": 50,
+              "end": 52,
+              "clause": "How many prefectures have a population density of 16 people/kilometers squared?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly identifies population density in people per square kilometer, matching the 'Pop. density (/km²)' field; values such as 16.56 provide supporting row evidence."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "97c76b3a87ce22b79e59835d582693992863404ea6ebf403a4ecd0d9cc9bcb46",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5781,
+              "completion_tokens": 57,
+              "total_tokens": 5838,
+              "prompt_tokens_details": {
+                "cached_tokens": 5504
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "16",
+              "value": "16",
+              "start": 50,
+              "end": 52,
+              "clause": "How many prefectures have a population density of 16 people/kilometers squared?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly identifies population density in people per square kilometer, matching the 'Pop. density (/km²)' field; values such as 16.56 provide supporting row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a385fa43c3f8024f5163a5113103baf09da349e841e48233575acc0493997320",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5862,
+              "completion_tokens": 9,
+              "total_tokens": 5871,
+              "prompt_tokens_details": {
+                "cached_tokens": 5504
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "16",
+              "value": "16",
+              "start": 50,
+              "end": 52,
+              "clause": "How many prefectures have a population density of 16 people/kilometers squared?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly identifies population density in people per square kilometer, matching the 'Pop. density (/km²)' field; values such as 16.56 provide supporting row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "7b406f0d91f263bb1168aa53b9fb20b9fc6fee233634cfa5f7d2ff209ea05a78",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5813,
+              "completion_tokens": 10,
+              "total_tokens": 5823,
+              "prompt_tokens_details": {
+                "cached_tokens": 5504
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "16",
+              "value": "16",
+              "start": 50,
+              "end": 52,
+              "clause": "How many prefectures have a population density of 16 people/kilometers squared?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                {
+                  "columnIndex": 0,
+                  "header": "Number in map",
+                  "evidence": "EXACT_VALUE_MATCH"
+                }
+              ],
+              "columnMatchReason": "The question explicitly identifies population density in people per square kilometer, matching the 'Pop. density (/km²)' field; values such as 16.56 provide supporting row evidence.",
+              "operator": "=",
+              "groundingReason": "FIELD_VALUE_CONFLICT",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": null,
+                "reason": "The intended field is 'Pop. density (/km²)' (column 4), but it is not among the supplied candidates; column 0 only contains the literal 16 as a map number and conflicts with the question's field meaning."
+              }
+            }
+          ],
+          "reviewModelCalls": [
+            {
+              "model": "gpt-5.6-sol",
+              "promptSha256": "3e1d6d9ae6b89df69884e81f465ad5f21634a4a5656b522f20c73c47011be529",
+              "knowledgeIds": [],
+              "usage": {
+                "prompt_tokens": 5901,
+                "completion_tokens": 60,
+                "total_tokens": 5961,
+                "prompt_tokens_details": {
+                  "cached_tokens": 5504
+                }
+              }
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "3e1d6d9ae6b89df69884e81f465ad5f21634a4a5656b522f20c73c47011be529",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5901,
+              "completion_tokens": 60,
+              "total_tokens": 5961,
+              "prompt_tokens_details": {
+                "cached_tokens": 5504
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "16",
+              "value": "16",
+              "start": 50,
+              "end": 52,
+              "clause": "How many prefectures have a population density of 16 people/kilometers squared?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                {
+                  "columnIndex": 0,
+                  "header": "Number in map",
+                  "evidence": "EXACT_VALUE_MATCH"
+                }
+              ],
+              "columnMatchReason": "The question explicitly identifies population density in people per square kilometer, matching the 'Pop. density (/km²)' field; values such as 16.56 provide supporting row evidence.",
+              "operator": "=",
+              "groundingReason": "FIELD_VALUE_CONFLICT",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": null,
+                "reason": "The intended field is 'Pop. density (/km²)' (column 4), but it is not among the supplied candidates; column 0 only contains the literal 16 as a map number and conflicts with the question's field meaning."
+              }
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "GROUNDING_FAILED",
+          "valid": false,
+          "errors": [
+            "condition 0: grounding NO_MATCH"
+          ],
+          "conditions": [
+            {
+              "surface": "16",
+              "value": "16",
+              "start": 50,
+              "end": 52,
+              "clause": "How many prefectures have a population density of 16 people/kilometers squared?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                {
+                  "columnIndex": 0,
+                  "header": "Number in map",
+                  "evidence": "EXACT_VALUE_MATCH"
+                }
+              ],
+              "columnMatchReason": "The question explicitly identifies population density in people per square kilometer, matching the 'Pop. density (/km²)' field; values such as 16.56 provide supporting row evidence.",
+              "operator": "=",
+              "groundingReason": "FIELD_VALUE_CONFLICT",
+              "grounded": false,
+              "groundingStatus": "NO_MATCH",
+              "groundingReview": {
+                "column": null,
+                "reason": "The intended field is 'Pop. density (/km²)' (column 4), but it is not among the supplied candidates; column 0 only contains the literal 16 as a map number and conflicts with the question's field meaning."
+              }
+            }
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "GROUNDING_FAILED",
+        "stage": "WHERE_CONDITION_VALIDATE",
+        "halt": true,
+        "completed": false,
+        "errors": [
+          "condition 0: grounding NO_MATCH"
+        ],
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "16",
+          "value": "16",
+          "start": 50,
+          "end": 52
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "16",
+          "value": "16",
+          "start": 50,
+          "end": 52,
+          "clause": "How many prefectures have a population density of 16 people/kilometers squared?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            {
+              "columnIndex": 0,
+              "header": "Number in map",
+              "evidence": "EXACT_VALUE_MATCH"
+            }
+          ],
+          "columnMatchReason": "The question explicitly identifies population density in people per square kilometer, matching the 'Pop. density (/km²)' field; values such as 16.56 provide supporting row evidence.",
+          "operator": "=",
+          "groundingReason": "FIELD_VALUE_CONFLICT",
+          "grounded": false,
+          "groundingStatus": "NO_MATCH",
+          "groundingReview": {
+            "column": null,
+            "reason": "The intended field is 'Pop. density (/km²)' (column 4), but it is not among the supplied candidates; column 0 only contains the literal 16 as a map number and conflicts with the question's field meaning."
+          }
+        }
+      ],
+      "count": 1
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": false,
+  "elapsed_ms": 10125
+}

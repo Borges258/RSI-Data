@@ -1,0 +1,453 @@
+{
+  "arm": "E2",
+  "position": 348,
+  "example_id": "test:5527:2-13909382-5",
+  "original_index": 5527,
+  "table_id": "2-13909382-5",
+  "question": "What is the number in January for Philadelphia Flyers as opponents?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        2,
+        0,
+        "philadelphia flyers"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "Philadelphia Flyers"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "Philadelphia Flyers"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Philadelphia Flyers",
+        "value": "Philadelphia Flyers",
+        "start": 34,
+        "end": 53,
+        "clause": "What is the number in January for Philadelphia Flyers as opponents?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The phrase 'as opponents' identifies the Opponent field, and the row evidence contains 'Philadelphia Flyers' under that header.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Philadelphia Flyers",
+        "value": "Philadelphia Flyers",
+        "start": 34,
+        "end": 53
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the number in January for Philadelphia Flyers as opponents?",
+      "table": {
+        "header": [
+          "Game",
+          "January",
+          "Opponent",
+          "Score",
+          "Record"
+        ],
+        "page_title": "1993–94 New York Rangers season",
+        "types": [
+          "real",
+          "real",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 13909382,
+        "id": "2-13909382-5",
+        "section_title": "Schedule and Results",
+        "rows": [
+          [
+            "39",
+            "3",
+            "Florida Panthers",
+            "3 - 2",
+            "27-9-3"
+          ],
+          [
+            "40",
+            "5",
+            "Calgary Flames",
+            "4 - 1",
+            "27-10-3"
+          ],
+          [
+            "41",
+            "8",
+            "@ Montreal Canadiens",
+            "3 - 2",
+            "27-11-3"
+          ],
+          [
+            "42",
+            "10",
+            "Tampa Bay Lightning",
+            "5 - 2",
+            "27-12-3"
+          ],
+          [
+            "43",
+            "14",
+            "Philadelphia Flyers",
+            "5 - 2",
+            "28-12-3"
+          ],
+          [
+            "44",
+            "16",
+            "@ Chicago Blackhawks",
+            "5 - 1",
+            "29-12-3"
+          ],
+          [
+            "45",
+            "18",
+            "St. Louis Blues",
+            "4 - 1",
+            "30-12-3"
+          ],
+          [
+            "46",
+            "25",
+            "@ San Jose Sharks",
+            "8 - 3",
+            "31-12-3"
+          ],
+          [
+            "47",
+            "27",
+            "@ Los Angeles Kings",
+            "5 - 4",
+            "32-12-3"
+          ],
+          [
+            "48",
+            "28",
+            "@ Mighty Ducks of Anaheim",
+            "3 - 2",
+            "32-13-3"
+          ],
+          [
+            "49",
+            "31",
+            "Pittsburgh Penguins",
+            "5 - 3",
+            "33-13-3"
+          ]
+        ],
+        "caption": "Schedule and Results",
+        "headers": [
+          "Game",
+          "January",
+          "Opponent",
+          "Score",
+          "Record"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-13909382-5",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Philadelphia Flyers",
+              "value": "Philadelphia Flyers",
+              "start": 34,
+              "end": 53
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "315d64bb719f1c17d98831a724c546509ec14169e41f2b9fab291ab570c885f5",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4893,
+              "completion_tokens": 19,
+              "total_tokens": 4912,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Philadelphia Flyers",
+              "value": "Philadelphia Flyers",
+              "start": 34,
+              "end": 53,
+              "clause": "What is the number in January for Philadelphia Flyers as opponents?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Philadelphia Flyers",
+              "value": "Philadelphia Flyers",
+              "start": 34,
+              "end": 53,
+              "clause": "What is the number in January for Philadelphia Flyers as opponents?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Philadelphia Flyers",
+              "value": "Philadelphia Flyers",
+              "start": 34,
+              "end": 53,
+              "clause": "What is the number in January for Philadelphia Flyers as opponents?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase 'as opponents' identifies the Opponent field, and the row evidence contains 'Philadelphia Flyers' under that header."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e1119150a5f800fa6ff83f303b4eeae0d444ed956ecb89a31d8333cffed42dfd",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4928,
+              "completion_tokens": 46,
+              "total_tokens": 4974,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Philadelphia Flyers",
+              "value": "Philadelphia Flyers",
+              "start": 34,
+              "end": 53,
+              "clause": "What is the number in January for Philadelphia Flyers as opponents?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase 'as opponents' identifies the Opponent field, and the row evidence contains 'Philadelphia Flyers' under that header.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "180d29240d60cb68d8892775ea63c1ec98a3cac6efd57b6337e7993596c245fd",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4998,
+              "completion_tokens": 9,
+              "total_tokens": 5007,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Philadelphia Flyers",
+              "value": "Philadelphia Flyers",
+              "start": 34,
+              "end": 53,
+              "clause": "What is the number in January for Philadelphia Flyers as opponents?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase 'as opponents' identifies the Opponent field, and the row evidence contains 'Philadelphia Flyers' under that header.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e5dd2d9ea0b218d42a6d1cbe38c49d22e65e8306008e33c7be3de3d4791614db",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4949,
+              "completion_tokens": 11,
+              "total_tokens": 4960,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Philadelphia Flyers",
+              "value": "Philadelphia Flyers",
+              "start": 34,
+              "end": 53,
+              "clause": "What is the number in January for Philadelphia Flyers as opponents?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase 'as opponents' identifies the Opponent field, and the row evidence contains 'Philadelphia Flyers' under that header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Philadelphia Flyers",
+              "value": "Philadelphia Flyers",
+              "start": 34,
+              "end": 53,
+              "clause": "What is the number in January for Philadelphia Flyers as opponents?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase 'as opponents' identifies the Opponent field, and the row evidence contains 'Philadelphia Flyers' under that header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Philadelphia Flyers",
+              "value": "Philadelphia Flyers",
+              "start": 34,
+              "end": 53,
+              "clause": "What is the number in January for Philadelphia Flyers as opponents?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The phrase 'as opponents' identifies the Opponent field, and the row evidence contains 'Philadelphia Flyers' under that header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "Philadelphia Flyers"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Philadelphia Flyers",
+          "value": "Philadelphia Flyers",
+          "start": 34,
+          "end": 53
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Philadelphia Flyers",
+          "value": "Philadelphia Flyers",
+          "start": 34,
+          "end": 53,
+          "clause": "What is the number in January for Philadelphia Flyers as opponents?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The phrase 'as opponents' identifies the Opponent field, and the row evidence contains 'Philadelphia Flyers' under that header.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          2,
+          0,
+          "Philadelphia Flyers"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7140
+}

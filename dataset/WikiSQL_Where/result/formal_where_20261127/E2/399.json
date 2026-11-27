@@ -1,0 +1,590 @@
+{
+  "arm": "E2",
+  "position": 399,
+  "example_id": "test:9005:2-171361-2",
+  "original_index": 9005,
+  "table_id": "2-171361-2",
+  "question": "What's the population of durham parish?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        0,
+        0,
+        "durham"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "Durham"
+    ],
+    [
+      1,
+      0,
+      "Parish"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "Durham"
+      ],
+      [
+        1,
+        0,
+        "Parish"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "durham",
+        "value": "Durham",
+        "start": 25,
+        "end": 31,
+        "clause": "What's the population of durham parish?",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "Durham is the parish's official name, matching Official Name.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "parish",
+        "value": "Parish",
+        "start": 32,
+        "end": 38,
+        "clause": "What's the population of durham parish?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "Parish denotes the entity status, matching Status.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "durham",
+        "value": "Durham",
+        "start": 25,
+        "end": 31
+      },
+      {
+        "surface": "parish",
+        "value": "Parish",
+        "start": 32,
+        "end": 38
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What's the population of durham parish?",
+      "table": {
+        "header": [
+          "Official Name",
+          "Status",
+          "Area km 2",
+          "Population",
+          "Census Ranking"
+        ],
+        "page_title": "Restigouche County, New Brunswick",
+        "types": [
+          "text",
+          "text",
+          "real",
+          "real",
+          "text"
+        ],
+        "page_id": 171361,
+        "id": "2-171361-2",
+        "section_title": "Parishes",
+        "rows": [
+          [
+            "Addington",
+            "Parish",
+            "1024.99",
+            "2,727",
+            "1,064 of 5,008"
+          ],
+          [
+            "Dalhousie",
+            "Parish",
+            "121.73",
+            "2,323",
+            "1,205 of 5,008"
+          ],
+          [
+            "Saint-Quentin",
+            "Parish",
+            "2,478.88",
+            "1,578",
+            "1,549 of 5,008"
+          ],
+          [
+            "Durham",
+            "Parish",
+            "410.28",
+            "1,303",
+            "1,736 of 5,008"
+          ],
+          [
+            "Eldon",
+            "Parish",
+            "1,681.51",
+            "779",
+            "2,406 of 5,008"
+          ],
+          [
+            "Balmoral",
+            "Parish",
+            "1,098.18",
+            "619",
+            "2,726 of 5,008"
+          ],
+          [
+            "Colborne",
+            "Parish",
+            "754.15",
+            "234",
+            "3,895 of 5,008"
+          ]
+        ],
+        "caption": "Parishes",
+        "headers": [
+          "Official Name",
+          "Status",
+          "Area km 2",
+          "Population",
+          "Census Ranking"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-171361-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "durham",
+              "value": "Durham",
+              "start": 25,
+              "end": 31
+            },
+            {
+              "surface": "parish",
+              "value": "Parish",
+              "start": 32,
+              "end": 38
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0f94d3fd8e2584c833e88ac6084fc1e6262c60ec8479d9934b0d6ac41f2e8426",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4844,
+              "completion_tokens": 29,
+              "total_tokens": 4873,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "durham",
+              "value": "Durham",
+              "start": 25,
+              "end": 31,
+              "clause": "What's the population of durham parish?"
+            },
+            {
+              "surface": "parish",
+              "value": "Parish",
+              "start": 32,
+              "end": 38,
+              "clause": "What's the population of durham parish?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "durham",
+              "value": "Durham",
+              "start": 25,
+              "end": 31,
+              "clause": "What's the population of durham parish?"
+            },
+            {
+              "surface": "parish",
+              "value": "Parish",
+              "start": 32,
+              "end": 38,
+              "clause": "What's the population of durham parish?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "durham",
+              "value": "Durham",
+              "start": 25,
+              "end": 31,
+              "clause": "What's the population of durham parish?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Durham is the parish's official name, matching Official Name."
+            },
+            {
+              "surface": "parish",
+              "value": "Parish",
+              "start": 32,
+              "end": 38,
+              "clause": "What's the population of durham parish?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Parish denotes the entity status, matching Status."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "3496f384786be741c2b09956ce54d7643d6ae59ee8b744db9621ac10e80b40f8",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4905,
+              "completion_tokens": 48,
+              "total_tokens": 4953,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "durham",
+              "value": "Durham",
+              "start": 25,
+              "end": 31,
+              "clause": "What's the population of durham parish?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Durham is the parish's official name, matching Official Name.",
+              "operator": "="
+            },
+            {
+              "surface": "parish",
+              "value": "Parish",
+              "start": 32,
+              "end": 38,
+              "clause": "What's the population of durham parish?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Parish denotes the entity status, matching Status.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c27b2d063988f6856625f9b93135c4d87dfaef63878738d2c381476530501873",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4988,
+              "completion_tokens": 11,
+              "total_tokens": 4999,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "durham",
+              "value": "Durham",
+              "start": 25,
+              "end": 31,
+              "clause": "What's the population of durham parish?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Durham is the parish's official name, matching Official Name.",
+              "operator": "="
+            },
+            {
+              "surface": "parish",
+              "value": "Parish",
+              "start": 32,
+              "end": 38,
+              "clause": "What's the population of durham parish?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Parish denotes the entity status, matching Status.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "30ba1fae7a7d1b39f43681cbbfc66633790c9bfbd1013c43805097e2f84a4906",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4942,
+              "completion_tokens": 14,
+              "total_tokens": 4956,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "durham",
+              "value": "Durham",
+              "start": 25,
+              "end": 31,
+              "clause": "What's the population of durham parish?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Durham is the parish's official name, matching Official Name.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "parish",
+              "value": "Parish",
+              "start": 32,
+              "end": 38,
+              "clause": "What's the population of durham parish?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Parish denotes the entity status, matching Status.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "durham",
+              "value": "Durham",
+              "start": 25,
+              "end": 31,
+              "clause": "What's the population of durham parish?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Durham is the parish's official name, matching Official Name.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "parish",
+              "value": "Parish",
+              "start": 32,
+              "end": 38,
+              "clause": "What's the population of durham parish?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Parish denotes the entity status, matching Status.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "durham",
+              "value": "Durham",
+              "start": 25,
+              "end": 31,
+              "clause": "What's the population of durham parish?",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "Durham is the parish's official name, matching Official Name.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "parish",
+              "value": "Parish",
+              "start": 32,
+              "end": 38,
+              "clause": "What's the population of durham parish?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Parish denotes the entity status, matching Status.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              "Durham"
+            ],
+            [
+              1,
+              0,
+              "Parish"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "durham",
+          "value": "Durham",
+          "start": 25,
+          "end": 31
+        },
+        {
+          "surface": "parish",
+          "value": "Parish",
+          "start": 32,
+          "end": 38
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "durham",
+          "value": "Durham",
+          "start": 25,
+          "end": 31,
+          "clause": "What's the population of durham parish?",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "Durham is the parish's official name, matching Official Name.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "parish",
+          "value": "Parish",
+          "start": 32,
+          "end": 38,
+          "clause": "What's the population of durham parish?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "Parish denotes the entity status, matching Status.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          0,
+          0,
+          "Durham"
+        ],
+        [
+          1,
+          0,
+          "Parish"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7640
+}

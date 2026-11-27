@@ -1,0 +1,433 @@
+{
+  "arm": "E2",
+  "position": 36,
+  "example_id": "test:3104:1-24625467-1",
+  "original_index": 3104,
+  "table_id": "1-24625467-1",
+  "question": "Who directed \"hey now hey now perry'S girlfriend's back\"?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        1,
+        0,
+        "\"Hey Now Hey Now Perry's Girlfriend's Back\""
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "\"Hey Now Hey Now Perry's Girlfriend's Back\""
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "\"Hey Now Hey Now Perry's Girlfriend's Back\""
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "hey now hey now perry'S girlfriend's back",
+        "value": "\"Hey Now Hey Now Perry's Girlfriend's Back\"",
+        "start": 14,
+        "end": 55,
+        "clause": "Who directed \"hey now hey now perry'S girlfriend's back\"?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The quoted phrase names the episode, matching the Title header and the Title cell in row 6.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "NORMALIZED_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "hey now hey now perry'S girlfriend's back",
+        "value": "Hey Now Hey Now Perry's Girlfriend's Back",
+        "start": 14,
+        "end": 55
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Who directed \"hey now hey now perry'S girlfriend's back\"?",
+      "table": {
+        "id": "1-24625467-1",
+        "header": [
+          "No.",
+          "Title",
+          "Directed by",
+          "Written by",
+          "Original air date",
+          "Production code",
+          "U.S. viewers (million)"
+        ],
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "rows": [
+          [
+            1,
+            "\"Don't Be Yourself\"",
+            "James Burrows",
+            "Ricky Blitt",
+            "April19,2010",
+            "2J5351",
+            "10.67"
+          ],
+          [
+            2,
+            "\"The Charade\"",
+            "James Burrows",
+            "Ricky Blitt",
+            "April26,2010",
+            "2J5353",
+            "9.06"
+          ],
+          [
+            3,
+            "\"Perry and Rebecca's High School Reunion\"",
+            "James Burrows",
+            "Ted Cohen & Andrew Reich",
+            "May3,2010",
+            "2J5355",
+            "9.64"
+          ],
+          [
+            4,
+            "\"Rebecca's One Night Stand\"",
+            "James Burrows",
+            "Ted Cohen & Andrew Reich",
+            "May17,2010",
+            "2J5354",
+            "N/A"
+          ],
+          [
+            5,
+            "\"Perry Dates His Assistant\"",
+            "James Burrows",
+            "Ted Cohen & Andrew Reich",
+            "Unaired",
+            "2J5352",
+            "N/A"
+          ],
+          [
+            6,
+            "\"Hey Now Hey Now Perry's Girlfriend's Back\"",
+            "N/A",
+            "N/A",
+            "Unaired",
+            "2J5356",
+            "N/A"
+          ]
+        ],
+        "name": "table_24625467_1",
+        "headers": [
+          "No.",
+          "Title",
+          "Directed by",
+          "Written by",
+          "Original air date",
+          "Production code",
+          "U.S. viewers (million)"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-24625467-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "hey now hey now perry'S girlfriend's back",
+              "value": "Hey Now Hey Now Perry's Girlfriend's Back",
+              "start": 14,
+              "end": 55
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ee8f1c95de4b6ae450bf6abd2b40c9c70c3cecedc089237b832f86dfb1d8c19b",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4887,
+              "completion_tokens": 35,
+              "total_tokens": 4922,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "hey now hey now perry'S girlfriend's back",
+              "value": "Hey Now Hey Now Perry's Girlfriend's Back",
+              "start": 14,
+              "end": 55,
+              "clause": "Who directed \"hey now hey now perry'S girlfriend's back\"?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "hey now hey now perry'S girlfriend's back",
+              "value": "Hey Now Hey Now Perry's Girlfriend's Back",
+              "start": 14,
+              "end": 55,
+              "clause": "Who directed \"hey now hey now perry'S girlfriend's back\"?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "hey now hey now perry'S girlfriend's back",
+              "value": "Hey Now Hey Now Perry's Girlfriend's Back",
+              "start": 14,
+              "end": 55,
+              "clause": "Who directed \"hey now hey now perry'S girlfriend's back\"?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The quoted phrase names the episode, matching the Title header and the Title cell in row 6."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "bbc1b8071de9a8915fef02100066e7040978d2f49734c9833692c7e8f1e2446a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4941,
+              "completion_tokens": 41,
+              "total_tokens": 4982,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "hey now hey now perry'S girlfriend's back",
+              "value": "Hey Now Hey Now Perry's Girlfriend's Back",
+              "start": 14,
+              "end": 55,
+              "clause": "Who directed \"hey now hey now perry'S girlfriend's back\"?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The quoted phrase names the episode, matching the Title header and the Title cell in row 6.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "fa2e531ea87a537d4a950dcdf60eeefd51ebe1820a012349ea89a0f92b993151",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5006,
+              "completion_tokens": 9,
+              "total_tokens": 5015,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "hey now hey now perry'S girlfriend's back",
+              "value": "Hey Now Hey Now Perry's Girlfriend's Back",
+              "start": 14,
+              "end": 55,
+              "clause": "Who directed \"hey now hey now perry'S girlfriend's back\"?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The quoted phrase names the episode, matching the Title header and the Title cell in row 6.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "27b3a4cbae7981eccee2f1653a6008e400c3bd7321f7130744313a72fcfbab56",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4957,
+              "completion_tokens": 19,
+              "total_tokens": 4976,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "hey now hey now perry'S girlfriend's back",
+              "value": "\"Hey Now Hey Now Perry's Girlfriend's Back\"",
+              "start": 14,
+              "end": 55,
+              "clause": "Who directed \"hey now hey now perry'S girlfriend's back\"?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The quoted phrase names the episode, matching the Title header and the Title cell in row 6.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "NORMALIZED_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "hey now hey now perry'S girlfriend's back",
+              "value": "\"Hey Now Hey Now Perry's Girlfriend's Back\"",
+              "start": 14,
+              "end": 55,
+              "clause": "Who directed \"hey now hey now perry'S girlfriend's back\"?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The quoted phrase names the episode, matching the Title header and the Title cell in row 6.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "NORMALIZED_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "hey now hey now perry'S girlfriend's back",
+              "value": "\"Hey Now Hey Now Perry's Girlfriend's Back\"",
+              "start": 14,
+              "end": 55,
+              "clause": "Who directed \"hey now hey now perry'S girlfriend's back\"?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The quoted phrase names the episode, matching the Title header and the Title cell in row 6.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "NORMALIZED_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              "\"Hey Now Hey Now Perry's Girlfriend's Back\""
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "hey now hey now perry'S girlfriend's back",
+          "value": "Hey Now Hey Now Perry's Girlfriend's Back",
+          "start": 14,
+          "end": 55
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "hey now hey now perry'S girlfriend's back",
+          "value": "\"Hey Now Hey Now Perry's Girlfriend's Back\"",
+          "start": 14,
+          "end": 55,
+          "clause": "Who directed \"hey now hey now perry'S girlfriend's back\"?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The quoted phrase names the episode, matching the Title header and the Title cell in row 6.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "NORMALIZED_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          1,
+          0,
+          "\"Hey Now Hey Now Perry's Girlfriend's Back\""
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8718
+}

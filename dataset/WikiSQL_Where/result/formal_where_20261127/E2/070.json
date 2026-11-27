@@ -1,0 +1,436 @@
+{
+  "arm": "E2",
+  "position": 70,
+  "example_id": "test:4612:2-10701914-11",
+  "original_index": 4612,
+  "table_id": "2-10701914-11",
+  "question": "How many attended the game with north melbourne as the away side?",
+  "gold_sql": {
+    "sel": 5,
+    "conds": [
+      [
+        2,
+        0,
+        "North Melbourne"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "North Melbourne"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "North Melbourne"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "north melbourne",
+        "value": "North Melbourne",
+        "start": 32,
+        "end": 47,
+        "clause": "How many attended the game with north melbourne as the away side?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "The question explicitly identifies North Melbourne as the away side, matching the Away team header and row value.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "north melbourne",
+        "value": "North Melbourne",
+        "start": 32,
+        "end": 47
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "How many attended the game with north melbourne as the away side?",
+      "table": {
+        "header": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ],
+        "page_title": "1951 VFL season",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 10701914,
+        "id": "2-10701914-11",
+        "section_title": "Round 11",
+        "rows": [
+          [
+            "Hawthorn",
+            "18.12 (120)",
+            "Melbourne",
+            "13.8 (86)",
+            "Glenferrie Oval",
+            "10,000",
+            "14 July 1951"
+          ],
+          [
+            "Geelong",
+            "12.23 (95)",
+            "St Kilda",
+            "10.7 (67)",
+            "Kardinia Park",
+            "13,500",
+            "14 July 1951"
+          ],
+          [
+            "Collingwood",
+            "15.13 (103)",
+            "Fitzroy",
+            "21.9 (135)",
+            "Victoria Park",
+            "22,000",
+            "14 July 1951"
+          ],
+          [
+            "Richmond",
+            "11.13 (79)",
+            "North Melbourne",
+            "11.16 (82)",
+            "Punt Road Oval",
+            "15,000",
+            "14 July 1951"
+          ],
+          [
+            "Footscray",
+            "7.14 (56)",
+            "Essendon",
+            "9.10 (64)",
+            "Western Oval",
+            "27,000",
+            "14 July 1951"
+          ],
+          [
+            "South Melbourne",
+            "7.9 (51)",
+            "Carlton",
+            "7.14 (56)",
+            "Lake Oval",
+            "25,000",
+            "14 July 1951"
+          ]
+        ],
+        "caption": "Round 11",
+        "headers": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-10701914-11",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "north melbourne",
+              "value": "North Melbourne",
+              "start": 32,
+              "end": 47
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "d4a363d6c09b0b3ac64dc82d08e2dc536411fe6024dcb467de4ac3bb2f0306ef",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4909,
+              "completion_tokens": 20,
+              "total_tokens": 4929,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "north melbourne",
+              "value": "North Melbourne",
+              "start": 32,
+              "end": 47,
+              "clause": "How many attended the game with north melbourne as the away side?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "north melbourne",
+              "value": "North Melbourne",
+              "start": 32,
+              "end": 47,
+              "clause": "How many attended the game with north melbourne as the away side?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "north melbourne",
+              "value": "North Melbourne",
+              "start": 32,
+              "end": 47,
+              "clause": "How many attended the game with north melbourne as the away side?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies North Melbourne as the away side, matching the Away team header and row value."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "3f273d447925e2654d94ef8adc8f60fab6d3c18df53fef4fc8a888b78a933d45",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4947,
+              "completion_tokens": 41,
+              "total_tokens": 4988,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "north melbourne",
+              "value": "North Melbourne",
+              "start": 32,
+              "end": 47,
+              "clause": "How many attended the game with north melbourne as the away side?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies North Melbourne as the away side, matching the Away team header and row value.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "7053a140de51e58f30885ca4d768e74547c4d3f139c9e975374d2bb765df80d6",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5012,
+              "completion_tokens": 9,
+              "total_tokens": 5021,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "north melbourne",
+              "value": "North Melbourne",
+              "start": 32,
+              "end": 47,
+              "clause": "How many attended the game with north melbourne as the away side?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies North Melbourne as the away side, matching the Away team header and row value.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a1fc40f064d02645012b861448316f3be2654f73cfe98da9dd612b560d2b4c20",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4963,
+              "completion_tokens": 11,
+              "total_tokens": 4974,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "north melbourne",
+              "value": "North Melbourne",
+              "start": 32,
+              "end": 47,
+              "clause": "How many attended the game with north melbourne as the away side?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies North Melbourne as the away side, matching the Away team header and row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "north melbourne",
+              "value": "North Melbourne",
+              "start": 32,
+              "end": 47,
+              "clause": "How many attended the game with north melbourne as the away side?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies North Melbourne as the away side, matching the Away team header and row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "north melbourne",
+              "value": "North Melbourne",
+              "start": 32,
+              "end": 47,
+              "clause": "How many attended the game with north melbourne as the away side?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "The question explicitly identifies North Melbourne as the away side, matching the Away team header and row value.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "North Melbourne"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "north melbourne",
+          "value": "North Melbourne",
+          "start": 32,
+          "end": 47
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "north melbourne",
+          "value": "North Melbourne",
+          "start": 32,
+          "end": 47,
+          "clause": "How many attended the game with north melbourne as the away side?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "The question explicitly identifies North Melbourne as the away side, matching the Away team header and row value.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          2,
+          0,
+          "North Melbourne"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7141
+}

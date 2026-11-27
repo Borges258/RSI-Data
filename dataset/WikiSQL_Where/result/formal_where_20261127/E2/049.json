@@ -1,0 +1,610 @@
+{
+  "arm": "E2",
+  "position": 49,
+  "example_id": "test:3563:1-26397277-3",
+  "original_index": 3563,
+  "table_id": "1-26397277-3",
+  "question": "Name the employee real name for raw and superstar",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        4,
+        0,
+        "Raw"
+      ],
+      [
+        3,
+        0,
+        "Superstar"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "Raw"
+    ],
+    [
+      3,
+      0,
+      "Superstar"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "Raw"
+      ],
+      [
+        3,
+        0,
+        "Superstar"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "raw",
+        "value": "Raw",
+        "start": 32,
+        "end": 35,
+        "clause": "Name the employee real name for raw",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1,
+          4
+        ],
+        "columnMatchReason": "Raw denotes a brand; Brand (to) is the likely current assignment, though Brand (from) also contains Raw.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "superstar",
+        "value": "Superstar",
+        "start": 40,
+        "end": 49,
+        "clause": "and superstar",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "Superstar is explicitly a value of Role(s).",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "raw",
+        "value": "Raw",
+        "start": 32,
+        "end": 35
+      },
+      {
+        "surface": "superstar",
+        "value": "Superstar",
+        "start": 40,
+        "end": 49
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Name the employee real name for raw and superstar",
+      "table": {
+        "id": "1-26397277-3",
+        "header": [
+          "Pick #",
+          "Brand (to)",
+          "Employee (Real name)",
+          "Role(s)",
+          "Brand (from)"
+        ],
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "rows": [
+          [
+            10,
+            "SmackDown",
+            "Chavo Guerrero (Salvador Guerrero IV)",
+            "Superstar",
+            "Raw"
+          ],
+          [
+            11,
+            "SmackDown",
+            "Cody Rhodes (Cody Runnels)",
+            "Superstar",
+            "Raw"
+          ],
+          [
+            12,
+            "Raw",
+            "Natalya (Natalie Neidhart)",
+            "Diva",
+            "SmackDown"
+          ],
+          [
+            13,
+            "SmackDown",
+            "Chris Masters (Christopher Mordetzky)",
+            "Superstar",
+            "Raw"
+          ],
+          [
+            14,
+            "Raw",
+            "Ezekiel Jackson (Rycklon Stephens)",
+            "Superstar",
+            "SmackDown"
+          ],
+          [
+            15,
+            "Raw",
+            "Goldust (Dustin Runnels)",
+            "Superstar",
+            "SmackDown"
+          ],
+          [
+            16,
+            "SmackDown",
+            "Hornswoggle (Dylan Postl)",
+            "Superstar",
+            "Raw"
+          ],
+          [
+            17,
+            "SmackDown",
+            "Rosa Mendes (Milena Roucka)",
+            "Diva",
+            "Raw"
+          ]
+        ],
+        "name": "table_26397277_3",
+        "headers": [
+          "Pick #",
+          "Brand (to)",
+          "Employee (Real name)",
+          "Role(s)",
+          "Brand (from)"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-26397277-3",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "raw",
+              "value": "Raw",
+              "start": 32,
+              "end": 35
+            },
+            {
+              "surface": "superstar",
+              "value": "Superstar",
+              "start": 40,
+              "end": 49
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "454fdb049548b21c9b85c0161d2145b8255f2ee9ebb962db22b0f8cb9bfc06f2",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4844,
+              "completion_tokens": 27,
+              "total_tokens": 4871,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "raw",
+              "value": "Raw",
+              "start": 32,
+              "end": 35,
+              "clause": "Name the employee real name for raw"
+            },
+            {
+              "surface": "superstar",
+              "value": "Superstar",
+              "start": 40,
+              "end": 49,
+              "clause": "and superstar"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "raw",
+              "value": "Raw",
+              "start": 32,
+              "end": 35,
+              "clause": "Name the employee real name for raw"
+            },
+            {
+              "surface": "superstar",
+              "value": "Superstar",
+              "start": 40,
+              "end": 49,
+              "clause": "and superstar"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "raw",
+              "value": "Raw",
+              "start": 32,
+              "end": 35,
+              "clause": "Name the employee real name for raw",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1,
+                4
+              ],
+              "columnMatchReason": "Raw denotes a brand; Brand (to) is the likely current assignment, though Brand (from) also contains Raw."
+            },
+            {
+              "surface": "superstar",
+              "value": "Superstar",
+              "start": 40,
+              "end": 49,
+              "clause": "and superstar",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Superstar is explicitly a value of Role(s)."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c64496b390f46c165f05f59a9bdaf63dd36e6d35153ededa1b477aa42e22224c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4896,
+              "completion_tokens": 297,
+              "total_tokens": 5193,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 234
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "raw",
+              "value": "Raw",
+              "start": 32,
+              "end": 35,
+              "clause": "Name the employee real name for raw",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1,
+                4
+              ],
+              "columnMatchReason": "Raw denotes a brand; Brand (to) is the likely current assignment, though Brand (from) also contains Raw.",
+              "operator": "="
+            },
+            {
+              "surface": "superstar",
+              "value": "Superstar",
+              "start": 40,
+              "end": 49,
+              "clause": "and superstar",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Superstar is explicitly a value of Role(s).",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "19def6cd1295412d936286a96e5920d9b2f4b01810a1c105862852a74794ac57",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4992,
+              "completion_tokens": 11,
+              "total_tokens": 5003,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "raw",
+              "value": "Raw",
+              "start": 32,
+              "end": 35,
+              "clause": "Name the employee real name for raw",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1,
+                4
+              ],
+              "columnMatchReason": "Raw denotes a brand; Brand (to) is the likely current assignment, though Brand (from) also contains Raw.",
+              "operator": "="
+            },
+            {
+              "surface": "superstar",
+              "value": "Superstar",
+              "start": 40,
+              "end": 49,
+              "clause": "and superstar",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Superstar is explicitly a value of Role(s).",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "615a8f74abd631bf78a1ccdd364316f4fc9f1098cdbc2da139022fbc925c2f82",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4947,
+              "completion_tokens": 13,
+              "total_tokens": 4960,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "raw",
+              "value": "Raw",
+              "start": 32,
+              "end": 35,
+              "clause": "Name the employee real name for raw",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1,
+                4
+              ],
+              "columnMatchReason": "Raw denotes a brand; Brand (to) is the likely current assignment, though Brand (from) also contains Raw.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "superstar",
+              "value": "Superstar",
+              "start": 40,
+              "end": 49,
+              "clause": "and superstar",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Superstar is explicitly a value of Role(s).",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "raw",
+              "value": "Raw",
+              "start": 32,
+              "end": 35,
+              "clause": "Name the employee real name for raw",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1,
+                4
+              ],
+              "columnMatchReason": "Raw denotes a brand; Brand (to) is the likely current assignment, though Brand (from) also contains Raw.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "superstar",
+              "value": "Superstar",
+              "start": 40,
+              "end": 49,
+              "clause": "and superstar",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Superstar is explicitly a value of Role(s).",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "raw",
+              "value": "Raw",
+              "start": 32,
+              "end": 35,
+              "clause": "Name the employee real name for raw",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1,
+                4
+              ],
+              "columnMatchReason": "Raw denotes a brand; Brand (to) is the likely current assignment, though Brand (from) also contains Raw.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "superstar",
+              "value": "Superstar",
+              "start": 40,
+              "end": 49,
+              "clause": "and superstar",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Superstar is explicitly a value of Role(s).",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              "Raw"
+            ],
+            [
+              3,
+              0,
+              "Superstar"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "raw",
+          "value": "Raw",
+          "start": 32,
+          "end": 35
+        },
+        {
+          "surface": "superstar",
+          "value": "Superstar",
+          "start": 40,
+          "end": 49
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "raw",
+          "value": "Raw",
+          "start": 32,
+          "end": 35,
+          "clause": "Name the employee real name for raw",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1,
+            4
+          ],
+          "columnMatchReason": "Raw denotes a brand; Brand (to) is the likely current assignment, though Brand (from) also contains Raw.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "superstar",
+          "value": "Superstar",
+          "start": 40,
+          "end": 49,
+          "clause": "and superstar",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "Superstar is explicitly a value of Role(s).",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          1,
+          0,
+          "Raw"
+        ],
+        [
+          3,
+          0,
+          "Superstar"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 11844
+}

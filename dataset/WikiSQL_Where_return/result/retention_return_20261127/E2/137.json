@@ -1,0 +1,436 @@
+{
+  "arm": "E2",
+  "position": 137,
+  "example_id": "test:4853:2-10773616-3",
+  "original_index": 4853,
+  "table_id": "2-10773616-3",
+  "question": "When Richmond was the home team, what was the home team score?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        0,
+        0,
+        "richmond"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      0,
+      0,
+      "Richmond"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        0,
+        0,
+        "Richmond"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Richmond",
+        "value": "Richmond",
+        "start": 5,
+        "end": 13,
+        "clause": "When Richmond was the home team",
+        "columnIndex": 0,
+        "columnCandidates": [
+          0
+        ],
+        "columnMatchReason": "The clause explicitly identifies Richmond as the home team, matching the 'Home team' field; Richmond appears in that column.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Richmond",
+        "value": "Richmond",
+        "start": 5,
+        "end": 13
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "When Richmond was the home team, what was the home team score?",
+      "table": {
+        "header": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ],
+        "page_title": "1954 VFL season",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "page_id": 10773616,
+        "id": "2-10773616-3",
+        "section_title": "Round 3",
+        "rows": [
+          [
+            "Hawthorn",
+            "11.9 (75)",
+            "Melbourne",
+            "9.10 (64)",
+            "Glenferrie Oval",
+            "17,000",
+            "1 May 1954"
+          ],
+          [
+            "Footscray",
+            "17.14 (116)",
+            "South Melbourne",
+            "3.11 (29)",
+            "Western Oval",
+            "24,500",
+            "1 May 1954"
+          ],
+          [
+            "Fitzroy",
+            "9.10 (64)",
+            "North Melbourne",
+            "13.16 (94)",
+            "Brunswick Street Oval",
+            "16,000",
+            "1 May 1954"
+          ],
+          [
+            "Essendon",
+            "15.10 (100)",
+            "Geelong",
+            "16.20 (116)",
+            "Windy Hill",
+            "27,500",
+            "1 May 1954"
+          ],
+          [
+            "St Kilda",
+            "10.10 (70)",
+            "Collingwood",
+            "10.16 (76)",
+            "Junction Oval",
+            "22,500",
+            "1 May 1954"
+          ],
+          [
+            "Richmond",
+            "14.20 (104)",
+            "Carlton",
+            "12.8 (80)",
+            "Punt Road Oval",
+            "25,000",
+            "1 May 1954"
+          ]
+        ],
+        "caption": "Round 3",
+        "headers": [
+          "Home team",
+          "Home team score",
+          "Away team",
+          "Away team score",
+          "Venue",
+          "Crowd",
+          "Date"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-10773616-3",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Richmond",
+              "value": "Richmond",
+              "start": 5,
+              "end": 13
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c9eaa38071cb3223d6b406495870d1e746369fac793b5c4a3e7ca938065f2ad4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4911,
+              "completion_tokens": 19,
+              "total_tokens": 4930,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Richmond",
+              "value": "Richmond",
+              "start": 5,
+              "end": 13,
+              "clause": "When Richmond was the home team"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Richmond",
+              "value": "Richmond",
+              "start": 5,
+              "end": 13,
+              "clause": "When Richmond was the home team"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Richmond",
+              "value": "Richmond",
+              "start": 5,
+              "end": 13,
+              "clause": "When Richmond was the home team",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The clause explicitly identifies Richmond as the home team, matching the 'Home team' field; Richmond appears in that column."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "85135990b7b0792ad5a0da3188ef4ded95dca32b1a153e799a884b3cd80ee173",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4940,
+              "completion_tokens": 45,
+              "total_tokens": 4985,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Richmond",
+              "value": "Richmond",
+              "start": 5,
+              "end": 13,
+              "clause": "When Richmond was the home team",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The clause explicitly identifies Richmond as the home team, matching the 'Home team' field; Richmond appears in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f038a7e96d761ad75750f093c6cd394834fb50589ade9f3611f30e1254dab201",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5009,
+              "completion_tokens": 9,
+              "total_tokens": 5018,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Richmond",
+              "value": "Richmond",
+              "start": 5,
+              "end": 13,
+              "clause": "When Richmond was the home team",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The clause explicitly identifies Richmond as the home team, matching the 'Home team' field; Richmond appears in that column.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a6034c3124074dbbfaba785c4261fdb2de193f097fd88d2a5ae56404de025f64",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4960,
+              "completion_tokens": 11,
+              "total_tokens": 4971,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Richmond",
+              "value": "Richmond",
+              "start": 5,
+              "end": 13,
+              "clause": "When Richmond was the home team",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The clause explicitly identifies Richmond as the home team, matching the 'Home team' field; Richmond appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Richmond",
+              "value": "Richmond",
+              "start": 5,
+              "end": 13,
+              "clause": "When Richmond was the home team",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The clause explicitly identifies Richmond as the home team, matching the 'Home team' field; Richmond appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Richmond",
+              "value": "Richmond",
+              "start": 5,
+              "end": 13,
+              "clause": "When Richmond was the home team",
+              "columnIndex": 0,
+              "columnCandidates": [
+                0
+              ],
+              "columnMatchReason": "The clause explicitly identifies Richmond as the home team, matching the 'Home team' field; Richmond appears in that column.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              0,
+              0,
+              "Richmond"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Richmond",
+          "value": "Richmond",
+          "start": 5,
+          "end": 13
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Richmond",
+          "value": "Richmond",
+          "start": 5,
+          "end": 13,
+          "clause": "When Richmond was the home team",
+          "columnIndex": 0,
+          "columnCandidates": [
+            0
+          ],
+          "columnMatchReason": "The clause explicitly identifies Richmond as the home team, matching the 'Home team' field; Richmond appears in that column.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          0,
+          0,
+          "Richmond"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 9546
+}

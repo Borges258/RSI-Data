@@ -1,0 +1,110 @@
+{
+  "arm": "E1",
+  "position": 148,
+  "example_id": "test:11546:2-10806592-2",
+  "original_index": 11546,
+  "table_id": "2-10806592-2",
+  "question": "In the game where the crowd was 11,327 and the hoem team scored 13.17 (95) How much did the away team score?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        5,
+        1,
+        "11,327"
+      ],
+      [
+        1,
+        0,
+        "13.17 (95)"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      5,
+      0,
+      11327
+    ],
+    [
+      1,
+      0,
+      "13.17 (95)"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": "gpt-5.6-sol",
+  "usage": {
+    "prompt_tokens": 10208,
+    "completion_tokens": 59,
+    "total_tokens": 10267,
+    "prompt_tokens_details": {
+      "cached_tokens": 4224
+    }
+  },
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        5,
+        0,
+        11327
+      ],
+      [
+        1,
+        0,
+        "13.17 (95)"
+      ]
+    ],
+    "explanation": "Filters by the stated crowd and exact home team score; the requested away score is the output, not a condition.",
+    "version": "wikisql-where-prior-v1",
+    "tableId": "2-10806592-2",
+    "knowledgeIds": [
+      "g-eq",
+      "g-gt",
+      "g-lt",
+      "g-inclusive",
+      "g-literal",
+      "g-threshold",
+      "g-and",
+      "g-or",
+      "g-column",
+      "g-count",
+      "g-ambiguous",
+      "t-2-10806592-2-field-0",
+      "t-2-10806592-2-field-1",
+      "t-2-10806592-2-field-2",
+      "t-2-10806592-2-field-3",
+      "t-2-10806592-2-field-4",
+      "t-2-10806592-2-field-5",
+      "t-2-10806592-2-field-6",
+      "d-implicit-eq",
+      "d-explicit-eq",
+      "d-gt",
+      "d-lt-and-gt",
+      "d-with-two",
+      "d-literal-form",
+      "p-text",
+      "p-number",
+      "p-multi",
+      "p-unsupported"
+    ],
+    "promptSha256": "43444a0f26a685b0c706a48a7718e4e8631f6a984408e15aa99d9d7729933553",
+    "model": "gpt-5.6-sol",
+    "usage": {
+      "prompt_tokens": 10208,
+      "completion_tokens": 59,
+      "total_tokens": 10267,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      }
+    },
+    "latencyMs": 2504
+  },
+  "source": "where_prior_parse",
+  "safe_completed": true,
+  "elapsed_ms": 2500
+}

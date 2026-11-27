@@ -1,0 +1,446 @@
+{
+  "arm": "E2",
+  "position": 199,
+  "example_id": "test:1228:1-15353123-1",
+  "original_index": 1228,
+  "table_id": "1-15353123-1",
+  "question": "Who was the highest picked defensive end",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        3,
+        0,
+        "Defensive end"
+      ]
+    ],
+    "agg": 1
+  },
+  "prediction_conds": [
+    [
+      3,
+      0,
+      "Defensive end"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        0,
+        "Defensive end"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "defensive end",
+        "value": "Defensive end",
+        "start": 27,
+        "end": 40,
+        "clause": "Who was the highest picked defensive end",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The condition names a player position, matching the Position header and the row value \"Defensive end\".",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "defensive end",
+        "value": "Defensive end",
+        "start": 27,
+        "end": 40
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Who was the highest picked defensive end",
+      "table": {
+        "header": [
+          "Round #",
+          "Pick #",
+          "Player",
+          "Position",
+          "College"
+        ],
+        "page_title": "1991 Buffalo Bills season",
+        "types": [
+          "real",
+          "real",
+          "text",
+          "text",
+          "text"
+        ],
+        "id": "1-15353123-1",
+        "section_title": "NFL Draft",
+        "caption": "NFL Draft",
+        "rows": [
+          [
+            1,
+            26,
+            "Henry Jones",
+            "Defensive Back",
+            "Illinois"
+          ],
+          [
+            2,
+            54,
+            "Phil Hansen",
+            "Defensive end",
+            "North Dakota State"
+          ],
+          [
+            3,
+            82,
+            "Darryl Wren",
+            "Defensive back",
+            "Pittsburg State"
+          ],
+          [
+            4,
+            138,
+            "Shawn Wilbourn",
+            "Defensive Back",
+            "Long Beach State"
+          ],
+          [
+            5,
+            166,
+            "Millard Hamilton",
+            "Wide receiver",
+            "Clark University"
+          ],
+          [
+            6,
+            194,
+            "Amir Rasul",
+            "Running back",
+            "Florida A&M"
+          ],
+          [
+            8,
+            222,
+            "Brad Lamb",
+            "Wide receiver",
+            "Anderson"
+          ],
+          [
+            9,
+            249,
+            "Mark Maddox",
+            "Linebacker",
+            "Northern Michigan"
+          ],
+          [
+            10,
+            277,
+            "Tony DeLorenzo",
+            "Guard",
+            "New Mexico State"
+          ],
+          [
+            11,
+            305,
+            "Dean Kirkland",
+            "Guard",
+            "Washington"
+          ]
+        ],
+        "name": "table_15353123_1",
+        "headers": [
+          "Round #",
+          "Pick #",
+          "Player",
+          "Position",
+          "College"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-15353123-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "defensive end",
+              "value": "Defensive end",
+              "start": 27,
+              "end": 40
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f1392d80201b4283ffc6610df7b4a876f0cafd6fb71ba909386d89734a9f6a7e",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4824,
+              "completion_tokens": 21,
+              "total_tokens": 4845,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "defensive end",
+              "value": "Defensive end",
+              "start": 27,
+              "end": 40,
+              "clause": "Who was the highest picked defensive end"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "defensive end",
+              "value": "Defensive end",
+              "start": 27,
+              "end": 40,
+              "clause": "Who was the highest picked defensive end"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "defensive end",
+              "value": "Defensive end",
+              "start": 27,
+              "end": 40,
+              "clause": "Who was the highest picked defensive end",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The condition names a player position, matching the Position header and the row value \"Defensive end\"."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "be4e96c71417c06280ae2c68fc8b5a0725c9318ff3d216bbc87cb99ad251f082",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4856,
+              "completion_tokens": 42,
+              "total_tokens": 4898,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "defensive end",
+              "value": "Defensive end",
+              "start": 27,
+              "end": 40,
+              "clause": "Who was the highest picked defensive end",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The condition names a player position, matching the Position header and the row value \"Defensive end\".",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "257b7e324867fcb7848886d740ae0b6f404b4246d8d85eadfc37702a1f701ae6",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4922,
+              "completion_tokens": 9,
+              "total_tokens": 4931,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "defensive end",
+              "value": "Defensive end",
+              "start": 27,
+              "end": 40,
+              "clause": "Who was the highest picked defensive end",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The condition names a player position, matching the Position header and the row value \"Defensive end\".",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "3e7f0048a4e6fa1509d676ca688ac2d2e99a363e4a880383303f724eeec1f6b2",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4873,
+              "completion_tokens": 12,
+              "total_tokens": 4885,
+              "prompt_tokens_details": {
+                "cached_tokens": 4608
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "defensive end",
+              "value": "Defensive end",
+              "start": 27,
+              "end": 40,
+              "clause": "Who was the highest picked defensive end",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The condition names a player position, matching the Position header and the row value \"Defensive end\".",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "defensive end",
+              "value": "Defensive end",
+              "start": 27,
+              "end": 40,
+              "clause": "Who was the highest picked defensive end",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The condition names a player position, matching the Position header and the row value \"Defensive end\".",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "defensive end",
+              "value": "Defensive end",
+              "start": 27,
+              "end": 40,
+              "clause": "Who was the highest picked defensive end",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The condition names a player position, matching the Position header and the row value \"Defensive end\".",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              0,
+              "Defensive end"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "defensive end",
+          "value": "Defensive end",
+          "start": 27,
+          "end": 40
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "defensive end",
+          "value": "Defensive end",
+          "start": 27,
+          "end": 40,
+          "clause": "Who was the highest picked defensive end",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The condition names a player position, matching the Position header and the row value \"Defensive end\".",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          3,
+          0,
+          "Defensive end"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7610
+}

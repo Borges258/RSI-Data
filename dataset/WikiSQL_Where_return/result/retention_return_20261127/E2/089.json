@@ -1,0 +1,759 @@
+{
+  "arm": "E2",
+  "position": 89,
+  "example_id": "test:3159:1-24887326-7",
+  "original_index": 3159,
+  "table_id": "1-24887326-7",
+  "question": "What was the attendance of the game where Stoke city was the away team?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        3,
+        0,
+        "Stoke City"
+      ]
+    ],
+    "agg": 2
+  },
+  "prediction_conds": [
+    [
+      3,
+      0,
+      "Stoke City"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        0,
+        "Stoke City"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Stoke city",
+        "value": "Stoke City",
+        "start": 42,
+        "end": 52,
+        "clause": "What was the attendance of the game where Stoke city was the away team?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The question explicitly identifies Stoke City as the away team, matching the Away team header and row evidence.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "NORMALIZED_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Stoke city",
+        "value": "Stoke city",
+        "start": 42,
+        "end": 52
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What was the attendance of the game where Stoke city was the away team?",
+      "table": {
+        "header": [
+          "Tie no",
+          "Home team",
+          "Score 1",
+          "Away team",
+          "Attendance",
+          "Date"
+        ],
+        "page_title": "1973–74 Football League Cup",
+        "types": [
+          "real",
+          "text",
+          "text",
+          "text",
+          "real",
+          "text"
+        ],
+        "id": "1-24887326-7",
+        "section_title": "Replays",
+        "caption": "Replays",
+        "rows": [
+          [
+            2,
+            "Newcastle United",
+            "0–1",
+            "Birmingham City",
+            19276,
+            "07-11-1973"
+          ],
+          [
+            4,
+            "Middlesbrough",
+            "1–2",
+            "Stoke City",
+            26068,
+            "06-11-1973"
+          ],
+          [
+            6,
+            "Bolton Wanderers",
+            "1–2",
+            "Millwall",
+            13501,
+            "06-11-1973"
+          ],
+          [
+            7,
+            "Ipswich Town",
+            "2–1",
+            "Fulham",
+            21400,
+            "14-11-1973"
+          ],
+          [
+            8,
+            "Wolverhampton Wanderers",
+            "2–1",
+            "Tranmere Rovers",
+            14839,
+            "13-11-1973"
+          ],
+          [
+            9,
+            "York City",
+            "2–1",
+            "Orient",
+            11152,
+            "06-11-1973"
+          ],
+          [
+            11,
+            "Coventry City",
+            "2–1",
+            "Bristol City",
+            13049,
+            "06-11-1973"
+          ]
+        ],
+        "name": "table_24887326_7",
+        "headers": [
+          "Tie no",
+          "Home team",
+          "Score 1",
+          "Away team",
+          "Attendance",
+          "Date"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-24887326-7",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Stoke city",
+              "value": "Stoke city",
+              "start": 42,
+              "end": 52
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b1b9deb73372d5df28bb4c9f6a1bb528f9da08ea0a96959301fb8c7f9d70a595",
+            "knowledgeIds": [],
+            "usage": {
+              "attribution": {
+                "items": {
+                  "msg_08a0fd5779e901cd016b08fc39da0c87d280bdcf1e0d869906": {
+                    "input_tokens": 64,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 64,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_08a0fd5779e901cd016b08fc39da0c87d2950d492c4c10a909": {
+                    "input_tokens": 332,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 332,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_08a0fd5779e901cd016b08fc39da0c87d2bda14fd34223b361": {
+                    "input_tokens": 86,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 86,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_08a0fd5779e901cd016b08fc44452887d28c0175159e1b1838": {
+                    "input_tokens": 0,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 23,
+                    "content": [
+                      {
+                        "input_tokens": 0,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 23
+                      }
+                    ]
+                  },
+                  "rs_08a0fd5779e901cd016b08fc4417ec87d2a8df8b0d7d31b39c": {
+                    "input_tokens": 2,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 56
+                  }
+                },
+                "request_fields": {
+                  "instructions": {
+                    "input_tokens": 4380,
+                    "cached_tokens": 3968,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0
+                  }
+                }
+              },
+              "prompt_tokens": 4864,
+              "completion_tokens": 79,
+              "total_tokens": 4943,
+              "prompt_tokens_details": {
+                "cache_write_tokens_details": {
+                  "ttl_30m_tokens": 0,
+                  "ttl_12h_tokens": 0
+                },
+                "cached_tokens": 3968
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 56
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Stoke city",
+              "value": "Stoke city",
+              "start": 42,
+              "end": 52,
+              "clause": "What was the attendance of the game where Stoke city was the away team?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Stoke city",
+              "value": "Stoke city",
+              "start": 42,
+              "end": 52,
+              "clause": "What was the attendance of the game where Stoke city was the away team?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Stoke city",
+              "value": "Stoke city",
+              "start": 42,
+              "end": 52,
+              "clause": "What was the attendance of the game where Stoke city was the away team?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies Stoke City as the away team, matching the Away team header and row evidence."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c20b4d9064fdb40d6fd5942399b21bffe0b7d1fbcafd12ef49b57814419f1bc0",
+            "knowledgeIds": [],
+            "usage": {
+              "attribution": {
+                "items": {
+                  "msg_0fb3c7bf25e6e05b016b08fc6c3ce087d29ff19e3a13f4d547": {
+                    "input_tokens": 64,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 64,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0fb3c7bf25e6e05b016b08fc6c3ce487d28cb320464b2266df": {
+                    "input_tokens": 126,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 126,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0fb3c7bf25e6e05b016b08fc6c3ce487d2babbf1f078d31eee": {
+                    "input_tokens": 332,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 332,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_0fb3c7bf25e6e05b016b08fc777c3487d2abf4017cfcc8289c": {
+                    "input_tokens": 0,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 43,
+                    "content": [
+                      {
+                        "input_tokens": 0,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 43
+                      }
+                    ]
+                  },
+                  "rs_0fb3c7bf25e6e05b016b08fc774f1487d2be87ef65b9e8e93f": {
+                    "input_tokens": 2,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 25
+                  }
+                },
+                "request_fields": {
+                  "instructions": {
+                    "input_tokens": 4380,
+                    "cached_tokens": 3968,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0
+                  }
+                }
+              },
+              "prompt_tokens": 4904,
+              "completion_tokens": 68,
+              "total_tokens": 4972,
+              "prompt_tokens_details": {
+                "cache_write_tokens_details": {
+                  "ttl_30m_tokens": 0,
+                  "ttl_12h_tokens": 0
+                },
+                "cached_tokens": 3968
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 25
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Stoke city",
+              "value": "Stoke city",
+              "start": 42,
+              "end": 52,
+              "clause": "What was the attendance of the game where Stoke city was the away team?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies Stoke City as the away team, matching the Away team header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "407103def9674550b096e893be993372a1bef7953ff3aec9a41ee6f02d08f684",
+            "knowledgeIds": [],
+            "usage": {
+              "attribution": {
+                "items": {
+                  "msg_00677dee11a7f490016b08fcb034a087d290d05d9da5201fb8": {
+                    "input_tokens": 332,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 332,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_00677dee11a7f490016b08fcb034a087d2b0da47260bbf8339": {
+                    "input_tokens": 191,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 191,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_00677dee11a7f490016b08fcb034a087d2bdf98cd907897def": {
+                    "input_tokens": 64,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 64,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_00677dee11a7f490016b08fcbaeddc87d2b804ecc5883d4e72": {
+                    "input_tokens": 0,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 11,
+                    "content": [
+                      {
+                        "input_tokens": 0,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 11
+                      }
+                    ]
+                  },
+                  "rs_00677dee11a7f490016b08fcbac11087d287f41607964667c4": {
+                    "input_tokens": 2,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 13
+                  }
+                },
+                "request_fields": {
+                  "instructions": {
+                    "input_tokens": 4380,
+                    "cached_tokens": 3968,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0
+                  }
+                }
+              },
+              "prompt_tokens": 4969,
+              "completion_tokens": 24,
+              "total_tokens": 4993,
+              "prompt_tokens_details": {
+                "cache_write_tokens_details": {
+                  "ttl_30m_tokens": 0,
+                  "ttl_12h_tokens": 0
+                },
+                "cached_tokens": 3968
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 13
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Stoke city",
+              "value": "Stoke city",
+              "start": 42,
+              "end": 52,
+              "clause": "What was the attendance of the game where Stoke city was the away team?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies Stoke City as the away team, matching the Away team header and row evidence.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "1ebd50892f11774812a84da4370be5780793a0c40e9994e165173d5451076dc7",
+            "knowledgeIds": [],
+            "usage": {
+              "attribution": {
+                "items": {
+                  "msg_032c375a56219729016b08fcc59f4087d288a5f3c59915ab07": {
+                    "input_tokens": 64,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 64,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_032c375a56219729016b08fcc59f4087d297686bda1ee93368": {
+                    "input_tokens": 332,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 332,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_032c375a56219729016b08fcc59f4087d2aea7bc9913c22bcf": {
+                    "input_tokens": 142,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0,
+                    "content": [
+                      {
+                        "input_tokens": 142,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 0
+                      }
+                    ]
+                  },
+                  "msg_032c375a56219729016b08fcd1789c87d28aa83fbc7464bc9c": {
+                    "input_tokens": 0,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 14,
+                    "content": [
+                      {
+                        "input_tokens": 0,
+                        "cached_tokens": 0,
+                        "cache_write_tokens": 0,
+                        "output_tokens": 14
+                      }
+                    ]
+                  },
+                  "rs_032c375a56219729016b08fcd1340087d2b9d0ebd918204062": {
+                    "input_tokens": 2,
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 72
+                  }
+                },
+                "request_fields": {
+                  "instructions": {
+                    "input_tokens": 4380,
+                    "cached_tokens": 3968,
+                    "cache_write_tokens": 0,
+                    "output_tokens": 0
+                  }
+                }
+              },
+              "prompt_tokens": 4920,
+              "completion_tokens": 86,
+              "total_tokens": 5006,
+              "prompt_tokens_details": {
+                "cache_write_tokens_details": {
+                  "ttl_30m_tokens": 0,
+                  "ttl_12h_tokens": 0
+                },
+                "cached_tokens": 3968
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 72
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Stoke city",
+              "value": "Stoke City",
+              "start": 42,
+              "end": 52,
+              "clause": "What was the attendance of the game where Stoke city was the away team?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies Stoke City as the away team, matching the Away team header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "NORMALIZED_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Stoke city",
+              "value": "Stoke City",
+              "start": 42,
+              "end": 52,
+              "clause": "What was the attendance of the game where Stoke city was the away team?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies Stoke City as the away team, matching the Away team header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "NORMALIZED_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Stoke city",
+              "value": "Stoke City",
+              "start": 42,
+              "end": 52,
+              "clause": "What was the attendance of the game where Stoke city was the away team?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The question explicitly identifies Stoke City as the away team, matching the Away team header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "NORMALIZED_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              0,
+              "Stoke City"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Stoke city",
+          "value": "Stoke city",
+          "start": 42,
+          "end": 52
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Stoke city",
+          "value": "Stoke City",
+          "start": 42,
+          "end": 52,
+          "clause": "What was the attendance of the game where Stoke city was the away team?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The question explicitly identifies Stoke City as the away team, matching the Away team header and row evidence.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "NORMALIZED_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          3,
+          0,
+          "Stoke City"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 154047
+}

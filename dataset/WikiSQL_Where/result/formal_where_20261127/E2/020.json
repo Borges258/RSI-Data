@@ -1,0 +1,464 @@
+{
+  "arm": "E2",
+  "position": 20,
+  "example_id": "test:1495:1-16581695-2",
+  "original_index": 1495,
+  "table_id": "1-16581695-2",
+  "question": "Who was the writer of the episode titled \"Pier Pressure\"?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        1,
+        0,
+        "\"Pier Pressure\""
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "\"Pier Pressure\""
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "\"Pier Pressure\""
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Pier Pressure",
+        "value": "\"Pier Pressure\"",
+        "start": 42,
+        "end": 55,
+        "clause": "Who was the writer of the episode titled \"Pier Pressure\"?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The phrase 'episode titled' identifies the Title field, and the Title column contains \"Pier Pressure\".",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Pier Pressure",
+        "value": "Pier Pressure",
+        "start": 42,
+        "end": 55
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "Who was the writer of the episode titled \"Pier Pressure\"?",
+      "table": {
+        "id": "1-16581695-2",
+        "header": [
+          "No. in series",
+          "Title",
+          "Directed by",
+          "Written by",
+          "Original airdate",
+          "Production code"
+        ],
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "rows": [
+          [
+            "1–2",
+            "\"Ben 10 Returns\"",
+            "Dan Riba and Butch Lukic",
+            "Dwayne McDuffie",
+            "April18,2008",
+            "101–102"
+          ],
+          [
+            "3",
+            "\"Everybody Talks About the Weather\"",
+            "Dan Riba",
+            "Dwayne McDuffie",
+            "April26,2008",
+            "103"
+          ],
+          [
+            "4",
+            "\"Kevin's Big Score\"",
+            "Butch Lukic",
+            "Matt Wayne",
+            "May3,2008",
+            "104"
+          ],
+          [
+            "5",
+            "\"All that Glitters\"",
+            "Dan Riba",
+            "Bob Goodman",
+            "May10,2008",
+            "105"
+          ],
+          [
+            "6",
+            "\"Max Out\"",
+            "Butch Lukic",
+            "Jim Krieg",
+            "May17,2008",
+            "107"
+          ],
+          [
+            "7",
+            "\"Pier Pressure\"",
+            "Dan Riba",
+            "Len Uhley",
+            "May31,2008",
+            "106"
+          ],
+          [
+            "8",
+            "\"What are Little Girls Made of?\"",
+            "Butch Lukic",
+            "Matt Wayne",
+            "June7,2008",
+            "109"
+          ],
+          [
+            "9",
+            "\"The Gauntlet\"",
+            "Dan Riba",
+            "Rob Hoegee",
+            "June14,2008",
+            "110"
+          ],
+          [
+            "10",
+            "\"Paradox\"",
+            "Butch Lukic",
+            "Jim Krieg",
+            "July5,2008",
+            "112"
+          ],
+          [
+            "11",
+            "\"Be-Knighted\"",
+            "Dan Riba",
+            "Stan Berkowitz",
+            "July12,2008",
+            "108"
+          ],
+          [
+            "12",
+            "\"Plumbers' Helpers\"",
+            "Dan Riba",
+            "Len Uhley",
+            "July19,2008",
+            "111"
+          ]
+        ],
+        "name": "table_16581695_2",
+        "headers": [
+          "No. in series",
+          "Title",
+          "Directed by",
+          "Written by",
+          "Original airdate",
+          "Production code"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-16581695-2",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "Pier Pressure",
+              "value": "Pier Pressure",
+              "start": 42,
+              "end": 55
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "0bb4ccb3cfe9173b10fb1eed7faa9935cae8d3927f238424eb07cfb4e2e74e3a",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4964,
+              "completion_tokens": 19,
+              "total_tokens": 4983,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Pier Pressure",
+              "value": "Pier Pressure",
+              "start": 42,
+              "end": 55,
+              "clause": "Who was the writer of the episode titled \"Pier Pressure\"?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Pier Pressure",
+              "value": "Pier Pressure",
+              "start": 42,
+              "end": 55,
+              "clause": "Who was the writer of the episode titled \"Pier Pressure\"?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Pier Pressure",
+              "value": "Pier Pressure",
+              "start": 42,
+              "end": 55,
+              "clause": "Who was the writer of the episode titled \"Pier Pressure\"?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'episode titled' identifies the Title field, and the Title column contains \"Pier Pressure\"."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "a0921e19efb48ee485a72385565c087b7f38c6742a13a392057d1d7823cf1af1",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5000,
+              "completion_tokens": 42,
+              "total_tokens": 5042,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Pier Pressure",
+              "value": "Pier Pressure",
+              "start": 42,
+              "end": 55,
+              "clause": "Who was the writer of the episode titled \"Pier Pressure\"?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'episode titled' identifies the Title field, and the Title column contains \"Pier Pressure\".",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "8f8969c33d2574cabadacd2ab6790200a7576ca26521b7b37651a414a22518fd",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5066,
+              "completion_tokens": 9,
+              "total_tokens": 5075,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Pier Pressure",
+              "value": "\"Pier Pressure\"",
+              "start": 42,
+              "end": 55,
+              "clause": "Who was the writer of the episode titled \"Pier Pressure\"?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'episode titled' identifies the Title field, and the Title column contains \"Pier Pressure\".",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "54df5cf93783ebb917b2f01fa9b881e80fc62ceac378d43c673effdb9ad24af3",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5017,
+              "completion_tokens": 13,
+              "total_tokens": 5030,
+              "prompt_tokens_details": {
+                "cached_tokens": 4736
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Pier Pressure",
+              "value": "\"Pier Pressure\"",
+              "start": 42,
+              "end": 55,
+              "clause": "Who was the writer of the episode titled \"Pier Pressure\"?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'episode titled' identifies the Title field, and the Title column contains \"Pier Pressure\".",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Pier Pressure",
+              "value": "\"Pier Pressure\"",
+              "start": 42,
+              "end": 55,
+              "clause": "Who was the writer of the episode titled \"Pier Pressure\"?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'episode titled' identifies the Title field, and the Title column contains \"Pier Pressure\".",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Pier Pressure",
+              "value": "\"Pier Pressure\"",
+              "start": 42,
+              "end": 55,
+              "clause": "Who was the writer of the episode titled \"Pier Pressure\"?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'episode titled' identifies the Title field, and the Title column contains \"Pier Pressure\".",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              "\"Pier Pressure\""
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Pier Pressure",
+          "value": "Pier Pressure",
+          "start": 42,
+          "end": 55
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Pier Pressure",
+          "value": "\"Pier Pressure\"",
+          "start": 42,
+          "end": 55,
+          "clause": "Who was the writer of the episode titled \"Pier Pressure\"?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The phrase 'episode titled' identifies the Title field, and the Title column contains \"Pier Pressure\".",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          1,
+          0,
+          "\"Pier Pressure\""
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 6937
+}

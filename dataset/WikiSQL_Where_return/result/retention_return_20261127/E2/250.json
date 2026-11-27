@@ -1,0 +1,595 @@
+{
+  "arm": "E2",
+  "position": 250,
+  "example_id": "test:10004:2-17342230-5",
+  "original_index": 10004,
+  "table_id": "2-17342230-5",
+  "question": "What game number was played on April 23, with Boston as the road team?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        4,
+        0,
+        "boston"
+      ],
+      [
+        1,
+        0,
+        "april 23"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      "April 23"
+    ],
+    [
+      4,
+      0,
+      "Boston"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        "April 23"
+      ],
+      [
+        4,
+        0,
+        "Boston"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "April 23",
+        "value": "April 23",
+        "start": 31,
+        "end": 39,
+        "clause": "What game number was played on April 23",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The question says the game was played 'on April 23,' which identifies the Date field.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "Boston",
+        "value": "Boston",
+        "start": 46,
+        "end": 52,
+        "clause": "with Boston as the road team?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The phrase 'Boston as the road team' explicitly identifies the Road Team field.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "April 23",
+        "value": "April 23",
+        "start": 31,
+        "end": 39
+      },
+      {
+        "surface": "Boston",
+        "value": "Boston",
+        "start": 46,
+        "end": 52
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What game number was played on April 23, with Boston as the road team?",
+      "table": {
+        "header": [
+          "Game",
+          "Date",
+          "Home Team",
+          "Result",
+          "Road Team"
+        ],
+        "page_title": "1968–69 Boston Celtics season",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 17342230,
+        "id": "2-17342230-5",
+        "section_title": "NBA Finals",
+        "rows": [
+          [
+            "Game 1",
+            "April 23",
+            "Los Angeles",
+            "120-118",
+            "Boston"
+          ],
+          [
+            "Game 2",
+            "April 25",
+            "Los Angeles",
+            "118-112",
+            "Boston"
+          ],
+          [
+            "Game 3",
+            "April 27",
+            "Boston",
+            "111-105",
+            "Los Angeles"
+          ],
+          [
+            "Game 4",
+            "April 29",
+            "Boston",
+            "89-88",
+            "Los Angeles"
+          ],
+          [
+            "Game 5",
+            "May 1",
+            "Los Angeles",
+            "117-104",
+            "Boston"
+          ],
+          [
+            "Game 6",
+            "May 3",
+            "Boston",
+            "99-90",
+            "Los Angeles"
+          ],
+          [
+            "Game 7",
+            "May 5",
+            "Los Angeles",
+            "106-108",
+            "Boston"
+          ]
+        ],
+        "caption": "NBA Finals",
+        "headers": [
+          "Game",
+          "Date",
+          "Home Team",
+          "Result",
+          "Road Team"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-17342230-5",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "April 23",
+              "value": "April 23",
+              "start": 31,
+              "end": 39
+            },
+            {
+              "surface": "Boston",
+              "value": "Boston",
+              "start": 46,
+              "end": 52
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "1485fb5d7b46667a45bce555b8e16d243c82bf5dfac508569d2a36fcd69c4a84",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4799,
+              "completion_tokens": 29,
+              "total_tokens": 4828,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "April 23",
+              "value": "April 23",
+              "start": 31,
+              "end": 39,
+              "clause": "What game number was played on April 23"
+            },
+            {
+              "surface": "Boston",
+              "value": "Boston",
+              "start": 46,
+              "end": 52,
+              "clause": "with Boston as the road team?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "April 23",
+              "value": "April 23",
+              "start": 31,
+              "end": 39,
+              "clause": "What game number was played on April 23"
+            },
+            {
+              "surface": "Boston",
+              "value": "Boston",
+              "start": 46,
+              "end": 52,
+              "clause": "with Boston as the road team?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "April 23",
+              "value": "April 23",
+              "start": 31,
+              "end": 39,
+              "clause": "What game number was played on April 23",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question says the game was played 'on April 23,' which identifies the Date field."
+            },
+            {
+              "surface": "Boston",
+              "value": "Boston",
+              "start": 46,
+              "end": 52,
+              "clause": "with Boston as the road team?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'Boston as the road team' explicitly identifies the Road Team field."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "813fb4fe22026a43809f837e39b97c775505b75673ccac599d8d333c0170d04c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4860,
+              "completion_tokens": 60,
+              "total_tokens": 4920,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "April 23",
+              "value": "April 23",
+              "start": 31,
+              "end": 39,
+              "clause": "What game number was played on April 23",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question says the game was played 'on April 23,' which identifies the Date field.",
+              "operator": "="
+            },
+            {
+              "surface": "Boston",
+              "value": "Boston",
+              "start": 46,
+              "end": 52,
+              "clause": "with Boston as the road team?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'Boston as the road team' explicitly identifies the Road Team field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "86b9455566b3413301f3294152ffdb020259330ae4d42b52bb089b987d2b8744",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4955,
+              "completion_tokens": 11,
+              "total_tokens": 4966,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "April 23",
+              "value": "April 23",
+              "start": 31,
+              "end": 39,
+              "clause": "What game number was played on April 23",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question says the game was played 'on April 23,' which identifies the Date field.",
+              "operator": "="
+            },
+            {
+              "surface": "Boston",
+              "value": "Boston",
+              "start": 46,
+              "end": 52,
+              "clause": "with Boston as the road team?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'Boston as the road team' explicitly identifies the Road Team field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "e7d80c321f866fe20203d23214b8b3d9e81d36458c5b52f0b7b2fb94fb9fbd0f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4909,
+              "completion_tokens": 14,
+              "total_tokens": 4923,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "April 23",
+              "value": "April 23",
+              "start": 31,
+              "end": 39,
+              "clause": "What game number was played on April 23",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question says the game was played 'on April 23,' which identifies the Date field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Boston",
+              "value": "Boston",
+              "start": 46,
+              "end": 52,
+              "clause": "with Boston as the road team?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'Boston as the road team' explicitly identifies the Road Team field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "April 23",
+              "value": "April 23",
+              "start": 31,
+              "end": 39,
+              "clause": "What game number was played on April 23",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question says the game was played 'on April 23,' which identifies the Date field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Boston",
+              "value": "Boston",
+              "start": 46,
+              "end": 52,
+              "clause": "with Boston as the road team?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'Boston as the road team' explicitly identifies the Road Team field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "April 23",
+              "value": "April 23",
+              "start": 31,
+              "end": 39,
+              "clause": "What game number was played on April 23",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The question says the game was played 'on April 23,' which identifies the Date field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "Boston",
+              "value": "Boston",
+              "start": 46,
+              "end": 52,
+              "clause": "with Boston as the road team?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The phrase 'Boston as the road team' explicitly identifies the Road Team field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              "April 23"
+            ],
+            [
+              4,
+              0,
+              "Boston"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "April 23",
+          "value": "April 23",
+          "start": 31,
+          "end": 39
+        },
+        {
+          "surface": "Boston",
+          "value": "Boston",
+          "start": 46,
+          "end": 52
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "April 23",
+          "value": "April 23",
+          "start": 31,
+          "end": 39,
+          "clause": "What game number was played on April 23",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The question says the game was played 'on April 23,' which identifies the Date field.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "Boston",
+          "value": "Boston",
+          "start": 46,
+          "end": 52,
+          "clause": "with Boston as the road team?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The phrase 'Boston as the road team' explicitly identifies the Road Team field.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          1,
+          0,
+          "April 23"
+        ],
+        [
+          4,
+          0,
+          "Boston"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8329
+}

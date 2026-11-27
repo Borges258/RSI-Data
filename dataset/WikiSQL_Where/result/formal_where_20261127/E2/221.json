@@ -1,0 +1,598 @@
+{
+  "arm": "E2",
+  "position": 221,
+  "example_id": "test:7924:2-17344644-1",
+  "original_index": 7924,
+  "table_id": "2-17344644-1",
+  "question": "What round was jerry corcoran drafted in as pick number 114?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        1,
+        1,
+        114
+      ],
+      [
+        2,
+        0,
+        "jerry corcoran"
+      ]
+    ],
+    "agg": 1
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "Jerry Corcoran"
+    ],
+    [
+      1,
+      0,
+      114
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "Jerry Corcoran"
+      ],
+      [
+        1,
+        0,
+        114
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "jerry corcoran",
+        "value": "Jerry Corcoran",
+        "start": 15,
+        "end": 29,
+        "clause": "What round was jerry corcoran drafted in as pick number 114?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "Jerry Corcoran is a player name, matching the Player header and row evidence.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "114",
+        "value": 114,
+        "start": 56,
+        "end": 59,
+        "clause": "What round was jerry corcoran drafted in as pick number 114?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The phrase 'pick number 114' explicitly identifies the Pick field.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "jerry corcoran",
+        "value": "jerry corcoran",
+        "start": 15,
+        "end": 29
+      },
+      {
+        "surface": "114",
+        "value": "114",
+        "start": 56,
+        "end": 59
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What round was jerry corcoran drafted in as pick number 114?",
+      "table": {
+        "header": [
+          "Round",
+          "Pick",
+          "Player",
+          "Nationality",
+          "College"
+        ],
+        "page_title": "1987–88 Boston Celtics season",
+        "types": [
+          "real",
+          "real",
+          "text",
+          "text",
+          "text"
+        ],
+        "page_id": 17344644,
+        "id": "2-17344644-1",
+        "section_title": "Draft picks",
+        "rows": [
+          [
+            "1",
+            "22",
+            "Reggie Lewis",
+            "United States",
+            "Northeastern"
+          ],
+          [
+            "2",
+            "45",
+            "Brad Lohaus",
+            "United States",
+            "Iowa"
+          ],
+          [
+            "4",
+            "70",
+            "Tom Sheehey",
+            "United States",
+            "Virginia"
+          ],
+          [
+            "4",
+            "91",
+            "Darryl Kennedy",
+            "United States",
+            "Oklahoma"
+          ],
+          [
+            "5",
+            "114",
+            "David Butler",
+            "United States",
+            "California"
+          ],
+          [
+            "6",
+            "137",
+            "Tim Naegeli",
+            "United States",
+            "Wisconsin–Stevens Point"
+          ],
+          [
+            "7",
+            "160",
+            "Jerry Corcoran",
+            "United States",
+            "Northeastern"
+          ]
+        ],
+        "caption": "Draft picks",
+        "headers": [
+          "Round",
+          "Pick",
+          "Player",
+          "Nationality",
+          "College"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-17344644-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "jerry corcoran",
+              "value": "jerry corcoran",
+              "start": 15,
+              "end": 29
+            },
+            {
+              "surface": "114",
+              "value": "114",
+              "start": 56,
+              "end": 59
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c78df269e5e1a7206e00bf6cdca0524991bda3bb810d41c2ca31b0c8ea1f571f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4780,
+              "completion_tokens": 81,
+              "total_tokens": 4861,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              },
+              "completion_tokens_details": {
+                "reasoning_tokens": 46
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "jerry corcoran",
+              "value": "jerry corcoran",
+              "start": 15,
+              "end": 29,
+              "clause": "What round was jerry corcoran drafted in as pick number 114?"
+            },
+            {
+              "surface": "114",
+              "value": "114",
+              "start": 56,
+              "end": 59,
+              "clause": "What round was jerry corcoran drafted in as pick number 114?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "jerry corcoran",
+              "value": "jerry corcoran",
+              "start": 15,
+              "end": 29,
+              "clause": "What round was jerry corcoran drafted in as pick number 114?"
+            },
+            {
+              "surface": "114",
+              "value": "114",
+              "start": 56,
+              "end": 59,
+              "clause": "What round was jerry corcoran drafted in as pick number 114?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "jerry corcoran",
+              "value": "jerry corcoran",
+              "start": 15,
+              "end": 29,
+              "clause": "What round was jerry corcoran drafted in as pick number 114?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Jerry Corcoran is a player name, matching the Player header and row evidence."
+            },
+            {
+              "surface": "114",
+              "value": "114",
+              "start": 56,
+              "end": 59,
+              "clause": "What round was jerry corcoran drafted in as pick number 114?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'pick number 114' explicitly identifies the Pick field."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "851a4588d3e2c46f08cc4ea66edf8f0767dc43103cadfad52bdf011cc293bde8",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4861,
+              "completion_tokens": 56,
+              "total_tokens": 4917,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "jerry corcoran",
+              "value": "jerry corcoran",
+              "start": 15,
+              "end": 29,
+              "clause": "What round was jerry corcoran drafted in as pick number 114?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Jerry Corcoran is a player name, matching the Player header and row evidence.",
+              "operator": "="
+            },
+            {
+              "surface": "114",
+              "value": "114",
+              "start": 56,
+              "end": 59,
+              "clause": "What round was jerry corcoran drafted in as pick number 114?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'pick number 114' explicitly identifies the Pick field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b244dd765905cdb64f02bd1f3333c485a1664ec976d14fd8bf4bbe2ecaff13c4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4952,
+              "completion_tokens": 11,
+              "total_tokens": 4963,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "jerry corcoran",
+              "value": "Jerry Corcoran",
+              "start": 15,
+              "end": 29,
+              "clause": "What round was jerry corcoran drafted in as pick number 114?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Jerry Corcoran is a player name, matching the Player header and row evidence.",
+              "operator": "="
+            },
+            {
+              "surface": "114",
+              "value": 114,
+              "start": 56,
+              "end": 59,
+              "clause": "What round was jerry corcoran drafted in as pick number 114?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'pick number 114' explicitly identifies the Pick field.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "ea7974e84132af639cc07042a14ff464c7797409d2d8455d9720abafa96bab44",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4906,
+              "completion_tokens": 14,
+              "total_tokens": 4920,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "jerry corcoran",
+              "value": "Jerry Corcoran",
+              "start": 15,
+              "end": 29,
+              "clause": "What round was jerry corcoran drafted in as pick number 114?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Jerry Corcoran is a player name, matching the Player header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "114",
+              "value": "114",
+              "start": 56,
+              "end": 59,
+              "clause": "What round was jerry corcoran drafted in as pick number 114?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'pick number 114' explicitly identifies the Pick field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "jerry corcoran",
+              "value": "Jerry Corcoran",
+              "start": 15,
+              "end": 29,
+              "clause": "What round was jerry corcoran drafted in as pick number 114?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Jerry Corcoran is a player name, matching the Player header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "114",
+              "value": 114,
+              "start": 56,
+              "end": 59,
+              "clause": "What round was jerry corcoran drafted in as pick number 114?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'pick number 114' explicitly identifies the Pick field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "jerry corcoran",
+              "value": "Jerry Corcoran",
+              "start": 15,
+              "end": 29,
+              "clause": "What round was jerry corcoran drafted in as pick number 114?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Jerry Corcoran is a player name, matching the Player header and row evidence.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "114",
+              "value": 114,
+              "start": 56,
+              "end": 59,
+              "clause": "What round was jerry corcoran drafted in as pick number 114?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The phrase 'pick number 114' explicitly identifies the Pick field.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "Jerry Corcoran"
+            ],
+            [
+              1,
+              0,
+              114
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "jerry corcoran",
+          "value": "jerry corcoran",
+          "start": 15,
+          "end": 29
+        },
+        {
+          "surface": "114",
+          "value": "114",
+          "start": 56,
+          "end": 59
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "jerry corcoran",
+          "value": "Jerry Corcoran",
+          "start": 15,
+          "end": 29,
+          "clause": "What round was jerry corcoran drafted in as pick number 114?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "Jerry Corcoran is a player name, matching the Player header and row evidence.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "114",
+          "value": 114,
+          "start": 56,
+          "end": 59,
+          "clause": "What round was jerry corcoran drafted in as pick number 114?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The phrase 'pick number 114' explicitly identifies the Pick field.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          2,
+          0,
+          "Jerry Corcoran"
+        ],
+        [
+          1,
+          0,
+          114
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8531
+}

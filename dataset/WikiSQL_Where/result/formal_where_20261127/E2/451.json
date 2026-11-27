@@ -1,0 +1,616 @@
+{
+  "arm": "E2",
+  "position": 451,
+  "example_id": "test:13980:2-18602446-15",
+  "original_index": 13980,
+  "table_id": "2-18602446-15",
+  "question": "What is the result of Waldemar 27´s freestyle test?",
+  "gold_sql": {
+    "sel": 4,
+    "conds": [
+      [
+        2,
+        0,
+        "waldemar 27"
+      ],
+      [
+        3,
+        0,
+        "freestyle test"
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      2,
+      0,
+      "Waldemar 27"
+    ],
+    [
+      3,
+      0,
+      "Freestyle Test"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        2,
+        0,
+        "Waldemar 27"
+      ],
+      [
+        3,
+        0,
+        "Freestyle Test"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "Waldemar 27",
+        "value": "Waldemar 27",
+        "start": 22,
+        "end": 33,
+        "clause": "What is the result of Waldemar 27´s freestyle test?",
+        "columnIndex": 2,
+        "columnCandidates": [
+          2
+        ],
+        "columnMatchReason": "Waldemar 27 is identified as the horse in the question and appears under Horse.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "freestyle",
+        "value": "Freestyle Test",
+        "start": 36,
+        "end": 45,
+        "clause": "What is the result of Waldemar 27´s freestyle test?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "Freestyle describes the test event and Freestyle Test appears under Event.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "Waldemar 27",
+        "value": "Waldemar 27",
+        "start": 22,
+        "end": 33
+      },
+      {
+        "surface": "freestyle",
+        "value": "Freestyle Test",
+        "start": 36,
+        "end": 45
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the result of Waldemar 27´s freestyle test?",
+      "table": {
+        "header": [
+          "Athlete",
+          "Class",
+          "Horse",
+          "Event",
+          "Result"
+        ],
+        "page_title": "Germany at the 2008 Summer Paralympics",
+        "types": [
+          "text",
+          "text",
+          "text",
+          "text",
+          "real"
+        ],
+        "page_id": 18602446,
+        "id": "2-18602446-15",
+        "section_title": "Equestrian",
+        "rows": [
+          [
+            "Hannelore Brenner",
+            "Grade III",
+            "Women of the World",
+            "Championship Test",
+            "71.440"
+          ],
+          [
+            "Hannelore Brenner",
+            "Grade III",
+            "Women of the World",
+            "Freestyle Test",
+            "74.223"
+          ],
+          [
+            "Bettina Eistel",
+            "Grade III",
+            "Fabuleux 5",
+            "Championship Test",
+            "70.880"
+          ],
+          [
+            "Bettina Eistel",
+            "Grade III",
+            "Fabuleux 5",
+            "Freestyle Test",
+            "69.612"
+          ],
+          [
+            "Britta Näpel",
+            "Grade II",
+            "Cherubin 15",
+            "Championship Test",
+            "71.909"
+          ],
+          [
+            "Britta Näpel",
+            "Grade II",
+            "Cherubin 15",
+            "Freestyle Test",
+            "70.277"
+          ],
+          [
+            "Angelika Trabert",
+            "Grade II",
+            "Londria 2",
+            "Championship Test",
+            "64.909"
+          ],
+          [
+            "Angelika Trabert",
+            "Grade II",
+            "Londria 2",
+            "Freestyle Test",
+            "60.778"
+          ],
+          [
+            "Steffen Zeibig",
+            "Grade II",
+            "Waldemar 27",
+            "Championship Test",
+            "66.091"
+          ],
+          [
+            "Steffen Zeibig",
+            "Grade II",
+            "Waldemar 27",
+            "Freestyle Test",
+            "64.667"
+          ]
+        ],
+        "caption": "Equestrian",
+        "headers": [
+          "Athlete",
+          "Class",
+          "Horse",
+          "Event",
+          "Result"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-18602446-15",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "Waldemar 27",
+              "value": "Waldemar 27",
+              "start": 22,
+              "end": 33
+            },
+            {
+              "surface": "freestyle",
+              "value": "Freestyle Test",
+              "start": 36,
+              "end": 45
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "98a38e5d9db00c1e870213e9cdb012d097bb4c1ef248c71b7ff86772b84963d0",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4900,
+              "completion_tokens": 36,
+              "total_tokens": 4936,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Waldemar 27",
+              "value": "Waldemar 27",
+              "start": 22,
+              "end": 33,
+              "clause": "What is the result of Waldemar 27´s freestyle test?"
+            },
+            {
+              "surface": "freestyle",
+              "value": "Freestyle Test",
+              "start": 36,
+              "end": 45,
+              "clause": "What is the result of Waldemar 27´s freestyle test?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "Waldemar 27",
+              "value": "Waldemar 27",
+              "start": 22,
+              "end": 33,
+              "clause": "What is the result of Waldemar 27´s freestyle test?"
+            },
+            {
+              "surface": "freestyle",
+              "value": "Freestyle Test",
+              "start": 36,
+              "end": 45,
+              "clause": "What is the result of Waldemar 27´s freestyle test?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Waldemar 27",
+              "value": "Waldemar 27",
+              "start": 22,
+              "end": 33,
+              "clause": "What is the result of Waldemar 27´s freestyle test?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Waldemar 27 is identified as the horse in the question and appears under Horse."
+            },
+            {
+              "surface": "freestyle",
+              "value": "Freestyle Test",
+              "start": 36,
+              "end": 45,
+              "clause": "What is the result of Waldemar 27´s freestyle test?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Freestyle describes the test event and Freestyle Test appears under Event."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "09440957548a54fb217001ef5828f93a999882a2a20b876159e94c6ddb2faf7f",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4978,
+              "completion_tokens": 57,
+              "total_tokens": 5035,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Waldemar 27",
+              "value": "Waldemar 27",
+              "start": 22,
+              "end": 33,
+              "clause": "What is the result of Waldemar 27´s freestyle test?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Waldemar 27 is identified as the horse in the question and appears under Horse.",
+              "operator": "="
+            },
+            {
+              "surface": "freestyle",
+              "value": "Freestyle Test",
+              "start": 36,
+              "end": 45,
+              "clause": "What is the result of Waldemar 27´s freestyle test?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Freestyle describes the test event and Freestyle Test appears under Event.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b3f56e81fe9bd46777ed1355ff35e1b525f6c70e533e466d8ba95e744327c642",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5070,
+              "completion_tokens": 11,
+              "total_tokens": 5081,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Waldemar 27",
+              "value": "Waldemar 27",
+              "start": 22,
+              "end": 33,
+              "clause": "What is the result of Waldemar 27´s freestyle test?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Waldemar 27 is identified as the horse in the question and appears under Horse.",
+              "operator": "="
+            },
+            {
+              "surface": "freestyle",
+              "value": "Freestyle Test",
+              "start": 36,
+              "end": 45,
+              "clause": "What is the result of Waldemar 27´s freestyle test?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Freestyle describes the test event and Freestyle Test appears under Event.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "227fb1305f2224aca7dd037dbfbe54e65cb0e31f0689820272b5044f520146b8",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5024,
+              "completion_tokens": 18,
+              "total_tokens": 5042,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Waldemar 27",
+              "value": "Waldemar 27",
+              "start": 22,
+              "end": 33,
+              "clause": "What is the result of Waldemar 27´s freestyle test?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Waldemar 27 is identified as the horse in the question and appears under Horse.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "freestyle",
+              "value": "Freestyle Test",
+              "start": 36,
+              "end": 45,
+              "clause": "What is the result of Waldemar 27´s freestyle test?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Freestyle describes the test event and Freestyle Test appears under Event.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "Waldemar 27",
+              "value": "Waldemar 27",
+              "start": 22,
+              "end": 33,
+              "clause": "What is the result of Waldemar 27´s freestyle test?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Waldemar 27 is identified as the horse in the question and appears under Horse.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "freestyle",
+              "value": "Freestyle Test",
+              "start": 36,
+              "end": 45,
+              "clause": "What is the result of Waldemar 27´s freestyle test?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Freestyle describes the test event and Freestyle Test appears under Event.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "Waldemar 27",
+              "value": "Waldemar 27",
+              "start": 22,
+              "end": 33,
+              "clause": "What is the result of Waldemar 27´s freestyle test?",
+              "columnIndex": 2,
+              "columnCandidates": [
+                2
+              ],
+              "columnMatchReason": "Waldemar 27 is identified as the horse in the question and appears under Horse.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "freestyle",
+              "value": "Freestyle Test",
+              "start": 36,
+              "end": 45,
+              "clause": "What is the result of Waldemar 27´s freestyle test?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Freestyle describes the test event and Freestyle Test appears under Event.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              2,
+              0,
+              "Waldemar 27"
+            ],
+            [
+              3,
+              0,
+              "Freestyle Test"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "Waldemar 27",
+          "value": "Waldemar 27",
+          "start": 22,
+          "end": 33
+        },
+        {
+          "surface": "freestyle",
+          "value": "Freestyle Test",
+          "start": 36,
+          "end": 45
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "Waldemar 27",
+          "value": "Waldemar 27",
+          "start": 22,
+          "end": 33,
+          "clause": "What is the result of Waldemar 27´s freestyle test?",
+          "columnIndex": 2,
+          "columnCandidates": [
+            2
+          ],
+          "columnMatchReason": "Waldemar 27 is identified as the horse in the question and appears under Horse.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "freestyle",
+          "value": "Freestyle Test",
+          "start": 36,
+          "end": 45,
+          "clause": "What is the result of Waldemar 27´s freestyle test?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "Freestyle describes the test event and Freestyle Test appears under Event.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          2,
+          0,
+          "Waldemar 27"
+        ],
+        [
+          3,
+          0,
+          "Freestyle Test"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 10015
+}

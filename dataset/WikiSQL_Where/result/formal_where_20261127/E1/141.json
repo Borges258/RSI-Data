@@ -1,0 +1,123 @@
+{
+  "arm": "E1",
+  "position": 141,
+  "example_id": "test:10945:2-11516217-44",
+  "original_index": 10945,
+  "table_id": "2-11516217-44",
+  "question": "What is the number of Not Outs when there were more than 327 runs and 24 innings, and an average of 29.54",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        3,
+        1,
+        327
+      ],
+      [
+        1,
+        1,
+        24
+      ],
+      [
+        4,
+        0,
+        29.54
+      ]
+    ],
+    "agg": 0
+  },
+  "prediction_conds": [
+    [
+      3,
+      1,
+      327
+    ],
+    [
+      1,
+      0,
+      24
+    ],
+    [
+      4,
+      0,
+      29.54
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": "gpt-5.6-sol",
+  "usage": {
+    "prompt_tokens": 9395,
+    "completion_tokens": 60,
+    "total_tokens": 9455,
+    "prompt_tokens_details": {
+      "cached_tokens": 4224
+    }
+  },
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        1,
+        327
+      ],
+      [
+        1,
+        0,
+        24
+      ],
+      [
+        4,
+        0,
+        29.54
+      ]
+    ],
+    "explanation": "Runs is strictly greater than 327, while Innings equals 24 and Average equals 29.54.",
+    "version": "wikisql-where-prior-v1",
+    "tableId": "2-11516217-44",
+    "knowledgeIds": [
+      "g-eq",
+      "g-gt",
+      "g-lt",
+      "g-inclusive",
+      "g-literal",
+      "g-threshold",
+      "g-and",
+      "g-or",
+      "g-column",
+      "g-count",
+      "g-ambiguous",
+      "t-2-11516217-44-field-0",
+      "t-2-11516217-44-field-1",
+      "t-2-11516217-44-field-2",
+      "t-2-11516217-44-field-3",
+      "t-2-11516217-44-field-4",
+      "d-implicit-eq",
+      "d-explicit-eq",
+      "d-gt",
+      "d-lt-and-gt",
+      "d-with-two",
+      "d-literal-form",
+      "p-text",
+      "p-number",
+      "p-multi",
+      "p-unsupported"
+    ],
+    "promptSha256": "290154e07d4e36b62d874593162f7e4b39c5ab2a6e65b43e67f5e1fcf9112558",
+    "model": "gpt-5.6-sol",
+    "usage": {
+      "prompt_tokens": 9395,
+      "completion_tokens": 60,
+      "total_tokens": 9455,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      }
+    },
+    "latencyMs": 2457
+  },
+  "source": "where_prior_parse",
+  "safe_completed": true,
+  "elapsed_ms": 2468
+}

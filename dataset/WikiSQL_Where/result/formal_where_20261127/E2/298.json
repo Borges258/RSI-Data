@@ -1,0 +1,658 @@
+{
+  "arm": "E2",
+  "position": 298,
+  "example_id": "test:15324:2-13107350-1",
+  "original_index": 15324,
+  "table_id": "2-13107350-1",
+  "question": "When was the earliest first game with 11 played and 12 games lost?",
+  "gold_sql": {
+    "sel": 0,
+    "conds": [
+      [
+        1,
+        1,
+        11
+      ],
+      [
+        3,
+        0,
+        12
+      ]
+    ],
+    "agg": 2
+  },
+  "prediction_conds": [
+    [
+      1,
+      0,
+      11
+    ],
+    [
+      3,
+      1,
+      "5"
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        1,
+        0,
+        11
+      ],
+      [
+        3,
+        1,
+        "5"
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "11",
+        "value": 11,
+        "start": 38,
+        "end": 40,
+        "clause": "When was the earliest first game with 11 played",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The clause explicitly describes 11 as the number played, matching the Played header.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "12",
+        "value": 12,
+        "start": 52,
+        "end": 54,
+        "clause": "and 12 games lost?",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "The clause explicitly describes 12 as games lost, matching the Lost header.",
+        "operator": ">=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "11",
+        "value": "11",
+        "start": 38,
+        "end": 40
+      },
+      {
+        "surface": "12",
+        "value": "12",
+        "start": 52,
+        "end": 54
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "When was the earliest first game with 11 played and 12 games lost?",
+      "table": {
+        "header": [
+          "First game",
+          "Played",
+          "Drawn",
+          "Lost",
+          "Percentage"
+        ],
+        "page_title": "Ireland women's national rugby union team",
+        "types": [
+          "real",
+          "real",
+          "real",
+          "real",
+          "text"
+        ],
+        "page_id": 13107350,
+        "id": "2-13107350-1",
+        "section_title": "Results summary",
+        "rows": [
+          [
+            "1998",
+            "2",
+            "0",
+            "2",
+            "0.00%"
+          ],
+          [
+            "2002",
+            "2",
+            "0",
+            "1",
+            "50.00%"
+          ],
+          [
+            "1996",
+            "18",
+            "0",
+            "17",
+            "5.56%"
+          ],
+          [
+            "1993",
+            "20",
+            "1",
+            "17",
+            "15.00%"
+          ],
+          [
+            "1997",
+            "3",
+            "0",
+            "0",
+            "100.00%"
+          ],
+          [
+            "1997",
+            "11",
+            "0",
+            "1",
+            "90.91%"
+          ],
+          [
+            "1994",
+            "3",
+            "0",
+            "1",
+            "66.67%"
+          ],
+          [
+            "1998",
+            "4",
+            "0",
+            "3",
+            "25.00%"
+          ],
+          [
+            "1998",
+            "3",
+            "0",
+            "0",
+            "100.00%"
+          ],
+          [
+            "2002",
+            "1",
+            "0",
+            "1",
+            "0.00%"
+          ],
+          [
+            "1993",
+            "22",
+            "0",
+            "14",
+            "36.36%"
+          ],
+          [
+            "2006",
+            "1",
+            "0",
+            "0",
+            "100.00%"
+          ],
+          [
+            "1997",
+            "9",
+            "0",
+            "5",
+            "44.44%"
+          ],
+          [
+            "1994",
+            "5",
+            "0",
+            "3",
+            "20.00%"
+          ],
+          [
+            "1996",
+            "18",
+            "0",
+            "12",
+            "33.33%"
+          ],
+          [
+            "1993",
+            "121",
+            "0",
+            "78",
+            "35.54%"
+          ]
+        ],
+        "caption": "Rugby: Ireland internationals 1993-",
+        "headers": [
+          "First game",
+          "Played",
+          "Drawn",
+          "Lost",
+          "Percentage"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-13107350-1",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "11",
+              "value": "11",
+              "start": 38,
+              "end": 40
+            },
+            {
+              "surface": "12",
+              "value": "12",
+              "start": 52,
+              "end": 54
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b8b94b5871a9e5be7f75985c41a247711133fc29e5934960db1a47cd8715b1c9",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4920,
+              "completion_tokens": 25,
+              "total_tokens": 4945,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "11",
+              "value": "11",
+              "start": 38,
+              "end": 40,
+              "clause": "When was the earliest first game with 11 played"
+            },
+            {
+              "surface": "12",
+              "value": "12",
+              "start": 52,
+              "end": 54,
+              "clause": "and 12 games lost?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "11",
+              "value": "11",
+              "start": 38,
+              "end": 40,
+              "clause": "When was the earliest first game with 11 played"
+            },
+            {
+              "surface": "12",
+              "value": "12",
+              "start": 52,
+              "end": 54,
+              "clause": "and 12 games lost?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "11",
+              "value": "11",
+              "start": 38,
+              "end": 40,
+              "clause": "When was the earliest first game with 11 played",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly describes 11 as the number played, matching the Played header."
+            },
+            {
+              "surface": "12",
+              "value": "12",
+              "start": 52,
+              "end": 54,
+              "clause": "and 12 games lost?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly describes 12 as games lost, matching the Lost header."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "6799cbd7293cd9502cabdf73c8a13fb466d6341007721abafcd613903b856ee3",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4977,
+              "completion_tokens": 56,
+              "total_tokens": 5033,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "11",
+              "value": "11",
+              "start": 38,
+              "end": 40,
+              "clause": "When was the earliest first game with 11 played",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly describes 11 as the number played, matching the Played header.",
+              "operator": "="
+            },
+            {
+              "surface": "12",
+              "value": "12",
+              "start": 52,
+              "end": 54,
+              "clause": "and 12 games lost?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly describes 12 as games lost, matching the Lost header.",
+              "operator": ">="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f1e7c6ff6fafcf1ff892f8acc70ddcaa234244de1e19b4c1383f2e1c0d694391",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5068,
+              "completion_tokens": 11,
+              "total_tokens": 5079,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "11",
+              "value": "11",
+              "start": 38,
+              "end": 40,
+              "clause": "When was the earliest first game with 11 played",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly describes 11 as the number played, matching the Played header.",
+              "operator": "="
+            },
+            {
+              "surface": "12",
+              "value": "12",
+              "start": 52,
+              "end": 54,
+              "clause": "and 12 games lost?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly describes 12 as games lost, matching the Lost header.",
+              "operator": ">="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "12272d0e297898431a8450f40a08b7de01b9cd89a40b1baff59d07fd586a41f4",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5023,
+              "completion_tokens": 12,
+              "total_tokens": 5035,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "11",
+              "value": "11",
+              "start": 38,
+              "end": 40,
+              "clause": "When was the earliest first game with 11 played",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly describes 11 as the number played, matching the Played header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "12",
+              "value": "12",
+              "start": 52,
+              "end": 54,
+              "clause": "and 12 games lost?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly describes 12 as games lost, matching the Lost header.",
+              "operator": ">=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "11",
+              "value": 11,
+              "start": 38,
+              "end": 40,
+              "clause": "When was the earliest first game with 11 played",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly describes 11 as the number played, matching the Played header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "12",
+              "value": 12,
+              "start": 52,
+              "end": 54,
+              "clause": "and 12 games lost?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly describes 12 as games lost, matching the Lost header.",
+              "operator": ">=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "11",
+              "value": 11,
+              "start": 38,
+              "end": 40,
+              "clause": "When was the earliest first game with 11 played",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly describes 11 as the number played, matching the Played header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "12",
+              "value": 12,
+              "start": 52,
+              "end": 54,
+              "clause": "and 12 games lost?",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "The clause explicitly describes 12 as games lost, matching the Lost header.",
+              "operator": ">=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              1,
+              0,
+              11
+            ],
+            [
+              3,
+              1,
+              "5"
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "11",
+          "value": "11",
+          "start": 38,
+          "end": 40
+        },
+        {
+          "surface": "12",
+          "value": "12",
+          "start": 52,
+          "end": 54
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "11",
+          "value": 11,
+          "start": 38,
+          "end": 40,
+          "clause": "When was the earliest first game with 11 played",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The clause explicitly describes 11 as the number played, matching the Played header.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "12",
+          "value": 12,
+          "start": 52,
+          "end": 54,
+          "clause": "and 12 games lost?",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "The clause explicitly describes 12 as games lost, matching the Lost header.",
+          "operator": ">=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          1,
+          0,
+          11
+        ],
+        [
+          3,
+          1,
+          "5"
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 10735
+}

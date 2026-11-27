@@ -1,0 +1,588 @@
+{
+  "arm": "E2",
+  "position": 413,
+  "example_id": "test:10943:2-11516217-44",
+  "original_index": 10943,
+  "table_id": "2-11516217-44",
+  "question": "What is the total number of runs when the average was less than 31.25 and there were fewer than 24 innings?",
+  "gold_sql": {
+    "sel": 3,
+    "conds": [
+      [
+        4,
+        2,
+        31.25
+      ],
+      [
+        1,
+        2,
+        24
+      ]
+    ],
+    "agg": 3
+  },
+  "prediction_conds": [
+    [
+      4,
+      2,
+      31.25
+    ],
+    [
+      1,
+      2,
+      24
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        2,
+        31.25
+      ],
+      [
+        1,
+        2,
+        24
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "31.25",
+        "value": 31.25,
+        "start": 64,
+        "end": 69,
+        "clause": "What is the total number of runs when the average was less than 31.25",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The clause explicitly names Average, matching the Average header; 31.25 is an average value in the row evidence.",
+        "operator": "<",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "24",
+        "value": 24,
+        "start": 96,
+        "end": 98,
+        "clause": "and there were fewer than 24 innings?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "The clause explicitly names innings, matching the Innings header; 24 is an innings value in the row evidence.",
+        "operator": "<",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "31.25",
+        "value": "31.25",
+        "start": 64,
+        "end": 69
+      },
+      {
+        "surface": "24",
+        "value": "24",
+        "start": 96,
+        "end": 98
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the total number of runs when the average was less than 31.25 and there were fewer than 24 innings?",
+      "table": {
+        "header": [
+          "Matches",
+          "Innings",
+          "Not Outs",
+          "Runs",
+          "Average"
+        ],
+        "page_title": "List of New Zealand Test cricket victories",
+        "types": [
+          "real",
+          "real",
+          "real",
+          "real",
+          "real"
+        ],
+        "page_id": 11516217,
+        "id": "2-11516217-44",
+        "section_title": "72 v Sri Lanka at Colombo 2012/13",
+        "rows": [
+          [
+            "13",
+            "24",
+            "3",
+            "1047",
+            "49.85"
+          ],
+          [
+            "13",
+            "25",
+            "1",
+            "709",
+            "29.54"
+          ],
+          [
+            "13",
+            "25",
+            "0",
+            "720",
+            "28.80"
+          ],
+          [
+            "13",
+            "24",
+            "1",
+            "748",
+            "32.52"
+          ],
+          [
+            "7",
+            "13",
+            "1",
+            "375",
+            "31.25"
+          ],
+          [
+            "6",
+            "12",
+            "0",
+            "327",
+            "27.22"
+          ]
+        ],
+        "caption": "72 v Sri Lanka at Colombo 2012/13",
+        "headers": [
+          "Matches",
+          "Innings",
+          "Not Outs",
+          "Runs",
+          "Average"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-11516217-44",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "31.25",
+              "value": "31.25",
+              "start": 64,
+              "end": 69
+            },
+            {
+              "surface": "24",
+              "value": "24",
+              "start": 96,
+              "end": 98
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "66e729918ea769f11c8d9967d286ffabf2f6a88e7838f93efcb2722d841e1a00",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4779,
+              "completion_tokens": 29,
+              "total_tokens": 4808,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "31.25",
+              "value": "31.25",
+              "start": 64,
+              "end": 69,
+              "clause": "What is the total number of runs when the average was less than 31.25"
+            },
+            {
+              "surface": "24",
+              "value": "24",
+              "start": 96,
+              "end": 98,
+              "clause": "and there were fewer than 24 innings?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "31.25",
+              "value": "31.25",
+              "start": 64,
+              "end": 69,
+              "clause": "What is the total number of runs when the average was less than 31.25"
+            },
+            {
+              "surface": "24",
+              "value": "24",
+              "start": 96,
+              "end": 98,
+              "clause": "and there were fewer than 24 innings?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "31.25",
+              "value": "31.25",
+              "start": 64,
+              "end": 69,
+              "clause": "What is the total number of runs when the average was less than 31.25",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly names Average, matching the Average header; 31.25 is an average value in the row evidence."
+            },
+            {
+              "surface": "24",
+              "value": "24",
+              "start": 96,
+              "end": 98,
+              "clause": "and there were fewer than 24 innings?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly names innings, matching the Innings header; 24 is an innings value in the row evidence."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "f82fe4feebabb39b8dca2a4fe01263871386b0bfd9d3bc8ad14a844debc9ddfe",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4850,
+              "completion_tokens": 72,
+              "total_tokens": 4922,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "31.25",
+              "value": "31.25",
+              "start": 64,
+              "end": 69,
+              "clause": "What is the total number of runs when the average was less than 31.25",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly names Average, matching the Average header; 31.25 is an average value in the row evidence.",
+              "operator": "<"
+            },
+            {
+              "surface": "24",
+              "value": "24",
+              "start": 96,
+              "end": 98,
+              "clause": "and there were fewer than 24 innings?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly names innings, matching the Innings header; 24 is an innings value in the row evidence.",
+              "operator": "<"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "faf26ae0fbdcaa280ec7924bce37b73c97290f30b9c67cfd688d7e06803541d2",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4957,
+              "completion_tokens": 12,
+              "total_tokens": 4969,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "31.25",
+              "value": "31.25",
+              "start": 64,
+              "end": 69,
+              "clause": "What is the total number of runs when the average was less than 31.25",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly names Average, matching the Average header; 31.25 is an average value in the row evidence.",
+              "operator": "<"
+            },
+            {
+              "surface": "24",
+              "value": "24",
+              "start": 96,
+              "end": 98,
+              "clause": "and there were fewer than 24 innings?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly names innings, matching the Innings header; 24 is an innings value in the row evidence.",
+              "operator": "<"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "9a8e6e3e4547903424ab2ea53e57419c428c2971a09b88805c3e0dea36817503",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4911,
+              "completion_tokens": 14,
+              "total_tokens": 4925,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "31.25",
+              "value": "31.25",
+              "start": 64,
+              "end": 69,
+              "clause": "What is the total number of runs when the average was less than 31.25",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly names Average, matching the Average header; 31.25 is an average value in the row evidence.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "24",
+              "value": "24",
+              "start": 96,
+              "end": 98,
+              "clause": "and there were fewer than 24 innings?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly names innings, matching the Innings header; 24 is an innings value in the row evidence.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "31.25",
+              "value": 31.25,
+              "start": 64,
+              "end": 69,
+              "clause": "What is the total number of runs when the average was less than 31.25",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly names Average, matching the Average header; 31.25 is an average value in the row evidence.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "24",
+              "value": 24,
+              "start": 96,
+              "end": 98,
+              "clause": "and there were fewer than 24 innings?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly names innings, matching the Innings header; 24 is an innings value in the row evidence.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "31.25",
+              "value": 31.25,
+              "start": 64,
+              "end": 69,
+              "clause": "What is the total number of runs when the average was less than 31.25",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The clause explicitly names Average, matching the Average header; 31.25 is an average value in the row evidence.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "24",
+              "value": 24,
+              "start": 96,
+              "end": 98,
+              "clause": "and there were fewer than 24 innings?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "The clause explicitly names innings, matching the Innings header; 24 is an innings value in the row evidence.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              2,
+              31.25
+            ],
+            [
+              1,
+              2,
+              24
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "31.25",
+          "value": "31.25",
+          "start": 64,
+          "end": 69
+        },
+        {
+          "surface": "24",
+          "value": "24",
+          "start": 96,
+          "end": 98
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "31.25",
+          "value": 31.25,
+          "start": 64,
+          "end": 69,
+          "clause": "What is the total number of runs when the average was less than 31.25",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The clause explicitly names Average, matching the Average header; 31.25 is an average value in the row evidence.",
+          "operator": "<",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "24",
+          "value": 24,
+          "start": 96,
+          "end": 98,
+          "clause": "and there were fewer than 24 innings?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "The clause explicitly names innings, matching the Innings header; 24 is an innings value in the row evidence.",
+          "operator": "<",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          4,
+          2,
+          31.25
+        ],
+        [
+          1,
+          2,
+          24
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8328
+}

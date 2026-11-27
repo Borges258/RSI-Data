@@ -1,0 +1,495 @@
+{
+  "arm": "E2",
+  "position": 92,
+  "example_id": "test:3188:1-25016555-5",
+  "original_index": 3188,
+  "table_id": "1-25016555-5",
+  "question": "When 21 is the number of assists how many sets of blocks are there?",
+  "gold_sql": {
+    "sel": 6,
+    "conds": [
+      [
+        4,
+        0,
+        21
+      ]
+    ],
+    "agg": 3
+  },
+  "prediction_conds": [
+    [
+      4,
+      0,
+      21
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        4,
+        0,
+        21
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "21",
+        "value": 21,
+        "start": 5,
+        "end": 7,
+        "clause": "When 21 is the number of assists how many sets of blocks are there?",
+        "columnIndex": 4,
+        "columnCandidates": [
+          4
+        ],
+        "columnMatchReason": "The question explicitly identifies 21 as the number of assists, matching the Assists header; row evidence includes an Assists value of 21.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "21",
+        "value": "21",
+        "start": 5,
+        "end": 7
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "When 21 is the number of assists how many sets of blocks are there?",
+      "table": {
+        "header": [
+          "Player",
+          "Minutes",
+          "Field Goals",
+          "Rebounds",
+          "Assists",
+          "Steals",
+          "Blocks",
+          "Points"
+        ],
+        "page_title": "2001 Miami Sol season",
+        "types": [
+          "text",
+          "real",
+          "real",
+          "real",
+          "real",
+          "real",
+          "real",
+          "real"
+        ],
+        "id": "1-25016555-5",
+        "section_title": "Player stats",
+        "caption": "Player stats",
+        "rows": [
+          [
+            "Sheri Sam",
+            1100,
+            180,
+            137,
+            88,
+            55,
+            8,
+            444
+          ],
+          [
+            "Elena Baranova",
+            984,
+            141,
+            191,
+            63,
+            33,
+            57,
+            378
+          ],
+          [
+            "Sandy Brondello",
+            850,
+            142,
+            50,
+            63,
+            27,
+            4,
+            367
+          ],
+          [
+            "Ruth Riley",
+            799,
+            77,
+            130,
+            26,
+            25,
+            46,
+            218
+          ],
+          [
+            "Debbie Black",
+            946,
+            70,
+            126,
+            123,
+            82,
+            2,
+            180
+          ],
+          [
+            "Tracy Reid",
+            278,
+            32,
+            37,
+            13,
+            15,
+            5,
+            80
+          ],
+          [
+            "Kristen Rasmussen",
+            416,
+            31,
+            88,
+            16,
+            11,
+            14,
+            75
+          ],
+          [
+            "Marlies Askamp",
+            431,
+            28,
+            87,
+            15,
+            12,
+            11,
+            74
+          ],
+          [
+            "Kisha Ford",
+            395,
+            26,
+            65,
+            21,
+            17,
+            5,
+            71
+          ],
+          [
+            "Marla Brumfield",
+            247,
+            17,
+            25,
+            32,
+            20,
+            0,
+            44
+          ],
+          [
+            "Katrina Colleton",
+            121,
+            10,
+            7,
+            7,
+            2,
+            1,
+            26
+          ]
+        ],
+        "name": "table_25016555_5",
+        "headers": [
+          "Player",
+          "Minutes",
+          "Field Goals",
+          "Rebounds",
+          "Assists",
+          "Steals",
+          "Blocks",
+          "Points"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "1-25016555-5",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 1,
+          "conditions": [
+            {
+              "surface": "21",
+              "value": "21",
+              "start": 5,
+              "end": 7
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b0b9bd970c02f5564b3ee7e55c5e21a52888183d9c0fa1174096cd0631c0cf5c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4914,
+              "completion_tokens": 17,
+              "total_tokens": 4931,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "21",
+              "value": "21",
+              "start": 5,
+              "end": 7,
+              "clause": "When 21 is the number of assists how many sets of blocks are there?"
+            }
+          ],
+          "count": 1
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "21",
+              "value": "21",
+              "start": 5,
+              "end": 7,
+              "clause": "When 21 is the number of assists how many sets of blocks are there?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "21",
+              "value": "21",
+              "start": 5,
+              "end": 7,
+              "clause": "When 21 is the number of assists how many sets of blocks are there?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly identifies 21 as the number of assists, matching the Assists header; row evidence includes an Assists value of 21."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "64b38e2391ead806ffceaad4ac185775564e5ea16e1b117a17f2d30e62baa43b",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4951,
+              "completion_tokens": 50,
+              "total_tokens": 5001,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "21",
+              "value": "21",
+              "start": 5,
+              "end": 7,
+              "clause": "When 21 is the number of assists how many sets of blocks are there?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly identifies 21 as the number of assists, matching the Assists header; row evidence includes an Assists value of 21.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c0c0b0d7d7658428f38a6609caf550ff47094f9e32e95794e133165ee313515b",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 5025,
+              "completion_tokens": 9,
+              "total_tokens": 5034,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "21",
+              "value": 21,
+              "start": 5,
+              "end": 7,
+              "clause": "When 21 is the number of assists how many sets of blocks are there?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly identifies 21 as the number of assists, matching the Assists header; row evidence includes an Assists value of 21.",
+              "operator": "="
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "04ff13f4bfed5fdb3d7b788119e93dbb0eb56f8b205eed0cb7fd950516f6f13c",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4976,
+              "completion_tokens": 9,
+              "total_tokens": 4985,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "21",
+              "value": "21",
+              "start": 5,
+              "end": 7,
+              "clause": "When 21 is the number of assists how many sets of blocks are there?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly identifies 21 as the number of assists, matching the Assists header; row evidence includes an Assists value of 21.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "21",
+              "value": 21,
+              "start": 5,
+              "end": 7,
+              "clause": "When 21 is the number of assists how many sets of blocks are there?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly identifies 21 as the number of assists, matching the Assists header; row evidence includes an Assists value of 21.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "21",
+              "value": 21,
+              "start": 5,
+              "end": 7,
+              "clause": "When 21 is the number of assists how many sets of blocks are there?",
+              "columnIndex": 4,
+              "columnCandidates": [
+                4
+              ],
+              "columnMatchReason": "The question explicitly identifies 21 as the number of assists, matching the Assists header; row evidence includes an Assists value of 21.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              4,
+              0,
+              21
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "21",
+          "value": "21",
+          "start": 5,
+          "end": 7
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "21",
+          "value": 21,
+          "start": 5,
+          "end": 7,
+          "clause": "When 21 is the number of assists how many sets of blocks are there?",
+          "columnIndex": 4,
+          "columnCandidates": [
+            4
+          ],
+          "columnMatchReason": "The question explicitly identifies 21 as the number of assists, matching the Assists header; row evidence includes an Assists value of 21.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 1,
+      "conds": [
+        [
+          4,
+          0,
+          21
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 8406
+}

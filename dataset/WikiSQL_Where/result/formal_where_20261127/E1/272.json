@@ -1,0 +1,93 @@
+{
+  "arm": "E1",
+  "position": 272,
+  "example_id": "test:7851:2-16729457-1",
+  "original_index": 7851,
+  "table_id": "2-16729457-1",
+  "question": "What is the lowest number of participants in 2010 when there were 0 participants in 2012?",
+  "gold_sql": {
+    "sel": 1,
+    "conds": [
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "agg": 2
+  },
+  "prediction_conds": [
+    [
+      3,
+      0,
+      0
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": "gpt-5.6-sol",
+  "usage": {
+    "prompt_tokens": 9614,
+    "completion_tokens": 47,
+    "total_tokens": 9661,
+    "prompt_tokens_details": {
+      "cached_tokens": 4224
+    }
+  },
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        0,
+        0
+      ]
+    ],
+    "explanation": "Filter rows where the 2012 participant count equals 0; lowest refers to the requested 2010 result.",
+    "version": "wikisql-where-prior-v1",
+    "tableId": "2-16729457-1",
+    "knowledgeIds": [
+      "g-eq",
+      "g-gt",
+      "g-lt",
+      "g-inclusive",
+      "g-literal",
+      "g-threshold",
+      "g-and",
+      "g-or",
+      "g-column",
+      "g-count",
+      "g-ambiguous",
+      "t-2-16729457-1-field-0",
+      "t-2-16729457-1-field-1",
+      "t-2-16729457-1-field-2",
+      "t-2-16729457-1-field-3",
+      "t-2-16729457-1-field-4",
+      "d-implicit-eq",
+      "d-explicit-eq",
+      "d-gt",
+      "d-lt-and-gt",
+      "d-with-two",
+      "d-literal-form",
+      "p-text",
+      "p-number",
+      "p-multi",
+      "p-unsupported"
+    ],
+    "promptSha256": "2d1eacbe05ebdfd07462711a6929e3fe107bfbb1ad103887983ac5f7171692b5",
+    "model": "gpt-5.6-sol",
+    "usage": {
+      "prompt_tokens": 9614,
+      "completion_tokens": 47,
+      "total_tokens": 9661,
+      "prompt_tokens_details": {
+        "cached_tokens": 4224
+      }
+    },
+    "latencyMs": 2061
+  },
+  "source": "where_prior_parse",
+  "safe_completed": true,
+  "elapsed_ms": 2078
+}

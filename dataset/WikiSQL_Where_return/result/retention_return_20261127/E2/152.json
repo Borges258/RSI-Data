@@ -1,0 +1,581 @@
+{
+  "arm": "E2",
+  "position": 152,
+  "example_id": "test:5488:2-14642287-5",
+  "original_index": 5488,
+  "table_id": "2-14642287-5",
+  "question": "What is the highest number of silver when there is 1 bronze and less than 4 golds?",
+  "gold_sql": {
+    "sel": 2,
+    "conds": [
+      [
+        3,
+        0,
+        1
+      ],
+      [
+        1,
+        2,
+        4
+      ]
+    ],
+    "agg": 1
+  },
+  "prediction_conds": [
+    [
+      3,
+      0,
+      1
+    ],
+    [
+      1,
+      2,
+      4
+    ]
+  ],
+  "status": "SUCCEEDED",
+  "attempts": 1,
+  "model": null,
+  "usage": null,
+  "validation_errors": [],
+  "response": {
+    "status": "SUCCEEDED",
+    "conds": [
+      [
+        3,
+        0,
+        1
+      ],
+      [
+        1,
+        2,
+        4
+      ]
+    ],
+    "stage": "WHERE_CONDITION_ASSEMBLE",
+    "halt": false,
+    "completed": true,
+    "conditions": [
+      {
+        "surface": "1",
+        "value": 1,
+        "start": 51,
+        "end": 52,
+        "clause": "What is the highest number of silver when there is 1 bronze",
+        "columnIndex": 3,
+        "columnCandidates": [
+          3
+        ],
+        "columnMatchReason": "Explicit noun phrase '1 bronze' matches the Bronze header.",
+        "operator": "=",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      },
+      {
+        "surface": "less than 4",
+        "value": 4,
+        "start": 64,
+        "end": 75,
+        "clause": "and less than 4 golds?",
+        "columnIndex": 1,
+        "columnCandidates": [
+          1
+        ],
+        "columnMatchReason": "Explicit phrase 'less than 4 golds' matches the Gold header.",
+        "operator": "<",
+        "grounded": true,
+        "groundingStatus": "EXACT_MATCH"
+      }
+    ],
+    "originalConditions": [
+      {
+        "surface": "1",
+        "value": "1",
+        "start": 51,
+        "end": 52
+      },
+      {
+        "surface": "less than 4",
+        "value": "4",
+        "start": 64,
+        "end": 75
+      }
+    ],
+    "warnings": [],
+    "request": {
+      "question": "What is the highest number of silver when there is 1 bronze and less than 4 golds?",
+      "table": {
+        "header": [
+          "Rank",
+          "Gold",
+          "Silver",
+          "Bronze",
+          "Total"
+        ],
+        "page_title": "Football at the Southeast Asian Games",
+        "types": [
+          "text",
+          "real",
+          "real",
+          "real",
+          "real"
+        ],
+        "page_id": 14642287,
+        "id": "2-14642287-5",
+        "section_title": "Women's tournament",
+        "rows": [
+          [
+            "1",
+            "4",
+            "2",
+            "1",
+            "7"
+          ],
+          [
+            "2",
+            "4",
+            "1",
+            "1",
+            "6"
+          ],
+          [
+            "3",
+            "0",
+            "3",
+            "3",
+            "6"
+          ],
+          [
+            "*4",
+            "0",
+            "1",
+            "0",
+            "1"
+          ],
+          [
+            "5",
+            "0",
+            "0",
+            "1",
+            "1"
+          ]
+        ],
+        "caption": "Women's tournament",
+        "headers": [
+          "Rank",
+          "Gold",
+          "Silver",
+          "Bronze",
+          "Total"
+        ]
+      },
+      "knowledgeContext": {
+        "version": "wikisql-where-prior-v1",
+        "activeTableId": "2-14642287-5",
+        "atoms": [],
+        "patterns": [],
+        "relations": []
+      },
+      "_whereStage": 10,
+      "stageResults": {
+        "WHERE_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "count": 2,
+          "conditions": [
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 51,
+              "end": 52
+            },
+            {
+              "surface": "less than 4",
+              "value": "4",
+              "start": 64,
+              "end": 75
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "097a2b7792146c38ee6551cbc57ba87f18a074730b0e7760da43599669c9b8ec",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4730,
+              "completion_tokens": 28,
+              "total_tokens": 4758,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_MULTI_CONDITION_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 51,
+              "end": 52,
+              "clause": "What is the highest number of silver when there is 1 bronze"
+            },
+            {
+              "surface": "less than 4",
+              "value": "4",
+              "start": 64,
+              "end": 75,
+              "clause": "and less than 4 golds?"
+            }
+          ],
+          "count": 2
+        },
+        "WHERE_COMPLETENESS_CHECK": {
+          "status": "SUCCEEDED",
+          "completeness": "COMPLETE",
+          "complete": true,
+          "missing": [],
+          "uncertain": [],
+          "extra": [],
+          "conditions": [
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 51,
+              "end": 52,
+              "clause": "What is the highest number of silver when there is 1 bronze"
+            },
+            {
+              "surface": "less than 4",
+              "value": "4",
+              "start": 64,
+              "end": 75,
+              "clause": "and less than 4 golds?"
+            }
+          ]
+        },
+        "WHERE_COLUMN_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 51,
+              "end": 52,
+              "clause": "What is the highest number of silver when there is 1 bronze",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicit noun phrase '1 bronze' matches the Bronze header."
+            },
+            {
+              "surface": "less than 4",
+              "value": "4",
+              "start": 64,
+              "end": 75,
+              "clause": "and less than 4 golds?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Explicit phrase 'less than 4 golds' matches the Gold header."
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "b42e3b8a5e5654b86dcfbb0bfe2160262140b3ea8a4de7eaf7ee9f7524fcd9c5",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4795,
+              "completion_tokens": 52,
+              "total_tokens": 4847,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_OPERATOR_RECOGNIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 51,
+              "end": 52,
+              "clause": "What is the highest number of silver when there is 1 bronze",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicit noun phrase '1 bronze' matches the Bronze header.",
+              "operator": "="
+            },
+            {
+              "surface": "less than 4",
+              "value": "4",
+              "start": 64,
+              "end": 75,
+              "clause": "and less than 4 golds?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Explicit phrase 'less than 4 golds' matches the Gold header.",
+              "operator": "<"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "84ae6dc7daf72f1082b940cda5d3c46716c5585bc650ef2c799428159d0bb4a6",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4882,
+              "completion_tokens": 12,
+              "total_tokens": 4894,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_VALUE_EXTRACT": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1",
+              "value": 1,
+              "start": 51,
+              "end": 52,
+              "clause": "What is the highest number of silver when there is 1 bronze",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicit noun phrase '1 bronze' matches the Bronze header.",
+              "operator": "="
+            },
+            {
+              "surface": "less than 4",
+              "value": 4,
+              "start": 64,
+              "end": 75,
+              "clause": "and less than 4 golds?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Explicit phrase 'less than 4 golds' matches the Gold header.",
+              "operator": "<"
+            }
+          ],
+          "modelCall": {
+            "model": "gpt-5.6-sol",
+            "promptSha256": "c7c963b1237f68d87d40214282e2b0550dae45653186d078f337454ac4c7adda",
+            "knowledgeIds": [],
+            "usage": {
+              "prompt_tokens": 4836,
+              "completion_tokens": 11,
+              "total_tokens": 4847,
+              "prompt_tokens_details": {
+                "cached_tokens": 4224
+              }
+            }
+          }
+        },
+        "WHERE_SCHEMA_VALUE_MATCH": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1",
+              "value": "1",
+              "start": 51,
+              "end": 52,
+              "clause": "What is the highest number of silver when there is 1 bronze",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicit noun phrase '1 bronze' matches the Bronze header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "less than 4",
+              "value": "4",
+              "start": 64,
+              "end": 75,
+              "clause": "and less than 4 golds?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Explicit phrase 'less than 4 golds' matches the Gold header.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_VALUE_NORMALIZE": {
+          "status": "SUCCEEDED",
+          "conditions": [
+            {
+              "surface": "1",
+              "value": 1,
+              "start": 51,
+              "end": 52,
+              "clause": "What is the highest number of silver when there is 1 bronze",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicit noun phrase '1 bronze' matches the Bronze header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "less than 4",
+              "value": 4,
+              "start": 64,
+              "end": 75,
+              "clause": "and less than 4 golds?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Explicit phrase 'less than 4 golds' matches the Gold header.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_VALIDATE": {
+          "status": "SUCCEEDED",
+          "valid": true,
+          "errors": [],
+          "conditions": [
+            {
+              "surface": "1",
+              "value": 1,
+              "start": 51,
+              "end": 52,
+              "clause": "What is the highest number of silver when there is 1 bronze",
+              "columnIndex": 3,
+              "columnCandidates": [
+                3
+              ],
+              "columnMatchReason": "Explicit noun phrase '1 bronze' matches the Bronze header.",
+              "operator": "=",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            },
+            {
+              "surface": "less than 4",
+              "value": 4,
+              "start": 64,
+              "end": 75,
+              "clause": "and less than 4 golds?",
+              "columnIndex": 1,
+              "columnCandidates": [
+                1
+              ],
+              "columnMatchReason": "Explicit phrase 'less than 4 golds' matches the Gold header.",
+              "operator": "<",
+              "grounded": true,
+              "groundingStatus": "EXACT_MATCH"
+            }
+          ]
+        },
+        "WHERE_CONDITION_ASSEMBLE": {
+          "status": "SUCCEEDED",
+          "conds": [
+            [
+              3,
+              0,
+              1
+            ],
+            [
+              1,
+              2,
+              4
+            ]
+          ]
+        }
+      },
+      "warnings": [],
+      "execution": {
+        "status": "SUCCEEDED",
+        "stage": "WHERE_CONDITION_ASSEMBLE",
+        "halt": false,
+        "completed": true,
+        "warnings": []
+      },
+      "originalConditions": [
+        {
+          "surface": "1",
+          "value": "1",
+          "start": 51,
+          "end": 52
+        },
+        {
+          "surface": "less than 4",
+          "value": "4",
+          "start": 64,
+          "end": 75
+        }
+      ],
+      "conditions": [
+        {
+          "surface": "1",
+          "value": 1,
+          "start": 51,
+          "end": 52,
+          "clause": "What is the highest number of silver when there is 1 bronze",
+          "columnIndex": 3,
+          "columnCandidates": [
+            3
+          ],
+          "columnMatchReason": "Explicit noun phrase '1 bronze' matches the Bronze header.",
+          "operator": "=",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        },
+        {
+          "surface": "less than 4",
+          "value": 4,
+          "start": 64,
+          "end": 75,
+          "clause": "and less than 4 golds?",
+          "columnIndex": 1,
+          "columnCandidates": [
+            1
+          ],
+          "columnMatchReason": "Explicit phrase 'less than 4 golds' matches the Gold header.",
+          "operator": "<",
+          "grounded": true,
+          "groundingStatus": "EXACT_MATCH"
+        }
+      ],
+      "count": 2,
+      "conds": [
+        [
+          3,
+          0,
+          1
+        ],
+        [
+          1,
+          2,
+          4
+        ]
+      ]
+    }
+  },
+  "source": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "safe_completed": true,
+  "elapsed_ms": 7906
+}
