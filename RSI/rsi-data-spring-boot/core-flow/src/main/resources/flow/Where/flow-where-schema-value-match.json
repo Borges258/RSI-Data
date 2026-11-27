@@ -1,0 +1,59 @@
+{
+  "id": "@com.horsecoder.common.whuTalent.dataTesting.core/WHERE_SCHEMA_VALUE_MATCH",
+  "name": "WHERE_SCHEMA_VALUE_MATCH",
+  "type": "flow",
+  "title": "用当前表字段值核对并还原条件值",
+  "description": "用当前表字段值核对并还原条件值",
+  "params": [
+    {
+      "type": "String",
+      "notnull": true,
+      "name": "request",
+      "title": "请求JSON"
+    }
+  ],
+  "results": [
+    {
+      "type": "String",
+      "notnull": true,
+      "name": "result",
+      "title": "结果JSON"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "NODE_WHERE_SCHEMA_VALUE_MATCH",
+      "type": "event",
+      "title": "用当前表字段值核对并还原条件值",
+      "reference": "WHERE_SCHEMA_VALUE_MATCH",
+      "params": [
+        {
+          "type": "String",
+          "notnull": true,
+          "name": "request",
+          "title": "请求JSON"
+        }
+      ],
+      "results": [
+        {
+          "type": "String",
+          "notnull": true,
+          "name": "result",
+          "title": "结果JSON"
+        }
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "target": "NODE_WHERE_SCHEMA_VALUE_MATCH",
+      "condition": "true",
+      "source": "start"
+    },
+    {
+      "target": "end",
+      "condition": "true",
+      "source": "NODE_WHERE_SCHEMA_VALUE_MATCH"
+    }
+  ]
+}

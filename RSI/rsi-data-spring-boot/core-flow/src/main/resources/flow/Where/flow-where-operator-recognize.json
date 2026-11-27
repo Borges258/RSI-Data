@@ -1,0 +1,59 @@
+{
+  "id": "@com.horsecoder.common.whuTalent.dataTesting.core/WHERE_OPERATOR_RECOGNIZE",
+  "name": "WHERE_OPERATOR_RECOGNIZE",
+  "type": "flow",
+  "title": "识别六种比较运算符",
+  "description": "识别六种比较运算符",
+  "params": [
+    {
+      "type": "String",
+      "notnull": true,
+      "name": "request",
+      "title": "请求JSON"
+    }
+  ],
+  "results": [
+    {
+      "type": "String",
+      "notnull": true,
+      "name": "result",
+      "title": "结果JSON"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "NODE_WHERE_OPERATOR_RECOGNIZE",
+      "type": "event",
+      "title": "识别六种比较运算符",
+      "reference": "WHERE_OPERATOR_RECOGNIZE",
+      "params": [
+        {
+          "type": "String",
+          "notnull": true,
+          "name": "request",
+          "title": "请求JSON"
+        }
+      ],
+      "results": [
+        {
+          "type": "String",
+          "notnull": true,
+          "name": "result",
+          "title": "结果JSON"
+        }
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "target": "NODE_WHERE_OPERATOR_RECOGNIZE",
+      "condition": "true",
+      "source": "start"
+    },
+    {
+      "target": "end",
+      "condition": "true",
+      "source": "NODE_WHERE_OPERATOR_RECOGNIZE"
+    }
+  ]
+}

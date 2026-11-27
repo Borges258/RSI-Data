@@ -1,0 +1,59 @@
+{
+  "id": "@com.horsecoder.common.whuTalent.dataTesting.core/WHERE_VALUE_EXTRACT",
+  "name": "WHERE_VALUE_EXTRACT",
+  "type": "flow",
+  "title": "提取完整条件值",
+  "description": "提取完整条件值",
+  "params": [
+    {
+      "type": "String",
+      "notnull": true,
+      "name": "request",
+      "title": "请求JSON"
+    }
+  ],
+  "results": [
+    {
+      "type": "String",
+      "notnull": true,
+      "name": "result",
+      "title": "结果JSON"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "NODE_WHERE_VALUE_EXTRACT",
+      "type": "event",
+      "title": "提取完整条件值",
+      "reference": "WHERE_VALUE_EXTRACT",
+      "params": [
+        {
+          "type": "String",
+          "notnull": true,
+          "name": "request",
+          "title": "请求JSON"
+        }
+      ],
+      "results": [
+        {
+          "type": "String",
+          "notnull": true,
+          "name": "result",
+          "title": "结果JSON"
+        }
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "target": "NODE_WHERE_VALUE_EXTRACT",
+      "condition": "true",
+      "source": "start"
+    },
+    {
+      "target": "end",
+      "condition": "true",
+      "source": "NODE_WHERE_VALUE_EXTRACT"
+    }
+  ]
+}

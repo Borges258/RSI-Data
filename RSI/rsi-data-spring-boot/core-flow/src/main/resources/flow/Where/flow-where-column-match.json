@@ -1,0 +1,59 @@
+{
+  "id": "@com.horsecoder.common.whuTalent.dataTesting.core/WHERE_COLUMN_MATCH",
+  "name": "WHERE_COLUMN_MATCH",
+  "type": "flow",
+  "title": "匹配条件对应的表字段",
+  "description": "匹配条件对应的表字段",
+  "params": [
+    {
+      "type": "String",
+      "notnull": true,
+      "name": "request",
+      "title": "请求JSON"
+    }
+  ],
+  "results": [
+    {
+      "type": "String",
+      "notnull": true,
+      "name": "result",
+      "title": "结果JSON"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "NODE_WHERE_COLUMN_MATCH",
+      "type": "event",
+      "title": "匹配条件对应的表字段",
+      "reference": "WHERE_COLUMN_MATCH",
+      "params": [
+        {
+          "type": "String",
+          "notnull": true,
+          "name": "request",
+          "title": "请求JSON"
+        }
+      ],
+      "results": [
+        {
+          "type": "String",
+          "notnull": true,
+          "name": "result",
+          "title": "结果JSON"
+        }
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "target": "NODE_WHERE_COLUMN_MATCH",
+      "condition": "true",
+      "source": "start"
+    },
+    {
+      "target": "end",
+      "condition": "true",
+      "source": "NODE_WHERE_COLUMN_MATCH"
+    }
+  ]
+}

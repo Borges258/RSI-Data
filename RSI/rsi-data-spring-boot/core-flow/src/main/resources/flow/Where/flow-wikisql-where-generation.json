@@ -1,0 +1,213 @@
+{
+  "id": "@com.horsecoder.common.whuTalent.dataTesting.core/WIKISQL_WHERE_GENERATION",
+  "name": "WIKISQL_WHERE_GENERATION",
+  "type": "flow",
+  "title": "WikiSQL WHERE 条件生成",
+  "description": "顺序调用十个 WHERE 原子 Skill，通过请求合并事件保留上下文、传递条件并处理终止状态。",
+  "params": [{ "name": "request", "type": "String", "title": "完整请求JSON", "notnull": true }],
+  "results": [{ "name": "result", "type": "String", "title": "执行结果JSON", "notnull": true }],
+  "nodes": [
+    {
+      "id": "NODE_WHERE_REQUEST_PREPARE",
+      "type": "event",
+      "title": "保留原始上下文并初始化执行状态",
+      "reference": "WHERE_REQUEST_PREPARE",
+      "params": [{ "name": "request", "type": "String", "title": "完整请求JSON", "notnull": true }],
+      "results": [{ "name": "request", "type": "String", "title": "完整请求JSON", "notnull": true }, { "name": "halt", "type": "Boolean", "title": "是否终止", "notnull": true }, { "name": "result", "type": "String", "title": "执行结果JSON", "notnull": true }]
+    },
+    {
+      "id": "NODE_WHERE_CONDITION_EXTRACT",
+      "type": "flow",
+      "title": "条件提取",
+      "reference": "@com.horsecoder.common.whuTalent.dataTesting.core/WHERE_CONDITION_EXTRACT",
+      "params": [{ "name": "request", "type": "String", "title": "完整请求JSON", "notnull": true }],
+      "results": [{ "name": "stageResult", "type": "String", "title": "子Flow结果JSON", "notnull": true }]
+    },
+    {
+      "id": "MERGE_WHERE_CONDITION_EXTRACT",
+      "type": "event",
+      "title": "合并条件提取结果",
+      "reference": "WHERE_REQUEST_MERGE",
+      "params": [{ "name": "request", "type": "String", "title": "完整请求JSON", "notnull": true }, { "name": "stageResult", "type": "String", "title": "子Flow结果JSON", "notnull": true }],
+      "results": [{ "name": "request", "type": "String", "title": "完整请求JSON", "notnull": true }, { "name": "halt", "type": "Boolean", "title": "是否终止", "notnull": true }, { "name": "result", "type": "String", "title": "执行结果JSON", "notnull": true }]
+    },
+    {
+      "id": "NODE_WHERE_MULTI_CONDITION_EXTRACT",
+      "type": "flow",
+      "title": "多条件边界识别",
+      "reference": "@com.horsecoder.common.whuTalent.dataTesting.core/WHERE_MULTI_CONDITION_EXTRACT",
+      "params": [{ "name": "request", "type": "String", "title": "完整请求JSON", "notnull": true }],
+      "results": [{ "name": "stageResult", "type": "String", "title": "子Flow结果JSON", "notnull": true }]
+    },
+    {
+      "id": "MERGE_WHERE_MULTI_CONDITION_EXTRACT",
+      "type": "event",
+      "title": "合并多条件边界识别结果",
+      "reference": "WHERE_REQUEST_MERGE",
+      "params": [{ "name": "request", "type": "String", "title": "完整请求JSON", "notnull": true }, { "name": "stageResult", "type": "String", "title": "子Flow结果JSON", "notnull": true }],
+      "results": [{ "name": "request", "type": "String", "title": "完整请求JSON", "notnull": true }, { "name": "halt", "type": "Boolean", "title": "是否终止", "notnull": true }, { "name": "result", "type": "String", "title": "执行结果JSON", "notnull": true }]
+    },
+    {
+      "id": "NODE_WHERE_COMPLETENESS_CHECK",
+      "type": "flow",
+      "title": "完整性检查",
+      "reference": "@com.horsecoder.common.whuTalent.dataTesting.core/WHERE_COMPLETENESS_CHECK",
+      "params": [{ "name": "request", "type": "String", "title": "完整请求JSON", "notnull": true }],
+      "results": [{ "name": "stageResult", "type": "String", "title": "子Flow结果JSON", "notnull": true }]
+    },
+    {
+      "id": "MERGE_WHERE_COMPLETENESS_CHECK",
+      "type": "event",
+      "title": "合并完整性检查结果",
+      "reference": "WHERE_REQUEST_MERGE",
+      "params": [{ "name": "request", "type": "String", "title": "完整请求JSON", "notnull": true }, { "name": "stageResult", "type": "String", "title": "子Flow结果JSON", "notnull": true }],
+      "results": [{ "name": "request", "type": "String", "title": "完整请求JSON", "notnull": true }, { "name": "halt", "type": "Boolean", "title": "是否终止", "notnull": true }, { "name": "result", "type": "String", "title": "执行结果JSON", "notnull": true }]
+    },
+    {
+      "id": "NODE_WHERE_COLUMN_MATCH",
+      "type": "flow",
+      "title": "字段匹配",
+      "reference": "@com.horsecoder.common.whuTalent.dataTesting.core/WHERE_COLUMN_MATCH",
+      "params": [{ "name": "request", "type": "String", "title": "完整请求JSON", "notnull": true }],
+      "results": [{ "name": "stageResult", "type": "String", "title": "子Flow结果JSON", "notnull": true }]
+    },
+    {
+      "id": "MERGE_WHERE_COLUMN_MATCH",
+      "type": "event",
+      "title": "合并字段匹配结果",
+      "reference": "WHERE_REQUEST_MERGE",
+      "params": [{ "name": "request", "type": "String", "title": "完整请求JSON", "notnull": true }, { "name": "stageResult", "type": "String", "title": "子Flow结果JSON", "notnull": true }],
+      "results": [{ "name": "request", "type": "String", "title": "完整请求JSON", "notnull": true }, { "name": "halt", "type": "Boolean", "title": "是否终止", "notnull": true }, { "name": "result", "type": "String", "title": "执行结果JSON", "notnull": true }]
+    },
+    {
+      "id": "NODE_WHERE_OPERATOR_RECOGNIZE",
+      "type": "flow",
+      "title": "运算符识别",
+      "reference": "@com.horsecoder.common.whuTalent.dataTesting.core/WHERE_OPERATOR_RECOGNIZE",
+      "params": [{ "name": "request", "type": "String", "title": "完整请求JSON", "notnull": true }],
+      "results": [{ "name": "stageResult", "type": "String", "title": "子Flow结果JSON", "notnull": true }]
+    },
+    {
+      "id": "MERGE_WHERE_OPERATOR_RECOGNIZE",
+      "type": "event",
+      "title": "合并运算符识别结果",
+      "reference": "WHERE_REQUEST_MERGE",
+      "params": [{ "name": "request", "type": "String", "title": "完整请求JSON", "notnull": true }, { "name": "stageResult", "type": "String", "title": "子Flow结果JSON", "notnull": true }],
+      "results": [{ "name": "request", "type": "String", "title": "完整请求JSON", "notnull": true }, { "name": "halt", "type": "Boolean", "title": "是否终止", "notnull": true }, { "name": "result", "type": "String", "title": "执行结果JSON", "notnull": true }]
+    },
+    {
+      "id": "NODE_WHERE_VALUE_EXTRACT",
+      "type": "flow",
+      "title": "条件值提取",
+      "reference": "@com.horsecoder.common.whuTalent.dataTesting.core/WHERE_VALUE_EXTRACT",
+      "params": [{ "name": "request", "type": "String", "title": "完整请求JSON", "notnull": true }],
+      "results": [{ "name": "stageResult", "type": "String", "title": "子Flow结果JSON", "notnull": true }]
+    },
+    {
+      "id": "MERGE_WHERE_VALUE_EXTRACT",
+      "type": "event",
+      "title": "合并条件值提取结果",
+      "reference": "WHERE_REQUEST_MERGE",
+      "params": [{ "name": "request", "type": "String", "title": "完整请求JSON", "notnull": true }, { "name": "stageResult", "type": "String", "title": "子Flow结果JSON", "notnull": true }],
+      "results": [{ "name": "request", "type": "String", "title": "完整请求JSON", "notnull": true }, { "name": "halt", "type": "Boolean", "title": "是否终止", "notnull": true }, { "name": "result", "type": "String", "title": "执行结果JSON", "notnull": true }]
+    },
+    {
+      "id": "NODE_WHERE_SCHEMA_VALUE_MATCH",
+      "type": "flow",
+      "title": "Schema 值匹配",
+      "reference": "@com.horsecoder.common.whuTalent.dataTesting.core/WHERE_SCHEMA_VALUE_MATCH",
+      "params": [{ "name": "request", "type": "String", "title": "完整请求JSON", "notnull": true }],
+      "results": [{ "name": "stageResult", "type": "String", "title": "子Flow结果JSON", "notnull": true }]
+    },
+    {
+      "id": "MERGE_WHERE_SCHEMA_VALUE_MATCH",
+      "type": "event",
+      "title": "合并Schema 值匹配结果",
+      "reference": "WHERE_REQUEST_MERGE",
+      "params": [{ "name": "request", "type": "String", "title": "完整请求JSON", "notnull": true }, { "name": "stageResult", "type": "String", "title": "子Flow结果JSON", "notnull": true }],
+      "results": [{ "name": "request", "type": "String", "title": "完整请求JSON", "notnull": true }, { "name": "halt", "type": "Boolean", "title": "是否终止", "notnull": true }, { "name": "result", "type": "String", "title": "执行结果JSON", "notnull": true }]
+    },
+    {
+      "id": "NODE_WHERE_VALUE_NORMALIZE",
+      "type": "flow",
+      "title": "值标准化",
+      "reference": "@com.horsecoder.common.whuTalent.dataTesting.core/WHERE_VALUE_NORMALIZE",
+      "params": [{ "name": "request", "type": "String", "title": "完整请求JSON", "notnull": true }],
+      "results": [{ "name": "stageResult", "type": "String", "title": "子Flow结果JSON", "notnull": true }]
+    },
+    {
+      "id": "MERGE_WHERE_VALUE_NORMALIZE",
+      "type": "event",
+      "title": "合并值标准化结果",
+      "reference": "WHERE_REQUEST_MERGE",
+      "params": [{ "name": "request", "type": "String", "title": "完整请求JSON", "notnull": true }, { "name": "stageResult", "type": "String", "title": "子Flow结果JSON", "notnull": true }],
+      "results": [{ "name": "request", "type": "String", "title": "完整请求JSON", "notnull": true }, { "name": "halt", "type": "Boolean", "title": "是否终止", "notnull": true }, { "name": "result", "type": "String", "title": "执行结果JSON", "notnull": true }]
+    },
+    {
+      "id": "NODE_WHERE_CONDITION_VALIDATE",
+      "type": "flow",
+      "title": "条件校验",
+      "reference": "@com.horsecoder.common.whuTalent.dataTesting.core/WHERE_CONDITION_VALIDATE",
+      "params": [{ "name": "request", "type": "String", "title": "完整请求JSON", "notnull": true }],
+      "results": [{ "name": "stageResult", "type": "String", "title": "子Flow结果JSON", "notnull": true }]
+    },
+    {
+      "id": "MERGE_WHERE_CONDITION_VALIDATE",
+      "type": "event",
+      "title": "合并条件校验结果",
+      "reference": "WHERE_REQUEST_MERGE",
+      "params": [{ "name": "request", "type": "String", "title": "完整请求JSON", "notnull": true }, { "name": "stageResult", "type": "String", "title": "子Flow结果JSON", "notnull": true }],
+      "results": [{ "name": "request", "type": "String", "title": "完整请求JSON", "notnull": true }, { "name": "halt", "type": "Boolean", "title": "是否终止", "notnull": true }, { "name": "result", "type": "String", "title": "执行结果JSON", "notnull": true }]
+    },
+    {
+      "id": "NODE_WHERE_CONDITION_ASSEMBLE",
+      "type": "flow",
+      "title": "WikiSQL conds 组装",
+      "reference": "@com.horsecoder.common.whuTalent.dataTesting.core/WHERE_CONDITION_ASSEMBLE",
+      "params": [{ "name": "request", "type": "String", "title": "完整请求JSON", "notnull": true }],
+      "results": [{ "name": "stageResult", "type": "String", "title": "子Flow结果JSON", "notnull": true }]
+    },
+    {
+      "id": "MERGE_WHERE_CONDITION_ASSEMBLE",
+      "type": "event",
+      "title": "合并WikiSQL conds 组装结果",
+      "reference": "WHERE_REQUEST_MERGE",
+      "params": [{ "name": "request", "type": "String", "title": "完整请求JSON", "notnull": true }, { "name": "stageResult", "type": "String", "title": "子Flow结果JSON", "notnull": true }],
+      "results": [{ "name": "request", "type": "String", "title": "完整请求JSON", "notnull": true }, { "name": "halt", "type": "Boolean", "title": "是否终止", "notnull": true }, { "name": "result", "type": "String", "title": "执行结果JSON", "notnull": true }]
+    }
+  ],
+  "routes": [
+    { "source": "start", "target": "NODE_WHERE_REQUEST_PREPARE", "condition": "true" },
+    { "source": "NODE_WHERE_REQUEST_PREPARE", "target": "end", "condition": "halt == true" },
+    { "source": "NODE_WHERE_REQUEST_PREPARE", "target": "NODE_WHERE_CONDITION_EXTRACT", "condition": "halt == false" },
+    { "source": "NODE_WHERE_CONDITION_EXTRACT", "target": "MERGE_WHERE_CONDITION_EXTRACT", "condition": "true" },
+    { "source": "MERGE_WHERE_CONDITION_EXTRACT", "target": "end", "condition": "halt == true" },
+    { "source": "MERGE_WHERE_CONDITION_EXTRACT", "target": "NODE_WHERE_MULTI_CONDITION_EXTRACT", "condition": "halt == false" },
+    { "source": "NODE_WHERE_MULTI_CONDITION_EXTRACT", "target": "MERGE_WHERE_MULTI_CONDITION_EXTRACT", "condition": "true" },
+    { "source": "MERGE_WHERE_MULTI_CONDITION_EXTRACT", "target": "end", "condition": "halt == true" },
+    { "source": "MERGE_WHERE_MULTI_CONDITION_EXTRACT", "target": "NODE_WHERE_COMPLETENESS_CHECK", "condition": "halt == false" },
+    { "source": "NODE_WHERE_COMPLETENESS_CHECK", "target": "MERGE_WHERE_COMPLETENESS_CHECK", "condition": "true" },
+    { "source": "MERGE_WHERE_COMPLETENESS_CHECK", "target": "end", "condition": "halt == true" },
+    { "source": "MERGE_WHERE_COMPLETENESS_CHECK", "target": "NODE_WHERE_COLUMN_MATCH", "condition": "halt == false" },
+    { "source": "NODE_WHERE_COLUMN_MATCH", "target": "MERGE_WHERE_COLUMN_MATCH", "condition": "true" },
+    { "source": "MERGE_WHERE_COLUMN_MATCH", "target": "end", "condition": "halt == true" },
+    { "source": "MERGE_WHERE_COLUMN_MATCH", "target": "NODE_WHERE_OPERATOR_RECOGNIZE", "condition": "halt == false" },
+    { "source": "NODE_WHERE_OPERATOR_RECOGNIZE", "target": "MERGE_WHERE_OPERATOR_RECOGNIZE", "condition": "true" },
+    { "source": "MERGE_WHERE_OPERATOR_RECOGNIZE", "target": "end", "condition": "halt == true" },
+    { "source": "MERGE_WHERE_OPERATOR_RECOGNIZE", "target": "NODE_WHERE_VALUE_EXTRACT", "condition": "halt == false" },
+    { "source": "NODE_WHERE_VALUE_EXTRACT", "target": "MERGE_WHERE_VALUE_EXTRACT", "condition": "true" },
+    { "source": "MERGE_WHERE_VALUE_EXTRACT", "target": "end", "condition": "halt == true" },
+    { "source": "MERGE_WHERE_VALUE_EXTRACT", "target": "NODE_WHERE_SCHEMA_VALUE_MATCH", "condition": "halt == false" },
+    { "source": "NODE_WHERE_SCHEMA_VALUE_MATCH", "target": "MERGE_WHERE_SCHEMA_VALUE_MATCH", "condition": "true" },
+    { "source": "MERGE_WHERE_SCHEMA_VALUE_MATCH", "target": "end", "condition": "halt == true" },
+    { "source": "MERGE_WHERE_SCHEMA_VALUE_MATCH", "target": "NODE_WHERE_VALUE_NORMALIZE", "condition": "halt == false" },
+    { "source": "NODE_WHERE_VALUE_NORMALIZE", "target": "MERGE_WHERE_VALUE_NORMALIZE", "condition": "true" },
+    { "source": "MERGE_WHERE_VALUE_NORMALIZE", "target": "end", "condition": "halt == true" },
+    { "source": "MERGE_WHERE_VALUE_NORMALIZE", "target": "NODE_WHERE_CONDITION_VALIDATE", "condition": "halt == false" },
+    { "source": "NODE_WHERE_CONDITION_VALIDATE", "target": "MERGE_WHERE_CONDITION_VALIDATE", "condition": "true" },
+    { "source": "MERGE_WHERE_CONDITION_VALIDATE", "target": "end", "condition": "halt == true" },
+    { "source": "MERGE_WHERE_CONDITION_VALIDATE", "target": "NODE_WHERE_CONDITION_ASSEMBLE", "condition": "halt == false" },
+    { "source": "NODE_WHERE_CONDITION_ASSEMBLE", "target": "MERGE_WHERE_CONDITION_ASSEMBLE", "condition": "true" },
+    { "source": "MERGE_WHERE_CONDITION_ASSEMBLE", "target": "end", "condition": "true" }
+  ]
+}

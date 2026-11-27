@@ -1,0 +1,33 @@
+{
+  "id":"@cn.edu.whu/FLOW_ADD",
+  "name":"FLOW_ADD",
+  "type":"flow",
+  "title":"运行",
+  "description": "实现两数相加",
+  "params":[
+    { "title":"数1", "name":"num1", "type":"double", "notnull":true },
+    { "title":"数2", "name":"num2", "type":"double", "notnull":true }
+  ],
+  "results":[
+    { "title":"结果", "name":"result", "type":"double", "notnull":true }
+  ],
+  "nodes":[
+    {
+      "id":"FLOW_NODE_ADD",
+      "type":"event",
+      "title":"运行",
+      "reference":"FLOW_CODE_ADD",
+      "params":[
+        { "title":"数1", "name":"num1", "type":"double", "notnull":true },
+        { "title":"数2", "name":"num2", "type":"double", "notnull":true }
+      ],
+      "results":[
+        { "title":"结果", "name":"result", "type":"double", "notnull":true }
+      ]
+    }
+  ],
+  "routes":[
+    { "source":"start", "target":"FLOW_NODE_ADD", "condition":"true" },
+    { "source":"FLOW_NODE_ADD", "target":"end", "condition":"true" }
+  ]
+}

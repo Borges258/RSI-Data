@@ -1,0 +1,59 @@
+{
+  "id": "@com.horsecoder.common.whuTalent.dataTesting.core/WHERE_COMPLETENESS_CHECK",
+  "name": "WHERE_COMPLETENESS_CHECK",
+  "type": "flow",
+  "title": "检查遗漏或多加的条件",
+  "description": "检查遗漏或多加的条件",
+  "params": [
+    {
+      "type": "String",
+      "notnull": true,
+      "name": "request",
+      "title": "请求JSON"
+    }
+  ],
+  "results": [
+    {
+      "type": "String",
+      "notnull": true,
+      "name": "result",
+      "title": "结果JSON"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "NODE_WHERE_COMPLETENESS_CHECK",
+      "type": "event",
+      "title": "检查遗漏或多加的条件",
+      "reference": "WHERE_COMPLETENESS_CHECK",
+      "params": [
+        {
+          "type": "String",
+          "notnull": true,
+          "name": "request",
+          "title": "请求JSON"
+        }
+      ],
+      "results": [
+        {
+          "type": "String",
+          "notnull": true,
+          "name": "result",
+          "title": "结果JSON"
+        }
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "target": "NODE_WHERE_COMPLETENESS_CHECK",
+      "condition": "true",
+      "source": "start"
+    },
+    {
+      "target": "end",
+      "condition": "true",
+      "source": "NODE_WHERE_COMPLETENESS_CHECK"
+    }
+  ]
+}
